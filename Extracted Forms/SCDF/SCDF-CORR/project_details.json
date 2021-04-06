@@ -1,0 +1,22 @@
+{
+  "form__name": "SCDF-CORR",
+  "form__last_update_date": "",
+  "form__create_date": "",
+  "form__version": "1.0",
+  "FormName10": "ESS-CORR",
+  "agencyUrl10": {
+    "url": "https://scdf.e.api.gov.sg:443/corenet2fisops/api/validateCorrespondence",
+    "params": "",
+    "body": {}
+  },
+  "Date10": "",
+  "Addr10": "FSSB",
+  "Addr20": "The Commissioner\nSingapore Civil Defence Force",
+  "Project_Project_Ref_No10": "",
+  "Project_Title10": "",
+  "Project_Location_Description10": "",
+  "lblProject_File_Ref_No10": "",
+  "Project_CorrType10": "",
+  "FIELD1": "",
+  "agencyUrlJSON10": "https://scdf.e.api.gov.sg:443/corenet2fisops/api/validateCorrespondence"
+}

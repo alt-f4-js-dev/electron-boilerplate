@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <title>BCA-BE-ENABAC_GBWAC</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Syncfusion" />
+
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+    <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+    <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+    <script src="../cm/js/func/common.js"></script>
+    <script src="../cm/js/components/cn2commonfunc.js"></script>
+    <script src="../cm/js/components/cn2sgheader.js"></script>
+    <script src="../cm/js/components/cn2masterhead.js"></script>
+    <script src="../cm/js/components/cn2standardfooter.js"></script>
+    <script src="../cm/js/components/cn2datefield.js"></script>
+    <script src="../cm/js/components/cn2fixedfooter.js"></script>
+    <script src="../cm/js/components/cn2textbox.js"></script>
+    <script src="../cm/js/components/cn2textarea.js"></script>
+    <script src="../cm/js/components/cn2checkbox.js"></script>
+    <script src="../cm/js/components/cn2versionfooter.js"></script>
+    <script src="../cm/js/components/cn2select.js"></script>
+    <script src="../cm/js/components/cn2navbutton.js"></script>
+    <script src="../cm/js/components/cn2button.js"></script>
+    <script src="../cm/js/components/cn2switchbutton.js"></script>
+
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <cn2-master-head title="ENDORSEMENTS ON RECORD PILING/STRUCTURAL PLAN CERTIFICATE"></cn2-master-head>
+    <input type="hidden" name="member_id" id="member_id">
+    <input type="hidden" name="form_validated" id="form_validated">
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p style="margin: 0px">Help</p>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <b>For enquiries related to forms, please contact the following:</b>
+                </p>
+                <p><span id="RegulatoryAuthority_id"></span></p>
+                <div id="table-parent" style="width:auto">
+                    <table id="ContDetaTable_id" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Regulatory Authority</th>
+                                <th>Email Address</th>
+                                <th>Tel No.</th>
+                                <th>Area of Support</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">BCA (ST)</td>
+                                <td>wai_hui_ling@bca.gov.sg</td>
+                                <td>68044609</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>chang_heng_choy@bca.gov.sg</td>
+                                <td>68044646</td>
+                                <td>Policies</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="mls-espro-form-container">
+        <div class="row">
+            <div class="mls-espro-form-left-nav" id="menu">
+                <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+                <cn2-nav-button target="page2" page-number="2" label="Endorsement Type"></cn2-nav-button>
+                <cn2-nav-button target="page3" page-number="3" label="Application Details"></cn2-nav-button>
+                <cn2-nav-button target="page4" hidden page-number="4"
+                    label="Particulars and Declaration by Accredited Checker">
+                </cn2-nav-button>
+                <cn2-nav-button target="page5" hidden page-number="5"
+                    label="Particular and Declaration by Specialist Accredited Checker">
+                </cn2-nav-button>
+            </div>
+
+            <div class="e-content mls-espro-form-right" id="page">
+                <div id="page1">
+                    <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">
+                                        <b>Date:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <cn2-textbox id="Date10" field-name="Date under Instructions" no-label
+                                            inline="6" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="1%">
+                                        <b>To:*</b>
+                                    </td>
+                                    <td width="15%">
+                                        <div class="mls-espro-form-fields row">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-select inline="6" id="Addr10"
+                                                    field-name="To dropdown under Instructions"
+                                                    event-change="ToAgency_id_change(this)"
+                                                    options="Building and Construction Authority:BCA,Defence Science & Technology Agency:DSTA"
+                                                    mandatory no-label>
+                                                </cn2-select>
+                                            </div>
+                                        </div>
+                                        <div class="mls-espro-form-fields row pt-2">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-textarea style="height:145px;" id="Addr20"
+                                                    field-name="To textarea under Instructions" no-label inline="6"
+                                                    disabled>
+                                                </cn2-textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container" id="Instructions_section_id" hidden>
+                        <h2>Instructions</h2>
+                        <ol id="AccCheckIntroList_id" class="mls-intro-list" hidden>
+                            <li>
+                                This form is to be digitally signed by the Accredited Checker.
+                            </li>
+                            <li>This form may take 2-3 minutes to complete.</li>
+                        </ol>
+                        <ol id="SpecAcctIntroList_id" class="mls-intro-list" hidden>
+                            <li>
+                                This form is to be digitally signed by the Specialist
+                                Accredited Checker.
+                            </li>
+                            <li>This form may take 2-3 minutes to complete.</li>
+                        </ol>
+                        <ol id="AccrSpecIntroList_id" class="mls-intro-list" hidden>
+                            <li>
+                                This form is to be digitally signed by the Accredited Checker
+                                & Specialist Accredited Checker.
+                            </li>
+                            <li>This form may take 2-3 minutes to complete.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div id="page2">
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Endorsement Type*</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                1. Endorsements on Record Piling/Structural Plan
+                                                Certificate to be Endorsed by the Accredited Checker
+                                            </td>
+                                            <td width="1%">
+                                                <cn2-checkbox id="ApplType_Endo10" checked mandatory
+                                                    field-name="Endorsements by the Accredited Checker under Endorsement Type"
+                                                    event-change="ApplType_change();ApplType_Endo10_change(this);">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                2. Endorsements on Record Piling/Structural Plan
+                                                Certificate to be Endorsed by the Specialist
+                                                Accredited Checker
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="ApplType_Endo20" checked mandatory
+                                                    field-name="Endorsements by the Specialist Accredited Checker under Endorsement Type"
+                                                    event-change="ApplType_change();ApplType_Endo20_change(this);">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page3">
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Particulars of Application</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td width="35%">Project Reference Number</td>
+                                            <td>
+                                                <cn2-textbox id="Project_Project_Ref_No10"
+                                                    field-name="Project Reference Number under Particulars of Application"
+                                                    no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Project Title</td>
+                                            <td>
+                                                <cn2-textbox id="Project_Title10"
+                                                    field-name="Project Title under Particulars of Application" no-label
+                                                    disabled></cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Description of Building Works</td>
+                                            <td>
+                                                <cn2-textarea id="Project_Title20"
+                                                    field-name="Description of Building Works under Particulars of Application"
+                                                    maxlength="1000" no-label>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Location Description</td>
+                                            <td>
+                                                <cn2-textarea id="Project_Location_Description10"
+                                                    field-name="Location Description under Particulars of Application"
+                                                    no-label disabled>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="mls-espro-form-fields row pt-2">
+                                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                        Structural Plan No.(s)*
+                                                    </div>
+                                                </div>
+                                                <div class="mls-espro-form-fields row pt-2">
+                                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                        <cn2-button label="Add"
+                                                            event-click="insertDuplicate('stForm','A1');enableDelete('stForm'); addSTtable('stForm')">
+                                                        </cn2-button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td id="stForm">
+                                                <div class="mls-espro-form-fields row pt-2 Afields" id="A1">
+                                                    <div class="col-xs-5 col-sm-5 col-lg-5 col-md-5">
+                                                        <cn2-select id="PartOfAppl_StruPlanOfProjB10"
+                                                            field-name="Structural Plan No.(s) dropdown under Particulars of Application"
+                                                            prefix="PartOfProj_StruPlanOfProjB" suffix="0" mandatory
+                                                            options="ST:ST" no-label disabled></cn2-select>
+                                                    </div>
+                                                    <div class="col-xs-5 col-sm-5 col-lg-5 col-md-5">
+                                                        <cn2-textbox id="PartOfAppl_StruPlanOfProjC10" maxlength="3"
+                                                            prefix="PartOfProj_StruPlanOfProjC" suffix="0" numeric
+                                                            mandatory
+                                                            field-name="Structural Plan No.(s) textbox under Particulars of Application"
+                                                            event-keypress="PartOfAppl_PlanType_keypress(event,this)"
+                                                            event-change="adjustNumberLength(this,3);PartOfAppl_PlanType_change(this);"
+                                                            no-label>
+                                                        </cn2-textbox>
+                                                    </div>
+                                                    <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2">
+                                                        <cn2-button label="Delete" style="float: right;" id="delete1"
+                                                            disabled danger
+                                                            event-click="removeDuplicate(this.id,'A1','stForm');disableDelete('stForm');"
+                                                            prefix="delete"></cn2-button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page4">
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Section I Particulars of Accredited Checker</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr hidden>
+                                            <td width="35%">Member ID</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Member_SID_AC10" group-id="partAc_id" no-label
+                                                    field-name="Member ID under Section I Particulars" disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">Name*</td>
+                                            <td>
+                                                <cn2-select id="Member_Member_Name_AC10" data-options="acDropdown"
+                                                    mandatory group-id="partAc_id"
+                                                    field-name="Name under Section I Particulars"
+                                                    event-change="loadDropDownDetails(this);Member_Member_Name_AC10_change(this);togglePartSpecAcc('Members_UEN_AC10')"
+                                                    no-label>
+                                                </cn2-select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Registration No.</td>
+                                            <td>
+                                                <table class="table table-borderless">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="35%">AC No.</td>
+                                                            <td>
+                                                                <cn2-textbox id="MemberRole_Professional_No_AC10"
+                                                                    group-id="partAc_id"
+                                                                    field-name="AC No. under Section I Particulars"
+                                                                    no-label disabled>
+                                                                </cn2-textbox>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                ACO No.
+                                                            </td>
+                                                            <td>
+                                                                <cn2-textbox id="MemberRole_Professional_No_ACCRCHECK20"
+                                                                    field-name="ACO No. under Section I Particulars"
+                                                                    group-id="partAc_id" no-label>
+                                                                </cn2-textbox>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Firm Name</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Firm_Name_AC10"
+                                                    field-name="Firm Name under Section I Particulars"
+                                                    group-id="partAc_id" no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>UEN</td>
+                                            <td>
+                                                <cn2-textbox id="Members_UEN_AC10"
+                                                    field-name="UEN under Section I Particulars" no-label maxlength="10"
+                                                    group-id="partAc_id" template="#########@"
+                                                    event-blur="uenValidate(this)">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Address</td>
+                                            <td>
+                                                <cn2-textarea id="Member_Address_AC10"
+                                                    field-name="Address under Section I Particulars"
+                                                    group-id="partAc_id" no-label disabled>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Telephone No.</td>
+                                            <td>
+                                                <cn2-textarea id="Member_Tel_No_AC10"
+                                                    field-name="Telephone No. under Section I Particulars"
+                                                    group-id="partAc_id" no-label disabled numeric>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Handphone No.</td>
+                                            <td>
+                                                <cn2-textarea id="Member_Mobile_No_AC10"
+                                                    field-name="Handphone No. under Section I Particulars"
+                                                    group-id="partAc_id" no-label disabled numeric>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email Address</td>
+                                            <td>
+                                                <cn2-textarea id="Member_Email_Address1_AC10" group-id="partAc_id"
+                                                    field-name="Email Address under Section I Particulars"
+                                                    event-blur="checkEmail(this);" placeholder="example@email.com"
+                                                    no-label disabled>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Declaration by Accredited Checker*</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tr>
+                                        <td colspan="2">
+                                            <b>A) Regulation 18(3)(c) of the Building Control
+                                                Regulations</b>
+                                        </td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1%">&nbsp;</td>
+                                        <td>
+                                            I,&nbsp;<cn2-textbox id="DeclByAccrChec_IAccrChecCert10"
+                                                field-name="Regulation 18(3)(c) textbox under Declaration by Accredited Checker"
+                                                no-label inline="3" disabled></cn2-textbox>, &nbsp;(Accredited Checker)
+                                            certify that to the
+                                            best
+                                            of my knowledge and belief, the record plans do not show
+                                            any inadequacy in key structural elements of the
+                                            building to be erected or affected by building works
+                                            carried out in accordance with those plans.
+                                        </td>
+                                        <td width="1%">
+                                            <cn2-checkbox id="DeclByAccrChec_IAccrChecCert20"
+                                                field-name="Regulation 18(3)(c) checkbox under Declaration by Accredited Checker"
+                                                event-change="DeclByAccrChec_IAccrChecCert20_change(this)">
+                                            </cn2-checkbox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2"><b>B) Standard endorsement for AC</b></td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>
+                                            <div class="mls-espro-form-fields row">
+                                                <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                                    1.
+                                                </div>
+                                                <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                                                    I,&nbsp;<cn2-textbox id="DeclByAccrChec_IAccrChecHere10" no-label
+                                                        field-name="Standard endorsement for AC textbox under Declaration by Accredited Checker"
+                                                        inline="3" disabled>
+                                                    </cn2-textbox>,&nbsp;(Accredited Checker) hereby certify that I
+                                                    have carried out an evaluation, analysis and review
+                                                    of the detailed structural plans and design
+                                                    calculations presented herein and am satisfied that
+                                                    there are no inadequacies in the key structural
+                                                    elements.
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <cn2-checkbox id="DeclByAccrChec_IAccrChecHere20"
+                                                field-name="Standard endorsement for AC checkbox under Declaration by Accredited Checker"
+                                                event-change="DeclByAccrChec_IAccrChecHere20_change(this)">
+                                            </cn2-checkbox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>
+                                            <div class="mls-espro-form-fields row">
+                                                <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                                    2.
+                                                </div>
+                                                <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                                                    <span id="AC2Label"> I further certify that these detailed
+                                                        structural
+                                                        plans and design calculations are in reference to
+                                                        Project Reference Number:</span>
+                                                    <p>
+                                                        <cn2-textbox id="DeclByAccrChec_IFurtCertThat10" no-label
+                                                            field-name="I further certify textbox under Declaration by Accredited Checker"
+                                                            maxlength="25" inline="3" disabled>
+                                                        </cn2-textbox>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <cn2-checkbox id="DeclByAccrChec_IFurtCertThat20"
+                                                field-name="I further certify checkbox under Declaration by Accredited Checker"
+                                                event-change="DeclByAccrChec_IFurtCertThat20_change(this,'DeclByAccrChec_IFurtCertThat10')">
+                                            </cn2-checkbox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>
+                                            <div class="mls-espro-form-fields row">
+                                                <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1"
+                                                    style="padding-top: 6px;">
+                                                    3.
+                                                </div>
+                                                <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                                                    <span id="AC3Label">Total number of structural plans checked
+                                                        :</span>
+                                                    &nbsp;<cn2-textbox id="DeclByAccrChec_TotaNumbOfStru10" no-label
+                                                        field-name="Total number of structural plans textbox under Declaration by Accredited Checker"
+                                                        inline="2" numeric maxlength="6" disabled></cn2-textbox>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <cn2-checkbox id="DeclByAccrChec_TotaNumbOfStru20"
+                                                field-name="Total number of structural plans checkbox under Declaration by Accredited Checker"
+                                                event-change="DeclByAccrChec_TotaNumbOfStru20_change(this,'DeclByAccrChec_TotaNumbOfStru10');">
+                                            </cn2-checkbox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>
+                                            <div class="mls-espro-form-fields row">
+                                                <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                                    4.
+                                                </div>
+                                                <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                                                    I hereby declare that I have no professional or
+                                                    financial interest in the building works shown in
+                                                    the plans as defined in Section 18 of the Building
+                                                    Control Act (Cap 29).*
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <cn2-checkbox id="DeclByAccrChec_IHereDeclThat10"
+                                                field-name="I hereby declare that checkbox under Declaration by Accredited Checker"
+                                                event-change="DeclByAccrChec_IHereDeclThat10_change(this)">
+                                            </cn2-checkbox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <cn2-textarea id="DeclByAccrChec_Rema10"
+                                                field-name="Remarks under Declaration by Accredited Checker"
+                                                label="Remarks" maxlength="1000">
+                                            </cn2-textarea>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page5">
+                    <div class="mls-espo-right-inner-container">
+                        <h2><span id="id1">Section I Particulars of Specialist Accredited Checker</span></h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr hidden>
+                                            <td width="35%">
+                                                Member ID
+                                            </td>
+                                            <td>
+                                                <cn2-textbox id="Member_Member_SID_ACGEO10"
+                                                    field-name="Member ID under Section I Particulars of Specialist"
+                                                    no-label group-id="page5PartAcGeoID" disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">
+                                                Name*
+                                            </td>
+                                            <td>
+                                                <cn2-select id="Member_Member_Name_ACGEO10" data-options="acgeoDropdown"
+                                                    field-name="Name under Section I Particulars of Specialist"
+                                                    group-id="page5PartAcGeoID"
+                                                    event-change="loadDropDownDetails(this);Member_Member_Name_ACGEO10_change(this);togglePartSpecAcc('Member_UEN_ACGEO10')"
+                                                    inline no-label mandatory>
+                                                </cn2-select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Registration No.</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Professional_No_ACGEO10"
+                                                    field-name="Specialist AC Registration No. under Section I Particulars of Specialist"
+                                                    group-id="page5PartAcGeoID" label="Specialist AC Registration No."
+                                                    disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Firm Name
+                                            </td>
+                                            <td>
+                                                <cn2-textbox id="Member_Firm_name_ACGEO10"
+                                                    field-name="Firm Name under Section I Particulars of Specialist"
+                                                    no-label disabled group-id="page5PartAcGeoID">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                UEN
+                                            </td>
+                                            <td>
+                                                <cn2-textbox id="Member_UEN_ACGEO10"
+                                                    field-name="UEN under Section I Particulars of Specialist" no-label
+                                                    maxlength="10" template="#########@" event-blur="uenValidate(this)"
+                                                    group-id="page5PartAcGeoID"></cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Address
+                                            </td>
+                                            <td>
+                                                <cn2-textarea id="Member_Address_ACGEO10"
+                                                    field-name="Address under Section I Particulars of Specialist"
+                                                    no-label disabled group-id="page5PartAcGeoID">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Telephone No.
+                                            </td>
+                                            <td>
+                                                <cn2-textbox id="Member_Tel_No_ACGEO10"
+                                                    field-name="Telephone No. under Section I Particulars of Specialist"
+                                                    no-label disabled numeric group-id="page5PartAcGeoID"></cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Handphone No.
+                                            </td>
+                                            <td>
+                                                <cn2-textbox id="Member_Mobile_No_ACGEO10"
+                                                    field-name="Handphone No. under Section I Particulars of Specialist"
+                                                    no-label disabled numeric group-id="page5PartAcGeoID">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Email Address
+                                            </td>
+                                            <td>
+                                                <cn2-textbox id="Member_Email_Address1_ACGEO10"
+                                                    field-name="Email Address under Section I Particulars of Specialist"
+                                                    no-label disabled event-blur="checkEmail(this);"
+                                                    placeholder="example@email.com" group-id="page5PartAcGeoID">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container" style="margin-bottom: 65px;">
+                        <h2>Declaration by Specialist Accredited Checker*</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="3">
+                                                <b>A) Certification of Record Plans for Specialist AC</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="1%">&nbsp;</td>
+                                            <td>
+                                                I, &nbsp;<cn2-textbox id="DeclBySac_CertOfRecoPlan10"
+                                                    field-name="Certification of Record Plans textbox under Declaration by Specialist Accredited Checker"
+                                                    no-label disabled inline="3"></cn2-textbox>&nbsp;being a registered
+                                                specialist
+                                                accredited
+                                                checker, certify that to the best of my knowledge and
+                                                belief, the record plans do not show any inadequacy in
+                                                the geotechnical aspects relating to the geotechnical
+                                                building works carried out in accordance with those
+                                                plans.
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="DeclBySac_CertOfRecoPlan20"
+                                                    field-name="Certification of Record Plans checkbox under Declaration by Specialist Accredited Checker"
+                                                    event-change="DeclBySac_CertOfRecoPlan20_change(this);">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">
+                                                <b> B) Standard endorsement for Specialist AC</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td>
+                                                <div class="mls-espro-form-fields row">
+                                                    <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                                        1
+                                                    </div>
+                                                    <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                                                        I,&nbsp;<cn2-textbox id="DeclBySac_StanEndoForSpec10"
+                                                            field-name="Standard endorsement for Specialist AC textbox under Declaration by Specialist Accredited Checker"
+                                                            no-label disabled inline="3">
+                                                        </cn2-textbox>
+                                                        &nbsp;being a registered specialist accredited
+                                                        checker, hereby certify that I have in accordance
+                                                        with the Building Control (Accredited Checkers and
+                                                        Accredited Checking Organisations) Regulations
+                                                        carried out an evaluation, analysis and review of
+                                                        the plans of the geotechnical building works
+                                                        attached, and to the best of my knowledge and
+                                                        belief the plans do not show any inadequacy in the
+                                                        geotechnical aspects relating to the geotechnical
+                                                        building works if carried out in accordance with
+                                                        those plans.
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="DeclBySac_StanEndoForSpec20"
+                                                    field-name="Standard endorsement for Specialist AC checkbox under Declaration by Specialist Accredited Checker"
+                                                    event-change="DeclBySac_StanEndoForSpec20_change(this)">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td>
+                                                <div class="mls-espro-form-fields row">
+                                                    <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                                        2
+                                                    </div>
+                                                    <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                                                        I append my Evaluation Report
+                                                        (comprising&nbsp;<cn2-textbox id="DeclBySac_IAppeMyEval10"
+                                                            field-name="I append my Evaluation Report textbox under Declaration by Specialist Accredited Checker"
+                                                            numeric maxlength="3" no-label disabled inline="2">
+                                                        </cn2-textbox>
+                                                        &nbsp;pages) as well as the analyses and
+                                                        calculations I have performed in carrying out the
+                                                        evaluation, analyses and review of the
+                                                        geotechnical reports and design calculations are
+                                                        in reference to Project Reference Number: <span
+                                                            id="SACLabel"></span>
+                                                        <p>
+                                                            <cn2-textbox id="DeclBySac_IAppeMyEval30"
+                                                                field-name="I append my Evaluation Report2 textbox under Declaration by Specialist Accredited Checker"
+                                                                no-label maxlength="25" inline="3" disabled>
+                                                            </cn2-textbox>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="DeclBySac_IAppeMyEval20"
+                                                    field-name="I append my Evaluation Report2 checkbox under Declaration by Specialist Accredited Checker"
+                                                    event-change="DeclBySac_IAppeMyEval20_change(this);"></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td>
+                                                <div class="mls-espro-form-fields row">
+                                                    <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                                        3
+                                                    </div>
+                                                    <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                                                        I hereby declare that I have no professional or
+                                                        financial interest in the geotechnical building
+                                                        works shown in the plans as defined in section 18
+                                                        of the Building Control Act (Cap 29).*
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="DeclBySac_IHereDeclThat20"
+                                                    field-name="I hereby declare that under Declaration by Specialist Accredited Checker"
+                                                    event-change="DeclBySac_IHereDeclThat20_change(this)">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">
+                                                <cn2-textarea id="DeclBySac_Remark" label="Remarks"
+                                                    field-name="Remarks under Declaration by Specialist Accredited Checker"
+                                                    maxlength="1000">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <cn2-fixed-footer></cn2-fixed-footer>
+        <cn2-version-footer></cn2-version-footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HDB(ARCH) QPAPP01 & QPAPP02</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Syncfusion" />
+
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+    <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+    <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+    <script src="../cm/js/func/common.js"></script>
+    <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+    <script src="../cm/js/components/cn2sgheader.js"></script>
+    <script src="../cm/js/components/cn2masterhead.js"></script>
+    <script src="../cm/js/components/cn2versionfooter.js"></script>
+    <script src="../cm/js/components/cn2fixedfooter.js"></script>
+
+    <script src="../cm/js/components/cn2textbox.js"></script>
+    <script src="../cm/js/components/cn2textarea.js"></script>
+    <script src="../cm/js/components/cn2checkbox.js"></script>
+    <script src="../cm/js/components/cn2navbutton.js"></script>
+    <script src="../cm/js/components/cn2select.js"></script>
+
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <!-- <cn2-sg-header></cn2-sg-header> -->
+    <cn2-master-head title="APPLICATION FOR TECHNICAL CLEARANCE / COMPLIANCE CERTIFICATE OF ARCHITECTURAL PLANS">
+    </cn2-master-head>
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p style="margin: 0px">Help</p>
+            </div>
+            <div class="modal-body">
+                <p><b>For enquiries related to forms, please contact the following:</b></p>
+                <p> <span id="RegulatoryAuthority_id"></span></p>
+                <div id="table-parent" style="width:auto">
+                    <table id="ContDetaTable_id" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Regulatory Authority</th>
+                                <th>Email Address</th>
+                                <th>Tel No.</th>
+                                <th>Area of Support</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="5">HDB</td>
+                                <td>plgmail@mailbox.hdb.gov.sg</td>
+                                <td>1800-8663073</td>
+                                <td>Submissions</td>
+                            </tr>
+                            <tr>
+                                <td>ipgmail@mailbox.hdb.gov.sg</td>
+                                <td>1800-8663075</td>
+                                <td>Submissions</td>
+                            </tr>
+                            <tr>
+                                <td>GOH_Meow_Wee@hdb.gov.sg</td>
+                                <td>64903167</td>
+                                <td>Submissions</td>
+                            </tr>
+                            <tr>
+                                <td>JIANG_Wei_Li@hdb.gov.sg</td>
+                                <td>64901663</td>
+                                <td>Submissions</td>
+                            </tr>
+                            <tr>
+                                <td>Johnny_CHIEW@hdb.gov.sg</td>
+                                <td>64903162</td>
+                                <td>Submissions</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="closer btn" onclick="hideHelp()"
+                    style="background-color:#037ebb;color:white;">OK</button>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" name="member_id" id="member_id">
+    <input type="hidden" name="form_validated" id="form_validated">
+    <div class="mls-espro-form-container">
+        <div class="row">
+            <div class="mls-espro-form-left-nav" id="menu">
+                <cn2-nav-button target="page1" page-number="1" label="Instruction"></cn2-nav-button>
+                <cn2-nav-button target="page2" page-number="2" label="Particulars of Application"></cn2-nav-button>
+                <cn2-nav-button target="page3" page-number="3" label="Particulars of Applicant"></cn2-nav-button>
+                <cn2-nav-button target="page4" page-number="4" label="Particulars of Qualified Person"></cn2-nav-button>
+                <cn2-nav-button target="page5" page-number="5" label="Confirmation by QP for Building Plan Submission">
+                </cn2-nav-button>
+                <cn2-nav-button target="page6" page-number="5" hidden
+                    label="Confirmation by QP for Application of Compliance Certificate">
+                </cn2-nav-button>
+
+            </div>
+
+            <div class="e-content mls-espro-form-right" id="page">
+                <div id="page1">
+                    <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">
+                                        <b>Date:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <cn2-textbox id="Date10" no-label inline="5" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="1%">
+                                        <b>To:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <div class="mls-espro-form-fields row">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-select no-label inline="5" id="Addr10"
+                                                    options="Housing & Development Board [HDBARCH]:HDBARCH" disabled>
+                                                </cn2-select>
+                                            </div>
+                                        </div>
+                                        <div class="mls-espro-form-fields row pt-2">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-textarea id="Addr20" no-label inline="5" disabled
+                                                    style="height: 87px;">
+                                                </cn2-textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Instruction</h2>
+                        <ol class="mls-intro-list">
+                            <li>This form is to be digitally signed by the appointed Qualified Person.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div id="page2">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <h2>Section 1 Project Details</h2>
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span>1</span>
+                                            </td>
+                                            <td>
+                                                <input type="radio" id="Project_PlanSubm10" onclick="Project_BS(this)"
+                                                    name="application" field-name="Application for Technical Clearance RadioButton"/>
+                                                <label class="label-text"> Application for Technical
+                                                    Clearance</label>
+                                                <p>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"
+                                                        id="Project_PlanSubm_1Subm10" name="Project_PlanSubm_name" field-name="1st Submission RadioButton"/>
+                                                    <label class="label-text"> 1st Submission</label>
+                                                </p>
+                                                <p>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"
+                                                        id="Project_PlanSubm_AmenPlan10" name="Project_PlanSubm_name" field-name="Amendment Plans RadioButton"/>
+                                                    <label class="label-text"> Amendment Plans</label>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <input type="radio" id="Project_AsBuilSubm10" onclick="Project_BS(this)"
+                                                    name="application" field-name="Application for Compliance Certificate RadioButton"/>
+                                                <label class="label-text"> Application for Compliance Certificate
+                                                    (prior to CSC Application to BCA)</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                1.1
+                                            </td>
+                                            <td>
+                                                <label class="label-text"> Project Reference Number</label>
+                                            </td>
+                                            <td>
+                                                <cn2-textbox id='Project_Project_Ref_No10' disabled no-label inline field-name="Project Reference Number under Project Details">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                1.2
+                                            </td>
+                                            <td>
+                                                <label class="label-text"> Project Title</label>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea id='Project_Title10' disabled no-label inline field-name="Project Title under Project Details">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                1.3
+                                            </td>
+                                            <td>
+                                                <label class="label-text"> Description of Building Works</label>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea inline no-label id='Project_Title20' maxlength="32400" field-name="Description of Building Works under Project Details">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                1.4
+                                            </td>
+                                            <td>
+                                                <label class="label-text">Location Description</label>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea id='Project_Location_Description10' disabled inline
+                                                    no-label field-name="Location Description under Project Details"></cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                1.5
+                                            </td>
+                                            <td ref-label="PartOfAppl_ProjType10">
+                                                <label class="label-text">Project Type*</label>
+                                            </td>
+                                            <td>
+                                                <div class="mls-espro-form-fields row">
+                                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                        <cn2-select options="New Development (ND):New Development (ND),
+                                                        Lift Upgrading Programme (LUP):Lift Upgrading Programme (LUP),
+                                                        Interim Upgrading Programme Plus (IUP Plus):Interim Upgrading Programme Plus (IUP Plus),
+                                                        Interim Upgrading Programme (IUP):Interim Upgrading Programme (IUP),
+                                                        Hawker Upgrading Programme (HUP):Hawker Upgrading Programme (HUP),
+                                                        A&A Works:A&A Works,
+                                                        Others:Others
+                                                        " id="PartOfAppl_ProjType10"
+                                                            event-change="PartOfAppl_ProjType10_changed(this)" no-label
+                                                            mandatory inline field-name="Project Type Dropdown under Project Details"></cn2-select>
+                                                    </div>
+                                                </div>
+                                                <div class="mls-espro-form-fields row">
+                                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pt-2">
+                                                        <cn2-textarea id='PartOfAppl_ProjType_Othe20' hidden
+                                                            maxlength="50" no-label inline disabled></cn2-textarea>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page3">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Applicant</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr hidden>
+                                            <td>SID</td>
+                                            <td>
+                                                <cn2-textbox no-label id='Member_SID_OWNER10' disabled field-name="SID under Particulars of Applicant">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                        <tr>
+                                            <td width="35%">Name*</td>
+                                            <td>
+                                                <cn2-select id="Member_Member_Name_OWNER10" data-options="ownerDropdown"
+                                                    no-label
+                                                    event-change="loadDropDownDetails(this);removeSelectUENerror('Members_UEN_OWNER10')"
+                                                    mandatory field-name="Name under Particulars of Applicant">
+                                                </cn2-select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Firm Name</td>
+                                            <td>
+                                                <cn2-textbox no-label id='Member_Firm_Name_OWNER10' disabled field-name="FirmName under Particulars of Applicant">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td ref-label="Members_UEN_OWNER10">UEN</td>
+                                            <td>
+                                                <cn2-textbox no-label id='Members_UEN_OWNER10' maxlength="10"
+                                                    template="#########@" event-blur="uenValidate(this)" field-name="MemberUEN under Particulars of Applicant">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Designation</td>
+                                            <td>
+                                                <cn2-textbox no-label id='Member_Designation_OWNER10' disabled field-name="Designation under Particulars of Applicant">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Address</td>
+                                            <td>
+                                                <cn2-textarea no-label id='Member_Address_OWNER10' disabled field-name="Adress under Particulars of Applicant">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Telephone No.</td>
+                                            <td>
+                                                <cn2-textarea no-label id='Member_Tel_No_OWNER10' disabled field-name="TelephoneNo under Particulars of Applicant">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Handphone No.</td>
+                                            <td>
+                                                <cn2-textbox no-label id='Member_Mobile_No_OWNER10' disabled field-name="Handphone under Particulars of Applicant">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email Address</td>
+                                            <td>
+                                                <cn2-textbox no-label id='Member_Email_Address1_OWNER10' disabled field-name="EmailAddress under Particulars of Applicant">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page4">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Qualified Person</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr hidden>
+                                            <td>SID</td>
+                                            <td>
+                                                <cn2-textbox no-label id='MemberRole_SID_QP10' disabled field-name="SID under Particulars of Qualified Person">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">Name*</td>
+                                            <td>
+                                                <cn2-select id="Member_Member_Name_QP10" no-label
+                                                    event-change="loadDropDownDetails(this);Member_Member_Name_QP10_change(this);removeSelectUENerror('Members_UEN_QP10')"
+                                                    data-options="qpDropdown" mandatory field-name="Name under Particulars of Qualified Person">
+                                                </cn2-select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>QP Prof. No.</td>
+                                            <td>
+                                                <cn2-textbox no-label id='MemberRole_Professional_No_QP10' disabled field-name="QP ProfNo under Particulars of Qualified Person">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Firm Name</td>
+                                            <td>
+                                                <cn2-textbox no-label id='Member_Firm_Name_QP10' disabled field-name="FirmName under Particulars of Qualified Person"></cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>UEN</td>
+                                            <td>
+                                                <cn2-textbox no-label maxlength="10" template="#########@"
+                                                    event-blur="uenValidate(this)" id='Members_UEN_QP10' field-name="UEN under Particulars of Qualified Person">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Address</td>
+                                            <td>
+                                                <cn2-textarea no-label id='Member_Address_QP10' disabled field-name="Address under Particulars of Qualified Person">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Telephone No.</td>
+                                            <td>
+                                                <cn2-textbox no-label id='Member_Tel_No_QP10' disabled field-name="Telephone under Particulars of Qualified Person"></cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Handphone No.</td>
+                                            <td>
+                                                <cn2-textbox no-label id='Member_Mobile_No_QP10' disabled field-name="Handphone under Particulars of Qualified Person">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email Address</td>
+                                            <td>
+                                                <cn2-textbox no-label id='Member_Email_Address1_QP10' disabled field-name="EmailAddress under Particulars of Qualified Person">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page5">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Section 2 Confirmation by Qualified Person for Building Plan Submission</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                The following documents are submitted :
+                                                <div class="mls-espro-form-fields row">
+                                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                        a. Total number of plans &nbsp; <cn2-textbox
+                                                            id="DeclByAppl_TotaNumbOfPlan20" no-label inline="4" numeric
+                                                            maxlength="1024" disabled field-name="Total Number of Plans Textbox under Confirmation by Qualified Person for Building Plan Submission">
+                                                        </cn2-textbox>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td width="1%">
+                                                <cn2-checkbox id="DeclByAppl_TotaNumbOfPlan10"
+                                                    event-change="DeclByAppl_TotaNumbOfPlan10_change(this,'DeclByAppl_TotaNumbOfPlan20')" field-name="The following documents are Submitted checkbox under Confirmation by Qualified Person for Building Plan Submission">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>b. One set of URA approved DC layout plan, EDA form and
+                                                Written Permission (applicable where DC submission is required)</td>
+                                            <td>
+                                                <cn2-checkbox id="DeclByAppl_OneSetOfURA10" field-name="OneSetOfURA checkbox under Confirmation by Qualified Person for Building Plan Submission"></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td ref-label="DeclByAppl_I10">I&nbsp; <cn2-textbox id="DeclByAppl_I10" no-label inline="4" disabled field-name="ITheQualPerson Textbox under Confirmation by Qualified Person for Building Plan Submission">
+                                                </cn2-textbox>
+                                                &nbsp;the Qualified Person of the above project hereby submit the plans
+                                                complying with HDB requirements and confirm that the details as stated
+                                                in this form are correct.
+                                            </td>
+                                            <td ref-label="DeclByAppl_TheQualPersOf10">
+                                                <cn2-checkbox id="DeclByAppl_TheQualPersOf10"
+                                                    event-change="DeclByAppl_TheQualPersOf10_change(this,'DeclByAppl_I10')" field-name="ITheQualPerson Checkbox under Confirmation by Qualified Person for Building Plan Submission">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page6">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Section 2 Confirmation by Qualified Person for Application of Compliance Certificate </h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2">The following documents are submitted</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span style="padding-top: 20%;">a</span></td>
+                                            <td> 
+                                                One set of final as-built plans (to indicate no of plans) &nbsp;
+                                                <cn2-textbox id="ConfByQualPers_OneSetOfFina20" no-label inline="4"
+                                                    numeric maxlength="1024" disabled field-name="Total Number of Plans Textbox under Confirmation by Qualified Person for Application of Compliance Certificate"></cn2-textbox>
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="ConfByQualPers_OneSetOfFina10"
+                                                    event-change="DeclByAppl_TotaNumbOfPlan10_change(this,'ConfByQualPers_OneSetOfFina20')" field-name="OneSetOfFinal Checkbox under Confirmation by Qualified Person for Application of Compliance Certificate">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>b</td>
+                                            <td>Photographs of rectified works (scanned in single pdf file)</td>
+                                            <td>
+                                                <cn2-checkbox id="ConfByQualPers_PhotOfRecWork10" field-name="PhotoOfRecWork Checkbox under Confirmation by Qualified Person for Application of Compliance Certificate"></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>c</td>
+                                            <td>One set of URA approved DC layout plan, EDAform and Written Permission
+                                                (if there are deviations involving GFA)
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="ConfByQualPers_OneSetOfURA10" field-name="OneSetOfURA Checkbox under Confirmation by Qualified Person for Application of Compliance Certificate">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td>
+                                                <div class="mls-espro-form-fields row">
+                                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                        I,&nbsp;<cn2-textbox id="ConfByQualPers_I10" inline="4" no-label
+                                                            disabled field-name="ConfByQualPers_I Checkbox under Confirmation by Qualified Person for Application of Compliance Certificate">
+                                                        </cn2-textbox>&nbsp;the Qualified Person of the above project
+                                                        confirm that:
+                                                    </div>
+                                                </div>
+                                                <div class="mls-espro-form-fields row pt-2">
+                                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                        a) I have inspected the above works and that the works complied
+                                                        with the HDB requirements and conditions in which the plans were
+                                                        approved.
+                                                    </div>
+                                                </div>
+                                                <div class="mls-espro-form-fields row pt-2">
+                                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                        b) All major amendments have been approved by HDB(ARCH), BCA and
+                                                        FSSD are submitted herewith;
+                                                    </div>
+                                                </div>
+                                                <div class="mls-espro-form-fields row pt-2">
+                                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                        c) Minor amendments are highlighted in the as-built plans;
+                                                    </div>
+                                                </div>
+                                                <div class="mls-espro-form-fields row pt-2">
+                                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                        d) There are no departures or deviations from the approved plans
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="mls-espro-form-fields row">
+                                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                        &nbsp;
+                                                    </div>
+                                                </div>
+                                                <div class="mls-espro-form-fields row pt-4">
+                                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                        <cn2-checkbox id="ConfByQualPers_IHaveInsp"
+                                                            event-change="ConfByQualPers_change('ConfByQualPers_I10')" field-name="ConfByQualPers_IHaveInsp Checkbox under Confirmation by Qualified Person for Application of Compliance Certificate">
+                                                        </cn2-checkbox>
+                                                    </div>
+                                                </div>
+                                                <div class="mls-espro-form-fields row pt-4">
+                                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                        <cn2-checkbox id="ConfByQualPers_AllMajoAmen"
+                                                            event-change="ConfByQualPers_change('ConfByQualPers_I10')" field-name="ConfByQualPers_AllMajoAmen Checkbox under Confirmation by Qualified Person for Application of Compliance Certificate">
+                                                        </cn2-checkbox>
+                                                    </div>
+                                                </div>
+                                                <div class="mls-espro-form-fields row pt-3">
+                                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                        <cn2-checkbox id="ConfByQualPers_MinoAmenAre"
+                                                            event-change="ConfByQualPers_change('ConfByQualPers_I10')" field-name="ConfByQualPers_MinoAmenAre Checkbox under Confirmation by Qualified Person for Application of Compliance Certificate">
+                                                        </cn2-checkbox>
+                                                    </div>
+                                                </div>
+                                                <div class="mls-espro-form-fields row pt-2">
+                                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                        <cn2-checkbox id="ConfByQualPers_TherAreNoDepa"
+                                                            event-change="ConfByQualPers_change('ConfByQualPers_I10')" field-name="ConfByQualPers_TherAreNoDepa Checkbox under Confirmation by Qualified Person for Application of Compliance Certificate">
+                                                        </cn2-checkbox>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <cn2-version-footer></cn2-version-footer>
+        <cn2-fixed-footer></cn2-fixed-footer>
+    </div>
+</body>
+
+</html>

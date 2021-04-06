@@ -13,6 +13,12 @@
     "electron": "^12.0.0"
   },
   "dependencies": {
-    "electron-is-dev": "^2.0.0"
+    "7zip-bin": "^5.1.1",
+    "archiver": "^5.3.0",
+    "archiver-zip-encryptable": "^1.0.8",
+    "electron-is-dev": "^2.0.0",
+    "find": "^0.3.0",
+    "fs-extra": "^8.1.0",
+    "node-7z": "^2.1.2"
   }
 }

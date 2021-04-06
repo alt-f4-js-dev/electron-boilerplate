@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ESSCORR</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Syncfusion" />
+
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+    <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+    <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+    <script src="../cm/js/func/common.js"></script>
+    <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+    <script src="../cm/js/components/cn2sgheader.js"></script>
+    <script src="../cm/js/components/cn2masterhead.js"></script>
+    <script src="../cm/js/components/cn2versionfooter.js"></script>
+    <script src="../cm/js/components/cn2fixedfooter.js"></script>
+
+    <script src="../cm/js/components/cn2textbox.js"></script>
+    <script src="../cm/js/components/cn2textarea.js"></script>
+    <script src="../cm/js/components/cn2checkbox.js"></script>
+    <script src="../cm/js/components/cn2select.js"></script>
+    <script src="../cm/js/components/cn2navbutton.js"></script>
+
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <cn2-master-head title="PSI CORRESPONDENCE TO BCA">
+    </cn2-master-head>
+    <input type="hidden" name="member_id" id="member_id">
+    <input type="hidden" name="form_validated" id="form_validated">
+
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p style="margin: 0px">Help</p>
+            </div>
+            <div class="modal-body">
+                <p><b>For enquiries related to forms, please contact the following:</b></p>
+                <p> <span id="RegulatoryAuthority_id"></span></p>
+                <div id="table-parent" style="width:auto">
+                    <table id="ContDetaTable_id" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Regulatory Authority</th>
+                                <th>Email Address</th>
+                                <th>Tel No.</th>
+                                <th>Area of Support</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>BCA(BP) & (TOP)</td>
+                                <td>bca_enquiry@bca.gov.sg</td>
+                                <td>1800-3425222</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">BCA (Buildable Design and Constructability)</td>
+                                <td>kong_chew_kwek@bca.gov.sg</td>
+                                <td>68044228</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>terence_teo@bca.gov.sg</td>
+                                <td>68044231</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>chin_kim_hong@bca.gov.sg</td>
+                                <td>68044234</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">BCA(ST)</td>
+                                <td>wai_hui_ling@bca.gov.sg</td>
+                                <td>68044609</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>chang_heng_choy@bca.gov.sg</td>
+                                <td>68044646</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">BCA (CD Shelter)</td>
+                                <td>lee_pheck_hoon@bca.gov.sg</td>
+                                <td>68044410</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>yeo_keng@bca.gov.sg</td>
+                                <td>68044416</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>BCA (Transit Shelter) </td>
+                                <td>Tan Wee Kian</td>
+                                <td>63961408</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4">BCA (Minimum Environmental Sustainability Std for Existing Bldgs &
+                                    Periodic Energy
+                                    Audit)</td>
+                                <td>aloysius_aw@bca.gov.sg</td>
+                                <td>68044705</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>joseph_hong@bca.gov.sg</td>
+                                <td>68044699</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>wee_kai_siong@bca.gov.sg</td>
+                                <td>68044701</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>yong_siew_hwa@bca.gov.sg</td>
+                                <td>68044715</td>
+                                <td>Policies</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="closer btn" onclick="hideHelp()"
+                    style="background-color:#037ebb;color:white;">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="mls-espro-form-container">
+        <div class="row">
+            <div class="mls-espro-form-left-nav" id="menu">
+                <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+                <cn2-nav-button target="page2" page-number="2" label="Information About Correspondence">
+                </cn2-nav-button>
+                <cn2-nav-button target="page3" page-number="3" label="Particulars of Qualified Person">
+                </cn2-nav-button>
+            </div>
+
+            <div class="e-content mls-espro-form-right" id="page">
+                <div id="page1">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">
+                                        <b>Date:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <cn2-textbox id="Date10" no-label inline="7" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="1%">
+                                        <b>To:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-select no-label inline="7" id="Addr10" options="Building and Construction Authority:BCA">
+                                                </cn2-select><br />
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pt-2">
+                                                <cn2-textarea id="Addr20" no-label inline="7" disabled
+                                                    style="height: 140px;">
+                                                </cn2-textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container" style="margin-bottom: 65px;">
+                        <h2>Instructions</h2>
+                        <ol class="mls-intro-list">
+                            <li>This document shall be submitted as part of the correspondence attachment for
+                                supplementary reports, request for extension of time, waiver etc</li>
+                        </ol>
+                    </div>
+                </div>
+                <div id="page2">
+                    <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 65px;">
+                        <h2>Information About Correspondence</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td width="1%">
+                                                &nbsp;
+                                            </td>
+                                            <td colspan="3">
+                                                <div class="mls-espro-form-fields row">
+                                                    <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                                        <input type="radio" name="PartOfBuil_name"
+                                                            id="PartOfBuil_SingOwne10"
+                                                            onchange="PartOfBuil_change(this)" />
+                                                    </div>
+                                                    <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                                                        Single Owner / Management Corporation
+                                                    </div>
+                                                </div>
+                                                <div class="mls-espro-form-fields row pt-2">
+                                                    <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                                        <input type="radio" name="PartOfBuil_name"
+                                                            id="PartOfBuil_MultOwne10"
+                                                            onchange="PartOfBuil_change(this)" />
+                                                    </div>
+                                                    <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                                                        Multiple Owners
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-middle text-center">
+                                                <input type="radio" name="PartOfBuilSMSMB_name"
+                                                    id="PartOfBuil_PSIRefe10" onchange="PartOfBuilSMSMB_change(this);"
+                                                    checked mandatory />
+                                            </td>
+                                            <td width="20%">
+                                                PSI Reference <br />
+                                                <span style="font-size: 13px;">Periodic Structural Inspection</span>
+                                            </td>
+                                            <td width="1%"><b>SM</b></td>
+                                            <td>
+                                                <div class="mls-espro-form-fields row">
+                                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12"
+                                                        id="smSingle_fields">
+                                                        <cn2-textbox id="PartOfBuil_NotiRefeNo10" numeric
+                                                            event-blur="yearValidation(this,event)" no-label inline="2"
+                                                            disabled maxlength="4">
+                                                        </cn2-textbox>
+                                                        &nbsp;/&nbsp;
+                                                        <cn2-textbox id="PartOfBuil_NotiRefeNo20"
+                                                            event-blur="monthValidation(this,event)" numeric no-label
+                                                            inline="1" disabled maxlength="2">
+                                                        </cn2-textbox>
+                                                        &nbsp;/&nbsp;
+                                                        <cn2-textbox id="PartOfBuil_NotiRefeNo30" numeric no-label
+                                                            inline="2" disabled maxlength="4">
+                                                        </cn2-textbox>
+                                                    </div>
+                                                </div>
+                                                <div class="mls-espro-form-fields row" hidden id="smMultiple_fields">
+                                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                        <cn2-textbox id="PartOfBuil_NotiRefeNo40"
+                                                            event-blur="yearValidation(this,event)" numeric no-label
+                                                            inline="2" disabled maxlength="4">
+                                                        </cn2-textbox>
+                                                        &nbsp;/&nbsp;
+                                                        <cn2-textbox id="PartOfBuil_NotiRefeNo50"
+                                                            event-blur="monthValidation(this,event)" numeric no-label
+                                                            inline="1" disabled maxlength="2">
+                                                        </cn2-textbox>
+                                                        &nbsp;/&nbsp;
+                                                        <cn2-textbox id="PartOfBuil_NotiRefeNo60" numeric no-label
+                                                            inline="2" disabled maxlength="4">
+                                                        </cn2-textbox>
+                                                        &nbsp;/&nbsp;
+                                                        <cn2-textbox id="PartOfBuil_NotiRefeNo70"
+                                                            event-change="PartOfBuil_NotiRefeNo70_change(this)" numeric
+                                                            no-label inline="2" disabled maxlength="3">
+                                                        </cn2-textbox>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="radio" id="RADIO1"
+                                                    name="grpProject_Subm_From_PSI_SD" hidden disabled no-label value="off"/>
+                                                <input type="radio" id="PartOfBuil_SMBRefe10"
+                                                    name="PartOfBuilSMSMB_name" onchange="PartOfBuilSMSMB_change(this)"
+                                                    checked mandatory />
+                                            </td>
+                                            <script>
+                                                radiobtn = document.getElementById("RADIO1");
+                                                radiobtn.checked = true;
+                                             </script>
+                                            <td>
+                                                SMB Reference<br />
+                                                <span style="font-size:13px">Batch PSI Notice</span>
+                                            </td>
+                                            <td><b>SMB</b></td>
+                                            <td>
+                                                <cn2-textbox id="PartOfBuil_SMBRefe20"
+                                                    event-blur="yearValidation(this,event)" numeric no-label inline="2"
+                                                    disabled maxlength="4">
+                                                </cn2-textbox>
+                                                &nbsp;/&nbsp;
+                                                <cn2-textbox id="PartOfBuil_SMBRefe30"
+                                                    event-blur="monthValidation(this,event)" numeric no-label inline="1"
+                                                    disabled maxlength="2">
+                                                </cn2-textbox>
+                                                &nbsp;/&nbsp;
+                                                <cn2-textbox id="PartOfBuil_SMBRefe40" numeric no-label inline="2"
+                                                    disabled maxlength="4">
+                                                </cn2-textbox>
+                                                &nbsp;/&nbsp;
+                                                <cn2-textbox id="PartOfBuil_SMBRefe50"
+                                                    event-change="PartOfBuil_SMBRefe50_change(this)" numeric no-label
+                                                    inline="2" disabled maxlength="4">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">Project Title *</td>
+                                            <td colspan="2">
+                                                <cn2-textarea id="Project_Title10" mandatory maxlength="255" no-label>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">Address *</td>
+                                            <td colspan="2">
+                                                <cn2-textarea id="Project_Location_Description10" mandatory maxlength="255" no-label>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">Remarks<br><span style="font-size: 13px">Note:
+                                                    (Please Indicate the
+                                                    Processing Officer from
+                                                    BCA if you are complying
+                                                    with any requests.)
+                                                </span>
+                                            </td>
+                                            <td colspan="2">
+                                                <cn2-textarea id="FIELD1" maxlength="32400" no-label></cn2-textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page3">
+                    <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 65px;">
+                        <h2>Particulars of Qualified Person</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="35%">Name*</td>
+                                    <td colspan="2">
+                                        <cn2-textbox id="PartOfQualPers_Name10" mandatory maxlength="66" no-label>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Registration No.*</td>
+                                    <td colspan="2">
+                                        <cn2-textbox id="PartOfQualPers_RegiNo10" mandatory maxlength="5" no-label>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <cn2-version-footer></cn2-version-footer>
+    <cn2-fixed-footer></cn2-fixed-footer>
+</body>
+
+</html>

@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>BCA-CSC-CSPLP</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2switchbutton.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head
+    title="THE BUILDING CONTROL ACT (CAP 29)<br>CERTIFICATE OF SUPERVISION OF LIGHTNING PROTECTION SYSTEM<br>(EARTH RESISTANCE & ELECTRICAL CONTINUITY TEST FORM)">
+  </cn2-master-head>
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p><b>For enquiries related to forms, please contact the following:</b></p>
+        <p> <span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>BCA(BP) & (TOP)</td>
+                <td>bca_enquiry@bca.gov.sg</td>
+                <td>1800-3425222</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td rowspan="3">BCA (Buildable Design and Constructability)</td>
+                <td>kong_chew_kwek@bca.gov.sg</td>
+                <td>68044228</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>terence_teo@bca.gov.sg</td>
+                <td>68044231</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>chin_kim_hong@bca.gov.sg</td>
+                <td> 68044234</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td rowspan="2">BCA(ST)</td>
+                <td>wai_hui_ling@bca.gov.sg</td>
+                <td>68044609</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>chang_heng_choy@bca.gov.sg</td>
+                <td>68044646</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td rowspan="2">BCA(CD Shelter)</td>
+                <td>lee_pheck_hoon@bca.gov.sg</td>
+                <td>68044410</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>yeo_keng@bca.gov.sg</td>
+                <td>68044416</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>BCA(Transit Shelter)</td>
+                <td>tan_wee_kian@bca.gov.sg</td>
+                <td>63961408</td>
+                <td>Policies</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">OK</button>
+      </div>
+    </div>
+  </div>
+  <input type="hidden" name="member_id" id="member_id">
+  <input type="hidden" name="form_validated" id="form_validated">
+
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions" selected></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Application"></cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars and Declaration by Qualified Person">
+        </cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4"
+          label="Lightning Protection System Earthing and Electrical Continuity Test">
+        </cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" field-name="Date under Instructions" no-label inline="5" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To:*</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-select inline="5" id="Addr10" field-name="To dropdown under Instructions"
+                          event-change="ToAgency_id_change(this)"
+                          options="Building and Construction Authority:BCA,Defence Science & Technology Agency:DSTA"
+                          mandatory no-label>
+                        </cn2-select>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea field-name="To textarea under Instructions"
+                          style="height:145px;overflow:auto;resize:none" id="Addr20" no-label inline="5" disabled>
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mls-espo-right-inner-container" style="margin-bottom: 65px;">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>This form is to be digitally signed by the appointed Qualified Person.</li>
+              <li>This form may take 2-3 minutes to complete</li>
+              </ul>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 65px;">
+            <h2>Particulars of Application</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Project Reference No.</td>
+                  <td colspan="2">
+                    <cn2-textbox no-label id='Project_Project_Ref_No10'
+                      field-name="Project Reference No. under Particulars of Application" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Project Title</td>
+                  <td colspan="2">
+                    <cn2-textarea no-label id='Project_Title10'
+                      field-name="Project Title under Particulars of Application" disabled>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Description of Building Works*
+                  </td>
+                  <td colspan="2">
+                    <cn2-textarea no-label id='Project_Title20'
+                      field-name="Description of Building Works under Particulars of Application" mandatory>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Location Description</td>
+                  <td colspan="2">
+                    <cn2-textarea no-label id='Project_Location_Description10'
+                      field-name="Location Description under Particulars of Application" disabled>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Plan Type*</td>
+                  <td>
+                    <cn2-select options="BP:BP,LPS:LPS" id="PartOfAppl_PlanType10"
+                      field-name="Plan Type dropdown under Particulars of Application" no-label>
+                    </cn2-select>
+                  </td>
+                  <td>
+                    <cn2-textbox id="PartOfAppl_PlanType20"
+                      field-name="Plan Type textbox under Particulars of Application" maxlength="3" no-label
+                      event-keypress="PartOfAppl_PlanType_keypress(event,this)"
+                      event-change="adjustNumberLength(this, 3);PartOfAppl_PlanType_change(this)" numeric mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Remarks</td>
+                  <td colspan="2">
+                    <cn2-textarea id="PartOfAppl_Rema10" field-name="Remarks under Particulars of Application" no-label
+                      maxlength="1000">
+                    </cn2-textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Section I Particulars of Qualified Person</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td>Member ID</td>
+                  <td>
+                    <cn2-textbox no-label id='Member_Member_SID_QP10' field-name="Member ID under Section I Particulars"
+                      disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_QP10" field-name="Name under Section I Particulars" no-label
+                      data-options="qpDropdown" event-change="loadDropDownDetails(this);togglePartQp()" mandatory>
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox no-label id='MemberRole_Professional_No_QP10'
+                      field-name="Registration No. under Section I Particulars" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox no-label id='Member_Firm_Name_QP10' field-name="Firm Name under Section I Particulars"
+                      disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox no-label id='Members_UEN_QP10' field-name="UEN under Section I Particulars"
+                      maxlength="10" event-blur="uenValidate(this)" template="#########@"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea no-label id='Member_Address_QP10' field-name="Address under Section I Particulars"
+                      disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox numeric no-label id='Member_Tel_No_QP10'
+                      field-name="Telephone No. under Section I Particulars" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox numeric no-label id='Member_Mobile_No_QP10'
+                      field-name="Handphone No. under Section I Particulars" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox no-label id='Member_Email_Address1_QP10'
+                      field-name="Email Address under Section I Particulars" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 65px;">
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <h2>Declaration by Qualified Person*</h2>
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td rowspan="4" width=1%><span>1.</span></td>
+                      <td colspan="2">
+                        I certify that the design of the above-mentioned lightning protection system complies with the
+                        requirements of the
+                        Building Control Regulations 2003, SS:555 and the relevant Singapore Standard Code of Practice
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        a. I have supervised the installation of the lightning protection
+                        system; and
+                      </td>
+                      <td>
+                        <cn2-checkbox id="DeclByQualPers_IHaveSupeThe10"
+                          field-name="I have supervised under Declaration by Qualified Person"
+                          event-click="remoMand(this)" mandatory checked>
+                        </cn2-checkbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="mls-espro-form-fields row pt-2">
+                          <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                            b. The design and installation of the lightning protection
+                            system
+                            are in accordance with
+                          </div>
+                        </div>
+                        <br>
+                        <ul>
+                          <li>
+                            <input type="radio" id="DeclByQualPers_TheDesiAndInst20"
+                              field-name="The design and installation radio1 under Declaration by Qualified Person"
+                              name="declarationQp1b" disabled>&nbsp;
+                            the Code of Practice on Lightning Protection in Buildings - SS
+                            CP 33:1996; or
+                          </li>
+                          <li>
+                            <input type="radio" id="DeclByQualPers_TheDesiAndInst30"
+                              field-name="The design and installation radio2 under Declaration by Qualified Person"
+                              name="declarationQp1b" disabled>&nbsp;
+                            the Code of Practice on Lightning Protection in Buildings - SS
+                            CP 33:1985; or
+                          </li>
+                          <li>
+                            <input type="radio" id="DeclByQualPers_TheDesiAndInst40"
+                              field-name="The design and installation radio3 under Declaration by Qualified Person"
+                              name="declarationQp1b" disabled>&nbsp;
+                            the Code of Practice For Protection Against Lightning - SS
+                            555:2010; or
+                          </li>
+                          <li>
+                            <input type="radio" id="DeclByQualPers_TheDesiAndInst50"
+                              field-name="The design and installation radio4 under Declaration by Qualified Person"
+                              name="declarationQp1b" disabled>&nbsp;
+                            the Code of Practice for Protection Against Lightning - SS 555:2018.
+                          </li>
+                        </ul>
+                        <div class="mls-espro-form-fields row pt-2">
+                          <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pl-5 pr-5 pb-2">
+                            Note: For building plans submitted before 1 July 1997,
+                            please select SS CP 33:1985; or on or after 1 July 1997,
+                            please select SS CP 33:1996; or on or after 1 July 2011,
+                            please select SS 555:2010
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <cn2-checkbox id="DeclByQualPers_TheDesiAndInst10"
+                          field-name="The design and installation checkbox under Declaration by Qualified Person"
+                          event-change="DeclByQualPers_TheDesiAndInst10_change(this)" event-click="remoMand(this)"
+                          mandatory checked>
+                        </cn2-checkbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="mls-espro-form-fields row pt-2">
+                          <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                            c. The design and installation of the lightning protection
+                            system
+                            are based on alternative solution.
+                          </div>
+                        </div>
+                        <br>
+                        <div class="mls-espro-form-fields row pt-2">
+                          <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                            <cn2-textarea id="FIELD1"
+                              field-name="The design and installation textarea under Declaration by Qualified Person"
+                              label="Remarks on alternative solution provided :">
+                            </cn2-textarea>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td rowspan="2" width=1%><span>2.</span></td>
+                      <td>I have supervised the above-mentioned lightning protection installation and hereby
+                        certify
+                        the installation works
+                        complies with the requirements of the Building Control Regulations 2003, SS:555 and the relevant
+                        Singapore Standard Code
+                        of Practice. I further certify that the installation works has been inspected and tested by me
+                        in accordance to relevant
+                        Singapore Standard Code of Practice.</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <cn2-textarea id="FIELD2"
+                          field-name="I have supervised textarea under Declaration by Qualified Person"
+                          label="Remarks:">
+                        </cn2-textarea>
+                      </td>
+                      <td>&nbsp;</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page4">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Lightning Protection System Earthing and Electrical Continuity Test</h2>
+
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td>Address</td>
+                    <td>
+                      <cn2-textarea id="LPSDC_Address10" field-name="Address under Lightning Protection System"
+                        maxlength="1024" no-label></cn2-textarea>
+                    </td>
+                    <td>
+                    <td>Test Date</td>
+                    <td>
+                      <cn2-datefield onfocusout="validateDate(this);" id="LPSDC_TestDate10"
+                        field-name="Test Date under Lightning Protection System" no-label></cn2-datefield>
+                    </td>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="4"><b>Test Instrument Details</b></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 mls-top-section">
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td>Brand & Model 1:</td>
+                    <td>
+                      <cn2-textbox no-label id='LPSDC_BranMode110'
+                        field-name="Brand & Model 1 under Lightning Protection System" maxlength="1000">
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Serial No.</td>
+                    <td>
+                      <cn2-textbox no-label id='LPSDC_SeriNo110'
+                        field-name="Brand & Model 1 Serial No. under Lightning Protection System" maxlength="1000">
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Calibrated</td>
+                    <td>
+                      <cn2-textbox no-label id='LPSDC_Cali110'
+                        field-name="Brand & Model 1 Calibrated under Lightning Protection System" maxlength="1000">
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 mls-top-section">
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td>Brand & Model 2:</td>
+                    <td>
+                      <cn2-textbox no-label id='LPSDC_BranMode210'
+                        field-name="Brand & Model 2 under Lightning Protection System" maxlength="1000">
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Serial No.</td>
+                    <td>
+                      <cn2-textbox no-label id='LPSDC_SeriNo210'
+                        field-name="Brand & Model 2 Serial No. under Lightning Protection System" maxlength="1000">
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Calibrated</td>
+                    <td>
+                      <cn2-textbox no-label id='LPSDC_Cali210'
+                        field-name="Brand & Model 2 Calibrated under Lightning Protection System" maxlength="1000">
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Table 1 : Earth Resistance System Test</h2>
+            <div class=" mls-espro-form-fields row pb-4">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <cn2-button label="Add" class="addBtn1"
+                  event-click="insertDuplicate('erSysTestForm','A1','#labelNo');disableDelete('erSysTestForm', '.deleteA');addHundredMax('erSysTestForm', '.addBtn1')">
+                </cn2-button>
+              </div>
+            </div>
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td width="30%">
+                    <center>Type of Test</center>
+                  </td>
+                  <td>
+                    <center>Resistance of Earth Termination System (Ohm)</center>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <center><b>Earth Electrode Point</b></center>
+                  </td>
+                  <td>&nbsp;</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="mls-espro-form-fields row" id="erSysTestForm">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12" id="A1">
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <td width="30%" rowspan="2" class="align-middle" style="text-align: center;"><span
+                          style="font-weight: bold;" id="labelNo">
+                          1</span>
+                      </td>
+                      <td width="25%">
+                        Point Resistance [R&lt;N x 10Ω]
+                      </td>
+                      <td>
+                        <cn2-textbox id="EartResiSystTest_PoinResi10"
+                          field-name="Point Resistance under Table 1 : Earth Resistance System Test" maxlength="4"
+                          numeric prefix="EartResiSystTest_PoinResi" suffix="0" no-label>
+                        </cn2-textbox>
+                      </td>
+                      <td rowspan="2">
+                        <cn2-button label="Delete" id="delete1A" class="deleteA" prefix="delete" suffix="A" disabled
+                          danger
+                          event-click="removeDuplicate(this.id,'A1','erSysTestForm','#labelNo');disableDelete('erSysTestForm', '.deleteA');addHundredMax('erSysTestForm', '.addBtn1')">
+                        </cn2-button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Electrical Continuity Test Between N & N+1
+                      </td>
+                      <td>
+                        <cn2-textbox id="EartResiSystTest_ElecContTestBet110"
+                          field-name="Electrical Continuity Test under Table 1 : Earth Resistance System Test" numeric
+                          maxlength="4" prefix="EartResiSystTest_ElecContTestBet1" suffix="0" no-label>
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td width="40%">Point Resistance [R&lt;N x 10Ω]<br>Remarks :</td>
+                    <td>
+                      <cn2-textarea id="EartResiSystTest_PoinResi_Rema10"
+                        field-name="Point Resistance Remarks under Table 1 : Earth Resistance System Test"
+                        maxlength="1000" no-label>
+                      </cn2-textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Electrical Continuity Test Between N & N+1<br>Remarks :</td>
+                    <td>
+                      <cn2-textarea id="EartResiSystTest_ElecContTestBet_Rema10"
+                        field-name="Electrical Continuity Test Remarks under Table 1 : Earth Resistance System Test"
+                        maxlength="1000" no-label>
+                      </cn2-textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Overall resistance of the Earth Termination System</td>
+                  </tr>
+                  <tr>
+                    <td width="40%">[R<sub>overall</sub> ≤ 10 Ω] :</td>
+                    <td>
+                      <cn2-textbox id="EartResiSystTest_OverResiOfThe10"
+                        field-name="Overall resistance under Table 1 : Earth Resistance System Test" maxlength="4"
+                        numeric no-label>
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <cn2-textarea id="EartResiSystTest_Rema10"
+                        field-name="Earth Resistance System Test Remarks under Table 1 : Earth Resistance System Test"
+                        label="Remarks:">
+                      </cn2-textarea>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Table 2 : Natural Down Conductor Electrical Test</h2>
+            <div class=" mls-espro-form-fields row pb-4">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <cn2-button label="Add" class="addBtn2"
+                  event-click="insertDuplicate('nDownConElecTestForm','B1','#labelNo');disableDelete('nDownConElecTestForm', '.deleteB');addHundredMax('nDownConElecTestForm', '.addBtn2')">
+                </cn2-button>
+              </div>
+            </div>
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td width="30%">
+                    <center>Type of Test</center>
+                  </td>
+                  <td>
+                    <center>Continuity Test for Down Conductor System (Ohm)</center>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <center><b>Electrical Continuity Test</b></center>
+                  </td>
+                  <td>&nbsp;</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="mls-espro-form-fields row" id="nDownConElecTestForm">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12" id="B1">
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <td width="30%" rowspan="2" class="align-middle" style="text-align: center;"><span
+                          style="font-weight: bold;" id="labelNo">
+                          1</span>
+                      </td>
+                      <td width="25%">
+                        Overall value in Ohm [R&lt;0.2Ω]
+                      </td>
+                      <td>
+                        <cn2-textbox id="NatuDownCondElec_OverValInOhm10"
+                          field-name="Overall value in Ohm under Table 2 : Natural Down Conductor Electrical Test"
+                          numeric maxlength="4" prefix="NatuDownCondElec_OverValInOhm" suffix="0" no-label>
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-button label="Delete" id="delete1B" class="deleteB" prefix="delete" suffix="A" disabled
+                          danger
+                          event-click="removeDuplicate(this.id,'B1','nDownConElecTestForm','#labelNo');disableDelete('nDownConElecTestForm', '.deleteB');addHundredMax('nDownConElecTestForm', '.addBtn2')">
+                        </cn2-button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td width="40%">Overall value in Ohm [R&lt;0.2Ω]<br>Remarks :</td>
+                    <td>
+                      <cn2-textarea id="NatuDownCondElec_OverValInOhm_Rema10"
+                        field-name="Overall value in Ohm Remarks under Table 2 : Natural Down Conductor Electrical Test"
+                        maxlength="1000" no-label>
+                      </cn2-textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Remarks:</td>
+                    <td colspan="2">
+                      <cn2-textarea id="NatuDownCondElec_Rema10"
+                        field-name="Natural Down Conductor Electrical Test Remarks under Table 2 : Natural Down Conductor Electrical Test"
+                        maxlength="32400" no-label>
+                      </cn2-textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Notes:</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <p>1. Test Report shall be provided for each structure/building.</p>
+                      <p>2. LPS as-built plans should include air-termination system, down conductor system, earth
+                        termination system, details of
+                        equipotential bonding with metallic fixtures/structural steel works, zones of lightning
+                        protection
+                        provided by rolling
+                        sphere and/or protection angle, photos of concealed equipotential bonding points between metal
+                        fixtures, steel rebar of
+                        concrete with LPS, etc.</p>
+                      <p>3. Any other details as required by BCA but not mentioned above.</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-version-footer></cn2-version-footer>
+    <cn2-fixed-footer></cn2-fixed-footer>
+  </div>
+</body>
+
+</html>

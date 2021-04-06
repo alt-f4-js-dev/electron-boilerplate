@@ -1,0 +1,3015 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <title>BCA-EME-PTO</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script>
+    if (typeof module === "object") {
+      window.module = module;
+      module = undefined;
+    }
+  </script>
+  <script src="../cm/resources/assets/js/jquery-3.4.1.min.js"></script>
+  <script src="../cm/resources/assets/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head title="APPLICATION FOR PERMIT TO OPERATE<br>[Section _ of the Building Control Act]
+"></cn2-master-head>
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Application">
+        </cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars of Developer(s)">
+        </cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4" label="Particulars of Lift Service Contractors" hidden>
+        </cn2-nav-button>
+        <cn2-nav-button target="page5" page-number="5"
+          label="Particulars of Qualified Person for Supervision of Installation of Lift Works" hidden>
+        </cn2-nav-button>
+        <cn2-nav-button target="page6" page-number="6"
+          label="Particulars and Declaration by Qualified Person for Supervision of Testing and Commissioning of Lift Works"
+          hidden>
+        </cn2-nav-button>
+        <cn2-nav-button target="page7" page-number="7" label="Lift Detail(s)" hidden></cn2-nav-button>
+        <cn2-nav-button target="page8" page-number="8" label="Fee Computation for Permit to Operate Application" hidden>
+        </cn2-nav-button>
+      </div>
+      <div class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <p style="margin: 0px">Help</p>
+          </div>
+          <div class="modal-body">
+            <p>
+              <b>For enquiries related to forms, please contact the
+                following:</b>
+            </p>
+            <p><span id="RegulatoryAuthority_id"></span></p>
+            <div id="table-parent" style="width:auto">
+              <table id="ContDetaTable_id" class="table-bordered">
+                <thead>
+                  <tr>
+                    <th>Regulatory Authority</th>
+                    <th>Email Address</th>
+                    <th>Tel No.</th>
+                    <th>Area of Support</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>BCA(BP) & (TOP)</td>
+                    <td>bca_enquiry@bca.gov.sg</td>
+                    <td>1800-3425222</td>
+                    <td>Policies</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="3">BCA (Buildable Design and Constructability)</td>
+                    <td>kong_chew_kwek@bca.gov.sg</td>
+                    <td>68044228</td>
+                    <td>Policies</td>
+                  </tr>
+                  <tr>
+                    <td>terence_teo@bca.gov.sg</td>
+                    <td>68044231</td>
+                    <td>Policies</td>
+                  </tr>
+                  <tr>
+                    <td>chin_kim_hong@bca.gov.sg</td>
+                    <td>68044234</td>
+                    <td>Policies</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2">BCA(ST)</td>
+                    <td>wai_hui_ling@bca.gov.sg</td>
+                    <td>68044609</td>
+                    <td>Policies</td>
+                  </tr>
+                  <tr>
+                    <td>chang_heng_choy@bca.gov.sg</td>
+                    <td>68044646</td>
+                    <td>Policies</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2">BCA (CD Shelter)</td>
+                    <td>ee_pheck_hoon@bca.gov.sg</td>
+                    <td>68044410</td>
+                    <td>Policies</td>
+                  </tr>
+                  <tr>
+                    <td>yeo_keng@bca.gov.sg</td>
+                    <td>68044416</td>
+                    <td>Policies</td>
+                  </tr>
+                  <tr>
+                    <td>BCA (Transit Shelter)</td>
+                    <td>tan_wee_kian@bca.gov.sg</td>
+                    <td>63961408</td>
+                    <td>Policies</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="4">BCA (Minimum Environmental Sustainability Std for Existing Bldgs & Periodic Energy
+                      Audit)</td>
+                    <td>aloysius_aw@bca.gov.sg</td>
+                    <td>68044705</td>
+                    <td>Policies</td>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>joseph_hong@bca.gov.sg</td>
+                    <td>68044699</td>
+                    <td>Policies</td>
+                  </tr>
+                  <tr>
+                    <td>wee_kai_siong@bca.gov.sg</td>
+                    <td>68044701</td>
+                    <td>Policies</td>
+                  </tr>
+                  <tr>
+                    <td>yong_siew_hwa@bca.gov.sg</td>
+                    <td>68044715</td>
+                    <td>Policies</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
+      <input type="hidden" name="member_id" id="member_id" />
+      <input type="hidden" name="form_validated" id="form_validated" />
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" no-label inline="5" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td><b>To:</b></td>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-select no-label inline="5" options="Building and Construction Authority:BCA" id="Addr10" disabled>
+                        </cn2-select>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea no-label inline="5" id="Addr20" style="height:135px;" disabled>
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>
+                This form is to be digitally signed by the Qualified Person.
+              </li>
+              <li>
+                This form may take 2-3 mins to complete.
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Application</h2>
+            <div class="mls-espro-form-fields row">
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td width="35%">Project Reference No.</td>
+                    <td>
+                      <cn2-textbox no-label id="Project_Project_Ref_No10" disabled> </cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Project Title</td>
+                    <td>
+                      <cn2-textarea no-label id="Project_Title10" disabled></cn2-textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Description of Building Works*</td>
+                    <td>
+                      <cn2-textarea no-label id="Project_Title20" mandatory></cn2-textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Location Description
+                    </td>
+                    <td>
+                      <cn2-textarea no-label id="Project_Location_Description_Description10" disabled> </cn2-textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Type of PTO*</td>
+                    <td>
+                      <cn2-select no-label id="Project_TypeOfPlan10"
+                        options="Lift:Lift,Escalator:Escalator,Mechanised Car Parking System:Mechanised Car Parking System"
+                        mandatory
+                        event-change="Project_TypeOfPlan10_Change(this); duplicateID(this);Project_TypeOfPlan20_change(this);
+                        setCounHideLift110(this);setCounHideEsca110(this);">
+                      </cn2-select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Type of Application*</td>
+                    <td>
+                      <cn2-select no-label id="Project_TypeOfPlan20"
+                        options="New Application:New Application,Recommissioning:Recommissioning" mandatory
+                        event-change="typeOfApplication(this)">
+                      </cn2-select>
+                    </td>
+                  </tr>
+                  <tr hidden id="scopeMajor">
+                    <td>Scope of major A/R works*</td>
+                    <td>
+                      <cn2-select no-label id="PartOfAppl_ScopOfMajoARWork10"
+                        event-change="PartOfAppl_ScopOfMajoARWork10_change(this)">
+                      </cn2-select>
+                    </td>
+                  </tr>
+                  <tr hidden id="nonApplicable">
+                    <td>&nbsp;</td>
+                    <td>
+                      <cn2-textarea no-label id="PartOfAppl_ScopOfMajoARWork20"></cn2-textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Development Type</td>
+                    <td>
+                      <cn2-select no-label id="Project_DevType10"
+                        options="Commercial:Commercial,Industrial:Industrial,Institutional:Institutional,Residential:Residential,Residential Non-Landed:Residential Non-Landed,Residential Non-Landed (HDB/TC):Residential Non-Landed (HDB/TC),Pedestrian Overhead Bridge:Pedestrian Overhead Bridge,Pedestrian Underpass:Pedestrian Underpass,MRT/LRT Station:MRT/LRT Station,New Development Type:New Development Type,Organisation:Organisation,Rail Depot/Rail Facility Bldg:Rail Depot/Rail Facility Bldg,Others:Others"
+                        event-change="devtypeChange(this)">
+                      </cn2-select>
+                    </td>
+                  </tr>
+                  <tr hidden id="devTypeOther">
+                    <td>&nbsp;</td>
+                    <td>
+                      <cn2-textbox no-label id="Project_DevType_Oth10"></cn2-textbox>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-borderless" style="border-top: 1px lightgrey solid;">
+                <thead>
+                  <tr style="font-weight: bold; text-align: center;">
+                    <td>Building Name</td>
+                    <td>Block No.*</td>
+                    <td>Road Name*</td>
+                    <td>Postal Code*</td>
+                    <td></td>
+                  </tr>
+                </thead>
+                <tbody id="PartOfAppl_BuildInfoCont" prefix="PartOfAppl_BuildInfoCont" suffix="">
+                  <tr id="PartOfAppl_BuildInfoForm100" prefix="PartOfAppl_BuildInfoForm" suffix="00" sub-form>
+                    <td>
+                      <cn2-textbox no-label id="PartOfAppl_BuilName100" prefix="PartOfAppl_BuilName" suffix="00"
+                        maxlength="1000">
+                      </cn2-textbox>
+                    </td>
+                    <td>
+                      <cn2-textbox no-label id="PartOfAppl_BlocNumb100" prefix="PartOfAppl_BlocNumb" suffix="00"
+                        maxlength="10" mandatory>
+                      </cn2-textbox>
+                    </td>
+                    <td>
+                      <cn2-textbox no-label id="PartOfAppl_RoadName100" prefix="PartOfAppl_RoadName" suffix="00"
+                        maxlength="256" mandatory>
+                      </cn2-textbox>
+                    </td>
+                    <td>
+                      <cn2-textbox no-label id="PartOfAppl_PostCode100" prefix="PartOfAppl_PostCode" suffix="00"
+                        maxlength="6" mandatory numeric>
+                      </cn2-textbox>
+                    </td>
+                    <td>
+                      <cn2-button label="Delete" id="PartOfAppl_BuildInfoDelete100" disabled
+                        prefix="PartOfAppl_BuildInfoDelete" suffix="00" danger danger-main
+                        event-click="mainDeleteInstance(this.id, 'PartOfAppl_BuildInfoCont', 'PartOfAppl_BuildInfoForm')">
+                      </cn2-button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td>
+                      <cn2-button label="Add" id="BuildInfoAdd10" prefix="BuildInfoAdd" suffix="0"
+                        event-click="mainAddInstance('PartOfAppl_BuildInfoCont', 'PartOfAppl_BuildInfoForm100');">
+                      </cn2-button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span style="font-size: 0.7rem;"><i>*Note: As approved by Inland Revenue Authority of
+                          Singapore</i></span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Section I - Particulars of Developer(s)</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <cn2-button label="Add" id="PartOfTheOWNER_Add10"
+                  event-click="insertDuplicate('PartOfDeve_Cont10','PartOfDeve_Form1');removeUENerror('PartOfDeve_Cont10', 'Members_UEN_OWNER');disableDelete('PartOfDeve_Cont10', '.deleteBtn');">
+                </cn2-button>
+              </div>
+            </div>
+            <div id="accordion">
+              <div id="PartOfDeve_Cont10">
+                <div id="PartOfDeve_Form1" class="Afields" parent>
+                  <h2 class="accordion-toggle">
+                    <table class="table table-borderless">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <cn2-select id="Member_Member_Name_OWNER10" prefix="Member_Member_Name_OWNER" mandatory
+                              label="Name " data-options="ownerDropdown" suffix="0"
+                              event-change="loadDropDownDetails(this); clearUEN(this, `[prefix='Members_UEN_OWNER']`); nricMaskingAccor(this,'Member_IC_Passport_No_Masked_OWNER')">
+                            </cn2-select>
+                          </td>
+                          <td nricUnmasked hidden>
+                            <cn2-textbox label="NRIC/Passport No." prefix="Member_IC_Passport_No_OWNER" suffix="0"
+                              id="Member_IC_Passport_No_OWNER10" disabled>
+                            </cn2-textbox>
+                          </td>
+                          <td nricMasked>
+                            <cn2-textbox label="NRIC/Passport No." prefix="Member_IC_Passport_No_Masked_OWNER"
+                              suffix="0" id="Member_IC_Passport_No_Masked_OWNER10" disabled>
+                            </cn2-textbox>
+                          </td>
+                          <td>
+                            <cn2-textbox label="Firm Name" id="Member_Firm_Name_OWNER10" prefix="Member_Firm_Name_OWNER"
+                              suffix="0" disabled>
+                            </cn2-textbox>
+                          </td>
+                          <td>
+                            <div class="mls-espro-form-fields row pt-4">
+                              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pt-1">
+                                <cn2-button style="float:right" label="Delete" disabled id="PartOfTheOWNER_Delete10"
+                                  class="deleteBtn" prefix="PartOfTheOWNER_Delete" suffix="0" danger
+                                  event-click="removeDuplicate(this.id,'PartOfDeve_Form1', 'PartOfDeve_Cont10'); disableDelete('PartOfDeve_Cont10', '.deleteBtn'); nricMaskingAccorDelete('Member_IC_Passport_No_Masked_OWNER')">
+                                </cn2-button>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <span class="fa fa-angle-down collapsed" data-toggle="collapse" href="#collapse2"
+                              id="#collapse2" prefix="#collapse" child onclick="spanUpDown(this)"
+                              aria-expanded="false"></span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </h2>
+                  <div id="collapse2" class="panel-collapse collapse" child="div" prefix="collapse">
+                    <table class="table table-borderless">
+                      <tbody>
+                        <tr hidden>
+                          <td>Member ID</td>
+                          <td>
+                            <cn2-textbox no-label id="Member_Member_SID_OWNER10" prefix="Member_Member_SID_OWNER"
+                              suffix="0" disabled>
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>UEN</td>
+                          <td>
+                            <cn2-textbox no-label id="Members_UEN_OWNER10" prefix="Members_UEN_OWNER" suffix="0"
+                              maxlength="10" template="#########@" event-blur="uenValidate(this)">
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="35%">Designation</td>
+                          <td>
+                            <cn2-textbox no-label id="Member_Designation_OWNER10" prefix="Member_Designation_OWNER"
+                              suffix="0" disabled>
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Address</td>
+                          <td>
+                            <cn2-textarea no-label id="Member_Address_OWNER10" prefix="Member_Address_OWNER" suffix="0"
+                              disabled>
+                            </cn2-textarea>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Telephone</td>
+                          <td>
+                            <cn2-textbox no-label numeric id="Member_Tel_No_OWNER10" prefix="Member_Tel_No_OWNER"
+                              suffix="0" disabled>
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Handphone No.</td>
+                          <td>
+                            <cn2-textbox no-label numeric id="Member_Mobile_No_OWNER10" prefix="Member_Mobile_No_OWNER"
+                              suffix="0" disabled>
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Email Address</td>
+                          <td>
+                            <cn2-textbox no-label id="Member_Email_Address1_OWNER10"
+                              prefix="Member_Email_Address1_OWNER" suffix="0" event-change="checkEmail(this);" disabled>
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page4">
+          <div class="mls-espo-right-inner-container borderchecking" id="Lift_Page4" lift hidden>
+            <h2>Section II – Particulars of Lift Contractors</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    <b><u>Lift Installation Contractor</u></b>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiLiftServCont_Member_Name_AnnuTest10" maxlength="66" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiLiftServCont_Member_RegiNo10" maxlength="4" numeric></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name*</td>
+                  <td>
+                    <cn2-textarea no-label id="AssiLiftServCont_Member_FirmName10" maxlength="66" mandatory>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiLiftServCont_Member_UEN10" maxlength="10" template="#########@"
+                      event-blur="uenValidate(this)" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address*</td>
+                  <td>
+                    <cn2-textarea no-label id="AssiLiftServCont_Member_Addr10" maxlength="50" mandatory>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiLiftServCont_Member_TeleNo10" maxlength="12" numeric mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiLiftServCont_Member_HandNo10" maxlength="12" numeric>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiLiftServCont_Member_EmaiAddr10" maxlength="50" mandatory
+                      event-change="checkEmail(this);" placeholder="name@example.com">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless" style="border-top: 1px solid lightgrey;">
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    <b><u>Lift Testing Contractor</u></b>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiLiftServCont_Member_Name_Main10" maxlength="66" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiLiftServCont_Member_RegiNo_Main10" maxlength="4" numeric>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name*</td>
+                  <td>
+                    <cn2-textarea no-label id="AssiLiftServCont_Member_FirmNameMain10" maxlength="66" mandatory>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiLiftServCont_Member_UENMain10" maxlength="10" template="#########@"
+                      event-blur="uenValidate(this)" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address*</td>
+                  <td>
+                    <cn2-textarea no-label id="AssiLiftServCont_Member_AddrMain10" maxlength="50" mandatory>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiLiftServCont_Member_TeleNoMain10" maxlength="12" numeric mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiLiftServCont_Member_HandNoMain10" maxlength="12" numeric>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiLiftServCont_Member_EmaiAddrMain10" maxlength="50" mandatory
+                      event-change="checkEmail(this);" placeholder="name@example.com">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless" style="border-top: 1px solid lightgrey;">
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    <b><u>Lift Maintenance Contractor (For Subsequent Maintenance)</u></b>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiLiftServCont_Member_Name_Sub_Main10" maxlength="66" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiLiftServCont_Member_RegiNo_Sub_Main10" maxlength="4" numeric>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name*</td>
+                  <td>
+                    <cn2-textarea no-label id="AssiLiftServCont_Member_FirmName_Sub_Main10" maxlength="66" mandatory>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiLiftServCont_Member_UEN_Sub_Main10" maxlength="10"
+                      template="#########@" event-blur="uenValidate(this)" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address*</td>
+                  <td>
+                    <cn2-textarea no-label id="AssiLiftServCont_Member_Addr_Sub_Main10" maxlength="50" mandatory>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiLiftServCont_Member_TeleNo_Sub_Main10" maxlength="12" numeric
+                      mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiLiftServCont_Member_HandNo_Sub_Main10" maxlength="12" numeric>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiLiftServCont_Member_EmaiAddr_Sub_Main10" maxlength="50" mandatory
+                      event-change="checkEmail(this);" placeholder="name@example.com">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" id="Escalator_Page4" escalator hidden>
+            <h2>Section II – Particulars of Escalator Contractors</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    <b><u>Escalator Installation Contractor</u></b>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-textbox no-label id="EscaInstCont_Member_Name10" maxlength="66" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox no-label id="EscaInstCont_Member_RegiNo10" maxlength="4" numeric></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name*</td>
+                  <td>
+                    <cn2-textarea no-label id="EscaInstCont_Member_FirmName10" maxlength="66" mandatory>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN*</td>
+                  <td>
+                    <cn2-textbox no-label id="EscaInstCont_Member_UEN10" maxlength="10" template="#########@"
+                      event-blur="uenValidate(this)" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address*</td>
+                  <td>
+                    <cn2-textarea no-label id="EscaInstCont_Member_Addr10" maxlength="50" mandatory>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.*</td>
+                  <td>
+                    <cn2-textbox no-label id="EscaInstCont_Member_TeleNo10" maxlength="12" numeric mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="EscaInstCont_Member_HandNo10" maxlength="12" numeric>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address*</td>
+                  <td>
+                    <cn2-textbox no-label id="EscaInstCont_Member_EmaiAddr10" maxlength="50" mandatory
+                      event-change="checkEmail(this);" placeholder="name@example.com">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    <b><u>Escalator Testing Contractor</u></b>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiEscaServCont_Member_Name_AnnuTest10" maxlength="66" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration Number</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiEscaServCont_Member_RegiNo10" maxlength="4" numeric></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiEscaServCont_Member_FirmName10" maxlength="66" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiEscaServCont_Member_UEN10" maxlength="10" template="#########@"
+                      event-blur="uenValidate(this)" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address*</td>
+                  <td>
+                    <cn2-textarea no-label id="AssiEscaServCont_Member_Addr10" maxlength="50" mandatory>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiEscaServCont_Member_TeleNo10" maxlength="12" numeric mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiEscaServCont_Member_HandNo10" maxlength="12" numeric>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiEscaServCont_Member_EmaiAddr10" maxlength="50" mandatory
+                      event-change="checkEmail(this);" placeholder="name@example.com">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless" style="border-top: 1px solid lightgrey;">
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    <b><u>Escalator Maintenance Contractor (For Subsequent Maintenance)
+                      </u></b>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiEscaServCont_Member_Name_Main10" maxlength="66" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiEscaServCont_Member_RegiNo_Main10" maxlength="4" numeric>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiEscaServCont_Member_FirmNameMain10" maxlength="66" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiEscaServCont_Member_UENMain10" maxlength="10" template="#########@"
+                      event-blur="uenValidate(this)" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address*</td>
+                  <td>
+                    <cn2-textarea no-label id="AssiEscaServCont_Member_AddrMain10" maxlength="50" mandatory>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiEscaServCont_Member_TeleNoMain10" maxlength="12" numeric mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiEscaServCont_Member_HandNoMain10" maxlength="12" numeric>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiEscaServCont_Member_EmaiAddrMain10" maxlength="50" mandatory
+                      event-change="checkEmail(this);" placeholder="name@example.com">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" id="Mechanical_Page4" mechanical hidden>
+            <h2>Section II – Particulars of MCPS Contractors</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    <b><u>MCPS Installation Contractor</u></b>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-textbox no-label id="McpsInstCont_Member_Name10" maxlength="66" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox no-label id="McpsInstCont_Member_RegiNo10" maxlength="4" numeric></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name*</td>
+                  <td>
+                    <cn2-textarea no-label id="McpsInstCont_Member_FirmName10" maxlength="66" mandatory>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN*</td>
+                  <td>
+                    <cn2-textbox no-label id="McpsInstCont_Member_UEN10" maxlength="10" template="#########@"
+                      event-blur="uenValidate(this)" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address*</td>
+                  <td>
+                    <cn2-textarea no-label id="McpsInstCont_Member_Addr10" maxlength="50" mandatory>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.*</td>
+                  <td>
+                    <cn2-textbox no-label id="McpsInstCont_Member_TeleNo10" maxlength="12" numeric mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="McpsInstCont_Member_HandNo10" maxlength="12" numeric>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address*</td>
+                  <td>
+                    <cn2-textbox no-label id="McpsInstCont_Member_EmaiAddr10" maxlength="50" mandatory
+                      event-change="checkEmail(this);" placeholder="name@example.com">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    <b><u>MCPS Testing Contractor</u></b>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiMechServCont_Member_Name_AnnuTest10" maxlength="66" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration Number</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiMechServCont_Member_RegiNo10" maxlength="4" numeric></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiMechServCont_Member_FirmName10" maxlength="66" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiMechServCont_Member_UEN10" maxlength="10" template="#########@"
+                      event-blur="uenValidate(this)" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address*</td>
+                  <td>
+                    <cn2-textarea no-label id="AssiMechServCont_Member_Addr10" maxlength="50" mandatory>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiMechServCont_Member_TeleNo10" maxlength="12" numeric mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiMechServCont_Member_HandNo10" maxlength="12" numeric>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiMechServCont_Member_EmaiAddr10" maxlength="50" mandatory
+                      event-change="checkEmail(this);" placeholder="name@example.com">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless" style="border-top: 1px solid lightgrey;">
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    <b><u>MCPS Maintenance Contractor (For Subsequent Maintenance)
+                      </u></b>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiMechServCont_Member_Name_Main10" maxlength="66" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiMechServCont_Member_RegiNo_Main10" maxlength="4" numeric>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiMechServCont_Member_FirmNameMain10" maxlength="66" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiMechServCont_Member_UENMain10" maxlength="10" template="#########@"
+                      event-blur="uenValidate(this)" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address*</td>
+                  <td>
+                    <cn2-textarea no-label id="AssiMechServCont_Member_AddrMain10" maxlength="50" mandatory>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiMechServCont_Member_TeleNoMain10" maxlength="12" numeric mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiMechServCont_Member_HandNoMain10" maxlength="12" numeric>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address*</td>
+                  <td>
+                    <cn2-textbox no-label id="AssiMechServCont_Member_EmaiAddrMain10" maxlength="50" mandatory
+                      event-change="checkEmail(this);" placeholder="name@example.com">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page5">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <div id="Lift_Page5" lift hidden>
+              <h2>
+                Section III - Particulars of Qualified Person for Supervision of
+                Installation of Lift Works
+              </h2>
+            </div>
+            <div id="Escalator_Page5" escalator hidden>
+              <h2>
+                Section III - Particulars of Qualified Person for Supervision of
+                Installation of Escalator Works
+              </h2>
+            </div>
+            <div id="Mechanical_Page5" mechanical hidden>
+              <h2>
+                Section III - Particulars of Qualified Person for Supervision of Installation of MCPS Works
+              </h2>
+            </div>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td>Member ID</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Member_SID_QP10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-select no-label id="Member_Member_Name_QP10"
+                      event-change="loadDropDownDetails(this); clearUEN2('Members_UEN_QP10')" data-options="qpDropdown"
+                      mandatory>
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Professional_No_QP10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name*</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Firm_Name_QP10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN*</td>
+                  <td>
+                    <cn2-textbox no-label id="Members_UEN_QP10" maxlength="10" mandatory template="#########@"
+                      event-blur="uenValidate(this)">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address*</td>
+                  <td>
+                    <cn2-textarea no-label id="Member_Address_QP10" disabled>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.*</td>
+                  <td>
+                    <cn2-textbox no-label numeric id="Member_Tel_No_QP10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox no-label numeric id="Member_Mobile_No_QP10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address*</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Email_Address1_QP10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless" id="inspectorInv" hidden>
+              <tbody>
+                <tr>
+                  <td id="stForm">
+                    <div class="mls-espro-form-fields row" id="A1">
+                      <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2 pb-2">
+                        Lift & Escalator Inspector involved
+                      </div>
+                      <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3 pb-2">
+                        <cn2-textbox no-label id="Member_Lift_Esca_QP10" prefix="Member_Lift_Esca_QP" suffix="0">
+                        </cn2-textbox>
+                      </div>
+                      <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2 pb-2">
+                        LEI Registration No.
+                      </div>
+                      <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3 pb-2">
+                        <cn2-textbox no-label id="MemberRole_Lei_Registraion_No_QP10"
+                          prefix="MemberRole_Lei_Registraion_No_QP" suffix="0">
+                        </cn2-textbox>
+                      </div>
+                      <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2 pb-2">
+                        <cn2-button id="delete1" prefix="delete" label="Delete" danger disabled
+                          event-click="removeDuplicate(this.id,'A1','stForm');stFormDelete_click('stForm')"
+                          style="float: right;">
+                        </cn2-button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-button label="Add" event-click="insertDuplicate('stForm','A1');stFormAdd_Click('stForm');"
+                      id="PlanTypeAdd_id">
+                    </cn2-button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" id="Lift_ParDecla" lift hidden>
+            <h2>
+              Declaration by Qualified Person for Supervision of Installation of Lift Works
+            </h2>
+            <div class="mls-espro-form-fields row">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <td colspan="3"><small>Note: This certification is not required if the Qualified Person of Testing
+                        and
+                        Commissioning of Lift Works is not the
+                        same as the Qualified Person for Supervision of Installation of Lift Works. The certification
+                        for
+                        the Supervision of
+                        Installation of Lift Works would have to be attached to the submission in this
+                        case.</small><br><br>I
+                      certify that:</td>
+                  </tr>
+                  <tr>
+                    <td width="1%">II.1</td>
+                    <td>
+                      I have supervised the installation of the Lift(s) in this submission by the above Lift
+                      installation contractor in
+                      accordance with the requirements of the Building Control Regulations ____;
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox liftCheck2 id="DeclByQP_Lift_TheAbovLiftServ20">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.2</td>
+                    <td>
+                      first examination, inspection and testing carried out on the date(s) stated in "Section IV Lift
+                      Details";
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox liftCheck2 id="DeclByQP_Lift_DateOfFirsExam20">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.3</td>
+                    <td>
+                      the Lift(s) is/are in a fit condition for operation; and
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox liftCheck2 id="DeclByQP_Lift_FitCondForOper20">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.4</td>
+                    <td>
+                      I am not a partner, associate, director, officer or employee of the owner of the Lift(s) or the
+                      Lift installation
+                      contractor(s) carrying out the examination, inspection and testing of the Lift(s) under Regulation
+                      19(1).
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox liftCheck2 id="DeclByQP_Lift_IAmNotPart20">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" id="Esca_ParDecla" escalator hidden>
+            <h2>
+              Declaration by Qualified Person for Supervision of Installation of Escalator Works
+            </h2>
+            <div class="mls-espro-form-fields row">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <td colspan="3"><small>Note: This certification is not required if the Qualified Person of Testing
+                        and
+                        Commissioning of Escalator Works is not the
+                        same as the Qualified Person for Supervision of Installation of Escalator Works. The
+                        certification
+                        for
+                        the Supervision of
+                        Installation of Escalator Works would have to be attached to the submission in this
+                        case.</small><br><br>I
+                      certify that:</td>
+                  </tr>
+                  <tr>
+                    <td width="1%">II.1</td>
+                    <td>
+                      I have supervised the installation of the Escalator(s) in this submission by the above Escalator
+                      installation contractor in
+                      accordance with the requirements of the Building Control Regulations ____;
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox escaCheck2 id="DeclByQP_Esca_TheAbovEscaServ20">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.2</td>
+                    <td>
+                      first examination, inspection and testing carried out on the date(s) stated in "Section IV
+                      Escalator
+                      Details";
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox escaCheck2 id="DeclByQP_Esca_DateOfFirsExam20">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.3</td>
+                    <td>
+                      the Escalator(s) is/are in a fit condition for operation; and
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox escaCheck2 id="DeclByQP_Esca_FitCondForOper20">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.4</td>
+                    <td>
+                      I am not a partner, associate, director, officer or employee of the owner of the Escalator(s) or
+                      the
+                      Escalator installation
+                      contractor(s) carrying out the examination, inspection and testing of the Escalator(s) under
+                      Regulation
+                      19(1).
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox escaCheck2 id="DeclByQP_Esca_IAmNotPart20">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" id="MCPS_ParDecla" mechanical hidden>
+            <h2>
+              Declaration by Qualified Person for Supervision of Installation of MCPS Works
+            </h2>
+            <div class="mls-espro-form-fields row">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <td colspan="3"><small>Note: This certification is not required if the Qualified Person of Testing
+                        and
+                        Commissioning of MCPS Works is not the
+                        same as the Qualified Person for Supervision of Installation of MCPS Works. The certification
+                        for
+                        the Supervision of
+                        Installation of MCPS Works would have to be attached to the submission in this
+                        case.</small><br><br>I
+                      certify that:</td>
+                  </tr>
+                  <tr>
+                    <td width="1%">II.1</td>
+                    <td>
+                      I have supervised the installation of the MCPS(s) in this submission by the above MCPS
+                      installation contractor in
+                      accordance with the requirements of the Building Control Regulations ____;
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox mcpsCheck2 id="DeclByQP_MCPS_TheAbovMCPSServ20">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.2</td>
+                    <td>
+                      first examination, inspection and testing carried out on the date(s) stated in "Section IV MCPS
+                      Details";
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox mcpsCheck2 id="DeclByQP_MCPS_DateOfFirsExam20">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.3</td>
+                    <td>
+                      the MCPS(s) is/are in a fit condition for operation; and
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox mcpsCheck2 id="DeclByQP_MCPS_FitCondForOper20">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.4</td>
+                    <td>
+                      I am not a partner, associate, director, officer or employee of the owner of the MCPS(s) or the
+                      MCPS installation
+                      contractor(s) carrying out the examination, inspection and testing of the MCPS(s) under Regulation
+                      19(1).
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox mcpsCheck2 id="DeclByQP_MCPS_IAmNotPart20">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div id="page6">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <div id="Lift_page6" lift hidden>
+              <h2>
+                Section IV - Particulars of Qualified Person for Supervision of
+                Testing and Commissioning of Lift Works
+              </h2>
+            </div>
+            <div id="Escalator_page6" escalator hidden>
+              <h2>
+                Section IV - Particulars of Qualified Person for Supervision of Testing and Commissioning of Escalator
+                Works
+              </h2>
+            </div>
+            <div id="Mechanical_page6" mechanical hidden>
+              <h2>
+                Section IV - Particulars of Qualified Person for Supervision of Testing and Commissioning of MCPS Works
+              </h2>
+            </div>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td>Member ID</td>
+                  <td>
+                    <cn2-textarea no-label id="Member_Member_SID_QP20" disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-select no-label id="Member_Member_Name_QP20"
+                      event-change="loadDropDownDetails(this); clearUEN2('Members_UEN_QP20')" data-options="qp2Dropdown"
+                      mandatory>
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox no-label id="MemberRole_Professional_No_QP20" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textarea no-label id="Member_Firm_Name_QP20" disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN*</td>
+                  <td>
+                    <cn2-textbox no-label id="Members_UEN_QP20" maxlength="10" template="#########@"
+                      event-blur="uenValidate(this)" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea no-label id="Member_Address_QP20" disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Tel_No_QP20" disabled> </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Mobile_No_QP20" disabled> </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Email_Address1_QP20" disabled onfocusout="checkEmail()">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless" id="inspectorInv2" hidden>
+              <tbody>
+                <tr>
+                  <td id="inpecForm">
+                    <div class="mls-espro-form-fields row" id="B1">
+                      <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2 pb-2">
+                        Lift & Escalator Inspector involved
+                      </div>
+                      <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3 pb-2">
+                        <cn2-textbox no-label id="Member_Lift_Esca2_QP10" prefix="Member_Lift_Esca2_QP" suffix="0">
+                        </cn2-textbox>
+                      </div>
+                      <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2 pb-2">
+                        LEI Registration No.
+                      </div>
+                      <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3 pb-2">
+                        <cn2-textbox no-label id="MemberRole_Lei2_Registraion_No_QP10"
+                          prefix="MemberRole_Lei2_Registraion_No_QP" suffix="0">
+                        </cn2-textbox>
+                      </div>
+                      <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2 pb-2">
+                        <cn2-button id="delBtn1" prefix="delBtn" label="Delete" danger disabled
+                          event-click="removeDuplicate(this.id,'B1','inpecForm');stFormDelete_click('inpecForm')"
+                          style="float: right;">
+                        </cn2-button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-button label="Add"
+                      event-click="insertDuplicate('inpecForm','B1');stFormAdd_Click('inpecForm');"
+                      id="PlanTypeAdd2_id">
+                    </cn2-button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" id="Lift_Page7" lift hidden>
+            <h2>
+              Declaration by Qualified Person for Supervision of Testing and
+              Commissioning of Lift Works*
+            </h2>
+            <div class="mls-espro-form-fields row">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <td colspan="2">I declare that:</td>
+                  </tr>
+                  <tr>
+                    <td>the certification for the Lift(s) in this submission by the Qualified Person for Supervision of
+                      Installation is
+                      attached.<br><br>
+
+                      <small>Note: This declaration is not required if the Qualified Person of Testing and Commissioning
+                        Lift Works is the same as
+                        the Qualified Person for Supervision of Installation of Lift Works and he/she has filled in
+                        “Declaration by Qualified
+                        Person for Supervision of Installation of Lift Works” in this form.</small>
+                    </td>
+                    <td>
+                      <cn2-checkbox liftCheck2 id="DeclByQP_Lift_CertForLift10">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mls-espro-form-fields row">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <td colspan="3">I certify that:</td>
+                  </tr>
+                  <tr>
+                    <td width="1%">II.1</td>
+                    <td>
+                      the above Lift service contractor(s) has(have) carried
+                      out the examination, inspection and testing of the above
+                      Lift(s) in my presence and in accordance with the
+                      requirements of the Building Maintenance and Strata
+                      Management (Lift, Escalator and Building Maintenance)
+                      Regulations 2016;
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox liftCheck event-change="removeManda(this)" id="DeclByQP_Lift_TheAbovLiftServ10">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.2</td>
+                    <td>
+                      first examination, inspection and testing carried out on
+                      the date(s) stated in "Section IV Lift Details";
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox liftCheck event-change="removeManda(this)" id="DeclByQP_Lift_DateOfFirsExam10">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.3</td>
+                    <td>
+                      the Lift(s) is/are in a fit condition for operation; and
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox liftCheck event-change="removeManda(this)" id="DeclByQP_Lift_FitCondForOper10">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.4</td>
+                    <td>
+                      I am not a partner, associate, director, officer or
+                      employee of the owner of the Lift(s) or the Lift service
+                      contractor(s) carrying out the examination, inspection
+                      and testing of the Lift(s) under Regulation 19(1).
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox liftCheck event-change="removeManda(this)" id="DeclByQP_Lift_IAmNotPart10">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.5</td>
+                    <td>
+                      <span>I hereby declare that I have submitted the following
+                        documents:</span>
+                      <br />
+                      <span>1. Certificate of Supervision of Installation from
+                        QP</span><br />
+                      <span>2. Certificate of Supervision of Testing &
+                        Commissioning from QP</span><br />
+                      <span>3. Certificate of Installation from Contractor</span><br />
+                      <span>4. Certificate of Testing & Commissioning from
+                        Contractor</span><br />
+                      <span>5. Final inspection Report</span><br />
+                      <span>6. Mill Test Certificate for Suspension Ropes (if applicable)</span><br /><br />
+                      <span>With the exception of: <br />
+                        <cn2-textarea no-label inline="8" id="DeclByQP_Lift_IDeclFollLift20" maxlength="1000" disabled>
+                        </cn2-textarea>
+                      </span>
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox id="DeclByQP_Lift_IDeclFollLift10" liftCheck
+                        event-change="unableTextArea(this, DeclByQP_Lift_IDeclFollLift20); removeManda(this)">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" id="DeclByQP_Lift_ReadForInsp">
+                      <span>I declare that the lift(s) in Section IV is /are
+                        ready for inspection.</span><br /><br />
+                      <span>Proposed Inspection Date: &nbsp;
+                        <cn2-datefield id="DeclByQP_PropInspDate10" no-label inline="3" m d
+                          onfocusout="validateDate(this)" disabled duplicate-id-lift pre-id="DeclByQP_PropInspDate10">
+                        </cn2-datefield>
+                        &nbsp;</span><br /><br />
+                      <span>Proposed Inspection Time: &nbsp;
+                        <cn2-textbox id="DeclByQP_PropInspTime10" no-label inline="3" m d
+                          event-change="validateTime(this)" disabled duplicate-id-lift pre-id="DeclByQP_PropInspTime10"
+                          placeholder="hh:mm" maxlength="5">
+                        </cn2-textbox>
+                        &nbsp;</span>
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox id="DeclByQP_Lift_ReadForInsp10" prefix="DeclByQP_Lift_ReadForInsp" liftCheck
+                        event-change="removeManda(this)" event-click="DeclByQP_Lift_ReadForInsp10_Click(this.id);">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" id="Escalator_Page7" escalator hidden>
+            <h2>
+              Declaration by Qualified Person for Supervision of Testing and
+              Commissioning of Escalator Works*
+            </h2>
+            <div class="mls-espro-form-fields row">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <td colspan="2">I declare that:</td>
+                  </tr>
+                  <tr>
+                    <td>the certification for the Escalator(s) in this submission by the Qualified Person for
+                      Supervision of
+                      Installation is
+                      attached.<br><br>
+
+                      <small>Note: This declaration is not required if the Qualified Person of Testing and Commissioning
+                        Escalator Works is the same as
+                        the Qualified Person for Supervision of Installation of Escalator Works and he/she has filled in
+                        “Declaration by Qualified
+                        Person for Supervision of Installation of Escalator Works” in this form.</small>
+                    </td>
+                    <td>
+                      <cn2-checkbox escaCheck2 id="DeclByQP_Esca_CertForLift20">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mls-espro-form-fields row">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <td colspan="3">I certify that:</td>
+                  </tr>
+                  <tr>
+                    <td width="1%">II.1</td>
+                    <td>
+                      the above Escalator service contractor(s) has(have)
+                      carried out the examination, inspection and testing of
+                      the above Escalator(s) in my presence and in accordance
+                      with the requirements of the Building Maintenance and
+                      Strata Management (Lift, Escalator and Building
+                      Maintenance) Regulation 2016;
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox escaCheck event-change="removeManda(this)" id="DeclByQP_Esca_TheAbovEscaServ10">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.2</td>
+                    <td>
+                      first examination, inspection and testing carried out on
+                      the date(s) stated in "Section IV Escalator Details";
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox escaCheck event-change="removeManda(this)" id="DeclByQP_Esca_DateOfFirsExam10">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.3</td>
+                    <td>
+                      the Escalator(s) is/are in a fit condition for
+                      operation; and
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox escaCheck event-change="removeManda(this)" id="DeclByQP_Esca_FitCondForOper10">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.4</td>
+                    <td>
+                      I am not a partner, associate, director, officer or
+                      employee of the owner of the Escalator(s) or the
+                      Escalator service contractor(s) carrying out the
+                      examination, inspection, and testing of the escalator(s)
+                      under Regulation 19(1).
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox escaCheck event-change="removeManda(this)" id="DeclByQP_Esca_IAmNotPart10">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.5</td>
+                    <td>
+                      <span>I hereby declare that I have submitted the following
+                        documents:</span>
+                      <br />
+                      <span>1. Certificate of Supervision of Installation from
+                        QP</span><br />
+                      <span>2. Certificate of Supervision of Testing &
+                        Commissioning from QP</span><br />
+                      <span>3. Certificate of Installation from Contractor</span><br />
+                      <span>4. Certificate of Testing & Commissioning from
+                        Contractor</span><br />
+                      <span>5. Final inspection Report</span><br /><br>
+                      <span>With the exception of: <br />
+                        <cn2-textarea no-label inline="8" id="DeclByQP_Esca_IDeclFollEsca20" disabled maxlength="1000">
+                        </cn2-textarea>
+                      </span>
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox escaCheck id="DeclByQP_Esca_IDeclFollEsca10"
+                        event-change="unableTextArea(this, DeclByQP_Esca_IDeclFollEsca20); removeManda(this)">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <span>I declare that the escalator(s) in Section IV is /are
+                        ready for inspection.</span><br /><br />
+                      <span>Proposed Inspection Date: &nbsp;
+                        <cn2-datefield id="DeclByQP_PropInspDate10" inline="3" onfocusout="validateDate(this)" disabled
+                          duplicate-id-escalator pre-id="DeclByQP_PropInspDate10">
+                        </cn2-datefield>
+                      </span><br /><br />
+                      <span>Proposed Inspection Time: &nbsp;
+                        <cn2-textbox id="DeclByQP_PropInspTime10" inline="3" event-change="validateTime(this)" disabled
+                          duplicate-id-escalator pre-id="DeclByQP_PropInspTime10" placeholder="hh:mm" maxlength="5">
+                        </cn2-textbox>
+                      </span>
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox id="DeclByQP_Esca_ReadForInsp10" escaCheck
+                        event-change="DeclByQP_Esca_ReadForInsp10_change(this); removeManda(this)">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.6</td>
+                    <td>
+                      Type Test Certificates and Reports (both System and
+                      Component Level)
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox escaCheck event-change="removeManda(this)" id="DeclByQP_TypeTestCert10">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" id="Mechanical_Page7" mechanical hidden>
+            <h2>
+              Declaration by Qualified Person for Supervision of Testing and Commissioning of MCPS Works*
+            </h2>
+            <div class="mls-espro-form-fields row">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <td colspan="2">I declare that:</td>
+                  </tr>
+                  <tr>
+                    <td>the certification for the MCPS(s) in this submission by the Qualified Person for Supervision of
+                      Installation is
+                      attached.<br><br>
+
+                      <small>Note: This declaration is not required if the Qualified Person of Testing and Commissioning
+                        MCPS Works is the same as
+                        the Qualified Person for Supervision of Installation of MCPS Works and he/she has filled in
+                        “Declaration by Qualified
+                        Person for Supervision of Installation of MCPS Works” in this form.</small>
+                    </td>
+                    <td>
+                      <cn2-checkbox mcpsCheck2 id="DeclByQP_MCPS_CertForLift20">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mls-espro-form-fields row">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <td colspan="3">I certify that:</td>
+                  </tr>
+                  <tr>
+                    <td width="1%">II.1</td>
+                    <td>
+                      the above MCPS testing contractor(s) has(have) carried out the examination, inspection and testing
+                      of the above MCPS(s)
+                      in my presence and in accordance with the requirements of the Building Maintenance and Strata
+                      Management (Lift,
+                      Escalator and Building Maintenance) Regulation 2016;
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox mcpsCheck event-change="removeManda(this)" id="DeclByQP_Mech_TheAbovEscaServ10">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.2</td>
+                    <td>
+                      first examination, inspection and testing carried out on the date(s) stated in "Section IV MCPS
+                      Details";
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox mcpsCheck event-change="removeManda(this)" id="DeclByQP_Mech_DateOfFirsExam10">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.3</td>
+                    <td>
+                      the MCPS(s) is/are in a fit condition for operation; and
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox mcpsCheck event-change="removeManda(this)" id="DeclByQP_Mech_FitCondForOper10">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.4</td>
+                    <td>
+                      I am not a partner, associate, director, officer or employee of the owner of the MCPS(s) or the
+                      MCPS testing
+                      contractor(s) carrying out the examination, inspection, and testing of the escalator(s) under
+                      Regulation 19(1).
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox mcpsCheck event-change="removeManda(this)" id="DeclByQP_Mech_IAmNotPart10">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.5</td>
+                    <td>
+                      <span>I hereby declare that I have submitted the following
+                        documents:</span>
+                      <br />
+                      <span>1. Certificate of Supervision of Installation from
+                        QP</span><br />
+                      <span>2. Certificate of Supervision of Testing &
+                        Commissioning from QP</span><br />
+                      <span>3. Certificate of Installation from Contractor</span><br />
+                      <span>4. Certificate of Testing & Commissioning from
+                        Contractor</span><br />
+                      <span>5. Final inspection Report</span><br /><br>
+                      <span>With the exception of: <br />
+                        <cn2-textarea no-label inline="8" id="DeclByQP_Mech_IDeclFollMech20" maxlength="1000" disabled>
+                        </cn2-textarea>
+                      </span>
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox mcpsCheck id="DeclByQP_Mech_IDeclFollEsca10"
+                        event-change="unableTextArea(this, DeclByQP_Mech_IDeclFollMech20); removeManda(this)">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <span>I declare that the MCPS(s) in Section IV is /are
+                        ready for inspection.</span><br /><br />
+                      <span>Proposed Inspection Date: &nbsp;
+                        <cn2-datefield id="DeclByQP_PropInspDate10" inline="3" onfocusout="validateDate(this)" disabled
+                          duplicate-id-mechanized pre-id="DeclByQP_PropInspDate10">
+                        </cn2-datefield>
+                      </span><br /><br />
+                      <span>Proposed Inspection Time: &nbsp;
+                        <cn2-textbox id="DeclByQP_PropInspTime10" inline="3" event-change="validateTime(this)" disabled
+                          duplicate-id-mechanized pre-id="DeclByQP_PropInspTime10" placeholder="hh:mm" maxlength="5">
+                        </cn2-textbox>
+                      </span>
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox mcpsCheck id="DeclByQP_Mech_ReadForInsp10"
+                        event-change="DeclByQP_Mech_ReadForInsp10_change(this); removeManda(this)">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II.6</td>
+                    <td>
+                      Type Test Certificates and Reports (both System and
+                      Component Level)
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox mcpsCheck event-change="removeManda(this)" id="DeclByQP_TypeTestCert20">
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div id="page7">
+          <div class="mls-espo-right-inner-container" id="Lift_Page8" lift hidden>
+            <h2>Section V Lift Detail(s)</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>
+                    III. Group of Lifts (sharing postal code, basic
+                    escalator details, specifications and type testing
+                    certificates)
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-button label="Add" id="LiftDeta_Add" prefix="LiftDeta_Add"
+                      event-click="mainAddInstance('LiftDetaContainer', 'LiftDetaChild10');">
+                    </cn2-button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="LiftDetaContainer" style="padding-left: 0;">
+              <div id="LiftDetaChild10" main-form prefix="LiftDetaChild" suffix="0" class="Bfields">
+                <div id="SiteAddressAccordion">
+                  <h2 class="accordion-toggle">
+                    <table class="table table-borderless" style="margin-bottom: 0px;">
+                      <tbody>
+                        <tr>
+                          <td width="90%">
+                            <br />
+                            <b>Group &nbsp;&nbsp;
+                              <span main-label>1</span>
+                            </b>
+                          </td>
+                          <td>
+                            <br />
+                            <cn2-button id="LiftDeta_Delete1010" class="deleteBtn" prefix="LiftDeta_Delete10" suffix="0"
+                              style="float: right;" siteAddrDelBtn
+                              event-click="mainDeleteInstance(this.id, 'LiftDetaContainer', 'LiftDetaChild')"
+                              label="Delete" danger-main danger disabled>
+                            </cn2-button>
+                          </td>
+                          <td style="float:right">
+                            <span class="fa fa-angle-down collapsed" data-toggle="collapse" accordion
+                              href="#SiteAddressFormChildAccordionBody10" id="#SiteAddressFormChildAccordionBody10"
+                              prefix="#SiteAddressFormChildAccordionBody" suffix="0" excluded child
+                              onclick="spanUpDown(this)" aria-expanded="false" main-accordion-header></span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </h2>
+                  <div id="SiteAddressFormChildAccordionBody10" class="panel-collapse collapse" child="div" excluded
+                    prefix="SiteAddressFormChildAccordionBody" suffix="0" main-accordion-body accordion
+                    style="padding-left: 0pt;padding-right: 0pt;">
+                    <table class="table table-borderless">
+                      <tbody>
+                        <tr>
+                          <td id="LiftDeta_Cont10" prefix="LiftDeta_Cont" main-container>
+                            <table class="table table-borderless mb-0" style="
+                                      border-top: 1px solid black;" id="LiftDeta_Form10" prefix="LiftDeta_Form"
+                              suffix="0" main-form>
+                              <tbody>
+                                <tr>
+                                  <td width="35%"><u>Quantity*</u></td>
+                                  <td>
+                                    <cn2-select no-label id="LiftReco_Quan10" prefix="LiftReco_Quan" suffix="0"
+                                      event-change="feeComputation()" inline="10"
+                                      options="0:0,1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9,10:10,11:11,12:12,13:13,14:14,15:15,16:16,17:17,18:18,19:19,20:20,21:21,22:22,23:23,24:24,25:25,26:26,27:27,28:28,29:29,30:30,31:31,32:32,33:33,34:34,35:35,36:36,37:37,38:38,39:39,40:40,41:41,42:42,43:43,44:44,45:45,46:46,47:47,48:48,49:49,50:50"
+                                      mandatory></cn2-select>(number)
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Lift Type*
+                                  </td>
+                                  <td>
+                                    <cn2-select no-label id="LiftReco_LiftType10" mandatory prefix="LiftReco_LiftType"
+                                      inline="10" suffix="0" event-change="LiftReco_LiftType_change(this)"
+                                      options="Passenger Lift:Passenger Lift,Goods Lift:Goods Lift,Service Lift:Service Lift,Car Lift:Car Lift,Vertical Platform Lift:Vertical Platform Lift,Stairlift:Stairlift">
+                                    </cn2-select>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td>Postal Code*<br><br>
+                                    <cn2-button label="Add" id="LiftDeta_LiftNo_Add10" prefix="LiftDeta_LiftNo_Add"
+                                      suffix="0" sub-suffix="0"
+                                      event-click="subAddInstance(this.id, 'LiftDeta_LiftNo_Cont', 'LiftDeta_LiftNo_Form10_10')">
+                                    </cn2-button>
+                                  </td>
+                                  <td>
+                                    <cn2-textbox no-label id="LiftReco_PostCode10" inline="10"
+                                      prefix="LiftReco_PostCode" suffix="0" mandatory maxlength="6" numeric>
+                                    </cn2-textbox>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2">
+                                    <table class="table table-bordered" style="margin: 0px;">
+                                      <tbody>
+                                        <tr>
+                                          <td id="LiftDeta_LiftNo_Cont10" prefix="LiftDeta_LiftNo_Cont" suffix="0"
+                                            sub-container>
+                                            <div class="mls-espro-form-fields row pb-2" id="LiftDeta_LiftNo_Form10_10"
+                                              prefix="LiftDeta_LiftNo_Form" suffix="0" sub-suffix="0" sub-form>
+                                              <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
+                                                Lift No.*
+                                              </div>
+                                              <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6 pl-4">
+                                                <cn2-textbox no-label id="SubmChec_LiftNumb10_10"
+                                                  event-change="setCounHideLift10(this);"
+                                                  prefix="SubmChec_LiftNumb" suffix="0" sub-suffix="0" maxlength="20"
+                                                  mandatory>
+                                                </cn2-textbox>
+                                                <cn2-textbox no-label disabled hidden id="CounHideLift10">
+                                                </cn2-textbox>
+                                              </div>
+                                              <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2">
+                                                <cn2-button label="Delete" id="LiftDeta_LiftNo_Delete10_10"
+                                                  prefix="LiftDeta_LiftNo_Delete" suffix="0" sub-suffix="0" danger
+                                                  disabled style="float: right;"
+                                                  event-click="subDeleteInstance(this.id, 'LiftDeta_LiftNo_Cont', 'LiftDeta_LiftNo_Form')"
+                                                  danger-inside>
+                                                </cn2-button>
+                                              </div>
+                                              <br><br>
+                                              <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
+                                                <span liftID>Lift ID</span>
+                                              </div>
+                                              <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6 pl-4">
+                                                <cn2-textbox no-label id="LiftReco_Id10_10" liftIdManda
+                                                  prefix="LiftReco_Id" suffix="0" sub-suffix="0" maxlength="20">
+                                                </cn2-textbox>
+                                              </div>
+                                              <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2">
+                                                &nbsp;
+                                              </div>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <table class="table table-borderless" class="table table-borderless mb-0" style="
+                                      border-top: 1px solid black;">
+                              <tbody>
+                                <tr>
+                                  <td colspan="4">
+                                    <b><u>Testing and Commissioning Dates</u></b>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="30%">
+                                    Annual Examination and Expectation
+                                    Date*
+                                  </td>
+                                  <td width="20%">
+                                    <cn2-datefield no-label
+                                      onfocusout="validateDate(this); dateFutureTodayValidation(this)"
+                                      prefix="LiftReco_AnnuExamInspDate" suffix="0" id="LiftReco_AnnuExamInspDate10"
+                                      mandatory>
+                                    </cn2-datefield>
+                                  </td>
+                                  <td width="30%">
+                                    No Load Test Date*
+                                  </td>
+                                  <td width="20%">
+                                    <cn2-datefield no-label
+                                      onfocusout="validateDate(this); dateFutureTodayValidation(this)"
+                                      prefix="LiftReco_NoLoadTestDate" suffix="0" id="LiftReco_NoLoadTestDate10"
+                                      mandatory>
+                                    </cn2-datefield>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="30%">
+                                    Full load Test Date*
+                                  </td>
+                                  <td width="20%">
+                                    <cn2-datefield no-label
+                                      onfocusout="validateDate(this); dateFutureTodayValidation(this)"
+                                      prefix="LiftReco_FullLoadTestDate" suffix="0" id="LiftReco_FullLoadTestDate10"
+                                      mandatory>
+                                    </cn2-datefield>
+                                  </td>
+                                  <td width="30%">
+                                    Commission Date*
+                                  </td>
+                                  <td width="20%">
+                                    <cn2-datefield no-label id="LiftReco_CommDate10" prefix="LiftReco_CommDate"
+                                      suffix="0" onfocusout="validateDate(this); dateFutureTodayValidation(this)"
+                                      mandatory>
+                                    </cn2-datefield>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <table class="table table-borderless" class="table table-borderless"
+                              class="table table-borderless mb-0" style="
+                                      border-top: 1px solid black;" id="LiftCode_Compliance_with10"
+                              prefix="LiftCode_Compliance_with" suffix="0">
+                              <tbody>
+                                <tr>
+                                  <td colspan="4">
+                                    <b><u>Code Compliance</u></b>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Code Compliance with*</td>
+                                  <td>
+                                    <cn2-select no-label id="LiftReco_CodeComp_CodeCompWith10"
+                                      prefix="LiftReco_CodeComp_CodeCompWith" suffix="0"
+                                      event-change="enableFieldBeside(this, `[prefix='LiftReco_CodeComp_CodeCompWithCode']`)"
+                                      options="SS 550/:2009:SS 550/:2009,EN81-40/:2008:EN81-40/:2008,EN81-41/:2010:EN81-41/:2010,Alternative Standard:Alternative Standard"
+                                      mandatory>
+                                    </cn2-select>
+                                  </td>
+                                  <td colspan="2">
+                                    <cn2-textbox no-label prefix="LiftReco_CodeComp_CodeCompWithCode" suffix="0"
+                                      id="LiftReco_CodeComp_CodeCompWithCode10" disabled maxlength="20" clear-disable>
+                                    </cn2-textbox>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    with*
+                                  </td>
+                                  <td>
+                                    <cn2-select no-label id="LiftReco_CodeComp_With10" prefix="LiftReco_CodeComp_With"
+                                      suffix="0"
+                                      options="No deviation from code:No deviation from code,Alternative Solution:Alternative Solution,Waiver:Waiver,Modification:Modification"
+                                      mandatory></cn2-select>
+                                  </td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td colspan="4">
+                                    <span style="font-size: 0.7rem;"><i>Note: For any selection with “Alternative
+                                        Standard” and/or “Alternative
+                                        Solution”/”Waiver”/”Modification”, the
+                                        respective alternative
+                                        solution/waiver/modification form has to be
+                                        submitted).</i></span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <table class="table table-borderless" class="table table-borderless mb-0" style="
+                                      border-top: 1px solid black;">
+                              <tbody>
+                                <tr>
+                                  <td colspan="4">
+                                    <b><u>Specifications</u></b>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="30%">
+                                    ARD Brand
+                                  </td>
+                                  <td>
+                                    <cn2-textbox no-label id="LiftGeneSpec_ARDBran10" prefix="LiftGeneSpec_ARDBran"
+                                      suffix="0" maxlength="20" mandatory>
+                                    </cn2-textbox>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="30%">
+                                    ARD Model
+                                  </td>
+                                  <td>
+                                    <cn2-textbox no-label id="LiftGeneSpec_ARDMode10" prefix="LiftGeneSpec_ARDMode"
+                                      suffix="0" maxlength="20" mandatory>
+                                    </cn2-textbox>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="30%">
+                                    UPS Brand
+                                  </td>
+                                  <td>
+                                    <cn2-textbox no-label id="LiftGeneSpec_UPSBrans10" prefix="LiftGeneSpec_UPSBrans"
+                                      suffix="0" maxlength="20" mandatory>
+                                    </cn2-textbox>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="30%">
+                                    UPS Model
+                                  </td>
+                                  <td>
+                                    <cn2-textbox no-label id="LiftGeneSpec_UPSMode10" prefix="LiftGeneSpec_UPSMode"
+                                      suffix="0" maxlength="20" mandatory>
+                                    </cn2-textbox>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td prefix="LiftDeta_Cont" suffix="0">
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mls-espo-right-inner-container" id="Escalator_Page8" escalator hidden>
+            <h2>Section V Escalator Detail(s)</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>
+                    III. Group of Escalators (sharing postal code, basic escalator details, specifications and type
+                    testing certificates)
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-button label="Add" id="EscaDeta_Add" prefix="EscaDeta_Add"
+                      event-click="mainAddInstance('EscaDetaContainer', 'EscaDetaChild10')">
+                    </cn2-button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div id="EscaDetaContainer">
+              <div id="EscaDetaChild10" main-form prefix="EscaDetaChild" suffix="0" class="Cfields">
+                <div id="EscaSiteAddressAccordion">
+                  <h2 class="accordion-toggle">
+                    <table class="table table-borderless">
+                      <tbody>
+                        <tr>
+                          <td width="90%">
+                            <br />
+                            <b>Group &nbsp;&nbsp;
+                              <span main-label>1</span>
+                            </b>
+                          </td>
+                          <td>
+                            <br />
+                            <cn2-button id="EscaDeta_Delete1010" class="deleteBtn" prefix="EscaDeta_Delete10" suffix="0"
+                              style="float: right;" siteAddrDelBtn
+                              event-click="mainDeleteInstance(this.id, 'EscaDetaContainer', 'EscaDetaChild')"
+                              label="Delete" danger-main danger disabled>
+                            </cn2-button>
+                          </td>
+                          <td style="float:right">
+                            <span class="fa fa-angle-down collapsed" data-toggle="collapse" accordion
+                              href="#EscaSiteAddressFormChildAccordionBody10"
+                              id="#EscaSiteAddressFormChildAccordionBody10"
+                              prefix="#EscaSiteAddressFormChildAccordionBody" suffix="0" excluded child
+                              onclick="spanUpDown(this)" aria-expanded="false" main-accordion-header></span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </h2>
+                  <div id="EscaSiteAddressFormChildAccordionBody10" class="panel-collapse collapse" child="div" excluded
+                    prefix="EscaSiteAddressFormChildAccordionBody" suffix="0" main-accordion-body accordion
+                    style="padding-left: 0pt;padding-right: 0pt;">
+
+                    <table class="table table-borderless">
+                      <tbody>
+                        <tr>
+                          <td id="EscaDeta_Cont10" prefix="EscaDeta_Cont" style="padding-left : 0px; padding-right: 0px"
+                            main-container>
+                            <table class="table table-borderless" class="table table-borderless mb-0" style="
+                                      border-top: 1px solid black;" id="EscaDeta_Form10" prefix="EscaDeta_Form"
+                              suffix="0" main-form>
+                              <tbody>
+                                <tr>
+                                  <td width="35%"><u>Quantity*</u></td>
+                                  <td>
+                                    <cn2-select no-label id="SubmChec_CateAndNoEsca_NoOfEsca10"
+                                      prefix="SubmChec_CateAndNoEsca_NoOfEsca" suffix="0" inline="10"
+                                      event-change="feeComputation()"
+                                      options="0:0,1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9,10:10,11:11,12:12,13:13,14:14,15:15,16:16,17:17,18:18,19:19,20:20,21:21,22:22,23:23,24:24,25:25,26:26,27:27,28:28,29:29,30:30,31:31,32:32,33:33,34:34,35:35,36:36,37:37,38:38,39:39,40:40,41:41,42:42,43:43,44:44,45:45,46:46,47:47,48:48,49:49,50:50"
+                                      mandatory></cn2-select>(number)
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Escalator Type*</td>
+                                  <td>
+                                    <cn2-select no-label id="SubmChec_CateAndNoEsca_CateOfEsca10" mandatory
+                                      prefix="SubmChec_CateAndNoEsca_CateOfEsca" inline="10" suffix="0" options="Escalator (With Steps):Escalator (With Steps),
+                                      Passenger Conveyor (Inclined):Passenger Conveyor (Inclined),
+                                      Passenger Conveyor (No Inclination):Passenger Conveyor (No Inclination)">
+                                    </cn2-select>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Postal Code*<br><br>
+                                    <cn2-button label="Add" id="EscaDeta_EscaNo_Add10" prefix="EscaDeta_EscaNo_Add"
+                                      suffix="0" sub-suffix="0"
+                                      event-click="subAddInstance(this.id, 'EscaDeta_EscaNo_Cont', 'EscaDeta_EscaNo_Form10_10')">
+                                    </cn2-button>
+                                  </td>
+                                  <td>
+                                    <cn2-textbox no-label id="EscaReco_PostCode10" inline="10"
+                                      prefix="EscaReco_PostCode" suffix="0" mandatory maxlength="6" numeric>
+                                    </cn2-textbox>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2">
+                                    <table class="table table-bordered" style="margin: 0px;">
+                                      <tbody>
+                                        <tr>
+                                          <td id="EscaDeta_EscaNo_Cont10" prefix="EscaDeta_EscaNo_Cont" suffix="0"
+                                            sub-container>
+
+                                            <div class="mls-espro-form-fields row pb-2" id="EscaDeta_EscaNo_Form10_10"
+                                              prefix="EscaDeta_EscaNo_Form" suffix="0" sub-suffix="0" sub-form>
+                                              <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
+                                                Escalator No.*
+                                              </div>
+                                              <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6 pl-4">
+                                                <cn2-textbox no-label id="SubmChec_EscaNumb10_10"
+                                                  event-change="setCounHideEsca10(this);"
+                                                  prefix="SubmChec_EscaNumb" suffix="0" sub-suffix="0" maxlength="20"
+                                                  mandatory>
+                                                </cn2-textbox>
+                                                <cn2-textbox no-label disabled hidden id="CounHideEsca10" default-value="1">
+                                                </cn2-textbox>
+                                              </div>
+                                              <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2">
+                                                <cn2-button label="Delete" id="EscaDeta_EscaNo_Delete10_10"
+                                                  prefix="EscaDeta_EscaNo_Delete" suffix="0" sub-suffix="0" danger
+                                                  disabled style="float: right;"
+                                                  event-click="subDeleteInstance(this.id, 'EscaDeta_EscaNo_Cont', 'EscaDeta_EscaNo_Form')"
+                                                  danger-inside>
+                                                </cn2-button>
+                                              </div>
+                                              <br><br>
+                                              <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
+                                                <span escaId>Escalator ID</span>
+                                              </div>
+                                              <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6 pl-4">
+                                                <cn2-textbox no-label id="EscaReco_Id10_10" escaIdManda
+                                                  prefix="EscaReco_Id" suffix="0" sub-suffix="0" maxlength="20">
+                                                </cn2-textbox>
+                                              </div>
+                                              <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2">
+                                                &nbsp;
+                                              </div>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table class="table table-borderless" style="
+                                      border-top: 1px solid black;">
+                      <tbody>
+                        <tr>
+                          <td colspan="4">
+                            <b><u>Testing and Commissioning Dates</u></b>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="30%">
+                            Annual Examination and Expectation Date*
+                          </td>
+                          <td width="20%">
+                            <cn2-datefield no-label onfocusout="validateDate(this); dateFutureTodayValidation(this)"
+                              prefix="EscaReco_AnnuExamInspDate" suffix="0" id="EscaReco_AnnuExamInspDate10" mandatory>
+                            </cn2-datefield>
+                          </td>
+                          <td width="30%">
+                            No Load Test Date*
+                          </td>
+                          <td width="20%">
+                            <cn2-datefield no-label onfocusout="validateDate(this); dateFutureTodayValidation(this)"
+                              prefix="EscaReco_NoLoadTestDate" suffix="0" id="EscaReco_NoLoadTestDate10" mandatory>
+                            </cn2-datefield>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="30%">
+                            Full load Test Date*
+                          </td>
+                          <td width="20%">
+                            <cn2-datefield no-label onfocusout="validateDate(this); dateFutureTodayValidation(this)"
+                              prefix="EscaReco_FullLoadTestDate" suffix="0" id="EscaReco_FullLoadTestDate10" mandatory>
+                            </cn2-datefield>
+                          </td>
+                          <td width="30%">
+                            Commission Date*
+                          </td>
+                          <td width="20%">
+                            <cn2-datefield no-label id="EscaReco_CommDate10" prefix="EscaReco_CommDate" suffix="0"
+                              onfocusout="validateDate(this); dateFutureTodayValidation(this)" mandatory>
+                            </cn2-datefield>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table class="table table-borderless" id="Code_Compliance_with10" style="
+                                      border-top: 1px solid black;" prefix="Code_Compliance_with" suffix="0">
+                      <tbody>
+                        <tr>
+                          <td colspan="4">
+                            <b><u>Code Compliance</u></b>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Code Compliance with*</td>
+                          <td>
+                            <cn2-select no-label id="EscaGeneSpec_CodeCompWith10" prefix="EscaGeneSpec_CodeCompWith"
+                              suffix="0" options="SS 626/:2017:SS 626/:2009,Alternative Standard:Alternative Standard"
+                              event-change="enableFieldBeside(this, `[prefix='EscaGeneSpec_With']`)" mandatory>
+                            </cn2-select>
+                          </td>
+                          <td colspan="2">
+                            <cn2-textbox no-label prefix="EscaGeneSpec_With" suffix="0" id="EscaGeneSpec_With10"
+                              clear-disable disabled maxlength="20">
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            with*
+                          </td>
+                          <td>
+                            <cn2-select no-label id="EscaReco_CodeComp_With10" prefix="EscaReco_CodeComp_With"
+                              suffix="0"
+                              options="No deviation from code:No deviation from code,Alternative Solution:Alternative Solution,Waiver:Waiver,Modification:Modification"
+                              mandatory></cn2-select>
+                          </td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td colspan="4">
+                            <span style="font-size: 0.7rem;"><i>Note: For any selection with “Alternative
+                                Standard” and/or “Alternative
+                                Solution”/”Waiver”/”Modification”, the
+                                respective alternative
+                                solution/waiver/modification form has to be
+                                submitted).</i></span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    </td prefix="EscaDeta_Cont" suffix="0">
+                    </tr>
+                    </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mls-espo-right-inner-container" id="Mechanical_Page8" mechanical hidden>
+            <h2>Section V MCPS Detail(s)</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>
+                    III. Group of MCPSs (each group should share same MCPS Type, postal code, testing dates and code
+                    compliances)
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-button label="Add" id="MechDeta_Add" prefix="MechDeta_Add"
+                      event-click="mainAddInstance('MechDetaContainer', 'MechDetaChild10')">
+                    </cn2-button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div id="MechDetaContainer">
+              <div id="MechDetaChild10" main-form prefix="MechDetaChild" suffix="0" class="Dfields">
+                <div id="MechSiteAddressAccordion">
+                  <h2 class="accordion-toggle">
+                    <table class="table table-borderless">
+                      <tbody>
+                        <tr>
+                          <td width="90%">
+                            <br />
+                            <b>Group &nbsp;&nbsp;
+                              <span main-label>1</span>
+                            </b>
+                          </td>
+                          <td>
+                            <br />
+                            <cn2-button id="MechDeta_Delete1010" class="deleteBtn" prefix="MechDeta_Delete10" suffix="0"
+                              style="float: right;" siteAddrDelBtn
+                              event-click="mainDeleteInstance(this.id, 'MechDetaContainer', 'MechDetaChild')"
+                              label="Delete" danger-main danger disabled>
+                            </cn2-button>
+                          </td>
+                          <td style="float:right">
+                            <span class="fa fa-angle-down collapsed" data-toggle="collapse" accordion
+                              href="#MechSiteAddressFormChildAccordionBody10"
+                              id="#MechSiteAddressFormChildAccordionBody10"
+                              prefix="#MechSiteAddressFormChildAccordionBody" suffix="0" excluded child
+                              onclick="spanUpDown(this)" aria-expanded="false" main-accordion-header></span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </h2>
+                  <div id="MechSiteAddressFormChildAccordionBody10" class="panel-collapse collapse" child="div" excluded
+                    prefix="MechSiteAddressFormChildAccordionBody" suffix="0" main-accordion-body accordion
+                    style="padding-left: 0pt;padding-right: 0pt;">
+
+                    <table class="table table-borderless">
+                      <tbody>
+                        <tr>
+                          <td id="MechDeta_Cont10" prefix="MechDeta_Cont" main-container
+                            style="padding-left: 0pt;padding-right: 0pt;">
+                            <table class="table table-borderless" class="table table-borderless" style="
+                                      border-top: 1px solid black;" id="MechDeta_Form10" prefix="MechDeta_Form"
+                              suffix="0" main-form>
+                              <tbody>
+                                <tr>
+                                  <td width="35%"><u>Quantity*</u></td>
+                                  <td>
+                                    <cn2-select no-label id="SubmChec_CateAndNoMech_NoOfMech10"
+                                      prefix="SubmChec_CateAndNoMech_NoOfMech" suffix="0" inline="10"
+                                      event-change="feeComputation()"
+                                      options="1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9,10:10,11:11,12:12,13:13,14:14,15:15,16:16,17:17,18:18,19:19,20:20,21:21,22:22,23:23,24:24,25:25,26:26,27:27,28:28,29:29,30:30,31:31,32:32,33:33,34:34,35:35,36:36,37:37,38:38,39:39,40:40,41:41,42:42,43:43,44:44,45:45,46:46,47:47,48:48,49:49,50:50"
+                                      mandatory></cn2-select>(number)
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>MCPS Type*</td>
+                                  <td>
+                                    <cn2-select no-label id="SubmChec_CateAndNoMech_CateOfMech10" mandatory
+                                      prefix="SubmChec_CateAndNoMech_CateOfMech" suffix="0" inline="10"
+                                      event-change="SubmChec_CateAndNoMech_CateOfMech10_change(this);"
+                                      options="Tower Systems:Tower Systems,Puzzle Systems:Puzzle Systems,Stacked Systems:Stacked Systems,Turntable:Turntable,Stack Packer:Stack Packer,Others:Others">
+                                    </cn2-select><br><br>
+                                    <cn2-textbox no-label id="SubmChec_CateAndNoMech_Txt_CateOfMech10" inline="10"
+                                      prefix="SubmChec_CateAndNoMech_Txt_CateOfMech" suffix="0" maxlength="50" disabled
+                                      hidden>
+                                    </cn2-textbox>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Postal Code*<br><br>
+                                    <cn2-button label=" Add" id="MechDeta_MechNo_Add10" prefix="MechDeta_MechNo_Add"
+                                      suffix="0" sub-suffix="0"
+                                      event-click="subAddInstance(this.id, 'MechDeta_MechNo_Cont', 'MechDeta_MechNo_Form10_10')">
+                                    </cn2-button>
+                                  </td>
+                                  <td>
+                                    <cn2-textbox no-label id="MechReco_PostCode10" prefix="MechReco_PostCode" suffix="0"
+                                      mandatory maxlength="6" inline="10" numeric>
+                                    </cn2-textbox>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2">
+                                    <table class="table table-bordered" style="margin: 0px;">
+                                      <tbody>
+                                        <tr>
+                                          <td id="MechDeta_MechNo_Cont10" prefix="MechDeta_MechNo_Cont" suffix="0"
+                                            sub-container>
+
+                                            <div class="mls-espro-form-fields row pb-2" id="MechDeta_MechNo_Form10_10"
+                                              prefix="MechDeta_MechNo_Form" suffix="0" sub-suffix="0" sub-form>
+                                              <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
+                                                MCPS No.*
+                                              </div>
+                                              <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6 pl-4">
+                                                <cn2-textbox no-label id="SubmChec_MechNumb10_10"
+                                                  prefix="SubmChec_MechNumb" suffix="0" sub-suffix="0" maxlength="20"
+                                                  mandatory>
+                                                </cn2-textbox>
+                                              </div>
+                                              <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2">
+                                                <cn2-button label="Delete" id="MechDeta_MechNo_Delete10_10"
+                                                  style="float: right;" prefix="MechDeta_MechNo_Delete" suffix="0"
+                                                  sub-suffix="0" danger disabled
+                                                  event-click="subDeleteInstance(this.id, 'MechDeta_MechNo_Cont', 'MechDeta_MechNo_Form')"
+                                                  danger-inside>
+                                                </cn2-button>
+                                              </div>
+                                              <br><br>
+                                              <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
+                                                <span mcspsId>MCPS ID</span>
+                                              </div>
+                                              <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6 pl-4">
+                                                <cn2-textbox no-label id="McpsReco_Id10_10" mcpsIdManda
+                                                  prefix="McpsReco_Id" suffix="0" sub-suffix="0" maxlength="20"
+                                                  mandatory>
+                                                </cn2-textbox>
+                                              </div>
+                                              <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2">
+                                                &nbsp;
+                                              </div>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <table class="table table-borderless" class="table table-borderless" style="
+                                      border-top: 1px solid black;">
+                              <tbody>
+                                <tr>
+                                  <td colspan="4">
+                                    <b><u>Testing and Commissioning Dates</u></b>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="30%">
+                                    Annual Examination and Expectation Date*
+                                  </td>
+                                  <td width="20%">
+                                    <cn2-datefield no-label
+                                      onfocusout="validateDate(this); dateFutureTodayValidation(this)"
+                                      prefix="MechReco_AnnuExamInspDate" suffix="0" id="MechReco_AnnuExamInspDate10"
+                                      mandatory>
+                                    </cn2-datefield>
+                                  </td>
+                                  <td width="30%">
+                                    No Load Test Date*
+                                  </td>
+                                  <td width="20%">
+                                    <cn2-datefield no-label
+                                      onfocusout="validateDate(this); dateFutureTodayValidation(this)"
+                                      prefix="MechReco_NoLoadTestDate" suffix="0" id="MechReco_NoLoadTestDate10"
+                                      mandatory>
+                                    </cn2-datefield>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="30%">
+                                    Full load Test Date*
+                                  </td>
+                                  <td width="20%">
+                                    <cn2-datefield no-label
+                                      onfocusout="validateDate(this); dateFutureTodayValidation(this)"
+                                      prefix="MechReco_FullLoadTestDate" suffix="0" id="MechReco_FullLoadTestDate10"
+                                      mandatory>
+                                    </cn2-datefield>
+                                  </td>
+                                  <td width="30%">
+                                    Commission Date*
+                                  </td>
+                                  <td width="20%">
+                                    <cn2-datefield no-label id="MechReco_CommDate10" prefix="MechReco_CommDate"
+                                      suffix="0" onfocusout="validateDate(this); dateFutureTodayValidation(this)"
+                                      mandatory>
+                                    </cn2-datefield>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <table class="table table-borderless" id="Code_Compliance_with10"
+                              prefix="Code_Compliance_with" suffix="0" class="table table-borderless" style="
+                                      border-top: 1px solid black;">
+                              <tbody>
+                                <tr>
+                                  <td colspan="4">
+                                    <b><u>Code Compliance</u></b>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Code Compliance with*</td>
+                                  <td>
+                                    <cn2-select no-label id="MechGeneSpec_CodeCompWith10"
+                                      prefix="MechGeneSpec_CodeCompWith" suffix="0"
+                                      options="BCA Code of Practice:BCA Code of Practice,EN14010:EN14010,Alternative Standard:Alternative Standard"
+                                      event-change="enableFieldBeside(this, `[prefix='MechGeneSpec_With']`)" mandatory>
+                                    </cn2-select>
+                                  </td>
+                                  <td colspan="2">
+                                    <cn2-textbox no-label prefix="MechGeneSpec_With" suffix="0" id="MechGeneSpec_With10"
+                                      clear-disable disabled maxlength="20">
+                                    </cn2-textbox>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    with*
+                                  </td>
+                                  <td>
+                                    <cn2-select no-label id="MechReco_CodeComp_With10" prefix="MechReco_CodeComp_With"
+                                      suffix="0"
+                                      options="No deviation from code:No deviation from code,Alternative Solution:Alternative Solution,Waiver:Waiver,Modification:Modification"
+                                      mandatory></cn2-select>
+                                  </td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td colspan="4">
+                                    <span style="font-size: 0.7rem;"><i>Note: For any selection with “Alternative
+                                        Standard” and/or “Alternative
+                                        Solution”/”Waiver”/”Modification”, the
+                                        respective alternative
+                                        solution/waiver/modification form has to be
+                                        submitted).</i></span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td prefix="MechDeta_Cont" suffix="0">
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page8">
+          <div class="mls-espo-right-inner-container">
+            <span style="text-align: center;">
+              <h2>
+                Fee Computation for Permit to Operate Application<br>[_ of the
+                Building Control Act]
+              </h2>
+            </span>
+            <table class="table table-bordered">
+              <thead style="font-weight: bold; text-align: center;">
+                <tr>
+                  <td>S/N</td>
+                  <td>Type of Equipment</td>
+                  <td>No. of Equipment</td>
+                  <td>Rate</td>
+                  <td>Computed Fees</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Lift</td>
+                  <td>
+                    <cn2-textbox no-label id="NoOfEqui_Lift10" disabled numeric clear-disable></cn2-textbox>
+                  </td>
+                  <td>
+                    $30/Lift for 1<sup>st</sup> 10 Lift(s)
+                    <br /><br>
+                    $10/Lift for subsequent Lift(s
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="CompFee_Lift10" disabled numeric clear-disable></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Escalator</td>
+                  <td>
+                    <cn2-textbox no-label id="NoOfEqui_Esca10" disabled numeric clear-disable></cn2-textbox>
+                  </td>
+                  <td>
+                    $30/Escalator for
+                    1<sup>st</sup> 10 Escalator(s)
+                    <br /><br>
+                    $10/Escalator
+                    for subsequent Escalator(s)
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="CompFee_Esca10" disabled numeric clear-disable></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Mechanised Car Parking System</td>
+                  <td>
+                    <cn2-textbox no-label id="NoOfEqui_Mech10" disabled numeric clear-disable></cn2-textbox>
+                  </td>
+                  <td>
+                    $30/MCPS for
+                    1<sup>st</sup> 10 MCPS(s)
+                    <br /><br>
+                    $10/MCPS for
+                    subsequent MCPS(s)
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="CompFee_Mech10" disabled numeric clear-disable></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4">
+                    <strong>Total Plan Fee Payable</strong>
+                  </td>
+                  <td>
+                    <strong>
+                      $<cn2-textbox no-label id="PaymMode_Paym10" disabled inline="10" numeric clear-disable>
+                      </cn2-textbox>
+                    </strong>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td colspan="4"><b>Indicate Payment Mode :-</b></td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">
+                    <input type="radio" id="PaymMode_Cheq10" name="PaymentMode" onchange="paymentMode(this)" />
+                  </td>
+                  <td width="10%">Cheque</td>
+                  <td>
+                    <cn2-textbox label="Cheque" id="PaymMode_Cheq20" inline maxlength="14" disabled clear-disable>
+                    </cn2-textbox>
+                    <br />
+                    <cn2-datefield label="Cheque Date" id="PaymMode_Cheq30" inline
+                      onfocusout="validateDate(this); dateFutureTodayValidation(this)" disabled clear-disable>
+                    </cn2-datefield>
+                  </td>
+                  <td>
+                    <cn2-textbox label="Bank Name" id="PaymMode_Cheq40" inline maxlength="256" disabled clear-disable>
+                    </cn2-textbox>
+                    <br />
+                    <cn2-textbox label="Amount Paid" id="PaymMode_Cheq50" currency inline maxlength="256" disabled
+                      clear-disable>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td rowspan="2" style="text-align: center;">
+                    <input type="radio" id="PaymMode_Giro10" name="PaymentMode" onchange="paymentMode(this)" />
+                  </td>
+                  <td rowspan="2">GIRO</td>
+                  <td colspan="2">
+                    <cn2-textbox label="Remittance Advice Ref No." id="PaymMode_Giro20" maxlength="66" disabled
+                      clear-disable>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-datefield label="Giro Deduction Date" id="PaymMode_Giro50" disabled clear-disable
+                      onfocusout="validateDate(this); dateFutureTodayValidation(this)">
+                    </cn2-datefield>
+                  </td>
+                  <td>
+                    <cn2-textbox label="Amount Paid" id="PaymMode_Giro40" currency maxlength="1024" disabled
+                      clear-disable>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">
+                    <input type="radio" id="PaymMode_ePay10" name="PaymentMode" onchange="paymentMode(this)" />
+                  </td>
+                  <td>ePayment</td>
+                  <td colspan="2">
+                    Please proceed to make ePayment after your e-Submission
+                    at<br />
+                    <a href="#"
+                      onclick="ipcRenderer.send('open-default-browser','https://www.bca.gov.sg/ePayment/ePayment.html')"
+                      style="color: royalblue;">https://www.bca.gov.sg/ePayment/ePayment.html</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4">Payer’s Details :-</td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    Name
+                  </td>
+                  <td colspan="2">
+                    <cn2-textbox no-label id="PayeDeta_Name" maxlength="66"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    Company Name
+                  </td>
+                  <td colspan="2">
+                    <cn2-textbox no-label id="PayeDeta_CompName" maxlength="66"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    Email
+                  </td>
+                  <td colspan="2">
+                    <cn2-textbox no-label id="PayeDeta_Email" maxlength="50" onfocusout="checkEmail(this)"
+                      placeholder="name@example.com">
+                    </cn2-textbox><br />
+                    <span style="color: red;"><i>*Note: Receipt will be emailed to the recipient. If
+                        there is no valid email address, please leave all
+                        fields under "Payer's Detail" blank.</i></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-fixed-footer></cn2-fixed-footer>
+    <cn2-version-footer></cn2-version-footer>
+  </div>
+</body>
+
+</html>

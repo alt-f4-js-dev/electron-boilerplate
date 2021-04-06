@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BCA_INST_ANNEX_E</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Syncfusion" />
+
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+    <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+    <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script src="../cm/resources/assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../cm/resources/assets/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../cm/js/func/common.js"></script>
+    <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+    <script src="../cm/js/components/cn2sgheader.js"></script>
+    <script src="../cm/js/components/cn2masterhead.js"></script>
+    <script src="../cm/js/components/cn2fixedfooter.js"></script>
+    <script src="../cm/js/components/cn2versionfooter.js"></script>
+
+    <script src="../cm/js/components/cn2textbox.js"></script>
+    <script src="../cm/js/components/cn2textarea.js"></script>
+    <script src="../cm/js/components/cn2checkbox.js"></script>
+    <script src="../cm/js/components/cn2navbutton.js"></script>
+    <script src="../cm/js/components/cn2select.js"></script>
+    <script src="../cm/js/components/cn2datefield.js"></script>
+    <script src="../cm/js/components/cn2button.js"></script>
+    <script src="../cm/js/components/cn2switchbutton.js"></script>
+
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <cn2-master-head
+        title="MONTHLY INSTRUMENTATION & MONITORING RESULTS&lt;br&gt; (This form shall be completed by QP(s) and QP(s)(Geo) where applicable and submitted to CBC/BCA by 7<sup>th</sup> day of the following month after obtaining permit of GBW/ERSS works)">
+    </cn2-master-head>
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p style="margin: 0px">Help</p>
+            </div>
+            <div class="modal-body">
+                <p><b>For enquiries related to forms, please contact the following:</b></p>
+                <p> <span id="RegulatoryAuthority_id"></span></p>
+                <div id="table-parent" style="width:auto">
+                    <table id="ContDetaTable_id" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Regulatory Authority</th>
+                                <th>Email Address</th>
+                                <th>Tel No.</th>
+                                <th>Area of Support</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>BCA(BP) & (TOP)</td>
+                                <td>bca_enquiry@bca.gov.sg</td>
+                                <td>1800-3425222</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">BCA (Buildable Design and Constructability)</td>
+                                <td>kong_chew_kwek@bca.gov.sg</td>
+                                <td>68044228</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>terence_teo@bca.gov.sg</td>
+                                <td>68044231</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>chin_kim_hong@bca.gov.sg</td>
+                                <td> 68044234</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">BCA(ST)</td>
+                                <td>wai_hui_ling@bca.gov.sg</td>
+                                <td>68044609</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>chang_heng_choy@bca.gov.sg</td>
+                                <td>68044646</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">BCA(CD Shelter)</td>
+                                <td>lee_pheck_hoon@bca.gov.sg</td>
+                                <td>68044410</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>yeo_keng@bca.gov.sg</td>
+                                <td>68044416</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>BCA(Transit Shelter)</td>
+                                <td>tan_wee_kian@bca.gov.sg</td>
+                                <td>63961408</td>
+                                <td>Policies</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="closer btn" onclick="hideHelp()"
+                    style="background-color:#037ebb;color:white;">OK</button>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" name="member_id" id="member_id">
+    <input type="hidden" name="form_validated" id="form_validated">
+    <div class="mls-espro-form-container">
+        <div class="row">
+            <div class="mls-espro-form-left-nav" id="menu">
+                <cn2-nav-button target="page1" page-number="1" label="Instructions" Selectednav
+                    onclick="SelectedNav(`[target='page1']`)"></cn2-nav-button>
+                <cn2-nav-button target="page2" page-number="2" label="Particulars of Application"
+                    onclick="SelectedNav(`[target='page2']`)"></cn2-nav-button>
+                <cn2-nav-button target="page3" page-number="3"
+                    label="Particulars and Declaration by Qualified Person (Supervision)"
+                    onclick="SelectedNav(`[target='page3']`)">
+                </cn2-nav-button>
+                <cn2-nav-button target="page4" page-number="4"
+                    label="Particulars and Declaration by Qualified Person (Geo) (Supervision)"
+                    onclick="SelectedNav(`[target='page4']`)">
+                </cn2-nav-button>
+                <cn2-nav-button target="page5" page-number="5" label="Instrumentation Monitoring and Damage Reporting"
+                    onclick="SelectedNav(`[target='page5']`)">
+                </cn2-nav-button>
+                <cn2-nav-button target="page6_1" page-number="6" id="GBWpage6"
+                    label="Section III When applicable, to be completed and certified by QP(D) and QP(Geo)(D) [for GBW], with assessment report appended"
+                    onclick="SelectedNav(`[target='page6_1']`)" hidden>
+                </cn2-nav-button>
+                <cn2-nav-button target="page6_2" page-number="6" id="nonGBWpage6"
+                    label="Section III When applicable, to be completed and certified by QP(D), with assessment report appended"
+                    onclick="SelectedNav(`[target='page6_2']`)" hidden>
+                </cn2-nav-button>
+                <cn2-nav-button target="page7_1" page-number="7" id="GBWpage7"
+                    label="Sectoion IV When applicable, to be completed and certified by AC[for major ERSS and GBW] and AC(Geo) [for GBW], with assessment report appended"
+                    onclick="SelectedNav(`[target='page7_1']`)" hidden>
+                </cn2-nav-button>
+                <cn2-nav-button target="page7_2" page-number="7" id="nonGBWpage7"
+                    label="Section IV When applicable, to be completed and certified by the AC [for major ERSS], with assessment report appended"
+                    onclick="SelectedNav(`[target='page7_2']`)" hidden>
+                </cn2-nav-button>
+            </div>
+            <div class="e-content mls-espro-form-right" id="page">
+                <div id="page1">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">
+                                        <b>Date:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <cn2-textbox id="Date10" no-label inline="6" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="1%">
+                                        <b>To:*</b>
+                                    </td>
+                                    <td width="15%">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-select no-label inline="6" id="Addr10" mandatory
+                                                    event-change="ToAgency_id_change(this)"
+                                                    options="Building and Construction Authority:BCA, Defence Science & Technology Agency:DSTA">
+                                                </cn2-select><br />
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pt-2">
+                                                <cn2-textarea id="Addr20" no-label inline="6" disabled disabled
+                                                    style="height: 140px;">
+                                                </cn2-textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Instructions</h2>
+                        <ol class="mls-intro-list">
+                            <li>This form is to be digitally signed by the appointed Qualified Person.</li>
+                            <li>This form may take 10-15 minutes to complete</li>
+                            </ul>
+                    </div>
+                </div>
+
+                <div id="page2">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Application</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td width="35%">Project Reference Number</td>
+                                            <td>
+                                                <cn2-textbox id="Project_Project_Ref_No10" no-label mandatory disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Project Title</td>
+                                            <td>
+                                                <cn2-textarea id="Project_Title10" maxlength="32400" no-label disabled>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Description of Building Works</td>
+                                            <td>
+                                                <cn2-textarea id="Project_Title20" maxlength="32400" no-label>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Location Description </td>
+                                            <td>
+                                                <cn2-textarea id="Project_Location_Description10" no-label disabled>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>For the month of*</td>
+                                            <td>
+                                                <div style="display:flex">
+                                                    <div style="margin-right: 3px;width: 150px">
+                                                        <cn2-select
+                                                            options="Jan:Jan,Feb:Feb,Mar:Mar,Apr:Apr,May:May,Jun:Jun,Jul:Jul,Aug:Aug,Sep:Sep,Oct:Oct,Nov:Nov,Dec:Dec"
+                                                            id="For_The_Month10" no-label event-change="applyDate(this)"
+                                                            mandatory>
+                                                    </div>
+                                                    <div width="flex:.5">
+                                                        &nbsp; Year* &nbsp;
+                                                    </div>
+                                                    <div style="width: 150px">
+                                                        <cn2-textbox id="For_The_Year10" no-label maxlength="4" numeric
+                                                            event-change="For_The_Year10_change(this)" mandatory>
+                                                        </cn2-textbox>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Submission Type*
+                                            </td>
+                                            <td>
+                                                <div style="width:150px">
+                                                    <cn2-select options="GBW:GBW,non-GBW:non-GBW" no-label
+                                                        id="Submission_Type10"
+                                                        event-change="Submission_Type10_change(this)" mandatory>
+                                                    </cn2-select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Commencement Date</td>
+                                            <td>
+                                                <cn2-datefield id="ErssUbwCommencementDate30" no-label
+                                                    onfocusout="validateDate(this)">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                ST Nos. included in this Annex E*
+                                                <br>
+                                                <cn2-button label="Add"
+                                                    event-click="insertDuplicate('stForm','A1'); ST(); disableDelete('stForm');removeError('stForm','PartOfAppl_StruPlanOfProjC');" />
+                                            </td>
+                                            <td>
+                                                <div id="stForm">
+                                                    <div style="display:flex;margin-top: 5px;" id="A1">
+                                                        <div style="margin-right: 6px; width:150px">
+                                                            <cn2-select options="ST:ST"
+                                                                id="PartOfAppl_StruPlanOfProjB10"
+                                                                prefix="PartOfAppl_StruPlanOfProjB" suffix="0" no-label
+                                                                group="st">
+                                                            </cn2-select>
+                                                        </div>
+                                                        <div style="margin-right: 5px;width: 150px">
+                                                            <cn2-textbox id="PartOfAppl_StruPlanOfProjC10"
+                                                                prefix="PartOfAppl_StruPlanOfProjC" suffix="0"
+                                                                maxlength="3" event-blur="adjustNumber(this, 3)" numeric
+                                                                no-label mandatory>
+                                                            </cn2-textbox>
+                                                        </div>
+                                                        <div align="right">
+                                                            <cn2-button label="Delete" id="delete1" prefix="delete"
+                                                                event-click="removeRow(this.id,'A1','stForm','div'); disableDelete('stForm')"
+                                                                danger disabled group="stDelete" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page3">
+                    <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom:10px">
+                        <h2>Section I Particulars of Qualified Person (Supervision)</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr hidden>
+                                            <td>Member ID</td>
+                                            <td>
+                                                <cn2-textbox no-label id='Member_Member_SID_HDBPE10' disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">
+                                                Name*
+                                            </td>
+                                            <td>
+                                                <cn2-select id="Member_Member_Name_HDBPE10"
+                                                    event-change="loadDropDownDetails(this); clearUEN('Members_UEN_HDBPE10')"
+                                                    data-options="qpDropdown" no-label mandatory></cn2-select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Registration No.</td>
+                                            <td>
+                                                <cn2-textbox no-label id='MemberRole_Professional_No_HDBPE10' disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Firm Name</td>
+                                            <td>
+                                                <cn2-textbox no-label id='Member_Firm_Name_HDBPE10' disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>UEN</td>
+                                            <td>
+                                                <cn2-textbox no-label id='Members_UEN_HDBPE10' maxlength="10"
+                                                    template="#########@" event-blur="uenValidate(this)">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Designation</td>
+                                            <td>
+                                                <cn2-textbox no-label id='Members_Designation_HDBPE10' maxlength="12"
+                                                    disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Address</td>
+                                            <td>
+                                                <cn2-textarea no-label id='Member_Address_HDBPE10' disabled>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Telephone No.</td>
+                                            <td>
+                                                <cn2-textbox no-label numeric id='Member_Tel_No_HDBPE10' disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mobile No.</td>
+                                            <td>
+                                                <cn2-textbox no-label numeric id='Member_Mobile_No_HDBPE10' disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email Address</td>
+                                            <td>
+                                                <cn2-textbox no-label id='Member_Email_Address1_HDBPE10' disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Declaration by Qualified Person (Supervision)</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                I confirm that for the month of
+                                <cn2-textbox id="For_The_Month_QP10" inline="4" disabled></cn2-textbox>
+                                Year
+                                <cn2-textbox id="For_The_Year_QP10" inline="4" disabled></cn2-textbox>
+                                that the readings
+                                of the monitoring instruments
+                                have
+                                been properly taken by the instrumentation specialists and that a record of the
+                                dates
+                                and times of these events including the construction/excavation activities have
+                                been
+                                kept and declare that-
+                                <p><i>(please tick every appropriate box below)</i></p>
+                            </div>
+                        </div>
+
+                        <table class="table table-bordered" style="margin-top: 5px;">
+                            <tbody>
+                                <tr>
+                                    <td width=1%>(1)</td>
+                                    <td>
+                                        <b>All</b> the critical instrumentation readings (for monitoring safety
+                                        of ERSS and neighbouring structures) have <b>not exceeded</b> the alert
+                                        of work suspension levels and there was <b>no reported damage</b> to
+                                        adjacent building/structure/boundary wall.
+                                        <br> <i>[If this box is ticked, there is no need to complete Sections
+                                            III & IV]</i>
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByQP_NoInstrumentExceedingAL_WSL10"
+                                            event-change="declaration_QP_change(this)">
+                                        </cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>(2)</td>
+                                    <td>
+                                        The basement structure or backfilling works have been <b>completed.</b>
+                                        I have inspected the site and its surroundings and confirm that they are
+                                        stable and there are no safety issues anticipated. This is the last
+                                        monthly declaration on instrumentation and monitoring for excavations
+                                        works.
+                                        <br><i>[If this box is ticked, there is no need to complete Sections III
+                                            & IV]</i>
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByQP_InstrumentExceedingAL10"
+                                            event-change="declaration_QP_change(this)">
+                                        </cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>(3)</td>
+                                    <td>
+                                        Critical instrumentation readings (for monitoring safety of ERSS and
+                                        neighbouring structures) <b> have exceeded the alert level </b>as shown
+                                        below.
+                                        <br><i>[If this box is ticked, please also complete Section III Section
+                                            A1]</i>
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByQP_InstrumentExceedingWSL10"
+                                            event-change="declaration_QP_change(this)">
+                                        </cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>(4)</td>
+                                    <td>
+                                        Critical instrumentation readings (for monitoring safety of ERSS and
+                                        neighbouring structures) <b>have exceeded the work suspension level</b>
+                                        and <b>work at site has been suspended.</b> I have directed the builder
+                                        to take corrective action to ensure safety as shwown in the report
+                                        submitted earlier to CBC/attached.
+                                        <br><i>[If this box is ticked, please also complete Section III Section
+                                            A2 & Section IV. (Applicable for AC projects only)]</i>
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByQP_NoBldgAffected10"
+                                            event-change="declaration_QP_change(this)">
+                                        </cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>(5)</td>
+                                    <td>
+                                        I have received report/feedback on damage to building(s)/boundary wall
+                                        as indicated in the report submitted earlier to CBC/attached. I have
+                                        inspected the affected building/boundary wall and <b>there is no
+                                            structural/stability issue.</b>
+                                        <br><i>[If this box is ticked, please also complete section III Section
+                                            A2 & Section IV. (Applicable for AC projects only)]</i>
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByQP_Damage_Highlighted_In_Report10"
+                                            event-change="declaration_QP_change(this)">
+                                        </cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>(6)</td>
+                                    <td>
+                                        All the instrumentation with critical limits shown in the approved plans
+                                        are installed at the site and are in working order.
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByQP_Works_Has_Been_Completed10"
+                                            event-change="declaration_QP_change(this)">
+                                        </cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>(7)</td>
+                                    <td>
+                                        There is <b>damage caused to the instrumentation with critical
+                                            limits</b> shown in the approved plans and I have notified the
+                                        Commissioner of Building Control of the affected instruments within 1
+                                        day after the damage is reported. I confirm that new instruments have
+                                        been installed at the site to replace the damaged instruments. I will
+                                        ensure that the readings recorded by the damaged instruments are carried
+                                        forward to the new instruments.
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByQP_Works_Has_Not_Commenced10"
+                                            event-change="declaration_QP_change(this)">
+                                        </cn2-checkbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="page4">
+                    <div class="mls-espo-right-inner-container" style="margin-bottom:10px">
+                        <h2>Section II Particulars of Qualified Person (Geo) (Supervision)</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr hidden>
+                                            <td>
+                                                Member ID
+                                            </td>
+                                            <td>
+                                                <cn2-textbox no-label id='Member_Member_SID_HDBPE20' disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">
+                                                Name<span group="gbwAsterisk"></span>
+                                            </td>
+                                            <td>
+                                                <cn2-select id="Member_Member_Name_HDBPE20" data-options="qpGeoDropdown"
+                                                    event-change="loadDropDownDetails(this); clearUEN('Members_UEN_HDBPE20')"
+                                                    no-label mandatory></cn2-select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Registration No.
+                                            </td>
+                                            <td>
+                                                <cn2-textbox no-label id='MemberRole_Professional_No_HDBPE20' disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Firm Name
+                                            </td>
+                                            <td>
+                                                <cn2-textbox no-label id='Member_Firm_Name_HDBPE20' disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                UEN
+                                            </td>
+                                            <td>
+                                                <cn2-textbox no-label id='Members_UEN_HDBPE20' maxlength="10"
+                                                    template="#########@" event-blur="uenValidate(this)">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Designation
+                                            </td>
+                                            <td>
+                                                <cn2-textbox no-label id='Members_Designation_HDBPE20' disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Address
+                                            </td>
+                                            <td>
+                                                <cn2-textarea no-label id='Member_Address_HDBPE20' disabled>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Telephone No.
+                                            </td>
+                                            <td>
+                                                <cn2-textbox numeric no-label id='Member_Tel_No_HDBPE20' disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Mobile No.
+                                            </td>
+                                            <td>
+                                                <cn2-textbox no-label id='Member_Mobile_No_HDBPE20' disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Email Address
+                                            </td>
+                                            <td>
+                                                <cn2-textbox no-label id='Member_Email_Address1_HDBPE20' disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Declaration by Qualified Person (Geo) (Supervision)<span group="gbwAsterisk"></span></h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span> I confirm that for the month of </span>
+                                <cn2-textbox id="For_The_Month_QP_Geo10" inline="4" disabled></cn2-textbox>
+                                Year
+                                <cn2-textbox id="For_The_Year_QP_Geo10" inline="4" disabled></cn2-textbox>
+                                that the readings of the monitoring instruments have been properly taken by
+                                the
+                                instrumentation specialists and that a record of the dates and times of
+                                these events
+                                including the construction/excavation activities have been kept and declare
+                                that-
+                                </span>
+                                <p><i>(please tick every appropriate box below)</i></p>
+                            </div>
+                        </div>
+
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td width=1%>(1)</td>
+                                    <td>
+                                        <b>All</b> the critical instrumentation readings (for monitoring safety
+                                        of ERSS and neighbouring structures) have <b>not exceeded</b> the alert
+                                        of work suspension levels and there was <b>no reported damage</b> to
+                                        adjacent building/structure/boundary wall.
+                                        <br> <i>[If this box is ticked, there is no need to complete Sections
+                                            III & IV]</i>
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByQPGeo_NoInstrumentExceedingAL_WSL10"
+                                            event-change="declaration_QPGeo_change(this)">
+                                        </cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>(2)</td>
+                                    <td>
+                                        The basement structure or backfilling works have been <b>completed.</b>
+                                        I have inspected the site and its surroundings and confirm that they are
+                                        stable and there are no safety issues anticipated. This is the last
+                                        monthly declaration on instrumentation and monitoring for excavations
+                                        works.
+                                        <br><i>[If this box is ticked, there is no need to complete Sections III
+                                            & IV]</i>
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByQPGeo_InstrumentExceedingAL10"
+                                            event-change="declaration_QPGeo_change(this)"></cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>(3)</td>
+                                    <td>
+                                        Critical instrumentation readings (for monitoring safety of ERSS and
+                                        neighbouring structures) <b> have exceeded the alert level </b>as shown
+                                        below.
+                                        <br><i>[If this box is ticked, please also complete Section III Section
+                                            A1]</i>
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByQPGeo_InstrumentExceedingWSL10"
+                                            event-change="declaration_QPGeo_change(this)"></cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>(4)</td>
+                                    <td>
+                                        Critical instrumentation readings (for monitoring safety of ERSS and
+                                        neighbouring structures) <b>have exceeded the work suspension level</b>
+                                        and <b>work at site has been suspended.</b> I have directed the builder
+                                        to take corrective action to ensure safety as shwown in the report
+                                        submitted earlier to CBC/attached.
+                                        <br><i>[If this box is ticked, please also complete Section III Section
+                                            A2 & Section IV. (Applicable for AC projects only)]</i>
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByQPGeo_NoBldgAffected10"
+                                            event-change="declaration_QPGeo_change(this)">
+                                        </cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>(5)</td>
+                                    <td>
+                                        I have received report/feedback on damage to building(s)/boundary wall
+                                        as indicated in the report submitted earlier to CBC/attached. I have
+                                        inspected the affected building/boundary wall and <b>there is no
+                                            structural/stability issue.</b>
+                                        <br><i>[If this box is ticked, please also complete section III Section
+                                            A2 & Section IV. (Applicable for AC projects only)]</i>
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByQPGeo_Damage_Highlighted_In_Report10"
+                                            event-change="declaration_QPGeo_change(this)">
+                                        </cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>(6)</td>
+                                    <td>
+                                        All the instrumentation with critical limits shown in the approved plans
+                                        are installed at the site and are in working order.
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByQPGeo_Works_Has_Been_Completed10"
+                                            event-change="declaration_QPGeo_change(this)">
+                                        </cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>(7)</td>
+                                    <td>
+                                        There is <b>damage caused to the instrumentation with critical
+                                            limits</b> shown in the approved plans and I have notified the
+                                        Commissioner of Building Control of the affected instruments within 1
+                                        day after the damage is reported. I confirm that new instruments have
+                                        been installed at the site to replace the damaged instruments. I will
+                                        ensure that the readings recorded by the damaged instruments are carried
+                                        forward to the new instruments.
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByQPGeo_Works_Has_Not_Commenced10"
+                                            event-change="declaration_QPGeo_change(this)"></cn2-checkbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="page5">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>
+                            INSTRUMENTATION MONITORING AND DAMAGE REPORTING
+                            <span style="display: block; font-size: medium;">
+                                (fill in this section only if the alert or
+                                work suspension levels are exceeded or damaged observed on building/structure, including
+                                boundary wall)
+                            </span>
+                        </h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                Ground lateral movement/settlement/other instruments
+                            </div>
+                        </div>
+                        <br>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <cn2-button label="Add" id="addA10"
+                                    event-click="insertDuplicate('buildingForm2','C1'); disDelete('buildingForm2', `[prefix='deleteA']`)"
+                                    disabled>
+                                </cn2-button>
+                            </div>
+                        </div>
+                        <div id="accordion">
+                            <div id="buildingForm2">
+                                <div id="C1" class="C1" parent>
+                                    <h2 class="accordion-toggle">
+                                        <table class="table table-borderless">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="align-middle">Instrument
+                                                        Ref.<span group="qpSuper"></span>
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        <cn2-textbox id="Ground_Monitoring_Instr_Ref10"
+                                                            prefix="Ground_Monitoring_Instr_Ref" suffix="0"
+                                                            maxlength="30" no-label disabled></cn2-textbox>
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        Current
+                                                        reading<span group="qpSuper"></span>
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        <cn2-textbox id="Ground_Monitoring_Curr_Reading10"
+                                                            prefix="Ground_Monitoring_Curr_Reading" suffix="0"
+                                                            maxlength="30" no-label disabled></cn2-textbox>
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        <!-- <cn2-button style="float:right" label="Delete"
+                                                                    id="PartOfTheOWNER_Delete10"
+                                                                    prefix="PartOfTheOWNER_Delete" suffix="0" danger
+                                                                    event-click="removeDuplicate(this.id,'form1','particularsOfApplicationForm')">
+                                                                </cn2-button> -->
+
+
+                                                        <cn2-button id="deleteA10" label="Delete" prefix="deleteA"
+                                                            style="float:right"
+                                                            event-click="removeDuplicate(this.id,'C1','buildingForm2'); disDelete('buildingForm2', `[prefix='deleteA']`)"
+                                                            suffix="0" danger disabled></cn2-button>
+                                                    </td>
+                                                    <td><span class="fa fa-angle-down collapsed" data-toggle="collapse"
+                                                            href="#accor1" id="#accor1" prefix="#accor" child
+                                                            onclick="spanUpDown(this)" aria-expanded="false"></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </h2>
+                                    <div id="accor1" class="panel-collapse collapse" child="div" prefix="accor">
+                                        <table class="table table-borderless">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="35%">Alert Level<span group="qpSuper"></span></td>
+                                                    <td>
+                                                        <cn2-textbox id="Ground_Monitoring_AL10"
+                                                            prefix="Ground_Monitoring_AL" suffix="0" no-label
+                                                            disabled />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Work Suspension
+                                                        Level<span group="qpSuper"></span></td>
+                                                    <td>
+                                                        <cn2-textbox id="Ground_Monitoring_WSL10"
+                                                            prefix="Ground_Monitoring_WSL" suffix="0" no-label
+                                                            disabled />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Date of
+                                                        Reading<span group="qpSuper"></span></td>
+                                                    <td>
+                                                        <cn2-datefield id="Ground_Monitoring_Date_Of_Reading10"
+                                                            prefix="Ground_Monitoring_Date_Of_Reading" suffix="0"
+                                                            no-label disabled onfocusout="validateDate(this)" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Remarks<span group="qpSuper"></span></td>
+                                                    <td>
+                                                        <cn2-textbox id="Ground_Monitoring_Remarks10"
+                                                            prefix="Ground_Monitoring_Remarks" suffix="0"
+                                                            maxlength="100" no-label disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>AL Exceeded?
+                                                        (Yes/No)</td>
+                                                    <td>
+                                                        <cn2-select mandatory no-label id="Ground_AL_Exceeded10"
+                                                            options="Yes:Yes,No:No" inline="4"></cn2-select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>WSL Exceeded?
+                                                        (Yes/No)</td>
+                                                    <td>
+                                                        <cn2-select mandatory no-label id="Ground_WSL_Exceeded10"
+                                                            options="Yes:Yes,No:No" inline="4"></cn2-select>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pt-2">
+                                Building settlement/monitoring
+                            </div>
+                        </div>
+                        <br>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <cn2-button label="Add" id="addB10"
+                                    event-click="insertDuplicate('buildingForm','B1'); disDelete('buildingForm', `[prefix='deleteB']`)"
+                                    disabled>
+                                </cn2-button>
+                            </div>
+                        </div>
+                        <div id="accordion">
+                            <div id="buildingForm">
+                                <div id="B1" class="B1" parent>
+                                    <h2 class="accordion-toggle">
+                                        <table class="table table-borderless">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="align-middle">Instrument
+                                                        Ref.<span group="qpSuper"></span>
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        <cn2-textbox id="Bldg_Monitoring_Instr_Ref10"
+                                                            prefix="Bldg_Monitoring_Instr_Ref" suffix="0" maxlength="30"
+                                                            no-label disabled />
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        Current
+                                                        reading<span group="qpSuper"></span>
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        <cn2-textbox id="Bldg_Monitoring_Curr_Reading10"
+                                                            prefix="Bldg_Monitoring_Curr_Reading" suffix="0" no-label
+                                                            disabled />
+                                                    </td>
+                                                    <td class="align-middle">
+
+                                                        <cn2-button id="deleteB10" label="Delete" prefix="deleteB"
+                                                            style="float:right"
+                                                            event-click="removeDuplicate(this.id,'B1','buildingForm'); disDelete('buildingForm', `[prefix='deleteB']`)"
+                                                            suffix="0" danger disabled></cn2-button>
+                                                    </td>
+                                                    <td><span class="fa fa-angle-down collapsed" data-toggle="collapse"
+                                                            href="#collapse1" id="#collapse1" prefix="#collapse" child
+                                                            onclick="spanUpDown(this)" aria-expanded="false"></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </h2>
+                                    <div id="collapse1" class="panel-collapse collapse" child="div" prefix="collapse">
+                                        <table class="table table-borderless">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="35%">Alert Level<span group="qpSuper"></span></td>
+                                                    <td>
+                                                        <cn2-textbox id="Bldg_Monitoring_AL10"
+                                                            prefix="Bldg_Monitoring_AL" suffix="0" no-label disabled />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Work Suspension
+                                                        Level<span group="qpSuper"></span></td>
+                                                    <td>
+                                                        <cn2-textbox id="Bldg_Monitoring_WSL10"
+                                                            prefix="Bldg_Monitoring_WSL" suffix="0" no-label disabled />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Date of
+                                                        Reading<span group="qpSuper"></span></td>
+                                                    <td>
+                                                        <cn2-datefield id="Bldg_Monitoring_Date_Of_Reading10"
+                                                            prefix="Bldg_Monitoring_Date_Of_Reading" suffix="0" no-label
+                                                            disabled onfocusout="validateDate(this)" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Remarks<span group="qpSuper"></span></td>
+                                                    <td>
+                                                        <cn2-textbox id="Bldg_Monitoring_Remarks10"
+                                                            prefix="Bldg_Monitoring_Remarks" suffix="0" maxlength="100"
+                                                            no-label disabled />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>AL Exceeded?
+                                                        (Yes/No)</td>
+                                                    <td>
+                                                        <cn2-select mandatory no-label id="Bldg_AL_Exceeded10"
+                                                            options="Yes:Yes,No:No" inline="4"></cn2-select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>WSL Exceeded?
+                                                        (Yes/No)</td>
+                                                    <td>
+                                                        <cn2-select mandatory no-label id="Bldg_WSL_Exceeded10"
+                                                            options="Yes:Yes,No:No" inline="4"></cn2-select>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pt-2">
+                                Building damage (including boundary wall, structural and non-structural damage)
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <td width="29%" class="text-center align-middle">Building name/address</td>
+                                            <td width="29%" class="text-center align-middle">Description</td>
+                                            <td width="29%" class="text-center align-middle">Remarks</td>
+                                            <td width="1%"></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="buildingDamForm">
+                                        <tr id="D1">
+                                            <td width="29%">
+                                                <cn2-textbox id="Damage_Bldg_Name10" prefix="Damage_Bldg_Name"
+                                                    suffix="0" no-label disabled />
+                                            </td>
+                                            <td width="29%">
+                                                <cn2-textbox id="Damage_Bldg_Desc10" prefix="Damage_Bldg_Desc"
+                                                    suffix="0" no-label disabled />
+                                            </td>
+                                            <td width="29%">
+                                                <cn2-textbox id="Damage_Bldg_Remarks10" prefix="Damage_Bldg_Remarks"
+                                                    suffix="0" no-label disabled />
+                                            </td>
+                                            <td width="1%">
+                                                <cn2-button id="deleteC10" label="Delete" prefix="deleteC" suffix="0"
+                                                    event-click="removeRow(this.id,'D1','buildingDamForm','tr'); disDelete('buildingDamForm', `[prefix='deleteC']`)"
+                                                    danger disabled />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12" style="margin-left:12px">
+                                <cn2-button id="addC10" label="Add"
+                                    event-click="appendRow('buildingDamForm','D1'); disDelete('buildingDamForm', `[prefix='deleteC']`)"
+                                    disabled />
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pt-2">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td width=1%>1.</td>
+                                            <td>I have inspected the site and satisfied that the works are built in
+                                                accordance with BCA approved plans and the surrounding properties are
+                                                safe.<span group="qpSuper"></span></td>
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="Site_Has_Been_Inspected10"
+                                                    event-click="remoMand(this)"></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="page6_1">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>
+                            <div style="display:flex">
+                                <div style="white-space: nowrap; margin-right: 5px;">
+                                    Section III
+                                </div>
+                                <div>
+                                    When applicable, to be completed and certified by QP(D) and QP(Geo)(D) [for
+                                    GBW], with assessment report appended
+                                </div>
+                            </div>
+                        </h2>
+                        <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                            <div class="mls-espro-form-fields row">
+                                <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 5px;">
+                                    <p><b><u>Section A1: The alert level is reached</u></b></p>
+                                    We have reviewed the performance of the ERSS and declare that-
+                                    <br><i>(please tick every appropriate box below)</i>
+                                    <p></p>
+                                    <div class="mls-espro-form-fields row">
+                                        <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                            <table class="table table-borderless" style="vertical-align: baseline;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="padding-top: 20px;">
+                                                            <input type="radio" name="a1QpdQpgeo"
+                                                                id="DeclGBW_NoChanToThe10"
+                                                                onchange="a1QpdQpgeo_change(this)" disabled>
+                                                        </td>
+                                                        <td>
+                                                            <b>No change to the approved ERSS is required.</b> The
+                                                            Builder
+                                                            <cn2-select id="DeclGBW_WillOrWillNot10"
+                                                                options="will:will, will not: will not" inline="2"
+                                                                no-label disabled>
+                                                            </cn2-select>
+                                                            be required to implement additional measures.
+                                                            <br><i>(Addtional measures should be included in an attached
+                                                                report).</i>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="radio" name="a1QpdQpgeo"
+                                                                id="DeclGBW_ChanToTheAppr10"
+                                                                onchange="a1QpdQpgeo_change(this)" disabled>
+                                                        </td>
+                                                        <td>
+                                                            <b>Changes to the approved ERSS are required.</b>
+                                                            Amendment submission to BCA will be required.
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 5px;">
+                                    <p><b><u>Section A2: The work suspension level is reached.<span
+                                                    id="gbwSecAste"></span></u></b></p>
+                                    A comprehensive design review, which includes full analyses with justification and
+                                    validation to check on the stability requirements and to ensure that all minimum
+                                    mobilisation factors, load factors and safety factors including robustness
+                                    considerations are adequately met,
+                                    <cn2-select id="DeclGBW_HasBeenHasIs10"
+                                        options="has been:has been, is being:is being" inline="3" no-label disabled>
+                                    </cn2-select>
+                                    carried out and
+                                    <cn2-select id="DeclGBW_IsBeWillBe10" options="is:is, will be:will be" inline="3"
+                                        no-label disabled>
+                                    </cn2-select>
+                                    shown in an attached report. There are changes to the approved ERSS plans. We
+                                    declare
+                                    that amendment submission
+                                    <cn2-select id="DeclGBW_HasBeenWillBe10"
+                                        options="has been:has been, is being:is being" inline="3" no-label disabled>
+                                    </cn2-select>
+                                    made to CBC. CBC has been earlier notified on
+                                    <cn2-datefield id="DeclGBW_Date10" inline="3" no-label disabled />
+                                </div>
+
+
+                                <div class="mls-espo-right-inner-container borderchecking">
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <td colspan="3" style="padding-bottom: 0px;">
+                                                <div style="display: flex;">
+                                                    <div style="margin-right: 10px">
+                                                        <cn2-checkbox id="DeclGBW_QPDesi10"
+                                                            event-change="DeclGBW_QPDesi10_change(this)" disabled>
+                                                    </div>
+                                                    <div>
+                                                        QP Design<span id="Member_Member_Name_QP10_aste"></span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td hidden>
+                                                <cn2-textbox id="Member_Member_SID_QP10" no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                            <td>
+                                                <cn2-select id="Member_Member_Name_QP10" data-options="qpDesignDropdown"
+                                                    event-change="loadDropDownDetails(this)" no-label disabled>
+                                                </cn2-select>
+                                            </td>
+                                            <td width="1px" style="padding-top: 20px;">,</td>
+                                            <td>
+                                                <cn2-textbox id="MemberRole_Professional_No_QP10" no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" style="padding-bottom: 0px;">
+                                                <div style="display:flex">
+                                                    <div style="margin-right: 10px;">
+                                                        <cn2-checkbox id="DeclGBW_QPGEODesi10"
+                                                            event-change="DeclGBW_QPGEODesi10_change(this)" disabled>
+                                                        </cn2-checkbox>
+                                                    </div>
+                                                    <div>
+                                                        QP (GEO) Design:<span
+                                                            id="Member_Member_Name_HDBPE30_label"></span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td hidden>
+                                                <cn2-textbox id="Member_Member_SID_HDBPE30" no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                            <td>
+                                                <cn2-select id="Member_Member_Name_HDBPE30"
+                                                    data-options="qpGeoDesignDropdown"
+                                                    event-change="loadDropDownDetails(this)" no-label disabled>
+                                                </cn2-select>
+                                            </td>
+                                            <td>,</td>
+                                            <td>
+                                                <cn2-textbox id="MemberRole_Professional_No_HDBPE30" no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="page7_1">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>
+                            <div style="display:flex;">
+                                <div style="white-space: nowrap;margin-right: 10px;">
+                                    Section IV
+                                </div>
+                                <div>
+                                    When applicable, to be completed and certified by AC[for major ERSS and GBW] and
+                                    AC(Geo) [for GBW], with assessment report appended
+                                </div>
+                            </div>
+                        </h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 5px;">
+                                    <p><b><u>The work suspension level is reached.<span
+                                                    id="DeclGBW_AcGeo_HasBeenIs10_aste"></span></u></b></p>
+                                    A comprehensive design review, which includes full analyses with justification and
+                                    validation to check on the stability requirements and to ensure that all minimum
+                                    mobilisation factors, load factors and safety factors including robustness
+                                    considerations are adequately met,
+                                    <cn2-select id="DeclGBW_AcGeo_HasBeenIs10"
+                                        options="has been:has been, is being:is being" inline="2" no-label disabled>
+                                    </cn2-select>
+                                    carried out and
+                                    <cn2-select id="DeclGBW_AcGeo_IsWillBe10" options="is:is, will be:will be"
+                                        inline="2" no-label disabled>
+                                    </cn2-select>
+                                    shown in an attached report. There are changes to the approved ERSS plans. We
+                                    declare
+                                    that amendment submission
+                                    <cn2-select id="DeclGBW_AcGeo_HasBeenWillBe10"
+                                        options="has been:has been, is being:is being" inline="2" no-label disabled>
+                                    </cn2-select>
+                                    made to CBC.
+                                </div>
+
+                                <div class="mls-espo-right-inner-container borderchecking">
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <td colspan="3" style="padding-bottom: 0px;">
+                                                <div style="display: flex;">
+                                                    <div style="margin-right: 10px">
+                                                        <cn2-checkbox id="DeclGBW_AC10"
+                                                            event-change="DeclGBW_AC10_change(this)" disabled>
+                                                        </cn2-checkbox>
+                                                    </div>
+                                                    <div>
+                                                        Accredited Checker:<span id="DeclGBW_AC10_change_aste"></span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td hidden>
+                                                <cn2-textbox id="Member_Member_SID_AC10" no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                            <td>
+                                                <cn2-select id="Member_Member_Name_AC10" data-options="acDropdown"
+                                                    event-change="loadDropDownDetails(this)" no-label disabled>
+                                                </cn2-select>
+                                            </td>
+                                            <td width="1px" style="padding-top: 20px;">,</td>
+                                            <td>
+                                                <cn2-textbox id="MemberRole_Professional_No_AC10" no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" style="padding-bottom: 0px;">
+                                                <div style="display:flex">
+                                                    <div style="margin-right: 10px;">
+                                                        <cn2-checkbox id="DeclGBW_ACGeo10"
+                                                            event-change="DeclGBW_ACGeo10_change(this)" disabled>
+                                                        </cn2-checkbox>
+                                                    </div>
+                                                    <div>
+                                                        Accredited Checker (Geotechnical):<span
+                                                            id="DeclGBW_ACGeo10_change_aste"></span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td hidden>
+                                                <cn2-textbox id="Member_Member_SID_AC30" no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                            <td>
+                                                <cn2-select id="Member_Member_Name_AC30" data-options="acGeoDropdown"
+                                                    event-change="loadDropDownDetails(this)" no-label disabled>
+                                                </cn2-select>
+                                            </td>
+                                            <td>,</td>
+                                            <td>
+                                                <cn2-textbox id="MemberRole_Professional_No_AC30" no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="page6_2">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>
+                            <div style="display:flex;">
+                                <div style="white-space: nowrap;margin-right: 10px;">
+                                    Section III
+                                </div>
+                                <div>
+                                    When applicable, to be completed and certified by QP(D), with assessment report
+                                    appended
+                                </div>
+                            </div>
+                        </h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 5px;">
+                                    <p><b><u>Section A1: The alert level is reached</u></b></p>
+                                    I have reviewed the performance of the ERSS and declare that-
+                                    <br><i>(please tick every appropriate box below)</i>
+                                    <p></p>
+
+                                    <table class="table table-borderless">
+                                        <tbody>
+                                            <tr>
+                                                <td width="1%" style="padding-top: 20px;">
+                                                    <input type="radio" name="a1Qpd" id="DeclNonGBW_NoChanToThe10"
+                                                        onchange="a1Qpd_change(this)" disabled>
+                                                </td>
+                                                <td>
+                                                    <b>No change to the approved ERSS is required.</b> The
+                                                    Builder
+                                                    <cn2-select id="DeclNonGBW_WillOrWillNot10"
+                                                        options="will:will, will not: will not" inline="3" no-label
+                                                        disabled>
+                                                    </cn2-select>
+                                                    be required to implement additional measures.
+                                                    <br><i>(Addtional measures should be included in an attached
+                                                        report).</i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="radio" name="a1Qpd" id="DeclNonGBW_ChanToTheAppr10"
+                                                        onchange="a1Qpd_change(this)" disabled>
+                                                </td>
+                                                <td>
+                                                    <b>Changes to the approved ERSS are required.</b>
+                                                    Amendment submission to BCA will be required.
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 5px;">
+                                    <p><b><u>Section A2: The work suspension level is reached.<span
+                                                    id="SectionA2"></span></u></b></p>
+                                    A comprehensive design review, which includes full analyses with justification and
+                                    validation to check on the stability requirements and to ensure that all minimum
+                                    mobilisation factors, load factors and safety factors including robustness
+                                    considerations are adequately met,
+                                    <cn2-select id="DeclNonGBW_HasBeenHasIs10"
+                                        options="has been:has been, is being:is being" inline="3" no-label disabled>
+                                    </cn2-select>
+                                    carried out and
+                                    <cn2-select id="DeclNonGBW_IsBeWillBe10" options="is:is, will be:will be" inline="3"
+                                        no-label disabled>
+                                    </cn2-select>
+                                    shown in an attached report. There are changes to the approved ERSS plans. I
+                                    declare
+                                    that amendment submission
+                                    <cn2-select id="DeclNonGBW_HasBeenWillBe10"
+                                        options="has been:has been, is being:is being" inline="3" no-label disabled>
+                                    </cn2-select>
+                                    made to CBC. CBC has been earlier notified on
+                                    <cn2-datefield id="DeclNonGBW_Date10" inline="3" no-label disabled />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mls-espo-right-inner-container borderchecking">
+                            <table class="table table-borderless">
+                                <tr>
+                                    <td colspan="3" style="padding-bottom: 0px;">
+                                        <div style="display: flex;">
+                                            <div style="margin-right: 10px">
+                                                <cn2-checkbox id="DeclNonGBW_QPDesi10"
+                                                    event-change="DeclNonGBW_QPDesi10_change(this)" disabled>
+                                                </cn2-checkbox>
+                                            </div>
+                                            <div>
+                                                QP Design<span id="Member_Member_Name_QP20_aste"></span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td hidden>
+                                        <cn2-textbox id="Member_Member_SID_QP20" no-label disabled>
+                                        </cn2-textbox>
+                                    </td>
+                                    <td>
+                                        <cn2-select id="Member_Member_Name_QP20" data-options="qpDesignDropdown2"
+                                            event-change="loadDropDownDetails(this)" no-label disabled>
+                                        </cn2-select>
+                                    </td>
+                                    <td width="1px" style="padding-top: 20px;">,</td>
+                                    <td>
+                                        <cn2-textbox id="MemberRole_Professional_No_QP20" no-label disabled>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="page7_2">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>
+                            <div style="display:flex;">
+                                <div style="white-space: nowrap;margin-right: 10px;">
+                                    Section IV
+                                </div>
+                                <div>
+                                    When applicable, to be completed and certified by the AC [for major ERSS], with
+                                    assessment report appended
+                                </div>
+                            </div>
+                        </h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 5px;">
+                                    <p><b><u>The work suspension level is reached.<span id="sec4Non"></span></u></h2>
+                                        </b></p>
+                                    A comprehensive design review, which includes full analyses with justification and
+                                    validation to check on the stability requirements and to ensure that all minimum
+                                    mobilisation factors, load factors and safety factors including robustness
+                                    considerations are adequately met,
+                                    <cn2-select id="DeclNonGBW_AcGeo_HasBeenIs10"
+                                        options="has been:has been, is being:is being" inline="2" no-label disabled>
+                                    </cn2-select>
+                                    carried out and
+                                    <cn2-select id="DeclNonGBW_AcGeo_IsWillBe10" options="is:is, will be:will be"
+                                        inline="2" no-label disabled>
+                                    </cn2-select>
+                                    shown in an attached report. There are changes to the approved ERSS plans. I
+                                    declare
+                                    that amendment submission
+                                    <cn2-select id="DeclNonGBW_AcGeo_HasBeenWillBe10"
+                                        options="has been:has been, is being:is being" inline="2" no-label disabled>
+                                    </cn2-select>
+                                    made to CBC.
+                                </div>
+
+                                <div class="mls-espo-right-inner-container borderchecking">
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <td colspan="3" style="padding-bottom: 0px;">
+                                                <div style="display: flex;">
+                                                    <div style="margin-right: 10px">
+                                                        <cn2-checkbox id="DeclNonGBW_AC10"
+                                                            event-change="DeclNonGBW_AC10_change(this)" disabled>
+                                                        </cn2-checkbox>
+                                                    </div>
+                                                    <div>
+                                                        Accredited Checker:<span
+                                                            id="DeclNonGBW_AC10_change_aste"></span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td hidden>
+                                                <cn2-textbox id="Member_Member_SID_AC20" no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                            <td>
+                                                <cn2-select id="Member_Member_Name_AC20" data-options="acDropdown2"
+                                                    event-change="loadDropDownDetails(this)" no-label disabled>
+                                                </cn2-select>
+                                            </td>
+                                            <td width="1px" style="padding-top: 20px;">,</td>
+                                            <td>
+                                                <cn2-textbox id="MemberRole_Professional_No_AC20" no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <cn2-fixed-footer></cn2-fixed-footer>
+    <cn2-version-footer></cn2-version-footer>
+    </div>
+</body>
+
+</html>

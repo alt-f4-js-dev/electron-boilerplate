@@ -1,0 +1,43 @@
+{
+  "form__name": "PUB-CSC-CLR",
+  "form__last_update_date": "",
+  "form__create_date": "",
+  "form__version": "1.0",
+
+  "FormName10": "PUB-CSC-CLR",
+  "Date10": "",
+  "Addr10": "PUBBPU",
+  "Addr20": "Building Plan Unit\nPUB\n40 Scotts Road #16-01\nEnvironment Building\nSingapore 228231",
+
+  "Project_Project_Ref_No10": "",
+  "Project_Title10": "",
+  "Project_Location_Description10": "",
+  "PartOfAppl_PlanTypeA10": "",
+  "PartOfAppl_PlanTypeB10": "",
+  "Member_Member_Name_QP10": "",
+  "MemberRole_Member_Role_Code_Desc_QP10": "",
+  "MemberRole_Professional_No_QP10": "",
+  "Member_Firm_Name_QP10": "",
+  "Member_Address_QP10": "",
+  "Member_Tel_No_QP10": "",
+  "Member_Email_Address1_QP10": "",
+  "DeclByQualPers_IAmTheQP10": false,
+  "DeclByQualPers_ThePartOfProj10": false,
+  "DeclByQualPers_TheProjHasObta10": false,
+  "DeclByQualPers_TheProjHasObta20": false,
+  "Atta_TopClerForSani10": false,
+  "Atta_TopClerForSani20": "",
+  "Atta_TopClerForSani30": false,
+  "Atta_TopClerForDrai10": false,
+  "Atta_TopClerForDrai20": "",
+  "Atta_TopClerForDrai30": false,
+  "qpDropdown": [{
+    "Member_Member_Name_QP10": "",
+    "MemberRole_Member_Role_Code_Desc_QP10": "",
+    "MemberRole_Professional_No_QP10": "",
+    "Member_Firm_Name_QP10": "",
+    "Member_Address_QP10": "",
+    "Member_Tel_No_QP10": "",
+    "Member_Email_Address1_QP10": ""
+  }]
+}

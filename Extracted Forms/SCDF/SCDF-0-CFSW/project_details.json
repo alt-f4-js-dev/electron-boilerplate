@@ -1,0 +1,132 @@
+{
+  "form__name": "SCDF-0-CFSW",
+  "form__last_update_date": "",
+  "form__create_date": "",
+  "form__version": "1.0",
+  "FormName10": "FSSD-0-CFSW",
+  "agencyUrl10": {
+    "url": "https://scdf.e.api.gov.sg:443/corenet2fisops/api/getFscCfswAppBPRefNos",
+    "params": "",
+    "body": {}
+  },
+  "agencyUrl20": {
+    "url": "https://scdf.e.api.gov.sg:443/corenet2fisops/api/getFscCfswAppFPRefNos",
+    "params": "",
+    "body": {}
+  },
+  "agencyUrl30": {
+    "url": "https://scdf.e.api.gov.sg:443/corenet2fisops/api/getFscCfswAppMVRefNos",
+    "params": "",
+    "body": {}
+  },
+  "agencyUrl40": {
+    "url": "https://scdf.e.api.gov.sg:443/corenet2fisops/api/getFscCfswAppPBRefNos",
+    "params": "",
+    "body": {}
+  },
+  "agencyUrl50": {
+    "url": "https://scdf.e.api.gov.sg:443/corenet2fisops/api/validateFscCfswAppBPRefNo",
+    "params": "",
+    "body": {}
+  },
+  "agencyUrl60": {
+    "url": "https://scdf.e.api.gov.sg:443/corenet2fisops/api/validateFscCfswAppFPRefNo",
+    "params": "",
+    "body": {}
+  },
+  "agencyUrl70": {
+    "url": "https://scdf.e.api.gov.sg:443/corenet2fisops/api/validateFscCfswAppMVRefNo",
+    "params": "",
+    "body": {}
+  },
+  "agencyUrl80": {
+    "url": "https://scdf.e.api.gov.sg:443/corenet2fisops/api/validateFscCfswAppPBRefNo",
+    "params": "",
+    "body": {}
+  },
+  "Date10": "",
+  "Addr10": "FSSB",
+  "Addr20": "The Commissioner\nSingapore Civil Defence Force",
+  "Project_Project_Ref_No10": "",
+  "Project_Title10": "",
+  "Project_Location_Description10": "",
+  "PartOfFSSBAppr_plan_no": "",
+  "PartOfFSSBAppr_title": "",
+  "PartOfFSSBAppr_A1": "",
+  "PartOfFSSBAppr_B1": "",
+  "PartOfFSSBAppr_C1": "",
+  "PartOfFSSBAppr_D1": "",
+  "PartOfCert_FireSafeWorkCert10": "",
+  "PartOfArchProf_A1": "",
+  "PartOfArchProf_B1": "",
+  "PartOfArchProf_C1": "",
+  "PartOfArchProf_D1": "",
+  "PartOfProfEngi_A1": "",
+  "PartOfProfEngi_B1": "",
+  "PartOfProfEngi_C1": "",
+  "PartOfProfEngi_D1": "",
+  "Member_Member_Name_QP10": "",
+  "MemberRole_Member_Role_Code_Desc_QP10": "",
+  "MemberRole_Professional_No_QP10": "",
+  "Member_IC_Passport_No_QP10": "",
+  "Member_IC_Passport_No_QP10_mask": "",
+  "Member_SID_QP10": "",
+  "Member_QP_Firm_Name_10": "",
+  "Member_Address_QP10": "",
+  "Member_Address_Type_QP10": "",
+  "Member_Address_Hse_Blk_QP10": "",
+  "Member_Address_Bldg_Name_QP10": "",
+  "Member_Address_Level_No_QP10": "",
+  "Member_Address_Unit_No_QP10": "",
+  "Member_Address_Road_Code_Desc_QP10": "",
+  "Member_Address_Postal_Code_QP10": "",
+  "Member_Address_AddressLine1_QP10": "",
+  "Member_Address_AddressLine2_QP10": "",
+  "Member_Address_AddressLine3_QP10": "",
+  "Member_Address_AddressLine4_QP10": "",
+  "Members_UEN_QP10": "",
+  "Member_Tel_No_QP10": "",
+  "Member_Email_Address1_QP10": "",
+  "POPUP1": "",
+  "CertByQualPers_IHereCertThat10": false,
+  "qpDropdown10": [
+    {
+      "Member_SID_QP10": "",
+      "Member_Member_Name_QP10": "",
+      "MemberRole_Member_Role_Code_Desc_QP10": "",
+      "MemberRole_Professional_No_QP10": "",
+      "Member_IC_Passport_No_QP10_mask": "",
+      "Member_IC_Passport_No_QP10": "",
+      "Member_Address_QP10": "",
+      "Member_QP_Firm_Name_10": "",
+      "Members_UEN_QP10": "",
+      "Member_Tel_No_QP10": "",
+      "Member_Email_Address1_QP10": "",
+      "Member_Address_Type_QP10": "",
+      "Member_Address_Hse_Blk_QP10": "",
+      "Member_Address_Bldg_Name_QP10": "",
+      "Member_Address_Level_No_QP10": "",
+      "Member_Address_Unit_No_QP10": "",
+      "Member_Address_Road_Code_Desc_QP10": "",
+      "Member_Address_Postal_Code_QP10": "",
+      "Member_Address_AddressLine1_QP10": "",
+      "Member_Address_AddressLine2_QP10": "",
+      "Member_Address_AddressLine3_QP10": "",
+      "Member_Address_AddressLine4_QP10": ""
+    }
+  ],
+  "appvBPplan10": [
+    {
+      "PartOfArchProf_A1": "",
+      "PartOfArchProf_B1": ""
+    }
+  ],
+  "agencyUrlJSON10": "https://scdf.e.api.gov.sg:443/corenet2fisops/api/getFscCfswAppBPRefNos",
+  "agencyUrlJSON20": "https://scdf.e.api.gov.sg:443/corenet2fisops/api/getFscCfswAppFPRefNos",
+  "agencyUrlJSON30": "https://scdf.e.api.gov.sg:443/corenet2fisops/api/getFscCfswAppMVRefNos",
+  "agencyUrlJSON40": "https://scdf.e.api.gov.sg:443/corenet2fisops/api/getFscCfswAppPBRefNos",
+  "agencyUrlJSON50": "https://scdf.e.api.gov.sg:443/corenet2fisops/api/validateFscCfswAppBPRefNo",
+  "agencyUrlJSON60": "https://scdf.e.api.gov.sg:443/corenet2fisops/api/validateFscCfswAppFPRefNo",
+  "agencyUrlJSON70": "https://scdf.e.api.gov.sg:443/corenet2fisops/api/validateFscCfswAppMVRefNo",
+  "agencyUrlJSON80": "https://scdf.e.api.gov.sg:443/corenet2fisops/api/validateFscCfswAppPBRefNo"
+}

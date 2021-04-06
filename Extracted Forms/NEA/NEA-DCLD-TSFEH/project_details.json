@@ -1,0 +1,60 @@
+{
+  "form__name": "NEA-DCLD-TSFEH",
+  "form__last_update_date": "",
+  "form__create_date": "",
+  "form__version": "1.0",
+  "Date10": "",
+  "Addr10": "Development Control and Licensing Department (DCLD)",
+  "Addr20": "National Environment Agency\n40, Scotts Road #12-00\nEnvironment Building\nSingapore 228231",
+  "Project_Project_Ref_No10": "",
+  "Project_Title10": "",
+  "Project_Location_Description10": "",
+  "PartOfAppl_DevePropAppl10": "",
+  "PartOfAppl_DepaFileRefeNo10": "",
+  "Member_SID_BLDR10": "",
+  "Member_Member_Name_BLDR10": "",
+  "Member_Firm_Name_BLDR10": "",
+  "Members_UEN_BLDR10": "",
+  "Member_Address_BLDR10": "",
+  "Member_Tel_No_BLDR10": "",
+  "Member_Email_Address1_BLDR10": "",
+  "Member_SID_QP10": "",
+  "Member_Member_Name_QP10": "",
+  "MemberRole_Member_Role_Code_Desc_QP10": "",
+  "MemberRole_Professional_No_QP10": "",
+  "Member_Firm_Name_QP10": "",
+  "Members_UEN_QP10": "",
+  "Member_Address_QP10": "",
+  "Member_Tel_No_QP10": "",
+  "Member_Ext_No_QP10": "",
+  "Member_Fax_No_QP10": "",
+  "Member_Email_Address1_QP10": "",
+  "DeclByQualPers_ThePartGiveIn10": false,
+  "DeclByQualPers_IHereCertThat10": false,
+  "DeclByQualPers_CleaWillBeObta10": false,
+  "SubmChec_PlanOnTheSani10": false,
+  "builderDropdown": [
+    {
+      "Member_Member_Name_BLDR10": "",
+      "Member_Firm_Name_BLDR10": "",
+      "Member_Address_BLDR10": "",
+      "Members_UEN_BLDR10": "",
+      "Member_Tel_No_BLDR10": "",
+      "Member_Email_Address1_BLDR10": ""
+    }
+  ],
+  "qpDropdown": [
+    {
+      "Member_Member_Name_QP10": "",
+      "MemberRole_Member_Role_Code_Desc_QP10": "",
+      "MemberRole_Professional_No_QP10": "",
+      "Member_Firm_Name_QP10": "",
+      "Member_Address_QP10": "",
+      "Members_UEN_QP10": "",
+      "Member_Tel_No_QP10": "",
+      "Member_Ext_No_QP10": "",
+      "Member_Fax_No_QP10": "",
+      "Member_Email_Address1_QP10": ""
+    }
+  ]
+}

@@ -1,0 +1,3583 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <title>LTA-DBC_RAILS</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2standardfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+  <script src="../cm/js/components/cn2switchbutton.js"></script>
+
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head
+    title="SUBMISSION UNDER THE RAPID TRANSIT SYSTEMS (DEVELOPMENT AND BUILDING WORKS IN RAILWAY CORRIDOR AND RAILWAY PROTECTION ZONE) REGULATIONS">
+  </cn2-master-head>
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p>
+          <b>For enquiries related to forms, please contact the
+            following:</b>
+        </p>
+        <p><span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>LTA</td>
+                <td>fook_khee_wong@lta.gov.sg</td>
+                <td>63328304</td>
+                <td>Policies(Rails)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+  <input type="hidden" id="member_id" name="member_id" />
+  <input type="hidden" id="form_validated" name="form_validated" />
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions">
+        </cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Application Type and Information">
+        </cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars and Declaration of QP">
+        </cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4" label="Fee Computation" hidden>
+        </cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" no-label inline="5" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To:</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textbox no-label inline="5" id="Addr10" disabled>
+                        </cn2-textbox>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea id="Addr20" no-label inline="5" disabled style="height: 90px;">
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container" style="margin-bottom:65px">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>
+                This form is to be completed and digitally signed by the Qualified Person.
+              </li>
+              <li>
+                It may take you 5 to 10 minutes to complete this form.
+              </li>
+              <li>
+                Please select the correct application type.
+              </li>
+              <li>
+                For submission of Instrumentation Monitoring Report, Please select “New Submission (ES)” for initial
+                readings and “Correspondence (CR)” for subsequent instrumentation readings.
+              </li>
+              <li>
+                This form MUST be attached for all (ES) and (CR) submissions.
+              </li>
+              <li>
+                This form MUST NOT be re-named.
+              </li>
+              <li>
+                All mandatory fields/checkboxes denoted by * must be filled in.
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Submission Type</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td colspan="2" class="text-center">
+                        <input type="radio" id="Sub_Type_RADIO1" name="subType" onclick="subType(this);" />&nbsp;New
+                        Submission
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" id="Sub_Type_RADIO2" name="subType"
+                          onclick="subType(this);" />&nbsp;Resubmission
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td width="35%" id="subTypeLBl">
+                        Submission No.
+                      </td>
+                      <td>
+                        <cn2-textbox no-label id="Sub_Number" disabled></cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <b>
+                          NOTE: Please provide ES submission number for
+                          Resubmission.
+                        </b>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Application Type (Please choose only one application)</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td>1.</td>
+                      <td>
+                        Application for Approval of Development Proposal in
+                        Railway Protection Zone / Railway Corridor
+                      </td>
+                      <td>
+                        <input type="radio" name="1-apptype" onclick="appTypeRadio(this)" id="ApplType_RLDeveCntrl" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2.</td>
+                      <td>
+                        Application for Approval of Building Proposal in
+                        Railway Protection Zone / Railway Corridor
+                      </td>
+                      <td>
+                        <input type="radio" name="1-apptype" onclick="appTypeRadio(this)" id="ApplType_RLBldgPlan" />
+                      </td>
+                    </tr>
+                    <tr afterDec>
+                      <td>3.</td>
+                      <td>
+                        Lodgement of Development Proposal in Railway Protection Zone
+                      </td>
+                      <td>
+                        <input type="radio" name="1-apptype" onclick="appTypeRadio(this)" id="ApplType_RLBldgPlan"
+                          newID="ApplType_LodgDevProp" />
+                      </td>
+                    </tr>
+                    <tr afterDec>
+                      <td>4.</td>
+                      <td>
+                        Lodgement of Building Proposal in Railway Protection Zone
+                      </td>
+                      <td>
+                        <input type="radio" name="1-apptype" onclick="appTypeRadio(this)" id="ApplType_RLBldgPlan"
+                          newID="ApplType_LodgBuilProp_RailProt" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><span beforeDec>5.</span></td>
+                      <td>
+                        Application for Amendment of Approved Proposal
+                      </td>
+                      <td>
+                        <input type="radio" name="1-apptype" onclick="appTypeRadio(this)" id="ApplType_RLEngWorks" />
+                      </td>
+                    </tr>
+                    <tr afterDec>
+                      <td>6.</td>
+                      <td>
+                        Application for Extension of NOA for Development
+                        Proposal / Building Proposal
+                      </td>
+                      <td>
+                        <input type="radio" name="1-apptype" onclick="appTypeRadio(this)" id="ApplType_RLExtOfNOA" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><span beforeDec>7.</span></td>
+                      <td>
+                        Application for Permit to Carry Out Engineering Works
+                        in Railway Protection Zone / Railway Corridor
+                      </td>
+                      <td>
+                        <input type="radio" name="1-apptype" onclick="appTypeRadio(this); changeToPage7(this)"
+                          id="ApplType_RLCertStaComp" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><span beforeDec>8.</span></td>
+                      <td>
+                        Application for Extension of Permit To Carry Out
+                        Engineering Work
+                      </td>
+                      <td>
+                        <input type="radio" name="1-apptype" onclick="appTypeRadio(this); DatePrevPermIssued();"
+                          id="ApplType_RLCrane" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><span beforeDec>9.</span></td>
+                      <td>
+                        Application for Clearance of Certificate of Statutory Completion for
+                        Development/ Building Works
+                        in Railway Protection Zone / Railway Corridor
+                      </td>
+                      <td>
+                        <input type="radio" name="1-apptype" onclick="appTypeRadio(this)"
+                          id="ApplType_StruInspCert20" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><span beforeDec>10.</span></td>
+                      <td>
+                        Submission of Updated LTA As-built Drawings and Documents Prior to
+                        Closure of Modification
+                        Request (COM)
+                      </td>
+                      <td>
+                        <input type="radio" name="1-apptype" onclick="appTypeRadio(this)" id="ApplType_RLSubofCert" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><span beforeDec>11.</span></td>
+                      <td>
+                        Submission of Instrumentation Monitoring Report
+                      </td>
+                      <td>
+                        <input type="radio" name="1-apptype" onclick="appTypeRadio(this)" id="ApplType_RLSubofIns" />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Section I – Application Information</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td width="35%">Project Reference Number</td>
+                      <td colspan="4">
+                        <cn2-textbox id="Project_Project_Ref_No10" maxlength="25" no-label disabled>
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Building Plan Reference Number</td>
+                      <td colspan="4">
+                        <cn2-textbox id="Building_Plan_Ref_No10" maxlength="50" no-label onclick="devSubType(this)">
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Project Title</td>
+                      <td colspan="4">
+                        <cn2-textarea id="Project_Title10" no-label disabled></cn2-textarea>
+                      </td>
+                    </tr>
+                    <!-- <tr>
+                      <td>
+                        Planning Area
+                      </td>
+                      <td colspan="4">
+                        <cn2-select id="POPUP3"
+                          options="ANG MO KIO:ANG MO KIO,BEDOK:BEDOK,BISHAN:BISHAN,BOON LAY:BOON LAY,BUKIT BATOK:BUKIT BATOK,BUKIT MERAH:BUKIT MERAH,BUKIT PANJANG:BUKIT PANJANG,BUKIT TIMAH:BUKIT TIMAH,CENTRAL WATER CATCHMENT:CENTRAL WATER CATCHMENT,CHANGI:CHANGI,CHANGI BAY:CHANGI BAY,CHOA CHU KANG:CHOA CHU KANG,CLEMENTI:CLEMENTI,DOWNTOWN CORE:DOWNTOWN CORE,GEYLANG:GEYLANG,HOUGANG:HOUGANG,JURONG EAST:JURONG EAST,JURONG WEST:JURONG WEST,KALLANG:KALLANG,LIM CHU KANG:LIM CHU KANG,MANDAI:MANDAI,MARINA EAST:MARINA EAST,MARINA SOUTH:MARINA SOUTH,MARINE PARADE:MARINE PARADE,MUSEUM:MUSEUM,NEWTON:NEWTON,NORTH-EASTERN ISLANDS:NORTH-EASTERN ISLANDS,NOVENA:NOVENA,ORCHARD:ORCHARD,OUTRAM:OUTRAM,PASIR RIS:PASIR RIS,PAYA LEBAR:PAYA LEBAR,PIONEER:PIONEER,PUNGGOL:PUNGGOL,QUEENSTOWN:QUEENSTOWN,RIVER VALLEY:RIVER VALLEY,ROCHOR:ROCHOR,SELETAR:SELETAR,SEMBAWANG:SEMBAWANG,SENGKANG:SENGKANG,SERANGOON:SERANGOON,SIMPANG:SIMPANG,SINGAPORE RIVER:SINGAPORE RIVER,SOUTHERN ISLANDS:SOUTHERN ISLANDS,STRAITS VIEW:STRAITS VIEW,SUNGEI KADUT:SUNGEI KADUT,TAMPINES:TAMPINES,TANGLIN:TANGLIN,TENGAH:TENGAH,TOA PAYOH:TOA PAYOH,TUAS:TUAS,WESTERN ISLANDS:WESTERN ISLANDS,WESTERN WATER CATCHMENT:WESTERN WATER CATCHMENT,WOODLANDS:WOODLANDS,YISHUN:YISHUN"
+                          no-label></cn2-select>
+                      </td>
+                    </tr> -->
+                    <tr>
+                      <td>Location Description</td>
+                      <td colspan="4">
+                        <cn2-textarea id="Project_Location_Description10" no-label>
+                        </cn2-textarea>
+                      </td>
+
+                    </tr>
+                    <tr>
+                      <td rowspan="7">
+                        Development Type
+                      </td>
+                      <td width="1%">
+                        <cn2-checkbox checked mandatory id="DeveSubType_CHECK1" no-label dev-sub-type
+                          event-change="devSubType(this)">
+                        </cn2-checkbox>
+                      </td>
+                      <td colspan="2">
+                        Residential (Landed)
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <cn2-checkbox checked mandatory id="DeveSubType_CHECK21" no-label dev-sub-type
+                          event-change="devSubType(this)">
+                        </cn2-checkbox>
+                      </td>
+                      <td colspan="2">
+                        Residential (Non-Landed)
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <cn2-checkbox checked mandatory id="DeveSubType_CHECK2" no-label dev-sub-type
+                          event-change="devSubType(this)">
+                        </cn2-checkbox>
+                      </td>
+                      <td>
+                        Commercial
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <cn2-checkbox checked mandatory id="DeveSubType_CHECK3" no-label dev-sub-type
+                          event-change="devSubType(this)">
+                        </cn2-checkbox>
+                      </td>
+                      <td width="20%">
+                        Institutional
+                      </td>
+                      <td colspan="2">
+                        <cn2-select hidden id="FIELD1" no-label options="Educational Institutions:Educational Institutions, 
+                                                Cultural and Social Welfare Institutions:Cultural and Social Welfare Institutions,
+                                                Places of Worship and Related Religious Institutions:Places of Worship and Related Religious Institutions,
+                                                Health Institution:Health Institution"></cn2-select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <cn2-checkbox checked mandatory id="DeveSubType_CHECK15" no-label dev-sub-type
+                          event-change="devSubType(this)">
+                        </cn2-checkbox>
+                      </td>
+                      <td colspan="2">
+                        Mixed Development
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <cn2-checkbox checked mandatory id="DeveSubType_CHECK16" no-label dev-sub-type
+                          event-change="devSubType(this)">
+                        </cn2-checkbox>
+                      </td>
+                      <td>
+                        Civil Engineering Works
+                      </td>
+                      <td colspan="2">
+                        <cn2-select hidden id="FIELD2" no-label
+                          options="Road Tunnels:Road Tunnels,Road Viaducts/Flyovers:Road Viaducts/Flyovers,Rapid Transit System Building/Viaducts/Tunnels:Rapid Transit System Building/Viaducts/Tunnels">
+                        </cn2-select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <cn2-checkbox checked mandatory id="DeveSubType_CHECK17" no-label dev-sub-type
+                          event-change="devSubType(this)">
+                        </cn2-checkbox>
+                      </td>
+                      <td>
+                        Others
+                      </td>
+                      <td colspan="2">
+                        <cn2-select hidden id="FIELD3" no-label options="Government/ Ministry Buildings:Government/ Ministry Buildings,
+                                                Sports and Recreational Facilities:Sports and Recreational Facilities,
+                                                White Sites:White Sites,
+                                                Tourist Attraction Developments:Tourist Attraction Developments,
+                                                Fire Station:Fire Station,
+                                                Electrical Sub-station:Electrical Sub-station,
+                                                Commuter Facilities:Commuter Facilities,
+                                                Hoarding/Temporary Access Construction:Hoarding/Temporary Access Construction
+                                                "></cn2-select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>3D BIM Submission</td>
+
+                      <td colspan="4">
+                        <div class="mls-espro-form-fields row">
+                          <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                            <input type="radio" name="BIM_Sub" id="BIM_Sub10"> &nbsp; Yes
+                          </div>
+                          <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                            <input type="radio" name="BIM_Sub" id="BIM_Sub20"> &nbsp; No
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Section II Particulars of Sender</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td width="35%">Name</td>
+                      <td>
+                        <cn2-select id="Member_Member_Name_QPTC10" no-label data-options="senderDropdown"
+                          event-change="loadDropDownDetails(this); Member_Name_change(this)">
+                        </cn2-select>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td width="35%">
+                        Is the Proposal a Statutory Board/Government Dept or Ministry?
+                      </td>
+                      <td>
+                        <cn2-switchbutton data-true="YES" data-false="NO" data-on="YES" data-off="NO"
+                          switch-id="StatBoar_Yes10"
+                          event-change="switchButton(this,'StatBoar_Yes10', 'StatBoar_No10'); StatBoar_change(this);">
+                        </cn2-switchbutton>
+                        <cn2-checkbox id="StatBoar_Yes10" hidden>
+                        </cn2-checkbox>
+                        <cn2-checkbox id="StatBoar_No10" hidden>
+                        </cn2-checkbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <cn2-select id="Member_Member_Name_StatBoar10" hidden no-label options="Building & Construction Authority:Building & Construction Authority,
+                              Civil Aviation Authority of Singapore:Civil Aviation Authority of Singapore,
+                              Ministry of Culture Community & Youth:Ministry of Culture Community & Youth,
+                              Defence Science & Technology Agency:Defence Science & Technology Agency,
+                              Economic Development Board:Economic Development Board,
+                              Energy Market Authority:Energy Market Authority,
+                              Ministry of Sustainability & Environment:Ministry of Sustainability & Environment,
+                              Enterprise Singapore:Enterprise Singapore,
+                              Housing & Development Board:Housing & Development Board,
+                              Health Promotion Board:Health Promotion Board,
+                              Health Sciences Authority:Health Sciences Authority,
+                              Home Team Science & Technology Agency:Home Team Science & Technology Agency,
+                              Infocomm Media Development Authority:Infocomm Media Development Authority,
+                              Intellectual Property Office:Intellectual Property Office,
+                              Inland Revenue Authority:Inland Revenue Authority,
+                              Ministry of Communications & Information:Ministry of Communications & Information,
+                              Institute of Technical Education:Institute of Technical Education,
+                              Jurong Town Corporation:Jurong Town Corporation,
+                              Judiciary Court:Judiciary Court,
+                              Ministry of Law:Ministry of Law,
+                              Land Transport Authority:Land Transport Authority,
+                              Monetary Authority of Singapore:Monetary Authority of Singapore,
+                              Ministry of Social & Family Development:Ministry of Social & Family Development,
+                              Ministry of Foreign Affairs:Ministry of Foreign Affairs,
+                              Ministry of Home Affairs:Ministry of Home Affairs,
+                              Ministry of National Development:Ministry of National Development,
+                              Ministry of Transport:Ministry of Transport,
+                              Ministry of Education:Ministry of Education,
+                              Ministry of Finance:Ministry of Finance,
+                              Ministry of Health:Ministry of Health,
+                              Ministry of Manpower:Ministry of Manpower,
+                              Maritime and Port Authority:Maritime and Port Authority,
+                              Ministry of Trade & Industry:Ministry of Trade & Industry,
+                              Majlis Ugama Islam Singapura:Majlis Ugama Islam Singapura,
+                              National Arts Council:National Arts Council,
+                              Ngee Ann Polytechnic:Ngee Ann Polytechnic,
+                              National Council of Social Service:National Council of Social Service,
+                              National Environmt Agency:National Environmt Agency,
+                              National Heritage Board:National Heritage Board,
+                              National Library Board:National Library Board,
+                              National Parks Board:National Parks Board,
+                              Nanyang Polytechnic:Nanyang Polytechnic,
+                              Parliament of Singapore:Parliament of Singapore,
+                              People's Association:People's Association,
+                              MOH Professional Boards:MOH Professional Boards,
+                              Presidential Council:Presidential Council,
+                              Professional Engineers Board:Professional Engineers Board,
+                              Producitvity Funds Admin Board:Producitvity Funds Admin Board,
+                              Prime Minister's Office:Prime Minister's Office,
+                              Public Transport Council:Public Transport Council,
+                              Public Utilities Board:Public Utilities Board,
+                              Republic Polytechnic:Republic Polytechnic,
+                              Singapore Accountancy Commission:Singapore Accountancy Commission,
+                              ISEAS - Yusof Ishak Institute:ISEAS - Yusof Ishak Institute,
+                              Science Centre Board:Science Centre Board,
+                              Yellow Ribbon Singapore:Yellow Ribbon Singapore,
+                              Sentosa Development Corporation:Sentosa Development Corporation,
+                              SEAB:SEAB,
+                              Singapore Food Agency:Singapore Food Agency,
+                              Singapore Labour Foundation:Singapore Labour Foundation,
+                              Singapore Polytechnic:Singapore Polytechnic,
+                              Sport Singapore:Sport Singapore,
+                              SkillsFuture Singapore:SkillsFuture Singapore,
+                              Singapore Tourism Board:Singapore Tourism Board,
+                              A*STAR Companies:A*STAR Companies,
+                              Tote Board:Tote Board,
+                              Temasek Polytechnic:Temasek Polytechnic,
+                              Urban Redevelopment Authority:Urban Redevelopment Authority,
+                              Workforce Singapore:Workforce Singapore" event-change="loadDropDownDetails(this);">
+                        </cn2-select>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div section id="3-1">
+            <h2 class="text-center">
+              Application for Approval of Development Proposal in Railway
+              Protection Zone / Railway Corridor
+            </h2>
+            <div class="mls-espo-right-inner-container borderchecking">
+              <h2>Section III - Declaration</h2>
+              <div class="mls-espro-form-fields row">
+                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                  <table class="table table-borderless mb-0">
+                    <tbody>
+                      <tr>
+                        <td width="40%">
+                          Approved Gross Floor Area (GFA) in m<sup>2</sup>*
+                        </td>
+                        <td colspan="2">
+                          <cn2-textbox no-label id="RAILSDP_AppGFA10" dont></cn2-textbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Approximated distance with respect to the outermost edge of RTS
+                          structure in m <br> (measured
+                          from the site boundary)*
+                        </td>
+                        <td colspan="2">
+                          <cn2-textbox no-label id="RAILSDP_ApproxDist10" dont></cn2-textbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Railway Protection Plan (RPP)*</td>
+                        <td>
+                          <cn2-datefield id="RailProtPlan_PurcDate10" label="Purchase Date:">
+                          </cn2-datefield>
+                        </td>
+                        <td>
+                          <cn2-textbox id="RailProtPlan_ReceNo10" label="Receipt No:" dont>
+                          </cn2-textbox>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table class="table table-bordered">
+                    <tbody>
+                      <tr>
+                        <td width="2%" style="padding-top: 17px;">1.</td>
+                        <td colspan="2">
+                          I,
+                          <cn2-textbox id="RAILSDP_FIELD1" no-label inline="4" event-change="loadDropDownDetails(this);"
+                            qpName disabled>
+                          </cn2-textbox>, BOA / PE Registration No.
+                          <cn2-textbox id="MemberRole_Professional_No_QPTC10" qpRegNo no-label inline="4" disabled>
+                          </cn2-textbox> confirm that I am appointed as the Qualified Person
+                          responsible for the
+                          supervision of development works within the railway protection
+                          zone/railway corridor under the
+                          Rapid Transit Systems (Development and Building Works in Railway
+                          Corridor and Railway
+                          Protection Zone) Regulations. *
+                        </td>
+                        <td width="3%" class="text-center" style="padding-top: 17px;">
+                          <cn2-checkbox id="RAILSDP_CHECK1" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2.</td>
+                        <td colspan="2">
+                          I confirm that I have prepared the proposal in compliance with the
+                          requirements stipulated in
+                          the Code of Practice for Railway Protection and other conditions
+                          imposed by the Land Transport
+                          Authority. I also confirm that the owner/developer of the subject
+                          development has been
+                          informed and he/she has agreed with the proposal submitted. *
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSDP_CHECK2" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3.</td>
+                        <td colspan="2">
+                          I attach the following: *
+                          <table class="table table-borderless">
+                            <tbody>
+                              <tr>
+                                <td width="1%" style="padding-left: 0;">
+                                  (a)
+                                </td>
+                                <td>
+                                  Cover letter
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (b)
+                                </td>
+                                <td>
+                                  A copy of valid URA’s PP/WP
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (c)
+                                </td>
+                                <td>
+                                  Plans for proposed development works with clear
+                                  indication of railway protection lines / railway
+                                  structures
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (d)
+                                </td>
+                                <td>
+                                  Clearance letter from competent authorities on
+                                  the proposed flood threshold levels of all
+                                  entrances/opening in the development if they are
+                                  connected or integrated with the RTS structures.
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (e)
+                                </td>
+                                <td>
+                                  Preliminary engineering impact assessment if any
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSDP_CHECK3" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="4">
+                          <cn2-textarea label="Remarks/Comments:" maxlength="1000" id="RAILSDP_Remarks10">
+                          </cn2-textarea>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div section id="3-2" hidden style="margin-bottom:65px">
+            <h2 class="text-center">
+              Application for Approval of Building Proposal in Railway
+              Protection Zone / Railway Corridor
+            </h2>
+            <div class="mls-espo-right-inner-container borderchecking">
+              <h2>Section III - Declaration</h2>
+              <div class="mls-espro-form-fields row">
+                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                  <table class="table table-bordered">
+                    <tbody>
+                      <tr>
+                        <td width="2%" style="padding-top: 17px;">1.</td>
+                        <td colspan="2">
+                          I,
+                          <cn2-textbox id="RAILSBP_FIELD1" no-label inline="4" event-change="loadDropDownDetails(this);"
+                            qpName disabled>
+                          </cn2-textbox>, BOA / PE Registration No.
+                          <cn2-textbox id="MemberRole_Professional_No_QPTC20" qpRegNo no-label inline="4" disabled>
+                          </cn2-textbox> confirm that I am appointed as the Qualified Person
+                          responsible for the
+                          supervision of development works within the railway protection
+                          zone/railway corridor under the
+                          Rapid Transit Systems (Development and Building Works in Railway
+                          Corridor and Railway
+                          Protection Zone) Regulations. *
+                        </td>
+                        <td width="3%" class="text-center" style="padding-top: 17px;">
+                          <cn2-checkbox id="RAILSBP_CHECK1" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2.</td>
+                        <td colspan="2">
+                          I confirm that I have prepared the proposal in compliance with the
+                          requirements stipulated in
+                          the Code of Practice for Railway Protection and other conditions
+                          imposed by the Land Transport
+                          Authority. I also confirm that the owner/developer of the subject
+                          development has been
+                          informed and he/she has agreed with the proposal submitted. *
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSBP_CHECK2" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3.</td>
+                        <td colspan="2">
+                          I attach the following: *
+                          <table class="table table-borderless">
+                            <tbody>
+                              <tr>
+                                <td width="1%" style="padding-left: 0;">
+                                  (a)
+                                </td>
+                                <td>
+                                  Cover letter
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (b)
+                                </td>
+                                <td>
+                                  Plans for proposed building works with clear
+                                  indication of railway protection lines /
+                                  railway structures
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (c)
+                                </td>
+                                <td>
+                                  A copy of NOA for Development Proposal issued by LTA
+                                  DBC(Rails)
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (d)
+                                </td>
+                                <td>
+                                  Engineering Evaluation Report if any
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSBP_CHECK3" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="4">
+                          <cn2-textarea label="Remarks/Comments:" maxlength="1000" id="RemaComm10">
+                          </cn2-textarea>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div id="331" hidden>
+              <h2 class="text-center">
+                <span label331></span>
+              </h2>
+              <div class="mls-espo-right-inner-container borderchecking">
+                <h2>Section III Type of Lodgement</h2>
+                <div class="mls-espro-form-fields row">
+                  <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                    <table class="table table-bordered" style="margin-bottom: 0px;">
+                      <tbody>
+                        <tr>
+                          <td width="1%" rowspan="2">
+                            1.
+                          </td>
+                          <td colspan="2">
+                            Non-LTA development/building works located > 20m away from the
+                            outermost edge of Rapid
+                            Transit
+                            System (RTS) area:
+                          </td>
+                          <td width="1%" rowspan="2">
+                            <input type="radio" id="RAILSLDP_CHECK10" name="331-lodgeRadio" checked mandatory
+                              onclick="onlyOneTick(this, '331-lodgeRadio');unableCheck5(this)">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Please select:
+                          </td>
+                          <td>
+                            <cn2-select no-label id="RAILSLDP_Drop10" options="a. Landed Residential without Basement:a. Landed Residential without Basement,b. Standalone Fire Station:b. Standalone Fire Station,c. Standalone Electrical Sub-Station:c. Standalone Electrical Sub-Station,d. Standalone Commuter Facilities (covered linkway/,taxi stand/,bus stop):d. Standalone Commuter Facilities (covered linkway/,taxi stand/,bus stop),e. Standalone Petrol Station:e. Standalone Petrol Station,f. A&A Works without any structural modification works to existing
+                              building:f. A&A Works without any structural modification works to existing
+                              building">
+                            </cn2-select>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td rowspan="2">
+                            2.
+                          </td>
+                          <td colspan="2">
+                            LTA Projects
+                          </td>
+                          <td rowspan="2">
+                            <input type="radio" id="RAILSLDP_MinorAA_Check10" name="331-lodgeRadio" checked mandatory
+                              onclick="onlyOneTick(this, '331-lodgeRadio');unableCheck5(this)">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Please select:
+                          </td>
+                          <td>
+                            <cn2-select no-label id="RAILSLDP_MinorAA_Check20"
+                              options="a. Covered Linkway:a. Covered Linkway,b. Cycling Path / Foot Path:b. Cycling Path / Foot Path,c. The following minor A&A works:c. The following minor A&A works"
+                              event-change="showCheckboxes(this);">
+                            </cn2-select>
+                            <table class="table table-borderless" hidden select-c>
+                              <tbody>
+                                <tr>
+                                  <td width="1%">
+                                    <cn2-checkbox id="RAILSLDP_MinorAA_Check30" name="331-lodge"
+                                      onclick="onlyOneTick(this, '331-lodge');" checked mandatory></cn2-checkbox>
+                                  </td>
+                                  <td>
+                                    Station slab-over
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <cn2-checkbox id="RAILSLDP_MinorAA_Check40" name="331-lodge"
+                                      onclick="onlyOneTick(this, '331-lodge');" checked mandatory></cn2-checkbox>
+                                  </td>
+                                  <td>
+                                    Toilet Upgrading
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <cn2-checkbox id="RAILSLDP_MinorAA_Check50" name="331-lodge"
+                                      onclick="onlyOneTick(this, '331-lodge');" checked mandatory></cn2-checkbox>
+                                  </td>
+                                  <td>
+                                    Handicap Ramp
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <cn2-checkbox id="RAILSLDP_MinorAA_Check60" name="331-lodge"
+                                      onclick="onlyOneTick(this, '331-lodge');" checked mandatory></cn2-checkbox>
+                                  </td>
+                                  <td>
+                                    Staircase
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <cn2-checkbox id="RAILSLDP_MinorAA_Check70" name="331-lodge"
+                                      onclick="onlyOneTick(this, '331-lodge');" checked mandatory></cn2-checkbox>
+                                  </td>
+                                  <td>
+                                    Bicycle Rack Installation/Removal
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <cn2-checkbox id="RAILSLDP_MinorAA_Check80" name="331-lodge"
+                                      onclick="onlyOneTick(this, '331-lodge');" checked mandatory></cn2-checkbox>
+                                  </td>
+                                  <td>
+                                    Weather Protection
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <cn2-checkbox id="RAILSLDP_MinorAA_Check90" name="331-lodge"
+                                      onclick="onlyOneTick(this, '331-lodge');" checked mandatory></cn2-checkbox>
+                                  </td>
+                                  <td>
+                                    Pick-up/ Drop-off/ Taxi Bay
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <cn2-checkbox id="RAILSLDP_MinorAA_Check100" name="331-lodge"
+                                      onclick="onlyOneTick(this, '331-lodge');" checked mandatory></cn2-checkbox>
+                                  </td>
+                                  <td>
+                                    Landscaping/ tiling works
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="mls-espo-right-inner-container borderchecking" id="appType3-4">
+                <h2>Section IV Declaration</h2>
+                <div class="mls-espro-form-fields row">
+                  <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                    <table class="table table-bordered" style="margin-bottom: 0px;">
+                      <tbody>
+                        <tr>
+                          <td width="35%">
+                            Approved Gross Floor Area (GFA) in m<sup>2</sup> *
+                          </td>
+                          <td colspan="2">
+                            <cn2-textbox no-label id="RAILSLDP_Decl_ApprGFA10" mandatory dont></cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Approximated distance with respect to the outermost edge of RTS
+                            structure in m <br>
+                            (measured from the site boundary) *
+                          </td>
+                          <td colspan="2">
+                            <cn2-textbox no-label id="RAILSLDP_Decl_ApprDist10" mandatory event-blur="less20(this);"
+                              currency dont></cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Railway Protection Plan (RPP)*
+                          </td>
+                          <td>
+                            <cn2-datefield label="Purchase Date:" dont id="RAILSLDP_Decl_PurcDate">
+                            </cn2-datefield>
+                          </td>
+                          <td>
+                            <cn2-textbox label="Receipt No.:" id="RAILSLDP_Decl_ReceNo" dont event-blur="less20(this);">
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table class="table table-bordered" style="margin-bottom: 0px;">
+                      <tbody>
+                        <tr>
+                          <td width="2%" style="padding-top: 17px;">1.</td>
+                          <td colspan="2">
+                            I,
+                            <cn2-textbox id="RAILSLDP_Decl_Name10" no-label inline="4" qpName disabled
+                              event-change="loadDropDownDetails(this);">
+                            </cn2-textbox>, BOA / PE Registration No.
+                            <cn2-textbox id="MemberRole_Professional_No_QPTC30" qpRegNo no-label inline="4" disabled>
+                            </cn2-textbox> confirm that I am appointed as the Qualified
+                            Person responsible for the
+                            supervision of development works within the railway protection
+                            zone under the Rapid Transit
+                            Systems (Development and Building Works in Railway Corridor and
+                            Railway Protection Zone)
+                            Regulations. *
+                          </td>
+                          <td width="3%" class="text-center" style="padding-top: 17px;">
+                            <cn2-checkbox id="RAILSLDP_Decl_Check10" no-label checked mandatory
+                              event-change="toggleCheck(this);">
+                            </cn2-checkbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>2.</td>
+                          <td colspan="2">
+                            I confirm that I have prepared the proposal in compliance with
+                            the requirements stipulated
+                            in the Code of Practice for Railway Protection and other
+                            conditions imposed by the Land
+                            Transport Authority. I also confirm that the owner/developer of
+                            the subject development has
+                            been informed and he/she has agreed with the proposal submitted.
+                            *
+                          </td>
+                          <td class="text-center">
+                            <cn2-checkbox id="RAILSLDP_Decl_Check20" no-label checked mandatory
+                              event-change="toggleCheck(this);">
+                            </cn2-checkbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>3.</td>
+                          <td colspan="2">
+                            I confirm that the development works may have to be redesigned
+                            if the lodged Development
+                            Proposal is subsequently found to be non-compliant with Land
+                            Transport Authority’s
+                            requirements. *
+                          </td>
+                          <td class="text-center">
+                            <cn2-checkbox id="RAILSLDP_Decl_Check30" no-label checked mandatory
+                              event-change="toggleCheck(this);">
+                            </cn2-checkbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>4.</td>
+                          <td colspan="2">
+                            I understand that the Development Proposal is to be re-lodged
+                            when there are amendments made
+                            to the original lodged Development Proposal. *
+                          </td>
+                          <td class="text-center">
+                            <cn2-checkbox id="RAILSLDP_Decl_Check40" no-label checked mandatory
+                              event-change="toggleCheck(this);">
+                            </cn2-checkbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>5.</td>
+                          <td colspan="2">
+                            I confirm that the Development Proposal are prepared in
+                            accordance with: *
+                            <table class="table table-borderless">
+                              <tbody>
+                                <tr>
+                                  <td width="1%" style="padding-left: 0;">
+                                    (a)
+                                  </td>
+                                  <td>
+                                    LTA Architectural Design Criteria and satisfy
+                                    all requirements listed in the LTA
+                                    Architectural Design Criteria Checklists, all
+                                    materials and workmanship
+                                    specification for architectural works and
+                                    requirements listed in the Code on
+                                    Accessibility in the Built Environment 2013; and
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="padding-left: 0;">
+                                    (b)
+                                  </td>
+                                  <td>
+                                    all requirements from LTA Public Transport
+                                    Security (PTS) Division
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td class="text-center">
+                            <cn2-checkbox id="RAILSLDP_Decl_Check50" no-label disabled
+                              event-change="toggleCheck(this);">
+                            </cn2-checkbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>6.</td>
+                          <td colspan="2">
+                            I attach the following: *
+                            <table class="table table-borderless">
+                              <tbody>
+                                <tr>
+                                  <td width="1%" style="padding-left: 0;">
+                                    (a)
+                                  </td>
+                                  <td>
+                                    Cover letter
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="padding-left: 0;">
+                                    (b)
+                                  </td>
+                                  <td>
+                                    A copy of NOA for Development Proposal issued by
+                                    LTA
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="padding-left: 0;">
+                                    (c)
+                                  </td>
+                                  <td>
+                                    Plans for proposed development works with clear
+                                    indication of railway protection
+                                    lines / railway structures
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="padding-left: 0;">
+                                    (d)
+                                  </td>
+                                  <td>
+                                    Clear indication of the clearance of the
+                                    proposed works (worst case scenario) with
+                                    respect to the RTS structures
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td class="text-center">
+                            <cn2-checkbox id="RAILSLDP_Decl_Check70" no-label checked mandatory
+                              event-change="toggleCheck(this);">
+                            </cn2-checkbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="4">
+                            <cn2-textarea label="Remarks/Comments:" maxlength="1000" id="RAILSLDP_Decl_Remarks10">
+                            </cn2-textarea>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div section id="3-3" hidden style="margin-bottom:65px">
+            <h2 class="text-center">
+              Application for Amendment of Approved Proposal
+            </h2>
+            <div class="mls-espo-right-inner-container borderchecking">
+              <h2>Section III Type of Application</h2>
+              <div class="mls-espro-form-fields row">
+                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                  <table class="table table-bordered" style="margin-bottom: 0px;">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <b>Amendment of Development Proposal</b>
+                        </td>
+                        <td width="10%" class="text-center">
+                          <input type="radio" checked mandatory id="RAILSENG_Amend_DevProp10" name="RAILSENG_Amend"
+                            onclick="onlyOneTick(this, 'RAILSENG_Amend');">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b>Amendment of Building Proposal</b>
+                        </td>
+                        <td width="10%" class="text-center">
+                          <input type="radio" checked mandatory id="RAILSENG_Amend_BuilProp10" name="RAILSENG_Amend"
+                            onclick="onlyOneTick(this, 'RAILSENG_Amend');">
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="mls-espo-right-inner-container borderchecking">
+              <h2>Section IV Declaration</h2>
+              <div class="mls-espro-form-fields row">
+                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                  <table class="table table-bordered" style="margin-bottom: 0px;">
+                    <tbody>
+                      <tr>
+                        <td width="2%" style="padding-top: 17px;">1.</td>
+                        <td colspan="2">
+                          I,
+                          <cn2-textbox id="RAILSENG_FIELD3" no-label inline="4" qpName disabled
+                            event-change="loadDropDownDetails(this);">
+                          </cn2-textbox>, BOA / PE Registration No.
+                          <cn2-textbox id="MemberRole_Professional_No_QPTC50" no-label qpRegNo inline="4" disabled>
+                          </cn2-textbox> confirm that I am appointed as the Qualified Person
+                          responsible for the
+                          supervision of development works within the railway protection
+                          zone/railway corridor under the
+                          Rapid Transit Systems (Development and Building Works in Railway
+                          Corridor and Railway
+                          Protection Zone) Regulations. *
+                        </td>
+                        <td width="3%" class="text-center" style="padding-top: 17px;">
+                          <cn2-checkbox id="RAILSENG_CHECK1" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2.</td>
+                        <td colspan="2">
+                          I confirm that I have prepared the proposal in compliance with the
+                          requirements stipulated in
+                          the Code of Practice for Railway Protection and other conditions
+                          imposed by the Land Transport
+                          Authority. I also confirm that the owner/developer of the subject
+                          development has been
+                          informed and he/she has agreed with the proposal submitted. *
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSENG_CHECK2" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3.</td>
+                        <td colspan="2">
+                          I attach the following: *
+                          <table class="table table-borderless">
+                            <tbody>
+                              <tr>
+                                <td width="1%" style="padding-left: 0;">
+                                  (a)
+                                </td>
+                                <td>
+                                  Cover letter
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (b)
+                                </td>
+                                <td>
+                                  A copy of valid URA’s PP/WP
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (c)
+                                </td>
+                                <td>
+                                  Plans for proposed development works with clear
+                                  indication of railway protection lines
+                                  / railway structures
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (d)
+                                </td>
+                                <td>
+                                  A copy of NOA issued by DBC (Rails)
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSENG_CHECK3" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="4">
+                          <cn2-textarea label="Remarks/Comments:" maxlength="1000" id="RAILSENG_Remarks10">
+                          </cn2-textarea>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div section id="3-4" hidden style="margin-bottom:65px">
+            <h2 class="text-center">
+              Application for Extension of NOA for Development Proposal / Building Proposal
+            </h2>
+            <div class="mls-espo-right-inner-container borderchecking">
+              <h2>Section III Type of Application</h2>
+              <div class="mls-espro-form-fields row">
+                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                  <table class="table table-bordered" style="margin-bottom: 0px;">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <b>Extension of NOA for Development Proposal</b>
+                        </td>
+                        <td width="10%" class="text-center">
+                          <input type="radio" checked mandatory id="RAILNOA_ExtNOA10" onclick="toggleCheck(this);"
+                            name="RAILNOA_ExtNOA">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b>Extension of NOA for Building Proposal</b>
+                        </td>
+                        <td width="10%" class="text-center">
+                          <input type="radio" checked mandatory id="RAILNOA_ExtNOA20" onclick="toggleCheck(this);"
+                            name="RAILNOA_ExtNOA">
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="mls-espo-right-inner-container borderchecking">
+              <h2>Section IV Declaration</h2>
+              <div class="mls-espro-form-fields row">
+                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                  <table class="table table-bordered" style="margin-bottom: 0px;">
+                    <tbody>
+                      <tr>
+                        <td width="2%" style="padding-top: 17px;">1.</td>
+                        <td colspan="2">
+                          I,
+                          <cn2-textbox id="RAILNOA_FIELD4" no-label inline="4" qpName disabled
+                            event-change="loadDropDownDetails(this);">
+                          </cn2-textbox>, BOA / PE Registration No.
+                          <cn2-textbox id="MemberRole_Professional_No_QPTC70" qpRegNo no-label inline="4" disabled>
+                          </cn2-textbox> confirm that I am appointed as the Qualified Person
+                          responsible for the
+                          supervision of development works within the railway protection
+                          zone/railway corridor under the
+                          Rapid Transit Systems (Development and Building Works in Railway
+                          Corridor and Railway
+                          Protection Zone) Regulations. *
+                        </td>
+                        <td width="3%" class="text-center" style="padding-top: 17px;">
+                          <cn2-checkbox id="RAILNOA_CHECK1" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2.</td>
+                        <td colspan="2">
+                          I confirm that there is no change to the approved Development /
+                          Building Proposal. *
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILNOA_CHECK2" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3.</td>
+                        <td colspan="2">
+                          I attach the following: *
+                          <table class="table table-borderless">
+                            <tbody>
+                              <tr>
+                                <td width="1%" style="padding-left: 0;">
+                                  (a)
+                                </td>
+                                <td>
+                                  Cover letter
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (b)
+                                </td>
+                                <td>
+                                  A copy of valid URA’s PP/WP
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (c)
+                                </td>
+                                <td>
+                                  A copy of earlier NOA issued by DBC(Rails)
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILNOA_CHECK3" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="4">
+                          <cn2-textarea label="Remarks/Comments:" maxlength="1000" id="RAILNOA_Remarks10">
+                          </cn2-textarea>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div section id="3-5" hidden style="margin-bottom:65px">
+            <h2 class="text-center">
+              Application for Permit to Carry Out Engineering Works in Railway
+              Protection Zone / Railway Corridor
+            </h2>
+            <div class="mls-espo-right-inner-container borderchecking">
+              <h2>Section III Permit Application Details</h2>
+              <div class="mls-espro-form-fields row">
+                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                  <table class="table table-borderless" style="margin-bottom: 0px;">
+                    <tbody>
+                      <tr>
+                        <td width="25%">
+                          With reference to Project Peference No.
+                        </td>
+                        <td>
+                          <cn2-textbox no-label disabled id="RAILSENGProjPref_No10">
+                          </cn2-textbox>
+                        </td>
+                        <td>
+                          <div class="mls-espro-form-fields row">
+                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
+                              <cn2-textbox no-label id="RAILSENG_ST20" disabled>
+                              </cn2-textbox>
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
+                              <cn2-textbox no-label id="RAILSENG_ST10" dont></cn2-textbox>
+                            </div>
+                          </div>
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Proposed engineering works: *
+                        </td>
+                        <td colspan="2">
+                          <cn2-select no-label id="RAILSENG_Drop10"
+                            options="Demolition:Demolition,Site formation:Site formation,Piling:Piling,Excavation:Excavation,Sub-structural:Sub-structural,Super-structural:Super-structural,Others&#xFF0C;please provide:Others&#xFF0C;please provide"
+                            event-change="hideOthers2(this.value, 'RAILSENG_DescWorks10');" mandatory>
+                          </cn2-select> <br>
+                          <cn2-textbox no-label hidden id="RAILSENG_other10" dont>
+                          </cn2-textbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Description of Works:
+                        </td>
+                        <td colspan="2">
+                          <cn2-textarea no-label id="RAILSENG_DescWorks10" dont maxlength="1000"></cn2-textarea>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">
+                          Location:
+                        </td>
+                        <td class="align-middle">
+                          <div class="row">
+                            <div class="col-2">
+                              <input type="radio" name="mkts" id="RAILSENG_MK10">
+                            </div>
+                            <div class="col-4">
+                              MK or
+                            </div>
+                            <div class="col-2">
+                              <input type="radio" name="mkts" id="RAILSENG_TS10">
+                            </div>
+                            <div class="col-4">
+                              TS
+                            </div>
+                          </div>
+                        </td>
+                        <td style="text-align: right;">
+                          Lot No.&nbsp;<cn2-textbox no-label inline="9" dont id="RAILSENG_LotNo10">
+                          </cn2-textbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Address
+                        </td>
+                        <td colspan="2">
+                          <cn2-textarea no-label id="RAILSENG_Address10" dont maxlength="500">
+                          </cn2-textarea>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Duration of works covered by this permit (in months)
+                        </td>
+                        <td colspan="2">
+                          <cn2-textbox no-label id="RAILSENG_MonthDura10" dont maxlength="2" numeric
+                            event-blur="less24(this, '24');"></cn2-textbox>
+                          <i>Note: max 24 months</i>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Proposed date of commencement of the works described above
+                        </td>
+                        <td colspan="2">
+                          <cn2-datefield no-label id="RAILSENG_PropDate10"
+                            onfocusout="validateDate(this);date20Validation(this)" dont>
+                          </cn2-datefield>
+                          <i>Note: cannot enter a date less than 20 working days</i>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table class="table table-borderless" style="margin-bottom: 0px;">
+                    <tbody>
+                      <tr>
+                        <td colspan="3">
+                          <b>
+                            Is the proposed engineering work involved
+                            modification request?
+                          </b>
+                          <br />
+                          <p style="color: gray; font-style: italic;">
+                            [Please note that this field is only applicable to
+                            modification request initiated by private
+                            developer. LTA or Railway Operator initiated
+                            modification please choose "No"]
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="3">
+                          <input type="radio" id="RAILSENG_RADIO1_1"
+                            onclick="onTick(this, 'RAILSENG_RADIO1_1', 'RAILSENG_RADIO2_1', 'yes'); disableDecl7and8('RAILSENG_RADIO1_1', 'RAILSENG_RADIO2_1')"
+                            name="modType" />
+                          Yes &nbsp;&nbsp;&nbsp;
+                          <input type="radio" id="RAILSENG_RADIO2_1"
+                            onclick="onTick(this, 'RAILSENG_RADIO1_1', 'RAILSENG_RADIO2_1', 'no'); disableDecl7and8('RAILSENG_RADIO1_1', 'RAILSENG_RADIO2_1')"
+                            name="modType" />
+                          No
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="2%">3.1</td>
+                        <td colspan="2">
+                          <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                              <table class="table table-borderless">
+                                <tbody>
+                                  <tr>
+                                    <td colspan="3">
+                                      <input type="radio" id="RAILSENG_RADIO3" name="modNo"
+                                        onclick="modNo(this);" />&nbsp;<span id="RAILSENG_RADIO3_LABEL">Architectural
+                                        and Structural Related<br>Modification Request</span>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2">Modification No.:</td>
+                                    <td>
+                                      <cn2-textbox id="RAILSENG_FIELD1" event-change="ModNoChange(this)" no-label
+                                        mandatory>
+                                      </cn2-textbox>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                              <table class="table table-borderless">
+                                <tbody>
+                                  <tr>
+                                    <td colspan="3">
+                                      <input type="radio" id="RAILSENG_RADIO4" name="modNo" onclick="modNo(this);" />
+                                      &nbsp;<span id="RAILSENG_RADIO4_LABEL">Mechanical and
+                                        Electrical Related<br>Modification Request</span>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2">Modification No.:</td>
+                                    <td>
+                                      <cn2-textbox id="RAILSENG_FIELD2" no-label event-change="ModNoChange(this)">
+                                      </cn2-textbox>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3.2</td>
+                        <td width="30%">Affected rail line:</td>
+                        <td>
+                          <cn2-select id="RAILSENG_POPUP1" no-label options="NSL:NSL,
+                                                    EWL:EWL,
+                                                    CCL:CCL,
+                                                    NEL:NEL,
+                                                    DTL:DTL,
+                                                    BPLRT:BPLRT,
+                                                    SPLRT:SPLRT,
+                                                    TEL:TEL,
+                                                    JRL:JRL,
+                                                    Others:Others" event-change="hideOthers(this.value);"></cn2-select>
+                        </td>
+                      </tr>
+                      <tr id="othersField" hidden>
+                        <td></td>
+                        <td></td>
+                        <td>
+                          <cn2-textbox id="MemberRole_Professional_No_QPTC50_1" no-label></cn2-textbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3.3</td>
+                        <td>
+                          Affected location: <br />
+                          <span style="font-style: italic; color: gray;">[ Please
+                            indicate the name of station, depot or
+                            section of viaduct ]</span>
+                        </td>
+                        <td>
+                          <cn2-textarea id="RAILSENG_FIELD5" no-label></cn2-textarea>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3.4</td>
+                        <td>
+                          Submission Revision No. : <br />
+                          <span style="font-style: italic; color: gray;">[ Please choose "-"
+                            if this is your very first
+                            submission ]</span>
+                        </td>
+                        <td>
+                          <cn2-select id="RAILSENG_POPUP2" no-label
+                            options="-:-,A:A,B:B,C:C,D:D,E:E,F:F,G:G,H:H,I:I,J:J,K:K,L:L,M:M,N:N,O:O,P:P,Q:Q,R:R,S:S,T:T,U:U,V:V,W:W,X:X,Y:Y,Z:Z">
+                          </cn2-select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3.5</td>
+                        <td>
+                          Title of the modification work: <br />
+                          <span style="font-style: italic; color: gray;">[Limited to 1000
+                            characters, i.e. Removal of
+                            knock-out panel at concourse level of CCL Paya Lebar
+                            station.]</span>
+                        </td>
+                        <td>
+                          <cn2-textarea id="RAILSENG_FIELD3_1" no-label maxlength="1000">
+                          </cn2-textarea>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="mls-espo-right-inner-container borderchecking">
+              <h2>Section IV Declaration </h2>
+              <div class="mls-espro-form-fields row">
+                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                  <table class="table table-bordered">
+                    <tbody>
+                      <tr>
+                        <td width="2%" style="padding-top: 17px;">1.</td>
+                        <td colspan="2">
+                          I,
+                          <cn2-textbox id="RAILSENG_Name10" no-label inline="4" qpName disabled
+                            event-change="loadDropDownDetails(this);">
+                          </cn2-textbox>, BOA/PE Registration No.
+                          <cn2-textbox id="MemberRole_Professional_No_QPTC60" qpRegNo no-label inline="4" disabled>
+                          </cn2-textbox> confirm that I am appointed as the Qualified Person
+                          responsible for the
+                          supervision of engineering works within the railway protection
+                          zone/railway corridor under the
+                          Rapid Transit Systems (Development and Building Works in Railway
+                          Corridor and Railway
+                          Protection Zone) Regulations. *
+                        </td>
+                        <td width="3%" class="text-center" style="padding-top: 17px;">
+                          <cn2-checkbox id="RAILSENG_Check10" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2.</td>
+                        <td colspan="2">
+                          I confirm that I have prepared the engineering work proposal in
+                          compliance with the
+                          requirements stipulated in the Code of Practice for Railway
+                          Protection. I also confirm that
+                          that the owner/developer of the subject development has been
+                          informed and he/she has agreed
+                          with the engineering work proposal submitted. *
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSENG_CHECK20" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3.</td>
+                        <td colspan="2">
+                          I undertake to fully discharge the duties stipulated in the Rapid
+                          Transit Systems (Development
+                          and Building Works in Railway corridor and Railway Protection Zone)
+                          Regulations; and *
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSENG_CHECK30" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>4.</td>
+                        <td colspan="2">
+                          I will take reasonable steps and exercise due diligence to ensure
+                          that works are carried out
+                          in accordance with the approved plans / details, the Code of
+                          Practice for Railway Protection,
+                          the Rapid Transit Systems (Development and Building Works in Railway
+                          Corridor and the Railway
+                          Protection Zone) Regulations; and the Rapid Transit Systems (Railway
+                          Protection, Restricted
+                          Activities) Regulation and its amendments. Those activities carried
+                          out in the railway
+                          protection should also satisfy the “Guide to Carrying Out Restricted
+                          Activities within Railway
+                          Protection and Safety Zone”. *
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSENG_CHECK40" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>5.</td>
+                        <td colspan="2">
+                          I am also the appointed qualified person to provide full time
+                          standing supervision of movement
+                          and operation of any crane, whether fixed or mobile, hoist, ladder,
+                          drilling or piling
+                          equipment, excavator or any other mechanical equipment or vehicle
+                          within the railway
+                          protection and safety zones. I undertake to fully discharge the
+                          duties stipulated in Appendix
+                          on duties of qualified Person.
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSENG_CHECK50" event-change="RAILSENG_CHECK50_change(this)" no-label
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>6.</td>
+                        <td colspan="2">
+                          I attach the following: *
+                          <table class="table table-borderless">
+                            <tbody>
+                              <tr>
+                                <td width="1%" style="padding-left: 0;">
+                                  (a)
+                                </td>
+                                <td>
+                                  Cover letter
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (b)
+                                </td>
+                                <td>
+                                  Detailed engineering evaluation report
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (c)
+                                </td>
+                                <td>
+                                  QP endorsed engineering plan and calculations
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (d)
+                                </td>
+                                <td>
+                                  Detailed method statement of the proposed
+                                  engineering work
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (e)
+                                </td>
+                                <td>
+                                  Instrumentation proposal
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (f)
+                                </td>
+                                <td>
+                                  Pre-condition survey
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (g)
+                                </td>
+                                <td>
+                                  Emergency procedure and call-up list
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (h)
+                                </td>
+                                <td>
+                                  Risk assessment
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSENG_CHECK60" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>7.</td>
+                        <td colspan="2">
+                          I acknowledge that the review by the Authority is limited to
+                          compliance with the Authority’s
+                          Civil Design Criteria (CDC), Architecture Design Criteria (ADC),
+                          Materials and Workmanship
+                          (M&W) Specifications, and Approval-in-Principle (AIP). Acceptance by
+                          the Authority shall in no
+                          way relieve me from my statutory, contractual or professional
+                          responsibilities, including but
+                          not limited to the adequacy and practicality of this submission.
+                          <span group-id="RAILSENG_CHECK_Asterisk">*</span>
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSENG_CHECK70" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>8.</td>
+                        <td colspan="2">
+                          I confirm that the same copy of proposal has been submitted to the
+                          railway operator. I attach
+                          a copy of acknowledgement letter from railway operator. <span
+                            group-id="RAILSENG_CHECK_Asterisk">*</span>
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSENG_CHECK80" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="mls-espo-right-inner-container borderchecking">
+              <h2>Section V Appointment of Assignee</h2>
+              <div class="mls-espro-form-fields row">
+                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                  <table class="table table-bordered" style="margin-bottom: 0px;">
+                    <tbody>
+                      <tr>
+                        <td width="2%" style="padding-top: 17px;">1.</td>
+                        <td colspan="2">
+                          <table class="table table-borderless">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  I hereby appoint <br>
+                                  <cn2-button label="Add"
+                                    event-click="insertDuplicate('appointForm','AP1');disableDelete('appointForm')">
+                                  </cn2-button>
+                                </td>
+                                <td style="padding: 0px;">
+                                  <div id="appointForm">
+                                    <div id="AP1" class="col-xs-12 col-sm-12 col-lg-12 col-md-12 appointfields"
+                                      style="padding: 0px;">
+                                      <table class="table table-borderless pt-0 pb-0">
+                                        <tbody>
+                                          <tr>
+                                            <td class="pb-0">
+                                              <cn2-select id="RAILSENG_Title10" prefix="RAILSENG_Title" suffix="0"
+                                                options="Mr:Mr, Ms:Ms" dont no-label>
+                                              </cn2-select>
+                                            </td>
+                                            <td class="pb-0">
+                                              <cn2-textbox id="RAILSENG_Name100" prefix="RAILSENG_Name" suffix="00"
+                                                no-label dont>
+                                              </cn2-textbox>
+                                            </td>
+                                            <td class="pb-0">
+                                              RE No.
+                                            </td>
+                                            <td class="pb-0">
+                                              <cn2-textbox id="MemberRole_Professional_No_QPTC600"
+                                                prefix="RAILSENG_BOA_PENo" suffix="00" no-label dont>
+                                              </cn2-textbox>
+                                            </td>
+                                            <td class="pb-0">
+                                              <cn2-button id="delete1AP" class="deleteBtn" prefix="delete" suffix="AP"
+                                                style="float: left"
+                                                event-click="removeDuplicate(this.id,'AP1','appointForm');disableDelete('appointForm')"
+                                                label="Delete" danger="" disabled>
+                                              </cn2-button>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          to act on my behalf and to suitably discharge my
+                          responsibility as required in
+                          the event of my absence <span app7Sec5Aste>*</span>
+                        </td>
+                        <td width="3%" class="text-center" style="padding-top: 17px;">
+                          <cn2-checkbox id="RAILSENG_CHECK90_10" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2.</td>
+                        <td colspan="2">
+                          The above assignee is a qualified Resident Engineer accredited with
+                          Building and
+                          Construction Authority or Joint Accreditation Committee of the
+                          institution of Engineers
+                          Singapore and the Association of Consulting Engineers Singapore.
+                          <br> I attach a copy of his
+                          certificate for your reference and acceptance. <span app7Sec5Aste>*</span>
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSENG_CHECK90" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3.</td>
+                        <td colspan="2">
+                          I have briefed the above assignee on the requirements and scope of
+                          works. <span app7Sec5Aste>*</span>
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSENG_CHECK100" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>4.</td>
+                        <td colspan="2">
+                          Notwithstanding such assignment, I shall be fully responsible for
+                          all actions taken by my
+                          assignee with or without my prior consent or sanction. <span app7Sec5Aste>*</span>
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSENG_CHECK110" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="4">
+                          <cn2-textarea label="Remarks/Comments:" maxlength="1000" id="RAILSENG_Decl_RemaComm10">
+                          </cn2-textarea>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div section id="3-6" hidden style="margin-bottom:65px">
+            <h2 class="text-center">
+              Application for Extension of Permit To Carry Out Engineering
+              Work
+            </h2>
+            <div class="mls-espo-right-inner-container borderchecking">
+              <h2>Section III Permit Application Details</h2>
+              <div class="mls-espro-form-fields row">
+                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                  <table class="table table-borderless" style="margin-bottom: 0px;">
+                    <tbody>
+                      <tr>
+                        <td width="35%">
+                          Date of previous permit issued
+                        </td>
+                        <td>
+                          <cn2-datefield no-label id="RAILSUND_DateOf_PrevPermit10" event-change="RAILSUNDchange(1)"
+                            dont>
+                          </cn2-datefield>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Validity of previous permit issued (in months)
+                        </td>
+                        <td>
+                          <cn2-textbox no-label id="RAILSUND_ValidOf_PrevPermit10" event-input="RAILSUNDchange(1)" dont
+                            numeric></cn2-textbox>
+                          <small style="color: red;">
+                            <span id="RAILSUND_Message10"></span>
+                          </small>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Submission No for which the previous permit was issued
+                        </td>
+                        <td>
+                          <div class="mls-espro-form-fields row">
+                            <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                              <cn2-select no-label id="RAILSUND_SubNo10" dont options="ES:ES,CR:CR"></cn2-select>
+                            </div>
+                            <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                              <cn2-textbox no-label id="RAILSUND_SubNo20" dont>
+                              </cn2-textbox>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Is there any change of approved method statement?
+                        </td>
+                        <td>
+                          <div class="mls-espro-form-fields row">
+                            <div class="col-xs-auto col-sm-auto col-lg-auto col-md-auto">
+                              <cn2-switchbutton data-true="YES" data-false="NO" data-on="YES" data-off="NO"
+                                switch-id="RAILSUND_Yes10"
+                                event-change="switchButton(this,'RAILSUND_Yes10', 'RAILSUND_No10'); RAILSUNDchange(2)">
+                              </cn2-switchbutton>
+                              <cn2-checkbox id="RAILSUND_Yes10" hidden>
+                              </cn2-checkbox>
+                              <cn2-checkbox id="RAILSUND_No10" hidden>
+                              </cn2-checkbox>
+                            </div>
+                            <div class="col-xs-auto col-sm-auto col-lg-auto col-md-auto">
+                              <small style="color: red;">
+                                <span id="RAILSUND_Message20"></span>
+                              </small>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Is there a change of appointed QP (Architect), QP (Structure) or
+                          developer?
+                        </td>
+                        <td>
+                          <div class="mls-espro-form-fields row">
+                            <div class="col-xs-auto col-sm-auto col-lg-auto col-md-auto">
+                              <cn2-switchbutton data-true="YES" data-false="NO" data-on="YES" data-off="NO"
+                                switch-id="RAILSUND_Yes20"
+                                event-change="switchButton(this,'RAILSUND_Yes20', 'RAILSUND_No20'); RAILSUNDchange(3)">
+                              </cn2-switchbutton>
+                              <cn2-checkbox id="RAILSUND_Yes20" hidden>
+                              </cn2-checkbox>
+                              <cn2-checkbox id="RAILSUND_No20" hidden>
+                              </cn2-checkbox>
+                            </div>
+                            <div class="col-xs-auto col-sm-auto col-lg-auto col-md-auto">
+                              <small style="color: red;">
+                                <span id="RAILSUND_Message30"></span>
+                              </small>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="mls-espo-right-inner-container borderchecking">
+              <h2>Section IV Declaration</h2>
+              <div class="mls-espro-form-fields row">
+                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                  <table class="table table-bordered" style="margin-bottom: 0px;">
+                    <tbody>
+                      <tr>
+                        <td width="2%" style="padding-top: 17px;">1.</td>
+                        <td colspan="2">
+                          I,
+                          <cn2-textbox id="RAILSUND_FIELD4" no-label inline="4" qpName disabled
+                            event-change="loadDropDownDetails(this);">
+                          </cn2-textbox>, BOA / PE Registration No.
+                          <cn2-textbox id="MemberRole_Professional_No_QPTC80" qpRegNo no-label inline="4" disabled>
+                          </cn2-textbox> confirm that I am appointed as the Qualified Person
+                          responsible for the
+                          supervision of engineering works within the railway protection
+                          zone/railway corridor under the
+                          Rapid Transit Systems (Development and Building Works in Railway
+                          Corridor and Railway
+                          Protection Zone) Regulations. *
+                        </td>
+                        <td width="3%" class="text-center" style="padding-top: 17px;">
+                          <cn2-checkbox id="RAILSUND_CHECK1" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2.</td>
+                        <td colspan="2">
+                          I undertake to fully discharge the duties stipulated in the Rapid
+                          Transit Systems (Development
+                          and Building Works in Railway corridor and Railway Protection Zone)
+                          Regulations; and *
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSUND_CHECK2" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3.</td>
+                        <td colspan="2">
+                          I will take reasonable steps and exercise due diligence to ensure
+                          that works are carried out
+                          in accordance with the approved plans / details, the Code of
+                          Practice for Railway Protection,
+                          the Rapid Transit Systems (Development and Building Works in Railway
+                          Corridor and the Railway
+                          Protection Zone) Regulations; and the Rapid Transit Systems (Railway
+                          Protection, Restricted
+                          Activities) Regulation and its amendments. Those activities carried
+                          out in the railway
+                          protection should also satisfy the “Guide to Carrying Out Restricted
+                          Activities within Railway
+                          Protection and Safety Zone”. *
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSUND_CHECK3" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="4">
+                          <cn2-textarea label="Remarks/Comments:" maxlength="1000" id="RAILSUND_Remarks10">
+                          </cn2-textarea>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div section id="3-7" hidden style="margin-bottom:65px">
+            <h2 class="text-center">
+              Application for Clearance of Certificate of Statutory Completion for Development/ Building
+              Works in
+              Railway Protection Zone / Railway Corridor
+            </h2>
+            <div class="mls-espo-right-inner-container borderchecking">
+              <h2>Section III Declaration</h2>
+              <div class="mls-espro-form-fields row">
+                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                  <table class="table table-bordered" style="margin-bottom: 0px;">
+                    <tbody>
+                      <tr>
+                        <td colspan="4">
+                          <b>Declaration by Supervision Qualified Person for
+                            Architectural/Building Works</b>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="2%" style="padding-top: 17px;">1.</td>
+                        <td colspan="2">
+                          I,
+                          <cn2-select id="Member_Member_Name_QPTC20" no-label inline="4" data-options="swQpDropdown"
+                            event-change="loadDropDownDetails(this);">
+                          </cn2-select>, BOA / PE Registration No.
+                          <cn2-textbox id="MemberRole_Professional_No_QPTC120" no-label inline="4" disabled>
+                          </cn2-textbox> being the qualified person appointed under the Rapid
+                          Transit Systems
+                          (Development and Building Works in Railway Corridor and Railway
+                          Protection Zone) Regulations,
+                          hereby certify that I have supervised the erection of the building
+                          works and such works have
+                          been carried out and completed in accordance with the approved
+                          building plan and calculations,
+                          the Code of Practice of Railway Protection and conditions imposed by
+                          LTA. *
+                        </td>
+                        <td width="3%" class="text-center" style="padding-top: 17px;">
+                          <cn2-checkbox id="RAILSCOS_CHECK1" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="4">
+                          <b>Declaration by Supervision Qualified Person for Structural
+                            Works</b>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2.</td>
+                        <td colspan="2">
+                          I,
+                          <cn2-select id="Member_Member_Name_QPTC30" no-label inline="4" data-options="sw2QpDropdown"
+                            event-change="loadDropDownDetails(this);">
+                          </cn2-select>, BOA / PE Registration No.
+                          <cn2-textbox id="MemberRole_Professional_No_QPTC130" no-label inline="4" disabled>
+                          </cn2-textbox> being the qualified person appointed under the Rapid
+                          Transit Systems
+                          (Development and Building Works in Railway Corridor and Railway
+                          Protection Zone) Regulations,
+                          hereby certify that I have supervised the piling / structural works
+                          and such works have been
+                          carried out and completed in accordance with the approved
+                          piling/structural plans, the Code of
+                          Practice of Railway Protection and conditions imposed by LTA. *
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSCOS_CHECK2" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3.</td>
+                        <td colspan="2">
+                          I confirm that all instruments including its fixtures installed at
+                          the RTS structures are
+                          fully removed. The affected areas have been properly made good with
+                          high strength non-shrink grout*
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSCOS_CHECK3" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>4.</td>
+                        <td colspan="2">
+                          We attach the following: *
+                          <table class="table table-borderless">
+                            <tbody>
+                              <tr>
+                                <td width="1%" style="padding-left: 0;">
+                                  (a)
+                                </td>
+                                <td>
+                                  Cover letter
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (b)
+                                </td>
+                                <td>
+                                  QP endorsed as-built architectural drawings
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (c)
+                                </td>
+                                <td>
+                                  QP endorsed as-built structural/piling/foundation
+                                  plans
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (d)
+                                </td>
+                                <td>
+                                  Post-con photogenic survey
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSCOS_CHECK3" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="4">
+                          <cn2-textarea label="Remarks/Comments:" maxlength="1000" id="FIELD8">
+                          </cn2-textarea>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div section id="3-8" hidden style="margin-bottom:65px">
+            <h2 class="text-center">
+              Submission of Updated LTA As-built Drawings and Documents Prior to Closure of Modification
+              Request (COM)
+            </h2>
+            <div class="mls-espo-right-inner-container borderchecking">
+              <h2>Section III Declaration</h2>
+              <div class="mls-espro-form-fields row">
+                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                  <table class="table table-bordered" style="margin-bottom: 0px;">
+                    <tbody>
+                      <tr>
+                        <td width="35%">
+                          Affected Rail Line:
+                        </td>
+                        <td>
+                          <cn2-select no-label id="RAILSCSP_AffeRailLine10" dont
+                            options="NSL:NSL, EWL:EWL, CCL:CCL, NEL:NEL, DTL:DTL, BPLRT:BPLRT, SPLRT:SPLRT, TEL:TEL, JRL:JRL, Others:Others"
+                            event-change="RAILSCSP_AffeRailLine10_change(this)">
+                          </cn2-select>
+                          <div id="affectedRailOther_Show" hidden>
+                            <br>
+                            <cn2-textbox no-label id="RAILSCSP_AffeRailLineOthe10" dont placeholder="Please Specify">
+                            </cn2-textbox>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="35%">
+                          Affected Location:<br>
+                          <span style="font-style: italic; color: gray;">[ Please
+                            indicate the name of station, depot or
+                            section of viaduct ]</span>
+                        </td>
+                        <td>
+                          <cn2-textarea no-label id="RAILSCSP_AffeLoca10" dont></cn2-textarea>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="35%">
+                          Approved Modification No.: *
+                        </td>
+                        <td>
+                          <cn2-textbox no-label event-change="ModNoChange(this)" id="RAILSCSP_AppModiNo10" dont>
+                          </cn2-textbox>
+                        </td>
+                      </tr>
+                      <tr id="RAILSCSP_JobNo10_Show" hidden>
+                        <td width="35%">
+                          Job No.:
+                        </td>
+                        <td>
+                          <cn2-textbox no-label id="RAILSCSP_JobNo10" dont></cn2-textbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="35%">
+                          Title of the modification work:<br>
+                          <span style="font-style: italic; color: gray;">[ Limited to 1000
+                            character, i.e. Removal of knock-out panel at concourse level of
+                            CCL Paya Lebar station. ]</span>
+                        </td>
+                        <td>
+                          <cn2-textbox no-label id="RAILSCSP_TitleModiWork10" dont>
+                          </cn2-textbox>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table class="table table-bordered" style="margin-bottom: 0px;">
+                    <tbody>
+                      <tr>
+                        <td width="2%" style="padding-top: 17px;">1.</td>
+                        <td colspan="2">
+                          I,
+                          <cn2-textbox id="RAILSCSP_FIELD1" no-label inline="4" qpName disabled
+                            event-change="loadDropDownDetails(this);">
+                          </cn2-textbox>, BOA / PE Registration No.
+                          <cn2-textbox id="MemberRole_Professional_No_QPTC100" qpRegNo no-label inline="4" disabled>
+                          </cn2-textbox> being the qualified person appointed under the Rapid
+                          Transit Systems
+                          (Development and Building Works in Railway Corridor and the Railway
+                          Protection Zone)
+                          Regulations, hereby certify that I have updated/amended LTA’s
+                          as-built drawings in compliance
+                          with the requirements stipulated in the Code of Practice for Railway
+                          Protection and the other
+                          conditions imposed by LTA. *
+                        </td>
+                        <td width="3%" class="text-center" style="padding-top: 17px;">
+                          <cn2-checkbox id="RAILSCSP_CHECK1" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2.</td>
+                        <td colspan="2">
+                          I attach the following: *
+                          <table class="table table-borderless">
+                            <tbody>
+                              <tr>
+                                <td width="1%" style="padding-left: 0;">
+                                  (a)
+                                </td>
+                                <td>
+                                  Cover letter
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (b)
+                                </td>
+                                <td>
+                                  Updated LTA as-built drawings
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (c)
+                                </td>
+                                <td>
+                                  Drawing list
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSCSP_CHECK2" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="4">
+                          <cn2-textarea label="Remarks/Comments:" maxlength="1000" id="RemaComm20">
+                          </cn2-textarea>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div section id="3-9" hidden style="margin-bottom:65px">
+            <h2 class="text-center">
+              Submission of Instrumentation Monitoring Report
+            </h2>
+            <div class="mls-espo-right-inner-container borderchecking">
+              <h2>Section III - Declaration</h2>
+              <div class="mls-espro-form-fields row">
+                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                  <table class="table table-bordered" style="margin-bottom: 0px;">
+                    <tbody>
+                      <tr>
+                        <td colspan="4">
+                          <b>Declaration by Supervision Qualified Person for Structural
+                            Works</b>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="2%" style="padding-top: 17px;">1.</td>
+                        <td colspan="2">
+                          I,
+                          <cn2-textbox id="RAILSIMR_FIELD1" no-label inline="4" qpName disabled
+                            event-change="loadDropDownDetails(this);">
+                          </cn2-textbox>, PE Registration No.
+                          <cn2-textbox id="MemberRole_Professional_No_QPTC110" qpRegNo no-label inline="4" disabled>
+                          </cn2-textbox> being the qualified person appointed under the Rapid
+                          Transit Systems
+                          (Development and Building Works in Railway Corridor and the Railway
+                          Protection Zone)
+                          Regulations, hereby certify that I have reviewed the monitoring
+                          results and the ground
+                          movement and/or the RTS structural movement are within the predicted
+                          limit and alert level. *
+                        </td>
+                        <td width="3%" class="text-center" style="padding-top: 17px;">
+                          <cn2-checkbox id="RAILSIMR_CHECK1" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2.</td>
+                        <td colspan="2">
+                          I shall continuously monitor the effects of construction works on
+                          the rapid transit system
+                          structures, tracks and the ground. I shall analyse the monitoring
+                          results, predict the likely
+                          trends and notify the Authority immediately of any deviation from
+                          the predicted results and
+                          trends. I shall also make proposal to change the method of working
+                          or to implement an
+                          emergency plan as a result of monitoring.
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSIMR_CHECK2" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3.</td>
+                        <td colspan="2">
+                          I attach the following: *
+                          <table class="table table-borderless">
+                            <tbody>
+                              <tr>
+                                <td width="1%" style="padding-left: 0;">
+                                  (a)
+                                </td>
+                                <td>
+                                  Cover letter
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (b)
+                                </td>
+                                <td>
+                                  Summary of monitoring results and findings
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-left: 0;">
+                                  (c)
+                                </td>
+                                <td>
+                                  Endorsed weekly monitoring report
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td class="text-center">
+                          <cn2-checkbox id="RAILSIMR_CHECK3" no-label checked mandatory
+                            event-change="toggleCheck(this);">
+                          </cn2-checkbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="4">
+                          <cn2-textarea label="Remarks/Comments:" maxlength="1000" id="RAILSIMR_ FIELD10">
+                          </cn2-textarea>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page4">
+          <div class="mls-espo-right-inner-container borderchecking" id="fee3-1">
+            <h2>Section IV Fee Computation</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12" id="section4-1">
+                <table class="table table-bordered" style="margin-bottom: 0px;">
+                  <tbody>
+                    <tr>
+                      <td colspan="5">
+                        Is the proposed development/building work involved any
+                        interface/connection/modification to existing RTS
+                        Structure?
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="5">
+                        <input type="radio" id="RAILSDP_RADIO1"
+                          onclick="onTick(this, 'RAILSDP_RADIO1', 'RAILSDP_RADIO2', 'yes')" />&nbsp;Yes
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" id="RAILSDP_RADIO2"
+                          onclick="onTick(this, 'RAILSDP_RADIO1', 'RAILSDP_RADIO2', 'no')" />&nbsp;No
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="5">
+                        Additional flat fee of $10,500 per interface per
+                        location will be applicable if the proposed
+                        development/building work is interfaced with RTS
+                        structure.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">
+                        No. of interface/connection/modification to existing
+                        RTS Structure
+                      </td>
+                      <td width="30%">
+                        <cn2-select id="RAILSDP_POPUP1" no-label options="1:1,2:2,3:3,4:4,5:5,Others:Others"
+                          event-change="toggleText(this)"></cn2-select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">Input number of interfaces</td>
+                      <td>
+                        <cn2-textbox id="RAILSDP_FIELD8" no-label numeric event-blur="greaterThanFive(this);">
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-bordered" style="margin-top: 0px; margin-bottom: 0px;">
+                  <tbody>
+                    <tr>
+                      <td colspan="5">
+                        Type of Development <br />
+                        (Choose only 1 type of development listed below)
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="5">Type 1</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">a. Landed housing</td>
+                      <td class="text-center">
+                        <input type="radio" id="RAILSDP_Type1A" data-devType="1"
+                          onclick="typeOfDev(this, 'RAILSDP_sideCheck');" RAILSDP-radios />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">b. Standalone fire station</td>
+                      <td class="text-center">
+                        <input type="radio" id="RAILSDP_Type1B" data-devType="1"
+                          onclick="typeOfDev(this, 'RAILSDP_sideCheck');" RAILSDP-radios />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">
+                        c. Standalone electrical sub-station
+                      </td>
+                      <td class="text-center">
+                        <input type="radio" id="RAILSDP_Type1C" data-devType="1"
+                          onclick="typeOfDev(this, 'RAILSDP_sideCheck');" RAILSDP-radios />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">d. Standalone petrol station</td>
+                      <td class="text-center">
+                        <input type="radio" id="RAILSDP_Type1D" data-devType="1"
+                          onclick="typeOfDev(this, 'RAILSDP_sideCheck');" RAILSDP-radios />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">
+                        e. Standalone commuter facility (covered linkway, taxi
+                        stand, bus shelter, cycling path)
+                      </td>
+                      <td class="text-center">
+                        <input type="radio" id="RAILSDP_Type1E" data-devType="1"
+                          onclick="typeOfDev(this, 'RAILSDP_sideCheck');" RAILSDP-radios />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">
+                        f. Addition and Alteration (A&A) works without any
+                        structural plan submission to the Competent Authority
+                      </td>
+                      <td class="text-center">
+                        <input type="radio" id="RAILSDP_Type1F" data-devType="1"
+                          onclick="typeOfDev(this, 'RAILSDP_sideCheck');" RAILSDP-radios />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="5">Type 2</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">
+                        a. Standalone underpass or pedestrian overhead bridge
+                      </td>
+                      <td class="text-center">
+                        <input type="radio" id="RAILSDP_Type2A" data-devType="2"
+                          onclick="typeOfDev(this, 'RAILSDP_sideCheck');" RAILSDP-radios />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">
+                        b. All development/building works not listed in Type 1
+                        and without basement construction
+                      </td>
+                      <td class="text-center">
+                        <input type="radio" id="RAILSDP_Type2B" data-devType="2"
+                          onclick="typeOfDev(this, 'RAILSDP_sideCheck');" RAILSDP-radios />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">
+                        c. Addition and Alteration (A&A) works with structural
+                        plan submission without basement construction to the
+                        Competent Authority.
+                      </td>
+                      <td class="text-center">
+                        <input type="radio" id="RAILSDP_Type2C" data-devType="2"
+                          onclick="typeOfDev(this, 'RAILSDP_sideCheck');" RAILSDP-radios />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="5">Type 3</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">
+                        a. All development/building works not listed in Type 1
+                        and/or 2 and with basement construction
+                      </td>
+                      <td class="text-center">
+                        <input type="radio" id="RAILSDP_Type3A" data-devType="3"
+                          onclick="typeOfDev(this, 'RAILSDP_sideCheck');" RAILSDP-radios />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">
+                        b. Addition and alteration works involving the
+                        erection or extension of a new building with basement
+                        construction
+                      </td>
+                      <td class="text-center">
+                        <input type="radio" id="RAILSDP_Type3B" data-devType="3"
+                          onclick="typeOfDev(this, 'RAILSDP_sideCheck');" RAILSDP-radios />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="2%" rowspan="15">4.1</td>
+                      <td colspan="3">
+                        <b>
+                          Fee Computation and Declaration of Fees <br />
+                          INTERPRETATION ACT
+                        </b>
+                      </td>
+                      <td rowspan="15" class="text-center">
+                        <cn2-checkbox id="RAILSDP_sideCheck"
+                          event-click="activateFee(this, [RAILSDP_FeeCompDeclFee_Type1Deve_Qty10,RAILSDP_FeeCompDeclFee_Type2Deve_Qty10,RAILSDP_FeeCompDeclFee_Type3Deve_Qty10,RAILSDP_FeeCompDeclFee_InteConnModiExis_Qty10],[RAILSDP_FeeCompDeclFee_Type1Deve_CompFees10,RAILSDP_FeeCompDeclFee_Type2Deve_CompFees10,RAILSDP_FeeCompDeclFee_Type3Deve_CompFees10,RAILSDP_FeeCompDeclFee_InteConnModiExis_CompFees10], 'RAILSDP_FeeCompDeclFee_TotaFeePaya10')"
+                          no-label hidden></cn2-checkbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">
+                        <b> Type of Application </b>
+                      </td>
+                      <td class="text-center"><b> Quantity </b></td>
+                      <td class="text-center"><b> Computed Fees </b></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">
+                        Type 1 Development ($3,300 per Development)
+                      </td>
+                      <td>
+                        <cn2-textbox id="RAILSDP_FeeCompDeclFee_Type1Deve_Qty10" event-blur="onBlurZero(this);"
+                          data-defaultZero="0" no-label numeric maxlength="20" disabled
+                          event-input="computeFee(this, 'RAILSDP_FeeCompDeclFee_TotaFeePaya10', 'RAILSDP_FeeCompDeclFee_Type1Deve_CompFees10', '3300', '$');">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <label>$</label>&nbsp;&nbsp;<cn2-textbox id="RAILSDP_FeeCompDeclFee_Type1Deve_CompFees10"
+                          no-label disabled data-defaultZero="0" inline="10">
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">
+                        Type 2 Development ($9,500 per Development)
+                      </td>
+                      <td>
+                        <cn2-textbox id="RAILSDP_FeeCompDeclFee_Type2Deve_Qty10" event-blur="onBlurZero(this);"
+                          data-defaultZero="0" no-label numeric maxlength="20" disabled
+                          event-input="computeFee(this, 'RAILSDP_FeeCompDeclFee_TotaFeePaya10', 'RAILSDP_FeeCompDeclFee_Type2Deve_CompFees10', '9500', '$');">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <label>$</label>&nbsp;&nbsp;<cn2-textbox id="RAILSDP_FeeCompDeclFee_Type2Deve_CompFees10"
+                          no-label disabled data-defaultZero="0" inline="10">
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">
+                        Type 3 Development ($18,800 per Development)
+                      </td>
+                      <td>
+                        <cn2-textbox id="RAILSDP_FeeCompDeclFee_Type3Deve_Qty10" event-blur="onBlurZero(this);"
+                          data-defaultZero="0" no-label numeric maxlength="20" disabled
+                          event-input="computeFee(this, 'RAILSDP_FeeCompDeclFee_TotaFeePaya10', 'RAILSDP_FeeCompDeclFee_Type3Deve_CompFees10', '18800', '$');">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <label>$</label>&nbsp;&nbsp;<cn2-textbox id="RAILSDP_FeeCompDeclFee_Type3Deve_CompFees10"
+                          no-label disabled data-defaultZero="0" inline="10">
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">
+                        Interface/connection/ modification to existing RTS
+                        Structure <br />
+                        ($10,500 per Integration per location)
+                      </td>
+                      <td>
+                        <cn2-textbox id="RAILSDP_FeeCompDeclFee_InteConnModiExis_Qty10" event-blur="onBlurZero(this);"
+                          data-defaultZero="0" no-label numeric maxlength="20" disabled
+                          event-input="computeFee(this, 'RAILSDP_FeeCompDeclFee_TotaFeePaya10', 'RAILSDP_FeeCompDeclFee_InteConnModiExis_CompFees10', '10500', '$');">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <label>$</label>&nbsp;&nbsp;<cn2-textbox id="RAILSDP_FeeCompDeclFee_InteConnModiExis_CompFees10"
+                          no-label disabled data-defaultZero="0" inline="10">
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3" class="text-right">
+                        <b> Total Fee Payable </b>
+                        &nbsp;&nbsp;&nbsp;<label>$</label>&nbsp;&nbsp;<cn2-textbox
+                          id="RAILSDP_FeeCompDeclFee_TotaFeePaya10" no-label disabled data-defaultZero="0" inline="4">
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        I have attached a copy of the payment receipt /
+                        invoice in this submission.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <input type="radio" id="RAILSDP_FeeCompDeclFee_NewSubm10" name="RAILSDP" checked disabled
+                          onclick="newSubAmntRec(this, 'RAILSDP_FeeCompDeclFee_NewSubm_Amount10', 'RAILSDP_FeeCompDeclFee_NewSubm_ReceNo10', ['RAILSDP_FeeCompDeclFee_Resu_FullPaymDoneEarl10', 'RAILSDP_FeeCompDeclFee_Resu_TopUpPaymDone10'], ['RAILSDP_FeeCompDeclFee_Resu_FullPaymDoneEarl_SubmNoFeePaid10', 'RAILSDP_FeeCompDeclFee_Resu_TopUpPaymDone_Amount10', 'RAILSDP_FeeCompDeclFee_Resu_TopUpPaymDone_ReceNo10'])" />
+                        &nbsp;&nbsp;&nbsp; <b>New Submission</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <div class="row">
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <label id="amt3-1" page="3-1">Amount :</label>
+                            &nbsp;&nbsp;&nbsp;
+                            <cn2-textbox id="RAILSDP_FeeCompDeclFee_NewSubm_Amount10" no-label mandatory inline="5"
+                              event-input="onlyFloat(this);"
+                              event-blur="inputZero(this);totalAmountValidation(this, RAILSDP_FeeCompDeclFee_TotaFeePaya10)">
+                            </cn2-textbox>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <label id="re3-1" page="3-1">Receipt No. :</label>
+                            &nbsp;&nbsp;&nbsp;
+                            <cn2-textbox id="RAILSDP_FeeCompDeclFee_NewSubm_ReceNo10" no-label inline="5"
+                              maxlength="20">
+                            </cn2-textbox>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <input type="radio" id="RAILSDP_FeeCompDeclFee_Resu10" name="RAILSDP"
+                          onclick="reTopRadio(this, 'RAILSDP_FeeCompDeclFee_Resu_FullPaymDoneEarl10', 'RAILSDP_FeeCompDeclFee_Resu_TopUpPaymDone10', ['RAILSDP_FeeCompDeclFee_NewSubm_Amount10', 'RAILSDP_FeeCompDeclFee_NewSubm_ReceNo10'])"
+                          disabled />
+                        &nbsp;&nbsp;&nbsp;
+                        <b>Resubmission</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3" style="text-indent: 40px;">
+                        <input type="radio" id="RAILSDP_FeeCompDeclFee_Resu_FullPaymDoneEarl10" name="RAILSDP_Radio"
+                          onclick="enableFullPayment(this, 'RAILSDP_FeeCompDeclFee_Resu_FullPaymDoneEarl_SubmNoFeePaid10', ['RAILSDP_FeeCompDeclFee_Resu_TopUpPaymDone_Amount10', 'RAILSDP_FeeCompDeclFee_Resu_TopUpPaymDone_ReceNo10']); changeAsterisk(this, 'full', ['3-1'], ['amtsub3-1', 'resub3-1']);"
+                          disabled />
+                        &nbsp;&nbsp; <b>Full Payment done earlier</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <div class="row">
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <label full="3-1">submission No. under which fee was
+                              paid</label>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <cn2-textbox id="RAILSDP_FeeCompDeclFee_Resu_FullPaymDoneEarl_SubmNoFeePaid10" no-label
+                              disabled maxlength="20"></cn2-textbox>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3" style="text-indent: 40px;">
+                        <input type="radio" id="RAILSDP_FeeCompDeclFee_Resu_TopUpPaymDone10" disabled
+                          name="RAILSDP_Radio"
+                          onclick="enableTopUp(this, 'RAILSDP_FeeCompDeclFee_Resu_TopUpPaymDone_Amount10', 'RAILSDP_FeeCompDeclFee_Resu_TopUpPaymDone_ReceNo10', 'RAILSDP_FeeCompDeclFee_Resu_FullPaymDoneEarl_SubmNoFeePaid10'); changeAsterisk(this, 'top', ['3-1'], ['amtsub3-1', 'resub3-1']);" />
+                        &nbsp;&nbsp; <b>Top up payment done</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <div class="row">
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <label id="amtsub3-1" subpages="3-1">Amount :
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <cn2-textbox id="RAILSDP_FeeCompDeclFee_Resu_TopUpPaymDone_Amount10" no-label inline="5"
+                              disabled maxlength="23" event-input="onlyFloat(this);"
+                              event-blur="inputZero(this);totalAmountValidation(this, RAILSDP_FeeCompDeclFee_TotaFeePaya10)">
+                            </cn2-textbox>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <label id="resub3-1" subpages="3-1">Receipt No. :
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <cn2-textbox id="RAILSDP_FeeCompDeclFee_Resu_TopUpPaymDone_ReceNo10" no-label inline="5"
+                              disabled maxlength="20">
+                            </cn2-textbox>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="2%" id="remarksID2">4.2</td>
+                      <td colspan="4">
+                        <cn2-textarea label="Remarks/Comments:" id="RAILSDP_FeeCompDeclFee_RemaComm10">
+                        </cn2-textarea>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" hidden id="fee3-3">
+            <h2>Section IV Fee Computation</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12" id="section4-2">
+                <table class="table table-bordered" style="margin-bottom: 0px;">
+                  <tbody>
+                    <tr>
+                      <td colspan="5">Type of Application</td>
+                    </tr>
+                    <tr>
+                      <td width="2%">4.1</td>
+                      <td colspan="3">Amendment of Development Proposal</td>
+                      <td class="text-center">
+                        <input type="radio" id="RAILSENG_RADIO1" data-devType="1" RAILSENG-radios
+                          onclick="amendDevPlan(this)" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>4.2</td>
+                      <td colspan="3">Amendment of Building Proposal</td>
+                      <td class="text-center">
+                        <input type="radio" id="RAILSENG_RADIO2" data-devType="2" RAILSENG-radios
+                          onclick="amendDevPlan(this)" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td rowspan="13">4.3</td>
+                      <td colspan="3">
+                        <b>
+                          Fee Computation and Declaration of Fees <br />
+                          INTERPRETATION ACT
+                        </b>
+                      </td>
+                      <td rowspan="13" class="text-center">
+                        <cn2-checkbox id="RAILSENG_sideCheck"
+                          event-click="activateFee(this, [RAILSENG_FeeCompDeclFee_DevePlan_Qty10,RAILSENG_FeeCompDeclFee_BldgPlan_Qty10],[RAILSENG_FeeCompDeclFee_DevePlan_CompFees10,RAILSENG_FeeCompDeclFee_BldgPlan_CompFees10], 'RAILSENG_FeeCompDeclFee_TotaFeePaya10')"
+                          no-label hidden></cn2-checkbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">
+                        <b> Type of Application </b>
+                      </td>
+                      <td class="text-center"><b> Quantity </b></td>
+                      <td class="text-center"><b> Computed Fees </b></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">Amendment of Development Proposal</td>
+                      <td>
+                        <cn2-textbox id="RAILSENG_FeeCompDeclFee_DevePlan_Qty10" event-blur="onBlurZero(this);"
+                          data-defaultZero="0" no-label numeric maxlength="20" disabled
+                          event-input="computeFee(this, 'RAILSENG_FeeCompDeclFee_TotaFeePaya10', 'RAILSENG_FeeCompDeclFee_DevePlan_CompFees10', '250', '$');">
+                        </cn2-textbox>
+                      </td>
+                      <td class="align-middle">
+                        <label>$</label>&nbsp;&nbsp;<cn2-textbox id="RAILSENG_FeeCompDeclFee_DevePlan_CompFees10"
+                          no-label numeric disabled data-defaultZero="0" inline="10">
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">Amendment of Building Proposal</td>
+                      <td>
+                        <cn2-textbox id="RAILSENG_FeeCompDeclFee_BldgPlan_Qty10" event-blur="onBlurZero(this);"
+                          data-defaultZero="0" no-label numeric maxlength="20" disabled
+                          event-input="computeFee(this, 'RAILSENG_FeeCompDeclFee_TotaFeePaya10', 'RAILSENG_FeeCompDeclFee_BldgPlan_CompFees10', '250', '$');">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <label>$</label>&nbsp;&nbsp;<cn2-textbox id="RAILSENG_FeeCompDeclFee_BldgPlan_CompFees10"
+                          no-label numeric disabled data-defaultZero="0" inline="10">
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3" class="text-right">
+                        <b> Total Fee Payable </b>
+                        &nbsp;&nbsp;&nbsp;<label>$</label>&nbsp;&nbsp;<cn2-textbox
+                          id="RAILSENG_FeeCompDeclFee_TotaFeePaya10" no-label disabled data-defaultZero="0" inline="3">
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        I have attached a copy of the payment receipt /
+                        invoice in this submission.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <input type="radio" id="RAILSENG_FeeCompDeclFee_NewSubm10" name="RAILSENG"
+                          onclick="newSubAmntRec(this, 'RAILSENG_FeeCompDeclFee_NewSubm_Amount10', 'RAILSENG_FeeCompDeclFee_NewSubm_ReceNo10', ['RAILSENG_FeeCompDeclFee_Resu_FullPaymDoneEarl10', 'RAILSENG_FeeCompDeclFee_Resu_TopUpPaymDone10'], ['RAILSENG_FeeCompDeclFee_Resu_FullPaymDoneEarl_SubmNoFeePaid10', 'RAILSENG_FeeCompDeclFee_Resu_TopUpPaymDone_Amount10', 'RAILSENG_FeeCompDeclFee_Resu_TopUpPaymDone_ReceNo10'])" />
+                        &nbsp;&nbsp;&nbsp; <b>New Submission</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <div class="row">
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <label id="amt3-3" page="3-3">Amount :</label>
+                            &nbsp;&nbsp;&nbsp;
+                            <cn2-textbox id="RAILSENG_FeeCompDeclFee_NewSubm_Amount10" no-label inline="5" disabled
+                              event-input="onlyFloat(this);"
+                              event-blur="inputZero(this);totalAmountValidation(this, RAILSENG_FeeCompDeclFee_TotaFeePaya10)">
+                            </cn2-textbox>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <label id="re3-3" page="3-3">Receipt No. :</label>
+                            &nbsp;&nbsp;&nbsp;
+                            <cn2-textbox id="RAILSENG_FeeCompDeclFee_NewSubm_ReceNo10" mandatory no-label maxlength="20"
+                              inline="5" disabled>
+                            </cn2-textbox>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <input type="radio" id="RAILSENG_FeeCompDeclFee_Resu10" name="RAILSENG"
+                          onclick="reTopRadio(this, 'RAILSENG_FeeCompDeclFee_Resu_FullPaymDoneEarl10', 'RAILSENG_FeeCompDeclFee_Resu_TopUpPaymDone10', ['RAILSENG_FeeCompDeclFee_NewSubm_Amount10', 'RAILSENG_FeeCompDeclFee_NewSubm_ReceNo10'])"
+                          disabled />
+                        &nbsp;&nbsp;&nbsp;
+                        <b>Resubmission</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3" style="text-indent: 40px;">
+                        <input type="radio" id="RAILSENG_FeeCompDeclFee_Resu_FullPaymDoneEarl10" disabled
+                          name="RAILSENG_Radio"
+                          onclick="enableFullPayment(this, 'RAILSENG_FeeCompDeclFee_Resu_FullPaymDoneEarl_SubmNoFeePaid10', ['RAILSENG_FeeCompDeclFee_Resu_TopUpPaymDone_Amount10', 'RAILSENG_FeeCompDeclFee_Resu_TopUpPaymDone_ReceNo10']); changeAsterisk(this, 'full', ['3-3'], ['amtsub3-3', 'resub3-3']);" />
+                        &nbsp;&nbsp; <b>Full Payment done earlier</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <div class="row">
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <label full="3-3">submission No. under which fee was
+                              paid</label>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <cn2-textbox id="RAILSENG_FeeCompDeclFee_Resu_FullPaymDoneEarl_SubmNoFeePaid10" no-label
+                              disabled maxlength="20"></cn2-textbox>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3" style="text-indent: 40px;">
+                        <input type="radio" id="RAILSENG_FeeCompDeclFee_Resu_TopUpPaymDone10" disabled
+                          name="RAILSENG_Radio"
+                          onclick="enableTopUp(this, 'RAILSENG_FeeCompDeclFee_Resu_TopUpPaymDone_Amount10', 'RAILSENG_FeeCompDeclFee_Resu_TopUpPaymDone_ReceNo10', 'RAILSENG_FeeCompDeclFee_Resu_FullPaymDoneEarl_SubmNoFeePaid10'); changeAsterisk(this, 'top', ['3-3'], ['amtsub3-3', 'resub3-3']);" />
+                        &nbsp;&nbsp; <b>Top up payment done</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <div class="row">
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <label id="amtsub3-3" subpages="3-3">Amount :
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <cn2-textbox id="RAILSENG_FeeCompDeclFee_Resu_TopUpPaymDone_Amount10" no-label inline="5"
+                              disabled event-input="onlyFloat(this);"
+                              event-blur="inputZero(this);totalAmountValidation(this, RAILSDP_FeeCompDeclFee_TotaFeePaya10)"
+                              maxlength="23">
+                            </cn2-textbox>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <label id="resub3-3" subpages="3-3">Receipt No. :
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <cn2-textbox id="RAILSENG_FeeCompDeclFee_Resu_TopUpPaymDone_ReceNo10" no-label
+                              maxlength="20" inline="5" disabled>
+                            </cn2-textbox>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td id="remarksID4">4.4</td>
+                      <td colspan="4">
+                        <cn2-textarea id="RAILSENG_FeeCompDeclFee_RemaComm10" label="Remarks/Comments:">
+                        </cn2-textarea>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" hidden id="fee3-4">
+            <h2>Section IV Fee Computation</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12" id="section4-3">
+                <table class="table table-bordered" style="margin-bottom: 0px;">
+                  <tbody>
+                    <tr>
+                      <td colspan="5">Type of Application</td>
+                    </tr>
+                    <tr>
+                      <td width="2%">4.1</td>
+                      <td colspan="3">
+                        Extension of NOA for Development Proposal
+                      </td>
+                      <td class="text-center">
+                        <input type="radio" id="RAILNOA_RADIO1" data-devType="1" RAILNOA-radios
+                          onclick="typeOfApp(this)" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>4.2</td>
+                      <td colspan="3">
+                        Extension of NOA for Building Proposal
+                      </td>
+                      <td class="text-center">
+                        <input type="radio" id="RAILNOA_RADIO2" data-devType="2" RAILNOA-radios
+                          onclick="typeOfApp(this)" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td rowspan="13">4.3</td>
+                      <td colspan="3">
+                        <b>
+                          Fee Computation and Declaration of Fees <br />
+                          INTERPRETATION ACT
+                        </b>
+                      </td>
+                      <td rowspan="13" class="text-center">
+                        <cn2-checkbox id="RAILNOA_sideCheck"
+                          event-click="activateFee(this, [RAILNOA_FeeCompDeclFee_DevePlan_Qty10,RAILNOA_FeeCompDeclFee_BldgPlan_Qty10],[RAILNOA_FeeCompDeclFee_DevePlan_CompFees10,RAILNOA_FeeCompDeclFee_BldgPlan_CompFees10], 'RAILNOA_FeeCompDeclFee_TotaFeePaya10')"
+                          no-label hidden></cn2-checkbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">
+                        <b> Type of Application </b>
+                      </td>
+                      <td class="text-center"><b> Quantity </b></td>
+                      <td class="text-center"><b> Computed Fees </b></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">Extension of NOA for Development Proposal</td>
+                      <td>
+                        <cn2-textbox id="RAILNOA_FeeCompDeclFee_DevePlan_Qty10" event-blur="onBlurZero(this);"
+                          data-defaultZero="0" no-label numeric maxlength="20" disabled
+                          event-input="computeFee(this, 'RAILNOA_FeeCompDeclFee_TotaFeePaya10', 'RAILNOA_FeeCompDeclFee_DevePlan_CompFees10', '120', '$');">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <label>$</label>&nbsp;&nbsp;<cn2-textbox id="RAILNOA_FeeCompDeclFee_DevePlan_CompFees10"
+                          no-label numeric disabled data-defaultZero="0" inline="10">
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">Extension of NOA for Building Proposal</td>
+                      <td>
+                        <cn2-textbox id="RAILNOA_FeeCompDeclFee_BldgPlan_Qty10" event-blur="onBlurZero(this);"
+                          data-defaultZero="0" no-label numeric maxlength="20" disabled
+                          event-input="computeFee(this, 'RAILNOA_FeeCompDeclFee_TotaFeePaya10', 'RAILNOA_FeeCompDeclFee_BldgPlan_CompFees10', '120', '$');">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <label>$</label>&nbsp;&nbsp;<cn2-textbox id="RAILNOA_FeeCompDeclFee_BldgPlan_CompFees10"
+                          no-label numeric disabled data-defaultZero="0" inline="10">
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3" class="text-right">
+                        <b> Total Fee Payable </b>
+                        &nbsp;&nbsp;&nbsp;<label>$</label>&nbsp;&nbsp;<cn2-textbox
+                          id="RAILNOA_FeeCompDeclFee_TotaFeePaya10" no-label disabled data-defaultZero="0" inline="3">
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        I have attached a copy of the payment receipt /
+                        invoice in this submission.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <input type="radio" id="RAILNOA_FeeCompDeclFee_NewSubm10" name="RAILNOA"
+                          onclick="newSubAmntRec(this, 'RAILNOA_FeeCompDeclFee_NewSubm_Amount10', 'RAILNOA_FeeCompDeclFee_NewSubm_ReceNo10', ['RAILNOA_FeeCompDeclFee_Resu_FullPaymDoneEarl10', 'RAILNOA_FeeCompDeclFee_Resu_TopUpPaymDone10'], ['RAILNOA_FeeCompDeclFee_Resu_FullPaymDoneEarl_SubmNoFeePaid10', 'RAILNOA_FeeCompDeclFee_Resu_TopUpPaymDone_Amount10', 'RAILNOA_FeeCompDeclFee_Resu_TopUpPaymDone_ReceNo10'])" />
+                        &nbsp;&nbsp;&nbsp; <b>New Submission</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <div class="row">
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <label id="amt3-4" page="3-4">Amount :</label>
+                            &nbsp;&nbsp;&nbsp;
+                            <cn2-textbox id="RAILNOA_FeeCompDeclFee_NewSubm_Amount10" no-label mandatory inline="5"
+                              disabled event-input="onlyFloat(this);"
+                              event-blur="inputZero(this);totalAmountValidation(this, RAILNOA_FeeCompDeclFee_TotaFeePaya10)"
+                              maxlength="23">
+                            </cn2-textbox>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <label id="re3-4" page="3-4">Receipt No. :</label>
+                            &nbsp;&nbsp;&nbsp;
+                            <cn2-textbox id="RAILNOA_FeeCompDeclFee_NewSubm_ReceNo10" no-label mandatory maxlength="20"
+                              inline="5" disabled>
+                            </cn2-textbox>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <input type="radio" id="RAILNOA_FeeCompDeclFee_Resu10" name="RAILNOA"
+                          onclick="reTopRadio(this, 'RAILNOA_FeeCompDeclFee_Resu_FullPaymDoneEarl10', 'RAILNOA_FeeCompDeclFee_Resu_TopUpPaymDone10', ['RAILNOA_FeeCompDeclFee_NewSubm_Amount10', 'RAILNOA_FeeCompDeclFee_NewSubm_ReceNo10'])"
+                          disabled />
+                        &nbsp;&nbsp;&nbsp;
+                        <b>Resubmission</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3" style="text-indent: 40px;">
+                        <input type="radio" id="RAILNOA_FeeCompDeclFee_Resu_FullPaymDoneEarl10" disabled
+                          name="RAILNOA_Radio"
+                          onclick="enableFullPayment(this, 'RAILNOA_FeeCompDeclFee_Resu_FullPaymDoneEarl_SubmNoFeePaid10', ['RAILNOA_FeeCompDeclFee_Resu_TopUpPaymDone_Amount10', 'RAILNOA_FeeCompDeclFee_Resu_TopUpPaymDone_ReceNo10']); changeAsterisk(this, 'full', ['3-4'], ['amtsub3-4', 'resub3-4']);" />
+                        &nbsp;&nbsp; <b>Full Payment done earlier</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <div class="row">
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <label full="3-4">submission No. under which fee was
+                              paid</label>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <cn2-textbox id="RAILNOA_FeeCompDeclFee_Resu_FullPaymDoneEarl_SubmNoFeePaid10" no-label
+                              disabled maxlength="20"></cn2-textbox>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3" style="text-indent: 40px;">
+                        <input type="radio" id="RAILNOA_FeeCompDeclFee_Resu_TopUpPaymDone10" disabled
+                          name="RAILNOA_Radio"
+                          onclick="enableTopUp(this, 'RAILNOA_FeeCompDeclFee_Resu_TopUpPaymDone_Amount10', 'RAILNOA_FeeCompDeclFee_Resu_TopUpPaymDone_ReceNo10', 'RAILNOA_FeeCompDeclFee_Resu_FullPaymDoneEarl_SubmNoFeePaid10'); changeAsterisk(this, 'top', ['3-4'], ['amtsub3-4', 'resub3-4']);" />
+                        &nbsp;&nbsp; <b>Top up payment done</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <div class="row">
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <label id="amtsub3-4" subpages="3-4">Amount :
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <cn2-textbox id="RAILNOA_FeeCompDeclFee_Resu_TopUpPaymDone_Amount10" no-label inline="5"
+                              disabled event-input="onlyFloat(this);"
+                              event-blur="inputZero(this);totalAmountValidation(this, RAILSDP_FeeCompDeclFee_TotaFeePaya10)"
+                              maxlength="23">
+                            </cn2-textbox>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <label id="resub3-4" subpages="3-4">Receipt No. :
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <cn2-textbox id="RAILNOA_FeeCompDeclFee_Resu_TopUpPaymDone_ReceNo10" no-label maxlength="20"
+                              inline="5" disabled>
+                            </cn2-textbox>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td id="remarksID4_1">4.4</td>
+                      <td colspan="4">
+                        <cn2-textarea id="RAILNOA_FeeCompDeclFee_RemaComm10" label="Remarks/Comments:">
+                        </cn2-textarea>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" hidden id="fee3-6">
+            <h2>Section IV Fee Computation</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12" id="section4-4">
+                <table class="table table-bordered" style="margin-bottom: 0px;">
+                  <tbody>
+                    <tr>
+                      <td colspan="5">Type of Application</td>
+                    </tr>
+                    <tr>
+                      <td width="2%">4.1</td>
+                      <td colspan="3">Extension of Permit</td>
+                      <td class="text-center">
+                        <input type="radio" id="RAILSUND_RADIO1" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td rowspan="12">4.2</td>
+                      <td colspan="3">
+                        <b>
+                          Fee Computation and Declaration of Fees <br />
+                          INTERPRETATION ACT
+                        </b>
+                      </td>
+                      <td rowspan="12" class="text-center">
+                        <cn2-checkbox id="RAILSUND_sideCheck"
+                          event-change="activateFee(this, [RAILSUND_FeeCompDeclFee_DevePlan_Qty10],[RAILSUND_FeeCompDeclFee_DevePlan_CompFees10], 'RAILSUND_FeeCompDeclFee_TotaFeePaya10');"
+                          event-no-label hidden></cn2-checkbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">
+                        <b> Type of Application </b>
+                      </td>
+                      <td class="text-center"><b> Quantity </b></td>
+                      <td class="text-center"><b> Computed Fees </b></td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">Extension of Permit</td>
+                      <td>
+                        <cn2-textbox id="RAILSUND_FeeCompDeclFee_DevePlan_Qty10" disabled event-blur="onBlurZero(this);"
+                          data-defaultZero="0" no-label numeric maxlength="20"
+                          event-input="computeFee(this, 'RAILSUND_FeeCompDeclFee_TotaFeePaya10', 'RAILSUND_FeeCompDeclFee_DevePlan_CompFees10', '120', '$');">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <label>$</label>&nbsp;&nbsp;<cn2-textbox id="RAILSUND_FeeCompDeclFee_DevePlan_CompFees10"
+                          no-label numeric disabled data-defaultZero="0" inline="10">
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3" class="text-right">
+                        <b> Total Fee Payable </b>
+                        &nbsp;&nbsp;&nbsp;<label>$</label>&nbsp;&nbsp;<cn2-textbox
+                          id="RAILSUND_FeeCompDeclFee_TotaFeePaya10" no-label disabled data-defaultZero="0" inline="3">
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        I have attached a copy of the payment receipt /
+                        invoice in this submission.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <input type="radio" id="RAILSUND_FeeCompDeclFee_NewSubm10" name="RAILSUND"
+                          onclick="newSubAmntRec(this, 'RAILSUND_FeeCompDeclFee_NewSubm_Amount10', 'RAILSUND_FeeCompDeclFee_NewSubm_ReceNo10', ['RAILSUND_FeeCompDeclFee_Resu_FullPaymDoneEarl10', 'RAILSUND_FeeCompDeclFee_Resu_TopUpPaymDone10'], ['RAILSUND_FeeCompDeclFee_Resu_FullPaymDoneEarl_SubmNoFeePaid10', 'RAILSUND_FeeCompDeclFee_Resu_TopUpPaymDone_Amount10', 'RAILSUND_FeeCompDeclFee_Resu_TopUpPaymDone_ReceNo10'])" />
+                        &nbsp;&nbsp;&nbsp; <b>New Submission</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <div class="row">
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <label id="amt3-6" page="3-6">Amount :</label>
+                            &nbsp;&nbsp;&nbsp;
+                            <cn2-textbox id="RAILSUND_FeeCompDeclFee_NewSubm_Amount10" no-label mandatory inline="5"
+                              disabled event-input="onlyFloat(this);"
+                              event-blur="inputZero(this);totalAmountValidation(this, RAILSUND_FeeCompDeclFee_TotaFeePaya10)"
+                              maxlength="23">
+                            </cn2-textbox>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <label id="re3-6" page="3-6">Receipt No. :</label>
+                            &nbsp;&nbsp;&nbsp;
+                            <cn2-textbox id="RAILSUND_FeeCompDeclFee_NewSubm_ReceNo10" no-label mandatory maxlength="20"
+                              inline="5" disabled>
+                            </cn2-textbox>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <input type="radio" id="RAILSUND_FeeCompDeclFee_Resu10" name="RAILSUND"
+                          onclick="reTopRadio(this, 'RAILSUND_FeeCompDeclFee_Resu_FullPaymDoneEarl10', 'RAILSUND_FeeCompDeclFee_Resu_TopUpPaymDone10', ['RAILSUND_FeeCompDeclFee_NewSubm_Amount10', 'RAILSUND_FeeCompDeclFee_NewSubm_ReceNo10'])"
+                          disabled />
+                        &nbsp;&nbsp;&nbsp;
+                        <b>Resubmission</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3" style="text-indent: 40px;">
+                        <input type="radio" id="RAILSUND_FeeCompDeclFee_Resu_FullPaymDoneEarl10" disabled
+                          name="RAILSUND_Radio"
+                          onclick="enableFullPayment(this, 'RAILSUND_FeeCompDeclFee_Resu_FullPaymDoneEarl_SubmNoFeePaid10', ['RAILSUND_FeeCompDeclFee_Resu_TopUpPaymDone_Amount10', 'RAILSUND_FeeCompDeclFee_Resu_TopUpPaymDone_ReceNo10']); changeAsterisk(this, 'full', ['3-6'], ['amtsub3-6', 'resub3-6']);" />
+                        &nbsp;&nbsp; <b>Full Payment done earlier</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <div class="row">
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <label full="3-6">submission No. under which fee was
+                              paid</label>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <cn2-textbox id="RAILSUND_FeeCompDeclFee_Resu_FullPaymDoneEarl_SubmNoFeePaid10" no-label
+                              disabled maxlength="20"></cn2-textbox>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3" style="text-indent: 40px;">
+                        <input type="radio" name="RAILSUND_Radio" id="RAILSUND_FeeCompDeclFee_Resu_TopUpPaymDone10"
+                          disabled
+                          onclick="enableTopUp(this, 'RAILSUND_FeeCompDeclFee_Resu_TopUpPaymDone_Amount10', 'RAILSUND_FeeCompDeclFee_Resu_TopUpPaymDone_ReceNo10', 'RAILSUND_FeeCompDeclFee_Resu_FullPaymDoneEarl_SubmNoFeePaid10'); changeAsterisk(this, 'top', ['3-6'], ['amtsub3-6', 'resub3-6']);" />
+                        &nbsp;&nbsp; <b>Top up payment done</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <div class="row">
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <label id="amtsub3-6" subpages="3-6">Amount :
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <cn2-textbox id="RAILSUND_FeeCompDeclFee_Resu_TopUpPaymDone_Amount10" no-label inline="5"
+                              disabled event-input="onlyFloat(this);"
+                              event-blur="inputZero(this);totalAmountValidation(this, RAILSDP_FeeCompDeclFee_TotaFeePaya10)"
+                              maxlength="23">
+                            </cn2-textbox>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <label id="resub3-6" subpages="3-6">Receipt No. :
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <cn2-textbox id="RAILSUND_FeeCompDeclFee_Resu_TopUpPaymDone_ReceNo10" no-label
+                              maxlength="20" inline="5" disabled>
+                            </cn2-textbox>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td id="remarksID3">4.3</td>
+                      <td colspan="4">
+                        <cn2-textarea id="RAILSUND_FeeCompDeclFee_RemaComm10" label="Remarks/Comments:">
+                        </cn2-textarea>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-fixed-footer></cn2-fixed-footer>
+    <cn2-version-footer></cn2-version-footer>
+  </div>
+</body>
+
+</html>

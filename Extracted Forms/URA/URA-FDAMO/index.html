@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>URA-FDAMO</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="author" content="Syncfusion">
+  <link rel="shortcut icon" href="resources/favicon.ico">
+  <link href="../cm/resources/assets/bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/fontawesome.min.css" rel="stylesheet">
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet">
+  <link href="../cm/styles/styles.css" rel="stylesheet">
+  <script>
+    if (typeof module === "object") {
+      window.module = module;
+      module = undefined;
+    }
+  </script>
+  <script src="../cm/resources/assets/js/jquery-3.4.1.min.js"></script>
+  <script src="../cm/resources/assets/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2switchbutton.js"></script>
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head title="DEMOLITION"></cn2-master-head><input type="hidden" name="member_id" id="member_id"><input
+    type="hidden" name="form_validated" id="form_validated">
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p><b>For enquiries related to forms, please contact the following:</b></p>
+        <p> <span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <td><b>Regulatory Authority</b></td>
+                <td><b>Email Address</b></td>
+                <td><b>Tel No.</b></td>
+                <td><b>Area of Support</b></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>URA</td>
+                <td>ura_daes_registry@ura.gov.sg</td>
+                <td>63293237</td>
+                <td>Submissions</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">OK</button>
+      </div>
+    </div>
+  </div>
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instruction"></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Application"></cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Mukim/Town Subdivision"></cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4" label="Site Address"></cn2-nav-button>
+        <cn2-nav-button target="page5" page-number="5" label="Person and Organisation"></cn2-nav-button>
+        <cn2-nav-button target="page6" page-number="6" label="Submission Info"></cn2-nav-button>
+        <cn2-nav-button target="page7" page-number="7" label="Declaration" hidden></cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" no-label inline="5" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To:</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea id="Addr20" no-label inline="5" disabled style="height: 150px;">
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Instruction</h2>
+            <ol class="mls-intro-list">
+              <li>
+                It may take you 5-10 minutes to complete.
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Application</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <cn2-select label="Application Type" id="PartOfAppl_ApplTp10" disabled
+                          options="Demolition:Demolition" event-change="updateHeaderDisplay(this, &quot;&quot;);">
+                        </cn2-select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <cn2-select mandatory label="Submission Type"
+                          options="New Submission (for fresh submission and fresh amendment submission to Written Permission):New Submission (for fresh submission and fresh amendment submission to Written Permission),Resubmission (for submission after a PP/, Advice/, Outline Permission and Written Direction):Resubmission (for submission after a PP/, Advice/, Outline Permission and Written Direction)"
+                          id="PartOfAppl_SubmTp10"
+                          event-change="PartOfAppl_SubmTp_Change(this); populateSignedBy('MemberRole_Member_Role_Code_Desc_QP10','Member_Member_Name_QP10_0', false);">
+                        </cn2-select>
+                      </td>
+                    </tr>
+                    <tr id="PartOfAppl_SubmNoPrevSubm" hidden>
+                      <td>
+                        <cn2-textbox id="PartOfAppl_SubmNoPrevSubm10" label="Submission No. of Previous Submission"
+                          mandatory maxlength="16" event-blur="checkFormat(this); validatePrevSub(this);"
+                          webservice="agencyURL10">
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Mukim/Town Subdivision*</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless" style="margin-bottom: 0px;">
+                  <thead>
+                    <tr>
+                      <td>
+                        <cn2-button type="button" label="Add" event-click="duplicateOneForm('MK1', 'mk10');">
+                        </cn2-button>
+                      </td>
+                    </tr>
+                  </thead>
+                </table>
+                <table class="table table-borderless" style="margin-bottom: 0px;">
+                  <thead>
+                    <tr>
+                      <td width="20%" class="align-middle text-center">
+                        <b>MK/TS</b>
+                      </td>
+                      <td width="20%" class="align-middle text-center">
+                        <b>MK/TS Number</b>
+                      </td>
+                      <td width="20%" class="align-middle text-center">
+                        <b>Lot Number</b>
+                      </td>
+                      <td width="20%" class="align-middle text-center">
+                        <b>Partial Lot Indicator</b>
+                      </td>
+                      <td width="20%" class="align-middle text-center"></td>
+                    </tr>
+                  </thead>
+                </table>
+                <div id="MK1">
+                  <table class="table table-bordered" style="margin-top: 0px; margin-bottom: 0px;" id="mk10" prefix="mk"
+                    suffix="0" main-con="1">
+                    <tbody>
+                      <tr>
+                        <td width="20%" style="text-align: center;">
+                          <input type="radio" name="MkTs10" radio1-mukim-validate="10" id="MkTs_MkTs_Mk10"
+                            prefix="MkTs_MkTs_Mk" suffix="0" checked mandatory
+                            onclick="checkIfMukimIsValidated(this, ['MkTs_MkTs_Mk10', 'MkTs_MkTs_Ts10', 'mk10']); validateMukim(this);"
+                            event-attribute="onclick" event-name="checkIfMukimIsValidated"
+                            event-value="this, [MkTs_MkTs_Mk*10, MkTs_MkTs_Ts*10, mk*10]" event-container="MK1"
+                            webservice="agencyURL20">&nbsp;MK
+                          &nbsp;&nbsp;&nbsp;
+                          <input type="radio" name="MkTs10" radio2-mukim-validate="10" id="MkTs_MkTs_Ts10"
+                            prefix="MkTs_MkTs_Ts" suffix="0" checked mandatory
+                            onclick="checkIfMukimIsValidated(this, ['MkTs_MkTs_Mk10', 'MkTs_MkTs_Ts10', 'mk10']); validateMukim(this);"
+                            event-attribute="onclick" event-name="checkIfMukimIsValidated"
+                            event-value="this, [MkTs_MkTs_Mk*10, MkTs_MkTs_Ts*10, mk*10]" event-container="MK1"
+                            webservice="agencyURL20">&nbsp;TS
+                        </td>
+                        <td width="20%">
+                          <cn2-textbox no-label mandatory id="MkTs_MkTsNo10" mukim-validate="10" numeric mkts-no
+                            maxlength="2" prefix="MkTs_MkTsNo" suffix="0"
+                            event-input="checkIfMukimIsValidated(this, 'mk10');" event-attribute="event-input"
+                            event-name="checkIfMukimIsValidated" event-value="this, mk*10" event-container="MK1"
+                            webservice="agencyURL20" event-blur="validateMukim(this);">
+                          </cn2-textbox>
+                        </td>
+                        <td width="20%">
+                          <cn2-textbox no-label mandatory id="MkTs_LotNo10" maxlength="6" mukim-validate="10"
+                            prefix="MkTs_LotNo" suffix="0" event-input="checkIfMukimIsValidated(this, 'mk10');"
+                            event-attribute="event-input" event-name="checkIfMukimIsValidated" event-value="this, mk*10"
+                            event-container="MK1" webservice="agencyURL20" event-blur="validateMukim(this);">
+                          </cn2-textbox>
+                        </td>
+                        <td width="20%" class="text-center" style="padding-left: 6%;">
+                          <cn2-switchbutton data-on="YES" data-off="NO" switch-field id="MkTs_switch10" prefix="switch"
+                            suffix="0" switch-id="MkTs_PartLotInd_Yes10"
+                            event-change="switchButton(this,'MkTs_PartLotInd_Yes10', 'MkTs_PartLotInd_No10')">
+                          </cn2-switchbutton>
+                          <cn2-checkbox id="MkTs_PartLotInd_Yes10" switch-yes prefix="MkTs_PartLotInd_Yes" suffix="0"
+                            hidden>
+                          </cn2-checkbox>
+                          <cn2-checkbox id="MkTs_PartLotInd_No10" hidden switch-no prefix="MkTs_PartLotInd_No"
+                            suffix="0">
+                          </cn2-checkbox>
+                        </td>
+                        <td width="20%" style="text-align: center;">
+                          <cn2-button type="button" id="mukimDelete10" danger disabled label="Delete"
+                            prefix="mukimDelete" suffix="0" danger-main event-click="removeOneForm('MK1', 'mk10');">
+                          </cn2-button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page4">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Site Address</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless" style="margin-bottom: 0px;">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <cn2-button label="Add"
+                          event-click="duplicateOneForm('siteAddress','siteAddressChild10');siteAddressMandatoryField('siteAddress', 'SiteAddr_RoadNm', 'SiteAddr_LocalDesc10', false, this.id);">
+                        </cn2-button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div id="siteAddress">
+              <div id="siteAddressChild10" main-form prefix="siteAddressChild" suffix="0"
+                class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <div id="SiteAddressAccordion">
+                  <h2 class="accordion-toggle">
+                    <table class="table table-borderless">
+                      <tbody>
+                        <tr>
+                          <td width="90%" style="padding-top: 11pt;padding-left: 24pt;">
+                            <br>
+                            <b>Site Address ID &nbsp;&nbsp;
+                              <span counter-form>1</span>
+                            </b>
+                          </td>
+                          <td style="padding-top: 10pt;">
+                            <br>
+                            <cn2-button id="siteAddressDelete1A" class="deleteBtn" prefix="siteAddressDelete" suffix="A"
+                              style="float: right;" siteaddrdelbtn
+                              event-click="siteAddressMandatoryField('siteAddress', 'SiteAddr_RoadNm', 'SiteAddr_LocalDesc10', true, this.id);removeOneForm('siteAddress','siteAddressChild10');"
+                              label="Delete" danger-main danger disabled>
+                            </cn2-button>
+                          </td>
+                          <td style="float:right">
+                            <span class="fa fa-angle-down collapsed" data-toggle="collapse"
+                              href="#SiteAddressFormChildAccordionBody10" id="#SiteAddressFormChildAccordionBody10"
+                              prefix="#SiteAddressFormChildAccordionBody" suffix="0" excluded child
+                              onclick="spanUpDown(this)" aria-expanded="false" main-accordion-header></span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </h2>
+                  <div id="SiteAddressFormChildAccordionBody10" class="panel-collapse collapse" child="div" excluded
+                    prefix="SiteAddressFormChildAccordionBody" suffix="0" main-accordion-body
+                    style="padding-left: 18pt;padding-right: 30pt;">
+
+                    <table class="table table-borderless">
+                      <tbody>
+                        <tr>
+                          <td width="35%">House/Block No.</td>
+                          <td>
+                            <cn2-textbox no-label id="SiteAddr_HseBlkNo10"
+                              event-change="checkSiteAddressDuplicate('siteAddressChild10', this.id);"
+                              prefix="SiteAddr_HseBlkNo" suffix="0" maxlength="10">
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td asterisk>Road Name*</td>
+                          <td>
+                            <cn2-select no-label id="SiteAddr_RoadNm10" prefix="SiteAddr_RoadNm"
+                              data-options="SiteAddr_RoadNm"
+                              event-change="siteAddressMandatoryField('siteAddress','SiteAddr_RoadNm', 'SiteAddr_LocalDesc10', false, this.id);checkSiteAddressDuplicate('siteAddressChild10', this.id);"
+                              suffix="0" mandatory>
+                            </cn2-select>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Building Name</td>
+                          <td>
+                            <cn2-textbox no-label maxlength="75"
+                              event-change="checkSiteAddressDuplicate('siteAddressChild10', this.id);"
+                              id="SiteAddr_BldgNm10" prefix="SiteAddr_BldgNm" suffix="0">
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Unit (Floor/Unit)
+                          </td>
+                          <td>
+                            <div class=" mls-espro-form-fields row">
+                              <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2">
+                                Floor
+                              </div>
+                              <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                                <cn2-textbox maxlength="3" no-label inline="5"
+                                  event-change="checkSiteAddressDuplicate('siteAddressChild10', this.id);"
+                                  id="SiteAddr_Unit_Floor10_10" numeric prefix="SiteAddr_Unit_Floor" suffix="0_10">
+                                </cn2-textbox>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td>
+                            <div class=" mls-espro-form-fields row">
+                              <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2">
+                                Unit No.
+                              </div>
+                              <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                                <cn2-textbox maxlength="5"
+                                  event-change="checkSiteAddressDuplicate('siteAddressChild10', this.id);"
+                                  id="SiteAddr_Unit_Unit10_10" no-label inline="5" numeric prefix="SiteAddr_Unit_Unit"
+                                  suffix="0_10">
+                                </cn2-textbox>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Postal Code</td>
+                          <td>
+                            <cn2-textbox no-label maxlength="6"
+                              event-change="checkSiteAddressDuplicate('siteAddressChild10', this.id);"
+                              id="SiteAddr_PostCd10" prefix="SiteAddr_PostCd" suffix="0" numeric>
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless" style="margin-bottom: 0px;">
+                  <tbody>
+                    <tr>
+                      <td colspan="2">
+                        <cn2-textarea label="Locality Description" maxlength="255" id="SiteAddr_LocalDesc10"
+                          event-change="siteAddressMandatoryField('siteAddress','SiteAddr_RoadNm', 'SiteAddr_LocalDesc10', false, this.id);checkSiteAddressDuplicate('siteAddressChild10', this.id);"
+                          mandatory locality-description prefix="SiteAddr_LocalDesc" suffix="0">
+                        </cn2-textarea>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page5">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Person and Organisation</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless" style="margin-bottom: 0px;">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <cn2-button label="Add" id="personAndOrgAdd"
+                          event-click="duplicateForm('PersAndOrg_Container', 'ContDtls_Container10', 'ContDtls_Fields10', 'persandorgs');">
+                        </cn2-button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div id="PersAndOrg_Container" class="col-xs-12 col-sm-12 col-lg-12 col-md-12"
+                  style="padding-left: 12px;">
+                  <div id="PersAndOrg_Forms10" prefix="PersAndOrg_Forms" suffix="0">
+                    <div id="PersonAndOrganisation">
+                      <h2 class="accordion-toggle">
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td width="45%">
+                                <cn2-select label="Role" mandatory id="MemberRole_Member_Role_Code_Desc_QP10"
+                                  prefix="MemberRole_Member_Role_Code_Desc_QP" suffix="0" excluded role-name
+                                  event-change="checkRoleInput(this, 'PersAndOrg_Forms10'); checkRoles(el, 'PersAndOrg_Container'); setQpRegNoMandatory(this, 'MemberRole_Member_Role_Code_Desc_QP10'); changeIDPerRoleNew(this);">
+                                </cn2-select>
+                              </td>
+                              <td width="45%">
+                                <cn2-select label="Name" mandatory id="Member_Member_Name_QP10"
+                                  prefix="Member_Member_Name_QP" suffix="0" name-role
+                                  event-change="loadDropDownDetailsURA(this);" data-options="persAndOrgsDropdown"
+                                  excluded>
+                                </cn2-select>
+                              </td>
+                              <td style="padding-top: 44px;">
+                                <cn2-button label="Delete" id="ContDtls_deleteForm10" prefix="ContDtls_deleteForm"
+                                  suffix="0" excluded danger danger-main
+                                  event-click="removeForm('PersAndOrg_Container', 'PersAndOrg_Forms10', 'ContDtls_Container10', 'ContDtls_Fields10');"
+                                  disabled>
+                                </cn2-button>
+                              </td>
+                              <td style="float:right">
+                                <span class="fa fa-angle-down collapsed" data-toggle="collapse"
+                                  href="#PersonAndOrganisationFormChildAccordionBody10"
+                                  id="#PersonAndOrganisationFormChildAccordionBody10"
+                                  prefix="#PersonAndOrganisationFormChildAccordionBody" suffix="0" excluded child
+                                  onclick="spanUpDown(this)" aria-expanded="false" main-accordion-header></span>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </h2>
+                      <div id="PersonAndOrganisationFormChildAccordionBody10" class="panel-collapse collapse"
+                        child="div" excluded prefix="PersonAndOrganisationFormChildAccordionBody" suffix="0"
+                        main-accordion-body>
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr hidden>
+                              <td width="35%">Member ID</td>
+                              <td>
+                                <cn2-textbox no-label id="Member_Member_SID_QP10" maxlength="75"
+                                  prefix="Member_Member_SID_QP" suffix="0" excluded disabled>
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="35%">Firm Name</td>
+                              <td>
+                                <cn2-textbox no-label id="Member_Firm_Name_QP10" maxlength="75"
+                                  prefix="Member_Firm_Name_QP" suffix="0" excluded>
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td qp-label>QP Registration No.</td>
+                              <td>
+                                <cn2-textbox no-label id="MemberRole_Professional_No_QP10" qp-reg-no
+                                  prefix="MemberRole_Professional_No_QP" suffix="0" maxlength="20" excluded>
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <!-- <tr>
+                              <td>Address*</td>
+                              <td>
+                                <input type="radio" name="addressFormat10" id="PersAndOrg_Format10" prefix="PersAndOrg_Format" suffix="0" excluded checked mandatory onclick="perAndOrgAddress(this, 'PersAndOrg_Forms10', 'perOrgFormatted');">&nbsp;Formatted
+                                &nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="addressFormat10" id="PersAndOrg_Unformat10" prefix="PersAndOrg_Unformat" suffix="0" excluded checked mandatory onclick="perAndOrgAddress(this, 'PersAndOrg_Forms10', 'perOrgUnformatted');">&nbsp;Unformatted
+                              </td>
+                            </tr> -->
+                            <tr id="formatted1_10_10" class="formatted10" perorgformatted exluded prefix="formatted1_"
+                              suffix="0">
+                              <td>House/Block No.*</td>
+                              <td>
+                                <cn2-textbox no-label mandatory id="Member_House_Block_No_QP10"
+                                  prefix="Member_House_Block_No_QP" suffix="0" maxlength="10" excluded>
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr id="formatted2_10_10" class="formatted10" perorgformatted exluded prefix="formatted2_"
+                              suffix="0">
+                              <td>Road Name*</td>
+                              <td>
+                                <cn2-textbox no-label id="Member_Road_Code_Desc_QP10" prefix="Member_Road_Code_Desc_QP"
+                                  road-name suffix="0" excluded formatted-road disabled>
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr id="formatted3_10_10" class="formatted10" perorgformatted exluded prefix="formatted3_"
+                              suffix="0">
+                              <td>Unit (Floor/Unit)</td>
+                              <td>
+                                Floor &nbsp;<cn2-textbox no-label inline="4" maxlength="3" id="Member_Unit_Floor_QP10"
+                                  prefix="Member_Unit_Floor_QP" suffix="0" excluded>
+                                </cn2-textbox>
+                                &nbsp;&nbsp;&nbsp; Unit &nbsp;<cn2-textbox no-label inline="4" maxlength="5"
+                                  id="Member_Unit_No_QP10" prefix="Member_Unit_No_QP" suffix="0" excluded>
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr id="formatted4_10_10" class="formatted10" perorgformatted exluded prefix="formatted4_"
+                              suffix="0">
+                              <td>Postal Code*</td>
+                              <td>
+                                <cn2-textbox no-label maxlength="6" id="Member_Postal_Code_QP10" formatted-postal
+                                  prefix="Member_Postal_Code_QP" suffix="0" excluded disabled numeric>
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr hidden id="unformatted1_10_10" class="unformatted10" perorgunformatted exluded
+                              prefix="unformatted1_" suffix="0">
+                              <td>Line 1*</td>
+                              <td>
+                                <cn2-textbox no-label id="Member_Address1_QP10" prefix="Member_Address1_QP" suffix="0"
+                                  excluded unformatted-line-one disabled>
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr hidden id="unformatted2_10_10" class="unformatted10" perorgunformatted exluded
+                              prefix="unformatted2_" suffix="0">
+                              <td>Line 2</td>
+                              <td>
+                                <cn2-textbox no-label id="Member_Address2_QP10" prefix="Member_Address2_QP" suffix="0"
+                                  excluded>
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr hidden id="unformatted3_10_10" class="unformatted10" perorgunformatted exluded
+                              prefix="unformatted3_" suffix="0">
+                              <td>Line 3</td>
+                              <td>
+                                <cn2-textbox no-label id="Member_Address3_QP10" prefix="Member_Address3_QP" suffix="0"
+                                  excluded>
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr hidden id="unformatted4_10_10" class="unformatted10" perorgunformatted exluded
+                              prefix="unformatted4_" suffix="0">
+                              <td>Line 4</td>
+                              <td>
+                                <cn2-textbox no-label id="Member_Address4_QP10" prefix="Member_Address4_QP" suffix="0"
+                                  excluded>
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td persandorgs-email-label>Email</td>
+                              <td>
+                                <cn2-textbox no-label id="Member_Email_Address_QP10" persandorgs_email
+                                  placeholder="example@email.com" prefix="Member_Email_Address_QP" suffix="0" excluded
+                                  event-change="validateEmail(this);">
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td label>Telephone No.*</td>
+                              <td>
+                                <cn2-textbox no-label id="Member_Tel_No_QP10" mandatory persandorgs_telno
+                                  event-input="PersAndOrgs_TelNoHandNo_Change(this, 'Member_Hand_No_QP');"
+                                  prefix="Member_Tel_No_QP" suffix="0" excluded numeric maxlength="8">
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Extension No.</td>
+                              <td>
+                                <cn2-textbox no-label maxlength="4" id="Member_Tel_Ext_No_QP10"
+                                  prefix="Member_Tel_Ext_No_QP" suffix="0" excluded numeric>
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td label>Handphone No.*</td>
+                              <td>
+                                <cn2-textbox no-label maxlength="8" mandatory persandorgs_handno
+                                  event-input="PersAndOrgs_TelNoHandNo_Change(this, 'Member_Tel_No_QP');"
+                                  id="Member_Hand_No_QP10" prefix="Member_Hand_No_QP" suffix="0" excluded numeric>
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td colspan="2">
+                                <b>Contact Details</b> &nbsp;&nbsp;&nbsp;
+                                <cn2-button id="ContDtls_addField10" label="Add New Contact" prefix="ContDtls_addField"
+                                  suffix="0" excluded add
+                                  event-click="duplicateField('PersAndOrg_Container', 'PersAndOrg_Forms10', 'ContDtls_Container10');">
+                                </cn2-button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <div id="ContDtls_Container10" prefix="ContDtls_Container" suffix="0" excluded>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mls-top-section" id="ContDtls_Fields10"
+                            prefix="ContDtls_Fields" suffix="0" included>
+                            <table class="table table-borderless">
+                              <tbody>
+                                <tr>
+                                  <td width="35%">Name*</td>
+                                  <td>
+                                    <cn2-textbox no-label mandatory id="Member_Cont_Member_Name_QP10"
+                                      prefix="Member_Cont_Member_Name_QP" suffix="0" included>
+                                    </cn2-textbox>
+                                  </td>
+                                  <td width="100px" rowspan="5" class="align-middle text-center">
+                                    <cn2-button label="Delete" id="ContDtls_deleteField10" prefix="ContDtls_deleteField"
+                                      suffix="0" included danger danger-inside
+                                      event-click="removeField('PersAndOrg_Container', 'PersAndOrg_Forms10', 'ContDtls_Container10', 'ContDtls_Fields10');"
+                                      disabled>
+                                    </cn2-button>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td cont-label>Email*</td>
+                                  <td>
+                                    <cn2-textbox no-label id="Member_Cont_Email_Address_QP10" mandatory
+                                      member_cont_email_address_qp set-manda placeholder="example@email.com"
+                                      event-input="Member_Cont_Email_Address_QPHandNoTelNo_Change(this, 'Member_Cont_Hand_No_QP', 'Member_Cont_Tel_No_QP');"
+                                      event-change="validateEmail(this);" prefix="Member_Cont_Email_Address_QP"
+                                      suffix="0" included>
+                                    </cn2-textbox>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td cont-label>Telephone No.*</td>
+                                  <td>
+                                    <cn2-textbox no-label id="Member_Cont_Tel_No_QP10" mandatory member_cont_tel_no_qp
+                                      set-manda
+                                      event-input="Member_Cont_Email_Address_QPHandNoTelNo_Change(this, 'Member_Cont_Email_Address_QP', 'Member_Cont_Hand_No_QP');"
+                                      prefix="Member_Cont_Tel_No_QP" suffix="0" included numeric maxlength="8">
+                                    </cn2-textbox>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Extension No.</td>
+                                  <td>
+                                    <cn2-textbox no-label id="Member_Cont_Tel_Ext_No_QP10"
+                                      prefix="Member_Cont_Tel_Ext_No_QP" suffix="0" included numeric maxlength="4">
+                                    </cn2-textbox>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td cont-label>Handphone No.*</td>
+                                  <td>
+                                    <cn2-textbox no-label id="Member_Cont_Hand_No_QP10" mandatory member_cont_hand_no_qp
+                                      set-manda
+                                      event-input="Member_Cont_Email_Address_QPHandNoTelNo_Change(this, 'Member_Cont_Email_Address_QP', 'Member_Cont_Tel_No_QP');"
+                                      prefix="Member_Cont_Hand_No_QP" suffix="0" included numeric maxlength="8">
+                                    </cn2-textbox>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page6">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Submission Info</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless" style="margin-bottom: 0px;">
+                  <tbody>
+                    <tr>
+                      <td width="35%">
+                        Is proposal a Government Dept. or <br>Ministry (non
+                        Statutory Board) Project? *
+                      </td>
+                      <td>
+                        <cn2-switchbutton data-on="YES" data-off="NO"
+                          switch-id="SubmInfo_IsPropGovtDept_Or_MiniProj_Yes10"
+                          event-change="switchButton(this,'SubmInfo_IsPropGovtDept_Or_MiniProj_Yes10', 'SubmInfo_IsPropGovtDept_Or_MiniProj_No10')">
+                        </cn2-switchbutton>
+                        <cn2-checkbox id="SubmInfo_IsPropGovtDept_Or_MiniProj_Yes10" hidden>
+                        </cn2-checkbox>
+                        <cn2-checkbox id="SubmInfo_IsPropGovtDept_Or_MiniProj_No10" hidden>
+                        </cn2-checkbox>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-borderless" style="margin-bottom: 0px; margin-top: 0px;">
+                  <tbody>
+                    <tr>
+                      <td width="35%">
+                        Is proposal for a condominium? *
+                      </td>
+                      <td>
+                        <cn2-switchbutton data-on="YES" data-off="NO" switch-id="SubmInfo_AlrdyBeenBuilorCarrOut_Yes10"
+                          event-change="switchButton(this,'SubmInfo_AlrdyBeenBuilorCarrOut_Yes10', 'SubmInfo_AlrdyBeenBuilorCarrOut_No10')">
+                        </cn2-switchbutton>
+                        <cn2-checkbox id="SubmInfo_AlrdyBeenBuilorCarrOut_Yes10" hidden>
+                        </cn2-checkbox>
+                        <cn2-checkbox id="SubmInfo_AlrdyBeenBuilorCarrOut_No10" hidden>
+                        </cn2-checkbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Proposal Description*</td>
+                      <td>
+                        <cn2-textarea no-label mandatory maxlength="1000" id="SubmInfo_PropDesc10">
+                        </cn2-textarea>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page7">
+          <div class="mls-espo-right-inner-container borderchecking" id="DeclGeneNewSubm10" hidden>
+            <h2>Declaration</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td width="100%">
+                        Does your proposal in this submission comply with all DC/Conversation
+                        Urban design guidelines? (If you have sought approval for deviations
+                        before, please click “No”) *
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="mls-espro-form-fields row">
+                          <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4" style="display: inline;">
+                              <input type="radio" name="declTypeNewSubm" mandatory checked
+                                id="DeclGeneNewSubm_DoesYourPropIn_Yes10" style="margin-right: 5px;"
+                                onchange="setRadioButtonOptional('DeclGeneNewSubm_DoesYourPropIn_Yes10','DeclGeneNewSubm_DoesYourPropIn_No10');">
+                              YES
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4" style="display: inline;">
+                              <input type="radio" name="declTypeNewSubm" mandatory checked
+                                id="DeclGeneNewSubm_DoesYourPropIn_No10" style="margin-right: 5px;"
+                                onchange="setRadioButtonOptional('DeclGeneNewSubm_DoesYourPropIn_Yes10','DeclGeneNewSubm_DoesYourPropIn_No10');">
+                              NO (Please fill in table B/C Below)
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4"></div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td colspan="4">
+                        I declare to the best of my knowledge and belief that
+                        -
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="1%">
+                        (1)
+                      </td>
+                      <td colspan="2">
+                        I am the qualified person appointed to make the
+                        application for planning permission or conservation
+                        permission for the Proposal (as set out in the
+                        Proposal Details section of this EDA Form ) under
+                        section 13 of the Planning Act (Cap. 232)("the Act");
+                      </td>
+                      <!-- <td>
+                                                                      <cn2-checkbox id="DeclGeneNewSubm_IAmTheQual10"></cn2-checkbox>
+                                                                    </td> -->
+                    </tr>
+                    <tr>
+                      <td>
+                        (2)
+                      </td>
+                      <td colspan="2">
+                        <table style="margin: 0px" class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td colspan="2" style="padding-top: 0px; padding-left: 0px;">I have
+                                prepared the plans of
+                                the -</td>
+                            </tr>
+                            <tr>
+                              <td width="1%" style="padding-top: 3px; padding-left: 0px;"></td>
+                              <td style="padding-top: 0px; padding-left: 0px;">(a)
+                                development; or</td>
+                            </tr>
+                            <tr>
+                              <td style="padding-top: 3px; padding-left: 0px;"></td>
+                              <td style="padding-top: 0px; padding-left: 0px;">(b) works
+                                within conservation area</td>
+                            </tr>
+                            <tr>
+                              <td colspan="2" style="padding-top: 0px; padding-left: 0px;">
+                                submitted with this application for planning
+                                permission or conservation permission in accordance
+                                with the duties of a qualified person under section
+                                24A(1) of the Act;
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                      <!-- <td>
+                                                                      <cn2-checkbox id="DeclGeneNewSubm_IHavePrepThe10"></cn2-checkbox>
+                                                                    </td> -->
+                    </tr>
+                    <tr>
+                      <td>
+                        (3)
+                      </td>
+                      <td colspan="2">
+                        <table style="margin: 0px" class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td colspan="2" style="padding-top: 0px; padding-left: 0px;">In particular, I have taken
+                                all reasonable steps and
+                                exercised due diligence to ensure that the plans were
+                                prepared in accordance with:</td>
+                            </tr>
+                            <tr>
+                              <td width="1%" style="padding-top: 3px; padding-left: 0px;"></td>
+                              <td style="padding-top: 0px; padding-left: 0px;">(a) the provisions of the Act;</td>
+                            </tr>
+                            <tr>
+                              <td style="padding-top: 3px; padding-left: 0px;"></td>
+                              <td style="padding-top: 0px; padding-left: 0px;">(b) where applicable, any conditions and
+                                requirements
+                                imposed by the Competent Authority in any outline
+                                permission or provisional permission for the
+                                development or works, or existing written permission,
+                                granted in respect of the land;</td>
+                            </tr>
+                            <tr>
+                              <td style="padding-top: 3px; padding-left: 0px;"></td>
+                              <td style="padding-top: 0px; padding-left: 0px;">(c) all relevant guidelines of the
+                                Competent
+                                Authority; and</td>
+                            </tr>
+                            <tr>
+                              <td style="padding-top: 3px; padding-left: 0px;"></td>
+                              <td style="padding-top: 0px; padding-left: 0px;">(d) all other requirements, if any,
+                                specified by
+                                the
+                                Competent Authority in respect of this application,
+                                except for the deviation(s) which are specifically set
+                                out in Table B and/or C below;</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        (4)
+                      </td>
+                      <td colspan="2">
+                        <table class="table table-borderless" style="margin: 0px;">
+                          <tbody>
+                            <tr>
+                              <td colspan="3" style="padding-top: 0px; padding-left: 0px;">
+                                The information contained in the forms, documents,
+                                drawings and plans as specified in
+                                Table A and which are submitted for this application are
+                                true and correct in all
+                                material particulars;
+                              </td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td colspan="3" style="padding-top: 0px; padding-left: 0px;">Table A
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="1%" style="padding-left: 0px; padding-top: 0px;">
+                                (i)</td>
+                              <td style="padding-left: 0px; padding-top: 0px;">Application Form
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="1%" style="padding-left: 0px; padding-top: 0px;">
+                                (ii)</td>
+                              <td style="padding-left: 0px; padding-top: 0px;">Proposal
+                                and sketch plans(s)</td>
+                            </tr>
+                            <tr>
+                              <td width="1%" style="padding-left: 0px; padding-top: 0px;">
+                                (iii)</td>
+                              <td style="padding-left: 0px; padding-top: 0px;">Calculation
+                                plan</td>
+                            </tr>
+                            <tr>
+                              <td width="1%" style="padding-left: 0px; padding-top: 0px;">
+                                (iv)</td>
+                              <td style="padding-left: 0px; padding-top: 0px;">
+                                Authorisation letter</td>
+                            </tr>
+                            <tr>
+                              <td width="1%" style="padding-left: 0px; padding-top: 0px;">
+                                (v)</td>
+                              <td style="padding-left: 0px; padding-top: 0px;">Other
+                                submitted documents¹ as specified
+                                below:</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td colspan="2" style="padding-top: 0px; padding-left: 0px;">
+                                <cn2-textarea id="DeclGeneNewSubm_OtheSubmDocuAs_Desc10" inline="6"
+                                  style="margin-left: -5px !important;">
+                                </cn2-textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td colspan="3" style="padding-top: 0px; padding-left: 0px;">
+                                ¹ E.g. HDB/JTC landowner's endorsement letter, BCA
+                                building plan
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                      <!-- <td>
+                                                                      <cn2-checkbox id="DeclGeneNewSubm_TheInfoContIn10"></cn2-checkbox>
+                                                                    </td> -->
+                    </tr>
+                    <tr>
+                      <td>
+                        (5)
+                      </td>
+                      <td colspan="2">
+                        I am seeking waiver for the deviation(s) as set out in
+                        Table B;
+                        <br><br>
+                        Table B<br>
+                        <div class="mls-espro-form-fields row pt-2 pb-2">
+                          <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                            <cn2-button label="Add"
+                              event-click="insertDuplicate('uraTableBForm','A1');disableDelete('uraTableBForm', '.deleteBtnTableB')">
+                            </cn2-button>
+                          </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2">
+                          <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                            <table class="table table-bordered" style="margin-bottom: 0px;">
+                              <tbody>
+                                <tr>
+                                  <td width="30%">URA conditions/guidelines</td>
+                                  <td width="30%">Description of deviation(s)
+                                  </td>
+                                  <td width="30%">Reasons/justification for waiver request</td>
+                                  <td width="10%"></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="mls-espro-form-fields row" id="uraTableBForm">
+                          <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12" id="A1">
+                            <table class="table table-bordered" style="margin-bottom: 0px; margin-top: 0px;">
+                              <tbody>
+                                <tr>
+                                  <td width="30%">
+                                    <cn2-textbox id="DeclGeneNewSubm_TablB_UraCondGuid10"
+                                      prefix="DeclGeneNewSubm_TablB_UraCondGuid" suffix="0" no-label>
+                                    </cn2-textbox>
+                                  </td>
+                                  <td width="30%">
+                                    <cn2-textbox id="DeclGeneNewSubm_TablB_DescOfDevi10"
+                                      prefix="DeclGeneNewSubm_TablB_DescOfDevi" suffix="0" no-label>
+                                    </cn2-textbox>
+                                  </td>
+                                  <td width="30%">
+                                    <cn2-textbox id="DeclGeneNewSubm_TablB_ReasJustForWaiv10"
+                                      prefix="DeclGeneNewSubm_TablB_ReasJustForWaiv" suffix="0" no-label>
+                                    </cn2-textbox>
+                                  </td>
+                                  <td width="10%">
+                                    <cn2-button id="delete1A" class="deleteBtnTableB" prefix="delete" suffix="A"
+                                      label="Delete" danger disabled
+                                      event-click="removeDuplicate(this.id,'A1','uraTableBForm');disableDelete('uraTableBForm', '.deleteBtnTableB')">
+                                    </cn2-button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </td>
+                      <!-- <td>
+                                                                      <cn2-checkbox id="DeclGeneNewSubm_IAmSeekWaiv10"></cn2-checkbox>
+                                                                    </td> -->
+                    </tr>
+                    <tr>
+                      <td>
+                        (6)
+                      </td>
+                      <td colspan="2">
+                        I have already obtained the approval in writing of the
+                        Competent Authority for the deviation(s) as set out in
+                        Table C;
+                        <br><br>
+                        Table C <br>
+                        <div class="mls-espro-form-fields row pt-2 pb-2">
+                          <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                            <cn2-button label="Add"
+                              event-click="insertDuplicate('uraTableCForm','B1');disableDelete('uraTableCForm', '.deleteBtnTableC')">
+                            </cn2-button>
+                          </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2">
+                          <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                            <table class="table table-bordered" style="margin-bottom: 0px;">
+                              <tbody>
+                                <tr>
+                                  <td width="45%">URA Reference Number</td>
+                                  <td width="45%">Date of Approval
+                                  </td>
+                                  <td width="10%"></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="mls-espro-form-fields row" id="uraTableCForm">
+                          <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12" id="B1">
+                            <table class="table table-bordered" style="margin-bottom: 0px; margin-top: 0px;">
+                              <tbody>
+                                <tr>
+                                  <td width="45%">
+                                    <cn2-textbox id="DeclGeneNewSubm_TablC_UraRefNo10"
+                                      prefix="DeclGeneNewSubm_TablC_UraRefNo" suffix="0" no-label>
+                                    </cn2-textbox>
+                                  </td>
+                                  <td width="45%">
+                                    <cn2-datefield id="DeclGeneNewSubm_TablCDateOfAppr10"
+                                      prefix="DeclGeneNewSubm_TablCDateOfAppr" onfocusout="validateDate(this)"
+                                      suffix="0" no-label>
+                                    </cn2-datefield>
+                                  </td>
+                                  <td width="10%">
+                                    <cn2-button id="delete1B" class="deleteBtnTableC" prefix="delete" suffix="A"
+                                      label="Delete" danger disabled
+                                      event-click="removeDuplicate(this.id,'B1','uraTableCForm');disableDelete('uraTableCForm', '.deleteBtnTableC')">
+                                    </cn2-button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </td>
+                      <!-- <td>
+                                                                      <cn2-checkbox id="DeclGeneNewSubm_IHaveAlreObta10"></cn2-checkbox>
+                                                                    </td> -->
+                    </tr>
+                    <tr>
+                      <td>
+                        (7)
+                      </td>
+                      <td colspan="2">
+                        I acknowledge that the information (including details
+                        on the applicant's name and address) will be used in
+                        official correspondence, including decision notices
+                        (e.g. Written Permissions) issued by the Competent
+                        Authority. Where amendments to details contained in
+                        the decision notices are required due to wrong
+                        information provided in the application, I accept that
+                        such changes cannot be made unless a formal amendment
+                        application (with payment of the required fees) is
+                        submitted to and duly processed by the Competent
+                        Authority.
+                      </td>
+                      <!-- <td>
+                                                                      <cn2-checkbox id="DeclGeneNewSubm_IAcknThatThe10"></cn2-checkbox>
+                                                                    </td> -->
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td colspan="2" width="14%">
+                        Signed By:
+                      </td>
+                      <td>
+                        <cn2-textbox id="DeclGeneNewSubm_SignedBy10" disabled no-label maxlength="75">
+                        </cn2-textbox>(QP's Name)
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" id="DeclGeneResu10" hidden>
+            <h2>Declaration</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td width="100%">
+                        Does your proposal in this submission comply with all DC/Conversation
+                        Urban design guidelines? (If you have sought approval for deviations
+                        before, please click “No”) *
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="mls-espro-form-fields row">
+                          <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4" style="display: inline;">
+                              <input type="radio" name="declTypeResu" id="DeclGeneResu_DoesYourPropIn_Yes10" checked
+                                mandatory
+                                onchange="setRadioButtonOptional('DeclGeneResu_DoesYourPropIn_Yes10','DeclGeneResu_DoesYourPropIn_No10')">
+                              YES
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4" style="display: inline;">
+                              <input type="radio" name="declTypeResu" id="DeclGeneResu_DoesYourPropIn_No10" checked
+                                mandatory
+                                onchange="setRadioButtonOptional('DeclGeneResu_DoesYourPropIn_Yes10','DeclGeneResu_DoesYourPropIn_No10')">
+                              NO (Please provide details in columns (d) &amp; (e), Part II and III of the Resubmission
+                              Declaration Form)
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td colspan="2">
+                        I declare to the best of my knowledge and belief that
+                        -
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        (1)
+                      </td>
+                      <td colspan="2">
+                        I am the qualified person appointed to make the
+                        application for planning permission or conservation
+                        permission for the Proposal (as set out in the
+                        <!--TODO yellow text ahead -->
+                        Proposal Details section of this EDA Form ) under
+                        section 13 of the Planning Act (Cap. 232)("the Act");
+                      </td>
+                      <!-- <td>
+                                                                      <cn2-checkbox id="DeclGeneResu_IAmTheQual10"></cn2-checkbox>
+                                                                    </td> -->
+                    </tr>
+                    <tr>
+                      <td>
+                        (2)
+                      </td>
+                      <td colspan="2">
+                        <table style="margin: 0px" class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td colspan="2" style="padding-top: 0px; padding-left: 0px;">I have
+                                prepared the plans of
+                                the -</td>
+                            </tr>
+                            <tr>
+                              <td width="1%" style="padding-top: 0px; padding-left: 0px;"></td>
+                              <td style="padding-top: 0px; padding-left: 0px;">(a)
+                                development; or</td>
+                            </tr>
+                            <tr>
+                              <td width="1%" style="padding-top: 0px; padding-left: 0px;"></td>
+                              <td style="padding-top: 0px; padding-left: 0px;">(b) works
+                                within conservation area</td>
+                              <td>
+                                <cn2-checbox id="DeclGeneResu_WorkWithConsArea10"></cn2-checbox>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td colspan="2" style="padding-top: 0px; padding-left: 0px;">
+                                submitted with this application for planning permission
+                                or conservation permission in
+                                accordance with the duties of a qualified person under
+                                section 24A(1) of the Act;
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                      <!-- <td>
+                                                                      <cn2-checkbox id="DeclGeneResu_IHavePrepThe10"></cn2-checkbox>
+                                                                    </td> -->
+                    </tr>
+                    <tr>
+                      <td>
+                        (3)
+                      </td>
+                      <td colspan="2">
+                        <table style="margin: 0px" class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td colspan="2" style="padding-top: 0px; padding-left: 0px;">In particular, I have taken
+                                all reasonable steps and
+                                exercised due diligence to ensure that the plans were
+                                prepared in accordance with:</td>
+                            </tr>
+                            <tr>
+                              <td width="1%" style="padding-top: 3px; padding-left: 0px;"></td>
+                              <td style="padding-top: 0px; padding-left: 0px;">(a) the provisions of the Act;</td>
+                            </tr>
+                            <tr>
+                              <td style="padding-top: 3px; padding-left: 0px;"></td>
+                              <td style="padding-top: 0px; padding-left: 0px;">(b) where applicable, any conditions and
+                                requirements
+                                imposed by the Competent Authority in any outline
+                                permission or provisional permission for the
+                                development or works, or existing written permission,
+                                granted in respect of the land;</td>
+                            </tr>
+                            <tr>
+                              <td style="padding-top: 3px; padding-left: 0px;"></td>
+                              <td style="padding-top: 0px; padding-left: 0px;">(c) all relevant guidelines of the
+                                Competent
+                                Authority; and</td>
+                            </tr>
+                            <tr>
+                              <td style="padding-top: 3px; padding-left: 0px;"></td>
+                              <td style="padding-top: 0px; padding-left: 0px;">(d) all other requirements, if any,
+                                specified by
+                                the
+                                Competent Authority in respect of this application, except for the deviation(s) which
+                                are
+                                specifically set out in the Resubmission Declaration Form;</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        (4)
+                      </td>
+                      <td colspan="2">
+                        <table class="table table-borderless" style="margin: 0px;">
+                          <tbody>
+                            <tr>
+                              <td colspan="3" style="padding-top: 0px; padding-left: 0px;">
+                                The information contained in the forms, documents,
+                                drawings and plans as specified in
+                                Table A and which are submitted for this application are
+                                true and correct in all
+                                material particulars;
+                              </td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td colspan="3" style="padding-top: 0px; padding-left: 0px;">Table A
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="1%" style="padding-left: 0px; padding-top: 0px;">
+                                (i)</td>
+                              <td style="padding-left: 0px; padding-top: 0px;">Application Form
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="1%" style="padding-left: 0px; padding-top: 0px;">
+                                (ii)</td>
+                              <td style="padding-left: 0px; padding-top: 0px;">Proposal
+                                and sketch plans(s)</td>
+                            </tr>
+                            <tr>
+                              <td width="1%" style="padding-left: 0px; padding-top: 0px;">
+                                (iii)</td>
+                              <td style="padding-left: 0px; padding-top: 0px;">Calculation
+                                plan</td>
+                            </tr>
+                            <tr>
+                              <td width="1%" style="padding-left: 0px; padding-top: 0px;">
+                                (iv)</td>
+                              <td style="padding-left: 0px; padding-top: 0px;">
+                                Authorisation letter</td>
+                            </tr>
+                            <tr>
+                              <td width="1%" style="padding-left: 0px; padding-top: 0px;">
+                                (v)</td>
+                              <td style="padding-left: 0px; padding-top: 0px;">Other
+                                submitted documents¹ as specified
+                                below:</td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td colspan="2" style="padding-top: 0px; padding-left: 0px;">
+                                <cn2-textarea id="DeclGeneNewSubm_OtheSubmDocuAs_Desc10" inline="6"
+                                  style="margin-left: -5px !important;">
+                                </cn2-textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td colspan="3" style="padding-top: 0px; padding-left: 0px;">
+                                ¹ E.g. HDB/JTC landowner's endorsement letter, BCA
+                                building plan
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        (5)
+                      </td>
+                      <td colspan="2">
+                        I acknowledge that the information (including details
+                        on the applicant's name and address) will be used in
+                        official correspondence, including decision notices
+                        (e.g. Written Permissions) issued by the Competent
+                        Authority. Where amendments to details contained in
+                        the decision notices are required due to wrong
+                        information provided in the application, I accept that
+                        such changes cannot be made unless a formal amendment
+                        application (with payment of the required fees) is
+                        submitted to and duly processed by the Competent
+                        Authority.
+                      </td>
+                      <!-- <td>
+                                                                      <cn2-checkbox id="DeclGeneResu_IAcknThatThe10"></cn2-checkbox>
+                                                                    </td> -->
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td width="15%">
+                        Signed By:
+                      </td>
+                      <td>
+                        <cn2-textbox id="DeclGeneResu_SignedBy10" disabled no-label maxlength="75">
+                        </cn2-textbox>(QP's Name)
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-version-footer></cn2-version-footer>
+    <cn2-fixed-footer></cn2-fixed-footer>
+  </div>
+</body>
+
+</html>

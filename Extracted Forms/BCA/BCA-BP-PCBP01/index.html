@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BCA-BP-PCBP01</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <meta name="author" content="Syncfusion" />
+
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link
+      href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css"
+      rel="stylesheet"
+    />
+    <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+    <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+    <script src="../cm/js/func/common.js"></script>
+    <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+    <script src="../cm/js/components/cn2sgheader.js"></script>
+    <script src="../cm/js/components/cn2masterhead.js"></script>
+    <script src="../cm/js/components/cn2versionfooter.js"></script>
+    <script src="../cm/js/components/cn2fixedfooter.js"></script>
+    <script src="../cm/js/components/cn2textbox.js"></script>
+    <script src="../cm/js/components/cn2textarea.js"></script>
+    <script src="../cm/js/components/cn2select.js"></script>
+
+    <script src="../cm/js/components/cn2navbutton.js"></script>
+    <script src="../cm/js/components/cn2datefield.js"></script>
+    <script src="../cm/js/components/cn2checkbox.js"></script>
+    <script src="../cm/js/components/cn2switchbutton.js"></script>
+    <script src="../cm/js/components/cn2button.js"></script>
+
+    <script src="index.js"></script>
+  </head>
+
+  <body>
+    <cn2-master-head
+      title="REQUEST FOR PRE-SUBMISSION CONSULTATIONS"
+    ></cn2-master-head>
+
+    <div class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p style="margin: 0px">Help</p>
+        </div>
+        <div class="modal-body">
+          <p>
+            <b>For enquiries related to forms, please contact the following:</b>
+          </p>
+          <p><span id="RegulatoryAuthority_id"></span></p>
+          <div id="table-parent" style="width: auto">
+            <table id="ContDetaTable_id" class="table-bordered">
+              <thead>
+                <tr>
+                  <th>Regulatory Authority</th>
+                  <th>Email Address</th>
+                  <th>Tel No.</th>
+                  <th>Area of Support</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>BCA(BP) & (TOP)</td>
+                  <td>bca_enquiry@bca.gov.sg</td>
+                  <td>1800-3425222</td>
+                  <td>Policies</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            class="closer btn"
+            onclick="hideHelp()"
+            style="background-color: #037ebb; color: white"
+          >
+            OK
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <input type="hidden" id="member_id" name="member_id" />
+    <input type="hidden" id="form_validated" name="form_validated" />
+
+    <div class="mls-espro-form-container">
+      <div class="row">
+        <div class="mls-espro-form-left-nav" id="menu">
+          <cn2-nav-button target="page1" page-number="1" label="Instructions">
+          </cn2-nav-button>
+          <cn2-nav-button
+            target="page2"
+            page-number="2"
+            label="Particulars of Application"
+          ></cn2-nav-button>
+          <cn2-nav-button
+            target="page3"
+            page-number="3"
+            label="Particulars and Declaration by Qualified Person"
+          >
+          </cn2-nav-button>
+          <cn2-nav-button
+            target="page4"
+            page-number="4"
+            label="Submission Checklist"
+          >
+          </cn2-nav-button>
+        </div>
+
+        <div class="e-content mls-espro-form-right" id="page">
+          <div id="page1">
+            <div class="mls-espo-right-inner-container borderchecking">
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td width="1%">
+                      <b>Date:</b>
+                    </td>
+                    <td width="15%">
+                      <cn2-textbox
+                        id="Date10"
+                        field-name="Date under Instructions"
+                        no-label
+                        inline="7"
+                        disabled
+                      >
+                        <cn2-textbox
+                          id="FIELD3"
+                          field-name="hidden field"
+                          no-label
+                          inline="7"
+                          disabled
+                          hidden
+                        ></cn2-textbox>
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="1%">
+                      <b>To:*</b>
+                    </td>
+                    <td width="15%">
+                      <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                          <cn2-select
+                            no-label
+                            inline="7"
+                            id="Addr10"
+                            field-name="To textbox under Instructions"
+                            mandatory
+                            options="Building and Construction Authority:BCA, Defence Science & Technology Agency:DSTA"
+                            event-change="ToAgency_id_change(this)"
+                          >
+                          </cn2-select
+                          ><br />
+                        </div>
+                        <div
+                          class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pt-2"
+                        >
+                          <cn2-textarea
+                            id="Addr20"
+                            field-name="To textarea under Instructions"
+                            no-label
+                            inline="7"
+                            disabled
+                            style="height: 140px"
+                          >
+                          </cn2-textarea>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="mls-espo-right-inner-container">
+              <h2>Instructions</h2>
+              <ol class="mls-intro-list">
+                <li>
+                  Form BCA-BP-COQP01 must be submitted before any pre-submission
+                  can be made.
+                </li>
+                <li>
+                  This form is to be digitally signed by the appointed Qualified
+                  Person.
+                </li>
+                <li>This form may take 2-3 mins to complete</li>
+              </ol>
+            </div>
+          </div>
+          <div id="page2">
+            <div class="mls-espo-right-inner-container borderchecking">
+              <h2>Particulars of Application</h2>
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td width="35%">Project Reference No.</td>
+                    <td>
+                      <cn2-textbox
+                        no-label
+                        id="Project_Project_Ref_No10"
+                        field-name="Project Reference No. under Particulars of Application"
+                        disabled
+                      >
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Project Title</td>
+                    <td>
+                      <cn2-textarea
+                        no-label
+                        id="Project_Title10"
+                        field-name="Project Title under Particulars of Application"
+                        disabled
+                      >
+                      </cn2-textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Description of Building Works*</td>
+                    <td>
+                      <cn2-textarea
+                        no-label
+                        id="Project_Title20"
+                        field-name="Description of Building Works under Particulars of Application"
+                        mandatory
+                      >
+                      </cn2-textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Location Description</td>
+                    <td>
+                      <cn2-textarea
+                        no-label
+                        id="Project_Location_Description_Description10"
+                        field-name="Location Description under Particulars of Application"
+                        disabled
+                      >
+                      </cn2-textarea>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td width="35%">Plan Type*</td>
+                    <td width="30%">
+                      <cn2-select
+                        id="PartOfAppl_PlanType10"
+                        field-name="Plan Type dropdown under Particulars of Application"
+                        mandatory
+                        options="BP:BP,LP:LP,EP:EP,MP:MP"
+                        event-change="PartOfAppl_change()"
+                        no-label
+                      >
+                      </cn2-select>
+                    </td>
+                    <td>
+                      <cn2-textbox
+                        id="PartOfAppl_PlanType20"
+                        field-name="Plan Type textbox under Particulars of Application"
+                        maxlength="3"
+                        no-label
+                        event-change="adjustNumberLength(this,3);PartOfAppl_PlanType_change(this);"
+                        event-keypress="PartOfAppl_PlanType_keypress(event,this);"
+                        numeric
+                        mandatory
+                      ></cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>No. of storeys*<br />(including attic & basements)</td>
+                    <td colspan="2">
+                      <cn2-textbox
+                        no-label
+                        id="PartOfAppl_NoOfStorIncl10"
+                        field-name="No. of storeys under Particulars of Application"
+                        numeric
+                        maxlength="2"
+                        mandatory
+                        event-change="adjustNumberLength(this,2);PartOfAppl_NoOfStorIncl10_change(this);"
+                      >
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div id="page3">
+            <div class="mls-espo-right-inner-container borderchecking">
+              <h2>Section I Particulars of Qualified Person</h2>
+              <table class="table table-borderless">
+                <tbody>
+                  <tr hidden>
+                    <td>Member ID</td>
+                    <td>
+                      <cn2-textbox
+                        no-label
+                        id="Member_Member_SID_QP10"
+                        field-name="Member ID under Section I Particulars"
+                        disabled
+                      >
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="35%">Name*</td>
+                    <td>
+                      <cn2-select
+                        no-label
+                        data-options="qpDropDown"
+                        event-change="loadDropDownDetails(this); togglePartQp()"
+                        id="Member_Member_Name_QP10"
+                        field-name="Name under Section I Particulars"
+                        mandatory
+                      >
+                      </cn2-select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Registration No.</td>
+                    <td>
+                      <cn2-textbox
+                        no-label
+                        id="MemberRole_Professional_No_QP10"
+                        field-name="Registration No. under Section I Particulars"
+                        disabled
+                      >
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Firm Name</td>
+                    <td>
+                      <cn2-textbox
+                        no-label
+                        id="Member_Firm_Name_QP10"
+                        field-name="Firm Name under Section I Particulars"
+                        disabled
+                      >
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>UEN</td>
+                    <td>
+                      <cn2-textbox
+                        no-label
+                        maxlength="10"
+                        id="Members_UEN_QP10"
+                        field-name="UEN under Section I Particulars"
+                        template="#########@"
+                        event-blur="uenValidate(this)"
+                      >
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Address</td>
+                    <td>
+                      <cn2-textarea
+                        no-label
+                        id="Member_Address_QP10"
+                        field-name="Address under Section I Particulars"
+                        disabled
+                      >
+                      </cn2-textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Telephone No.</td>
+                    <td>
+                      <cn2-textbox
+                        no-label
+                        id="Member_Tel_No_QP10"
+                        field-name="Telephone No. under Section I Particulars"
+                        disabled
+                      >
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Handphone No.</td>
+                    <td>
+                      <cn2-textbox
+                        no-label
+                        id="Member_Mobile_No_QP10"
+                        field-name="Handphone No. under Section I Particulars"
+                        disabled
+                      >
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Email Address</td>
+                    <td>
+                      <cn2-textbox
+                        no-label
+                        id="Member_Email_Address1_QP10"
+                        field-name="Email Address under Section I Particulars"
+                        disabled
+                      >
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mls-espo-right-inner-container borderchecking">
+              <h2>Declaration by Qualified Person*</h2>
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td width="1%">I.1.</td>
+                    <td>
+                      I confirm that I am the qualified person of the above
+                      project and I wish to consult your division on the
+                      following matters with details shown on the attached plans
+                      drawn to the scale of 1:200.
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox
+                        id="DeclByQualPers_IConfThatI10"
+                        field-name="I confirm that under Declaration by Qualified Person"
+                        mandatory
+                        checked
+                        event-change="remoMand(this)"
+                      >
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div id="page4">
+            <div class="mls-espo-right-inner-container borderchecking">
+              <h2>Section II Submission Checklist*</h2>
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td width="6%">II. 1.</td>
+                    <td width="30%">Brief Description of Consultations</td>
+                    <td width="75%">
+                      <cn2-textarea
+                        mandatory
+                        id="SubmChec_BrieDescOfCons10"
+                        field-name="Brief Description of Consultations under Declaration by Qualified Person"
+                        no-label
+                      >
+                      </cn2-textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>II. 2.</td>
+                    <td style="padding-top: 0" colspan="2">
+                      <span style="line-height: 50px">
+                        This is my
+                        <cn2-select
+                          id="SubmChec_ThisIsMyCons10"
+                          field-name="This is my consultation request 1 under Declaration by Qualified Person"
+                          options="1st:1st, 2nd:2nd, 3rd:3rd"
+                          inline="3"
+                          mandatory
+                        >
+                        </cn2-select
+                        >consultation request for the above project I would like
+                        to be informed of the appointment by
+                        <cn2-select
+                          id="SubmChec_ThisIsMyCons20"
+                          field-name="This is my consultation request 2 under Declaration by Qualified Person"
+                          no-label
+                          inline="3"
+                          options="Post:Post, Email:Email"
+                          mandatory
+                        ></cn2-select>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <cn2-version-footer></cn2-version-footer>
+      <cn2-fixed-footer></cn2-fixed-footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <title>LTA-DBC_VEHICLE PARKING_Version_2</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Syncfusion" />
+
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+    <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+    <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+    <script src="../cm/js/func/common.js"></script>
+    <script src="../cm/js/components/cn2commonfunc.js"></script>
+    <script src="../cm/js/components/cn2sgheader.js"></script>
+    <script src="../cm/js/components/cn2masterhead.js"></script>
+    <script src="../cm/js/components/cn2standardfooter.js"></script>
+    <script src="../cm/js/components/cn2fixedfooter.js"></script>
+    <script src="../cm/js/components/cn2textbox.js"></script>
+    <script src="../cm/js/components/cn2textarea.js"></script>
+    <script src="../cm/js/components/cn2checkbox.js"></script>
+    <script src="../cm/js/components/cn2versionfooter.js"></script>
+    <script src="../cm/js/components/cn2select.js"></script>
+    <script src="../cm/js/components/cn2navbutton.js"></script>
+    <script src="../cm/js/components/cn2switchbutton.js"></script>
+    <script src="../cm/js/components/cn2button.js"></script>
+
+    <script src="index.js"></script>
+</head>
+
+<body style="visibility: visible; opacity: 1;">
+    <cn2-master-head title=" SUBMISSIONS FOR VEHICLE PARKING" agency="logo.png"></cn2-master-head>
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p style="margin: 0px">Help</p>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <b>For enquiries related to forms, please contact the following:</b>
+                </p>
+                <p><span id="RegulatoryAuthority_id"></span></p>
+                <div id="table-parent" style="width:auto">
+                    <table id="ContDetaTable_id" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Regulatory Authority</th>
+                                <th>Email Address</th>
+                                <th>Tel No.</th>
+                                <th>Area of Support</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>LTA</td>
+                                <td>Zaini_Md_Sani@lta.gov.sg</td>
+                                <td>63328249</td>
+                                <td>Policies (Vehicle Parking)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="member_id" name="member_id" />
+    <input type="hidden" id="form_validated" name="form_validated" />
+
+    <div class="mls-espro-form-container">
+        <div class="row">
+            <div class="mls-espro-form-left-nav" id="menu" style="height: 70vh;">
+                <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+                <cn2-nav-button target="page2" page-number="2" label="Submission Type and Application Type">
+                </cn2-nav-button>
+                <cn2-nav-button target="page3" page-number="3" label="Application Information">
+                </cn2-nav-button>
+                <cn2-nav-button target="page4" page-number="4" label="Particulars of Sender">
+                </cn2-nav-button>
+                <cn2-nav-button target="page5" page-number="5" label="Declaration">
+                </cn2-nav-button>
+                <cn2-nav-button target="page6" page-number="5" label="Declaration" decla hidden>
+                </cn2-nav-button>
+                <cn2-nav-button target="page7" page-number="5" label="Declaration" decla hidden>
+                </cn2-nav-button>
+                <cn2-nav-button target="page8" page-number="5" label="Declaration" decla hidden>
+                </cn2-nav-button>
+                <cn2-nav-button target="page9" page-number="5" label="Declaration" decla hidden>
+                </cn2-nav-button>
+            </div>
+
+            <div class="e-content mls-espro-form-right" id="page" style="height: 70vh;">
+                <div id="page1" style="display: none;">
+                    <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">
+                                        <b>Date:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <cn2-textbox id="Date10" no-label inline="5" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="1%">
+                                        <b>To:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <div class="mls-espro-form-fields row">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-textbox id="Addr10" no-label inline="5" disabled>
+                                                </cn2-textbox>
+                                            </div>
+                                        </div>
+                                        <div class="mls-espro-form-fields row pt-2">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-textarea style="height:110px;" id="Addr20" no-label inline="5"
+                                                    disabled>
+                                                </cn2-textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Instructions</h2>
+                        <ol class="mls-intro-list">
+                            <li> This form is to be completed and digitally signed by the Qualified Person. </li>
+                            <li> It may take about 3 minutes to complete the form.</li>
+                            <li> Please select the correct Application Type. </li>
+                            <li> For re-submissions, please ensure that the Annexes for resubmission
+                                are attached in
+                                the following format:
+                                <ol>(i) Resubmission_Annex.pdf</ol>
+                                <ol style="padding-left: 125px">(OR)</ol>
+                                <ol>(ii) Resubmission_Annex.doc</ol>
+                            </li>
+                            <li> This form MUST be attached for all ES and CR submissions.</li>
+                            <li> This form MUST NOT be re-named.</li>
+                            <li> All mandatory fields/checkboxes denoted by * must be filled in.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div id="page2" style="display: none;">
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Submission Type</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td width="1%"><input type="radio" onclick="subTypeChange(this)"
+                                                    id="SubType_NewSub10" name="SubType" />
+                                            </td>
+                                            <td width="49%">
+                                                <b><span style="color:blue;">*</span> New Submission</b>
+                                            </td>
+                                            <td width="1%"><input type="radio" onclick="subTypeChange(this)"
+                                                    id="SubType_Resub10" name="SubType" />
+                                            </td>
+                                            <td width="49%"><b>Resubmission </b></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" class="py-0">
+                                                <span style="color:blue;">*</span> including Amendment to Approved
+                                                Proposal or Amendment to
+                                                Lodged Plan.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" class="py-0" style="color:blue;">
+                                                Note : Please select one of the above options before proceeding to next
+                                                page.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container" style="margin-bottom: 50px;">
+                        <h2>Application Type (Please choose only one application)</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                1. Application for Approval of Proposal and Plans for Provision of
+                                                Parking Places and Parking Lots.
+                                            </td>
+                                            <td width="5%">
+                                                <input type="radio" id="ApplType_VPBldgPlan" name="ApplType_name"
+                                                    onclick="ApplType_change(this);" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                2. Lodgement for Approval of Proposal and Plans for Provision of Parking
+                                                Places and Parking Lots.
+                                            </td>
+                                            <td>
+                                                <input type="radio" id="ApplType_VPLodgeVP" name="ApplType_name"
+                                                    onclick="ApplType_change(this);" />
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                3. Application for Certificate of Statutory Completion Clearance.
+                                            </td>
+                                            <td>
+                                                <input type="radio" id="ApplType_VPCertStaComp" name="ApplType_name"
+                                                    onclick="ApplType_change(this);" />
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                4. Application for Review of Requirement on Layout Arrangement,
+                                                Dimensions or Design of Parking Facilities.
+                                            </td>
+                                            <td>
+                                                <input type="radio" id="ApplType_VPModDim" name="ApplType_name"
+                                                    onclick="ApplType_change(this);" />
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                5. Application for Review of Requirement on Number of Parking Lots to be
+                                                provided.
+                                            </td>
+                                            <td>
+                                                <input type="radio" id="ApplType_VPWaiver" name="ApplType_name"
+                                                    onclick="ApplType_change(this);" />
+
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page3" style="display: block;">
+                    <div class="mls-espo-right-inner-container">
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <h2>Section I Application Information</h2>
+                            </div>
+                        </div>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="35%" class="align-middle">
+                                        Project Reference No.
+                                    </td>
+                                    <td colspan="2">
+                                        <cn2-textbox maxlength="50" id="Project_Project_Ref_No10" disabled no-label>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%" class="align-middle">
+                                        Building Plan Reference No.*
+                                    </td>
+                                    <td colspan="2">
+                                        <cn2-textbox maxlength="50" id="Building_Plan_Ref_No10" mandatory no-label>
+
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%" class="align-middle">
+                                        Project Title
+                                    </td>
+                                    <td colspan="2">
+                                        <cn2-textarea id="Project_Title10" disabled no-label></cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%" class="align-middle">
+                                        Planning Area
+                                    </td>
+                                    <td colspan="2">
+                                        <cn2-select id="POPUP3"
+                                            options="ANG MO KIO:ANG MO KIO,BEDOK:BEDOK,BISHAN:BISHAN,BOON LAY:BOON LAY,BUKIT BATOK:BUKIT BATOK,BUKIT MERAH:BUKIT MERAH,BUKIT PANJANG:BUKIT PANJANG,BUKIT TIMAH:BUKIT TIMAH,CENTRAL WATER CATCHMENT:CENTRAL WATER CATCHMENT,CHANGI:CHANGI,CHANGI BAY:CHANGI BAY,CHOA CHU KANG:CHOA CHU KANG,CLEMENTI:CLEMENTI,DOWNTOWN CORE:DOWNTOWN CORE,GEYLANG:GEYLANG,HOUGANG:HOUGANG,JURONG EAST:JURONG EAST,JURONG WEST:JURONG WEST,KALLANG:KALLANG,LIM CHU KANG:LIM CHU KANG,MANDAI:MANDAI,MARINA EAST:MARINA EAST,MARINA SOUTH:MARINA SOUTH,MARINE PARADE:MARINE PARADE,MUSEUM:MUSEUM,NEWTON:NEWTON,NORTH-EASTERN ISLANDS:NORTH-EASTERN ISLANDS,NOVENA:NOVENA,ORCHARD:ORCHARD,OUTRAM:OUTRAM,PASIR RIS:PASIR RIS,PAYA LEBAR:PAYA LEBAR,PIONEER:PIONEER,PUNGGOL:PUNGGOL,QUEENSTOWN:QUEENSTOWN,RIVER VALLEY:RIVER VALLEY,ROCHOR:ROCHOR,SELETAR:SELETAR,SEMBAWANG:SEMBAWANG,SENGKANG:SENGKANG,SERANGOON:SERANGOON,SIMPANG:SIMPANG,SINGAPORE RIVER:SINGAPORE RIVER,SOUTHERN ISLANDS:SOUTHERN ISLANDS,STRAITS VIEW:STRAITS VIEW,SUNGEI KADUT:SUNGEI KADUT,TAMPINES:TAMPINES,TANGLIN:TANGLIN,TENGAH:TENGAH,TOA PAYOH:TOA PAYOH,TUAS:TUAS,WESTERN ISLANDS:WESTERN ISLANDS,WESTERN WATER CATCHMENT:WESTERN WATER CATCHMENT,WOODLANDS:WOODLANDS,YISHUN:YISHUN"
+                                            no-label></cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Location Description
+                                    </td>
+                                    <td colspan="2" style="padding: 0px;">
+                                        <table class="table table-borderless">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="20%">Lot No. <br />
+                                                        <div class="mls-espro-form-fields row pt-2">
+                                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                                <cn2-button label="Add"
+                                                                    event-click="insertDuplicate('stForm','A1');disableDelete('stForm');add_change('stForm');">
+                                                                </cn2-button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div id="stForm">
+                                                            <div id="A1"
+                                                                class="col-xs-12 col-sm-12 col-lg-12 col-md-12 Afields"
+                                                                style="padding: 0px;">
+                                                                <table class="table table-borderless">
+                                                                    <tbody>
+                                                                        <tr style="align-items:center;">
+                                                                            <td width="15%" style="padding: 0px;">
+                                                                                <cn2-select class="lotNo_first"
+                                                                                    id="RDLotNo_110" prefix="RDLotNo_1"
+                                                                                    suffix="0" options="MK:MK,TS:TS"
+                                                                                    mandatory no-label>
+                                                                                </cn2-select>
+                                                                            </td>
+                                                                            <td style="padding-left: 0px; padding-right: 0px; padding-top: 7px;"
+                                                                                class="text-center">
+                                                                                -
+                                                                            </td>
+                                                                            <td width="15%" style="padding: 0px;">
+                                                                                <cn2-textbox class="lotNo"
+                                                                                    id="RDLotNo_210" prefix="RDLotNo_2"
+                                                                                    suffix="0" no-label maxlength="2"
+                                                                                    numeric>
+                                                                                </cn2-textbox>
+                                                                            </td>
+                                                                            <td style="padding-left: 0px; padding-right: 0px; padding-top: 7px;"
+                                                                                class="text-center">
+                                                                                -
+                                                                            </td>
+                                                                            <td width="15%" style="padding: 0px;">
+                                                                                <cn2-textbox class="lotNo"
+                                                                                    id="RDLotNo_310" prefix="RDLotNo_3"
+                                                                                    suffix="0" no-label maxlength="5"
+                                                                                    numeric>
+                                                                                </cn2-textbox>
+                                                                            </td>
+                                                                            <td style="padding-left: 0px; padding-right: 0px; padding-top: 7px;"
+                                                                                class="text-center">
+                                                                                -
+                                                                            </td>
+                                                                            <td width="15%" style="padding: 0px;">
+                                                                                <cn2-textbox class="lotNo"
+                                                                                    id="RDLotNo_410" prefix="RDLotNo_4"
+                                                                                    suffix="0" no-label template="@"
+                                                                                    maxlength="1">
+                                                                                </cn2-textbox>
+                                                                            </td>
+                                                                            <td style="padding-left: 0px; padding-right: 0px; padding-top: 7px;"
+                                                                                class="text-center">
+                                                                                -
+                                                                            </td>
+                                                                            <td width="19%" style="padding: 0px;">
+                                                                                <cn2-select class="lotNo_Last"
+                                                                                    id="RDLotNo_510" prefix="RDLotNo_5"
+                                                                                    suffix="0"
+                                                                                    options="Partial:Partial,Full:Full"
+                                                                                    mandatory no-label>
+                                                                                </cn2-select>
+                                                                            </td>
+                                                                            <td width="10%" class="align-middle"
+                                                                                style="padding: 3px;">
+                                                                                <cn2-button id="delete1A"
+                                                                                    class="deleteBtn" prefix="delete"
+                                                                                    suffix="A" style="float: left"
+                                                                                    event-click="removeDuplicate(this.id,'A1','stForm');disableDelete('stForm')"
+                                                                                    label="Delete" danger disabled>
+                                                                                </cn2-button>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Street Name <br />
+                                                        <div class="mls-espro-form-fields row pt-2">
+                                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                                <cn2-button label="Add"
+                                                                    event-click="insertDuplicate('streetName','B1');disableDelete('streetName');add_change('streetName');">
+                                                                </cn2-button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div id="streetName">
+                                                            <div id="B1"
+                                                                class="col-xs-12 col-sm-12 col-lg-12 col-md-12 Bfields"
+                                                                style="padding: 0px;">
+                                                                <table class="table table-borderless">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td style="padding: 0px;">
+                                                                                <cn2-textbox no-label
+                                                                                    id="Project_StreName10"
+                                                                                    prefix="Project_StreName"
+                                                                                    suffix="0"></cn2-textbox>
+                                                                            </td>
+                                                                            <td width="10%" class="align-middle"
+                                                                                style="padding: 3px;">
+                                                                                <cn2-button id="delete1B"
+                                                                                    class="deleteBtn" prefix="delete"
+                                                                                    suffix="B" style="float: left"
+                                                                                    event-click="removeDuplicate(this.id,'B1','streetName');disableDelete('streetName')"
+                                                                                    label="Delete" danger disabled>
+                                                                                </cn2-button>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="35%">Development Type</td>
+                                    <td style="padding: 0px;">
+                                        <table class="table table-borderless">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="1%" style="padding-right: 0px;">
+                                                        <cn2-checkbox id="DeveSubType_CHECK1"
+                                                            group-id="DeveSubType_CHECK_id"
+                                                            event-change="onlyOne(this)">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td colspan="2">Residential (Landed)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-right: 0px;">
+                                                        <cn2-checkbox id="DeveSubType_CHECK21"
+                                                            group-id="DeveSubType_CHECK_id"
+                                                            event-change="onlyOne(this)">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td colspan="2">Residential (Non-Landed)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-right: 0px;">
+                                                        <cn2-checkbox id="DeveSubType_CHECK22"
+                                                            group-id="DeveSubType_CHECK_id"
+                                                            event-change="onlyOne(this)">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td colspan="2">Industrial</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-right: 0px;">
+                                                        <cn2-checkbox id="DeveSubType_CHECK2"
+                                                            group-id="DeveSubType_CHECK_id"
+                                                            event-change="onlyOne(this)">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td colspan="2">Commercial (Offices)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-right: 0px;">
+                                                        <cn2-checkbox id="DeveSubType_CHECK23"
+                                                            group-id="DeveSubType_CHECK_id"
+                                                            event-change="onlyOne(this)">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td colspan="2">Commercial (Retail)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-right: 0px;">
+                                                        <cn2-checkbox id="DeveSubType_CHECK24"
+                                                            group-id="DeveSubType_CHECK_id"
+                                                            event-change="onlyOne(this)">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td width="25%">Institutional</td>
+                                                    <td>
+                                                        <cn2-select no-label id="DeveSubType_FIELD1" hidden
+                                                            options="Educational Institutions:Educational Institutions,Cultural and Social Welfare Institutions:Cultural and Social Welfare Institutions,Places of Worship and Related Religious Institutions:Places of Worship and Related Religious Institutions,Health Institutions:Health Institutions">
+                                                        </cn2-select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-right: 0px;">
+                                                        <cn2-checkbox id="DeveSubType_CHECK15"
+                                                            group-id="DeveSubType_CHECK_id"
+                                                            event-change="onlyOne(this)">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td colspan="2">Mixed [Residential]</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-right: 0px;">
+                                                        <cn2-checkbox id="DeveSubType_CHECK25"
+                                                            group-id="DeveSubType_CHECK_id"
+                                                            event-change="onlyOne(this)">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td>Civil Engineering Work</td>
+                                                    <td>
+                                                        <cn2-select no-label id="DeveSubType_FIELD2"
+                                                            options="Road Tunnels:Road Tunnels,Road Viaducts/Flyovers:Road Viaducts/Flyovers"
+                                                            hidden></cn2-select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-right: 0px;">
+                                                        <cn2-checkbox id="DeveSubType_CHECK20"
+                                                            group-id="DeveSubType_CHECK_id"
+                                                            event-change="onlyOne(this)">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td>Others</td>
+                                                    <td>
+                                                        <cn2-select no-label id="DeveSubType_FIELD3"
+                                                            options="Standalone Street Works:Standalone Street Works,Government/ Ministry Buildings:Government/ Ministry Buildings,Sports and Recreational Facilities:Sports and Recreational Facilities,White Sites:White Sites,Tourist Attraction Developments:Tourist Attraction Developments,Fire Station:Fire Station,Electrical Sub-station:Electrical Sub-station,Commuter Facilities:Commuter Facilities,Hoarding/ Temporary Access Construction:Hoarding/ Temporary Access Construction"
+                                                            hidden></cn2-select>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="35%">
+                                        3D BIM Submission
+                                    </td>
+                                    <td>
+                                        <div class="mls-espro-form-fields row">
+                                            <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                                                <input type="radio" id="Project_BIMYES10" name="Project_BIM" />   Yes
+                                            </div>
+                                            <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                                                <input type="radio" id="Project_BIMNO10" name="Project_BIM" />   No
+                                            </div>
+                                        </div>
+                                        <!-- <cn2-switchbutton data-true="YES" data-false="NO"
+                                            data-on="YES" data-off="NO" switch-id="Project_BIMYES10"
+                                            event-change="switchButton(this,'Project_BIMYES10', 'Project_BIMNO10')">
+                                        </cn2-switchbutton>
+                                        <cn2-checkbox id="Project_BIMYES10" hidden></cn2-checkbox>
+                                        <cn2-checkbox id="Project_BIMNO10" hidden></cn2-checkbox> -->
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="page4" style="display: none;">
+                    <div class="mls-espo-right-inner-container">
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <h2>Section II Particulars of Sender</h2>
+                            </div>
+                        </div>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="35%">Name</td>
+                                    <td>
+                                        <cn2-select id="Member_Member_Name_QP10" data-options="senderDropdown"
+                                            event-change="loadDropDownDetails(this)" no-label></cn2-select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="35%">
+                                        Is the Proposal a Statutory Board/Government Dept or Ministry?
+                                    </td>
+                                    <td>
+                                        <cn2-switchbutton data-true="YES" data-false="NO" data-on="YES" data-off="NO"
+                                            switch-id="StatBoar_Yes10"
+                                            event-change="switchButton(this, 'StatBoar_Yes10', 'StatBoar_No10');StatBoar_change(this);">
+                                        </cn2-switchbutton>
+                                        <cn2-checkbox id="StatBoar_Yes10" hidden>
+                                        </cn2-checkbox>
+                                        <cn2-checkbox id="StatBoar_No10" hidden>
+                                        </cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <cn2-select id="Member_Member_Name_StatBoar10" hidden no-label
+                                            event-change="loadDropDownDetails(this);" options="Building & Construction Authority:Building & Construction Authority,
+                                    Civil Aviation Authority of Singapore:Civil Aviation Authority of Singapore,
+                                    Ministry of Culture Community & Youth:Ministry of Culture Community & Youth,
+                                    Defence Science & Technology Agency:Defence Science & Technology Agency,
+                                    Economic Development Board:Economic Development Board,
+                                    Energy Market Authority:Energy Market Authority,
+                                    Ministry of Sustainability & Environment:Ministry of Sustainability & Environment,
+                                    Enterprise Singapore:Enterprise Singapore,
+                                    Housing & Development Board:Housing & Development Board,
+                                    Health Promotion Board:Health Promotion Board,
+                                    Health Sciences Authority:Health Sciences Authority,
+                                    Home Team Science & Technology Agency:Home Team Science & Technology Agency,
+                                    Infocomm Media Development Authority:Infocomm Media Development Authority,
+                                    Intellectual Property Office:Intellectual Property Office,
+                                    Inland Revenue Authority:Inland Revenue Authority,
+                                    Ministry of Communications & Information:Ministry of Communications & Information,
+                                    Institute of Technical Education:Institute of Technical Education,
+                                    Jurong Town Corporation:Jurong Town Corporation,
+                                    Judiciary Court:Judiciary Court,
+                                    Ministry of Law:Ministry of Law,
+                                    Land Transport Authority:Land Transport Authority,
+                                    Monetary Authority of Singapore:Monetary Authority of Singapore,
+                                    Ministry of Social & Family Development:Ministry of Social & Family Development,
+                                    Ministry of Foreign Affairs:Ministry of Foreign Affairs,
+                                    Ministry of Home Affairs:Ministry of Home Affairs,
+                                    Ministry of National Development:Ministry of National Development,
+                                    Ministry of Transport:Ministry of Transport,
+                                    Ministry of Education:Ministry of Education,
+                                    Ministry of Finance:Ministry of Finance,
+                                    Ministry of Health:Ministry of Health,
+                                    Ministry of Manpower:Ministry of Manpower,
+                                    Maritime and Port Authority:Maritime and Port Authority,
+                                    Ministry of Trade & Industry:Ministry of Trade & Industry,
+                                    Majlis Ugama Islam Singapura:Majlis Ugama Islam Singapura,
+                                    National Arts Council:National Arts Council,
+                                    Ngee Ann Polytechnic:Ngee Ann Polytechnic,
+                                    National Council of Social Service:National Council of Social Service,
+                                    National Environmt Agency:National Environmt Agency,
+                                    National Heritage Board:National Heritage Board,
+                                    National Library Board:National Library Board,
+                                    National Parks Board:National Parks Board,
+                                    Nanyang Polytechnic:Nanyang Polytechnic,
+                                    Parliament of Singapore:Parliament of Singapore,
+                                    People's Association:People's Association,
+                                    MOH Professional Boards:MOH Professional Boards,
+                                    Presidential Council:Presidential Council,
+                                    Professional Engineers Board:Professional Engineers Board,
+                                    Producitvity Funds Admin Board:Producitvity Funds Admin Board,
+                                    Prime Minister's Office:Prime Minister's Office,
+                                    Public Transport Council:Public Transport Council,
+                                    Public Utilities Board:Public Utilities Board,
+                                    Republic Polytechnic:Republic Polytechnic,
+                                    Singapore Accountancy Commission:Singapore Accountancy Commission,
+                                    ISEAS - Yusof Ishak Institute:ISEAS - Yusof Ishak Institute,
+                                    Science Centre Board:Science Centre Board,
+                                    Yellow Ribbon Singapore:Yellow Ribbon Singapore,
+                                    Sentosa Development Corporation:Sentosa Development Corporation,
+                                    SEAB:SEAB,
+                                    Singapore Food Agency:Singapore Food Agency,
+                                    Singapore Labour Foundation:Singapore Labour Foundation,
+                                    Singapore Polytechnic:Singapore Polytechnic,
+                                    Sport Singapore:Sport Singapore,
+                                    SkillsFuture Singapore:SkillsFuture Singapore,
+                                    Singapore Tourism Board:Singapore Tourism Board,
+                                    A*STAR Companies:A*STAR Companies,
+                                    Tote Board:Tote Board,
+                                    Temasek Polytechnic:Temasek Polytechnic,
+                                    Urban Redevelopment Authority:Urban Redevelopment Authority,
+                                    Workforce Singapore:Workforce Singapore">
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="page5" style="display: none;">
+                    <div class="mls-espo-right-inner-container">
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <div class="text-center">
+                                    <h4 style="margin-left:110px;margin-right: 110px;">Application for Approval of
+                                        Proposal And Plans for Provision of Parking
+                                        Places and Parking Lots
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <br />
+                                <h2>Section III Declaration</h2>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td width="5%"> 1.1</td>
+                                            <td colspan="2">I confirm that I have prepared the plans in compliance with
+                                                LTA's requirements. I also confirm that the applicant/developer of the
+                                                subject proposed development has been informed and agreed with the
+                                                proposed layout shown on this plans and I will inform the
+                                                applicant/developer of any amendment to the layout to comply with LTA's
+                                                requirements at all time.
+                                            </td>
+                                            <td width="1%">
+                                                <cn2-checkbox id="VPPRO_CHECK1"></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="5">1.2</td>
+                                            <td colspan="3">I attach the following documents:</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                1.2.1 A copy of the Competent Authority's approval for the proposed
+                                                development. (Filename: WP.pdf) *
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="VPPRO_CHECK2_1"
+                                                    event-change="CHECKED_change(this);fileAttachCheck(this, 'fileAttach10', false, 'WP.pdf', 'Declaration')"
+                                                    mandatory checked></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">1.2.2 A Copy of the Competent Authority Approved Plan (File
+                                                name: AP.dwg or AP.pdf). *</td>
+                                            <td>
+                                                <cn2-checkbox id="VPPRO_CHECK2_2"
+                                                    event-change="CHECKED_change(this);fileAttachCheck(this, 'fileAttach20', false, 'AP.*', 'Declaration')"
+                                                    mandatory checked></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">1.2.3 A set of building plans *</td>
+                                            <td>
+                                                <cn2-checkbox id="VPPRO_CHECK2_3" event-change="CHECKED_change(this);"
+                                                    mandatory checked></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">1.2.4 Form LTA-VP-FORM. (Filename: LTA-VP-FORM.pdf) *</td>
+                                            <td>
+                                                <cn2-checkbox id="VPPRO_CHECK2_4"
+                                                    event-change="CHECKED_change(this);fileAttachCheck(this, 'fileAttach30', false, 'LTA-VP-FORM.pdf', 'Declaration')"
+                                                    mandatory checked></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1.3</td>
+                                            <td colspan="2">
+                                                Gross Floor Area (GFA) details provided are the same as the submitted to
+                                                URA.
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="VPPRO_CHECK3"></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">
+                                                <div class="mls-espro-form-fields row">
+                                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                        <b>Development Submission Fee</b>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1.4</td>
+                                            <td colspan="2">
+                                                The amount payable for the application fee will be notified upon
+                                                successful submission. Please pay the fee within the date stipulated by
+                                                the payment notification email. <br /><br />
+                                                For the fee schedule to be paid, please refer to the COP on Vehicle
+                                                Parking Provision in Development Proposals. <br /><br />
+                                                For the new erections (Total GFA to be considered) <br />
+                                                For Amendments, Additional &amp; Alterations and Change of Use proposal
+                                                to
+                                                approved plans (Only affected GFA to be considered). <br /><br />
+                                                <div class="align-middle">
+                                                    GFA <span></span>
+                                                    <cn2-textbox no-label id="VPPRO_GFA10" inline="3" maxlength="6"
+                                                        event-change="formatDecimal(this, '2');"
+                                                        event-blur="displayZero(this)" mandatory></cn2-textbox> sqm
+                                                </div><br />
+                                                <i>
+                                                    Important: Please ensure the GFA entered is the same as that
+                                                    submitted to URA as the information will be used to compute the
+                                                    amount of payable.
+                                                </i>
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="VPPRO_CHECK4"
+                                                    event-change="enableFields(this, 'VPPRO_GFA10')">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1.5</td>
+                                            <td colspan="3">
+                                                <cn2-textarea id="VPPRO_Rema10" label="Comments"></cn2-textarea>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page6" style="display: none;">
+                    <div class="mls-espo-right-inner-container">
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 text-center">
+                                <h4 style="margin-left:110px;margin-right: 110px;">Lodgement for Approval of Proposal
+                                    and Plans
+                                    for Provision of Parking Places and
+                                    Parking Lots.</h4>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <br />
+                                <h2>Section III Declaration</h2>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td width="5%"> 2.1</td>
+                                            <td colspan="2">I declare that the particulars of the proposed development
+                                                given in this lodgement are true and correct. *
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox event-change="CHECKED_change(this)" id="VPLOD_CHECK1">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.2</td>
+                                            <td colspan="2">I declare that the proposal and plans of the parking place/s
+                                                and parking Lots of the proposed development comply fully with the
+                                                prevailing Parking Places (Provision of Parking Places and Parking Lots)
+                                                Rules and other relevant guidelines of the Authority.
+                                                Waiver/Modification of parking requirements (if any) has been approved
+                                                by LTA. *
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox event-change="CHECKED_change(this)" id="VPLOD_CHECK2">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.3</td>
+                                            <td colspan="2">I certify that I have obtained a Letter of Undertaking from
+                                                the applicant/developer to sign this form on behalf of the
+                                                applicant/developer. *
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox event-change="CHECKED_change(this)" id="VPLOD_CHECK3">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.4</td>
+                                            <td colspan="2">The attach plans and information given are similar to that
+                                                approved by Competent Authority (CEO, URA). *
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox event-change="CHECKED_change(this)" id="VPLOD_CHECK4">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="5">2.5</td>
+                                            <td colspan="3">I attach the following documents:</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">2.5.1 A copy of the Competent Authority's approval for the
+                                                proposed development. (Filename: WP.pdf)* </td>
+                                            <td>
+                                                <cn2-checkbox
+                                                    event-change="CHECKED_change(this); fileAttachCheck(this, 'fileAttach10', false, 'WP.pdf', 'Declaration')"
+                                                    id="VPLOD_CHECK5_1">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">2.5.2 A Copy of the Competent Authority Approved Plan (File
+                                                name: AP.dwg or AP.pdf).* </td>
+                                            <td>
+                                                <cn2-checkbox
+                                                    event-change="CHECKED_change(this); fileAttachCheck(this, 'fileAttach20', false, 'AP.*', 'Declaration')"
+                                                    id="VPLOD_CHECK5_2">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">2.5.3 A set of building plans. </td>
+                                            <td>
+                                                <cn2-checkbox event-change="CHECKED_change(this); " id="VPLOD_CHECK5_3">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">2.5.4 Form LTA-VP-FORM (Filename: LTA-VP-FORM.pdf) *</td>
+                                            <td>
+                                                <cn2-checkbox
+                                                    event-change="CHECKED_change(this); fileAttachCheck(this, 'fileAttach30', false, 'LTA-VP-FORM.pdf', 'Declaration')"
+                                                    id="VPLOD_CHECK5_4">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.6</td>
+                                            <td colspan="2">Gross Floor Area (GFA) details provided are the same as the
+                                                submitted to
+                                                URA *
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox event-change="CHECKED_change(this)" id="VPLOD_CHECK5_5">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">
+                                                <b>Development Submission Fee</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.7</td>
+                                            <td colspan="2">
+                                                The amount payable for the Application fee will be notified upon
+                                                successful submission. Please pay the fee within the date stipulated by
+                                                the payment notification email. <br /><br />
+                                                For the fee schedule to be paid, please refer to the COP on Vehicle
+                                                Parking Provision in the Development Proposals. <br /><br />
+                                                For New Erections, (Total GFA to be considered).<br />
+                                                For Amendments, Additional and Alteration and Change of Use proposal to
+                                                approved plans (Only affected GFA to be considered). <br />
+                                                For Re-lodge, with no change in GFA, please insert 0. (Minimum fee
+                                                payment is applicable)<br /><br />
+                                                <div class="align-middle">
+                                                    GFA <span></span>
+                                                    <cn2-textbox no-label id="VPLOD_GFA10" inline="3" maxlength="6"
+                                                        event-change="formatDecimal(this, '2')"
+                                                        event-blur="displayZero(this)" disabled></cn2-textbox> sqm
+                                                </div><br />
+                                                <i>
+                                                    Important: Please ensure the GFA entered is the same as that
+                                                    submitted to URA as the information will be used to compute the
+                                                    amount payable. You are required to make a new lodgement if the
+                                                    information provided is incorrect.
+                                                </i>
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="VPLOD_CHECK6"
+                                                    event-change="CHECKED_change(this);enableFields(this, 'VPLOD_GFA10')">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                2.8
+                                            </td>
+                                            <td colspan="3">
+                                                <cn2-textarea id="VPLOD_Rema10" label="Comments"></cn2-textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page7" style="display: none;">
+                    <div class="mls-espo-right-inner-container">
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <div class="text-center">
+                                    <h4>APPLICATION FOR CERTIFICATE OF STATUTORY COMPLETION CLEARANCE</h4>
+                                </div>
+                            </div>
+                            <br />
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <br />
+                                <h2>Section III Declaration</h2>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td width="5%"> 3.1</td>
+                                            <td>I have inspected the completed parking place and parking
+                                                lots. <span page7asterisk></span></td>
+                                            <td>
+                                                <cn2-checkbox id="VPCSC_CHECK1" event-change="CHECKED_change(this)"
+                                                    disabled></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3.2</td>
+                                            <td>
+                                                <div class="mls-espro-form-fields row">
+                                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                        I am satisfied that the parking place/s and
+                                                        parking lots
+                                                        are built in accordance with the approved
+                                                        building plans <span page7asterisk></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mls-espro-form-fields row pt-2">
+                                                    <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11"
+                                                        style="padding-left:40px">
+                                                        With no deviation
+                                                    </div>
+                                                    <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                                        <input type="radio" name="deviations" id="WithNoDevi10"
+                                                            disabled />
+                                                    </div>
+                                                </div>
+                                                <div class="mls-espro-form-fields row pt-2">
+                                                    <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11"
+                                                        style="padding-left:40px">
+                                                        With deviations highlighted in the submitted
+                                                        as-built plans
+                                                    </div>
+                                                    <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                                        <input type="radio" name="deviations" id="WithDevi10"
+                                                            disabled />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td rowspan="2">
+                                                <cn2-checkbox id="VPCSC_CHECK2" event-change="CHECKED_change(this)"
+                                                    disabled></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3.3</td>
+                                            <td>
+                                                <div class="mls-espro-form-fields row">
+                                                    <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                                                        The deviation conforms to the Parking Places
+                                                        (Provision
+                                                        of Parking Places and Parking Lots) Rules. <span
+                                                            page7asterisk></span>
+                                                    </div>
+                                                    <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                                        <input type="radio" name="conforms" id="TheDeviConf10"
+                                                            disabled />
+                                                    </div>
+                                                </div>
+                                                <div class="mls-espro-form-fields row pt-2">
+                                                    <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11"
+                                                        style="padding-left:40px">
+                                                        The deviation does not conform to the
+                                                        Parking Places
+                                                        (Provision of Parking Places and Parking
+                                                        Lots) Rules but
+                                                        approval has been granted vide LTA's letter
+                                                    </div>
+                                                    <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                                        <input type="radio" name="conforms" id="TheDeviDoesNot10"
+                                                            disabled />
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="4">3.4</td>
+                                            <td colspan="2">
+                                                I attach the following documents:
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3.4.1 Vehicle Parking Clearance. <span page7asterisk></span></td>
+                                            <td>
+                                                <cn2-checkbox id="VPCSC_CHECK3_1" event-change="CHECKED_change(this)"
+                                                    disabled></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3.4.2 As-built plan showing the parking place/lots. <span
+                                                    page7asterisk></span></td>
+                                            <td>
+                                                <cn2-checkbox id="VPCSC_CHECK3_2" event-change="CHECKED_change(this)"
+                                                    disabled></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3.4.3 Photographs showing the open surface parking places. <span
+                                                    page7asterisk></span></td>
+                                            <td>
+                                                <cn2-checkbox id="VPCSC_CHECK3_3" event-change="CHECKED_change(this)"
+                                                    disabled></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3.5</td>
+                                            <td>
+                                                I have rectified all the defects according to LTA’s Written Directions.
+                                                The parking place and parking lots now conforms to the Parking Places
+                                                (Provision of Parking Places and Parking Lots) Rules. <span
+                                                    page7asterisk2></span>
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="VPCSC_CHECK4" event-change="CHECKED_change(this)"
+                                                    disabled></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3.6</td>
+                                            <td colspan="2">
+                                                <cn2-textarea label="Comments" id="VPCSC_Rema10">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page8" style="display: none;">
+                    <div class="mls-espo-right-inner-container">
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <div class="text-center">
+                                    <h4 style="margin-left:110px;margin-right: 110px;">Application for Review of
+                                        Requirement on Layout Arrangement,
+                                        Dimensions or
+                                        Design of Parking Facilities
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <br />
+                                <h2>Section III Declaration</h2>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td width="5%">4.1</td>
+                                            <td colspan="2">I confirm that I have prepared the plans in compliance with
+                                                LTA's requirements. I also confirm that the applicant/developer of the
+                                                proposed development has been informed of the proposed layout which
+                                                includes any request for modification of dimensions as shown on the
+                                                plans. The applicant/developer has agreed with the proposed layout which
+                                                includes any modification of the specification(s) as set out in the
+                                                Parking Places (Provision of Parking Places and Parking Lots) Rules and
+                                                will comply with LTA's requirements at all times.
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="VPMODDIM_CHECK1"></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="4">4.2</td>
+                                            <td colspan="3">I attach the following documents:</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">4.2.1 A set of plans showing the affected parking
+                                                place/lots.
+                                                <span page8asterisk></span></td>
+                                            <td>
+                                                <cn2-checkbox id="VPMODDIM_CHECK2_1" checked mandatory></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">4.2.2 Form LTA-VP-SCHR (Filename: LTA-VP-SCHR.pdf) <span
+                                                    page8asterisk></span></td>
+                                            <td>
+                                                <cn2-checkbox id="VPMODDIM_CHECK2_2"
+                                                    event-change="fileAttachCheck(this, 'fileAttach10', false, 'LTA-VP-SCHR.pdf', 'Declaration')"
+                                                    checked mandatory></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">4.2.3 Form LTA-VP-LOU. (Filename: LTA-VP-LOU.pdf) <span
+                                                    page8asterisk></span></td>
+                                            <td>
+                                                <cn2-checkbox id="VPMODDIM_CHECK2_3"
+                                                    event-change="fileAttachCheck(this, 'fileAttach20', false, 'LTA-VP-LOU.pdf', 'Declaration')"
+                                                    checked mandatory></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">
+                                                <b>Development Submission Fee</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4.3</td>
+                                            <td colspan="2">
+                                                The amount payable for the Application fee will be notified upon
+                                                successful submission. Please pay the fee within the date stipulated by
+                                                the payment notification email. <br /><br />
+                                                For the fee schedule to be paid, please refer to the COP on Vehicle
+                                                Parking Provision in the Development Proposals. <br /><br />
+                                                <div class="align-middle">
+                                                    No. of item to be reviewed: <span></span>
+                                                    <cn2-textbox no-label id="VPMODDIM_GFA10" inline="2" maxlength="2"
+                                                        numeric disabled></cn2-textbox>
+                                                </div><br />
+                                                <i>
+                                                    Example of item: Review the requirement of 6.6m width driveway.
+                                                </i>
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="VPMODDIM_CHECK3"
+                                                    event-change="enableFields(this, 'VPMODDIM_GFA10')" disabled>
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4.4</td>
+                                            <td colspan="3">
+                                                <cn2-textarea id="VPMODDIM_Rema10" label="Comments">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page9" style="display: none;">
+                    <div class="mls-espo-right-inner-container">
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <div class="text-center">
+                                    <h4 style="margin-left:110px;margin-right: 110px;">Application For Review Of
+                                        Requirement on Number of Parking
+                                        Lots to be Provided
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <br />
+                                <h2>Section III Declaration</h2>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td width="5%">5.1</td>
+                                            <td>I confirm that I have prepared the plans in compliance with LTA's
+                                                requirements. I also confirm that the applicant/developer of the
+                                                proposed development has been informed of the proposed layout which
+                                                includes any request for waiver as shown on the plans. The
+                                                applicant/developer has agreed with the proposal.
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="VPWAI_CHECK1" disabled></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="4">5.2</td>
+                                            <td colspan="2">I attach the following documents:</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5.2.1 A set of plans showing the affected parking place/lots. <span
+                                                    page9asterisk></span></td>
+                                            <td>
+                                                <cn2-checkbox id="VPWAI_CHECK2_1" disabled></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5.2.2 Form LTA-VP-SCHR (Filename: LTA-VP-SCHR.pdf) <span
+                                                    page9asterisk></span></td>
+                                            <td>
+                                                <cn2-checkbox id="VPWAI_CHECK2_2"
+                                                    event-change="fileAttachCheck(this, 'fileAttach10', false, 'LTA-VP-SCHR.pdf', 'Declaration')"
+                                                    disabled>
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5.2.3 Form LTA-VP-LOU. (Filename: LTA-VP-LOU.pdf) <span
+                                                    page9asterisk></span></td>
+                                            <td>
+                                                <cn2-checkbox id="VPWAI_CHECK2_3"
+                                                    event-change="fileAttachCheck(this, 'fileAttach20', false, 'LTA-VP-LOU.pdf', 'Declaration')"
+                                                    disabled>
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">
+                                                <b>Development Submission Fee</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5.3</td>
+                                            <td>
+                                                The amount payable for the Application fee will be notified upon
+                                                successful submission. Please pay the fee within the date stipulated by
+                                                the payment notification email. <br /><br />
+                                                For the fee schedule to be paid, please refer to the COP on Vehicle
+                                                Parking Provision in the Development Proposals. <br /><br />
+                                                <div class="align-middle">
+                                                    No. of item to be reviewed: <span></span>
+                                                    <cn2-textbox no-label id="VPWAI_GFA10" inline="2" maxlength="2"
+                                                        numeric disabled></cn2-textbox>
+                                                </div><br />
+                                                <i>
+                                                    Example of item: Review the requirement on the number of lots to be
+                                                    provided for car.
+                                                </i>
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="VPWAI_CHECK3"
+                                                    event-change="enableFields(this, 'VPWAI_GFA10')" disabled>
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5.4</td>
+                                            <td colspan="2">
+                                                <cn2-textarea id="VPWAI_Rema10" label="Comments"></cn2-textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <cn2-fixed-footer data-previous-page="page2" data-next-page="page4"></cn2-fixed-footer>
+        <cn2-version-footer hidden></cn2-version-footer>
+    </div>
+
+
+
+</body>
+
+</html>

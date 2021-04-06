@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>BCA-BP-ENBPPE</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2switchbutton.js"></script>
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head title="PROFESSIONAL ENGINEER'S DECLARATION IN-LIEU-OF ENDORSEMENTS ON BUILDING PLAN">
+  </cn2-master-head>
+  <input type="hidden" name="member_id" id="member_id">
+  <input type="hidden" name="form_validated" id="form_validated">
+
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p><b>For enquiries related to forms, please contact the following:</b></p>
+        <p> <span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>BCA(BP) & (TOP)</td>
+                <td>bca_enquiry@bca.gov.sg</td>
+                <td>1800-3425222</td>
+                <td>Policies</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Application">
+        </cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars and Declaration by Professional Engineer">
+        </cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" field-name="Date under Instructions" no-label inline="6" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To: *</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-select no-label inline="6" id="Addr10" field-name="To dropdown under Instructions"
+                          event-change="ToAgency_id_change(this)" mandatory
+                          options="Building and Construction Authority:BCA,Defence Science & Technology Agency:DSTA">
+                        </cn2-select>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea id="Addr20" field-name="To textarea under Instructions" no-label inline="6"
+                          disabled style="height: 137px;">
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container" style="padding-bottom: 0px;">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>
+                This form is to be digitally signed by the Professional
+                Engineer.
+              </li>
+              <li>
+                This form must be submitted together with every application
+                for approval of building plan involving repairs, alterations
+                and/or additions to an existing building.
+              </li>
+              <li>This form may take 2-3 mins to complete.</li>
+            </ol>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 0px;">
+            <h2>Application Type</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="25%">Project Reference Number</td>
+                  <td>
+                    <cn2-textbox id="Project_Project_Ref_No10"
+                      field-name="Project Reference Number under Application Type" disabled no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Project Title</td>
+                  <td>
+                    <cn2-textarea id="Project_Title10" field-name="Project Title under Application Type" no-label
+                      disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Description of Building Works *
+                  </td>
+                  <td>
+                    <cn2-textarea id="Project_Title20" field-name="Description of Building Works under Application Type"
+                      no-label mandatory maxlength="32400"></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Location Description</td>
+                  <td>
+                    <cn2-textarea id="Project_Location_Description10"
+                      field-name="Location Description under Application Type" no-label disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Plan Type *</td>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                        <cn2-select id="Project_PlanType_A1" field-name="Plan Type dropdown under Application Type"
+                          options="BP:BP" no-label disabled></cn2-select>
+                      </div>
+                      <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                        <cn2-textbox id="Project_PlanType_B1" field-name="Plan Type textbox under Application Type"
+                          no-label mandatory maxlength="3" numeric
+                          event-change="adjustNumberLength(this,3);PartOfAppl_PlanType_change(this)"
+                          event-keypress="PartOfAppl_PlanType_keypress(event,this)">
+                        </cn2-textbox>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container">
+            <h2>Section I - Particulars of Professional Engineer</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td>Member ID</td>
+                  <td>
+                    <cn2-textbox id="Member_Member_SID_PE10" field-name="Member ID under Section I - Particulars"
+                      no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="25%">
+                    Name *
+                  </td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_PE10" field-name="Name under Section I - Particulars" mandatory
+                      data-options="peDropdown"
+                      event-change="loadDropDownDetails(this);Member_Member_Name_PE10_change(this);togglePartQp()"
+                      no-label>
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Professional_No_PE10"
+                      field-name="Registration No. under Section I - Particulars" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox id="Member_Firm_Name_PE10" field-name="Firm Name under Section I - Particulars"
+                      no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_PE10" field-name="UEN under Section I - Particulars" no-label
+                      maxlength="10" event-blur="uenValidate(this)" template="#########@"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea id="Member_Address_PE10" field-name="Address under Section I - Particulars" no-label
+                      disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_PE10" field-name="Telephone No. under Section I - Particulars"
+                      numeric no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Mobile_No_PE10" field-name="Handphone No. under Section I - Particulars"
+                      numeric no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_PE10"
+                      field-name="Email Address under Section I - Particulars" event-change="checkEmail(this)" no-label
+                      disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container" style="padding-bottom: 0px;">
+            <h2>Section II - Declaration by Professional Engineer</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%" style="padding-top: 17px;">1</td>
+                  <td>
+                    I, &nbsp;<cn2-textbox id="DeclByQP_1I10" field-name="Er1 textbox under Section II - Declaration"
+                      disabled no-label inline="3"></cn2-textbox>&nbsp;have
+                    inspected the building and investigated its
+                    overall structures and that, in my opinion, the building
+                    is capable of resisting the forces and moments which may
+                    increased or altered by reason of repairs, alterations or
+                    additions shown on the plan.
+                  </td>
+                  <td width="1%" style="padding-top: 20px;">
+                    <cn2-checkbox id="DeclByQP_1I20" field-name="Er1 checkbox under Section II - Declaration"
+                      event-change="DeclByQP_change(this,'DeclByQP_1I10')">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-top: 17px;">2</td>
+                  <td>
+                    I, &nbsp;<cn2-textbox id="DeclByQP_2I10" field-name="Er2 textbox under Section II - Declaration"
+                      disabled no-label inline="3"></cn2-textbox>&nbsp;have
+                    inspected the building and investigated its
+                    overall structures and that, in my opinion, the building
+                    which its structural elements strengthened in accordance
+                    with the structural plans.
+                  </td>
+                  <td style="padding-top: 20px;">
+                    <cn2-checkbox id="DeclByQP_2I60" field-name="Er1 checkbox under Section II - Declaration"
+                      event-change="DeclByQP_change(this,'DeclByQP_2I10')">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>
+                    <div class=" mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <input type="radio" id="DeclByQP_2I_SubmOn10" name="DeclByQP_name"
+                          onchange="DeclByQP2_change(this)" />
+                        &nbsp;submitted on
+                        <input type="radio" id="RADIO3" name="grpProject_Subm_From_PSI_SD" hidden disabled no-label
+                          value="off" />
+                        <cn2-datefield id="DeclByQP_2I_SubmOn20"
+                          field-name="Submitted on under Section II - Declaration" onfocusout="validateDate(this)"
+                          no-label inline="3" disabled></cn2-datefield>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <input type="radio" id="DeclByQP_2I_ToBeSubm10"
+                          field-name="To be submitted radio under Section II - Declaration" name="DeclByQP_name"
+                          onchange="DeclByQP2_change(this)" />
+                        &nbsp;to be submitted
+                      </div>
+                    </div>
+                  </td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>
+                    for approval before submission of the Joint Application
+                    for Permit To Commence &nbsp;
+                    <cn2-select id="DeclByQP_2I_ToBeSubm20"
+                      field-name="To be submitted dropdown under Section II - Declaration" no-label inline="3" disabled
+                      options="Piling Works:Piling Works, Building Works:Building Works, Structural Works:Structural Works">
+                    </cn2-select>
+                    <br />
+                    will be capable of resisting forces and moments which may
+                    be increased or altered by reason of repairs, alterations
+                    or additions shown on the plans.
+                  </td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    <cn2-textarea id="DeclByQualPers_Rema10" field-name="Remarks under Section II - Declaration"
+                      label="Remarks:" maxlength="32400"></cn2-textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-version-footer></cn2-version-footer>
+    <cn2-fixed-footer></cn2-fixed-footer>
+  </div>
+</body>
+
+</html>

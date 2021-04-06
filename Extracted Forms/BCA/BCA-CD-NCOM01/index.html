@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <title>BCA-CD-NCOM01</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script>
+    if (typeof module === 'object') {
+      window.module = module;
+      module = undefined;
+    }
+  </script>
+  <script src="../cm/resources/assets/js/jquery-3.4.1.min.js"></script>
+  <script src="../cm/resources/assets/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2switchbutton.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head
+    title="NOTIFICATION OF COMMISSIONING TEST FOR CIVIL DEFENCE SHELTER<br>(FOR PUBLIC SHELTER AND TRANSIT SHELTER ONLY)">
+  </cn2-master-head>
+
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p><b>For enquiries related to forms, please contact the following:</b></p>
+        <p> <span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">BCA (CD Shelter)</td rowspan="2">
+                <td>lian_seow_ngo@bca.gov.sg</td>
+                <td>68044409</td>
+                <td rowspan="2">Policies</td>
+              </tr>
+              <tr>
+                <td>yeo_keng@bca.gov.sg</td>
+                <td>68044416</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <input type="hidden" name="member_id" id="member_id">
+  <input type="hidden" name="form_validated" id="form_validated">
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Application"></cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars of Developer(s)"></cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4" label="Particulars and Declaration by Qualified Person">
+        </cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px;">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td><b>QP’s Reference:</b></td>
+                  <td>
+                    <cn2-textbox id="OurRefe10" field-name="QP's Reference under Instructions" no-label maxlength="35"
+                      inline="6"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" field-name="Date under Instructions" no-label inline="6" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To:</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-select no-label inline="6" id="Addr10" options="Building and Construction Authority:BCA"
+                          field-name="To textbox under Instructions" disabled>
+                        </cn2-select>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea id="Addr20" field-name="To textarea under Instructions" no-label inline="6"
+                          disabled style="height:125px;">
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>
+                This form is to be digitally signed by the appointed Qualified Person when
+                submitting electronically.
+              </li>
+              <li>
+                The method statement for the commissioning test shall be approved by BCA
+                prior to the conduct of the test.
+              </li>
+              <li>
+                This form may take 2-3 mins to complete.
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Application</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Project Reference Number</td>
+                  <td>
+                    <cn2-textbox no-label id="Project_Project_Ref_No10"
+                      field-name="Project Reference Number under Particulars of Application" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Project Title</td>
+                  <td>
+                    <cn2-textarea no-label id="Project_Title10"
+                      field-name="Project Title under Particulars of Application" disabled></cn2-textarea>
+                    <cn2-textbox id="FIELD2" no-label hidden></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Description of Building Works</td>
+                  <td>
+                    <cn2-textarea no-label id="Project_Title20"
+                      field-name="Description of Building Works under Particulars of Application" maxlength="1000"
+                      style="height: 200px;"></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Location Description</td>
+                  <td>
+                    <cn2-textarea no-label id="Project_Location_Description10"
+                      field-name="Location Description under Particulars of Application" disabled></cn2-textarea>
+                    <cn2-textbox id="FIELD1" no-label hidden></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Category of Shelter</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">
+                    Shelter Category*
+                  </td>
+                  <td>
+                    <cn2-select id="CateOfShel_PleaSeleCate10" field-name="Shelter Category under Category of Shelter"
+                      options="Transit Shelter:TS,Public Shelter:PS" no-label mandatory
+                      event-change="titleChange(this);CateOfShel_PleaSeleCate10_change(this);">
+                    </cn2-select>
+                    <cn2-textbox no-label id="CateOfShel_PleaSeleCate20" hidden></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Category of Notification</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Commissioning Test Type*</td>
+                  <td>
+                    <cn2-select id="CateOfNoti_PleaSeleNotiType10"
+                      field-name="Commissioning Test Type under Category of Notification"
+                      options="Internal Overpressure Test:IOT,Overpressure Regime and Airflow Test:ORAT,Integrated System Test:IST"
+                      no-label mandatory></cn2-select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Section I Particulars of Developer(s)</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <cn2-button label="Add" id="PartOfTheOWNER_Add10"
+                  event-click="insertDuplicate('stForm','A1');removeUENerror('stForm');disableDelete('stForm');">
+                </cn2-button>
+              </div>
+            </div>
+            <div id="accordion">
+              <div id="stForm">
+                <div id="A1" parent>
+                  <h2 class="accordion-toggle">
+                    <table class="table table-borderless">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <cn2-select id="Member_Member_Name_OWNER10" field-name="Name under Section I Particulars"
+                              prefix="Member_Member_Name_OWNER" mandatory
+                              event-change="loadDropDownDetails(this);togglePartDev(this);nricMaskingAccor(this, 'Member_IC_Passport_No_Masked_OWNER'); formatAddess(this, 'Member_Address_OWNER');"
+                              data-options="devDropdown" suffix="0" label="Name*">
+                            </cn2-select>
+                          </td>
+                          <td>
+                            <cn2-select id="Member_Member_Title_OWNER10" field-name="Title under Section I Particulars"
+                              options="Mr:Mr,Dr:Dr,Er:Er,Mdm:Mdm,Miss:Miss,Mrs:Mrs,Ms:Ms"
+                              prefix="Member_Member_Title_OWNER" suffix="0" label="Title">
+                            </cn2-select>
+                          </td>
+                          <td nricUnmasked hidden>
+                            <cn2-textbox label="NRIC/Passport No." prefix="Member_IC_Passport_No_OWNER" suffix="0"
+                              id="Member_IC_Passport_No_OWNER10"
+                              field-name="NRIC/Passport No. Unmasked under Section I Particulars" disabled>
+                            </cn2-textbox>
+                          </td>
+                          <td nricMasked>
+                            <cn2-textbox label="NRIC/Passport No." prefix="Member_IC_Passport_No_Masked_OWNER"
+                              suffix="0" id="Member_IC_Passport_No_Masked_OWNER10"
+                              field-name="NRIC/Passport No. Masked under Section I Particulars" disabled>
+                            </cn2-textbox>
+                          </td>
+                          <td>
+                            <div class="mls-espro-form-fields row pt-4">
+                              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pt-1">
+                                <cn2-button style="float:right" label="Delete" disabled id="PartOfTheOWNER_Delete10"
+                                  class="deleteBtn" prefix="PartOfTheOWNER_Delete" suffix="0" danger
+                                  event-click="removeDuplicate(this.id,'A1','stForm');disableDelete('stForm');nricMaskingAccorDelete('Member_IC_Passport_No_Masked_OWNER')">
+                                </cn2-button>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <span class="fa fa-angle-down collapsed" data-toggle="collapse" href="#collapse1"
+                              id="#collapse1" prefix="#collapse" child onclick="spanUpDown(this)"
+                              aria-expanded="false"></span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </h2>
+                  <div id="collapse1" class="panel-collapse collapse" child="div" prefix="collapse">
+                    <table class="table table-borderless">
+                      <tbody>
+                        <tr hidden>
+                          <td width="35%">Member ID</td>
+                          <td>
+                            <cn2-textbox no-label id="Member_Member_SID_OWNER10"
+                              field-name="Member ID under Section I Particulars" prefix="Member_Member_SID_OWNER"
+                              suffix="0" disabled>
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="35%">Firm Name</td>
+                          <td>
+                            <cn2-textbox no-label id="Member_Firm_Name_OWNER10"
+                              field-name="Firm Name under Section I Particulars" prefix="Member_Firm_Name_OWNER"
+                              suffix="0" disabled>
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>UEN</td>
+                          <td>
+                            <cn2-textbox no-label prefix="Members_UEN_OWNER" suffix="0" maxlength="10"
+                              template="#########@" event-blur="uenValidate(this)" id="Members_UEN_OWNER10"
+                              field-name="UEN under Section I Particulars">
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="35%">
+                            Designation
+                          </td>
+                          <td>
+                            <cn2-textbox id="Member_Designation_OWNER10"
+                              field-name="Designation under Section I Particulars" no-label disabled
+                              prefix="Member_Designation_OWNER" suffix="0">
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Address</td>
+                          <td>
+                            <cn2-textarea no-label prefix="Member_Address_OWNER" format-add
+                              field-name="Address under Section I Particulars" suffix="0" id="Member_Address_OWNER10"
+                              disabled>
+                            </cn2-textarea>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Telephone No.</td>
+                          <td>
+                            <cn2-textbox no-label prefix="Member_Tel_No_OWNER"
+                              field-name="Telephone No. under Section I Particulars" numeric suffix="0"
+                              id="Member_Tel_No_OWNER10" disabled>
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Handphone No.</td>
+                          <td>
+                            <cn2-textbox no-label prefix="Member_Mobile_No_OWNER"
+                              field-name="Handphone No. under Section I Particulars" numeric suffix="0"
+                              id="Member_Mobile_No_OWNER10" disabled>
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Email Address</td>
+                          <td>
+                            <cn2-textarea no-label prefix="Member_Email_Address1_OWNER" suffix="0"
+                              id="Member_Email_Address1_OWNER10" field-name="Email Address under Section I Particulars"
+                              event-change="checkEmail(this);" disabled>
+                            </cn2-textarea>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page4">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Section II Particulars of Qualified Person</h2>
+            <table class="table table-borderless">
+              <tbody parent>
+                <tr hidden>
+                  <td>Member ID</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Member_SID_QP10"
+                      field-name="Member ID under Section II Particulars" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-select no-label data-options="qpDropdown"
+                      event-change="loadDropDownDetails(this); togglePartQp(); formatAddess(this, 'Member_Address_QP');"
+                      id="Member_Member_Name_QP10" field-name="Name under Section II Particulars" mandatory>
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox no-label id="MemberRole_Professional_No_QP10"
+                      field-name="Registration No. under Section II Particulars" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Firm_Name_QP10" field-name="Firm Name under Section II Particulars"
+                      disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox template="#########@" event-blur="uenValidate(this);" maxlength="10" no-label
+                      maxlength="12" id="Members_UEN_QP10" field-name="UEN under Section II Particulars"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea no-label prefix="Member_Address_QP" id="Member_Address_QP10" format-add
+                      field-name="Address under Section II Particulars" isabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Tel_No_QP10"
+                      field-name="Telephone No. under Section II Particulars" numeric disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Mobile_No_QP10"
+                      field-name="Handphone No. under Section II Particulars" numeric disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Email_Address1_QP10"
+                      field-name="Email Address under Section II Particulars" event-change="checkEmail(this);" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Declaration by Qualified Person</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td rowspan="2">
+                    II.i
+                  </td>
+                  <td>
+                    I certify that the trial commissioning test is carried out in accordance with the approved method
+                    statement and the
+                    trial test results as attached are satisfactory and within the test acceptance criteria.<br><br>
+                    I wish to notify you that the commissioning test will be conducted on &nbsp;&nbsp;<cn2-datefield
+                      no-label inline="3" id="DeclByQualPers_IWishToNotiYou10"
+                      field-name="I wish to notify you checkbox under Declaration by Qualified Person"
+                      onfocusout="validateDate(this)" mandatory></cn2-datefield>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    from &nbsp;&nbsp;<cn2-textbox id="DeclByQualPers_IWishToNotiYou20"
+                      field-name="I wish to notify you textbox1 under Declaration by Qualified Person"
+                      event-blur="timeValidator(this)" template="##:##" maxlength="5" inline="1" no-label mandatory>
+                    </cn2-textbox>&nbsp;&nbsp; <cn2-select id="DeclByQualPers_IWishToNotiYou30"
+                      field-name="I wish to notify you dropdown1 under Declaration by Qualified Person"
+                      options="AM:am,PM:pm" no-label inline="3" mandatory></cn2-select>&nbsp;&nbsp;to&nbsp;&nbsp;
+                    <cn2-textbox id="DeclByQualPers_IWishToNotiYou40"
+                      field-name="I wish to notify you textbox2 under Declaration by Qualified Person"
+                      event-blur="timeValidator(this)" template="##:##" maxlength="5" inline="1" no-label mandatory>
+                    </cn2-textbox>&nbsp;&nbsp;<cn2-select id="DeclByQualPers_IWishToNotiYou50"
+                      field-name="I wish to notify you dropdown2 under Declaration by Qualified Person"
+                      options="AM:am,PM:pm" no-label inline="3" mandatory>
+                    </cn2-select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-version-footer></cn2-version-footer>
+    <cn2-fixed-footer></cn2-fixed-footer>
+  </div>
+</body>
+
+</html>

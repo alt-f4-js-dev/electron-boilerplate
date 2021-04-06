@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <title>BCA-BE-ST-AC_ACGeo</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2switchbutton.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head
+    title="ACCREDITED CHECKER’S CERTIFICATE / SPECIALIST ACCREDITED CHECKER’S CERTIFICATE<br/>FOR APPLICATION FOR APPROVAL OF ST PLANS">
+  </cn2-master-head>
+  <input type="hidden" name="member_id" id="member_id">
+  <input type="hidden" name="form_validated" id="form_validated">
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p>
+          <b>For enquiries related to forms, please contact the following:</b>
+        </p>
+        <p><span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">BCA (ST)</td>
+                <td>wai_hui_ling@bca.gov.sg</td>
+                <td>68044609</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>chang_heng_choy@bca.gov.sg</td>
+                <td>68044646</td>
+                <td>Policies</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Endorsement Type"></cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars of Application"></cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4" hidden label="Particulars and Declaration by Accredited Checker">
+        </cn2-nav-button>
+        <cn2-nav-button target="page5" page-number="5" hidden
+          label="Particulars and Declaration by Specialist Accredited Checker">
+        </cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px;">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" field-name="Date under Instructions" no-label inline="6" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To:*</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-select mandatory event-change="ToAgency_id_change(this);" no-label inline="6" id="Addr10"
+                          field-name="To dropdown under Instructions"
+                          options="Building and Construction Authority:BCA,Defence Science & Technology Agency:DSTA">
+                        </cn2-select>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea hidden id="Addr20" field-name="To textarea under Instructions" no-label inline="6"
+                          disabled style="height:158px;">
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>
+                This form is to be digitally signed by the Accredited Checker
+                and Specialist Accredited Checker if applicable.
+              </li>
+              <li>
+                This form may take 2-3 mins to complete.
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Endorsement Type</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">1.</td>
+                  <td>Accredited Checker’s Certificate<br>[Regulation 8(1)(a) of The Building Control (Accredited
+                    Checkers and Accredited Checking Organisations) Regulations (Cap
+                    29, Rg 2)]</td>
+                  <td>
+                    <cn2-checkbox name="EndoType" event-change="EndoType_AccrChecCert10_change(this);pageNumbering();"
+                      id="EndoType_AccrChecCert10" field-name="Accredited Checker’s Certificate under Endorsement Type">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>Specialist Accredited Checker’s Certificate<br>[Regulation 8(2)(a) of The Building Control
+                    (Accredited Checkers and Accredited Checking Organisations) Regulations (Cap
+                    29, Rg 2)]</td>
+                  <td>
+                    <cn2-checkbox name="EndoType" event-change="EndoType_SpecAccrChec10_change(this);pageNumbering();"
+                      id="EndoType_SpecAccrChec10"
+                      field-name="Specialist Accredited Checker’s Certificate under Endorsement Type"></cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Application</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Project Reference Number</td>
+                  <td>
+                    <cn2-textbox no-label id="Project_Project_Ref_No10"
+                      field-name="Project Reference Number under Particulars of Application" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Project Title</td>
+                  <td>
+                    <cn2-textarea no-label id="Project_Title10"
+                      field-name="Project Title under Particulars of Application" disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Description of Building Works</td>
+                  <td>
+                    <cn2-textarea no-label id="Project_Title20"
+                      field-name="Description of Building Works under Particulars of Application" maxlength="1000">
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Location Description</td>
+                  <td>
+                    <cn2-textarea no-label id="Project_Location_Description10"
+                      field-name="Location Description under Particulars of Application" disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr id="planType" hidden>
+                  <td>
+                    Plan Type*
+                  </td>
+                  <td style="padding:0;">
+                    <table class="table table-borderless">
+                      <tbody>
+                        <tr>
+                          <td width="40%">
+                            <cn2-select options="ST:ST" id="PartOfAppl_PlanType10"
+                              field-name="Plan Type dropdown under Particulars of Application" no-label disabled>
+                            </cn2-select>
+                            <cn2-textbox id="PartOfAppl_StruPlanNo10" no-label disabled hidden></cn2-textbox>
+                          </td>
+                          <td>
+                            <cn2-textbox event-keypress="PartOfAppl_PlanType_keypress(event,this);" maxlength="3"
+                              event-change="adjustNumberLength(this,'3');PartOfAppl_PlanType_change(this);setStruPlanNo20(this);"
+                              id="PartOfAppl_PlanType20" field-name="Plan Type textbox under Particulars of Application"
+                              no-label></cn2-textbox>
+                              <cn2-textbox id="PartOfAppl_StruPlanNo20" no-label disabled hidden></cn2-textbox>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page4">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Section <span id="sectNumb">I</span> Particulars of Accredited Checker</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td>Member ID</td>
+                  <td>
+                    <cn2-textbox id="Member_Member_SID_AC10" field-name="Member ID under Section I Particulars" disabled
+                      no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-select data-options="acDropdown"
+                      event-change="loadDropDownDetails(this);Member_Member_Name_AC10_change(this);togglePartQp('Members_UEN_OWNER10')"
+                      id="Member_Member_Name_AC10" field-name="Name under Section I Particulars" no-label mandatory>
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr id="MemberRole_Professional_No" hidden>
+                  <td>Registration No.</td>
+                  <td style="padding:0;">
+                    <table class="table table-borderless">
+                      <tbody>
+                        <tr>
+                          <td>AC No.</td>
+                          <td>
+                            <cn2-textbox id="MemberRole_Professional_No_AC10"
+                              field-name="AC No. under Section I Particulars" no-label disabled></cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>ACO No.</td>
+                          <td>
+                            <cn2-textbox id="MemberRole_Professional_No_ACCRCHECK20"
+                              field-name="ACO No. under Section I Particulars" maxlength="10" no-label>
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox id="Member_Firm_Name_AC10" field-name="Firm Name under Section I Particulars" disabled
+                      no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox maxlength="10" template="#########@" id="Members_UEN_OWNER10"
+                      field-name="UEN under Section I Particulars" no-label event-blur="uenValidate(this);">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr id="Member_Designation" hidden>
+                  <td>Designation</td>
+                  <td>
+                    <cn2-textbox id="Member_Designation_AC10" field-name="Designation under Section I Particulars"
+                      disabled no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea id="Member_Address_AC10" field-name="Address under Section I Particulars" disabled
+                      no-label></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_AC10" field-name="Telephone No. under Section I Particulars" disabled
+                      no-label numeric></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Mobile_No_AC10" field-name="Handphone No. under Section I Particulars"
+                      disabled no-label numeric></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_AC10" field-name="Email Address under Section I Particulars"
+                      disabled no-label event-blur="checkEmail(this);" placeholder="example@email.com"></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 65px; margin-top:-45px;"
+            id="DeclByAppl_div" hidden>
+            <h2>Declaration by Accredited Checker(s)</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>I.1.</td>
+                  <td>
+                    I,&nbsp;&nbsp;
+                    <cn2-textbox no-label id="DeclByAppl_IBeinARegi20"
+                      field-name="Registered accredited checker textbox under Declaration by Accredited Checker"
+                      inline="5"></cn2-textbox>&nbsp;&nbsp; being a
+                    registered accredited checker,
+                    hereby certify that I have in accordance with the Building
+                    Control (Accredited Checkers and Accredited Checking
+                    Organization) Regulations carried out an evaluation,
+                    analysis and review of the plans of the building works
+                    attached, and to the best of my knowledge and belief, the
+                    plans do not show any inadequacy in the key structural
+                    elements of the building to be erected or affected by the
+                    building works carried out in accordance with those
+                    plans.*
+                  </td>
+                  <td>
+                    <cn2-checkbox group="DeclByAppl"
+                      event-change="removeManda(this);enableField(this,'DeclByAppl_IBeinARegi20');DeclByAppl_IBeinARegi10_change(this);"
+                      id="DeclByAppl_IBeinARegi10"
+                      field-name="Registered accredited checker checkbox under Declaration by Accredited Checker">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>I.2.</td>
+                  <td colspan="2">
+                    In arriving at my conclusion, I confirm that I have
+                    reviewed and evaluated the design in accordance with
+                    Regulation 7 of The Building Control (Accredited Checkers
+                    and Accredited Checking Organizations) Regulations using
+                    the following criteria:
+                    <table class="table table-borderless table-sm" style="margin-bottom:0;margin-left:5px;">
+                      <tbody>
+                        <tr>
+                          <td width="1%">a.</td>
+                          <td>Codes of Practice adopted in the design.*</td>
+                          <td width="1%">
+                            <cn2-checkbox group="DeclByAppl" event-change="removeManda(this)"
+                              id="DeclByAppl_InArriAtMy_CodeOfPracAdop20"
+                              field-name="Codes of Practice under Declaration by Accredited Checker"></cn2-checkbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>b.</td>
+                          <td>
+                            Design loading (including wind load, construction
+                            load or dynamic load, if applicable) checked.*
+                          </td>
+                          <td>
+                            <cn2-checkbox group="DeclByAppl" event-change="removeManda(this)"
+                              id="DeclByAppl_InArriAtMy_DesiLoad10"
+                              field-name="Design loading under Declaration by Accredited Checker"></cn2-checkbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>c.</td>
+                          <td>
+                            Standards and specifications of structural
+                            materials checked.*
+                          </td>
+                          <td>
+                            <cn2-checkbox group="DeclByAppl" event-change="removeManda(this)"
+                              id="DeclByAppl_InArriAtMy_StanAndSpecOf10"
+                              field-name="Standards and specifications under Declaration by Accredited Checker">
+                            </cn2-checkbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>d.</td>
+                          <td>
+                            Structural design concept ascertained and the key
+                            structural elements identified.*
+                          </td>
+                          <td>
+                            <cn2-checkbox group="DeclByAppl" event-change="removeManda(this)"
+                              id="DeclByAppl_InArriAtMy_StruDesiConcAsce10"
+                              field-name="Structural design concept under Declaration by Accredited Checker">
+                            </cn2-checkbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>e.</td>
+                          <td>
+                            Key structural elements including foundation
+                            system analyzed.*
+                          </td>
+                          <td>
+                            <cn2-checkbox group="DeclByAppl" event-change="removeManda(this)"
+                              id="DeclByAppl_InArriAtMy_KeyStruElemIncl10"
+                              field-name="Key structural elements under Declaration by Accredited Checker">
+                            </cn2-checkbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>f.</td>
+                          <td>
+                            Stability of the structural elements including
+                            foundation system analyzed.*
+                          </td>
+                          <td>
+                            <cn2-checkbox group="DeclByAppl" event-change="removeManda(this)"
+                              id="DeclByAppl_InArriAtMy_StabOfTheStru10"
+                              field-name="Stability of the structural elements under Declaration by Accredited Checker">
+                            </cn2-checkbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>g.</td>
+                          <td>Structuring detailed checked.*</td>
+                          <td>
+                            <cn2-checkbox group="DeclByAppl" event-change="removeManda(this)"
+                              id="DeclByAppl_InArriAtMy_StruDetaChec10"
+                              field-name="Structuring detailed checked under Declaration by Accredited Checker">
+                            </cn2-checkbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>h.</td>
+                          <td>
+                            Others (Please Specify) <span id="othersManda"></span> <br />
+                            <cn2-textarea hidden id="DeclByAppl_InArriAtMy_Othe10"
+                              field-name="Others textarea under Declaration by Accredited Checker" no-label inline="6"
+                              maxlength="32400"></cn2-textarea>
+                          </td>
+                          <td>
+                            <cn2-checkbox
+                              event-change="DeclByAppl_InArriAtMy_Othe20_change(this);enableField(this,'DeclByAppl_InArriAtMy_Othe10');"
+                              id="DeclByAppl_InArriAtMy_Othe20"
+                              field-name="Others checkbox under Declaration by Accredited Checker"></cn2-checkbox>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>I.3.</td>
+                  <td>
+                    I append my Evaluation Report
+                    (comprising&nbsp;&nbsp;<cn2-textbox numeric maxlength="4" no-label id="DeclByAppl_IAppeMyEval30"
+                      field-name="I append my Evaluation Report textbox under Declaration by Accredited Checker"
+                      inline="2"></cn2-textbox>&nbsp;&nbsp; pages) as well as the analysis and design
+                    calculations I have performed in carrying out the
+                    evaluation, analysis and review of the plans of building
+                    work.*
+                  </td>
+                  <td>
+                    <cn2-checkbox group="DeclByAppl"
+                      event-change="removeManda(this);enableField(this,'DeclByAppl_IAppeMyEval30');"
+                      id="DeclByAppl_IAppeMyEval40"
+                      field-name="I append my Evaluation Report checkbox under Declaration by Accredited Checker">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>I.4.</td>
+                  <td>
+                    I,&nbsp;&nbsp;<cn2-textbox id="DeclByAccrChec_IAccrChecCert10"
+                      field-name="I Accredited Checked hereby certify textbox under Declaration by Accredited Checker"
+                      no-label inline="5"></cn2-textbox>
+                    &nbsp;&nbsp;(ACCREDITED CHECKER) hereby certify that I
+                    have carried out an evaluation, analysis and review of the
+                    detailed structural plans and design calculations
+                    presented herein and am satisfied that there are no
+                    inadequacies in the key structural elements.*
+                  </td>
+                  <td>
+                    <cn2-checkbox group="DeclByAppl"
+                      event-change="removeManda(this);enableField(this,'DeclByAccrChec_IAccrChecCert10');DeclByAccrChec_IAccrChecCert20_change(this);"
+                      id="DeclByAccrChec_IAccrChecCert20"
+                      field-name="I Accredited Checked hereby certify checkbox under Declaration by Accredited Checker">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>I.5.</td>
+                  <td>
+                    I further certify that these detailed structural plans and
+                    design calculations are in <br />
+                    reference to Project Ref No.:*&nbsp;&nbsp;
+                    <cn2-textbox maxlength="25" id="DeclByAccrChec_IFurtCertThat10"
+                      field-name="I further certify that textbox under Declaration by Accredited Checker" inline="5"
+                      no-label></cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-checkbox group="DeclByAppl"
+                      event-change="removeManda(this);enableField(this,'DeclByAccrChec_IFurtCertThat10')"
+                      id="DeclByAccrChec_IFurtCertThat20"
+                      field-name="I further certify that checkbox under Declaration by Accredited Checker">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>I.6.</td>
+                  <td>
+                    Total number of structural plans
+                    checked.*&nbsp;&nbsp;<cn2-textbox inline="3" numeric no-label maxlength="6"
+                      id="DeclByAccrChec_TotaNumbOfStru10" field-name="Total number of structural plans
+                      checked textbox under Declaration by Accredited Checker"></cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-checkbox group="DeclByAppl"
+                      event-change="removeManda(this);enableField(this,'DeclByAccrChec_TotaNumbOfStru10')"
+                      id="DeclByAccrChec_TotaNumbOfStru20" field-name="Total number of structural plans
+                      checked checkbox under Declaration by Accredited Checker"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>I.7.</td>
+                  <td>
+                    I hereby declare that I have no professional or financial
+                    interest in the building works shown in the plans as
+                    defined in section 18 of the Building Control Act (Cap
+                    29).*
+                  </td>
+                  <td>
+                    <cn2-checkbox group="DeclByAppl" event-change="removeManda(this)"
+                      id="DeclByAccrChec_IHereDeclThat10"
+                      field-name="I hereby declare that under Declaration by Accredited Checker"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    Remarks: <br />
+                    <cn2-textarea inline="6" no-label id="DeclByAccrChec_Rema10" event-change="setRemarks10(this)"
+                      field-name="Remarks under Declaration by Accredited Checker"></cn2-textarea>
+                    <cn2-textbox id="Remarks10" no-label disabled hidden></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="page5">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Section <span id="sectNumb2">II</span> Particulars of Specialist Accredited Checker</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>Member ID</td>
+                  <td>
+                    <cn2-textbox id="Member_Member_SID_AC20" field-name="Member ID under Section II Particulars"
+                      disabled no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-select data-options="sacDropdown"
+                      event-change="loadDropDownDetails(this);Member_Member_Name_AC20_change(this);togglePartQp('Members_UEN_AC20')"
+                      id="Member_Member_Name_AC20" field-name="Name under Section II Particulars" no-label mandatory>
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr id="member_role_specialist">
+                  <td>Specialist AC Registration No.</td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Professional_No_AC20"
+                      field-name="Specialist AC Registration No. under Section II Particulars" disabled no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox id="Member_Firm_Name_AC20" field-name="Firm Name under Section II Particulars" disabled
+                      no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox event-blur="uenValidate(this);" maxlength="10" template="#########@"
+                      id="Members_UEN_AC20" field-name="UEN under Section II Particulars" event-change="setUEN10(this);" no-label></cn2-textbox>
+                    <cn2-textbox id="Members_UEN_AC10" no-label disabled hidden></cn2-textbox>
+                  </td>
+                </tr>
+                <tr id="specialDesignation" hidden>
+                  <td>Designation</td>
+                  <td>
+                    <cn2-textbox id="Member_Designation_AC20" field-name="Designation under Section II Particulars"
+                      disabled no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea id="Member_Address_AC20" field-name="Address under Section II Particulars" disabled
+                      no-label></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_AC20" field-name="Telephone No. under Section II Particulars"
+                      disabled no-label numeric></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Mobile_No_AC20" field-name="Handphone No. under Section II Particulars"
+                      disabled no-label numeric></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_AC20" field-name="Email Address under Section II Particulars"
+                      disabled no-label event-blur="checkEmail(this);" placeholder="example@email.com"></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 65px;margin-top:-45px;"
+            id="DeclByAppl_special_div" hidden>
+            <h2>Declaration by Specialist Accredited Checker(s)</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td><span group-id="sectNumbDec">II</span>.1.</td>
+                  <td>
+                    I,&nbsp;&nbsp;
+                    <cn2-textbox no-label id="DeclByAppl_IBeinARegi40"
+                      field-name="I registered specialist accredited checker textbox under Declaration by Specialist Accredited Checker(s)"
+                      inline="5"></cn2-textbox>&nbsp;&nbsp;being a
+                    registered specialist accredited
+                    checker, hereby certify that I have in accordance with the
+                    Building Control (Accredited Checkers and Accredited
+                    Checking Organizations) Regulations carried out an
+                    evaluation, analysis and review of the plans of the
+                    geotechnical building works attached, and to the best of
+                    my knowledge and belief the plans do not show any
+                    inadequacy in the geotechnical aspects relating to the
+                    geotechnical building works if carried out in accordance
+                    with those plans.*
+                  </td>
+                  <td>
+                    <cn2-checkbox
+                      event-change="enableField(this,'DeclByAppl_IBeinARegi40');DeclByAppl_IBeinARegi30_change(this);removeManda(this);"
+                      group="DeclByAppl_special" id="DeclByAppl_IBeinARegi30"
+                      field-name="I registered specialist accredited checker checkbox under Declaration by Specialist Accredited Checker(s)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span group-id="sectNumbDec">II</span>.2.</td>
+                  <td>
+                    In arriving at my conclusion, I confirm that I have
+                    reviewed and evaluated the design in relation to the
+                    geotechnical aspects of the geotechnical building works in
+                    accordance with regulation 7A of the Building Control
+                    (Accredited Checkers and Accredited Checking
+                    Organizations) Regulations.*
+                  </td>
+                  <td>
+                    <cn2-checkbox group="DeclByAppl_special" id="DeclByAppl_InArriAtMy_CodeOfPracAdop10"
+                      field-name="In arriving at my conclusion under Declaration by Specialist Accredited Checker(s)"
+                      event-change="removeManda(this);"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span group-id="sectNumbDec">II</span>.3.</td>
+                  <td>
+                    I append my Geotechnical Report
+                    (comprising&nbsp;&nbsp;<cn2-textbox inline="1" id="DeclByAppl_IAppeMyEval10"
+                      field-name="I append my Geotechnical Report textbox under Declaration by Specialist Accredited Checker(s)"
+                      no-label numeric maxlength="4"></cn2-textbox>&nbsp;&nbsp;pages) as well as the analyses and
+                    calculations I have performed in carrying out the
+                    evaluation, analyses and review of the geotechnical
+                    aspects relating to the plans of the geotechnical building
+                    works.*
+                  </td>
+                  <td>
+                    <cn2-checkbox event-change="enableField(this,'DeclByAppl_IAppeMyEval10');removeManda(this);"
+                      group="DeclByAppl_special" id="DeclByAppl_IAppeMyEval20"
+                      field-name="I append my Geotechnical Report checkbox under Declaration by Specialist Accredited Checker(s)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span group-id="sectNumbDec">II</span>.4.</td>
+                  <td>
+                    I, &nbsp;&nbsp;<cn2-textbox inline="5" id="DeclByAppl_IBeinARegi60"
+                      field-name="I being a registered specialist textbox under Declaration by Specialist Accredited Checker(s)"
+                      no-label></cn2-textbox>
+                    &nbsp;&nbsp;being a registered specialist accredited
+                    checker, hereby certify that I have in accordance with the
+                    Building Control (Accredited Checkers and Accredited
+                    Checking Organisations) Regulations carried out an
+                    evaluation, analysis and review of the plans of the
+                    geotechnical building works attached, and to the best of
+                    my knowledge and belief the plans do not show any
+                    inadequacy in the geotechnical aspects relating to the
+                    geotechnical building works if carried out in accordance
+                    with those plans.*
+                  </td>
+                  <td>
+                    <cn2-checkbox
+                      event-change="enableField(this,'DeclByAppl_IBeinARegi60');DeclByAppl_IBeinARegi50_change(this);removeManda(this);"
+                      group="DeclByAppl_special" id="DeclByAppl_IBeinARegi50"
+                      field-name="I being a registered specialist checkbox under Declaration by Specialist Accredited Checker(s)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span group-id="sectNumbDec">II</span>.5.</td>
+                  <td>
+                    I append my Evaluation Report
+                    (comprising&nbsp;&nbsp;<cn2-textbox numeric maxlength="4" id="DeclBySac_IAppeMyEval10"
+                      field-name="I append my Evaluation Report textbox under Declaration by Specialist Accredited Checker(s)"
+                      no-label inline="1"></cn2-textbox>&nbsp;&nbsp;pages) as well as the analyses and
+                    calculations I have performed in carrying out the
+                    evaluation, analyses and review of the geotechnical
+                    reports and design calculations are in reference to <br />
+                    Project Ref. No : *
+                    <cn2-textbox maxlength="32400" id="DeclBySac_IAppeMyEval30"
+                      field-name="I append my Evaluation Report textbox2 under Declaration by Specialist Accredited Checker(s)"
+                      event-change="setProjRef10(this);" no-label inline="5"></cn2-textbox>
+                    <cn2-textbox id="Dec_Project_Ref_No10" no-label disabled hidden></cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-checkbox
+                      event-change="enableField(this,'DeclBySac_IAppeMyEval10');enableField(this,'DeclBySac_IAppeMyEval30');removeManda(this);"
+                      group="DeclByAppl_special" id="DeclBySac_IAppeMyEval20"
+                      field-name="I append my Evaluation Report checkbox under Declaration by Specialist Accredited Checker(s)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span group-id="sectNumbDec">II</span>.6.</td>
+                  <td>
+                    I hereby declare that I have no professional or financial
+                    interest in the geotechnical building works shown in the
+                    plans as defined in Section 18 of the Building Control Act
+                    (Cap 29).*
+                  </td>
+                  <td>
+                    <cn2-checkbox group="DeclByAppl_special" id="DeclBySac_IHereDeclThat20"
+                      field-name="I hereby declare that under Declaration by Specialist Accredited Checker(s)"
+                      event-change="removeManda(this);"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    Remarks: <br />
+                    <cn2-textarea id="Remarks10"
+                      field-name="Remarks under Declaration by Specialist Accredited Checker(s)" no-label inline="6"
+                      event-change="setFIELD2(this);" maxlength="32400"></cn2-textarea>
+                      <cn2-textbox id="FIELD2" no-label disabled hidden></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-version-footer></cn2-version-footer>
+    <cn2-fixed-footer></cn2-fixed-footer>
+  </div>
+</body>
+
+</html>

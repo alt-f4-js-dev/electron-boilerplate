@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PUB-DD-CSIDRA</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Syncfusion" />
+
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+    <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+    <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+    <script src="../cm/js/func/common.js"></script>
+    <script src="../cm/js/components/cn2commonfunc.js"></script>
+    <script src="../cm/js/components/cn2sgheader.js"></script>
+    <script src="../cm/js/components/cn2masterhead.js"></script>
+    <script src="../cm/js/components/cn2fixedfooter.js"></script>
+    <script src="../cm/js/components/cn2versionfooter.js"></script>
+
+    <script src="../cm/js/components/cn2navbutton.js"></script>
+    <script src="../cm/js/components/cn2textbox.js"></script>
+    <script src="../cm/js/components/cn2textarea.js"></script>
+    <script src="../cm/js/components/cn2select.js"></script>
+    <script src="../cm/js/components/cn2datefield.js"></script>
+    <script src="../cm/js/components/cn2checkbox.js"></script>
+    <script src="../cm/js/components/cn2button.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <cn2-master-head
+        title="APPLICATION FOR COMPLIANCE CERTIFICATE FOR COMPLETED DRAINAGE WORKS [UNDER SECTION 33(8) OF THE SEWERAGE AND DRAINAGE ACT, CHAPTER 294]">
+    </cn2-master-head>
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p style="margin: 0px">Help</p>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <b>For enquiries related to forms, please contact the following:</b>
+                </p>
+                <p><span id="RegulatoryAuthority_id"></span></p>
+                <div id="table-parent" style="width:auto">
+                    <table id="ContDetaTable_id" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Regulatory Authority</th>
+                                <th>Email Address</th>
+                                <th>Tel No.</th>
+                                <th>Area of Support</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PUB</td>
+                                <td>pub_bpu@pub.gov.sg</td>
+                                <td>67313512</td>
+                                <td>General Enquiry, Policies, Submissions</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="member_id" name="member_id" />
+    <input type="hidden" id="form_validated" name="form_validated" />
+    <div class="mls-espro-form-container">
+        <div class="row">
+            <div class="mls-espro-form-left-nav" id="menu">
+                <cn2-nav-button target="page1" page-number="1" label="Instructions">
+                </cn2-nav-button>
+                <cn2-nav-button target="page2" page-number="2" label="Particulars of Project">
+                </cn2-nav-button>
+                <cn2-nav-button target="page3" page-number="3" label="Particulars of Application">
+                </cn2-nav-button>
+                <cn2-nav-button target="page4" page-number="4" label="Particulars and Declaration of Qualified Person">
+                </cn2-nav-button>
+                <cn2-nav-button target="page5" page-number="5" label="Submission Checklists">
+                </cn2-nav-button>
+            </div>
+
+            <div class="e-content mls-espro-form-right" id="page">
+                <div id="page1">
+                    <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">
+                                        <b>Date:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <cn2-textbox id="Date10" no-label inline="5" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="1%">
+                                        <b>To:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <div class="mls-espro-form-fields row">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-select id="Addr10" no-label inline="5" options="PUB:PUBBPU" disabled>
+                                                </cn2-select>
+                                            </div>
+                                        </div>
+                                        <div class="mls-espro-form-fields row pt-2">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-textarea id="Addr20" no-label inline="5" disabled
+                                                    style="height: 140px;">
+                                                </cn2-textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Instructions</h2>
+                        <ol class="mls-intro-list">
+                            <li>This form is to be digitally signed by the Qualified Person responsible for the
+                                project(s).</li>
+                            <li>All fields in this form are mandatory and QP is to fill up /tick/ insert a "N.A" reply.
+                            </li>
+                            <li>
+                                This form is to be accompanied by the relevant acceptance checklist and attachments
+                                including the DC and all DP clearance certificates.
+                            </li>
+                            <li>
+                                Please tick appropriate box(es) under submission checklists. For items which are not
+                                applicable (N.A.), please state reasons in the Remarks column.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div id="page2">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Project</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="35%">Project Reference Number</td>
+                                    <td>
+                                        <cn2-textbox no-label id="Project_Project_Ref_No10" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Project Title</td>
+                                    <td>
+                                        <cn2-textbox no-label id="Project_Title10" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Location Description<br />[Include Lot/Plot, MK/TS, house No., Building Address
+                                        and Road information]</td>
+                                    <td>
+                                        <cn2-textarea no-label id="Project_Location_Description10" disabled>
+                                        </cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Drainage Catchment No.*</td>
+                                    <td>
+                                        <cn2-select no-label id="Project_DrainCatchNo10" mandatory
+                                            options="1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9,10:10"></cn2-select>
+                                        <br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <b>Please refer to catchment maps</b>
+                                    </td>
+                                    <td>
+                                        <cn2-button
+                                            event-click="openUrl('https://www.pub.gov.sg/compliance/qualifiedpersonsportal/catchmentmaps')"
+                                            label="Here"></cn2-button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="page3">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Application</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="3">
+                                                <h5>Type of Works</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-bottom:0" width="50%"><b>Simplified Submission</b></td>
+                                            <td>&nbsp;</td>
+                                            <td width="1%">
+                                                <cn2-checkbox mandatory checked
+                                                    id="PartOfAppl_BuilProjPlanNumb_SimpSubm10"
+                                                    event-change="SimpSubm_change(this);checMand(this);"></cn2-checkbox>
+                                            </td>
+                                    </tbody>
+                                </table>
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        </tr>
+                                        <tr>
+                                            <td width="5%">&nbsp;</td>
+                                            <td style="padding-right:0;padding-bottom:0;padding-top:0;">
+
+                                                <table class="table table-borderless">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td colspan="2"
+                                                                style="padding-right:0;padding-bottom:0;padding-top:0;">
+                                                                <b>For A&A Works</b>
+                                                                <table class="table table-borderless">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td width="1%">a)</td>
+                                                                            <td>
+                                                                                A&A works to an existing building
+                                                                                involving only the
+                                                                                construction of additional floors
+                                                                                without reconstructing the
+                                                                                first storey and where there are no
+                                                                                linkages to special
+                                                                                underground facilities.
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2"
+                                                                style="padding-right:0;padding-bottom:0;padding-top:0;">
+                                                                <b>For External Structures that are:</b>
+                                                                <table class="table table-borderless">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td width="1%">a)</td>
+                                                                            <td>
+                                                                                not affecting public drain (i.e. at
+                                                                                least 300mm away from
+                                                                                drain wall) or;
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>b)</td>
+                                                                            <td>not within DR or;</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>c)</td>
+                                                                            <td>
+                                                                                not affected by common drain
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td colspan="2" style="padding-right:0;padding-top:0;"><b>Works Affecting
+                                                    Drainage</b></td>
+                                            <td style="padding-top:0">
+                                                <cn2-checkbox id="PartOfAppl_BuilProjPlanNumb_WorkAffeOtherDrain10"
+                                                    event-change="workAffeDrai_change(this)"></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td colspan="2" style="padding-right: 0;">
+
+                                                <table class="table table-borderless">
+                                                    <tbody>
+
+                                                        <tr>
+                                                            <td colspan="2"
+                                                                style="padding-right:0;padding-bottom:0;padding-top:0;">
+                                                                <b>Structural detention and retention features</b>
+                                                                <table class="table table-borderless">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td width="1%">a)</td>
+                                                                            <td width="98%">
+                                                                                Gravity discharge
+                                                                            </td>
+                                                                            <td width="1%">
+                                                                                <cn2-checkbox id="DeteTank_GravDisc10"
+                                                                                    disabled></cn2-checkbox>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>b)</td>
+                                                                            <td>Pumped discharge</td>
+                                                                            <td>
+                                                                                <cn2-checkbox id="DeteTank_PumpDisc10"
+                                                                                    disabled></cn2-checkbox>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> <b>ABC Waters design features</b></td>
+                                                            <td width="1%">
+                                                                <cn2-checkbox id="ABCWateDesiFeatk10" disabled>
+                                                                </cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> <b>Flood protection measures (e.g. flood barriers/flood
+                                                                    gates)</b></td>
+                                                            <td>
+                                                                <cn2-checkbox id="FlooProtMeas10" disabled>
+                                                                </cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2" style="padding-right:0;padding-bottom:0;">
+                                                                <b>Pumped drainage system for development with</b>
+                                                                <table class="table table-borderless">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td width="1%">a)</td>
+                                                                            <td>Linkages to underground special
+                                                                                facilities</td>
+                                                                            <td width="1%">
+                                                                                <cn2-checkbox
+                                                                                    id="DrainWrk_PumpDraiSystWith10"
+                                                                                    disabled></cn2-checkbox>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>b)</td>
+                                                                            <td>
+                                                                                No linkages to underground special
+                                                                                facilities
+                                                                            </td>
+                                                                            <td>
+                                                                                <cn2-checkbox
+                                                                                    id="DrainWrk_PumpDraiSystWithNo10"
+                                                                                    disabled>
+                                                                                </cn2-checkbox>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding-top:0;"><b>Common drain</b></td>
+                                                            <td style="padding-top:0;">
+                                                                <cn2-checkbox id="DrainReceRuno10" disabled>
+                                                                </cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><b>Roadside drains</b></td>
+                                                            <td>
+                                                                <cn2-checkbox id="RoadDrain10" disabled></cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><b>Entrance culverts</b></td>
+                                                            <td>
+                                                                <cn2-checkbox id="EntrCulv10" disabled></cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><b>Drainage reserve</b></td>
+                                                            <td>
+                                                                <cn2-checkbox id="DraiRese10" disabled></cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </td>
+
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>Plan Type*
+                                                <div class="mls-espro-form-fields row pt-2">
+                                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                        <cn2-button label="Add"
+                                                            event-click="insertDuplicate('stForm','A1');disableDelete('stForm')">
+                                                        </cn2-button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td colspan="2">
+                                                <div id="stForm">
+                                                    <div id="A1">
+                                                        <div class="mls-espro-form-fields row pt-2">
+                                                            <div class="col-xs-5 col-sm-5 col-lg-5 col-md-5">
+                                                                <cn2-select id="PartOfAppl_PlanType_A1"
+                                                                    prefix="PartOfAppl_PlanTypeA" suffix="0"
+                                                                    options="BP:BP, BPNE:BPNE, BPAM:BPAM, BPAA:BPAA, AAAM:AAAM, MVNE:MVNE, MVAM:MVAM, MVAA:MVAA, MAAM:MAAM, NA:NA"
+                                                                    mandatory no-label inline="15">
+                                                                </cn2-select>
+                                                            </div>
+                                                            <div class="col-xs-5 col-sm-5 col-lg-5 col-md-5">
+                                                                <cn2-textbox class="planType"
+                                                                    id="PartOfAppl_PlanType_B1"
+                                                                    event-keypress="PartOfAppl_PlanType_keypress(event,this);"
+                                                                    event-change="adjustNumberLength(this,'3');PartOfAppl_PlanType_change(this);"
+                                                                    prefix="PartOfAppl_PlanTypeB" suffix="0" inline
+                                                                    no-label maxlength="3" mandatory>
+                                                                </cn2-textbox>
+                                                            </div>
+                                                            <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2">
+                                                                <cn2-button id="delete1A" class="deleteBtn"
+                                                                    prefix="delete" suffix="A" style="float: right;"
+                                                                    event-click="removeDuplicate(this.id,'A1','stForm');disableDelete('stForm')"
+                                                                    label="Delete" danger disabled>
+                                                                </cn2-button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </td>
+                                        </tr>
+                                        <!-- <div style="height: 100px;width:300px;background-color: red;position: fixed;z-index:999;"></div> -->
+                                        <tr>
+                                            <td>Date Work Commenced*</td>
+                                            <td>
+                                                <cn2-datefield no-label id="PartOfAppl_DateWorkComm10"
+                                                    onfocusout="validateDate(this);"
+                                                    event-change="PartOfAppl_DateWorkComm10_change(this)" mandatory>
+                                                </cn2-datefield>
+                                            </td>
+                                            <td width="12%">&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date Work Completed*</td>
+                                            <td>
+                                                <cn2-datefield no-label id="PartOfAppl_DateWorkComp10"
+                                                    onfocusout="validateDate(this);"
+                                                    event-change="PartOfAppl_DateWorkComm10_change(this)" mandatory>
+                                                </cn2-datefield>
+                                            </td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Name of Contractor*</td>
+                                            <td>
+                                                <cn2-textbox no-label id="PartOfAppl_NameOfCont10" mandatory>
+                                                </cn2-textbox>
+                                            </td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page4">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Qualified Person</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="35%">Name*</td>
+                                    <td>
+                                        <cn2-select id="Member_Member_Name_QP10" no-label data-options="qpDropdown"
+                                            event-change="loadDropDownDetails(this)" mandatory></cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Role in Project</td>
+                                    <td>
+                                        <cn2-textbox no-label id="MemberRole_Member_Role_Code_Desc_QP10" disabled>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Registration No.</td>
+                                    <td>
+                                        <cn2-textbox no-label id="MemberRole_Professional_No_QP10" disabled>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Firm Name</td>
+                                    <td>
+                                        <cn2-textbox disabled no-label id="Member_Firm_Name_QP10" maxlength="12">
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Firm Address</td>
+                                    <td>
+                                        <cn2-textarea no-label id="Member_Address_QP10" disabled></cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Telephone No.</td>
+                                    <td>
+                                        <cn2-textbox no-label id="Member_Tel_No_QP10" disabled numeric></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email Address</td>
+                                    <td>
+                                        <cn2-textbox no-label id="Member_Email_Address1_QP10" disabled
+                                            event-blur="checkEmail(this);" placeholder="example@email.com">
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Declaration by Qualified Person</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                I, being a Qualified Person, hereby certify that I have inspected the
+                                                completed drainage works. I confirm that, to the best of my knowledge
+                                                and belief, the drainage works were carried out in accordance with the
+                                                above building/project plans and detailed drainage plans, the current
+                                                Code of Practice on Surface Water Drainage/Standard Specification for
+                                                Drainage Work, the Sewerage and Drainage Act, chapter 294 and the
+                                                Sewerage and Drainage ( Surface Water Drainage) Regulations, and any
+                                                other conditions under which the plans and amendments thereto were
+                                                cleared by PUB*
+                                            </td>
+                                            <td width="3%">
+                                                <cn2-checkbox mandatory checked event-change="checMand(this)"
+                                                    id="DeclByQualPers_IBeinAQual10"></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page5">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Submission Checklists</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                The completed drainage works are indicated below
+                                                <br />
+                                                [tick the appropriate boxes]
+                                            </td>
+                                            <td width="3%"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <b>Works Affecting Drainage</b>
+                                                <span style="color:red"> (Read only. Editable on page 3.)</span>
+                                                <br />
+                                                I have supervised, inspected and certify that the drainage work are
+                                                executed in accordance with the approved building/project plans and
+                                                attach the necessary documents.<br> In particular, I certify that:
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="SubmChec_InteDraiWork10"
+                                                    event-change="workAffeDrai2_change(this)" disabled></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <td colspan="2" width="47%"><b>Internal Drainage System</b></td>
+                                            <td class="text-center" width="3%"><b>Yes</b></td>
+                                            <td class="text-center" width="3%"><b>N.A</b></td>
+                                            <td class="text-center" width="47%"><b>Remarks</b></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td width="1%">1.</td>
+                                            <td>
+                                                The platform and crest protection levels are not lower than the
+                                                required
+                                                minimum platform level and crest level.
+                                                <br />
+                                                As built survey plan showing the platform and crest protection levels
+                                                are
+                                                attached.*
+                                            </td>
+                                            <td width="3%" class="text-center">
+                                                <input type="radio" name="minorCheckList1" onclick="radiMand(this)"
+                                                    mandatory id="InteDraiWork_Yes_ThePlatLeveAre10">
+                                            </td>
+                                            <td width="3%" class="text-center">
+                                                <input type="radio" name="minorCheckList1" onclick="radiMand(this)"
+                                                    event-change="setHiddenFieldValue10(this,InteDraiWork_Hide_ThePlatLeveAre10)"
+                                                    mandatory id="InteDraiWork_NA_ThePlatLeveAre10">
+                                                <input type="radio" id="InteDraiWork_Hide_ThePlatLeveAre10" disabled hidden>
+                                            </td>
+                                            <td width="47%">
+                                                <cn2-textarea no-label id="InteDraiWork_Rema_ThePlatLeveAre10">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.</td>
+                                            <td>
+                                                All internal drains are configured for collection of storm water
+                                                only, and are properly connected to the public drain (roadside
+                                                drain/outlet drain) and not into adjacent premises.*
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="minorCheckList2"
+                                                    mandatory id="InteDraiWork_Yes_AllinterdraiAre10">
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="minorCheckList2"
+                                                    event-change="setHiddenFieldValue10(this,InteDraiWork_Hide_AllinterdraiAre10)"
+                                                    mandatory id="InteDraiWork_NA_AllinterdraiAre10">
+                                                <input type="radio" id="InteDraiWork_Hide_AllinterdraiAre10" disabled hidden>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea id="InteDraiWork_Rema_AllinterdraiAre10" no-label>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3.</td>
+                                            <td>
+                                                The runoff within and adjacent to the development lot can be
+                                                effectively drained away without affecting the development lot or the
+                                                areas outside the lot.*
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="minorCheckList3"
+                                                    mandatory id="InteDraiWork_Yes_TheRunoWithAnd10">
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="minorCheckList3"
+                                                    event-change="setHiddenFieldValue10(this,InteDraiWork_Hide_TheRunoWithAnd10)"
+                                                    mandatory id="InteDraiWork_NA_TheRunoWithAnd10">
+                                                <input type="radio" id="InteDraiWork_Hide_TheRunoWithAnd10" disabled hidden>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea no-label id="InteDraiWork_Rema_TheRunoWithAnd10">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4.</td>
+                                            <td>
+                                                As built drawins and calculations (if there are approved deviations)
+                                                for internal drains are submitted.*
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="minorCheckList4"
+                                                    mandatory id="InteDraiWork_Yes_AsconplanForInte10">
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="minorCheckList4"
+                                                    event-change="setHiddenFieldValue10(this,InteDraiWork_Hide_AsconplanForInte10)"
+                                                    mandatory id="InteDraiWork_NA_AsconplanForInte10">
+                                                <input type="radio" id="InteDraiWork_Hide_AsconplanForInte10" disabled hidden>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea no-label id="InteDraiWork_Rema_AsconplanForInte10">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <td colspan="2" width="46%"><b>Other Drainage System</b></td>
+                                            <td class="text-center" width="3%"><b>Yes</b></td>
+                                            <td class="text-center" width="3%"><b>N.A</b></td>
+                                            <td class="text-center" width="47%"><b>Remarks</b></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td width="1%">1.</td>
+                                            <td>
+                                                Drainage works fully completed and constructed according to approved
+                                                plan.*
+                                            </td>
+                                            <td width="3%" class="text-center" width="3%" class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList1"
+                                                    mandatory id="ExteDraiWork_Yes_DraiWorkFullComp10"
+                                                    event-change="radiMand(this)">
+                                            </td>
+                                            <td width="3%" class="text-center" width="3%" class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList1"
+                                                    event-change="setHiddenFieldValue10(this,ExteDraiWork_Hide_DraiWorkFullComp10)"
+                                                    mandatory id="ExteDraiWork_NA_DraiWorkFullComp10">
+                                                <input type="radio" id="ExteDraiWork_Hide_DraiWorkFullComp10" disabled hidden>
+                                            </td>
+                                            <td width="47%">
+                                                <cn2-textarea id="ExteDraiWork_Rema_DraiWorkFullComp10" no-label>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.</td>
+                                            <td>
+                                                No unauthorised slab-crossing / fence-in over public drain / common
+                                                drain.*
+                                            </td>
+                                            <td class="text-center" class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList2"
+                                                    mandatory id="ExteDraiWork_Yes_NoUnauSlabFenc10">
+                                            </td>
+                                            <td class="text-center" class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList2"
+                                                    event-change="setHiddenFieldValue10(this,ExteDraiWork_Hide_NoUnauSlabFenc10)"
+                                                    mandatory id="ExteDraiWork_NA_NoUnauSlabFenc10">
+                                                <input type="radio" id="ExteDraiWork_Hide_NoUnauSlabFenc10" disabled hidden>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea no-label id="ExteDraiWork_Rema_NoUnauSlabFenc10">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3.</td>
+                                            <td>
+                                                No overgrown vegetation, slit, earth, debris, concrete waste or other
+                                                construction material in drain, culvert, drop-inlet chamber, scupper
+                                                drain and drainage reserve.*
+                                            </td>
+                                            <td class="text-center" class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList3"
+                                                    mandatory id="ExteDraiWork_Yes_NoOverVegeSilt10">
+                                            </td>
+                                            <td class="text-center" class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList3"
+                                                    event-change="setHiddenFieldValue10(this,ExteDraiWork_Hide_NoOverVegeSilt10)"
+                                                    mandatory id="ExteDraiWork_NA_NoOverVegeSilt10">
+                                                <input type="radio" id="ExteDraiWork_Hide_NoOverVegeSilt10" disabled hidden>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea no-label id="ExteDraiWork_Rema_NoOverVegeSilt10">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4.</td>
+                                            <td>
+                                                No services inside drain / drainage reserve.*
+                                            </td>
+                                            <td class="text-center" class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList4"
+                                                    mandatory id="ExteDraiWork_Yes_NoServInsiDrai10">
+                                            </td>
+                                            <td class="text-center" class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList4"
+                                                    event-change="setHiddenFieldValue10(this,ExteDraiWork_Hide_NoServInsiDrai10)"
+                                                    mandatory id="ExteDraiWork_NA_NoServInsiDrai10">
+                                                <input type="radio" id="ExteDraiWork_Hide_NoServInsiDrai10" disabled hidden>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea no-label id="ExteDraiWork_Rema_NoServInsiDrai10">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5.</td>
+                                            <td>
+                                                Drainage reserve levelled / turfed / paved / free from encumbrances.*
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList5"
+                                                    mandatory id="ExteDraiWork_Yes_DraiReseLeveTurf10">
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList5"
+                                                    event-change="setHiddenFieldValue10(this,ExteDraiWork_Hide_DraiReseLeveTurf10)"
+                                                    mandatory id="ExteDraiWork_NA_DraiReseLeveTurf10">
+                                                <input type="radio" id="ExteDraiWork_Hide_DraiReseLeveTurf10" disabled hidden>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea no-label id="ExteDraiWork_Rema_DraiReseLeveTurf10">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>6.</td>
+                                            <td>
+                                                Damage to existing drainage facilities reinstated.*
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList6"
+                                                    mandatory id="ExteDraiWork_Yes_DamaToExisDrai10">
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList6"
+                                                    event-change="setHiddenFieldValue10(this,ExteDraiWork_Hide_DamaToExisDrai10)"
+                                                    mandatory id="ExteDraiWork_NA_DamaToExisDrai10">
+                                                <input type="radio" id="ExteDraiWork_Hide_DamaToExisDrai10" disabled hidden>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea no-label id="ExteDraiWork_Rema_DamaToExisDrai10">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>7.</td>
+                                            <td>
+                                                As-built drainage drawings and calculations (if there are approved
+                                                deviations) showing details in accordance with Appendix 5 of the Code of
+                                                Practice on Surface water drainage is submitted.*
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList7"
+                                                    mandatory id="ExteDraiWork_Yes_AscoDraiDrawIn10">
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList7"
+                                                    event-change="setHiddenFieldValue10(this,ExteDraiWork_Hide_AscoDraiDrawIn10)"
+                                                    mandatory id="ExteDraiWork_NA_AscoDraiDrawIn10">
+                                                <input type="radio" id="ExteDraiWork_Hide_AscoDraiDrawIn10" disabled hidden>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea no-label id="ExteDraiWork_Rema_AscoDraiDrawIn10">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>8.</td>
+                                            <td>
+                                                Handing over of completed drainage works is submitted and duly
+                                                endorsed by the QP.*
+                                                <br />
+                                                <br />
+                                                Click <cn2-button
+                                                    event-click="openUrl('https://www.pub.gov.sg/compliance/drainage/standardsandreferences')"
+                                                    label="Here"></cn2-button> to download form.
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList8"
+                                                    mandatory id="ExteDraiWork_Yes_IndiConsCostOf10">
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList8"
+                                                    event-change="setHiddenFieldValue10(this,ExteDraiWork_Hide_IndiConsCostOf10)"
+                                                    mandatory id="ExteDraiWork_NA_IndiConsCostOf10s">
+                                                <input type="radio" id="ExteDraiWork_Hide_IndiConsCostOf10" disabled hidden>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea no-label id="ExteDraiWork_Rema_IndiConsCostOf10">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>9.</td>
+                                            <td>
+                                                For developments which are affected by drainage reserves that are
+                                                required to be vested in the state:*
+                                                <table class="table table-borderless">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="1%"> a) </td>
+                                                            <td> URA's Writted Permission with approved plan is
+                                                                attached.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> b)</td>
+                                                            <td> URA's approved subdivision plan with Written Permission
+                                                                is
+                                                                attached.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> c)</td>
+                                                            <td>
+                                                                Certified Survey Plan (CP) is attached.
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> d)</td>
+                                                            <td>
+                                                                Photographs showing the drainage reserve are free of all
+                                                                encumbrances
+                                                                are attached.
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList9"
+                                                    mandatory id="ExteDraiResrv_Yes_DevAffected10">
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList9"
+                                                    event-change="setHiddenFieldValue10(this,ExteDraiResrv_Hide_DevAffected10)"
+                                                    mandatory id="ExteDraiResrv_NA_DevAffected10">
+                                                <input type="radio" id="ExteDraiResrv_Hide_DevAffected10" disabled hidden>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea no-label id="ExteDraiResrv_Rema_DevAffected10">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>10.</td>
+                                            <td>
+                                                Certified survey plan consisting of a site plan and cross-sections
+                                                showing the development or structure and lot boundary in relation to the
+                                                Drainage Reserve is submitted (only required when a development or
+                                                structure is constructed within less than 300mm from a Drainage
+                                                Reserve).*
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList10"
+                                                    mandatory id="ExteDraiResrv_Yes_CertSurvPlan10">
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList10"
+                                                    event-change="setHiddenFieldValue10(this,ExteDraiResrv_Hide_CertSurvPlan10)"
+                                                    mandatory id="ExteDraiResrv_NA_CertSurvPlan10">
+                                                <input type="radio" id="ExteDraiResrv_Hide_CertSurvPlan10" disabled hidden>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea no-label id="ExteDraiResrv_Rema_CertSurvPlan10">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>11.</td>
+                                            <td>
+                                                As built survey plans indicating crest levels, platform levels,
+                                                flood
+                                                protection levels based on approved flood protection measures.*
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList11"
+                                                    mandatory id="ExteDraiResrv_Yes_AsBuilSurvPlan10">
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList11"
+                                                    event-change="setHiddenFieldValue10(this,ExteDraiResrv_Hide_AsBuilSurvPlan10)"
+                                                    mandatory id="ExteDraiResrv_NA_AsBuilSurvPlan10">
+                                                <input type="radio" id="ExteDraiResrv_Hide_AsBuilSurvPlan10" disabled hidden>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea no-label id="ExteDraiResrv_Rema_AsBuilSurvPlan10">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>12.</td>
+                                            <td>
+                                                As built drawings and calculations (if there are approved
+                                                deviations)
+                                                for drains, pumped drainage system (basement/detention tank),
+                                                structural
+                                                detention and retention features and / or ABC Waters design features.*
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList12"
+                                                    mandatory id="ExteDraiResrv_Yes_BuiltDrawDeteTank10">
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList12"
+                                                    event-change="setHiddenFieldValue10(this,ExteDraiResrv_Hide_BuiltDrawDeteTank10)"
+                                                    mandatory id="ExteDraiResrv_NA_BuiltDrawDeteTank10">
+                                                <input type="radio" id="ExteDraiResrv_Hide_BuiltDrawDeteTank10" disabled hidden>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea no-label id="ExteDraiResrv_Rema_BuiltDrawDeteTank10">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>13.</td>
+                                            <td>
+                                                Post photos of the fenced-in common drain (to show that the drain is
+                                                free of debris).*
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList13"
+                                                    mandatory id="ExteDraiResrv_Yes_PostPhoto10">
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList13"
+                                                    event-change="setHiddenFieldValue10(this,ExteDraiResrv_Hide_PostPhoto10)"
+                                                    mandatory id="ExteDraiResrv_NA_PostPhoto10">
+                                                <input type="radio" id="ExteDraiResrv_Hide_PostPhoto10" disabled hidden>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea no-label id="ExteDraiResrv_Rema_PostPhoto10">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.</td>
+                                            <td>
+                                                Leak Test Certificate on installed flood barriers.*
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList14"
+                                                    mandatory id="ExteDraiResrv_Yes_LeakTestCert10">
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList14"
+                                                    event-change="setHiddenFieldValue10(this,ExteDraiResrv_Hide_LeakTestCert10)"
+                                                    mandatory id="ExteDraiResrv_NA_LeakTestCert10">
+                                                <input type="radio" id="ExteDraiResrv_Hide_LeakTestCert10" disabled hidden>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea no-label id="ExteDraiResrv_Rema_LeakTestCert10">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>15.</td>
+                                            <td>
+                                                Standard Operating Procedure for pumped drainage system
+                                                (basement/detention tank).*
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList15"
+                                                    mandatory id="ExteDraiResrv_Yes_StanOperProc10">
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList15"
+                                                    event-change="setHiddenFieldValue10(this,ExteDraiResrv_Hide_StanOperProc10)"
+                                                    mandatory id="ExteDraiResrv_NA_StanOperProc10">
+                                                <input type="radio" id="ExteDraiResrv_Hide_StanOperProc10" disabled hidden>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea no-label id="ExteDraiResrv_Rema_StanOperProc10">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>16.</td>
+                                            <td>
+                                                Standard Operating Procedure for flood barrier.*
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList16"
+                                                    mandatory id="ExteDraiResrv_Yes_StanOperProcFlood10">
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList16"
+                                                    event-change="setHiddenFieldValue10(this,ExteDraiResrv_Hide_StanOperProcFlood10)"
+                                                    mandatory id="ExteDraiResrv_NA_StanOperProcFlood10">
+                                                <input type="radio" id="ExteDraiResrv_Hide_StanOperProcFlood10" disabled hidden>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea no-label id="ExteDraiResrv_Rema_StanOperProcFlood10">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>17.</td>
+                                            <td>
+                                                The pumped drainage systems (if applicable) are designed and built
+                                                in accordance with the Code of Practice on Surface Water Drainage and
+                                                are adequate to protect underground structures against flooding.*
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList17"
+                                                    mandatory id="ExteDraiResrv_Yes_ThePumpDraiSyst10">
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList17"
+                                                    event-change="setHiddenFieldValue10(this,ExteDraiResrv_Hide_ThePumpDraiSyst10)"
+                                                    mandatory id="ExteDraiResrv_NA_ThePumpDraiSyst10">
+                                                <input type="radio" id="ExteDraiResrv_Hide_ThePumpDraiSyst10" disabled hidden>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea no-label id="ExteDraiResrv_Rema_ThePumpDraiSyst10">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>18.</td>
+                                            <td>
+                                                As built plan of pumped drainage system is submitted (only required
+                                                if there are pumped drainage system).*
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList18"
+                                                    mandatory id="ExteDraiResrv_Yes_CertSurvPlanCons10">
+                                            </td>
+                                            <td class="text-center">
+                                                <input onclick="radiMand(this)" type="radio" name="otherCheckList18"
+                                                    event-change="setHiddenFieldValue10(this,ExteDraiResrv_Hide_CertSurvPlanCons10)"
+                                                    mandatory id="ExteDraiResrv_NA_CertSurvPlanCons10">
+                                                <input type="radio" id="ExteDraiResrv_Hide_CertSurvPlanCons10" disabled hidden>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea no-label id="ExteDraiResrv_Rema_CertSurvPlanCons10">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <cn2-version-footer></cn2-version-footer>
+        <cn2-fixed-footer></cn2-fixed-footer>
+
+    </div>
+
+</body>
+
+</html>

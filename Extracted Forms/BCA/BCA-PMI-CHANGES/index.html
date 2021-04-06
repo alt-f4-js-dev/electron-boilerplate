@@ -1,0 +1,2494 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <title>BCA-PMI-CHANGES</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Syncfusion" />
+
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+    <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+    <link href="../cm/styles/styles.css" rel="stylesheet" />
+    <script>
+        if (typeof module === "object") {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script src="../cm/resources/assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../cm/resources/assets/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../cm/js/func/common.js"></script>
+    <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+    <script src="../cm/js/components/cn2sgheader.js"></script>
+    <script src="../cm/js/components/cn2masterhead.js"></script>
+    <script src="../cm/js/components/cn2versionfooter.js"></script>
+    <script src="../cm/js/components/cn2fixedfooter.js"></script>
+    <script src="../cm/js/components/cn2navbutton.js"></script>
+
+    <script src="../cm/js/components/cn2textbox.js"></script>
+    <script src="../cm/js/components/cn2textarea.js"></script>
+    <script src="../cm/js/components/cn2checkbox.js"></script>
+    <script src="../cm/js/components/cn2select.js"></script>
+    <script src="../cm/js/components/cn2datefield.js"></script>
+    <script src="../cm/js/components/cn2switchbutton.js"></script>
+    <script src="../cm/js/components/cn2button.js"></script>
+
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <cn2-master-head title="APPLICATION AS AN ACCREDITED CHECKER [CAP 29 OF THE BUILDING CONTROL ACT]">
+    </cn2-master-head>
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p style="margin: 0px">Help</p>
+            </div>
+            <div class="modal-body">
+                <p><b>For enquiries related to forms, please contact the following:</b></p>
+                <p> <span id="RegulatoryAuthority_id"></span></p>
+                <div id="table-parent" style="width:auto">
+                    <table id="ContDetaTable_id" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Regulatory Authority</th>
+                                <th>Email Address</th>
+                                <th>Tel No.</th>
+                                <th>Area of Support</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>BCA(BP) & (TOP)</td>
+                                <td>bca_enquiry@bca.gov.sg</td>
+                                <td>1800-3425222</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">BCA (Buildable Design and Constructability)</td>
+                                <td>kong_chew_kwek@bca.gov.sg</td>
+                                <td>68044228</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>terence_teo@bca.gov.sg</td>
+                                <td>68044231</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>chin_kim_hong@bca.gov.sg</td>
+                                <td>68044234</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">BCA(ST)</td>
+                                <td>wai_hui_ling@bca.gov.sg</td>
+                                <td>68044609</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>chang_heng_choy@bca.gov.sg</td>
+                                <td>68044646</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">BCA (CD Shelter)</td>
+                                <td>lee_pheck_hoon@bca.gov.sg</td>
+                                <td>68044410</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>yeo_keng@bca.gov.sg</td>
+                                <td>68044416</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>BCA (Transit Shelter) </td>
+                                <td>Tan Wee Kian</td>
+                                <td>63961408</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4">BCA (Minimum Environmental Sustainability Std for Existing Bldgs &
+                                    Periodic Energy
+                                    Audit)</td>
+                                <td>aloysius_aw@bca.gov.sg</td>
+                                <td>68044705</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>joseph_hong@bca.gov.sg</td>
+                                <td>68044699</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>wee_kai_siong@bca.gov.sg</td>
+                                <td>68044701</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>yong_siew_hwa@bca.gov.sg</td>
+                                <td>68044715</td>
+                                <td>Policies</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="closer btn" onclick="hideHelp()"
+                    style="background-color:#037ebb;color:white;">OK</button>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" name="member_id" id="member_id" />
+    <input type="hidden" name="form_validated" id="form_validated" />
+
+    <div class="mls-espro-form-container">
+        <div class="row">
+            <div class="mls-espro-form-left-nav" id="menu">
+                <cn2-nav-button id="navPage1" target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+                <cn2-nav-button target="page2" page-number="2" label="Application Type"></cn2-nav-button>
+                <cn2-nav-button target="page3" page-number="3" label="Particulars of Application"></cn2-nav-button>
+                <cn2-nav-button target="page4" page-number="4" label="Particulars and Declaration by Qualified Person">
+                </cn2-nav-button>
+                <cn2-nav-button target="page5" page-number="5" hidden label=""></cn2-nav-button>
+                <cn2-nav-button target="page6" page-number="6" hidden label=""></cn2-nav-button>
+            </div>
+
+            <div class="e-content mls-espro-form-right" id="page">
+                <div id="page1">
+                    <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px;">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">
+                                        <b>Date:</b>
+                                    </td>
+                                    <td width="20%">
+                                        <cn2-textbox id="Date10" no-label inline="6" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="1%">
+                                        <b>To:*</b>
+                                    </td>
+                                    <td width="20%">
+                                        <div class="mls-espro-form-fields row">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-select mandatory event-change="ToAgency_id_change(this);" no-label
+                                                    inline="6" id="Addr10"
+                                                    options="Building and Construction Authority:BCA,Defence Science & Technology Agency:DSTA">
+                                                </cn2-select>
+                                            </div>
+                                        </div>
+                                        <div class="mls-espro-form-fields row pt-2">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-textarea id="Addr20" no-label inline="6" disabled
+                                                    style="height:150px;">
+                                                </cn2-textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="mls-espro-form-fields row" id="TermReaLiceSpec_note" hidden>
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 mls-intro-list">
+                                Note: For Geotechnical Building Works, only Developer can
+                                appoint a licensed Specialist Builder in site investigation
+                                works to undertake monitoring instruments measuring pore
+                                pressures for saturated and unsaturated levels, ground-water
+                                levels, ground movements or building movements and to measure
+                                forces, deformations or displacement.
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row" id="AppoLiceSpecBuilDev_note" hidden>
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 mls-intro-list">
+                                Note: For Geotechnical Building Works, only Developer can
+                                appoint a licensed Specialist Builder in site investigation
+                                works to undertake monitoring instruments measuring pore
+                                pressures for saturated and unsaturated levels, ground-water
+                                levels, ground movements or building movements and to measure
+                                forces, deformations or displacement.
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row" id="NotiTermBuil_note" hidden>
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 mls-intro-list">
+                                Note: For Geotechnical Building Works, only Developer can
+                                appoint a licensed Specialist Builder in site investigation
+                                works to monitor instruments measuring pore pressures for
+                                saturated and unsaturated levels, ground-water levels, ground
+                                movements or building movements and to measure forces,
+                                deformations or displacement.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Instructions</h2>
+                        <table class="table table-borderless table-sm mls-intro-list" id="NotiTermAppo_instructions">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">1.</td>
+                                    <td>
+                                        This form is to be digitally signed by the appointed
+                                        Qualified Person (for Building Plans).
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2.</td>
+                                    <td>
+                                        Please note the following submission requirement by
+                                        different parties for change of architect.
+                                        <table class="table table-borderless table-sm" style="margin-bottom:0;">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="1%">a)</td>
+                                                    <td>
+                                                        Outgoing architect to <br />
+                                                        <ol style="margin-bottom:0;" type="i">
+                                                            <li>submit letter of relinquishment</li>
+                                                            <li>certificate of supervision and</li>
+                                                            <li>add in new QP as project coordinator</li>
+                                                            <li>
+                                                                to provide status of current construction
+                                                                stage
+                                                            </li>
+                                                        </ol>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>b)</td>
+                                                    <td>
+                                                        Incoming QP <br />
+                                                        <ol style="margin-bottom:0;" type="i">
+                                                            <li>to verify work done on site</li>
+                                                        </ol>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>c)</td>
+                                                    <td>
+                                                        Letter of termination of service by developer
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>d)</td>
+                                                    <td>
+                                                        New letter of authorisation of incoming QP by
+                                                        developer
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3.</td>
+                                    <td>This form may take 2-3 mins to complete.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="mls-espro-form-fields row mls-intro-list" id="AppoLiceSpecBuilDev_instructions"
+                            hidden>
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                This form is to be digitally signed by the Qualified Person
+                                for Supervision of Structural Works. In addition he is to
+                                submit a digitally signed scanned copy of the application form
+                                (BCA-BE-SPECIALIST BUILDER-Appointment.doc), manually signed by all
+                                parties concerned.
+                            </div>
+                        </div>
+
+                        <ol class="mls-intro-list" id="NotiTermAppoSS_instructions" hidden>
+                            <i>
+                                <li>
+                                    This form is to be digitally signed by the appointed
+                                    Qualified Person for Supervision of Structural Works. In addition he is to submit a
+                                    digitally signed scanned copy
+                                    of the application form (BCA-BE-NCTASS.doc), manually signed by all parties
+                                    concerned.
+                                </li>
+                            </i>
+                            <i>
+                                <li>This form may take 2-4 mins to complete.</li>
+                            </i>
+                        </ol>
+
+                        <div class="mls-espro-form-fields row mls-intro-list" id="NotiTermBuil_instructions" hidden>
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                This form is to be digitally signed by the Qualified Person
+                                for Supervision of Structural Works. In addition he is to
+                                submit a digitally signed scanned copy of the application form
+                                (BCA-BE-Builder Termination.doc), manually signed by all
+                                parties concerned.
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row mls-intro-list" id="TermReaLiceSpec_instructions" hidden>
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                This form is to be digitally signed by the Qualified Person
+                                for Supervision of Structural Works. In addition he is to
+                                submit a digitally signed scanned copy of the application forms
+                                (BCA-BE-Builder Termination.doc) and (BCA-BE-SPECIALIST BUILDER-Appointment.doc) (for
+                                re-appointment) manually signed by all parties
+                                concerned.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page2">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Application Type</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">1.</td>
+                                    <td>
+                                        Notice of Termination of QP Appointment (Building Plans) <br>
+                                        [Section 9(5) of Building Control Act (Cap 29)]
+                                    </td>
+                                    <td width="1%">
+                                        <input type="radio" name="appType" id="ApplType_NotiTermAppo10"
+                                            onchange="appType(this);" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2.</td>
+                                    <td>
+                                        Notice of Termination/ Appointment of Site Supervisor <br>
+                                        [Section 10 of Building Control Act (Cap 29)]
+                                    </td>
+                                    <td>
+                                        <input type="radio" name="appType" id="ApplType_NotiTermAppoSS10"
+                                            onchange="appType(this);" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3.</td>
+                                    <td>
+                                        Appointment of Licensed Specialist Builder by Developer/
+                                        Builder <br> [Section 8(1)(f)(ii) or 11(1)(g) of Building Control Act (Cap 29)]
+                                    </td>
+                                    <td>
+                                        <input type="radio" name="appType" id="ApplType_AppoLiceSBil10"
+                                            onchange="appType(this);" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4.</td>
+                                    <td>
+                                        Termination/ Re-appointment of Licensed Specialist Builder
+                                        by Developer/ Builder <br> [Section 8(2)(b) or 11(1)(g) of Building Control
+                                        Act (Cap 29)]
+                                    </td>
+                                    <td>
+                                        <input type="radio" name="appType" id="ApplType_TermReapLiceSB10"
+                                            onchange="appType(this);" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="page3">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2 id="page3Title">Particulars of Application</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="35%">Project Reference Number</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Project_Project_Ref_No10" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr hidden id="Project_PermitApplRefNo10_row">
+                                    <td>Permit Application Ref No.*</td>
+                                    <td>
+                                        <cn2-textbox id="Project_PermitApplRefNo10" no-label maxlength="32400"
+                                            mandatory>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Project Title</td>
+                                    <td>
+                                        <cn2-textarea disabled id="Project_Title10" no-label></cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Description of Building Works*</td>
+                                    <td>
+                                        <cn2-textarea id="Project_Title20" mandatory no-label></cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Location Description</td>
+                                    <td>
+                                        <cn2-textarea disabled id="Project_Location_Description_Description10" no-label>
+                                        </cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr id="typeOfWork_row" hidden>
+                                    <td>
+                                        Please indicate the types of specialist building works in
+                                        this project*
+                                    </td>
+                                    <td>
+                                        <table class="table table-borderless table-sm" style="margin-bottom:0;">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <cn2-checkbox event-change="atLeastOne(this);" name="typeOfWork"
+                                                            id="Proj_TypeOfBuilWork_PiliWork10"></cn2-checkbox>
+                                                    </td>
+                                                    <td>Piling Works</td>
+                                                    <td>
+                                                        <cn2-checkbox event-change="atLeastOne(this);" name="typeOfWork"
+                                                            id="Proj_TypeOfBuilWork_PreCastConcWork10"></cn2-checkbox>
+                                                    </td>
+                                                    <td>Pre-cast concrete work</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <cn2-checkbox event-change="atLeastOne(this);" name="typeOfWork"
+                                                            id="Proj_TypeOfBuilWork_GrouSuppStabWork10"></cn2-checkbox>
+                                                    </td>
+                                                    <td>Ground support and stabilization works</td>
+                                                    <td>
+                                                        <cn2-checkbox event-change="atLeastOne(this);" name="typeOfWork"
+                                                            id="Proj_TypeOfBuilWork_PostTensWork10"></cn2-checkbox>
+                                                    </td>
+                                                    <td>In-situ post-tensioning Work</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <cn2-checkbox event-change="atLeastOne(this);" name="typeOfWork"
+                                                            id="Proj_TypeOfBuilWork_StruSteeWork10"></cn2-checkbox>
+                                                    </td>
+                                                    <td>Structural steelwork</td>
+                                                    <td>
+                                                        <cn2-checkbox event-change="atLeastOne(this);" name="typeOfWork"
+                                                            id="Proj_TypeOfBuilWork_SiteInveWork10"></cn2-checkbox>
+                                                    </td>
+                                                    <td>Site investigation work</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="page4">
+                    <div class="mls-espo-right-inner-container borderchecking" id="particularsDevBuild" hidden>
+                        <h2>Section I Particulars of Developer/Builder (If Applicable)</h2>
+                        <span id="developerRadio">
+                            <input type="radio" onchange="particularsDevBuild(this);" id="DeclByOWN_Deve10"
+                                name="DeclByOWN" />
+                            &nbsp; &nbsp; Developer &nbsp; &nbsp;
+                        </span>
+                        <cn2-button label="Add" id="particularOWNERadd"
+                            event-click="insertDuplicate('particularsOfDeveloper','A1');removeUENerror('particularsOfDeveloper','Member_UEN_OWNER');disableDelete('particularsOfDeveloper','particularsOfDeveloper_Delete');removeMasking('particularsOfDeveloper','Member_NRIC_OWNER','Member_NRIC_OWNERMasked');">
+                        </cn2-button>
+                        <div id="accordion">
+                            <div id="particularsOfDeveloper">
+                                <div id="A1" class="Afields" parent>
+                                    <h2 class="accordion-toggle">
+                                        <table class="table table-borderless">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="align-bottom">
+                                                        <cn2-select id="Member_Member_Name_OWNER100"
+                                                            prefix="Member_Member_Name_OWNER"
+                                                            event-change="loadDropDownDetails(this);removeAddUENerror(this,'Member_UEN_OWNER','00');nricMaskingAccor(this,'Member_NRIC_Masked_OWNER')"
+                                                            data-options="devDropdown" suffix="00" label="Name">
+                                                        </cn2-select>
+                                                    </td>
+                                                    <td>
+                                                        <cn2-textbox label="Firm Name" prefix="Member_Firm_Name_OWNER"
+                                                            suffix="00" id="Member_Firm_Name_OWNER100" disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                    <td>
+                                                        <cn2-textbox label='Designation'
+                                                            id="Member_Designation_OWNER100"
+                                                            prefix="Member_Designation_OWNER" suffix="00" disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+
+                                                    <td width="5%" class="align-bottom">
+
+                                                        <cn2-button style="float:right" label="Delete" disabled
+                                                            id="PartOfTheOWNER_Delete10"
+                                                            class="particularsOfDeveloper_Delete"
+                                                            prefix="PartOfTheOWNER_Delete" suffix="0" danger
+                                                            event-click="removeDuplicate(this.id,'A1','particularsOfDeveloper');disableDelete('particularsOfDeveloper','particularsOfDeveloper_Delete');">
+                                                        </cn2-button>
+
+                                                    </td>
+                                                    <td width="5%">
+                                                        <span class="fa fa-angle-down collapsed" data-toggle="collapse"
+                                                            href="#collapse1" id="#collapse1" prefix="#collapse1" child
+                                                            onclick="spanUpDown(this)" aria-expanded="false"></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </h2>
+                                    <div id="collapse1" class="panel-collapse collapse" child="div" prefix="collapse1">
+                                        <table class="table table-borderless">
+                                            <tbody>
+                                                <tr hidden>
+                                                    <td>Member ID</td>
+                                                    <td>
+                                                        <cn2-textbox no-label prefix="Member_Member_SID_OWNER"
+                                                            suffix="00" id="Member_Member_SID_OWNER100" disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Title</td>
+                                                    <td>
+                                                        <cn2-select no-label id="Member_Title_OWNER100"
+                                                            prefix="Member_Title_OWNER" suffix="00" label="Title"
+                                                            options="Dr:Dr,Er:Er,Mdm:Mdm,Mr:Mr,Mrs:Mrs,Ms:Ms">
+                                                        </cn2-select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>NRIC/Passport No.</td>
+                                                    <td hidden nricUnmasked>
+                                                        <cn2-textbox no-label id="Member_NRIC_OWNER100"
+                                                            prefix="Member_NRIC_OWNER" suffix="00" disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                    <td nricMasked>
+                                                        <cn2-textbox no-label id="Member_NRIC_Masked_OWNER100"
+                                                            prefix="Member_NRIC_Masked_OWNER" suffix="00" disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="25%">UEN</td>
+                                                    <td>
+                                                        <cn2-textbox no-label prefix="Member_UEN_OWNER" suffix="00"
+                                                            maxlength="10" template="#########@"
+                                                            event-blur="uenValidate(this)" id="Member_UEN_OWNER100">
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Address</td>
+                                                    <td>
+                                                        <cn2-textarea no-label prefix="Member_Address_OWNER" suffix="00"
+                                                            id="Member_Address_OWNER100" disabled>
+                                                        </cn2-textarea>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Telephone No.</td>
+                                                    <td>
+                                                        <cn2-textbox no-label prefix="Member_Tel_No_OWNER" suffix="00"
+                                                            id="Member_Tel_No_OWNER100" disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Handphone No.</td>
+                                                    <td>
+                                                        <cn2-textbox no-label prefix="Member_Mobile_No_OWNER"
+                                                            suffix="00" id="Member_Mobile_No_OWNER100" disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Email Address</td>
+                                                    <td>
+                                                        <cn2-textarea no-label prefix="Member_Email_Address1_OWNER"
+                                                            suffix="00" id="Member_Email_Address1_OWNER100" disabled>
+                                                        </cn2-textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br />
+                        <span id="builderRadio">
+                            <input type="radio" onchange="particularsDevBuild(this);" id="DeclByOWN_Buil10"
+                                name="DeclByOWN" />
+                            &nbsp; &nbsp; Builder &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            <cn2-button label="Add" id="particularBLDRadd" disabled
+                                event-click="insertDuplicate('particularsOfBuilder','B1');removeUENerror('particularsOfBuilder','Members_UEN_BLDR20');disableDelete('particularsOfBuilder','PartOfTheBLDR_Delete');removeMasking('particularsOfDeveloper','Member_NRIC_BLDR','Member_NRIC_BLDRRMasked20');">
+                            </cn2-button></span>
+                        <div id="accordion2">
+                            <div id="particularsOfBuilder">
+                                <div id="B1" class="Bfields" parent>
+                                    <h2 class="accordion-toggle">
+                                        <table class="table table-borderless">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="align-bottom">
+                                                        <cn2-select id="Member_Member_Name_BLDR2010" class="builderName"
+                                                            disabled prefix="Member_Member_Name_BLDR20"
+                                                            event-change="loadDropDownDetails(this);removeAddUENerror(this,'Members_UEN_BLDR20','0');nricMaskingAccor(this,'Member_NRIC_Masked_BLDR20')"
+                                                            data-options="buildDropdown" suffix="0" label="Name">
+                                                        </cn2-select>
+                                                    </td>
+                                                    <td>
+                                                        <cn2-textbox label="Firm Name" class="builderFirmName"
+                                                            prefix="Member_Firm_Name_BLDR20" suffix="0" disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                    <td>
+                                                        <cn2-textbox label="Designation" class="builderDesignation"
+                                                            id="Member_Designation_BLDR2010"
+                                                            prefix="Member_Designation_BLDR20" suffix="0" disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+
+                                                    <td width="5%" class="align-bottom">
+
+                                                        <cn2-button style="float:right" label="Delete" disabled
+                                                            id="PartOfTheBLDR_Delete10" class="PartOfTheBLDR_Delete"
+                                                            prefix="PartOfTheBLDR_Delete" suffix="0" danger
+                                                            event-click="removeDuplicate(this.id,'B1','particularsOfBuilder');">
+                                                        </cn2-button>
+
+                                                    </td>
+                                                    <td width="5%">
+                                                        <span class="fa fa-angle-down collapsed" data-toggle="collapse"
+                                                            href="#collapse2" id="#collapse2" prefix="#collapse2" child
+                                                            onclick="spanUpDown(this)" aria-expanded="false"></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </h2>
+                                    <div id="collapse2" class="panel-collapse collapse" child="div" prefix="collapse2">
+                                        <table class="table table-borderless">
+                                            <tbody>
+                                                <tr hidden>
+                                                    <td>Member ID</td>
+                                                    <td>
+                                                        <cn2-textbox class="builderSID" no-label
+                                                            prefix="Member_Member_SID_BLDR2010" suffix="0"
+                                                            id="Member_Member_SID_BLDR20" disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Title</td>
+                                                    <td>
+                                                        <cn2-select class="builderTitle" no-label
+                                                            id="Member_Member_Title_BLDR2010"
+                                                            prefix="Member_Member_Title_BLDR20" suffix="0" label="Title"
+                                                            options="Dr:Dr,Er:Er,Mdm:Mdm,Mr:Mr,Mrs:Mrs,Ms:Ms">
+                                                        </cn2-select>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>NRIC/Passport No.</td>
+                                                    <td hidden nricUnmasked>
+                                                        <cn2-textbox no-label id="Member_NRIC_BLDR2010"
+                                                            prefix="Member_NRIC_BLDR20" suffix="0" disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                    <td nricMasked>
+                                                        <cn2-textbox no-label id="Member_NRIC_Masked_BLDR2010"
+                                                            prefix="Member_NRIC_Masked_BLDR20" suffix="0" disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="25%">UEN</td>
+                                                    <td>
+                                                        <cn2-textbox class="builderUEN" disabled no-label
+                                                            prefix="Members_UEN_BLDR20" suffix="0" maxlength="10"
+                                                            template="#########@" event-blur="uenValidate(this)"
+                                                            id="Members_UEN_BLDR2010">
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Address</td>
+                                                    <td>
+                                                        <cn2-textarea class="builderAddress" no-label
+                                                            prefix="Member_Address_BLDR20" suffix="0"
+                                                            id="Member_Address_BLDR2010" disabled>
+                                                        </cn2-textarea>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Telephone No.</td>
+                                                    <td>
+                                                        <cn2-textbox class="builderTelephone" no-label
+                                                            prefix="Member_Tel_No_BLDR20" suffix="0"
+                                                            id="Member_Tel_No_BLDR2010" disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Handphone No.</td>
+                                                    <td>
+                                                        <cn2-textbox class="builderHandphone" no-label
+                                                            prefix="Member_Mobile_No_BLDR20" suffix="0"
+                                                            id="Member_Mobile_No_BLDR2010" disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Email Address</td>
+                                                    <td>
+                                                        <cn2-textarea class="builderEmail" no-label
+                                                            prefix="Member_Email_Address1_BLDR20" suffix="0"
+                                                            id="Member_Email_Address1_BLDR2010" disabled>
+                                                        </cn2-textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking" id="particularSpecBuild" hidden>
+                        <h2>Appointment of Specialist Builder(s)</h2>
+                        <cn2-select options="I:I,We:We" no-label id="DeclBySpecBuil_HereByNoti10" inline="2" mandatory>
+                        </cn2-select>&nbsp;hereby notify that:
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">(a)</td>
+                                    <td>
+                                        <cn2-select options="Please Select:Please Select,I am:I am,We are:We are"
+                                            no-label id="DeclBySpecBuil_HereByNoti_A10" inline="2"></cn2-select>
+                                        &nbsp;the
+                                        Specialist Builder(s) for the following
+                                        specialist building works comprised in this project.
+                                        <table class="table table-borderless table-sm" style="margin-bottom:0;">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="1%">
+                                                        <cn2-checkbox id="DeclBySpecBuil_PiliWork10" no-label>
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td width="30%">Piling works</td>
+                                                    <td width="1%">
+                                                        <cn2-checkbox class="Proj_TypeOfBuilWork_PostTensWork10_1"
+                                                            id="DeclBySpecBuil_PostTensWork10" no-label>
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td>In-situ post-tensioning work</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <cn2-checkbox id="DeclBySpecBuil_GrouSuppStabWork10" no-label>
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td>Ground support and stabilization Works</td>
+                                                    <td>
+                                                        <cn2-checkbox class="Proj_TypeOfBuilWork_SiteInveWork10_1"
+                                                            id="DeclBySpecBuil_SiteInveWork10" no-label>
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td>
+                                                        Site investigation work (excluding instrumentation
+                                                        monitoring for projects involving Geotechnical
+                                                        Building Works)(see # note)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <cn2-checkbox id="DeclBySpecBuil_StruSteeWork10" no-label>
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td>Structural Steelwork</td>
+                                                    <td>
+                                                        <cn2-checkbox id="DeclBySpecBuil_InstMoniForProj10" no-label>
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td>
+                                                        Instrumentation monitoring for projects involving
+                                                        Geotechnical Building Works (see # note)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <cn2-checkbox id="DeclBySpecBuil_PreCastConcWork10" no-label>
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td colspan="3">Pre-cast concrete work</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>(b)</td>
+                                    <td>
+                                        <!-- <cn2-select options="and:and, or:or" no-label
+                                            id="DeclBySpecBuil_HereByNoti_TheSpecBuil10" inline="2"></cn2-select>&nbsp; -->
+                                        <cn2-select options="Please Select:Please Select,I:I,We:We" no-label
+                                            id="DeclBySpecBuil_HereByNoti_B10" inline="2">
+                                        </cn2-select>
+                                        &nbsp;have appointed the Specialist Builder(s) for
+                                        the
+                                        following specialist building works comprised in this
+                                        project:
+                                        <br><br>
+                                        <div class="mls-espro-form-fields row pt-2">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-button label="Add"
+                                                    event-click="insertDuplicate('Specialbuilders','D1');disableDelete('Specialbuilders','deleteBtnSS');removeUENerror('Specialbuilders','DeclBySpecBuil_HereByNoti_UEN');">
+                                                </cn2-button>
+                                            </div>
+                                        </div>
+                                        <div id="Specialbuilders" class="mls-espo-right-inner-container">
+                                            <div id="D1" class="Dfields">
+                                                <hr />
+                                                <div style="display:inline-flex;min-width:500px;">
+                                                    <cn2-textbox hidden disabled prefix="Member_Member_SID_BLDR10"
+                                                        suffix="0" id="Member_Member_SID_BLDR1010" no-label
+                                                        style="flex-basis: 100%;margin-left:20px;">
+                                                    </cn2-textbox>
+                                                    <cn2-select
+                                                        event-change="loadDropDownDetails(this);removeAddUENerror(this,'Member_UEN_BLDR1010','0');"
+                                                        data-options="appoSpecbuildDropdown"
+                                                        prefix="Member_Member_Name_BLDR10" suffix="0"
+                                                        id="Member_Member_Name_BLDR1010" no-label
+                                                        style="flex-basis: 100%;"></cn2-select>
+                                                    <cn2-textbox disabled prefix="Member_Firm_Name_BLDR10" suffix="0"
+                                                        id="Member_Firm_Name_BLDR1010" no-label
+                                                        style="flex-basis: 100%;margin-left:20px;">
+                                                    </cn2-textbox>
+                                                </div>
+                                                &nbsp; of UEN &nbsp;
+
+                                                <p style="max-width:300px;display: inline-table;">
+                                                    <cn2-textbox event-blur="uenValidate(this);" maxlength="10"
+                                                        template="#########@" prefix="Member_UEN_BLDR10" suffix="0"
+                                                        id="Member_UEN_BLDR1010" no-label>
+                                                    </cn2-textbox>
+                                                </p>
+                                                &nbsp; as the Specialist Builder for
+
+                                                <cn2-select
+                                                    options="piling works:piling works,ground support and stabilization works:ground support and stabilization works,structural steelwork:structural steelwork,pre-cast concrete work:pre-cast concrete work,in-situ post-tensioning work:in-situ post-tensioning work,site investigation work:site investigation work"
+                                                    inline="8" id="DeclBySpecBuil_HereByNoti_AsTheSpecBuil10"
+                                                    prefix="DeclBySpecBuil_HereByNoti_AsTheSpecBuil" suffix="0"
+                                                    no-label></cn2-select>
+
+                                                <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2" style="float: right;">
+                                                    <cn2-button id="delete1A" class="deleteBtnSS" prefix="delete"
+                                                        suffix="A" style="float: right;"
+                                                        event-click="removeDuplicate(this.id,'D1','Specialbuilders');disableDelete('Specialbuilders','deleteBtnSS')"
+                                                        label="Delete" danger disabled>
+                                                    </cn2-button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mls-espo-right-inner-container borderchecking" id="particularsQP">
+                        <h2>Section I Particulars of Qualified Person</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr hidden>
+                                    <td>Member ID</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Member_SID_QP10" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">Name*</td>
+                                    <td>
+                                        <cn2-select data-options="qpDropdown" mandatory
+                                            event-change="loadDropDownDetails(this);removeSelectUENerror('Members_UEN_QP10');"
+                                            id="Member_Member_Name_QP10" no-label></cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Registration No.</td>
+                                    <td>
+                                        <cn2-textbox disabled id="MemberRole_Professional_No_QP10" no-label>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Firm Name</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Firm_Name_QP10" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>UEN</td>
+                                    <td>
+                                        <cn2-textbox template="#########@" maxlength="10"
+                                            event-blur="uenValidate(this);" id="Members_UEN_QP10" no-label>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Address</td>
+                                    <td>
+                                        <cn2-textarea disabled id="Member_Address_QP10" no-label></cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Telephone No.</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Tel_No_QP10" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Handphone No.</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Mobile_No_QP10" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email Address</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Email_Address1_QP10" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mls-espo-right-inner-container borderchecking" id="particularsQP"
+                        style="margin-bottom:65px;">
+                        <h2>Declaration by Qualified Person</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">I.1</td>
+                                    <td>
+                                        As required by Section 9(5) of the Act, I am notifying
+                                        that, with effect from* <br />
+                                        <cn2-datefield onfocusout="validateDate(this)" disabled no-label inline="4"
+                                            id="DeclByQualPers_AsRequBySect10">
+                                        </cn2-datefield>
+                                        &nbsp; I have ceased to carry out my duties as the
+                                        qualified person in respect of the building works
+                                        described herein as* : -
+
+                                        <table class="table table-borderless table-sm" style="margin-bottom:0;">
+                                            <tr>
+                                                <td width="1%">
+                                                    <input disabled name="DeclByQualPers_AsRequBySect"
+                                                        onchange="DeclByQualPers_AsRequBySect_change(this);atLeastOne(this);"
+                                                        type="radio" id="DeclByQualPers_AsRequBySect_IHaveTermMy10" />
+                                                </td>
+                                                <td>
+                                                    I have terminated my appointment as the qualified
+                                                    person;
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input
+                                                        onchange="DeclByQualPers_AsRequBySect_change(this);atLeastOne(this);"
+                                                        disabled name="DeclByQualPers_AsRequBySect" type="radio"
+                                                        id="DeclByQualPers_AsRequBySect_MyAppoAsThe10" />
+                                                </td>
+                                                <td>
+                                                    My appointment as the qualified person has been
+                                                    terminated by
+                                                    <table class="table table-borderless table-sm"
+                                                        style="margin-bottom:0;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td width="1%">
+                                                                    <input disabled
+                                                                        name="DeclByQualPers_AsRequBySect_MyAppoAsThe"
+                                                                        type="radio"
+                                                                        id="DeclByQualPers_AsRequBySect_MyAppoAsThe_TheApplOr10"
+                                                                        onchange="atLeastOne(this);" />
+                                                                </td>
+                                                                <td>the applicant, or</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td width="1%">
+                                                                    <input disabled
+                                                                        name="DeclByQualPers_AsRequBySect_MyAppoAsThe"
+                                                                        type="radio"
+                                                                        id="DeclByQualPers_AsRequBySect_MyAppoAsThe_Build10"
+                                                                        onchange="atLeastOne(this);" />
+                                                                </td>
+                                                                <td>builder</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByQualPers_AsRequBySect20" checked mandatory
+                                            event-change="DeclByQualPers_AsRequBySect20_change(this);removeManda(this);">
+                                        </cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>I.2</td>
+                                    <td>
+                                        I confirm that no building works have been commenced or
+                                        carried out at the site.
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByQualPers_iConfThatNo10"></cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>I.3</td>
+                                    <td>
+                                        I submit the following documents as required under the
+                                        Building Control Regulations :
+                                        <table class="table table-borderless table-sm" style="margin-bottom:0;">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="1%">(i)</td>
+                                                    <td>
+                                                        A summary report of the building works carried
+                                                        out/completed under my supervision; and
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>(ii)</td>
+                                                    <td>
+                                                        My certificate of supervision of the building
+                                                        works completed under my supervision.
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByQualPers_ISubmTheFoll_ASummRepoOf10"></cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>I.4</td>
+                                    <td style="padding-top:0;">
+                                        <table class="table table-borderless table-sm" style="margin-bottom:0;">
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        I have, on&nbsp;<cn2-datefield onfocusout="validateDate(this)"
+                                                            disabled id="DeclByQualPers_IHaveOn10" no-label inline="4">
+                                                        </cn2-datefield>&nbsp;notified the builder that I have ceased to
+                                                        carry out my duties as the qualified person and
+                                                        instructed the Builder :-
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input disabled name="DeclByQualPers_IHaveOn"
+                                                            onchange="atLeastOne(this);" type="radio"
+                                                            id="DeclByQualPers_IHaveOn_NotToCommOr10" />
+                                                    </td>
+                                                    <td>
+                                                        not to commence or carry out any building works at
+                                                        the site;
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input disabled name="DeclByQualPers_IHaveOn"
+                                                            onchange="atLeastOne(this);" type="radio"
+                                                            id="DeclByQualPers_IHaveOn_CeasAllBuilWork10" />
+                                                    </td>
+                                                    <td>
+                                                        cease all building works at the site until another
+                                                        qualified person has been appointed by the
+                                                        applicant and a fresh permit to commence or carry
+                                                        out building works obtained.
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByQualPers_IHaveOn20"
+                                            event-change="DeclByQualPers_IHaveOn20_change(this);">
+                                        </cn2-checkbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- <div class="mls-espo-right-inner-container borderchecking" hidden id="appoBuildDev"
+                        style="margin-bottom:65px;">
+                        <h2>Appointment of Builder(s) by Developer*</h2>
+                        (To be completed by the Developer. If more than one Specialist
+                        Builder is appointed to carry out separate parts of the same type
+                        of specialist building works, you must also inform CBC of the
+                        additional Specialist Builder(s)) <br />
+                        As required under the Building Control Act,&nbsp;<cn2-select id="DeclByOWN_1IConfThat20"
+                            no-label options="I:I,We:We" inline="2"></cn2-select>&nbsp;hereby appoint the following
+                        builder(s):
+                        <div class="mls-espro-form-fields row py-2">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <cn2-button label="Add"
+                                    event-click="insertDuplicate('builders','C1');disableDelete('builders','deleteBtnBuilders');removeUENerror('builders','DeclByOWN_1IConfThat_UEN');addDefaultValue_DeclByOWN_1IConfThat_SpecBuil10(this);">
+                                </cn2-button>
+                            </div>
+                        </div>
+                        <div id="builders">
+                            <div id="C1" class="Cfields" style="margin-bottom:20px;">
+                                <div style="display:inline-flex;min-width:500px;">
+                                    <cn2-select class="appoBuildername" id="Member_Member_Name_BLDR2010"
+                                        prefix="Member_Member_Name_BLDR20" suffix="0"
+                                        event-change="loadDropDownDetails(this);removeAddUENerror(this,'DeclByOWN_1IConfThat_UEN','0');"
+                                        data-options="appoBuildDropdown" no-label style="flex-basis: 100%;">
+                                    </cn2-select>
+
+                                    <cn2-textbox class="appoFirmname" disabled id="Member_Firm_Name_BLDR2010"
+                                        prefix="Member_Firm_Name_BLDR20" suffix="0" no-label
+                                        style="flex-basis: 100%;margin-left:20px;"></cn2-textbox>
+                                </div>
+                                &nbsp; of UEN &nbsp;
+                                <p style="max-width:300px;display: inline-table;">
+                                    <cn2-textbox event-blur="uenValidate(this);" maxlength="10" template="#########@"
+                                        prefix="DeclByOWN_1IConfThat_UEN" suffix="0" id="DeclByOWN_1IConfThat_UEN10"
+                                        no-label></cn2-textbox>
+                                </p>
+                                &nbsp; as the&nbsp;
+                                <cn2-select event-change="DeclByOWN_1IConfThat_AsThe10_change(this);"
+                                    prefix="DeclByOWN_1IConfThat_AsThe" suffix="0" inline="3"
+                                    id="DeclByOWN_1IConfThat_AsThe10"
+                                    options="General Builder:General Builder,Specialist Builder:Specialist Builder"
+                                    no-label></cn2-select>
+
+                                &nbsp; under Section 8(1)(c) of the Building Control Act.
+
+                                <br />
+                                <br />
+
+                                <cn2-select hidden prefix="DeclByOWN_1IConfThat_SpecBuil" suffix="0"
+                                    options="for piling works:for piling works,for ground support and stabilization works:for ground support and stabilization works,for structural steelwork:for structural steelwork,for pre-cast concrete work:for pre-cast concrete work,for in-situ post-tensioning work:for in-situ post-tensioning work,for site investigation work:for site investigation work,for instrumentation monitoring for projects involving Geotechnical Building Works:for instrumentation monitoring for projects involving Geotechnical Building Works"
+                                    id="DeclByOWN_1IConfThat_SpecBuil10" no-label inline="10"></cn2-select>
+                                <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2" style="float: right;">
+                                    <cn2-button id="delete1A" class="deleteBtnBuilders" prefix="delete" suffix="A"
+                                        style="float: right;"
+                                        event-click="removeDuplicate(this.id,'C1','builders');disableDelete('builders','deleteBtnBuilders')"
+                                        label="Delete" danger disabled>
+                                    </cn2-button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="mls-espo-right-inner-container borderchecking" id="termBuildDev" hidden
+                        style="margin-bottom:65px;">
+                        <h2>Termination Of Builder By Developer/Builder*</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2">I.1</td>
+                                    <td style="line-height: 50px;padding-top:0;">
+                                        I confirm that I have terminated the appointment of <br />
+                                        <div style="display:inline-flex;min-width:800px;">
+                                            <cn2-textbox hidden class="Member_Member_SID_BLDR20_1" disabled
+                                                id="Member_Member_SID_BLDR20_1" no-label
+                                                style="flex-basis: 130%;margin-left:20px;"></cn2-textbox>
+                                            <cn2-select class="Member_Member_Name_BLDR20_1"
+                                                id="Member_Member_Name_BLDR20"
+                                                event-change="loadDropDownDetails(this);removeSelectUENerror_DuplicateID('Members_UEN_BLDR20_1');"
+                                                data-options="termBuildDropdown2" no-label style="flex-basis: 70%;">
+                                            </cn2-select>
+                                            <cn2-textbox class="Member_Firm_Name_BLDR20_1" disabled
+                                                id="Member_Firm_Name_BLDR20" no-label
+                                                style="flex-basis: 130%;margin-left:20px;"></cn2-textbox>
+                                            <cn2-textbox disabled id="Member_IC_Passport_No_BLDR20" no-label
+                                                style="flex-basis: 100%;margin-left:20px;"></cn2-textbox>
+                                        </div>
+
+                                        of UEN &nbsp;
+                                        <p
+                                            style="max-width:300px;display: inline-table;margin-bottom:0;line-height: 20px;">
+                                            <cn2-textbox class="Members_UEN_BLDR20_1" event-blur="uenValidate(this);"
+                                                maxlength="10" template="#########@" id="Members_UEN_BLDR20_1" no-label>
+                                            </cn2-textbox>
+                                        </p>
+                                        &nbsp; as the
+                                        <cn2-select class="DeclByOWN_1IConfThat_AsThe10_1"
+                                            id="DeclByOWN_1IConfThat_AsThe10"
+                                            options="General Builder:General Builder,Specialist Builder:Specialist Builder"
+                                            no-label inline="4"></cn2-select>
+                                        &nbsp; and have appointed
+
+                                        <div style="display:inline-flex;min-width:800px;">
+                                            <cn2-textbox hidden class="Member_Member_SID_BLDR30_1" disabled
+                                                id="Member_Member_SID_BLDR30_1" no-label
+                                                style="flex-basis: 130%;margin-left:20px;"></cn2-textbox>
+                                            <cn2-select class="Member_Member_Name_BLDR30_1"
+                                                event-change="loadDropDownDetails(this);removeSelectUENerror_DuplicateID('Members_UEN_BLDR30_1')"
+                                                data-options="termBuildDropdown" id="Member_Member_Name_BLDR30" no-label
+                                                style="flex-basis: 70%;"></cn2-select>
+                                            <cn2-textbox class="Member_Firm_Name_BLDR30_1" disabled
+                                                id="Member_Firm_Name_BLDR30" no-label
+                                                style="flex-basis: 130%;margin-left:20px;"></cn2-textbox>
+                                            <cn2-textbox disabled id="Member_IC_Passport_No_BLDR30" no-label
+                                                style="flex-basis: 100%;margin-left:20px;"></cn2-textbox>
+                                        </div>
+                                        of UEN &nbsp;
+
+                                        <p
+                                            style="max-width:300px;display: inline-table;margin-bottom:0;line-height: 20px;">
+                                            <cn2-textbox event-blur="uenValidate(this);" maxlength="10"
+                                                template="#########@" class="Members_UEN_BLDR30_1"
+                                                id="Members_UEN_BLDR30" no-label></cn2-textbox>
+                                        </p>
+
+                                        &nbsp; as the substitute &nbsp;
+                                        <cn2-select
+                                            options="General Builder:General Builder,Specialist Builder:Specialist Builder"
+                                            id="DeclByOWN_1IConfThat_AsTheSubs10" no-label inline="4"></cn2-select>
+                                        &nbsp; for:
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table class="table table-borderless table-sm" style="margin-bottom:0;">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="1%">
+                                                        <cn2-checkbox name="DeclByOwn_1IconfThat"
+                                                            event-change="atLeastOne(this);"
+                                                            id="DeclByOWN_1IConfThat_PiliWork10"></cn2-checkbox>
+                                                    </td>
+                                                    <td width="35%">Piling Works</td>
+                                                    <td width="1%">
+                                                        <cn2-checkbox name="DeclByOwn_1IconfThat"
+                                                            event-change="atLeastOne(this);"
+                                                            id="DeclByOWN_1IConfThat_PostTensWork10"></cn2-checkbox>
+                                                    </td>
+                                                    <td>In-situ post-tensioning work</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <cn2-checkbox name="DeclByOwn_1IconfThat"
+                                                            event-change="atLeastOne(this);"
+                                                            id="DeclByOWN_1IConfThat_GrouSuppStabWork10"></cn2-checkbox>
+                                                    </td>
+                                                    <td>Ground Support and stabilization works</td>
+                                                    <td>
+                                                        <cn2-checkbox name="DeclByOwn_1IconfThat"
+                                                            event-change="atLeastOne(this);"
+                                                            id="DeclByOWN_1IConfThat_SiteInveWorkExcl10"></cn2-checkbox>
+                                                    </td>
+                                                    <td>
+                                                        Site investigation work (excluding instrumentation
+                                                        monitoring for projects involving Geotechnical
+                                                        Building Works)(see # note)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <cn2-checkbox name="DeclByOwn_1IconfThat"
+                                                            event-change="atLeastOne(this);"
+                                                            id="DeclByOWN_1IConfThat_StruSteeWork10"></cn2-checkbox>
+                                                    </td>
+                                                    <td>Structural Steelwork</td>
+                                                    <td>
+                                                        <cn2-checkbox name="DeclByOwn_1IconfThat"
+                                                            event-change="atLeastOne(this);"
+                                                            id="DeclByOWN_1IConfThat_SiteInveWorkIncl10"></cn2-checkbox>
+                                                    </td>
+                                                    <td>
+                                                        Site investigation work on instrumentation
+                                                        monitoring for projects involving Geotechnical
+                                                        Building Works(see # note)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <cn2-checkbox name="DeclByOwn_1IconfThat"
+                                                            event-change="atLeastOne(this);"
+                                                            id="DeclByOWN_1IConfThat_PreCastConcWork10"></cn2-checkbox>
+                                                    </td>
+                                                    <td colspan="3">Pre-cast concrete work</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking" id="particularOutSS" hidden>
+                        <h2>Section I Particulars of Outgoing Site Supervisor</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr hidden>
+                                    <td>Member ID</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Member_SID_SS10" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">Name*</td>
+                                    <td>
+                                        <cn2-select id="Member_Member_Name_SS10"
+                                            event-change="loadDropDownDetails(this);removeSelectUENerror('Members_UEN_SS10');nricMasking(Member_NRIC_SS10_masked)"
+                                            data-options="ssDropdown" no-label></cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>NRIC/Passport No.</td>
+                                    <td hidden nricUnmasked>
+                                        <cn2-textbox disabled id="Member_NRIC_SS10" no-label></cn2-textbox>
+                                    </td>
+                                    <td nricMasked>
+                                        <cn2-textbox disabled id="Member_NRIC_SS10_masked" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Profession</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Designation_SS10" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Firm Name</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Firm_Name_SS10" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>UEN</td>
+                                    <td>
+                                        <cn2-textbox template="#########@" maxlength="10"
+                                            event-blur="uenValidate(this);" id="Members_UEN_SS10" no-label>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Address</td>
+                                    <td>
+                                        <cn2-textarea disabled id="Member_Address_SS10" no-label></cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Telephone No.</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Tel_No_SS10" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Handphone No.</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Mobile_No_SS10" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email Address</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Email_Address1_SS10" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking" id="particularOutSS" hidden
+                        style="margin-bottom:65px;">
+                        <h2>Declaration by Outgoing Site Supervisor*</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td style="padding-top:19px;">I.1</td>
+                                    <td>
+                                        As required by Section 10(6) of the Building Control Act,
+                                        with effect from &nbsp;
+                                        <cn2-datefield onfocusout="validateDate(this)" disabled
+                                            id="DeclByOutgSite_AsRequBySect10" no-label inline="4">
+                                        </cn2-datefield>, I have ceased to carry out my duties as the
+                                        <cn2-select disabled inline="3" options="RE:RE,RTO:RTO"
+                                            id="DeclByOutgSite_AsRequBySect20" no-label>
+                                        </cn2-select>
+                                        &nbsp; in respect of the structural works described
+                                        herein.
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox
+                                            event-change="DeclByOutgSite_AsRequBySect30_change(this);removeManda(this)"
+                                            id="DeclByOutgSite_AsRequBySect30"></cn2-checkbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking" id="termReapLiceSBD" hidden>
+                        <h2>
+                            Termination/Reappointment of Specialist Builder By Developer/Builder
+                        </h2>
+                        <table class="table table-bordered" style="margin-bottom: 0px;border-bottom: 0px;">
+                            <tbody>
+                                <tr>
+                                    <td>I.1</td>
+                                    <td>
+                                        I confirm that I have terminated <br />
+                                        <span style="line-height: 45px;">
+                                            <div style="display:inline-flex;min-width:500px;">
+                                                <cn2-textbox class="Member_Member_SID_BLDR20_2" disabled
+                                                    id="Member_Member_SID_BLDR20_2" no-label
+                                                    style="flex-basis: 130%;margin-left:20px;"></cn2-textbox>
+                                                <cn2-select disabled class="Member_Member_Name_BLDR20_2"
+                                                    event-change="loadDropDownDetails(this);removeSelectUENerror_DuplicateID('Members_UEN_BLDR20_2');"
+                                                    data-options="termiReapDropdown" id="Member_Member_Name_BLDR20"
+                                                    no-label style="flex-basis: 70%;"></cn2-select>
+                                                <cn2-textbox class="Member_Firm_Name_BLDR20_2" disabled
+                                                    id="Member_Firm_Name_BLDR20" no-label
+                                                    style="flex-basis: 130%;margin-left:20px;"></cn2-textbox>
+                                            </div>
+                                            of UEN &nbsp;
+
+                                            <p
+                                                style="max-width:300px;display: inline-table;margin-bottom:0;line-height: 20px;">
+                                                <cn2-textbox class="Members_UEN_BLDR20_2" disabled
+                                                    event-blur="uenValidate(this);" maxlength="10" template="#########@"
+                                                    id="Members_UEN_BLDR20" no-label></cn2-textbox>
+                                            </p>
+                                            &nbsp; as the Licensed Specialist Builder, and
+                                            re-appoint &nbsp;
+                                            <div style="display:inline-flex;min-width:500px;">
+                                                <cn2-textbox hidden class="Member_Member_SID_BLDR30_2" disabled
+                                                    id="Member_Member_SID_BLDR30_2" no-label
+                                                    style="flex-basis: 130%;margin-left:20px;"></cn2-textbox>
+                                                <cn2-select disabled class="Member_Member_Name_BLDR30_2"
+                                                    event-change="loadDropDownDetails(this);removeSelectUENerror_DuplicateID('Members_UEN_BLDR30_2');"
+                                                    data-options="termiReapDropdown2" id="Member_Member_Name_BLDR30"
+                                                    no-label style="flex-basis: 70%;"></cn2-select>
+                                                <cn2-textbox class="Member_Firm_Name_BLDR30_2" disabled
+                                                    id="Member_Firm_Name_BLDR30" no-label
+                                                    style="flex-basis: 130%;margin-left:20px;"></cn2-textbox>
+                                            </div>
+                                            of UEN &nbsp;
+
+                                            <p
+                                                style="max-width:300px;display: inline-table;margin-bottom:0;line-height: 20px;">
+                                                <cn2-textbox event-blur="uenValidate(this);"
+                                                    class="Members_UEN_BLDR30_2" disabled maxlength="10"
+                                                    template="#########@" id="Members_UEN_BLDR30" no-label>
+                                                </cn2-textbox>
+                                            </p>
+                                        </span>
+
+                                        &nbsp; as Licensed Specialist Builder under Section
+                                        8(1)(f)(ii) of the Building Control Act to monitor
+                                        instruments measuring pore pressures for saturated and
+                                        unsaturated levels, ground-water levels, ground movements
+                                        or building movements and to measure forces, deformations
+                                        or displacements. (for projects involving Geotechnical
+                                        Building Works only)
+                                    </td>
+                                    <td>
+                                        <input type="radio" name="DeclByOWN" onchange="DeclByOWN_1IConfThat10(this);"
+                                            id="DeclByOWN_1IConfThat10" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered" style="margin-bottom: 0px;border-bottom: 0px;">
+                            <tbody>
+                                <tr>
+                                    <td style="padding-top:19px;">I.2</td>
+                                    <td>
+                                        I confirm that I have terminated the appointment of
+                                        <div style="display:inline-flex;min-width:500px;">
+                                            <cn2-textbox hidden id="Member_Member_SID_BLDR40" disabled no-label
+                                                style="flex-basis: 100%;margin-bottom:5px; margin-left:10px;">
+                                            </cn2-textbox>
+                                            <cn2-select
+                                                event-change="loadDropDownDetails(this);removeSelectUENerror('Members_UEN_BLDR40');nricMasking(Member_NRIC_BLDR40_masked)"
+                                                data-options="termiSpecBuildDropdown" id="Member_Member_Name_BLDR40"
+                                                no-label style="flex-basis: 70%;">
+                                            </cn2-select>
+                                            <cn2-textbox id="Member_Firm_Name_BLDR40" disabled no-label
+                                                style="flex-basis: 100%;margin-bottom:5px; margin-left:10px;">
+                                            </cn2-textbox>&nbsp;
+                                            <cn2-textbox id="Member_NRIC_BLDR40" disabled hidden no-label hidden
+                                                nricUnmasked
+                                                style="flex-basis: 100%;margin-bottom:5px; margin-left:10px;">
+                                            </cn2-textbox>
+                                            <cn2-textbox id="Member_NRIC_BLDR40_masked" disabled no-label nricMasked
+                                                style="flex-basis: 100%;margin-bottom:5px; margin-left:10px;">
+                                            </cn2-textbox>
+                                        </div>
+                                        , of UEN &nbsp;
+                                        <p style="max-width:300px;display: inline-table;margin-bottom:0;">
+                                            <cn2-textbox event-blur="uenValidate(this);" maxlength="10"
+                                                template="#########@" id="Members_UEN_BLDR40" no-label></cn2-textbox>
+                                        </p>
+                                        &nbsp;as the&nbsp;<cn2-select inline="4"
+                                            options="General Builder:General Builder,Specialist Builder:Specialist Builder"
+                                            id="Members_Role_BLDR40" no-label></cn2-select> and have appointed
+                                        <div style="display:inline-flex;min-width:500px; margin-top: 5px;">
+                                            <cn2-textbox hidden id="Member_Member_SID_BLDR40_2" disabled no-label
+                                                style="flex-basis: 100%;margin-bottom:5px; margin-left:10px;">
+                                            </cn2-textbox>
+                                            <cn2-select
+                                                event-change="loadDropDownDetails(this);removeSelectUENerror('Members_UEN_BLDR40_2');nricMasking(Member_NRIC_BLDR40_2_masked)"
+                                                data-options="termiSpecBuildDropdown2" id="Member_Member_Name_BLDR40_2"
+                                                no-label style="flex-basis: 70%;">
+                                            </cn2-select>
+                                            <cn2-textbox id="Member_Firm_Name_BLDR40_2" disabled no-label
+                                                style="flex-basis: 100%;margin-bottom:5px; margin-left:10px;">
+                                            </cn2-textbox>&nbsp;
+                                            <cn2-textbox id="Member_NRIC_BLDR40_2" disabled hidden no-label hidden
+                                                nricUnmasked
+                                                style="flex-basis: 100%;margin-bottom:5px; margin-left:10px;">
+                                            </cn2-textbox>
+                                            <cn2-textbox id="Member_NRIC_BLDR40_2_masked" disabled no-label nricMasked
+                                                style="flex-basis: 100%;margin-bottom:5px; margin-left:10px;">
+                                            </cn2-textbox>
+                                        </div>
+                                        , of UEN &nbsp;
+                                        <p style="max-width:300px;display: inline-table;margin-bottom:0;">
+                                            <cn2-textbox event-blur="uenValidate(this);" maxlength="10"
+                                                template="#########@" id="Members_UEN_BLDR40_2" no-label></cn2-textbox>
+                                        </p>
+                                        &nbsp;as the substitute&nbsp;<cn2-select inline="4"
+                                            options="General Builder:General Builder,Specialist Builder:Specialist Builder"
+                                            id="Members_Role_BLDR40_2" no-label>
+                                        </cn2-select>
+                                        &nbsp; for :<br>
+                                        <table class="table table-borderless table-sm" style="margin-bottom:0;">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="1%">
+                                                        <cn2-checkbox id="DeclByOWN_AsLiceSpecBuil40">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td width="49%">Piling works</td>
+                                                    <td width="1%">
+                                                        <cn2-checkbox id="DeclByOWN_AsLiceSpecBuil30">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td width="49%">In-situ post-tensioning works</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <cn2-checkbox id="DeclByOWN_AsLiceSpecBuil10_10">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td>Ground support and stabilization works</td>
+                                                    <td>
+                                                        <cn2-checkbox id="DeclByOWN_AsLiceSpecBuil50">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td>
+                                                        Site investigation work (excluding instrumentation
+                                                        monitoring
+                                                        for projects involving Geotechnical Building Works (see #
+                                                        note)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <cn2-checkbox id="DeclByOWN_AsLiceSpecBuil70">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td>Structural steelwork</td>
+                                                    <td>
+                                                        <cn2-checkbox id="DeclByOWN_AsLiceSpecBuil60">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td>Site investigation work on instrumentation monitoring for
+                                                        projects involving Geotechnical Building Works (see # note)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <cn2-checkbox id="DeclByOWN_AsLiceSpecBuil20">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td>Pre-cast concrete works</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <input type="radio" name="DeclByOWN" onchange="DeclByOWN_1IConfThat10(this);"
+                                            id="DeclByOWN_2IConfThat10" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td style="padding-top:19px;">I.3</td>
+                                    <td>
+                                        I confirm that I have terminated
+                                        <div style="display:inline-flex;min-width:500px;">
+                                            <cn2-textbox hidden id="Member_Member_SID_BLDR40_1" disabled no-label
+                                                style="flex-basis: 130%;margin-left:20px;"></cn2-textbox>
+                                            <cn2-select
+                                                event-change="loadDropDownDetails(this);removeSelectUENerror('Members_UEN_BLDR40_1');"
+                                                data-options="termiSpecDevOrBuildDropdown"
+                                                id="Member_Member_Name_BLDR40_1" no-label style="flex-basis: 70%;">
+                                            </cn2-select>
+                                            <cn2-textbox id="Member_Firm_Name_BLDR40_1" disabled no-label
+                                                style="flex-basis: 130%;margin-left:20px;"></cn2-textbox>
+                                        </div>
+                                        , of UEN &nbsp;
+                                        <p style="max-width:300px;display: inline-table;margin-bottom:0;">
+                                            <cn2-textbox event-blur="uenValidate(this);" maxlength="10"
+                                                template="#########@" id="Members_UEN_BLDR40_1" no-label></cn2-textbox>
+                                        </p>
+                                        &nbsp; Licensed Specialist Builder under Section 11(1)(g)
+                                        of the Building Control Act to carry out the following
+                                        specialist building work:
+                                        <table class="table table-borderless table-sm" style="margin-bottom:0;">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="1%">
+                                                        <cn2-checkbox id="DeclByOWN_AsLiceSpecBuil10_20">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td>Ground support and stabilization works</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <cn2-checkbox id="DeclByOWN_AsLiceSpecBuil20_1">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td>Pre-cast concrete works</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <cn2-checkbox id="DeclByOWN_AsLiceSpecBuil30_1">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td>In-situ post-tensioning works</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <cn2-checkbox id="DeclByOWN_AsLiceSpecBuil40_1">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td>Piling works</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <cn2-checkbox id="DeclByOWN_AsLiceSpecBuil50_1">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td>
+                                                        Site investigation and instrumentation monitoring
+                                                        works
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <cn2-checkbox id="DeclByOWN_AsLiceSpecBuil60_1">
+                                                        </cn2-checkbox>
+                                                    </td>
+                                                    <td>Structural steelworks</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <input type="radio" name="DeclByOWN" onchange="DeclByOWN_1IConfThat10(this);"
+                                            id="DeclByOWN_3IConfThat10" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="page5">
+                    <div class="mls-espo-right-inner-container borderchecking" id="particularSpecBuild" hidden>
+                        <h2>Section II Particulars of Specialist Builder</h2>
+                        <cn2-button label="Add" id="PartOfTheOWNER_Add10"
+                            event-click="insertDuplicate('particularsOfSpecialistBuilder','E1');removeUENerror('particularsOfSpecialistBuilder','Member_UEN_BLDR50');disableDelete('particularsOfSpecialistBuilder','particularsOfSpecialistBuilder_delete');removeMasking('particularsOfSpecialistBuilder','Member_NRIC_BLDR50','Member_NRIC_MASKED_BLDR50');">
+                        </cn2-button>
+                        <div id="accordion3">
+                            <div id="particularsOfSpecialistBuilder">
+                                <div id="E1" class="Efields" parent>
+                                    <h2 class="accordion-toggle">
+                                        <table class="table table-borderless">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="align-bottom">
+                                                        <cn2-select id="Member_Member_Name_BLDR5010"
+                                                            prefix="Member_Member_Name_BLDR50"
+                                                            event-change="loadDropDownDetails(this);removeAddUENerror(this,'Member_UEN_BLDR50','0');nricMaskingAccor(this,'Member_NRIC_MASKED_BLDR50')"
+                                                            data-options="specBuildDropdown"
+                                                            label="Name of Technical Controller" suffix="0">
+                                                        </cn2-select>
+                                                    </td>
+                                                    <td>
+                                                        <cn2-textbox id="Member_Firm_Name_BLDR5010" label="Firm Name"
+                                                            prefix="Member_Firm_Name_BLDR50" suffix="0" disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                    <td>
+                                                        <cn2-select id="Member_Title_BLDR5010"
+                                                            prefix="Member_Title_BLDR50" suffix="0" label="Title"
+                                                            options="Dr:Dr,Er:Er,Mdm:Mdm,Mr:Mr,Mrs:Mrs,Ms:Ms">
+                                                        </cn2-select>
+                                                    </td>
+
+                                                    <td width="5%" class="align-bottom">
+
+                                                        <cn2-button style="float:right" label="Delete" disabled
+                                                            id="PartOfTheOWNER_Delete10"
+                                                            class="particularsOfSpecialistBuilder_delete"
+                                                            prefix="PartOfTheOWNER_Delete" suffix="0" danger
+                                                            event-click="removeDuplicate(this.id,'E1','particularsOfSpecialistBuilder');disableDelete('particularsOfSpecialistBuilder','particularsOfSpecialistBuilder_delete');">
+                                                        </cn2-button>
+
+                                                    </td>
+                                                    <td width="5%">
+                                                        <span class="fa fa-angle-down collapsed" data-toggle="collapse"
+                                                            href="#collapse3" id="#collapse3" prefix="#collapse3" child
+                                                            onclick="spanUpDown(this)" aria-expanded="false"></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </h2>
+                                    <div id="collapse3" class="panel-collapse collapse" child="div" prefix="collapse3">
+                                        <table class="table table-borderless">
+                                            <tbody>
+                                                <tr hidden>
+                                                    <td>Member ID</td>
+                                                    <td>
+                                                        <cn2-textbox no-label prefix="Member_Member_SID_BLDR50"
+                                                            suffix="0" id="Member_Member_SID_BLDR5010" disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>NRIC/Passport No.</td>
+                                                    <td hidden nricUnmasked>
+                                                        <cn2-textbox disabled id="Member_NRIC_BLDR5010"
+                                                            prefix="Member_NRIC_BLDR50" suffix="0" no-label>
+                                                            </cn2-0.textbox>
+                                                    </td>
+                                                    <td nricMasked>
+                                                        <cn2-textbox disabled id="Member_NRIC_MASKED_BLDR5010"
+                                                            prefix="Member_NRIC_MASKED_BLDR50" suffix="0" no-label>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="28%">UEN</td>
+                                                    <td>
+                                                        <cn2-textbox no-label prefix="Member_UEN_BLDR50" suffix="0"
+                                                            maxlength="10" template="#########@"
+                                                            event-blur="uenValidate(this)" id="Member_UEN_BLDR5010">
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Address</td>
+                                                    <td>
+                                                        <cn2-textarea no-label prefix="Member_Address_BLDR50" suffix="0"
+                                                            id="Member_Address_BLDR5010" disabled>
+                                                        </cn2-textarea>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Telephone No.</td>
+                                                    <td>
+                                                        <cn2-textbox no-label prefix="Member_Tel_No_BLDR50" suffix="0"
+                                                            id="Member_Tel_No_BLDR5010" disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Handphone No.</td>
+                                                    <td>
+                                                        <cn2-textbox no-label prefix="Member_Mobile_No_BLDR50"
+                                                            suffix="0" id="Member_Mobile_No_BLDR5010" disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Email Address</td>
+                                                    <td>
+                                                        <cn2-textarea no-label prefix="Member_Email_Address1_BLDR50"
+                                                            suffix="0" id="Member_Email_Address1_BLDR5010" disabled>
+                                                        </cn2-textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking" id="particularSpecBuild" hidden>
+                        <h2>Declaration by Specialist Builder on Appointment*</h2>
+                        (To be completed by the Specialist Builder)
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span style="line-height: 45px;">
+                                            <cn2-select disabled options="I:I,We:We" inline="2" id="DeclByQualPers10"
+                                                no-label></cn2-select>
+                                            &nbsp;confirm that &nbsp;
+                                            <cn2-select disabled options="I am:I am,We are:We are" inline="2"
+                                                id="DeclByQualPers_ConfThat10" no-label></cn2-select>&nbsp;the appointed
+                                            Specialist Builder(s) to carry out
+                                            the specialist building works as indicated in Section I and&nbsp;
+                                            <cn2-select disabled options="I:I,We:We" inline="2"
+                                                id="DeclByQualPers_AppoSpecBuil20" no-label>
+                                            </cn2-select>&nbsp;shall
+                                            ensure that the specialist building works
+                                            are carried out in accordance with:
+                                        </span>
+                                        <table class="table table-borderless table-sm" style="margin-bottom:0;">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="1%">(1)</td>
+                                                    <td>The provisions of this Act</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>(2)</td>
+                                                    <td>
+                                                        Subject to section 6A, the building regulations
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>(3)</td>
+                                                    <td>
+                                                        The relevant plans approved by the Commissioner of
+                                                        Building Control and
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>(4)</td>
+                                                    <td>
+                                                        Any terms and conditions imposed by the
+                                                        Commissioner of Building Control
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByQualPers_IConfThat10"
+                                            event-change="removeManda(this);DeclByQualPers_IConfThat10_change(this);">
+                                        </cn2-checkbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking" id="particularQPSS" hidden>
+                        <h2>
+                            Section II Particulars of Qualified Person for Structural Works:
+                        </h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr hidden>
+                                    <td>Member ID</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Member_SID_HDBPE10" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">Name*</td>
+                                    <td>
+                                        <cn2-select
+                                            event-change="loadDropDownDetails(this);removeSelectUENerror('Members_UEN_HDBPE10');"
+                                            data-options="qpSSDropdown" id="Member_Member_Name_HDBPE10" no-label>
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Registration No.</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Professional_No_HDBPE10" no-label>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Firm Name</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Firm_Name_HDBPE10" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>UEN</td>
+                                    <td>
+                                        <cn2-textbox maxlength="10" template="#########@"
+                                            event-blur="uenValidate(this);" id="Members_UEN_HDBPE10" no-label>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Address</td>
+                                    <td>
+                                        <cn2-textarea disabled id="Member_Address_HDBPE10" no-label></cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Telephone No.</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Tel_No_HDBPE10" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Handphone No.</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Mobile_No_HDBPE10" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email Address</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Email_Address1_HDBPE10" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking" id="particularQPSS" hidden
+                        style="margin-bottom:65px;">
+                        <h2>Declaration by Qualified Person For Structural Works*</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">II.1</td>
+                                    <td>
+                                        I have appointed the new Site Supervisor whose particulars
+                                        are as shown in Section III to undertake : -
+                                        <table class="table table-borderless table-sm" style="margin-bottom:0">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <input disabled type="radio" onchange="atLeastOne(this);"
+                                                            name="DeclByQualPers_IHaveAppoThe"
+                                                            id="DeclByQualPers_IHaveAppoThe_ImmeSupeOfCrit10" />
+                                                    </td>
+                                                    <td>
+                                                        a. Immediate supervision of critical structural
+                                                        works as required in Section 7(1)(c) of the
+                                                        Building Control Act
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input disabled type="radio" onchange="atLeastOne(this);"
+                                                            name="DeclByQualPers_IHaveAppoThe"
+                                                            id="DeclByQualPers_IHaveAppoThe_FullTimeSupeOf10" />
+                                                    </td>
+                                                    <td>
+                                                        b. Full-time supervision of critical structural
+                                                        works as required in Section 7(1)(b) of the
+                                                        Building Control Act
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByQualPers_IHaveAppoThe10"
+                                            event-change="DeclByQualPers_IHaveAppoThe10_change(this);removeManda(this);">
+                                        </cn2-checkbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking" id="particularOutgoBuilSpecBuil" hidden>
+                        <h2>
+                            Section II Particulars of Outgoing Licensed Specialist Builder
+                        </h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr hidden>
+                                    <td>Member ID</td>
+                                    <td>
+                                        <cn2-textbox class="outgoinMemId" disabled id="Member_Member_SID_BLDR50"
+                                            no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">Name of Technical Controller*</td>
+                                    <td>
+                                        <cn2-select class="outgoinName"
+                                            event-change="loadDropDownDetails(this);removeSelectUENerror_DuplicateID('outgoinUEN');nricMasking(Member_NRIC_BLDR50_Masked)"
+                                            data-options="outBuilSpecBuilDropdown" id="Member_Member_Name_BLDR50"
+                                            no-label></cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Title</td>
+                                    <td>
+                                        <cn2-select class="outgoinTitle"
+                                            options="Dr:Dr,Er:Er,Mdm:Mdm,Mr:Mr,Mrs:Mrs,Ms:Ms" id="Member_Title_BLDR50"
+                                            no-label></cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>NRIC/Passport No.</td>
+                                    <td hidden nricUnmasked>
+                                        <cn2-textbox no-label id="Member_NRIC_BLDR50" class="outgoinNric" disabled>
+                                        </cn2-textbox>
+                                    </td>
+                                    <td nricMasked>
+                                        <cn2-textbox no-label id="Member_NRIC_BLDR50_Masked" class="outgoinNricMasked"
+                                            disabled>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Firm Name</td>
+                                    <td>
+                                        <cn2-textbox class="outgoinFirmname" disabled id="Member_Firm_Name_BLDR50"
+                                            no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>UEN</td>
+                                    <td>
+                                        <cn2-textbox class="outgoinUEN" maxlength="10" template="#########@"
+                                            event-blur="uenValidate(this);" id="Members_UEN_BLDR50" no-label>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Address</td>
+                                    <td>
+                                        <cn2-textarea class="outgoinAddress" disabled id="Member_Address_BLDR50"
+                                            no-label></cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Telephone No.</td>
+                                    <td>
+                                        <cn2-textbox class="outgoinTelNo" disabled id="Member_Tel_No_BLDR50" no-label>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Handphone No.</td>
+                                    <td>
+                                        <cn2-textbox class="outgoinHandNo" disabled id="Member_Mobile_No_BLDR50"
+                                            no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email Address</td>
+                                    <td>
+                                        <cn2-textbox class="outgoinEmailAddress" disabled
+                                            id="Member_Email_Address1_BLDR50" no-label>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking" id="particularOutgoBuilSpecBuil" hidden>
+                        <h2>Notification on Termination of Appointment by Licensed Specialist Builder*</h2>
+                        (To be completed and submitted by the outgoing specialist builder within 14
+                        days of his ceasing to carry out his duties.)
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2" style="padding-top:19px;">II.1</td>
+                                    <td>
+                                        I confirm that I have ceased my duties with effect from
+                                        &nbsp;
+                                        <cn2-datefield onfocusout="validateDate(this)" no-label
+                                            id="DeclByOWN_2IConfThat_Date10" inline="4">
+                                        </cn2-datefield>&nbsp; as the specialist builder for:
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table class="table table-borderless table-sm" style="margin-bottom:0;">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="1%">
+                                                        <cn2-checkbox name="DeclByOWN_2IConfThat"
+                                                            event-change="atLeastOne(this);"
+                                                            id="DeclByOWN_2IConfThat_PiliWork10"></cn2-checkbox>
+                                                    </td>
+                                                    <td width="35%">Piling Works</td>
+                                                    <td width="1%">
+                                                        <cn2-checkbox name="DeclByOWN_2IConfThat"
+                                                            event-change="atLeastOne(this);"
+                                                            id="DeclByOWN_2IConfThat_PostTensWork10"></cn2-checkbox>
+                                                    </td>
+                                                    <td>In-situ post-tensioning work</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <cn2-checkbox name="DeclByOWN_2IConfThat"
+                                                            event-change="atLeastOne(this);"
+                                                            id="DeclByOWN_2IConfThat_GrouSuppStabWork10"></cn2-checkbox>
+                                                    </td>
+                                                    <td>Ground Support and stabilization works</td>
+                                                    <td>
+                                                        <cn2-checkbox name="DeclByOWN_2IConfThat"
+                                                            event-change="atLeastOne(this);"
+                                                            id="DeclByOWN_2IConfThat_SiteInveWorkExcl10"></cn2-checkbox>
+                                                    </td>
+                                                    <td>
+                                                        Site investigation work (excluding instrumentation
+                                                        monitoring for projects involving Geotechnical
+                                                        Building Works)(see # note)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <cn2-checkbox name="DeclByOWN_2IConfThat"
+                                                            event-change="atLeastOne(this);"
+                                                            id="DeclByOWN_2IConfThat_StruSteeWork10"></cn2-checkbox>
+                                                    </td>
+                                                    <td>Structural Steelwork</td>
+                                                    <td>
+                                                        <cn2-checkbox name="DeclByOWN_2IConfThat"
+                                                            event-change="atLeastOne(this);"
+                                                            id="DeclByOWN_2IConfThat_SiteInveWorkIncl10"></cn2-checkbox>
+                                                    </td>
+                                                    <td>
+                                                        Site investigation work on instrumentation
+                                                        monitoring for projects involving Geotechnical
+                                                        Building Works(see # note)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <cn2-checkbox name="DeclByOWN_2IConfThat"
+                                                            event-change="atLeastOne(this);"
+                                                            id="DeclByOWN_2IConfThat_PreCastConcWork10"></cn2-checkbox>
+                                                    </td>
+                                                    <td colspan="3">Pre-cast concrete work</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="page6">
+                    <div class="mls-espo-right-inner-container borderchecking" id="particularSS" hidden>
+                        <h2>Section III Particulars of Incoming Site Supervisor</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr hidden>
+                                    <td>Member ID</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Member_SID_SS20" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">Name*</td>
+                                    <td>
+                                        <cn2-select
+                                            event-change="loadDropDownDetails(this);removeSelectUENerror('Members_UEN_SS20');nricMasking(Member_Member_NRIC_SS20_masked)"
+                                            data-options="SSDropdown" id="Member_Member_Name_SS20" no-label>
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>NRIC/Passport No.</td>
+                                    <td hidden nricUnmasked>
+                                        <cn2-textbox disabled id="Member_Member_NRIC_SS20" no-label>
+                                            </cn2-0.textbox>
+                                    </td>
+                                    <td nricMasked>
+                                        <cn2-textbox disabled id="Member_Member_NRIC_SS20_masked" no-label>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Profession</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Designation_SS20" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Firm Name</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Firm_Name_SS20" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>UEN</td>
+                                    <td>
+                                        <cn2-textbox maxlength="10" event-blur="uenValidate(this);"
+                                            template="#########@" id="Members_UEN_SS20" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Address</td>
+                                    <td>
+                                        <cn2-textarea disabled id="Member_Address_SS20" no-label></cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Telephone No.</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Tel_No_SS20" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Handphone No.</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Mobile_No_SS20" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email Address</td>
+                                    <td>
+                                        <cn2-textbox disabled id="Member_Email_Address1_SS20" no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking" id="particularSS" hidden
+                        style="margin-bottom:65px;">
+                        <h2>Declaration by Incoming Site Supervisor</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td>III.1</td>
+                                    <td>
+                                        I confirm that I have been appointed as the site
+                                        supervisor under Section 10 of the Building Control Act to
+                                        undertake supervision as defined by the Qualified Person
+                                        for Structural Works.
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByIncoSite_IConfThatI10"></cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>III.2</td>
+                                    <td>
+                                        I declare that I am not a partner, officer or employee of
+                                        the builder or any associate of the builder.
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByIncoSite_IDeclThatI10"></cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>III.3</td>
+                                    <td>
+                                        I declare that I am not supervising any other projects on
+                                        a full-time basis.
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByIncoSite_IDeclThatIAm20"></cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>III.4</td>
+                                    <td>
+                                        I declare that I am supervising &nbsp;<cn2-textbox disabled numeric
+                                            maxlength="4" id="DeclByIncoSite_IDeclThatIAm10_1" no-label inline="4">
+                                        </cn2-textbox>
+                                        &nbsp; (state total no.) projects which do not require
+                                        full-time supervision and I am able to provide immediate
+                                        supervision to all these projects.
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByIncoSite_IDeclThatIAm10"
+                                            event-change="DeclByIncoSite_IDeclThatIAm10_change(this);"></cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>III.5</td>
+                                    <td>
+                                        A photo copy of my letter of acceptance as &nbsp;
+                                        <cn2-select options="RTO:RTO,RE:RE" id="DeclByIncoSite_APhotOfMy20" no-label
+                                            inline="3">
+                                        </cn2-select>&nbsp; is attached.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking" id="termReapLiceSBD" hidden>
+                        <h2>Section III Particulars of Incoming Licensed Specialist Builder</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr hidden>
+                                    <td>Member ID</td>
+                                    <td>
+                                        <cn2-textbox class="liceMemId" disabled id="Member_Member_SID_BLDR70" no-label>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">Name of Technical Controller*</td>
+                                    <td>
+                                        <cn2-select class="liceName"
+                                            event-change="loadDropDownDetails(this);removeSelectUENerror_DuplicateID('liceUEN');nricMasking(Member_NRIC_BLDR70_Masked)"
+                                            data-options="incBuilSpecBuilDropdown" id="Member_Member_Name_BLDR70"
+                                            no-label></cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Title</td>
+                                    <td>
+                                        <cn2-select class="liceTitle" options="Dr:Dr,Er:Er,Mdm:Mdm,Mr:Mr,Mrs:Mrs,Ms:Ms"
+                                            id="Member_Title_BLDR70" no-label></cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>NRIC/Passport No.</td>
+                                    <td hidden nricUnmasked>
+                                        <cn2-textbox no-label id="Member_NRIC_BLDR70" class="liceNric" disabled>
+                                        </cn2-textbox>
+                                    </td>
+                                    <td nricMasked>
+                                        <cn2-textbox no-label id="Member_NRIC_BLDR70_Masked" class="liceNricMasked"
+                                            disabled>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Firm Name</td>
+                                    <td>
+                                        <cn2-textbox class="liceFirmname" disabled id="Member_Firm_Name_BLDR70"
+                                            no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>UEN</td>
+                                    <td>
+                                        <cn2-textbox class="liceUEN" maxlength="10" template="#########@"
+                                            event-blur="uenValidate(this);" id="Members_UEN_BLDR70" no-label>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Address</td>
+                                    <td>
+                                        <cn2-textarea class="liceAddress" disabled id="Member_Address_BLDR70" no-label>
+                                        </cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Telephone No.</td>
+                                    <td>
+                                        <cn2-textbox class="liceTelNo" disabled id="Member_Tel_No_BLDR70" no-label>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Handphone No.</td>
+                                    <td>
+                                        <cn2-textbox class="liceHandNo" disabled id="Member_Mobile_No_BLDR70" no-label>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email Address</td>
+                                    <td>
+                                        <cn2-textbox class="liceEmail" disabled id="Member_Email_Address1_BLDR70"
+                                            no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mls-espo-right-inner-container borderchecking" id="termReapLiceSBD" hidden>
+                        <h2>Declaration by Specialist Builder on Appointment*</h2>
+                        (To be completed by the Specialist Builder)
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span style="line-height: 45px;">
+                                            <cn2-select disabled options="I:I,We:We" inline="2" id="DeclByQualPers10"
+                                                class="DeclByQualPers10_1" no-label></cn2-select>
+                                            &nbsp;confirm that &nbsp;
+                                            <cn2-select disabled options="I am:I am,We are:We are" inline="2"
+                                                id="DeclByQualPers_ConfThat10" class="DeclByQualPers_ConfThat10_1"
+                                                no-label>
+                                            </cn2-select>&nbsp;the appointed
+                                            Specialist Builder(s) to carry out
+                                            the specialist building works as indicated in Section I and&nbsp;
+                                            <cn2-select disabled options="I:I,We:We" inline="2"
+                                                id="DeclByQualPers_AppoSpecBuil20"
+                                                class="DeclByQualPers_AppoSpecBuil20_1" no-label>
+                                            </cn2-select>&nbsp;shall
+                                            ensure that the specialist building works
+                                            are carried out in accordance with:
+                                        </span>
+                                        <table class="table table-borderless table-sm" style="margin-bottom:0;">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="1%">(1)</td>
+                                                    <td>The provisions of this Act</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>(2)</td>
+                                                    <td>
+                                                        Subject to section 6A, the building regulations
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>(3)</td>
+                                                    <td>
+                                                        The relevant plans approved by the Commissioner of
+                                                        Building Control and
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>(4)</td>
+                                                    <td>
+                                                        Any terms and conditions imposed by the
+                                                        Commissioner of Building Control
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <cn2-checkbox id="DeclByQualPers_IConfThat20"
+                                            event-change="removeManda(this);DeclByQualPers_IConfThat10_change(this);">
+                                        </cn2-checkbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <cn2-version-footer></cn2-version-footer>
+        <cn2-fixed-footer></cn2-fixed-footer>
+    </div>
+</body>
+
+</html>

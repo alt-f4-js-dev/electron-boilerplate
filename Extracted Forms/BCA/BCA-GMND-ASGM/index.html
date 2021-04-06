@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>BCA-GMND-ASGM</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="index.js"></script>
+
+</head>
+
+<body>
+  <cn2-master-head title="SUBMISSION OF DOCUMENTATION IN SUPPORT OF GREEN MARK SCORE <br> Regulation 7 and 9 of the Building Control (Environmental
+    Sustainability) Regulations 2008 (Cap 29)"></cn2-master-head>
+  <input type="hidden" id="member_id" name="member_id" />
+  <input type="hidden" id="form_validated" name="form_validated" />
+  <!-- <div id="maskID" hidden class="text-center">
+        <img src="loader.gif" style="height: 100%;" />
+    </div> -->
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p><b>For enquiries related to forms, please contact the following:</b></p>
+        <p> <span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="4">BCA (Minimum Environmental Sustainability Std for Existing Bldgs &
+                  Periodic Energy
+                  Audit)</td>
+                <td>aloysius_aw@bca.gov.sg</td>
+                <td>68044705</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>joseph_hong@bca.gov.sg</td>
+                <td>68044699</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>wee_kai_siong@bca.gov.sg</td>
+                <td>68044701</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>yong_siew_hwa@bca.gov.sg</td>
+                <td>68044715</td>
+                <td>Policies</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Submission"></cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars and Declaration by Qualified Person">
+        </cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4" label="Project Details"></cn2-nav-button>
+        <cn2-nav-button target="page5" page-number="5" label="Submission Checklist">
+        </cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" no-label inline="6" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To:</b>
+                  </td>
+                  <td width="15%">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <!-- <cn2-textbox no-label inline="6" id="Addr10" disabled>
+                        </cn2-textbox><br /> -->
+                        <cn2-select id="Addr10" options="Building and Construction Authority:BCA" no-label inline="6" disabled>
+                        </cn2-select><br />
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pt-2">
+                        <cn2-textarea id="Addr20" no-label inline="6" disabled style="height: 110px;">
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container" style="margin-bottom: 65px;">
+            <h2>Instruction</h2>
+            <table class="table table-borderless table-sm mls-intro-list">
+              <tbody>
+                <tr>
+                  <td width="1%">1.</td>
+                  <td>This form is to be submitted together with the documentation in support of the
+                    Green Mark score
+                    when
+                    required. It is to be digitally signed by the appropriate practitioners namely
+                    Qualified Person, PE (Mechanical) and PE (Electrical) where relevant.
+                  </td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>
+                    AS-BUILT SUBMISSION
+                    <table class="table table-borderless table-sm">
+                      <tbody>
+                        <tr>
+                          <td width="1%">2.1</td>
+                          <td>For building works that are required to meet the MINIMUM
+                            ENVIRONMENTAL SUSTAINABILITY
+                            STANDARD, this form is to be submitted with
+                            <table class="table table-borderless table-sm" style='margin-bottom:0;'>
+                              <tbody>
+                                <tr>
+                                  <td width="1%">(a)</td>
+                                  <td>
+                                    As-built Green Mark Score Calculation – Form
+                                    BPD_GM02 + BPD_GM02_Appendix 1 and/or
+                                    BPD_GM02_Appendix 2.
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>(b)</td>
+                                  <td>
+                                    Documentary evidences in support of the
+                                    declaration as stated in the checklist. The
+                                    documentation is to be digitally signed by the
+                                    respective appropriate practitioners.
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>2.2</td>
+                          <td>
+                            For building works that are located on land sold under the
+                            Government Land Sales (GLS)
+                            Programme in SELECTED STRATEGIC AREAS and are required to meet a
+                            higher prescribed
+                            Green Mark rating under Green Mark Certification, this form is
+                            to be submitted with the
+                            Letter of
+                            Clearance obtained from BCA-Green Mark Department after site
+                            verification.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 65px;">
+            <h2>Particulars of Submission</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Project Reference Number</td>
+                  <td>
+                    <cn2-textbox no-label id="Project_Project_Ref_No10" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Project Title</td>
+                  <td>
+                    <cn2-textarea no-label id="Project_Title10" disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Description of completed building works*</td>
+                  <td>
+                    <cn2-textarea no-label id="Project_Title20" mandatory>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <th width="33%" class="text-center">
+                    Mukim/TS*
+                  </th>
+                  <th width="32%" class="text-center">
+                    Lot No.*
+                  </th>
+                  <th width="20%" class="text-center">
+                    Partial Lot
+                  </th>
+                  <th width="15%" class="text-center">
+                    <cn2-button label="Add"
+                      event-click="insertDuplicate('addressForm','A1'); disableDelete('addressForm', `[group='addressForm']`);">
+                    </cn2-button>
+                  </th>
+              </tbody>
+              </tr>
+            </table>
+            <div class="mls-espro-form-fields row pt-2" id="addressForm">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12" id="A1">
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <td width="33%">
+                        <cn2-select id="Project_MukiTs10" no-label prefix="Project_MukiTs" suffix="0" options="Mukim 01 : Mukim 01,Mukim 02 : Mukim 02,Mukim 03 : Mukim 03,Mukim 04 : Mukim 04,Mukim 05 : Mukim 05,Mukim 06 : Mukim 06,
+                               Mukim 07 : Mukim 07,Mukim 08 : Mukim 08,Mukim 09 : Mukim 09,Mukim 10 : Mukim 10,Mukim 11 : Mukim 11,Mukim 12 : Mukim 12,
+                               Mukim 13 : Mukim 13,Mukim 14 : Mukim 14,Mukim 15 : Mukim 15,Mukim 16 : Mukim 16,Mukim 17 : Mukim 17,Mukim 18 : Mukim 18,
+                               Mukim 19 : Mukim 19,Mukim 20 : Mukim 20,Mukim 21 : Mukim 21,Mukim 22 : Mukim 22,Mukim 23 : Mukim 23,Mukim 24 : Mukim 24,
+                               Mukim 25 : Mukim 25,Mukim 26 : Mukim 26,Mukim 27 : Mukim 27,Mukim 28 : Mukim 28,Mukim 29 : Mukim 29,Mukim 30 : Mukim 30,
+                               Mukim 31 : Mukim 31,Mukim 32 : Mukim 32,Mukim 33 : Mukim 33,Mukim 34 : Mukim 34,
+                               Town Subdivision 1:Town Subdivision 1,
+                               Town Subdivision 2:Town Subdivision 2,
+                               Town Subdivision 3:Town Subdivision 3,
+                               Town Subdivision 4:Town Subdivision 4,
+                               Town Subdivision 5:Town Subdivision 5,
+                               Town Subdivision 6:Town Subdivision 6,
+                               Town Subdivision 7:Town Subdivision 7,
+                               Town Subdivision 8:Town Subdivision 8,
+                               Town Subdivision 9:Town Subdivision 9,
+                               Town Subdivision 10:Town Subdivision 10,
+                               Town Subdivision 11:Town Subdivision 11,
+                               Town Subdivision 12:Town Subdivision 12,
+                               Town Subdivision 13:Town Subdivision 13,
+                               Town Subdivision 14:Town Subdivision 14,
+                               Town Subdivision 15:Town Subdivision 15,
+                               Town Subdivision 16:Town Subdivision 16,
+                               Town Subdivision 17:Town Subdivision 17,
+                               Town Subdivision 18:Town Subdivision 18,
+                               Town Subdivision 19:Town Subdivision 19,
+                               Town Subdivision 20:Town Subdivision 20,
+                               Town Subdivision 21:Town Subdivision 21,
+                               Town Subdivision 22:Town Subdivision 22,
+                               Town Subdivision 23:Town Subdivision 23,
+                               Town Subdivision 24:Town Subdivision 24,
+                               Town Subdivision 25:Town Subdivision 25,
+                               Town Subdivision 26:Town Subdivision 26,
+                               Town Subdivision 27:Town Subdivision 27,
+                               Town Subdivision 28:Town Subdivision 28,
+                               Town Subdivision 29:Town Subdivision 29,
+                               Town Subdivision 30:Town Subdivision 30" mandatory></cn2-select>
+                      </td>
+                      <td width="32%">
+                        <cn2-textbox id="Project_LotNumb10" no-label prefix="Project_LotNumb" suffix="0" mandatory
+                          maxlength="6" template="#####@">
+                        </cn2-textbox>
+                      </td>
+                      <td width="20%" class="text-center">
+                        <cn2-checkbox id="Project_PartLot10" prefix="Project_PartLot" suffix="0">
+                        </cn2-checkbox>
+                      </td>
+                      <td width="15%" class="text-center">
+                        <cn2-button id="delete1A" prefix="delete" suffix="A" label="Delete" style="float:right;" danger
+                          group="addressForm" disabled
+                          event-click="removeDuplicate(this.id,'A1','addressForm'); disableDelete('addressForm', `[group='addressForm']`)">
+                        </cn2-button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Location Description
+                    and Address
+                  </td>
+                  <td>
+                    <cn2-textarea no-label id="Project_Location_Description_Description10" disabled>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Building Name (if any)</td>
+                  <td>
+                    <cn2-textarea no-label id="Project_BuilName10"></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Project/ Building Address</td>
+                  <td>
+                    <cn2-textarea no-label id="Project_ProjBuilAddr10"></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Expected/ Scheduled Final
+                    TOP Inspection Date*
+                  </td>
+                  <td>
+                    <cn2-datefield onfocusout="validateDate(this)" no-label id="Project_ExpeScheFinaTOP10" mandatory>
+                    </cn2-datefield>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Expected Inspection Date
+                    for 1<sup>st</sup> Partial TOP where
+                    applicable
+                  </td>
+                  <td>
+                    <cn2-datefield onfocusout="validateDate(this)" no-label id="Project_ExpeInspDateFor10">
+                    </cn2-datefield>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Partial TOP Details where applicable </p>
+                    <cn2-button label="Add"
+                      event-click="insertDuplicate('dateForm','B1'); disableDelete('dateForm', `[group='dateForm']`)">
+                    </cn2-button>
+                  </td>
+                  <td>
+                    <div id="dateForm" style="margin-left: 0%;">
+                      <div id="B1" style="margin-left: 0%;">
+                        <cn2-datefield onfocusout="validateDate(this)" no-label id="Project_PartTOPDetaWher10"
+                          prefix="Project_PartTOPDetaWher" suffix="0" inline="8"></cn2-datefield>
+                        <cn2-button id="delete1B" prefix="delete" suffix="B" label="Delete" style="float:right;" danger
+                          group="dateForm" disabled
+                          event-click="removeDuplicate(this.id,'B1','dateForm'); disableDelete('dateForm', `[group='dateForm']`)">
+                        </cn2-button><br><br>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Section I Particulars of Qualified Person</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td>Member ID</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Member_SID_QP10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_QP10" no-label data-options="qpDropdown" mandatory
+                      event-change="loadDropDownDetails(this);resetUEN('Members_UEN_QP10');">
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox no-label id="MemberRole_Professional_No_QP10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Firm_Name_QP10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox no-label id="Members_UEN_QP10" event-blur="uenValidate(this)" template="#########@"
+                      maxlength="10"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea no-label id="Member_Address_QP10" disabled>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Tel_No_QP10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Mobile_No_QP10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Email_Address1_QP10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Declaration by Qualified Person<br>Particulars of PE (Mechanical)</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td>Member ID</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Member_SID_PEME10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name</td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_PEME10" no-label data-options="peDropdown"
+                      event-change="loadDropDownDetails(this);resetUEN('Members_UEN_PEME10');">
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox no-label id="MemberRole_Professional_No_PEME10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Firm_Name_PEME10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox no-label id="Members_UEN_PEME10" event-blur="uenValidate(this)" template="#########@"
+                      maxlength="10"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea no-label id="Member_Address_PEME10" disabled>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Tel_No_PEME10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Mobile_No_PEME10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Email_Address1_PEME10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Particulars of PE (Electrical)</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Name</td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_PEEE20" no-label data-options="peeeDropdown"
+                      event-change="loadDropDownDetails(this);resetUEN('Members_UEN_PEEE20');">
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox no-label id="MemberRole_Professional_No_PEEE20" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Firm_Name_PEEE20" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox no-label id="Members_UEN_PEEE20" event-blur="uenValidate(this)" template="#########@"
+                      maxlength="10"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea no-label id="Member_Address_PEEE20" disabled>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Tel_No_PEEE20" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Mobile_No_PEEE20" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Email_Address1_PEEE20" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="margin-bottom: 65px;">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    Please tick the relevant requirement that is applicable for your project:
+                    <p><i>(Mandatory Selection)</i></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%"> <input type="radio" name="SubmChec_BuilWork" id="SubmChec_BuilWork_MeetMiniGM10"
+                      onchange="SubmChec_BuilWork_change(this)"></input></td>
+                  <td>
+                    Building works that are required to meet the Minimum Environmental
+                    Sustainability Standard.
+                    <table class="table table-borderless table-sm" style="margin-bottom:0;">
+                      <tbody>
+                        <tr>
+                          <td colspan="2">Please state whether this project is also certified
+                            under the Green Mark
+                            Certification on a voluntary basis.</td>
+                        </tr>
+                        <tr>
+                          <td rowspan="2" width="1%"><input type="radio"
+                              onchange="SubmChec_BuilWork_MeetMiniGM_change(this);"
+                              id="SubmChec_BuilWork_MeetMiniGM_Yes10" name="SubmChec_BuilWork_MeetMiniGM">&nbsp;Yes</td>
+                          <td>
+                            <cn2-select
+                              options="Green Mark Gold:Green Mark Gold,Green Mark Gold<sup>Plus</sup>:Green Mark Gold<sup>Plus</sup>,Green Mark Platinum:Green Mark Platinum"
+                              disabled id="SubmChec_BuilWork_MeetMiniGM_List10" no-label inline="5" disabled>
+                            </cn2-select>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <cn2-checkbox disabled disabled id="SubmChec_BuilWork_MeetMiniGM_AttaLettOfAwar10">
+                            </cn2-checkbox>&nbsp;Attached letter of award
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><input onchange="SubmChec_BuilWork_MeetMiniGM_change(this);" type="radio"
+                              id="SubmChec_BuilWork_MeetMiniGM_No10" name="SubmChec_BuilWork_MeetMiniGM">&nbsp;No</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td> <input type="radio" name="SubmChec_BuilWork" id="SubmChec_BuilWork_LocaOnLandSold10s"
+                      onchange="SubmChec_BuilWork_change(this)"></input></td>
+                  <td>
+                    Building works that are located on land sold under the Government Land Sales
+                    (GLS)
+                    Programme in selected strategic areas and are required to comply with
+                    higher prescribed
+                    Green Mark Certification.
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pt-2">
+                        <p>&nbsp;&nbsp;&nbsp;<cn2-checkbox id="SubmChec_AttaLettOfClea10" no-label disabled>
+                          </cn2-checkbox>&nbsp;Attached
+                          letter of clearance</p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page4">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Project Details </h2>
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pt-2">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <td colspan="4"><i>The following information is to be provided for projects that
+                        are required to meet the minimum Environmental Sustainability Standard
+                        (including those with modification).
+                      </i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      GM e-Filing No. <span id="Project_GMeFiliNo41_sign"></span>
+                    </td>
+                    <td>
+                      GM&nbsp;<cn2-textbox id="Project_GMeFiliNo40" inline="9" disabled>
+                      </cn2-textbox>&nbsp;
+                    </td>
+                    <td>
+                      -AB&nbsp;
+                      <cn2-textbox id="Project_GMeFiliNo41" numeric inline="9" maxlength="3">
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" width="20%">
+                      Project Type <span id="Project_ProjType10_sign"></span>
+                    </td>
+                    <td colspan="2">
+                      <cn2-select id="Project_ProjType10" event-change="Project_ProjType10_change(this)" no-label
+                        options="Residential:R,Residential (Lift Upgrading):Residential (Lift Upgrading),Non-Residential:Non-Residential,Non-Residential (Link Ways/,Underground Passes/,Open Sheds/,Substations and the like):Non-Residential (Link Ways/,Underground Passes/,Open Sheds/,Substations and the like),Mixed-Use (Residential):Mixed-Use (Residential),Mixed-Use (Non-Residential):Mixed-Use (Non-Residential),Mixed-Use (Residential & Non-Residential):Mixed-Use (Residential & Non-Residential)">
+                      </cn2-select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="4">
+                      <input type="radio" id="Subm_Code1st" name="Subm_Code" onchange="Subm_Code_change(this)" mandatory
+                        checked> &nbsp;
+
+                      Submission based on Code for Environmental Sustainability of Buildings (Code
+                      1st to
+                      3rd Edition) <span submission-code>*</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" width="20%" rowspan="2">
+                      Green Mark Score
+                    </td>
+                    <td>
+                      Residential
+                    </td>
+                    <td>
+                      <cn2-textbox id="SubmChec_UndeTheBuilCont_ResGMScor10" disabled numeric no-label inline="9"
+                        maxlength="3"></cn2-textbox>
+                  </tr>
+                  <tr>
+                    <td>
+                      Non-Residential
+                    </td>
+                    <td>
+                      <cn2-textbox id="SubmChec_UndeTheBuilCont_NonResGMScor10" no-label inline="9" maxlength="3"
+                        disabled></cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="4">
+                      <input type="radio" id="Subm_Code4th" name="Subm_Code" onchange="Subm_Code_change(this)" mandatory
+                        checked> &nbsp;
+                      Submission based on Code for Environmental Sustainability of Buildings (4th Edition) - Pending
+                      Implementation <span submission-code>*</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td rowspan="4" width="18%">Green Mark Score</td>
+                    <td rowspan="2" width="17%">
+                      Residential
+                    </td>
+                    <td>Comply with Base Requirements:</td>
+                    <td>
+                      <cn2-textbox event-input="promptErrorMoreThan100(this);" disabled inline="9"
+                        id="SubmChec_UndeTheBuilCont_CompResGMScor10" numeric maxlength="3" no-label></cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Comply with Elective Options:</td>
+                    <td>
+                      <cn2-textbox event-input="promptErrorMoreThan100(this);" disabled inline="9"
+                        id="SubmChec_UndeTheBuilCont_CompResGMScor20" numeric maxlength="3" no-label></cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2">
+                      Non-Residential
+                    </td>
+                    <td>Comply with Base Requirements:</td>
+                    <td>
+                      <cn2-textbox event-input="promptErrorMoreThan100(this);" disabled inline="9"
+                        id="SubmChec_UndeTheBuilCont_CompNonResGMScor10" numeric maxlength="3" no-label></cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Comply with Elective Options:</td>
+                    <td>
+                      <cn2-textbox event-input="promptErrorMoreThan100(this);" disabled inline="9"
+                        id="SubmChec_UndeTheBuilCont_CompNonResGMScor20" numeric maxlength="3" no-label></cn2-textbox>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div id="page5">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Submission Checklist (General)</h2>
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td width="50%">
+                      <div class="mls-espro-form-fields row">
+                        <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                          Site Location Plan
+                        </div>
+                      </div>
+                      <div class="mls-espro-form-fields row">
+                        <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                          <i>(Please highlight entrance to site)</i>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <cn2-checkbox id="SubmChecGene_SiteLocaPlan" no-label inline></cn2-checkbox>
+                      &nbsp;Attached
+                    </td>
+                  </tr>
+                <tbody>
+              </table>
+            </div>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Submission Checklist (Documentary Evidences)</h2>
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+              <p style="font-style: italic;">(Please refer to the relevant Code for Environmental
+                Sustainability of
+                Buildings and guidelines
+                on the detailed documentary evidences needed for the items listed below)</p>
+              Submission Checklist &nbsp;&nbsp;<cn2-select no-label inline="9" id="SubmChk_SubmChk10"
+                event-change="SubmChk_SubmChk10_change(this);"
+                options="Residential Buildings (Code 1st to 3rd Edition):Residential Buildings (Code 1st to 3rd Edition),Non-Residential Buildings (Code 1st to 3rd Edition):Non-Residential Buildings (Code 1st to 3rd Edition),Non-Residential Transit Station Criteria:Non-Residential Transit Station Criteria,Residential Buildings (Code 4th Edition) - Pending Implementation:Residential Buildings (Code 4th Edition) - Pending Implementation,Non-Residential Buildings (Code 4th Edition)(Also applicable to Transit Stations) - Pending Implementation:Non-Residential Buildings (Code 4th Edition)(Also applicable to Transit Stations) - Pending Implementation">
+              </cn2-select>
+            </div>
+            <!-- =========================================================RB RB RB======================================================= -->
+            <div id="RBtable" hidden style="margin-top:20px;"></div>
+            <!-- =========================================================RB RB RB======================================================= -->
+            <!-- =========================================================NRB NRB NRB==================================================== -->
+            <div id="NRBtable" hidden style="margin-top:20px"></div>
+            <!-- =========================================================NRB NRB NRB==================================================== -->
+            <!-- =========================================================ST ST ST==================================================== -->
+            <div id="STtable" hidden style="margin-top:20px"></div>
+            <!-- =========================================================ST ST ST==================================================== -->
+            <!-- =========================================================RB2 RB2 RB2==================================================== -->
+            <div id="RB2table" hidden style="margin-top:20px"></div>
+            <!-- =========================================================RB2 RB2 RB2==================================================== -->
+            <!-- =========================================================NRB2 NRB2 NRB2==================================================== -->
+            <div id="NRB2table" hidden style="margin-top:20px"></div>
+            <!-- =========================================================NRB2 NRB2 NRB2==================================================== -->
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+              <i>Important Note: Submittal of other documentary evidences may be required and shall be
+                made in such
+                manner and be in such form as the Commissioner of
+                Building Control requires upon request.</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <cn2-version-footer></cn2-version-footer>
+  <cn2-fixed-footer></cn2-fixed-footer>
+  </div>
+</body>
+
+</html>

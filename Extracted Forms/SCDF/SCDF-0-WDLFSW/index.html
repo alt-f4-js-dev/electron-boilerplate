@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <title>SCDF-0-WDLFSW</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2switchbutton.js"></script>
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head
+    title="APPLICATION FOR WITHDRAWAL OF PLANS OF FIRE SAFETY WORKS&lt;br&gt;FIRE SAFETY ACT (CAP 109A)&lt;br&gt;[Fire Safety (Building and Pipeline Fire Safety) Regulations]"
+    style="margin-top: 20px; width: 180px;">
+  </cn2-master-head>
+  <input type="hidden" id="member_id" name="member_id" />
+  <input type="hidden" id="form_validated" name="form_validated" />
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p><b>For enquiries related to forms, please contact the following:</b></p>
+        <p> <span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SCDF</td>
+                <td>TAN_Chung_Yee@scdf.gov.sg</td>
+                <td>68481457</td>
+                <td>Submissions</td>
+              </tr>
+              <tr>
+                <td>SCDF</td>
+                <td>&nbsp;</td>
+                <td>62800000</td>
+                <td>E-Payment / Status Of Application</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Project">
+        </cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars of Application">
+        </cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4" label="Particulars and Confirmation by Applicant">
+        </cn2-nav-button>
+        <cn2-nav-button target="page5" page-number="5" label="Particulars and Declaration by Qualified Person">
+        </cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" no-label inline="5" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To:</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-select id="Addr10" options="FSSB:FSSB" hidden disabled></cn2-select>
+                        <cn2-textarea no-label inline="5" id="Addr20" disabled>
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>
+                This form is to be digitally signed by the applicant and/ or appointed Qualified Person
+                responsible
+                for the project(s).
+              </li>
+              <li>
+                It may take you 2 minutes to complete this form.
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Project</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Project Reference Number</td>
+                  <td>
+                    <cn2-textbox id="Project_Project_Ref_No10" disabled no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Project Title</td>
+                  <td>
+                    <cn2-textarea id="Project_Title10" disabled no-label>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    Location Description [Include Lot/Plot, MK/TS, House No.,
+                    Building Address and Road information]
+                  </td>
+                  <td>
+                    <cn2-textarea id="Project_Location_Description10" disabled no-label>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Application*</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        Description of Building(s)/Building Work
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12" style="font-size: 13px;">
+                        Note: This full title for submission will be the project title indicated
+                        on our letters
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <cn2-textarea id="PartOfAppl_DescOfBuilWork10" mandatory maxlength="500" no-label></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">SCDF Plan Reference Number to withdraw</td>
+                  <td>
+                    <cn2-textbox id="PartOfAppl_FSSBRefeNumb10"
+                      event-blur="PartOfAppl_FSSBRefeNumb10_blur(this); validateSCDFPlanRef(this)"
+                      template="@@@/@#####/####" no-label uppercase maxlength="15" mandatory></cn2-textbox>
+                    <small style="color: red;"><span id="errMsgSCDFPlanRef"></span></small>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page4">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Applicant</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td width="35%">
+                    SID
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_SID_FSBAPPL10" no-label uppercase disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    Name*
+                  </td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_FSBAPPL10" data-options="applicantDropdown" mandatory
+                      event-change="loadDropDownDetails(this); nricMasking(Member_IC_Passport_No_Masked_FSBAPPL10); clearUEN('Members_UEN_FSBAPPL10')"
+                      no-label>
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr nricUnmasked hidden>
+                  <td width="35%">
+                    NRIC No./Passport No.
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_FSBAPPL10" no-label uppercase disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr nricMasked>
+                  <td width="35%">
+                    NRIC No./Passport No.
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_Masked_FSBAPPL10" no-label uppercase disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    Designation
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_Designation_FSBAPPL10" no-label uppercase disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    Firm Name
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_Firm_Name_FSBAPPL10" no-label maxlength="64" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    ACRA UEN
+                  </td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_FSBAPPL10" no-label uppercase maxlength="10" template="#########@"
+                      maxlength="10" event-blur="uenValidate(this)">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    Address
+                  </td>
+                  <td>
+                    <cn2-textarea id="Member_Address_FSBAPPL10" no-label disabled uppercase maxlength="1024">
+                    </cn2-textarea>
+                    <cn2-textbox id="Member_Address_Type_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Hse_Blk_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Bldg_Name_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Level_No_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Unit_No_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Road_Code_Desc_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Postal_Code_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine1_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine2_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine3_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine4_FSBAPPL10" no-label disabled hidden>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    Telephone No.
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_FSBAPPL10" no-label maxlength="15" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    Email Address
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_FSBAPPL10" no-label disabled maxlength="100" uppercase>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Confirmation by Applicant*</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tr>
+                    <td>I consent to the withdrawal of the application and the plans by my Qualified
+                      Person.
+                    </td>
+                    <td width="1%">
+                      <cn2-checkbox id="ConfByAppl_IConsToThe10" event-change="ConfByAppl_IConsToThe10_change(this)"
+                        checked mandatory>
+                      </cn2-checkbox>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page5">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Qualified Person</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td>
+                    SID <span QP-Label></span>
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_SID_QP10" no-label uppercase maxlength="50" disabled QP-Field>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    Name *
+                  </td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_QP10" data-options="qpDropdown"
+                      event-change="loadDropDownDetails(this); validateQPName(this); clearUEN('Members_UEN_QP10')"
+                      mandatory no-label></cn2-select>
+                    <cn2-textbox QPtxt no-label hidden></cn2-textbox>
+                    <small style="color: red;"><span id="errMsgQPName"></span></small>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Role in Project <span QP-Label></span>
+                  </td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Member_Role_Code_Desc_QP10" no-label uppercase maxlength="50" disabled
+                      QP-Field>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Registration No. <span QP-Label></span>
+                  </td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Professional_No_QP10" no-label maxlength="10" disabled QP-Field>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Firm Name <span QP-Label></span>
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_QP_Firm_Name_10" no-label uppercase maxlength="64" disabled QP-Field>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    ACRA UEN
+                  </td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_QP10" no-label uppercase template="#########@" maxlength="10"
+                      event-blur="uenValidate(this)"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Address <span QP-Label></span>
+                  </td>
+                  <td>
+                    <cn2-textarea id="Member_Address_QP10" no-label maxlength="1024" uppercase disabled QP-Field>
+                    </cn2-textarea>
+                    <cn2-textbox id="Member_Address_Type_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Hse_Blk_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Bldg_Name_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Level_No_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Unit_No_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Road_Code_Desc_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Postal_Code_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine1_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine2_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine3_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine4_QP10" no-label disabled hidden>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Telephone No. <span QP-Label></span>
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_QP10" no-label maxlength="15" disabled QP-Field>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Email Address <span QP-Label></span>
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_QP10" no-label uppercase maxlength="100" disabled QP-Field>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Declaration by Qualified Person*</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td>An application for approval of building plans in respect of the fire
+                        safety works
+                        was submitted on&nbsp;<cn2-datefield onfocusout="validateDate(this)"
+                          id="ConfByQualPers_AnApplForAppr10" event-change="DeclByQualPers_PlanSubmDate10_change(this)"
+                          disabled no-label inline="3">
+                        </cn2-datefield>&nbsp;and&nbsp;<cn2-select disabled id="ConfByQualPers_AnApplForAppr20" no-label
+                          inline="4" options="approved:approved, has yet to be approved:has yet to be approved">
+                        </cn2-select>&nbsp;on&nbsp;<cn2-datefield onfocusout="validateDate(this)"
+                          id="ConfByQualPers_AnApplForAppr30"
+                          event-change="DeclByQualPers_PlanApprStatDate10_change(this)" disabled no-label inline="3">
+                        </cn2-datefield>
+                      </td>
+                      <td rowspan="4" class="align-middle">
+                        <cn2-checkbox id="DeclByQualPers_QPDecl10" event-change="DeclByQualPers_QPDecl10_change(this)"
+                          checked mandatory>
+                        </cn2-checkbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>I hereby apply for withdrawal of the application and the plans mentioned
+                        above </td>
+                    </tr>
+                    <tr>
+                      <td>I being a qualified person, hereby declare that I have obtained consent
+                        from the owner of this project to withdraw the application and the
+                        plans.</td>
+                    </tr>
+                    <tr>
+                      <td>I hereby confirm that the fire safety works&nbsp; <cn2-select disabled
+                          id="ConfByQualPers_IHereConfThat10" no-label inline="4"
+                          options="have:have, have not been:have not been"></cn2-select>
+                        &nbsp;commenced or
+                        carried out at the site.
+
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-version-footer></cn2-version-footer>
+    <cn2-fixed-footer></cn2-fixed-footer>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>PUBWTR-0-PPC01</title>
+  <meta charset="utf-8" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head title="PRE-PLANNING CONSULTATION">
+  </cn2-master-head>
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p>
+          <b>For enquiries related to forms, please contact the following:</b>
+        </p>
+        <p><span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="6">PUB (Water)</td>
+                <td>pub_bpu@pub.gov.sg </td>
+                <td>67313512</td>
+                <td>General Enquiry</td>
+              </tr>
+              <tr>
+                <td>KUANG_kim_yaw@pub.gov.sg</td>
+                <td>67313515</td>
+                <td>Policies
+                </td>
+              </tr>
+              <tr>
+                <td>olivia_TEO@pub.gov.sg </td>
+                <td>67313967</td>
+                <td>PE Submissions</td>
+              </tr>
+              <tr>
+                <td>Marwin_SUHAIMI@pub.gov.sg</td>
+                <td>67313893</td>
+                <td>PE Submissions</td>
+              </tr>
+              <tr>
+                <td>THAM_tuck_kuan@pub.gov.sg</td>
+                <td>67313665</td>
+                <td>License Plumber Submissions</td>
+              </tr>
+              <tr>
+                <td>LEE_Cai_Jie@pub.gov.sg </td>
+                <td>67313250</td>
+                <td>License Plumber Submissions</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+  <input type="hidden" name="member_id" id="member_id" />
+  <input type="hidden" name="form_validated" id="form_validated" />
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions">
+        </cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Project">
+        </cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars of Qualified Person">
+        </cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4" label="Submission Checklists">
+        </cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" no-label inline="5" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To:</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textbox no-label inline="5" id="Addr10" disabled>
+                        </cn2-textbox>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea id="Addr20" no-label inline="5" disabled style="height: 160px;">
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>
+                This form is to be digitally signed by the Qualified Person.
+              </li>
+              <li>
+                Design of water service installation including the mode of supply shall comply with the
+                Public Utilities (Water Supply) Regulations and the Singapore Standard 636 - Code of
+                Practice for Water Services.
+              </li>
+              <li>
+                Water meter shall be located above ground near to the main entrance of the above
+                development and shall be easily accessible for maintenance and reading.
+              </li>
+              <li>
+                There shall be no risk of contamination to PUB potable water supply system through
+                backflow.
+              </li>
+              <li>
+                Potable water storage tanks shall not be located below sanitary pipes and other
+                non-potable water pipes.
+              </li>
+              <li>
+                This form is to be accompanied by the relevant documents (refer to Submission
+                Checklists).
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Project</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">
+                    Project Reference Number
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="Project_Project_Ref_No10" data-options="qpDropdown"
+                      event-change="loadDropDownDetails(this);" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Development Type*
+                  </td>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-select no-label
+                          options="Commercial:COM,Institution:INS,Recreational:REC,Residential:RES,Social:SOC,Transportation:TRA,Others:OTH"
+                          id="PartOfProj_DeveType10" mandatory event-change="PartOfProj_DeveType10_change(this)">
+                        </cn2-select>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea no-label id="PartOfProj_DeveType20" maxlength="50" disabled hidden>
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Location Description [Include Lot/Plot, MK/TS, House No.,
+                    Building Address and Road Information]</td>
+                  <td>
+                    <cn2-textarea no-label id="Project_Location_Description10" disabled>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Project Description
+                  </td>
+                  <td>
+                    <cn2-textarea no-label id="Project_Title10" disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Estimated PUB Water Requirement (m³/mth)
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="PartOProj_EstiPUBWateRequ10" numeric maxlength="6">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Estimated NEWater Requirement (m³/mth)
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="PartOProj_EstiNEWaterWateRequ10" numeric maxlength="6">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Platform Level of Development<br>(m above Mean Sea Level)*
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="PartOfProj_PlatLeveOfDeve10" mandatory numeric maxlength="5">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Level of Highest Direct Supply Water Fitting<br>(m above Mean Sea Level)*
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="PartOfProj_ReduLeveOfHigh10" mandatory numeric maxlength="5">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Issue For Discussion*
+                  </td>
+                  <td>
+                    <cn2-textarea no-label id="PartOfProj_IssuForDisc10" mandatory maxlength="200">
+                    </cn2-textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Qualified Person</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">
+                    Name*
+                  </td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_QP10" no-label data-options="qpDropdown"
+                      event-change="loadDropDownDetails(this); removeSelectUENerror('Members_UEN_QP10');" mandatory>
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Name of Company
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Firm_Name_QP10" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    UEN
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="Members_UEN_QP10" maxlength="10" template="#########@"
+                      event-blur="uenValidate(this)"></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page4">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Submission Checklists</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td width="1%">1</td>
+                      <td>
+                        Site Plan
+                      </td>
+                      <td width="1%">
+                        <cn2-checkbox id="SubmChec_1SetOfSite10"></cn2-checkbox>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-version-footer></cn2-version-footer>
+    <cn2-fixed-footer></cn2-fixed-footer>
+  </div>
+</body>
+
+</html>

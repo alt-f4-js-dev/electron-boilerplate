@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <title>BCA-BE-CForms</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Syncfusion" />
+
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+    <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+    <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+    <script src="../cm/js/func/common.js"></script>
+    <script src="../cm/js/components/cn2commonfunc.js"></script>
+    <script src="../cm/js/components/cn2sgheader.js"></script>
+    <script src="../cm/js/components/cn2masterhead.js"></script>
+    <script src="../cm/js/components/cn2standardfooter.js"></script>
+    <script src="../cm/js/components/cn2datefield.js"></script>
+    <script src="../cm/js/components/cn2fixedfooter.js"></script>
+    <script src="../cm/js/components/cn2textbox.js"></script>
+    <script src="../cm/js/components/cn2textarea.js"></script>
+    <script src="../cm/js/components/cn2checkbox.js"></script>
+    <script src="../cm/js/components/cn2versionfooter.js"></script>
+    <script src="../cm/js/components/cn2select.js"></script>
+    <script src="../cm/js/components/cn2navbutton.js"></script>
+    <script src="../cm/js/components/cn2button.js"></script>
+    <script src="../cm/js/components/cn2switchbutton.js"></script>
+
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <cn2-master-head
+        title="CERTIFICATE OF SUPERVISION OF PILING WORKS AND<BR/>NOTICE OF COMPLETION BY THE QUALIFIED PERSON FOR STRUCTURAL WORKS<BR/>[THE BUILDING CONTROL ACT (CAP 29)]<BR/>[REGULATION 23(1)(c) OF THE BUILDING CONTROL REGULATIONS]">
+    </cn2-master-head>
+    <input type="hidden" name="member_id" id="member_id">
+    <input type="hidden" name="form_validated" id="form_validated">
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p style="margin: 0px">Help</p>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <b>For enquiries related to forms, please contact the following:</b>
+                </p>
+                <p><span id="RegulatoryAuthority_id"></span></p>
+                <div id="table-parent" style="width:auto">
+                    <table id="ContDetaTable_id" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Regulatory Authority</th>
+                                <th>Email Address</th>
+                                <th>Tel No.</th>
+                                <th>Area of Support</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">BCA (ST)</td>
+                                <td>wai_hui_ling@bca.gov.sg</td>
+                                <td>68044609</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>chang_heng_choy@bca.gov.sg</td>
+                                <td>68044646</td>
+                                <td>Policies</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="mls-espro-form-container">
+        <div class="row">
+            <div class="mls-espro-form-left-nav" id="menu">
+                <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+                <cn2-nav-button target="page2" page-number="2"
+                    label="Certificate Type (Please choose only one Certificate Type)"></cn2-nav-button>
+                <cn2-nav-button target="page3" page-number="3"
+                    label="Particulars of Structural Works to which this Certificate relates ">
+                </cn2-nav-button>
+                <cn2-nav-button target="page4" page-number="4"
+                    label="Particulars and Declaration by Qualified Person for Supervision of Piling/Structural Works">
+                </cn2-nav-button>
+                <cn2-nav-button target="page5" page-number="5" hidden
+                    label="Particulars and Declaration by Qualified Person for Supervision of Geotechnical Aspects of Geotechnical Building Works">
+                </cn2-nav-button>
+            </div>
+
+            <div class="e-content mls-espro-form-right" id="page">
+                <div id="page1">
+                    <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">
+                                        <b>Date:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <cn2-textbox id="Date10" field-name="Date under Instructions" no-label
+                                            inline="5" disabled>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="1%">
+                                        <b>To:*</b>
+                                    </td>
+                                    <td width="15%">
+                                        <div class="mls-espro-form-fields row">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-select no-label inline="5" id="Addr10"
+                                                    field-name="To dropdown under Instructions"
+                                                    event-change="ToAgency_id_change(this)"
+                                                    options="Building and Construction Authority:BCA,Defence Science & Technology Agency:DSTA"
+                                                    mandatory>
+                                                </cn2-select>
+                                            </div>
+                                        </div>
+                                        <div class="mls-espro-form-fields row pt-2">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-textarea style="height:145px;" id="Addr20"
+                                                    field-name="To textarea under Instructions" no-label inline="5"
+                                                    disabled>
+                                                </cn2-textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Instructions</h2>
+                        <ol class="mls-intro-list">
+                            <li> This form is to be digitally signed by the appointed Qualified Person.</li>
+                            <li> This form may take 2-3 mins to complete.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div id="page2">
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Certificate Type (Please choose only one Certificate Type)*</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                1. Certificate of Supervision of Piling Works and Notice of Completion
+                                                by the
+                                                Qualified Person for Structural Works
+                                            </td>
+                                            <td width="5%">
+                                                <input type="radio" id="ApplType_QPCTPW" name="ApplType_name"
+                                                    onchange="ApplType_change(this);"
+                                                    field-name="Certificate of Supervision of Piling Works under Certificate Type" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                2. Certificate of Supervision of Structural Works by the Qualified
+                                                Person for
+                                                Structural Works
+                                            </td>
+                                            <td>
+                                                <input type="radio" id="ApplType_QPCTSSW" name="ApplType_name"
+                                                    onchange="ApplType_change(this);"
+                                                    field-name="Certificate of Supervision of Structural Works under Certificate Type" />
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                3. Submission Certificate of Record Structural Plans/Calculations
+                                            </td>
+                                            <td>
+                                                <input type="radio" id="ApplType_CTASST" name="ApplType_name"
+                                                    onchange="ApplType_change(this);"
+                                                    field-name="Submission Certificate of Record Structural Plans/Calculations under Certificate Type" />
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                4. Certificate of Supervision of Piling Works and Notice of Completion
+                                                for Geotechnical Building
+                                                Works.
+                                            </td>
+                                            <td>
+                                                <input type="radio" id="ApplType_QPCTPW_GBW" name="ApplType_name"
+                                                    onchange="ApplType_change(this);"
+                                                    field-name="Certificate of Supervision of Piling Works Geo under Certificate Type" />
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                5. Certificate of Supervision of Geotechnical Building Works
+                                            </td>
+                                            <td>
+                                                <input type="radio" id="ApplType_QPCTSSW_GBW" name="ApplType_name"
+                                                    onchange="ApplType_change(this);"
+                                                    field-name="Certificate of Supervision of Geotechnical Building Works under Certificate Type" />
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                6. Submission Certificate of Record Geotechnical Building
+                                                Plans/Calculations.
+                                            </td>
+                                            <td>
+                                                <input type="radio" id="ApplType_CTASST_GBW" name="ApplType_name"
+                                                    onchange="ApplType_change(this);"
+                                                    field-name="Submission Certificate of Record Geotechnical Building Plans/Calculations under Certificate Type" />
+
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page3">
+                    <div class="mls-espo-right-inner-container">
+                        <h2 id="Page3_h2Section_id">Section I Particulars of Structural Works to which this Certificate
+                            relates </h2>
+                        <table class="table table-borderless" id="PartGeotBuilWorkTable" hidden>
+                            <tbody>
+                                <tr>
+                                    <td width="1%">
+                                        <cn2-checkbox id="PartOfAppl_AnyExcaOrOthe10" name="PartOfAppl_AnyExcaOr"
+                                            event-change="atLeastOne(this)"
+                                            field-name="Any excavation under Particulars of Geotechnical Building Works" />
+                                    </td>
+                                    <td>
+                                        Any excavation or other building works to make - <br />
+                                        &nbsp;(i) a tunnel with a diameter, width or height of more than 2 meters <br />
+                                        &nbsp;(ii) a casison, cofferdam, trench, shaft or well with a depth of more than
+                                        6 meters
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <cn2-checkbox id="PartOfAppl_AnyBuilWorkFor10" name="PartOfAppl_AnyExcaOr"
+                                            event-change="atLeastOne(this)"
+                                            field-name="Any building works under Particulars of Geotechnical Building Works" />
+                                    </td>
+                                    <td>
+                                        Any building works for constructing, altering or repairing any earth
+                                        retaining<br />
+                                        &nbsp;structure in or for a trench, ditch, shaft or well with a depth or height
+                                        of<br />
+                                        &nbsp;more than 6 meters
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <cn2-checkbox id="PartOfAppl_AnyTypeOfFoun10" name="PartOfAppl_AnyExcaOr"
+                                            event-change="atLeastOne(this)"
+                                            field-name="All type of foundation works under Particulars of Geotechnical Building Works" />
+                                    </td>
+                                    <td>
+                                        All type of foundation works for buildings of 30 or more storeys
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td width="35%">Project Reference Number</td>
+                                            <td>
+                                                <cn2-textbox id="Project_Project_Ref_No10"
+                                                    field-name="Project Reference Number under Section I Particulars"
+                                                    disabled no-label>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Project Title</td>
+                                            <td>
+                                                <cn2-textarea id="Project_Title10"
+                                                    field-name="Project Title under Section I Particulars" no-label
+                                                    disabled>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Description of building works</td>
+                                            <td>
+                                                <cn2-textarea id="Project_Title20"
+                                                    field-name="Description of building works under Section I Particulars"
+                                                    maxlength="1000" no-label>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Location Description</td>
+                                            <td>
+                                                <cn2-textarea id="Project_Location_Description10"
+                                                    field-name="Location Description under Section I Particulars"
+                                                    no-label disabled>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Structural Plan of Project Ref. No. *
+                                                <p>
+                                                    <cn2-button label="Add"
+                                                        event-click="insertDuplicate('stForm','A1'); addTableST('stForm'); disableDelete('stForm', '.delete1')">
+                                                    </cn2-button>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <div id="stForm">
+                                                    <div id="A1">
+                                                        <div class="mls-espro-form-fields row">
+                                                            <div class="col-xs-5 col-sm-5 col-lg-5 col-md-5 pt-2">
+                                                                <cn2-select id="PartOfAppl_StruPlanOfProjB10"
+                                                                    field-name="Structural Plan of Project Ref. No. dropdown under Section I Particulars"
+                                                                    prefix="PartOfAppl_StruPlanOfProjB" suffix="0"
+                                                                    disabled options="ST:ST" no-label group="st">
+                                                                </cn2-select>
+                                                            </div>
+                                                            <div class="col-xs-5 col-sm-5 col-lg-5 col-md-5 pt-2">
+                                                                <cn2-textbox id="PartOfAppl_StruPlanOfProjC10"
+                                                                    field-name="Structural Plan of Project Ref. No. textbox under Section I Particulars"
+                                                                    event-keypress="PartOfAppl_PlanType_keypress(event,this)"
+                                                                    event-change="adjustNumberLength(this,3);PartOfAppl_PlanType_change(this)"
+                                                                    maxlength="3" numeric
+                                                                    prefix="PartOfAppl_StruPlanOfProjC" suffix="0"
+                                                                    mandatory no-label>
+                                                                </cn2-textbox>
+                                                            </div>
+                                                            <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2 pt-2">
+                                                                <cn2-button id="delete1" prefix="delete"
+                                                                    event-click="removeDuplicate(this.id,'A1','stForm'); disableDelete('stForm', '.delete1')"
+                                                                    label="Delete" danger disabled group="del">
+                                                                </cn2-button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Building Works covered under the above approved Structural Plan *</td>
+                                            <td>
+                                                <div class="mls-espro-form-fields row">
+                                                    <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                                        <input type="radio" id="PartOfAppl_FullCompOfWork10"
+                                                            name="PartOfAppl_name" checked mandatory
+                                                            onchange="PartOfAppl_change(this)"
+                                                            field-name="Full completion of works under Section I Particulars" />
+                                                    </div>
+                                                    <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">Full completion
+                                                        of works</div>
+                                                </div>
+                                                <div class="mls-espro-form-fields row pt-2">
+                                                    <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                                        <input type="radio" id="PartOfAppl_PartCompOfWork10"
+                                                            name="PartOfAppl_name" checked mandatory
+                                                            onchange="PartOfAppl_change(this)"
+                                                            field-name="Partial completion of works under Section I Particulars" />
+                                                        <cn2-checkbox id="RADIO1" no-label hidden></cn2-checkbox>
+                                                    </div>
+                                                    <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                                                        Partial completion of
+                                                        works as describe below.
+                                                        <p>
+                                                            Final submission will be made upon full completion of works.
+                                                        </p>
+                                                        <cn2-textarea id="PartOfAppl_PartCompOfWork20" hidden no-label
+                                                            mandatory maxlength="1000">
+                                                        </cn2-textarea>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Remarks</td>
+                                            <td>
+                                                <cn2-textarea id="PartOfAppl_Rema10"
+                                                    field-name="Remarks under Section I Particulars" no-label
+                                                    maxlength="1000">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page4">
+                    <div id="particularsContainer" class="mls-espo-right-inner-container">
+                        <h2 id="Page4_h2Section_id">Section II Particulars of Qualified Person for Supervision of
+                            Piling/Structural Works</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr hidden>
+                                            <td width="35%">Member Id</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Member_SID_HDBPE10"
+                                                    field-name="Member Id under Section II Particulars" no-label
+                                                    disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">Name*</td>
+                                            <td>
+                                                <cn2-select id="Member_Member_Name_HDBPE10"
+                                                    field-name="Name under Section II Particulars"
+                                                    data-options="hdbpeDropdown" no-label
+                                                    event-change="loadDropDownDetails(this);Member_Member_Name_HDBPE10_change(this);clearUEN('Members_UEN_HDBPE10')"
+                                                    mandatory>
+                                                </cn2-select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>PE Registration No.</td>
+                                            <td>
+                                                <cn2-textbox id="MemberRole_Professional_No_HDBPE10"
+                                                    field-name="PE Registration No. under Section II Particulars"
+                                                    no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Firm Name</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Firm_Name_HDBPE10"
+                                                    field-name="Firm Name under Section II Particulars" no-label
+                                                    disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>UEN</td>
+                                            <td>
+                                                <cn2-textbox id="Members_UEN_HDBPE10"
+                                                    field-name="UEN under Section II Particulars" template="#########@"
+                                                    no-label maxlength="10" event-blur="uenValidate(this)">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Address
+                                            </td>
+                                            <td>
+                                                <cn2-textarea id="Member_Address_HDBPE10"
+                                                    field-name="Address under Section II Particulars" no-label disabled>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Telephone No.</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Tel_No_HDBPE10"
+                                                    field-name="Telephone No. under Section II Particulars" no-label
+                                                    disabled numeric>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Handphone No.</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Mobile_No_HDBPE10"
+                                                    field-name="Handphone No. under Section II Particulars" no-label
+                                                    disabled numeric>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email Address</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Email_Address1_HDBPE10"
+                                                    field-name="Email Address under Section II Particulars" no-label
+                                                    disabled event-blur="checkEmail(this);"
+                                                    placeholder="example@email.com">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="DeclContainer" class="mls-espo-right-inner-container">
+                        <h2 id="Section2DeclarationH2">Declaration by Qualified Person*</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table id="CertSupePiliTable" class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td width="1%">I.1</td>
+                                            <td>I, the Qualified Person for Structural works appointed under Section
+                                                8(1)(b)
+                                                or 11(1)(d)(ii) of the Building Control Act,
+                                                hereby certify that all piling works as carried out under my supervision
+                                                have been completed on &nbsp;<cn2-datefield
+                                                    onfocusout="validateDate(this)" id="DeclByQualPers_IHereCertThat10"
+                                                    disabled no-label inline="3"
+                                                    field-name="the Qualified Person for Structural datefield under Declaration by Qualified Person">
+                                                </cn2-datefield>&nbsp;(DD/MM/YYYY) in accordance with the approved set
+                                                of piling plans / calculations, together
+                                                with the condition under which they were approved and all the relevant
+                                                provisions stipulated under the Building Control Act. I attach a record
+                                                plan
+                                                showing full details of the piling works.
+                                            </td>
+                                            <td width="1%">
+                                                <cn2-checkbox id="DeclByQualPers_IHereCertThat20"
+                                                    field-name="the Qualified Person for Structural checkbox under Declaration by Qualified Person"
+                                                    event-change="DeclByQualPers_IHereCertThat20_change(this)" checked
+                                                    mandatory>
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table id="CertSupeStruQPTable" hidden class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>I.1</td>
+                                            <td>I, the Qualified Person for structural works appointed under section
+                                                8(1)(b) or 11(1)(d)(ii) of the Building Control Act, hereby certify that
+                                                I have supervised the structural works and that such works have been
+                                                completed in accordance with the provisions of the Building Control Act,
+                                                the building regulations, the approved detailed structural plans and
+                                                design calculations and the conditions under which they were approved.
+
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="DeclByQualPers_IHereCertThat30"
+                                                    field-name="the Qualified Person for Structural2 checkbox under Declaration by Qualified Person"
+                                                    event-change="removeAttMandatoryCheck(this)"></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table id="SubmCertRecoPlanTable" hidden class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td rowspan="2">I.1</td>
+                                            <td>I, the Qualified Person for Structural works appointed under Section
+                                                8(1)(a) or 11(1)(d)(i) of the Building Control Act confirm that:-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="mls-espro-form-fields row">
+                                                    <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                                        a)&nbsp;&nbsp;&nbsp;<input
+                                                            id="DeclByQualPers_ITheQualPers_TheRecoDetaStru10"
+                                                            onchange="DeclByQualPers_ITheQualPers_change(this)"
+                                                            name="DeclByQualPers_ITheQualPers_name" type="radio"
+                                                            field-name="the Qualified Person for Structural (a) radio under Declaration by Qualified Person" />
+                                                    </div>
+                                                    <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                                                        <ul class="dashed">
+                                                            <li>- the record detailed structural plans and calculations
+                                                                which
+                                                                show the departures or deviations from the approved
+                                                                plans are
+                                                                submitted herewith.</li>
+                                                            <li>- all the minor structural amendments (i.e immaterial
+                                                                changes)
+                                                                highlighted and concise description of these amendments
+                                                                are
+                                                                shown in the record detailed structural plans and
+                                                                calculations.</li>
+                                                            <li>- all structural amendments works have carried out under
+                                                                my
+                                                                supervision.</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mls-espro-form-fields row">
+                                                    <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                                        b)&nbsp;&nbsp;&nbsp;<input
+                                                            id="DeclByQualPers_ITheQualPers_TherAreNoDepa10"
+                                                            onchange="DeclByQualPers_ITheQualPers_change(this)"
+                                                            name="DeclByQualPers_ITheQualPers_name" type="radio"
+                                                            field-name="the Qualified Person for Structural (b) radio under Declaration by Qualified Person" />
+                                                        <input id="DeclByQualPers_ITheQualPers_Hide10" hidden
+                                                            type="radio"
+                                                            field-name="the Qualified Person for Structural (b) radio hidden1 under Declaration by Qualified Person" />
+                                                        <input id="DeclByQualPers_ITheQualPers_Hide20" hidden
+                                                            type="radio"
+                                                            field-name="the Qualified Person for Structural (b) radio hidden2 under Declaration by Qualified Person" />
+                                                    </div>
+                                                    <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                                                        <ul style="list-style: none;">
+                                                            <li>there are no departures or deviations from the
+                                                                approved
+                                                                plans.
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table id="CertSupeStruQPTable10" hidden class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td colspan="2"><b>A. Regulation 18(3)(b) of the Building Control
+                                                    Regulation*
+                                                </b></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="1%">1.</td>
+                                            <td>I,&nbsp;<cn2-textbox id="DeclByQualPers_ICertThatTo10" inline="3"
+                                                    no-label disabled
+                                                    field-name="A. Regulation 18(3)(b) textbox under Declaration by Qualified Person">
+                                                </cn2-textbox>
+                                                &nbsp;the Qualified Person for structural works appointed under section
+                                                8(1) or 11(1)(d)(i) of the
+                                                Building Control Act, certify that to the best of my knowledge and
+                                                belief the departures or deviations shown on the record plans do not
+                                                affect the structural adequacy or stability of the building.
+
+                                            </td>
+                                            <td width="1%">
+                                                <cn2-checkbox id="DeclByQualPers_ICertThatTo20"
+                                                    field-name="A. Regulation 18(3)(b) checkbox under Declaration by Qualified Person"
+                                                    event-change="DeclByQualPers_ICertThatTo20_change(this)">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table id="SubmCertRecoPlanTable20" hidden class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td colspan="2"><b>B. Standard endorsement for QP*
+                                                </b></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="1%">1.</td>
+                                            <td>In accordance with Regulation 9 of the Building Control Regulations
+                                                <p>I,&nbsp;<cn2-textbox id="DeclByQualPers_InAccoWithRegu10" no-label
+                                                        disabled inline="3"
+                                                        field-name="In accordance with Regulation 9 textbox under Declaration by Qualified Person">
+                                                    </cn2-textbox>&nbsp;the Qualified Person for structural works
+                                                    appointed under section 8(1) or 11(1)(d)(i) of the Building
+                                                    Control
+                                                    Act, hereby submit the detailed structural plans and design
+                                                    calculations prepared by me and certify that they have been prepared
+                                                    in accordance with the provision of the Building Control
+                                                    Regulations, the Building Control Act and any other written law
+                                                    pertaining to buildings and construction for the time being in
+                                                    force.
+                                                </p>
+                                            </td>
+                                            <td width="1%">
+                                                <cn2-checkbox id="DeclByQualPers_InAccoWithRegu20"
+                                                    field-name="In accordance with Regulation 9 checkbox under Declaration by Qualified Person"
+                                                    event-change="DeclByQualPers_InAccoWithRegu20_change(this)">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.</td>
+                                            <td>I further certify that these detail structural plans and design
+                                                calculations are in reference to Project Reference No.:<p>
+                                                    <cn2-textbox id="DeclByQualPers_IFurtCertThat10" no-label disabled
+                                                        maxlength="25" inline="6"
+                                                        field-name="I further certify that textbox under Declaration by Qualified Person">
+                                                    </cn2-textbox>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="DeclByQualPers_IFurtCertThat20"
+                                                    field-name="I further certify that checkbox under Declaration by Qualified Person"
+                                                    event-change="DeclByQualPers_IFurtCertThat20_change(this,'DeclByQualPers_IFurtCertThat10')">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">
+                                                3.
+                                            </td>
+                                            <td>
+                                                Total number of structural plans submitted :
+                                                <p>
+                                                    <cn2-textbox id="DeclByQualPers_TotaNumbOfStru10" no-label numeric
+                                                        maxlength="25" inline="2" disabled
+                                                        field-name="Total number of structural plans textbox under Declaration by Qualified Person">
+                                                    </cn2-textbox>
+                                                </p>
+
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="DeclByQualPers_TotaNumbOfStru20"
+                                                    field-name="Total number of structural plans checkbox under Declaration by Qualified Person"
+                                                    event-change="DeclByQualPers_TotaNumbOfStru20_change(this,'DeclByQualPers_TotaNumbOfStru10')">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <cn2-textarea id="DeclByQualPers_TotalNumbOfPage10" disabled
+                                                    label="Total number of pages of design calculations in this book."
+                                                    maxlength="1000"
+                                                    field-name="Total number of pages textbox under Declaration by Qualified Person">
+                                                </cn2-textarea>
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="DeclByQualPers_TotaNumbOfPage20"
+                                                    field-name="Total number of pages checkbox under Declaration by Qualified Person"
+                                                    event-change="DeclByQualPers_TotaNumbOfPage20_change(this,'DeclByQualPers_TotalNumbOfPage10')">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">
+                                                <cn2-textarea id="DeclByQualPers_Rema10" label="Remarks"
+                                                    maxlength="1000"
+                                                    field-name="Remarks textarea under Declaration by Qualified Person">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table id="CertSupePiliWorkTable" hidden class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td width="1%">I.1</td>
+                                            <td>I, the Qualified Person for structural works appointed under section
+                                                8(1)(b)
+                                                or 11(1)(d)(ii) of the Building Control Act, hereby certify that all the
+                                                piling
+                                                works for geotechnical building works as carried out under my
+                                                supervision have been completed on
+                                                &nbsp;<cn2-datefield id="DeclByQualPers_IHereCertThat40" no-label
+                                                    onfocusout="validateDate(this)"
+                                                    field-name="In accordance with the approved set of piling plans datefield under Declaration by Qualified Person"
+                                                    disabled inline="4">
+                                                </cn2-datefield>&nbsp;
+                                                (DD/MM/YYYY) in accordance with the approved
+                                                set of piling plans/calculations for geotechnical building works,
+                                                together with the conditions under which they were approved and all
+                                                the relevant provisions stipulated under the Building Control Act. I
+                                                attach a record plan showing full details of the piling works.
+
+                                            </td>
+                                            <td width="1%">
+                                                <cn2-checkbox id="DeclByQualPers_IHereCertThat50"
+                                                    field-name="In accordance with the approved set of piling plans checkbox under Declaration by Qualified Person"
+                                                    event-change="DeclByQualPers_IHereCertThat50_change(this)">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table id="CertSupeGeotBuilTable" hidden class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td width="1%">I.1</td>
+                                            <td>I, the Qualified Person for structural works appointed under section
+                                                8(1)(b) or 11(1)(d)(ii) of the Building Control Act, hereby certify that
+                                                I
+                                                have supervised the structural works of geotechnical building works and
+                                                that such works have been completed in accordance with the provisions
+                                                of the Building Control Act, the building regulations, the approved
+                                                detailed
+                                                of the geotechnical building works plans and design calculations and
+                                                the conditions under which they were approved.
+
+                                            </td>
+                                            <td width="1%">
+                                                <cn2-checkbox id="DeclByQualPers_IHereCertThat60"
+                                                    field-name="the Qualified Person for structural 3 under Declaration by Qualified Person">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="page5">
+                    <div id="particularsContainer2" class="mls-espo-right-inner-container">
+                        <h2 id="Section3H2_Id">Section III Particulars Of Qualified Person for Supervision of
+                            Geotechnical Aspects of
+                            Geotechnical Building Works</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr hidden>
+                                            <td>Member Id</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Member_SID_PE10"
+                                                    field-name="Member Id under Section III Particulars" pe-group
+                                                    no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">Name*</td>
+                                            <td>
+                                                <cn2-select id="Member_Member_Name_HDBPE20" data-options="peDropdown"
+                                                    pe-group mandatory no-label
+                                                    field-name="Name under Section III Particulars"
+                                                    event-change="loadDropDownDetails(this);Member_Member_Name_HDBPE20_change();clearUEN('Members_UEN_HDBPE20')">
+                                                </cn2-select>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Registration No.</td>
+                                            <td>
+                                                <cn2-textbox id="MemberRole_Professional_No_HDBPE20" pe-group no-label
+                                                    field-name="Registration No. under Section III Particulars"
+                                                    disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Firm Name</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Firm_Name_HDBPE20"
+                                                    field-name="Firm Name under Section III Particulars" pe-group
+                                                    no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>UEN</td>
+                                            <td>
+                                                <cn2-textbox id="Members_UEN_HDBPE20" pe-group no-label
+                                                    field-name="UEN under Section III Particulars"
+                                                    event-blur="uenValidate(this)" maxlength="10" template="#########@">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Address</td>
+                                            <td>
+                                                <cn2-textarea id="Member_Address_HDBPE20"
+                                                    field-name="Address under Section III Particulars" pe-group no-label
+                                                    disabled>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Telephone No.</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Tel_No_HDBPE20"
+                                                    field-name="Telephone No. under Section III Particulars" pe-group
+                                                    no-label disabled numeric>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Handphone No.</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Mobile_No_HDBPE20"
+                                                    field-name="Handphone No. under Section III Particulars" pe-group
+                                                    no-label disabled numeric>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email Address</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Email_Address1_HDBPE20" pe-group no-label
+                                                    disabled event-blur="checkEmail(this);"
+                                                    field-name="Email Address under Section III Particulars"
+                                                    placeholder="example@email.com">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container">
+                        <h2 id="Page5Section3Decl_h2">Declaration by Qualified Person for Supervision of Geotechnical
+                            Aspects of Geotechnical
+                            Building Works</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table id="DeclQualPersSuperGeoTable1" hidden class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td width="1%">I.1</td>
+                                            <td>
+                                                I, the Qualified Person for geotechnical aspects of geotechnical
+                                                building
+                                                works appointed under section 8(1)(d)(ii) or 11(1)(d)(iii) (B) of the
+                                                Building
+                                                Control Act, hereby certify that geotechnical aspects of piling works
+                                                for
+                                                geotechnical building works as carried out under my supervision have
+                                                been completed on
+                                                &nbsp;<cn2-datefield id="DeclByQualPers_IHereCertThat70" no-label
+                                                    onfocusout="validateDate(this)"
+                                                    field-name="the Qualified Person for geotechnical datefield under Declaration QP Supervision of Geo"
+                                                    disabled inline="4"></cn2-datefield>
+                                                &nbsp;(DD/MM/YYYY) in accordance with the approved set of piling
+                                                plans/calculations for geotechnical building works, together with the
+                                                conditions under which they were approved and all the relevant
+                                                provisions stipulated under the Building Control Act. I attach a record
+                                                plan showing full details of the piling works.
+                                            </td>
+                                            <td width="1%">
+                                                <cn2-checkbox id="DeclByQualPers_IHereCertThat80"
+                                                    field-name="the Qualified Person for geotechnical checkbox under Declaration QP Supervision of Geo"
+                                                    event-change="DeclByQualPers_IHereCertThat80_change(this)">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table id="DeclQualPersSuperGeoTable2" hidden class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td width="1%">I.1</td>
+                                            <td>
+                                                I, the Qualified Person for geotechnical aspects of geotechnical
+                                                building
+                                                works appointed under section 8(1)(d)(ii) or 11(1)(d)(iii) (B) of the
+                                                Building
+                                                Control Act, hereby certify that I have supervised the geotechnical
+                                                aspects
+                                                of geotechnical building works and that such works have been completed
+                                                in accordance with the provisions of the Building Control Act, the
+                                                building
+                                                regulations, the approved detailed of the geotechnical building works
+                                                plans and design calculations and the conditions under which they were
+                                                approved.
+
+                                            </td>
+                                            <td width="1%">
+                                                <cn2-checkbox id="DeclByQualPers_IHereCertThat90"
+                                                    field-name="the Qualified Person for geotechnical 2 checkbox under Declaration QP Supervision of Geo"
+                                                    event-change="removeAttMandatoryCheck(this)"></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table id="DeclQualPersGeoAspGeoBuilTable" hidden class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td rowspan="2">I.1</td>
+                                            <td>I, the Qualified Person for geotechnical aspects of geotechnical
+                                                building works appointed under section 8(1)(d)(i) or 11(1)(d)(iii)(A) of
+                                                the Building Control Act confirm that:-*</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="mls-espro-form-fields row">
+                                                    <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                                        a)&nbsp;&nbsp;&nbsp;<input
+                                                            id="DeclByQualPers_ITheQualPers_TheRecoDetaStru20"
+                                                            field-name="the Qualified Person for geotechnical (a) radio under Declaration QP Supervision of Geo"
+                                                            onchange="DeclByQualPers_ITheQualPers2_change(this)"
+                                                            name="DeclByQualPers_ITheQualPers2_name" type="radio" />
+                                                    </div>
+                                                    <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                                                        <ul>
+                                                            <li>- the record detailed geotechnical building works plans
+                                                                and
+                                                                calculations which show the departures or deviations
+                                                                from the
+                                                                approved plans are submitted herewith
+                                                            </li>
+                                                            <li>- all minor structural amendments (i.e. immaterial
+                                                                changes) are
+                                                                highlighted and concise description of these amendments
+                                                                are shown in the record detailed geotechnical building
+                                                                works plans
+                                                                and calculations
+                                                            </li>
+                                                            <li>- all structural amendment works have been carried out
+                                                                under
+                                                                my supervision
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mls-espro-form-fields row">
+                                                    <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                                        b)&nbsp;&nbsp;&nbsp;<input
+                                                            id="DeclByQualPers_ITheQualPers_TherAreNoDepa20"
+                                                            field-name="the Qualified Person for geotechnical (b) radio under Declaration QP Supervision of Geo"
+                                                            onchange="DeclByQualPers_ITheQualPers2_change(this)"
+                                                            name="DeclByQualPers_ITheQualPers2_name" type="radio" />
+                                                    </div>
+                                                    <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                                                        <ul style="list-style: none;">
+                                                            <li>there are no departures or deviations from the approved
+                                                                plans.
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table id="DeclQualPersGeoAspGeoBuilTableA" hidden class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="3"><b>A) Certification of Record Plans for Qualified Person
+                                                    (Geotechnical)*
+                                                </b></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="1%">1.</td>
+                                            <td>I,&nbsp;<cn2-textbox id="DeclByQual_CertOfRecoPlan10" inline="3"
+                                                    field-name="Certification of Record Plans textbox under Declaration QP Supervision of Geo"
+                                                    no-label disabled></cn2-textbox>
+                                                &nbsp;the Qualified Person for geotechnical aspects of geotechnical
+                                                building works appointed under section 8(1)(d)(i) or 11(1)(d)(iii) of
+                                                the Building Control Act, certify that to the best of my knowledge and
+                                                belief the departures or deviations shown on the record plans do not
+                                                show any inadequacy in the geotechnical aspects relating to the
+                                                geotechnical building works.
+
+                                            </td>
+                                            <td width="1%">
+                                                <cn2-checkbox id="DeclByQual_CertOfRecoPlan20"
+                                                    field-name="Certification of Record Plans checkbox under Declaration QP Supervision of Geo"
+                                                    event-change="DeclByQual_CertOfRecoPlan20_change(this)">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table id="DeclQualPersGeoAspGeoBuilTableB" hidden class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="3"><b>B) Standard endorsement for QP (Geotechnical)*
+                                                </b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>1.</td>
+                                            <td>In accordance with Regulation 10A of the Building Control Regulations<p>
+                                                    I, &nbsp;<cn2-textbox id="DeclByQual_InAccoWithRegu10" no-label
+                                                        field-name="Standard endorsement textbox under Declaration QP Supervision of Geo"
+                                                        inline="4" disabled>
+                                                    </cn2-textbox>&nbsp;for geotechnical aspects of geotechnical
+                                                    building works appointed under section 8(1)(d)(i) or 11(1)(d)(iii)
+                                                    of the Building Control Act, hereby submit the geotechnical building
+                                                    works plans and design calculations prepared by me and certify that,
+                                                    to the best of my knowledge and belief, they have been prepared in
+                                                    accordance with the provisions of the Building Control Regulations,
+                                                    the Building Control Act and any other written law pertaining to
+                                                    buildings and construction for the time being in force.
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="DeclByQual_InAccoWithRegu20"
+                                                    field-name="Standard endorsement checkbox under Declaration QP Supervision of Geo"
+                                                    event-change="DeclByQual_InAccoWithRegu20_change(this)">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="1%">2.</td>
+                                            <td>I further certify that these geotechnical building works plans and
+                                                design calculations are in reference to Project Reference No:
+                                                <p>
+                                                    <cn2-textbox id="DeclByQual_IFurtCertThat10" inline="6" no-label
+                                                        field-name="I further certify textbox under Declaration QP Supervision of Geo"
+                                                        maxlength="25" disabled>
+                                                    </cn2-textbox>
+                                                </p>
+
+                                            </td>
+                                            <td width="1%">
+                                                <cn2-checkbox id="DeclByQual_IFurtCertThat20"
+                                                    field-name="I further certify checkbox under Declaration QP Supervision of Geo"
+                                                    event-change="DeclByQual_IFurtCertThat20_change(this)">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="1%" rowspan="2">3.</td>
+                                            <td>Total number of geotechnical building works plans submitted :
+                                                <p>
+                                                    <cn2-textbox id="DeclByQual_TotaNumbOfInde10" inline="2" no-label
+                                                        field-name="Total number of geotechnical textbox under Declaration QP Supervision of Geo"
+                                                        maxlength="6" numeric disabled>
+                                                    </cn2-textbox>
+                                                </p>
+
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="DeclByQual_TotaNumbOfInde20"
+                                                    field-name="Total number of geotechnical checkbox under Declaration QP Supervision of Geo"
+                                                    event-change="DeclByQual_TotaNumbOfInde20_change(this)">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total number of page of design calculations in this book :
+                                                <p>
+                                                    <cn2-textbox id="DeclByQual_TotaNumbOfPage10" inline="2" no-label
+                                                        field-name="Total number of page textbox under Declaration QP Supervision of Geo"
+                                                        maxlength="6" numeric disabled>
+                                                    </cn2-textbox>
+                                                </p>
+
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="DeclByQual_TotaNumbOfPage20"
+                                                    field-name="Total number of page checkbox under Declaration QP Supervision of Geo"
+                                                    event-change="DeclByQual_TotaNumbOfPage20_change(this)">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">
+                                                <cn2-textarea id="FIELD5" label="Remarks" maxlength="1000"
+                                                    field-name="Remarks under Declaration QP Supervision of Geo">
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <cn2-fixed-footer></cn2-fixed-footer>
+        <cn2-version-footer></cn2-version-footer>
+    </div>
+
+</body>
+
+</html>

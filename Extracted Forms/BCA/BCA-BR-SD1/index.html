@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>BCA-BR-SD1</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2switchbutton.js"></script>
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head title="APPOINTMENT OF STRUCTURAL ENGINEER &lt;br&gt;The Building Control Act (Cap 29) [Section 24]">
+  </cn2-master-head>
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p><b>For enquiries related to forms, please contact the following:</b></p>
+        <p> <span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>BCA(BP) & (TOP)</td>
+                <td>bca_enquiry@bca.gov.sg</td>
+                <td>1800-3425222</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td rowspan="3">BCA (Buildable Design and Constructability)</td>
+                <td>kong_chew_kwek@bca.gov.sg</td>
+                <td>68044228</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>terence_teo@bca.gov.sg</td>
+                <td>68044231</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>chin_kim_hong@bca.gov.sg</td>
+                <td>68044234</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td rowspan="2">BCA(ST)</td>
+                <td>wai_hui_ling@bca.gov.sg</td>
+                <td>68044609</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>chang_heng_choy@bca.gov.sg</td>
+                <td>68044646</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td rowspan="2">BCA (CD Shelter)</td>
+                <td>lee_pheck_hoon@bca.gov.sg</td>
+                <td>68044410</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>yeo_keng@bca.gov.sg</td>
+                <td>68044416</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>BCA (Transit Shelter) </td>
+                <td>Tan Wee Kian</td>
+                <td>63961408</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td rowspan="4">BCA (Minimum Environmental Sustainability Std for Existing Bldgs &
+                  Periodic Energy
+                  Audit)</td>
+                <td>aloysius_aw@bca.gov.sg</td>
+                <td>68044705</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>joseph_hong@bca.gov.sg</td>
+                <td>68044699</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>wee_kai_siong@bca.gov.sg</td>
+                <td>68044701</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>yong_siew_hwa@bca.gov.sg</td>
+                <td>68044715</td>
+                <td>Policies</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <input type="hidden" id="member_id" name="member_id" />
+  <input type="hidden" id="form_validated" name="form_validated" />
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Building to be Accessed">
+        </cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3"
+          label="Particulars and Declaration by Owner / Management Corporation">
+        </cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4" label="Particulars and Confirmation by Structural Engineer">
+        </cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" no-label inline="6" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To:*</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textbox no-label inline="6" id="Addr10" disabled>
+                        </cn2-textbox>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea id="Addr20" no-label inline="6" disabled style="height: 125px;">
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list" id="AppoOfStruEngi_tableList_id">
+              <li>
+                This form is to be digitally signed by the appointed Qualified Person.
+              </li>
+              <li>
+                This form may take you 2-3 mins to complete.
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container" style="margin-bottom: 65px">
+            <h2>Particulars of Building to be Accessed</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <td width="35%">Order Reference No.*</td>
+                <td>
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pl-3" style="padding: 0px;">
+                      SD&nbsp;<cn2-textbox no-label maxlength="4" inline="2" id="PartOfBuil_NotiRefeNo10"
+                        event-blur="yearValidation(this,event)" numeric mandatory>
+                      </cn2-textbox>/
+                      <cn2-textbox no-label maxlength="3" inline="2" id="PartOfBuil_NotiRefeNo20"
+                        event-keypress="PartOfAppl_PlanType_keypress(event,this)"
+                        event-change="adjustNumberLength(this, 3);" numeric mandatory>
+                      </cn2-textbox>
+                    </div>
+                  </div>
+                </td>
+                <tr>
+                  <td>Building Address*</td>
+                  <td colspan="3">
+                    <cn2-textarea id="BuilDetails_Build_Add10" mandatory no-label maxlength="250">
+                    </cn2-textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container">
+            <h2>Section I Particulars of Owner / Management Corporation</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="25%">
+                    Name*
+                  </td>
+                  <td>
+                    <cn2-textbox id="Part_Owner_Name10" no-label mandatory maxlength="66">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="mls-espro-form-fields row">
+                          <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <input type="radio" id="Part_Owner_Owner10" name="PartOfTheOWNER_name"
+                              onchange="PartOfTheOWNER_change(this); onBlurorChange(this)" />
+                          </div>
+                          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                            Owner
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="mls-espro-form-fields row">
+                          <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <input type="radio" id="Part_Owner_MCST10" name="PartOfTheOWNER_name"
+                              onchange="PartOfTheOWNER_change(this); onBlurorChange(this)" />
+                          </div>
+                          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                            MCST <span id="mcstno"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="PartOfTheOWNER_MCSTNo10_hide" hidden>
+                        <cn2-textbox id="Part_Owner_MCST_No10" maxlength="10" no-label disabled>
+                        </cn2-textbox>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox id="Part_Owner_Fname10" no-label maxlength="66"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox id="Part_Owner_UEN10" no-label maxlength="10" event-change="UENchange(this)">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address*</td>
+                  <td>
+                    <cn2-textarea id="Part_Owner_Address10" mandatory no-label maxlength="32400">
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.*</td>
+                  <td>
+                    <cn2-textbox id="Part_Owner_Tele_No10" no-label maxlength="12" mandatory numeric>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox id="Part_Owner_Hand_No10" no-label maxlength="12" numeric>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address*</td>
+                  <td>
+                    <cn2-textbox id="Part_Owner_Email_Add10" no-label maxlength="50"
+                      event-change="Member_Email_Address1_OWNMCST10_change(this)" placeholder="name@example.com"
+                      mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container" style="margin-bottom: 65px">
+            <h2>Declaration by Owner / Management Corporation*</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    (1)
+                  </td>
+                  <td>
+                    <div style="line-height: 35px;">
+                      I have appointed Er <cn2-textbox id="Decl_Owner_NameQP10" inline="4" disabled></cn2-textbox>
+                      &nbsp;PE Registration No.
+                      <cn2-textbox id="Decl_Owner_RegiNo_QP10" inline="2" disabled></cn2-textbox>
+                      as the Structural
+                      Engineer to fulfil the requirements of the Order served on the above
+                      building under Section 24 of
+                      the Building Control Act (Cap 29).</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page4">
+          <div class="mls-espo-right-inner-container" id="particursOfQualifiedPers">
+            <h2>Section II Particulars of Structural Engineer</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="25%">Name*</td>
+                  <td>
+                    <cn2-textbox id="Member_Name_QP10" no-label maxlength="66" event-blur="onBlurorChange(this)"
+                      mandatory></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.*</td>
+                  <td>
+                    <cn2-textbox id="Member_RegiNo_QP10" maxlength="5" event-blur="onBlurorChange(this)" no-label
+                      numeric mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox id="Member_Firm_Name_QP10" maxlength="66" no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox id="Member_UEN_QP10" maxlength="10" event-change="UENchange(this)" no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Address*
+                  </td>
+                  <td>
+                    <cn2-textarea id="Member_Address_QP10" mandatory no-label maxlength="32400">
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.*</td>
+                  <td>
+                    <cn2-textbox id="Member_Tele_No_QP10" mandatory no-label maxlength="12" numeric>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Hand_No_QP10" no-label maxlength="12" numeric>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address*</td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Add_QP10" no-label maxlength="50"
+                      event-change="Member_Email_Address1_OWNMCST10_change(this)" placeholder="name@example.com"
+                      mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container" style="margin-bottom: 65px">
+            <h2>Confirmation of Appointment by Structural Engineer</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>
+                    <div style="line-height: 35px;">I, Er <cn2-textbox id="Decl_QualPers_Er10" inline="4" disabled>
+                      </cn2-textbox>&nbsp;hereby confirm that I have
+                      been appointed by the above&nbsp;<cn2-textbox id="Decl_QualPers_Owner_Mana10" inline="2" disabled>
+                      </cn2-textbox>&nbsp;to
+                      carry out the necessary works to comply with the Order served on the above
+                      building under
+                      Section 24 of The Building Control Act (Cap 29).
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-version-footer></cn2-version-footer>
+    <cn2-fixed-footer></cn2-fixed-footer>
+  </div>
+</body>
+
+</html>

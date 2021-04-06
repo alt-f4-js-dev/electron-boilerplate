@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>BCA-TOP-CSC</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <script>
+    if (typeof module === 'object') {
+      window.module = module;
+      module = undefined;
+    }
+  </script>
+  <script src="../cm/resources/assets/js/jquery-3.4.1.min.js"></script>
+  <script src="../cm/resources/assets/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
+
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2switchbutton.js"></script>
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head
+    title="APPLICATION FOR *TEMPORARY OCCUPATION (TOP)/CERTIFICATE OF STATUTORY COMPLETION (CSC)<br>[Section 12 of the Building Control Act (Cap 29)]">
+  </cn2-master-head>
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p><b>For enquiries related to forms, please contact the following:</b></p>
+        <p> <span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>BCA(BP) & (TOP)</td>
+                <td>bca_enquiry@bca.gov.sg</td>
+                <td>1800-3425222</td>
+                <td>Policies</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">OK</button>
+      </div>
+    </div>
+  </div>
+  <input type="hidden" name="member_id" id="member_id">
+  <input type="hidden" name="form_validated" id="form_validated">
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Application">
+        </cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars of Developer">
+        </cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4" label="Particulars and Declaration by Qualified Person">
+        </cn2-nav-button>
+        <cn2-nav-button target="page5" page-number="5" label="Booking Inspections" onclick="showPage5();">
+        </cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" no-label inline="5" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To: *</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-select no-label inline="5" id="Addr10" event-change="ToAgency_id_change(this)" mandatory
+                          options="Building and Construction Authority:BCA,Defence Science & Technology Agency:DSTA">
+                        </cn2-select>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea id="Addr20" no-label inline="5" disabled style="height: 137px;">
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container" style="margin-bottom: 65px;">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>
+                This form is to be digitally signed by the Qualified Person.
+              </li>
+              <li>
+                This form may take 2-4 minutes to complete.
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Project Details</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="25%">
+                    Project Reference Number
+                  </td>
+                  <td>
+                    <cn2-textbox id="Project_Project_Ref_No10" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Project Title</td>
+                  <td>
+                    <cn2-textarea id="Project_Title10" no-label disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td id="Project_Title20_td">Description of Completed Building Works</td>
+                  <td>
+                    <cn2-textarea id="Project_Title20" no-label maxlength="1000"></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Location Description</td>
+                  <td>
+                    <cn2-textarea id="Project_Location_Description10" no-label disabled></cn2-textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 65px;">
+            <h2>Application Details</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr id="PartOfAppl_NameOfDeve10_tr">
+                  <td width="25%">Name of Development</td>
+                  <td colspan="2">
+                    <cn2-textarea id="PartOfAppl_NameOfDeve10" no-label maxlength="32400"></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="25%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        Plan Type *
+                      </div>
+                    </div>
+                  </td>
+                  <td id="stForm" colspan="2">
+                    <div class="mls-espro-form-fields row" id="A1">
+                      <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                        <cn2-select id="PartOfAppl_PlanType10" prefix="PartOfAppl_PlanType" suffix="0" no-label
+                          event-change="PartOfAppl_PlanTypeA10_change(this);PartOfAppl_DevtType10_change()"
+                          options="BP:BP,ST:ST" mandatory></cn2-select>
+                      </div>
+                      <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                        <cn2-textbox id="PartOfAppl_PlanType20" maxlength="3" prefix="PartOfAppl_PlanTypeB" suffix="0"
+                          no-label numeric event-change="adjustNumberLength(this,3);PartOfAppl_PlanTypeB_change(this)"
+                          mandatory>
+                        </cn2-textbox>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr id="PartOfAppl_ApplType10_tr">
+                  <td>
+                    Type of Application *
+                  </td>
+                  <td colspan="2">
+                    <cn2-select id="DeclByAppl_IHereApplFor10" no-label options="TOP:TOP,CSC:CSC"
+                      event-change="PartOfAppl_ApplType10_change()" mandatory>
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td> Building Usage <span id="PartOfAppl_ResiLabel"></span>
+                  </td>
+                  <td colspan="2">
+                    <table class="table table-borderless m-0">
+                      <tbody building-usage-tbody>
+                        <tr>
+                          <td class="text-center align-middle" width="30px">
+                            <cn2-checkbox id="PartOfAppl_Resi10" name="checkedOne" selectedBP disabled
+                              event-change="atleastOne(this)">
+                            </cn2-checkbox>
+                          </td>
+                          <td class="align-middle" style="padding-top: 1px; padding-left: 0;">
+                            Residential (Landed)
+                          </td>
+                          <td class="text-center align-middle" width="30px">
+                            <cn2-checkbox id="PartOfAppl_ResiNon10" name="checkedOne" selectedBP disabled
+                              event-change="atleastOne(this)">
+                            </cn2-checkbox>
+                          </td>
+                          <td class="align-middle" style="padding-top: 1px; padding-left: 0;">
+                            Residential (Non Landed)
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-center align-middle">
+                            <cn2-checkbox id="PartOfAppl_Comm10" name="checkedOne" selectedBP disabled
+                              event-change="atleastOne(this)">
+                            </cn2-checkbox>
+                          </td>
+                          <td class="align-middle" style="padding-top: 1px; padding-left: 0;">
+                            Commercial
+                          </td>
+                          <td class="text-center align-middle">
+                            <cn2-checkbox id="PartOfAppl_Inst10" name="checkedOne" selectedBP disabled
+                              event-change="atleastOne(this)">
+                            </cn2-checkbox>
+                          </td>
+                          <td class="align-middle" style="padding-top: 1px; padding-left: 0;">
+                            Institutional
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-center align-middle">
+                            <cn2-checkbox id="PartOfAppl_Indu10" name="checkedOne" selectedBP disabled
+                              event-change="atleastOne(this)">
+                            </cn2-checkbox>
+                          </td>
+                          <td class="align-middle" style="padding-top: 1px; padding-left: 0;">
+                            Industrial
+                          </td>
+                          <td class="text-center align-middle">
+                            <cn2-checkbox id="PartOfAppl_Brid10" name="checkedOne" selectedBP disabled
+                              event-change="atleastOne(this)">
+                            </cn2-checkbox>
+                          </td>
+                          <td class="align-middle" style="padding-top: 1px; padding-left: 0;">
+                            Bridge / Flyover
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr id="PartOfAppl_AcceFund_tr">
+                  <td>Accessibility Fund is applicable</td>
+                  <td colspan="2">
+                    <cn2-checkbox id="PartOfAppl_AcceFund" style="margin-left: 12px;"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr id="PartOfAppl_ContPers10_tr">
+                  <td>Contact Person <span id="PartOfAppl_ContPers10Label"></span></td>
+                  <td colspan="2">
+                    <cn2-textbox id="PartOfAppl_ContPers10" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container" style="margin-bottom: 65px;">
+            <h2>Section I Particulars of Developer</h2>
+            <div class="mls-espro-form-fields row ">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 ">
+                <cn2-button label="Add"
+                  event-click="insertDuplicate('particularsOfApplicationForm','form1');particularsOfApplicationFormAdd_click('particularsOfApplicationForm');removeUenInvalid('particularsOfApplicationForm', 'Members_UEN_OWNER')">
+                </cn2-button>
+              </div>
+            </div>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 ">
+                <div id="accordion">
+                  <div id="particularsOfApplicationForm">
+                    <div id="form1" parent>
+                      <h2 class="accordion-toggle">
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td width="20%">
+                                <cn2-select data-options="ownerDropdown" label="Name"
+                                  event-change="loadDropDownDetails(this); togglePartDev(this);nricMaskingAccor(this, 'Member_IC_Passport_No_Masked_OWNER')"
+                                  mandatory prefix="Member_Member_Name_OWNER" suffix="0"
+                                  id="Member_Member_Name_OWNER10">
+                                </cn2-select>
+                              </td>
+                              <td width="20%" nricUnmasked hidden>
+                                <cn2-textbox label="NRIC No." id="Member_IC_Passport_No_OWNER10" disabled
+                                  prefix="Member_IC_Passport_No_OWNER" suffix="0">
+                                </cn2-textbox>
+                              </td>
+                              <td width="20%" nricMasked>
+                                <cn2-textbox label="NRIC No." id="Member_IC_Passport_No_Masked_OWNER10" disabled
+                                  prefix="Member_IC_Passport_No_Masked_OWNER" suffix="0">
+                                </cn2-textbox>
+                              </td>
+                              <td width="20%">
+                                <cn2-textbox label="Firm Name" id="Member_Firm_Name_OWNER10" disabled
+                                  prefix="Member_Firm_Name_OWNER" suffix="0">
+                                </cn2-textbox>
+                              </td>
+                              <td width="10%">
+                                <div class="mls-espro-form-fields row pt-4">
+                                  <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pt-1 text-center">
+                                    <cn2-button label="Delete" id="PartOfTheOWNER_Delete10" disabled
+                                      prefix="PartOfTheOWNER_Delete" suffix="0" danger
+                                      event-click="removeDuplicate(this.id,'form1','particularsOfApplicationForm');particularsOfApplicationFormDelete_click('particularsOfApplicationForm');nricMaskingAccorDelete('Member_IC_Passport_No_Masked_OWNER')">
+                                    </cn2-button>
+                                  </div>
+                                </div>
+                              </td>
+                              <td width="5%"><span class="fa fa-angle-down collapsed" data-toggle="collapse"
+                                  href="#collapse1" id="#collapse1" prefix="#collapse" child onclick="spanUpDown(this)"
+                                  aria-expanded="false"></span>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </h2>
+                      <div id="collapse1" class="panel-collapse collapse" child="div" prefix="collapse">
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr hidden>
+                              <td>Member ID</td>
+                              <td>
+                                <cn2-textbox no-label id="Member_Member_SID_OWNER10" prefix="Member_Member_SID_OWNER"
+                                  suffix="0" disabled>
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="25%">UEN</td>
+                              <td>
+                                <cn2-textbox no-label id="Members_UEN_OWNER10" prefix="Members_UEN_OWNER" suffix="0"
+                                  maxlength="10" template="#########@" event-blur="uenValidate(this)">
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Designation</td>
+                              <td>
+                                <cn2-textarea no-label id="Member_Designation_OWNER10" prefix="Member_Designation_OWNER"
+                                  suffix="0" disabled>
+                                </cn2-textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Address</td>
+                              <td>
+                                <cn2-textarea no-label id="Member_Address_OWNER10" disabled
+                                  prefix="Member_Address_OWNER" suffix="0">
+                                </cn2-textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Telephone No</td>
+                              <td>
+                                <cn2-textbox no-label id="Member_Tel_No_OWNER10" prefix="Member_Tel_No_OWNER" suffix="0"
+                                  disabled>
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Handphone No</td>
+                              <td>
+                                <cn2-textbox no-label id="Member_Mobile_No_OWNER10" prefix="Member_Mobile_No_OWNER"
+                                  suffix="0" disabled>
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Email Address</td>
+                              <td>
+                                <cn2-textbox no-label id="Member_Email_Address1_OWNER10"
+                                  prefix="Member_Email_Address1_OWNER" suffix="0" disabled>
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page4">
+          <div class="mls-espo-right-inner-container">
+            <h2>Section I Particulars of Qualified Person</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td>Member ID</td>
+                  <td>
+                    <cn2-textbox id="Member_Member_SID_QP10" disabled no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="25%">Name *</td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_QP10" data-options="qpDropdown"
+                      event-change="loadDropDownDetails(this);togglePartQp();nricMasking(Member_Member_IC_Passport_No_Masked_QP10)"
+                      no-label mandatory></cn2-select>
+                  </td>
+                </tr>
+                <tr nricUnmasked hidden>
+                  <td>ID</td>
+                  <td>
+                    <cn2-textbox id="Member_Member_IC_Passport_No_QP10" disabled no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr nricMasked>
+                  <td>ID</td>
+                  <td>
+                    <cn2-textbox id="Member_Member_IC_Passport_No_Masked_QP10" disabled no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Professional_No_QP10" disabled no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox id="Member_Firm_Name_QP10" disabled no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_QP10" maxlength="10" template="#########@"
+                      event-blur="uenValidate(this)" no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea id="Member_Address_QP10" disabled no-label></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_QP10" disabled no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Mobile_No_QP10" disabled no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_QP10" disabled no-label></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2 id="declH2">Declaration by Qualified Person</h2>
+
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td width="1%">II.1</td>
+                  <td>
+                    I am the Qualified Person appointed under the Act in respect of the abovementioned building works
+                    and declare that all the particulars required for this application are correct and have been
+                    complied with. *
+                  </td>
+                  <td width="1%">
+                    <cn2-checkbox id="DeclByQualPers_IAmTheQual10" event-change="removeMandatoryCheck(this)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>II.2</td>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        The building works have been completed *
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 pt-1">
+                        <input type="radio" id="DeclByQualPers_TheBuilWorkHave20"
+                          onchange="DeclByQualPers_TheBuilWorkHave_change(this)"
+                          name="DeclByQualPers_TheBuilWorkHave_name" disabled style="margin-top:7px" />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        With a permit to commence works obtained on <span
+                          id="DeclByQualPers_TheBuilWorkHave_WithAPermTo20Label"></span>&nbsp;<cn2-datefield
+                          onfocusout="validateDate(this)" id="DeclByQualPers_TheBuilWorkHave_WithAPermTo20" disabled
+                          no-label inline="3">
+                        </cn2-datefield>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <input type="radio" id="DeclByQualPers_TheBuilWorkHave_WithAPerm10"
+                          onchange="DeclByQualPers_TheBuilWorkHave_change(this)"
+                          name="DeclByQualPers_TheBuilWorkHave_name" disabled />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        Without a permit
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_TheBuilWorkHave10"
+                      event-change="removeMandatoryCheck(this);DeclByQualPers_TheBuilWorkHave10_change(this);">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>II.3</td>
+                  <td>
+                    I have obtained clearance for the commissioning of household and
+                    storey shelters from the Civil Defence Shelters Engineering
+                    Department, BCA, for residential developments, whose applications
+                    for written permission to URA or lodgement with URA are made on or
+                    after 1 May 1998.
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_IHaveObta10" event-change="removeMandatoryCheck(this)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td rowspan="7" width="1%">II.4</td>
+                  <td>I have obtained clearances for TOP/CSC from -</td>
+                  <td width="1%">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>(i) Fire Safety and Shelter Department</td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_IHaveObtaClearances10"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>(ii) NEA (Pollution Control/Environmental Health)</td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_IHaveObtaClearances20"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>(iii) PUB (Sewerage/Drainage)</td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_IHaveObtaClearances30"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>(iv) URA</td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_IHaveObtaClearances60"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>(v) LTA (Road & Transport/Vehicle Parking)</td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_IHaveObtaClearances40"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>(vi) NParks</td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_IHaveObtaClearances50"></cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container" id="SubmCheck_div" style="margin-bottom: 65px;">
+            <h2>Submission Checklist</h2>
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td width="1%">III.1</td>
+                  <td>
+                    Notification of appointment/authorisation form (eg. BCA-LU-NAPPQP01)
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        <input type="radio" name="SubmChec_NotiOfAppoAuth_name" disabled id="SubmChec_NotiOfAppoAuth20"
+                          onchange="SubmChec_NotiOfAppoAuth_change(this)" />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11 ">
+                        is attached.
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        <input type="radio" name="SubmChec_NotiOfAppoAuth_name" disabled id="SubmChec_NotiOfAppoAuth30"
+                          onchange="SubmChec_NotiOfAppoAuth_change(this)" />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11 ">
+                        had been submitted previously on &nbsp;<cn2-datefield onfocusout="validateDate(this)"
+                          id="SubmChec_NotiOfAppoAuth40" inline="3" no-label disabled>
+                        </cn2-datefield>
+                      </div>
+                    </div>
+                  </td>
+                  <td width="1%">
+                    <cn2-checkbox id="SubmChec_NotiOfAppoAuth10" group-id="SubmChec_groupid"
+                      event-change="SubmChec_change(this);SubmChec_NotiOfAppoAuth10_change(this)"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td rowspan="10">III.2</td>
+                  <td colspan="2">The following documents are attached for TOP/CSC consideration.</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        a)
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11 ">
+                        Form BCA-CSC-CSPBW - Certificate of Supervision of Building Works
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_TheFollDocuMust_FormCertOfSupe10" group-id="SubmChec_groupid"
+                      event-change="SubmChec_change(this)"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        b)
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11 ">
+                        Form BCA-CSC-TOPCSCDQP - Declaration by Qualified Person for the application of TOP/CSC for
+                        Building Works
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_TheFollDocuMust_FormBpdCsc0Cert10" group-id="SubmChec_groupid"
+                      event-change="SubmChec_change(this)"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        c)
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11 ">
+                        Form BCA-CSC-CSPLP - Certificate of Supervision of Lightning Protection System
+                      </div>
+                    </div>
+
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_TheFollDocuMust_FormBpdCsc0Certificate10" group-id="SubmChec_groupid"
+                      event-change="SubmChec_change(this)"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        d)
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11 ">
+                        Form BCA-CSC-CSPLE - Certificate of Supervision of Escalator / Lift Installation.
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_TheFollDocuMust_FormBpdCsc04Cert10" group-id="SubmChec_groupid"
+                      event-change="SubmChec_change(this)"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        e)
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11 ">
+                        Form BCA-CSC-CSPACMVS - Certificate of Supervision of
+                        Airconditioning/Mechanical Ventilation System(s)
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_TheFollDocuMust_FormBpdCsc05Cert10" group-id="SubmChec_groupid"
+                      event-change="SubmChec_change(this)"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        f)
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11 ">
+                        Form BCA-BE-BRCTBW - The Builder's Certificate of
+                        Completion of the Building Works
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_TheFollDocuMust_FormBcBcThe10" group-id="SubmChec_groupid"
+                      event-change="SubmChec_change(this)"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        g)
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11 ">
+                        Form BPD_BS03 - As-Built Buildable Design Score Calculation (if applicable)
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-1">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        &nbsp;
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11 ">
+                        The Buildable Design Score is &nbsp;<cn2-textbox id="SubmChec_TheBuilDesiScor10" numeric
+                          no-label disabled inline="3">
+                        </cn2-textbox>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-1">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        &nbsp;
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11 ">
+                        for GFA of &nbsp;<cn2-textbox id="SubmChec_ForGfaOf10" numeric no-label disabled inline="3">
+                        </cn2-textbox>&nbsp;m<sup>2</sup>
+                        </cn2-textbox>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_TheFollDocuMust_FormBpdBs03AsBuil10" group-id="SubmChec_groupid"
+                      event-change="SubmChec_change(this);SubmChec_TheFollDocuMust_FormBpdBs03AsBuil10_change(this)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        h)
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11 ">
+                        Form BPD_CCS01 - Certificate of Compliance of Constructability Score (if applicable)
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-1">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        &nbsp;
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11 ">
+                        The Constructability Score is &nbsp;<cn2-textbox id="SubmChec_TheConsScorIs10" numeric no-label
+                          inline="3" disabled></cn2-textbox>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_TheFollDocuMust_FormBpdCcs01Cert10" group-id="SubmChec_groupid"
+                      event-change="SubmChec_change(this);SubmChec_TheFollDocuMust_FormBpdCcs01Cert10_change(this)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>i) 1 copy of site plan with the boundary lines and the outlines of the building/(s) concerned
+                    edged in red (any scale between 1:200 to 1:1000)</td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_TheFollDocuMust_1CopyOfSite10" group-id="SubmChec_groupid"
+                      event-change="SubmChec_change(this)"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>III.3</td>
+                  <td>Attached are copies of the declaration to DSTA and/or CAAS in accordance with the conditions of
+                    the Written Permission.</td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_AttaAreCopiOf10" group-id="SubmChec_groupid"
+                      event-change="SubmChec_change(this)"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>III.4</td>
+                  <td>
+                    Attached is/are letter(s), Cable Readiness Certificate if projects are affected by IMDA Direction.
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_AttaIsALett10" group-id="SubmChec_groupid"
+                      event-change="SubmChec_change(this)"></cn2-checkbox>
+                  </td>
+                </tr>
+                <!-- <tr>
+                  <td>III.5</td>
+                  <td>Form BCA-BFAChecklist.doc is attached.</td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_FormBFACIsAtta10" group-id="SubmChec_groupid"
+                      event-change="SubmChec_change(this)"></cn2-checkbox>
+                  </td>
+                </tr> -->
+                <tr>
+                  <td>III.5</td>
+                  <td>
+                    <!-- Missing 1 -->
+                    <cn2-textarea id="SubmChec_OtheDocuRema20" label="Other document – Remarks" maxlength="1000"
+                      disabled> </cn2-textarea>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_OtheDocuRema10" group-id="SubmChec_groupid"
+                      event-change="SubmChec_change(this);SubmChec_OtheDocuRema20_change(this)"></cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container" id="StanRegu_div" hidden style="margin-bottom: 65px;">
+            <h2>Standard Requirements</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <td colspan="2">&nbsp;</td>
+                      <td>
+                        *Not Applicable / Complied With / Not Complied With but Waiver Sought
+                        (Select whichever is applicable)
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="1%">(1)</td>
+                      <td>
+                        <u>NO OCCUPATION OF BUILDING *</u>
+                        <p>
+                          The building must not be occupied before a TOP/CSC has been issued as provided for under
+                          Section12(1) of the Act.
+                        </p>
+                      </td>
+                      <td>
+                        <p style="margin-bottom: 5px;">&nbsp;</p>
+                        <cn2-select id="StanRequ_NoOccuOfBuil10" no-label
+                          options="Not Applicable:Not Applicable , Complied With:Complied With , Not Complied With but Waiver Sought:Not Complied With but Waiver Sought">
+                        </cn2-select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="1%">(2)</td>
+                      <td>
+                        <u>SITE OFFICES / STRUCTURES *</u>
+                        <p>
+                          All site offices / stores / work-sheds / hoardings have been demolished and the site
+                          completely cleared of all construction materials and debris.
+                        </p>
+                      </td>
+                      <td>
+                        <p style="margin-bottom: 5px;">&nbsp;</p>
+                        <cn2-select id="StanRequ_SiteOffiStru10" no-label
+                          options="Not Applicable:Not Applicable , Complied With:Complied With , Not Complied With but Waiver Sought:Not Complied With but Waiver Sought">
+                        </cn2-select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="1%">(3)</td>
+                      <td>
+                        <u>PARTIAL TOP *</u>
+                        <p>
+                          For partial TOP applications, all areas to which the application relates have been
+                          satisfactorily separated from those areas under construction by means of robust hoardings /
+                          fencing.
+                        </p>
+                      </td>
+                      <td>
+                        <p style="margin-bottom: 5px;">&nbsp;</p>
+                        <cn2-select id="StanRequ_PartTop10" no-label
+                          options="Not Applicable:Not Applicable , Complied With:Complied With , Not Complied With but Waiver Sought:Not Complied With but Waiver Sought">
+                        </cn2-select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="1%">(4)</td>
+                      <td>
+                        <u>BOUNDARY CLEARANCE *</u>
+                        <p>
+                          The boundary clearance, building set backs and general layout are generally in accordance with
+                          the plans approved by the Competent Authority.
+                        </p>
+                      </td>
+                      <td>
+                        <p style="margin-bottom: 5px;">&nbsp;</p>
+                        <cn2-select id="StanRequ_BounClear10" no-label
+                          options="Not Applicable:Not Applicable , Complied With:Complied With , Not Complied With but Waiver Sought:Not Complied With but Waiver Sought">
+                        </cn2-select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="1%">(5)</td>
+                      <td>
+                        <u>FLOOR DIAGRAM *</u>
+                        <p>
+                          For non-residential building floor diagrams stating the imposed load in accordance with the
+                          Regulation 46 have been prominently displayed on every floor.
+                        </p>
+                      </td>
+                      <td>
+                        <p style="margin-bottom: 5px;">&nbsp;</p>
+                        <cn2-select id="StanRequ_FlooDiag10" no-label
+                          options="Not Applicable:Not Applicable , Complied With:Complied With , Not Complied With but Waiver Sought:Not Complied With but Waiver Sought">
+                        </cn2-select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        FOOTNOTE:
+                        <p>
+                          <i>(1) The qualified person is required to select every item in the schedule to indicate
+                            whether the particular item is applicable or not applicable to the building or building
+                            works.</i>
+
+                        </p>
+                        <p><i>(2) The date of inspection in this declaration should not be earlier than 3 months from
+                            the
+                            date of this application for TOP/CSC.</i></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page5">
+          <div class="mls-espo-right-inner-container" style="margin-bottom: 65px;">
+            <h2>Booking Inspections</h2>
+            <table class="table table-borderless">
+              <tr>
+                <td width="25%">Booking Type *</td>
+                <td>
+                  <cn2-select id="BookInsp_BookType10" mandatory no-label options="Normal:Normal,Express:Express">
+                  </cn2-select>
+                </td>
+              </tr>
+              <tr>
+                <td id="BookInsp_unitInsp10_td">No. of units to be inspected </td>
+                <td>
+                  <cn2-textbox id="BookInsp_unitInsp10" disabled no-label></cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td id="BookInsp_BlocInsp10_td">No. of blocks to be inspected</td>
+                <td>
+                  <cn2-textbox id="BookInsp_BlocInsp10" disabled no-label></cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td id="BookInsp_AreaInsp10_td">Area to be inspected (sqm)</td>
+                <td>
+                  <cn2-textbox id="BookInsp_AreaInsp10" disabled no-label></cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td>Remarks</td>
+                <td>
+                  <cn2-textarea id="BookInsp_Rema10" no-label></cn2-textarea>
+                </td>
+              </tr>
+              <tr>
+                <td>Inspection Date</td>
+                <td>
+                  <cn2-datefield onfocusout="validateDate(this)" id="BookInsp_InspDate106" no-label></cn2-datefield>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-version-footer></cn2-version-footer>
+    <cn2-fixed-footer></cn2-fixed-footer>
+  </div>
+</body>
+
+</html>

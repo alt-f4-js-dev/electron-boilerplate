@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>BCA-CM-CORR</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/resources/assets/bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/fontawesome.min.css" rel="stylesheet" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script>
+    if (typeof module === "object") {
+      window.module = module;
+      module = undefined;
+    }
+  </script>
+  <script src="../cm/resources/assets/js/jquery-3.4.1.min.js"></script>
+  <script src="../cm/resources/assets/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2switchbutton.js"></script>
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head title="CORRESPONDENCE FORM"></cn2-master-head>
+  <input type="hidden" name="member_id" id="member_id">
+  <input type="hidden" name="form_validated" id="form_validated">
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions and Application Type">
+        </cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Application"></cn2-nav-button>
+        <cn2-nav-button target="page3" hidden label="Response to Written Direction / Written Advice">
+        </cn2-nav-button>
+        <cn2-nav-button target="page4" hidden label="Particulars and Declaration by Applicant(s)">
+        </cn2-nav-button>
+        <cn2-nav-button target="page5" hidden label="Particulars and Declaration by Qualified Person">
+        </cn2-nav-button>
+      </div>
+
+      <div class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <p style="margin: 0px">Help</p>
+          </div>
+          <div class="modal-body">
+            <p><b>For enquiries related to forms, please contact the following:</b></p>
+            <p> <span id="RegulatoryAuthority_id"></span></p>
+            <div id="table-parent" style="width:auto">
+              <table id="ContDetaTable_id" class="table-bordered">
+                <thead>
+                  <tr>
+                    <th>Regulatory Authority</th>
+                    <th>Email Address</th>
+                    <th>Tel No.</th>
+                    <th>Area of Support</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>BCA(BP) & (TOP)</td>
+                    <td>bca_enquiry@bca.gov.sg</td>
+                    <td>1800-3425222</td>
+                    <td>Policies</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="3">BCA (Buildable Design and Constructability)</td>
+                    <td>kong_chew_kwek@bca.gov.sg</td>
+                    <td>68044228</td>
+                    <td>Policies</td>
+                  </tr>
+                  <tr>
+                    <td>terence_teo@bca.gov.sg</td>
+                    <td>68044231</td>
+                    <td>Policies</td>
+                  </tr>
+                  <tr>
+                    <td>chin_kim_hong@bca.gov.sg</td>
+                    <td> 68044234</td>
+                    <td>Policies</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2">BCA(ST)</td>
+                    <td>wai_hui_ling@bca.gov.sg</td>
+                    <td>68044609</td>
+                    <td>Policies</td>
+                  </tr>
+                  <tr>
+                    <td>chang_heng_choy@bca.gov.sg</td>
+                    <td>68044646</td>
+                    <td>Policies</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2">BCA(CD Shelter)</td>
+                    <td>lee_pheck_hoon@bca.gov.sg</td>
+                    <td>68044410</td>
+                    <td>Policies</td>
+                  </tr>
+                  <tr>
+                    <td>yeo_keng@bca.gov.sg</td>
+                    <td>68044416</td>
+                    <td>Policies</td>
+                  </tr>
+                  <tr>
+                    <td>BCA(Transit Shelter)</td>
+                    <td>tan_wee_kian@bca.gov.sg</td>
+                    <td>63961408</td>
+                    <td>Policies</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">OK</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" no-label inline="5" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To:*</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-select inline="5" id="Addr10" event-change="ToAgency_id_change(this)"
+                          options="Building and Construction Authority:BCA,Defence Science & Technology Agency:DSTA"
+                          mandatory no-label>
+                        </cn2-select>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea style="height:145px;overflow:auto;resize:none" id="Addr20" no-label inline="5"
+                          disabled>
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>
+                This file shall be submitted as part of the correspondence attachment.
+              </li>
+              <li>
+                This form may take you 1-2 mins to complete.
+              </li>
+            </ol>
+          </div>
+          <div class="mls-espo-right-inner-container" style="margin-bottom: 65px;">
+            <h2>Application Type*</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>1. General Correspondence</td>
+                  <td>
+                    <input type="radio" id="Genr_Core" name="appType" style="float:right;" onchange="planType()"
+                      mandatory checked>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2. Reply to Written Direction / Written Advice</td>
+                  <td>
+                    <input type="radio" id="Repl_Writ" name="appType" style="float:right;" onchange="planType()"
+                      mandatory checked>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3. Application for Withdrawal of Plans</td>
+                  <td>
+                    <input type="radio" id="Appl_with" name="appType" style="float:right;" onchange="planType()"
+                      mandatory checked>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 65px;">
+            <h2>Particulars of Application</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Project Reference No.</td>
+                  <td>
+                    <cn2-textbox id="Project_Project_Ref_No10" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Project Title</td>
+                  <td>
+                    <cn2-textarea id="Project_Title10" no-label disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr hidden id="Project_Title20_hide">
+                  <td>Description of Building Works</td>
+                  <td>
+                    <cn2-textarea id="Project_Title20" no-label></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Location Description
+                    [Includes Lot/Plot, MK/TS, Address/Road and Building Name if any]
+                  </td>
+                  <td>
+                    <cn2-textarea id="Project_Location_Description10" no-label disabled>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden id="PlanType10_hide">
+                  <td width="35%">Plan Type*</td>
+                  <td width="35%">
+                    <cn2-select id="PlanType10" no-label options="BP:BP,
+                                        ST:ST,
+                                        CD:CD,
+                                        CS:CS" group="page3MandFields"></cn2-select>
+                  </td>
+                  <td>
+                    <cn2-textbox id="PlanType20" maxlength="3" no-label
+                      event-keypress="PartOfAppl_PlanType_keypress(event,this)"
+                      event-change="adjustNumberLength(this, 3);PartOfAppl_PlanType_change(this)" numeric mandatory
+                      group="page3MandFields">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden id="Project_CorrType10_hide">
+                  <td width="35%"><span id="Project_CorrType10_label">Correspondence Type</span></td>
+                  <td>
+                    <cn2-select id="Project_CorrType10" no-label
+                      options="General Correspondence:GENCORR"></cn2-select>
+                  </td>
+                </tr>
+                <tr hidden id="FIELD1_hide">
+                  <td>Remarks</td>
+                  <td>
+                    <cn2-textarea id="FIELD1" no-label></cn2-textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 65px;">
+            <h2>Response to Written Direction / Written Advice *</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td>
+                        Reply to Written Direction / Written Advice
+                      </td>
+                      <td width="1%"><input type="radio" name="responseName" id="ReplToWritDire10"
+                          onchange="replyRequest()" group="page3Checks"></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Request for Extension of Time
+                      </td>
+                      <td width="1%"><input type="radio" name="responseName" id="RequForExte10"
+                          onchange="replyRequest()" group="page3Checks">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><span id="ReasForExte10_label">Reason(s) for extension:</span><br>
+                        <cn2-textarea id="ReasForExte10" no-label disabled group="page3Fields">
+                        </cn2-textarea>
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page4">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Section I Particulars of Applicant(s)</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <cn2-button label="Add" id="PartOfTheOWNER_Add10"
+                  event-click="insertDuplicate('particularsOfApplicationForm','form1');disableDelete('particularsOfApplicationForm');removeUENerror();">
+                </cn2-button>
+              </div>
+            </div>
+            <div id="accordion">
+              <div id="particularsOfApplicationForm">
+
+                <div id="form1" class="form1" parent>
+                  <h2 class="accordion-toggle">
+                    <table class="table table-borderless">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <cn2-select id="Member_Member_Name_OWNER10" data-options="ownerDropdown"
+                              event-change="loadDropDownDetails(this);togglePartDev(this)"
+                              prefix="Member_Member_Name_OWNER" suffix="0" group="page4MandFields" label="Name">
+                            </cn2-select>
+                          </td>
+                          <td>
+                            <cn2-textbox id="Member_Firm_Name_OWNER10" disabled suffix="0"
+                              prefix="Member_Firm_Name_OWNER" group="page4Fields" label="Firm Name">
+                            </cn2-textbox>
+                          </td>
+                          <td>
+
+                          </td>
+                          <td>
+                            <cn2-textbox id="Member_Designation_OWNER10" disabled suffix="0"
+                              prefix="Member_Designation_OWNER" group="page4Fields" label="Designation">
+                            </cn2-textbox>
+                          </td>
+
+                          <td>
+                            <div class="mls-espro-form-fields row pt-4">
+                              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pt-1">
+                                <cn2-button style="float:right" label="Delete" id="PartOfTheOWNER_Delete10" disabled
+                                  class="deleteBtn" prefix="PartOfTheOWNER_Delete" suffix="0" danger
+                                  event-click="removeDuplicate(this.id,'form1','particularsOfApplicationForm');disableDelete('particularsOfApplicationForm')">
+                                </cn2-button>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <span class="fa fa-angle-down collapsed" data-toggle="collapse" href="#collapse1"
+                              id="#collapse1" prefix="#collapse" suffix="" child onclick="spanUpDown(this)"
+                              aria-expanded="false" main-accordion-header>
+                            </span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </h2>
+                  <div id="collapse1" class="panel-collapse collapse" child="div" prefix="collapse" suffix=""
+                    main-accordion-body>
+                    <table class="table table-borderless">
+                      <tbody>
+                        <tr hidden>
+                          <td>Member ID</td>
+                          <td>
+                            <cn2-textbox no-label id="Member_Member_SID_OWNER10" disabled suffix="0"
+                              prefix="Member_Member_SID_OWNER" group="page4Fields">
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="35%">UEN</td>
+                          <td>
+                            <cn2-textbox no-label id="Members_UEN_OWNER10" event-blur="uenValidate(this)" maxlength="10"
+                              suffix="0" prefix="Members_UEN_OWNER" template="#########@" group="page4Fields">
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Address</td>
+                          <td>
+                            <cn2-textarea no-label id="Member_Address_OWNER10" disabled suffix="0"
+                              prefix="Member_Address_OWNER" group="page4Fields">
+                            </cn2-textarea>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Telephone No.</td>
+                          <td>
+                            <cn2-textbox no-label id="Member_Tel_No_OWNER10" disabled suffix="0" numeric
+                              prefix="Member_Tel_No_OWNER" group="page4Fields">
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Handphone No.</td>
+                          <td>
+                            <cn2-textbox no-label id="Member_Mobile_No_OWNER10" numeric disabled suffix="0"
+                              prefix="Member_Mobile_No_OWNER" group="page4Fields">
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Email Address</td>
+                          <td>
+                            <cn2-textbox no-label id="Member_Email_Address1_OWNER10" disabled suffix="0"
+                              prefix="Member_Email_Address1_OWNER" group="page4Fields">
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 65px;">
+            <h2>
+              Declaration by Applicant(s)*
+            </h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td>
+                        I.1. <cn2-select inline="3" id="DeclByAppl_IWeConsTo10" options="I:I,We:We" disabled
+                          group="page4Fields">
+                        </cn2-select> consent to the withdrawal of application and the plans by
+                        my/our qualified person.
+                      </td>
+                      <td width="5%">
+                        <cn2-checkbox id="DeclByAppl_IWeConsTo20" event-change="DeclByAppl_IWeConsTo20_click(this)"
+                          mandatory checked group="page4MandChecks">
+                        </cn2-checkbox>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page5">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Section II Particulars of Qualified Person</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td>Member ID</td>
+                  <td>
+                    <cn2-textbox disabled id="Member_Member_SID_QP10" no-label group="page5Fields">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-select no-label mandatory id="Member_Member_Name_QP10" data-options="qpDropdown"
+                      event-change="loadDropDownDetails(this);togglePartQp()" group="page5MandFields">
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox disabled id="MemberRole_Professional_No_QP10" no-label group="page5Fields">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox disabled id="Member_Firm_Name_QP10" no-label group="page5Fields">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_QP10" no-label event-blur="uenValidate(this)" maxlength="10"
+                      template="#########@" group="page5Fields"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Designation</td>
+                  <td>
+                    <cn2-textbox disabled id="Member_Address_QP10" no-label group="page5Fields">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea disabled id="Member_Tel_No_QP10" no-label group="page5Fields">
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox numeric disabled id="Member_Tel_Ext_No_QP10" no-label group="page5Fields">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox disabled id="Member_Mobile_No_QP10" numeric no-label group="page5Fields">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox disabled id="Member_Email_Address1_QP10" no-label group="page5Fields"></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 65px;">
+            <h2>
+              Declaration by Qualified Person*
+            </h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>II. 1 The application(s) for approval of plans in respect of the
+                    building(s)/building works are as described below</td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_TheApplForAppr20"
+                      event-click="DeclByQualPers_TheApplForAppr20_click(this)" group="page5MandChecks"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table class="table table-bordered" style="margin-left: 3%; width:90%;">
+                      <tbody>
+                        <tr>
+                          <td width="35%">Plan Type</td>
+                          <td>
+                            <cn2-select id="DeclByQP_Plan_A10" options="BP:BP, ST:ST, CD:CD, CS:CS" disabled
+                              group="page5Fields" no-label>
+                            </cn2-select>
+                          </td>
+                          <td>
+                            <cn2-textbox id="DeclByQP_Type_C10" disabled maxlength="3" no-label
+                              event-keypress="PartOfAppl_PlanType_keypress(event,this)"
+                              event-change="adjustNumberLength(this, 3);PartOfAppl_PlanType_change(this)" numeric
+                              group="page5Fields">
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Submitted Date</td>
+                          <td colspan="2">
+                            <cn2-datefield onfocusout="validateDate(this)" id="DeclByQP_SubmDate_E10" no-label disabled
+                              group="page5Fields">
+                            </cn2-datefield>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Approval Status</td>
+                          <td>
+                            <input type="radio" id="DeclByQP_ApprStat_Appr_F10" name="approvalStatus1" disabled
+                              group="page5Checks">
+                            &nbsp;&nbsp; Approved
+                          </td>
+                          <td>
+                            <input type="radio" id="DeclByQP_ApprStat_YetToAppr_I10" name="approvalStatus1" disabled
+                              group="page5Checks">
+                            &nbsp;&nbsp; Yet to Approve
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Approval Date</td>
+                          <td colspan="2">
+                            <cn2-datefield onfocusout="validateDate(this)" id="DeclByQP_ApprDate_H10" no-label disabled>
+                            </cn2-datefield>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>II. 2 I hereby apply for withdrawal of the application(s) and the plans selected
+                    in Item II. 1 and confirm that no building works have commenced or carried out
+                    at the site.</td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_IHereApplFor10"
+                      event-click="DeclByQualPers_IHereApplFor10_click(this)" group="page5MandChecks"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>II. 3 I confirmed that I have obtained the written consent of the applicant(s)
+                    to withdraw the plans selected in Item II.1 and a copy of this consent such as
+                    form BCA-LU-NAPPQP01</td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_IConfThatI10" event-click="DeclByQualPers_IConfThatI10_click(this)"
+                      group="page5MandChecks"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="radio" id="RADIO1" name="atch" style="margin-left: 3%;" disabled
+                      onchange="rad2_click()" group="page5Checks">
+                    &nbsp;is
+                    attached</td>
+                </tr>
+                <tr>
+                  <td><input type="radio" id="RADIO2" name="atch" style="margin-left: 3%;" disabled
+                      onchange="rad2_click()" group="page5Checks">
+                    &nbsp;has
+                    been
+                    previously submitted on
+                    <cn2-datefield onfocusout="validateDate(this)" inline="4" no-label id="SubmChec_HasBeenSubmPrev10"
+                      disabled group="page5Fields">
+                    </cn2-datefield>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-fixed-footer></cn2-fixed-footer>
+    <cn2-version-footer></cn2-version-footer>
+  </div>
+</body>
+
+</html>

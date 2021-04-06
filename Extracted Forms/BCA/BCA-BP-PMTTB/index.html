@@ -1,0 +1,2057 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>BCA-BP-PMTTB</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2switchbutton.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head
+    title="APPLICATION FOR PERMIT TO USE TEMPORARY BUILDINGS <br> [Regulation 7 of the Building Control (Temporary Buildings) Regulations 2018]"
+    agency="logo.png"></cn2-master-head>
+  <input type="hidden" name="form_validated" id="form_validated" />
+  <input type="hidden" name="member_id" id="member_id" />
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p>
+          <b>For enquiries related to forms, please contact the following:</b>
+        </p>
+        <p><span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>BCA(BP) & (TOP)</td>
+                <td>bca_enquiry@bca.gov.sg</td>
+                <td>1800-3425222</td>
+                <td>Policies</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Application"></cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Project Details">
+        </cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4" label="Particulars of Owner(s)">
+        </cn2-nav-button>
+        <cn2-nav-button target="page5" page-number="5" label="Particulars of Professional Engineer and Builder">
+        </cn2-nav-button>
+        <cn2-nav-button target="page6" page-number="6" hidden label="Application for the Permit to Use">
+        </cn2-nav-button>
+        <cn2-nav-button target="page7" page-number="6" hidden
+          label="Application for the Extension / Renewal of Permit to Use"></cn2-nav-button>
+        <cn2-nav-button target="page8" page-number="6" label="Permit Fee Computation"></cn2-nav-button>
+      </div>
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px;">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" field-name="Date under Instructions" no-label inline="6" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To:*</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-select mandatory event-change="ToAgency_id_change(this);" no-label inline="6" id="Addr10"
+                          field-name="To dropdown under Instructions"
+                          options="Building and Construction Authority:BCA,Defence Science & Technology Agency:DSTA">
+                        </cn2-select>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea hidden id="Addr20" field-name="To textarea under Instructions" no-label inline="6"
+                          disabled style="height:158px;">
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>
+                Please refer to the Explanatory Notes before completing this
+                form.
+              </li>
+              <li>
+                This form is to be applied by the
+                <u>owner of the temporary building</u> and digitally signed by
+                the Appointed Professional Engineers.
+              </li>
+              <li>
+                This form may take you 3-5 mins to complete. Please fill-in
+                all the mandatory field to avoid rejection of application.
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Application</h2>
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td width="1%">1.1.</td>
+                  <td width="30%">
+                    Description of Temporary Building(s)* <br />
+                    <span style="font-size:13px;">
+                      e.g.: PROPOSED 1 NO. OF STAGE AND 2 NOS. OF TENTS FOR
+                      SINGAPORE GARDEN FESTIVAL 2019 AT MARINA BOULEVARD
+                      (GARDEN BY THE BAY)
+                    </span>
+                  </td>
+                  <td>
+                    <cn2-textarea id="Project_Title20" field-name="Project Title under Particulars of Application"
+                      maxlength="1000" no-label mandatory>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>1.2.</td>
+                  <td>
+                    Location Description / Address*
+                  </td>
+                  <td>
+                    <cn2-textarea id="Project_Location_Description_Description10"
+                      field-name="Location Description / Address under Particulars of Application" maxlength="32400"
+                      no-label mandatory>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>1.3.</td>
+                  <td>
+                    Type of Application*
+                  </td>
+                  <td style="padding:0;">
+                    <table class="table table-bordered">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <u>Building / structure</u>
+                            <table class="table table-bordered" style="margin-top:10px;margin-bottom:0;">
+                              <tbody>
+                                <tr>
+                                  <td width="1%">
+                                    <input type="radio" name="typeOfApp" checked mandatory id="Check_NewErec10"
+                                      field-name="Building Structure New Erection under Particulars of Application"
+                                      onchange="removeDataInvalid2();typeOfApp(this);removeGroupMandaOneChecked(this);" />
+                                  </td>
+                                  <td>New Erection</td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2">
+                                    (Maximum permitted period for use not
+                                    exceeding 36 months)
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <input type="radio" name="typeOfApp" checked mandatory id="Check_ReteWork10"
+                                      field-name="Building Structure Permit Extension under Particulars of Application"
+                                      onchange="removeDataInvalid2();typeOfApp(this);removeGroupMandaOneChecked(this);" />
+                                  </td>
+                                  <td>Permit Extension</td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2">
+                                    <table class="table table-borderless table-sm" style="margin-bottom:0;">
+                                      <tbody>
+                                        <tr>
+                                          <td width="35%">
+                                            Existing Permit No.:<span id="exisPermi1"></span>
+                                          </td>
+                                          <td>
+                                            <cn2-select id="TypeOfAppl_ExisPermNo20"
+                                              field-name="Permit Extension Existing Permit No. dropdown under Particulars of Application"
+                                              disabled options="TPB:TPB,TPC:TPC" no-label></cn2-select>
+                                          </td>
+                                          <td>
+                                            <cn2-textbox id="TypeOfAppl_ExisPermNo10"
+                                              field-name="Permit Extension Existing Permit No. textbox under Particulars of Application"
+                                              disabled numeric maxlength="10" no-label></cn2-textbox>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td colspan="2">
+                                            (For Permit extension within 36
+                                            months form the commencement date
+                                            of 1st permit)
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <input type="radio" name="typeOfApp" checked mandatory id="Check_PermExte10"
+                                      field-name="Building Structure Permit Renewal under Particulars of Application"
+                                      onchange="removeDataInvalid2();typeOfApp(this);removeGroupMandaOneChecked(this);" />
+                                  </td>
+                                  <td>Permit Renewal</td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2">
+                                    <table class="table table-borderless table-sm" style="margin-bottom:0;">
+                                      <tbody>
+                                        <tr>
+                                          <td width="35%">
+                                            Existing Permit No.:<span id="exisPermi2"></span>
+                                          </td>
+                                          <td>
+                                            <cn2-select id="PrevPermNo20"
+                                              field-name="Permit Renewal Existing Permit No. dropdown under Particulars of Application"
+                                              disabled options="TPB:TPB,TPC:TPC" no-label>
+                                            </cn2-select>
+                                          </td>
+                                          <td>
+                                            <cn2-textbox id="PrevPermNo10"
+                                              field-name="Permit Renewal Existing Permit No. textbox under Particulars of Application"
+                                              disabled numeric maxlength="10" no-label>
+                                            </cn2-textbox>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td colspan="2">
+                                            (For permit extension beyond 36
+                                            months from the commencement date
+                                            of 1st permit)
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <u>Advertising Structure</u>
+                            <table class="table table-bordered" style="margin-top:10px;margin-bottom:0;">
+                              <tbody>
+                                <tr>
+                                  <td width="1%">
+                                    <input type="radio" name="typeOfApp" checked mandatory
+                                      id="chklblTypeOfAppl_AdveStru_NewErec10"
+                                      field-name="Advertising Structure New Erection under Particulars of Application"
+                                      onchange="removeDataInvalid2();typeOfApp(this);removeGroupMandaOneChecked(this);" />
+                                  </td>
+                                  <td>New Erection</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <input type="radio" name="typeOfApp" checked mandatory
+                                      id="chkTypeOfAppl_AdveStru_PermRene10"
+                                      field-name="Advertising Structure Permit Renewal under Particulars of Application"
+                                      onchange="removeDataInvalid2();typeOfApp(this);removeGroupMandaOneChecked(this);" />
+                                  </td>
+                                  <td>Permit Renewal</td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2">
+                                    Please provide the existing:
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2">
+                                    <table class="table table-borderless">
+                                      <tbody>
+                                        <tr>
+                                          <td width="35%">
+                                            Permit No. :
+                                            <span id="permiNoSign"></span>
+                                          </td>
+                                          <td>
+                                            <cn2-textbox disabled id="TypeOfAppl_AdveStru_PrevPermNo10"
+                                              field-name="Permit Renewal Permit No. under Particulars of Application"
+                                              no-label maxlength="10"></cn2-textbox>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td>
+                                            Licence No. :
+                                            <div class="mls-espro-form-fields row pt-2">
+                                              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-button label="Add" id="addBtn" disabled
+                                                  event-click="insertDuplicate('licenseNo','A1');disableDelete('licenseNo','deleteBtn');removeDataInvalid()">
+                                                </cn2-button>
+                                              </div>
+                                            </div>
+                                          </td>
+                                          <td>
+                                            <div id="licenseNo">
+                                              <div id="A1" class="Afields" style="margin-bottom:10px;">
+                                                <table class="table table-borderless">
+                                                  <tbody>
+                                                    <tr>
+                                                      <td style="padding-left:0;">
+                                                        <cn2-textbox id="TypeOfAppl_AdveStru_PrevLiceNo10" disabled
+                                                          prefix="TypeOfAppl_AdveStru_PrevLiceNo"
+                                                          field-name="Permit Renewal License No. under Particulars of Application"
+                                                          suffix="0" no-label template="####/#####" maxlength="10"
+                                                          event-blur="licenseNoValidate(this)" numeric>
+                                                        </cn2-textbox>
+                                                      </td>
+                                                      <td width="1%">
+                                                        <cn2-button id="delete1A" class="deleteBtn" prefix="delete"
+                                                          suffix="A" style="float: right;"
+                                                          event-click="removeDuplicate(this.id,'A1','licenseNo');disableDelete('licenseNo','deleteBtn')"
+                                                          label="Delete" danger disabled>
+                                                        </cn2-button>
+                                                      </td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </div>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td colspan="2">
+                                            (For new license application
+                                            supported on existing advertising
+                                            structure, please key in
+                                            the formal application number
+                                            (FA/XXXXX/YYYY/MM/DD) in the field
+                                            below) <br />
+                                            <cn2-textbox disabled template="FA/#####/####/##/##" maxlength="19" no-label
+                                              id="LABEL14"
+                                              field-name="Formal Application Number under Particulars of Application">
+                                            </cn2-textbox>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Project Details</h2>
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td colspan="4" width="50%">
+                    <b>Details of Temporary Buildings (TB)</b> <br />
+                    Note: The application will not include building or
+                    structure 3 storeys and above (except for building/
+                    structures within construction site and show flat),
+                    bridge, any decking for a bridge, or any earth retaining
+                    structure.
+                  </td>
+                  <td width="25%">
+                    <b>No. of structures</b>
+                  </td>
+                  <td width="25%">
+                    <b>SGFA (m<sup>2</sup>)</b>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%" rowspan="14">2.1.</td>
+                  <td colspan="4">
+                    <u><b>Events / Short-term < 90 days</b> </u>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="radio" disabled name="projDetails" id="ProjDetl_TypeOfTempBuil_EvenRelaStruc10"
+                      field-name="Events related structures radio under Project Details"
+                      onchange="projDetails(this);" />
+                  </td>
+                  <td colspan="3">
+                    Events related structures and any buildings erected for
+                    < 90 days. Please state event name: <br />
+                    <cn2-textbox maxlength="66" disabled no-label id="ProjDetl_TypeOfTempBuil_EvenRelaStruc20"
+                      field-name="Events related structures textbox under Project Details">
+                    </cn2-textbox>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td rowspan="12">&nbsp;</td>
+                  <td colspan="3">
+                    <u><b>Building/ Structure with SGFA</b></u>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <cn2-checkbox disabled id="ProjDetl_TypeOfTempBuil_EvenRelaStruc_Tent10"
+                      field-name="No. of tents checkbox under Project Details"
+                      event-change="enableMandatoryField(this,['TypeOfTempBuil_EvenRelaStruc_Tent_NoOfStruc10','TypeOfTempBuil_EvenRelaStruc_Tent_SGFA10']);calcTotal('numStruct2.1','EvenRelaStruc_StagWithOr_TotaNoOfStru10');calcTotal('sgfa2.1','EvenRelaStruc_StagWithOr_TotaSGFA10');">
+                    </cn2-checkbox>
+                  </td>
+                  <td colspan="2">No. of tents</td>
+                  <td>
+                    <cn2-textbox group="numStruct2.1"
+                      event-input="calcTotal('numStruct2.1','EvenRelaStruc_StagWithOr_TotaNoOfStru10');"
+                      event-input="calcTotal('numStruct2.1','EvenRelaStruc_StagWithOr_TotaNoOfStru10');"
+                      id="TypeOfTempBuil_EvenRelaStruc_Tent_NoOfStruc10"
+                      field-name="No. of tents textbox under Project Details" disabled numeric no-label maxlength="10">
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-textbox group="sgfa2.1" id="TypeOfTempBuil_EvenRelaStruc_Tent_SGFA10"
+                      field-name="No. of tents SGFA under Project Details" disabled maxlength="10" no-label
+                      event-keypress="maxV(this,event,7);"
+                      event-input="calcTotal('sgfa2.1','EvenRelaStruc_StagWithOr_TotaSGFA10');"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <cn2-checkbox disabled id="ProjDetl_TypeOfTempBuil_EvenRelaStruc_Cont10"
+                      field-name="No. of containers checkbox under Project Details"
+                      event-change="enableMandatoryField(this,['TypeOfTempBuil_EvenRelaStruc_Cont_NoOfStruc10','TypeOfTempBuil_EvenRelaStruc_Cont_SGFA10']);calcTotal('numStruct2.1','EvenRelaStruc_StagWithOr_TotaNoOfStru10');calcTotal('sgfa2.1','EvenRelaStruc_StagWithOr_TotaSGFA10');">
+                    </cn2-checkbox>
+                  </td>
+                  <td colspan="2">No. of containers</td>
+                  <td>
+                    <cn2-textbox group="numStruct2.1"
+                      event-input="calcTotal('numStruct2.1','EvenRelaStruc_StagWithOr_TotaNoOfStru10');"
+                      field-name="No. of containers textbox under Project Details"
+                      id="TypeOfTempBuil_EvenRelaStruc_Cont_NoOfStruc10" disabled numeric no-label maxlength="10">
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-textbox group="sgfa2.1" id="TypeOfTempBuil_EvenRelaStruc_Cont_SGFA10"
+                      field-name="No. of containers SGFA under Project Details" disabled maxlength="10"
+                      event-keypress="maxV(this,event,7);"
+                      event-input="calcTotal('sgfa2.1','EvenRelaStruc_StagWithOr_TotaSGFA10');" no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <cn2-checkbox disabled id="ProjDetl_TypeOfTempBuil_EvenRelaStruc_StagWithOr10"
+                      field-name="No. of stages checkbox under Project Details"
+                      event-change="enableMandatoryField(this,['TypeOfTempBuil_EvenRelaStruc_StagWithOr_NoOfStruc10','TypeOfTempBuil_BuilOrStruc3_StagWithOr_SGFA10']);calcTotal('numStruct2.1','EvenRelaStruc_StagWithOr_TotaNoOfStru10');calcTotal('sgfa2.1','EvenRelaStruc_StagWithOr_TotaSGFA10');">
+                    </cn2-checkbox>
+                  </td>
+                  <td colspan="2">
+                    No. of stages with or without frame / Backdrop
+                  </td>
+                  <td>
+                    <cn2-textbox group="numStruct2.1"
+                      event-input="calcTotal('numStruct2.1','EvenRelaStruc_StagWithOr_TotaNoOfStru10');"
+                      field-name="No. of stages textbox under Project Details"
+                      id="TypeOfTempBuil_EvenRelaStruc_StagWithOr_NoOfStruc10" disabled no-label numeric maxlength="10">
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-textbox group="sgfa2.1" id="TypeOfTempBuil_BuilOrStruc3_StagWithOr_SGFA10"
+                      field-name="No. of stages SGFA under Project Details" disabled maxlength="10"
+                      event-keypress="maxV(this,event,7);"
+                      event-input="calcTotal('sgfa2.1','EvenRelaStruc_StagWithOr_TotaSGFA10');" no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td rowspan="2" width="1%">
+                    <cn2-checkbox disabled id="ProjDetl_TypeOfTempBuil_EvenRelaStruc_Othe10"
+                      field-name="Others checkbox under Project Details"
+                      event-change="enableMandatoryField(this,['TypeOfTempBuil_EvenRelaStruc_Othe_NoOfStruc10','TypeOfTempBuil_EvenRelaStruc_Othe_SGFA10']);enableHiddenMandatoryField(this,'ProjDetl_TypeOfTempBuil_EvenRelaStruc_Othe20','ProjDetl_TypeOfTempBuil_EvenRelaStruc_Othe20_span');calcTotal('numStruct2.1','EvenRelaStruc_StagWithOr_TotaNoOfStru10');calcTotal('sgfa2.1','EvenRelaStruc_StagWithOr_TotaSGFA10');">
+                    </cn2-checkbox>
+                  </td>
+                  <td colspan="2">
+                    Others <span id="ProjDetl_TypeOfTempBuil_EvenRelaStruc_Othe20_span"></span><br />
+                    <cn2-textarea id="ProjDetl_TypeOfTempBuil_EvenRelaStruc_Othe20"
+                      field-name="Others textarea under Project Details" hidden no-label maxlength="66">
+                    </cn2-textarea>
+                  </td>
+                  <td>
+                    <cn2-textbox group="numStruct2.1"
+                      event-input="calcTotal('numStruct2.1','EvenRelaStruc_StagWithOr_TotaNoOfStru10');"
+                      id="TypeOfTempBuil_EvenRelaStruc_Othe_NoOfStruc10"
+                      field-name="Others textbox under Project Details" disabled numeric no-label maxlength="10">
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-textbox group="sgfa2.1" id="TypeOfTempBuil_EvenRelaStruc_Othe_SGFA10"
+                      field-name="Others SGFA under Project Details" disabled currency maxlength="10"
+                      event-keypress="maxV(this,event,7);"
+                      event-input="calcTotal('sgfa2.1','EvenRelaStruc_StagWithOr_TotaSGFA10');" no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-right"><b>Total:</b></td>
+                  <td>
+                    <cn2-textbox id="EvenRelaStruc_StagWithOr_TotaNoOfStru10"
+                      field-name="Total No. of Structures under Project Details" disabled no-label maxlength="10">
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-textbox id="EvenRelaStruc_StagWithOr_TotaSGFA10" field-name="Total SGFA under Project Details"
+                      disabled no-label maxlength="10">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    <b><u>Structure without SGFA</u></b>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <cn2-checkbox disabled
+                      event-change="enableMandatoryField(this,['EvenRelaStruc_StruWOSGFA_NoOfStru10']);calcTotal('numStrct2.1b','TypeOfTempBuil_EvenRelaStruc_TotaNoOfStru10');"
+                      id="EvenRelaStruc_StruWOSGFA_Stru10"
+                      field-name="Structure without SGFA No. of Structures checkbox under Project Details">
+                    </cn2-checkbox>
+                  </td>
+                  <td colspan="2">
+                    No. of structures (e.g. Christmas tree, gantry etc.)
+                  </td>
+                  <td>
+                    <cn2-textbox group="numStrct2.1b"
+                      event-input="calcTotal('numStrct2.1b','TypeOfTempBuil_EvenRelaStruc_TotaNoOfStru10');" disabled
+                      id="EvenRelaStruc_StruWOSGFA_NoOfStru10"
+                      field-name="Structure without SGFA No. of Structures textbox under Project Details" no-label
+                      numeric maxlength="10"></cn2-textbox>
+                  </td>
+                  <td class="text-center"><b>N/A</b></td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <cn2-checkbox disabled
+                      event-change="enableMandatoryField(this,['EvenRelaStruc_StruWOSGFA_NoOfExceStru10']);calcTotal('numStrct2.1b','TypeOfTempBuil_EvenRelaStruc_TotaNoOfStru10');"
+                      id="EvenRelaStruc_StruWOSGFA_Exce10"
+                      field-name="Structure without SGFA No. of advertising structures exceeding 10m² checkbox under Project Details">
+                    </cn2-checkbox>
+                  </td>
+                  <td colspan="2">
+                    No. of advertising structures exceeding 10m<sup>2</sup>
+                  </td>
+                  <td>
+                    <cn2-textbox event-input="calcTotal('numStrct2.1b','TypeOfTempBuil_EvenRelaStruc_TotaNoOfStru10');"
+                      group="numStrct2.1b" disabled id="EvenRelaStruc_StruWOSGFA_NoOfExceStru10"
+                      field-name="Structure without SGFA No. of advertising structures exceeding 10m² textbox under Project Details"
+                      no-label numeric maxlength="10"></cn2-textbox>
+                  </td>
+                  <td class="text-center"><b>N/A</b></td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <cn2-checkbox disabled
+                      event-change="enableMandatoryField(this,['EvenRelaStruc_StruWOSGFA_NoOfStruUppe10']);calcTotal('numStrct2.1b','TypeOfTempBuil_EvenRelaStruc_TotaNoOfStru10');"
+                      id="EvenRelaStruc_StruWOSGFA_UppePart10"
+                      field-name="Structure without SGFA No. of advertising structures with structure height checkbox under Project Details">
+                    </cn2-checkbox>
+                  </td>
+                  <td colspan="2">
+                    No. of advertising structures with structure height of 4
+                    metres and above from the base of the structures (does not
+                    include signs mounted directly on facade of building)
+                  </td>
+                  <td>
+                    <cn2-textbox event-input="calcTotal('numStrct2.1b','TypeOfTempBuil_EvenRelaStruc_TotaNoOfStru10');"
+                      group="numStrct2.1b" disabled id="EvenRelaStruc_StruWOSGFA_NoOfStruUppe10"
+                      field-name="Structure without SGFA No. of advertising structures with structure height textbox under Project Details"
+                      no-label numeric maxlength="10"></cn2-textbox>
+                  </td>
+                  <td class="text-center"><b>N/A</b></td>
+                </tr>
+                <tr>
+                  <td width="1%">&nbsp;</td>
+                  <td colspan="3">
+                    <i>Note: Signs for events will not need to complete part
+                      2.4</i>
+                  </td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td width="1%">&nbsp;</td>
+                  <td colspan="2" class="text-right"><b>Total:</b></td>
+                  <td>
+                    <cn2-textbox disabled id="TypeOfTempBuil_EvenRelaStruc_TotaNoOfStru10"
+                      field-name="Event Related Structures Total No. of Structures under Project Details" no-label
+                      maxlength="10">
+                    </cn2-textbox>
+                  </td>
+                  <td class="text-center"><b>N/A</b></td>
+                </tr>
+                <tr>
+                  <td width="1%" rowspan="10">2.2.</td>
+                  <td colspan="4">
+                    <u><b>TB with URA’s Written Permission (Temporary)</b></u>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="radio" disabled name="projDetails" onchange="projDetails(this);"
+                      id="ProjDetl_TypeOfTempBuil_TBURAWP10"
+                      field-name="TB with URA’s Written Permission under Project Details" />
+                  </td>
+                  <td colspan="3">Building or structure for > = 90 days</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td rowspan="8">&nbsp;</td>
+                  <td colspan="3">
+                    <b><u>Building / Structure with SGFA</u></b>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox disabled id="TypeOfTempBuil_BuilWithSGFA_NoOfTent10"
+                      field-name="Building / Structure with SGFA No. of tents checkbox under Project Details"
+                      event-change="enableMandatoryField(this,['TypeOfTempBuil_BuilWithSGFA_NoOfTent_NoOfStru10','TypeOfTempBuil_BuilWithSGFA_NoOfTent_SGFA10']);calcTotal('numStruct2.2','TypeOfTempBuil_BuilWithSGFA_TotaNoOfStru10');calcTotal('sfga2.2','TypeOfTempBuil_BuilWithSGFA_TotaSGFA10');">
+                    </cn2-checkbox>
+                  </td>
+                  <td colspan="2">No. of tents</td>
+                  <td>
+                    <cn2-textbox group="numStruct2.2"
+                      event-input="calcTotal('numStruct2.2','TypeOfTempBuil_BuilWithSGFA_TotaNoOfStru10');" disabled
+                      no-label numeric maxlength="10" id="TypeOfTempBuil_BuilWithSGFA_NoOfTent_NoOfStru10"
+                      field-name="Building / Structure with SGFA No. of tents textbox under Project Details">
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-textbox group="sfga2.2"
+                      event-input="calcTotal('sfga2.2','TypeOfTempBuil_BuilWithSGFA_TotaSGFA10');" disabled no-label
+                      currency maxlength="10" event-keypress="maxV(this,event,7);"
+                      id="TypeOfTempBuil_BuilWithSGFA_NoOfTent_SGFA10"
+                      field-name="Building / Structure with SGFA No. of tents SGFA under Project Details">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox disabled id="TypeOfTempBuil_BuilWithSGFA_NoOfCont10"
+                      field-name="Building / Structure with SGFA No. of containers checkbox under Project Details"
+                      event-change="enableMandatoryField(this,['TypeOfTempBuil_BuilWithSGFA_NoOfCont_NoOfStru10','TypeOfTempBuil_BuilWithSGFA_NoOfCont_SGFA10']);calcTotal('numStruct2.2','TypeOfTempBuil_BuilWithSGFA_TotaNoOfStru10');calcTotal('sfga2.2','TypeOfTempBuil_BuilWithSGFA_TotaSGFA10');">
+                    </cn2-checkbox>
+                  </td>
+                  <td colspan="2">No. of containers</td>
+                  <td>
+                    <cn2-textbox group="numStruct2.2"
+                      event-input="calcTotal('numStruct2.2','TypeOfTempBuil_BuilWithSGFA_TotaNoOfStru10');" disabled
+                      no-label numeric maxlength="10" id="TypeOfTempBuil_BuilWithSGFA_NoOfCont_NoOfStru10"
+                      field-name="Building / Structure with SGFA No. of containers textbox under Project Details">
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-textbox group="sfga2.2"
+                      event-input="calcTotal('sfga2.2','TypeOfTempBuil_BuilWithSGFA_TotaSGFA10');" disabled no-label
+                      currency maxlength="10" event-keypress="maxV(this,event,7);"
+                      id="TypeOfTempBuil_BuilWithSGFA_NoOfCont_SGFA10"
+                      field-name="Building / Structure with SGFA No. of containers SGFA under Project Details">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox disabled id="TypeOfTempBuil_BuilWithSGFA_Othe10"
+                      field-name="Building / Structure with SGFA Others checkbox under Project Details"
+                      event-change="enableMandatoryField(this,['TypeOfTempBuil_BuilWithSGFA_Othe_NoOfStru10','TypeOfTempBuil_BuilWithSGFA_Othe_SGFA10']);calcTotal('numStruct2.2','TypeOfTempBuil_BuilWithSGFA_TotaNoOfStru10');calcTotal('sfga2.2','TypeOfTempBuil_BuilWithSGFA_TotaSGFA10');enableHiddenMandatoryField(this,'TypeOfTempBuil_BuilWithSGFA_Othe20','TypeOfTempBuil_BuilWithSGFA_Othe20_span');">
+                    </cn2-checkbox>
+                  </td>
+                  <td colspan="2">
+                    Others <span id="TypeOfTempBuil_BuilWithSGFA_Othe20_span"></span> <br />
+                    <cn2-textarea hidden maxlength="66" no-label id="TypeOfTempBuil_BuilWithSGFA_Othe20"
+                      field-name="Building / Structure with SGFA Others textarea under Project Details"></cn2-textarea>
+                  </td>
+                  <td>
+                    <cn2-textbox group="numStruct2.2"
+                      event-input="calcTotal('numStruct2.2','TypeOfTempBuil_BuilWithSGFA_TotaNoOfStru10');" disabled
+                      no-label numeric maxlength="10" id="TypeOfTempBuil_BuilWithSGFA_Othe_NoOfStru10"
+                      field-name="Building / Structure with SGFA Others textbox under Project Details"></cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-textbox group="sfga2.2"
+                      event-input="calcTotal('sfga2.2','TypeOfTempBuil_BuilWithSGFA_TotaSGFA10');" disabled no-label
+                      currency maxlength="10" event-keypress="maxV(this,event,7);"
+                      id="TypeOfTempBuil_BuilWithSGFA_Othe_SGFA10"
+                      field-name="Building / Structure with SGFA Others SGFA under Project Details"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td colspan="2" class="text-right"><b>Total:</b></td>
+                  <td>
+                    <cn2-textbox disabled no-label id="TypeOfTempBuil_BuilWithSGFA_TotaNoOfStru10"
+                      field-name="Building / Structure with SGFA Total No. of Structures under Project Details">
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-textbox disabled no-label id="TypeOfTempBuil_BuilWithSGFA_TotaSGFA10"
+                      field-name="Building / Structure with SGFA Total SGFA under Project Details"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    <u><b>Structure without SGFA</b></u>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox
+                      event-change="enableMandatoryField(this,['TypeOfTempBuil_StruNoSGFA_Othe_NoOfStru10']);enableHiddenMandatoryField(this,'TypeOfTempBuil_StruNoSGFA_Othe20','TypeOfTempBuil_StruNoSGFA_Othe20_span');calcTotal('numStrct2.2b','TypeOfTempBuil_MoreThan90Days_Tota_NoOfStru10');"
+                      disabled id="TypeOfTempBuil_StruNoSGFA_Othe10"
+                      field-name="Structure without SGFA Others checkbox under Project Details"></cn2-checkbox>
+                  </td>
+                  <td colspan="2">
+                    Others (eg. Telecommunication tower, camera poles, girders etc.) <span
+                      id="TypeOfTempBuil_StruNoSGFA_Othe20_span"></span> <br />
+                    <cn2-textarea hidden no-label id="TypeOfTempBuil_StruNoSGFA_Othe20"
+                      field-name="Structure without SGFA Others textarea under Project Details" maxlength="66">
+                    </cn2-textarea>
+                  </td>
+                  <td>
+                    <cn2-textbox group="numStrct2.2b"
+                      event-input="calcTotal('numStrct2.2b','TypeOfTempBuil_MoreThan90Days_Tota_NoOfStru10');" numeric
+                      maxlength="10" disabled no-label id="TypeOfTempBuil_StruNoSGFA_Othe_NoOfStru10"
+                      field-name="Structure without SGFA Others textbox under Project Details"></cn2-textbox>
+                  </td>
+                  <td class="text-center"><b>N/A</b></td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td colspan="2" class="text-right"><b>Total:</b></td>
+                  <td>
+                    <cn2-textbox disabled no-label id="TypeOfTempBuil_MoreThan90Days_Tota_NoOfStru10"
+                      field-name="Structure without SGFA Others Total No. of Structures under Project Details">
+                    </cn2-textbox>
+                  </td>
+                  <td class="text-center"><b>N/A</b></td>
+                </tr>
+                <tr>
+                  <td width="1%" rowspan="15">2.3.</td>
+                  <td colspan="4">
+                    <u><b>Construction Site / Show-flat</b></u>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td rowspan="14">
+                    <input type="radio" disabled name="projDetails" onchange="projDetails(this);"
+                      id="ProjDetl_TypeOfTempBuil_ConsSiteShowFlat10"
+                      field-name="Construction Site / Show-flat radio under Project Details" />
+                  </td>
+                  <td colspan="3">
+                    Project reference number for the main permanent building :
+                    <br />
+                    <cn2-textbox disabled maxlength="35" no-label id="ProjDetl_TypeOfTempBuil_ConsSiteShowFlat20"
+                      field-name="Construction Site / Show-flat textbox under Project Details">
+                    </cn2-textbox>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox disabled id="ProjDetl_TypeOfTempBuil_3StorAbov10"
+                      field-name="Building or structure exceeds 3 storeys checkbox1 under Project Details">
+                    </cn2-checkbox>
+                  </td>
+                  <td colspan="2">
+                    <div style="display: flex;">
+                      <span>(i)</span>
+                      <span style="margin-left:10px;">Building or structure exceeds 3 storeys used as
+                        workers' quarters, a site office, in connection with
+                        any building works for a permanent building.</span>
+                    </div>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox disabled id="ProjDetl_TypeOfTempBuil_3StorAbov20"
+                      field-name="Building or structure exceeds 3 storeys checkbox2 under Project Details">
+                    </cn2-checkbox>
+                  </td>
+                  <td colspan="2">
+                    <div style="display: flex;">
+                      <span>(ii)</span>
+                      <span style="margin-left:10px;">Showflat/ showhouse.</span>
+                    </div>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td rowspan="5">
+                    <cn2-checkbox disabled
+                      event-change="TypeOfTempBuil_3StorAbov_WithConsSite10_change(this);calcTotal('numStrct2.3','TypeOfTempBuil_3StorAbov_Tota_NoOfStru10');calcTotal('TBSGFAgroup','TypeOfTempBuil_3StorAbov_Tota_SGFA10');"
+                      id="TypeOfTempBuil_3StorAbov_WithConsSite10"
+                      field-name="3 storeys TB within Construction Site under Project Details">
+                    </cn2-checkbox>
+                  </td>
+                  <td colspan="2">
+                    <b><u>TB within Construction Site</u></b>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <cn2-checkbox disabled
+                      event-change="enableMandatoryField(this,['TypeOfTempBuil_3StorAbov_NoOfSteeFramStru_NoOfStru10','TypeOfTempBuil_3StorAbov_NoOfSteeFramStru_SGFA10']);calcTotal('TBSGFAgroup','TypeOfTempBuil_3StorAbov_Tota_SGFA10');calcTotal('numStrct2.3','TypeOfTempBuil_3StorAbov_Tota_NoOfStru10');"
+                      id="TypeOfTempBuil_3StorAbov_NoOfSteeFramStru10"
+                      field-name="3 storeys No. of Steel framed structures checkbox under Project Details">
+                    </cn2-checkbox>
+                  </td>
+                  <td>No. of Steel framed structures</td>
+                  <td>
+                    <cn2-textbox disabled numeric maxlength="10" group="numStrct2.3"
+                      event-input="calcTotal('numStrct2.3','TypeOfTempBuil_3StorAbov_Tota_NoOfStru10');" no-label
+                      id="TypeOfTempBuil_3StorAbov_NoOfSteeFramStru_NoOfStru10"
+                      field-name="3 storeys No. of Steel framed structures No. of Structures under Project Details">
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-textbox disabled currency group="TBSGFAgroup" event-keypress="maxV(this,event,7);"
+                      event-input="calcTotal('TBSGFAgroup','TypeOfTempBuil_3StorAbov_Tota_SGFA10');" no-label
+                      id="TypeOfTempBuil_3StorAbov_NoOfSteeFramStru_SGFA10"
+                      field-name="3 storeys No. of Steel framed structures SGFA under Project Details"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox disabled
+                      event-change="enableMandatoryField(this,['TypeOfTempBuil_3StorAbov_NoOfCont_NoOfStru10','TypeOfTempBuil_3StorAbov_NoOfCont_SGFA10']);calcTotal('TBSGFAgroup','TypeOfTempBuil_3StorAbov_Tota_SGFA10');calcTotal('numStrct2.3','TypeOfTempBuil_3StorAbov_Tota_NoOfStru10');"
+                      id="TypeOfTempBuil_3StorAbov_NoOfCont10"
+                      field-name="3 storeys No. of containers under Project Details"></cn2-checkbox>
+                  </td>
+                  <td>No. of containers</td>
+                  <td>
+                    <cn2-textbox disabled numeric maxlength="10" group="numStrct2.3"
+                      event-input="calcTotal('numStrct2.3','TypeOfTempBuil_3StorAbov_Tota_NoOfStru10');" no-label
+                      id="TypeOfTempBuil_3StorAbov_NoOfCont_NoOfStru10"
+                      field-name="3 storeys No. of containers No. of Structures under Project Details"></cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-textbox disabled currency group="TBSGFAgroup" event-keypress="maxV(this,event,7);"
+                      event-input="calcTotal('TBSGFAgroup','TypeOfTempBuil_3StorAbov_Tota_SGFA10');" no-label
+                      id="TypeOfTempBuil_3StorAbov_NoOfCont_SGFA10"
+                      field-name="3 storeys No. of containers SGFA under Project Details"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox disabled
+                      event-change="enableMandatoryField(this,['TypeOfTempBuil_3StorAbov_ShowFlat_NoOfStru10','TypeOfTempBuil_3StorAbov_ShowFlat_SGFA10']);calcTotal('TBSGFAgroup','TypeOfTempBuil_3StorAbov_Tota_SGFA10');calcTotal('numStrct2.3','TypeOfTempBuil_3StorAbov_Tota_NoOfStru10');"
+                      id="TypeOfTempBuil_3StorAbov_ShowFlat10"
+                      field-name="3 storeys No. of show-flats or show-houses under Project Details"></cn2-checkbox>
+                  </td>
+                  <td>No. of show-flats or show-houses</td>
+                  <td>
+                    <cn2-textbox disabled numeric maxlength="10" group="numStrct2.3"
+                      event-input="calcTotal('numStrct2.3','TypeOfTempBuil_3StorAbov_Tota_NoOfStru10');" no-label
+                      id="TypeOfTempBuil_3StorAbov_ShowFlat_NoOfStru10"
+                      field-name="3 storeys No. of show-flats or show-houses No. of Structures under Project Details">
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-textbox disabled currency group="TBSGFAgroup" event-keypress="maxV(this,event,7);"
+                      event-input="calcTotal('TBSGFAgroup','TypeOfTempBuil_3StorAbov_Tota_SGFA10');" no-label
+                      id="TypeOfTempBuil_3StorAbov_ShowFlat_SGFA10"
+                      field-name="3 storeys No. of show-flats or show-houses SGFA under Project Details"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox disabled
+                      event-change="enableMandatoryField(this,['TypeOfTempBuil_3StorAbov_OutsCons_NoOfStru10','TypeOfTempBuil_3StorAbov_OutsCons_SGFA10']);enableHiddenMandatoryField(this,'TypeOfTempBuil_3StorAbov_Othe20','TypeOfTempBuil_3StorAbov_Othe20_span');calcTotal('TBSGFAgroup','TypeOfTempBuil_3StorAbov_Tota_SGFA10');calcTotal('numStrct2.3','TypeOfTempBuil_3StorAbov_Tota_NoOfStru10');"
+                      id="TypeOfTempBuil_3StorAbov_Othe10" field-name="3 storeys Others under Project Details">
+                    </cn2-checkbox>
+                  </td>
+                  <td>
+                    Others <span id="TypeOfTempBuil_3StorAbov_Othe20_span"></span><br />
+                    <cn2-textarea hidden maxlength="66" no-label id="TypeOfTempBuil_3StorAbov_Othe20"
+                      field-name="3 storeys Others textarea under Project Details"></cn2-textarea>
+                  </td>
+                  <td>
+                    <cn2-textbox disabled numeric maxlength="10" group="numStrct2.3"
+                      event-input="calcTotal('numStrct2.3','TypeOfTempBuil_3StorAbov_Tota_NoOfStru10');" no-label
+                      id="TypeOfTempBuil_3StorAbov_OutsCons_NoOfStru10"
+                      field-name="3 storeys Others No. of Structures under Project Details"></cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-textbox disabled currency group="TBSGFAgroup" event-keypress="maxV(this,event,7);"
+                      event-input="calcTotal('TBSGFAgroup','TypeOfTempBuil_3StorAbov_Tota_SGFA10');" no-label
+                      id="TypeOfTempBuil_3StorAbov_OutsCons_SGFA10"
+                      field-name="3 storeys Others SGFA under Project Details"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td rowspan="6">
+                    <cn2-checkbox disabled
+                      event-change="TypeOfTempBuil_3StorAbov_OutConsSite10_change(this);calcTotal('numStrct2.3','TypeOfTempBuil_3StorAbov_Tota_NoOfStru10');calcTotal('TBSGFAgroup','TypeOfTempBuil_3StorAbov_Tota_SGFA10');"
+                      id="TypeOfTempBuil_3StorAbov_OutConsSite10" field-name="Off-site TBs under Project Details">
+                    </cn2-checkbox>
+                  </td>
+                  <td colspan="2">
+                    <b><u>Off-site TBs</u></b>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <cn2-checkbox disabled
+                      event-change="enableMandatoryField(this,['StorAbov_OutConsSite_NoOfSteeFramStru_NoOfStru10','StorAbov_OutConsSite_NoOfSteeFramStru_SGFA10']);calcTotal('numStrct2.3','TypeOfTempBuil_3StorAbov_Tota_NoOfStru10');calcTotal('TBSGFAgroup','TypeOfTempBuil_3StorAbov_Tota_SGFA10');"
+                      id="TypeOfTempBuil_3StorAbov_OutConsSite_NoOfSteeFramStru10"
+                      field-name="Off-site TBs No. of Steel framed structures under Project Details"></cn2-checkbox>
+                  </td>
+                  <td>No. of Steel framed structures</td>
+                  <td>
+                    <cn2-textbox group="numStrct2.3"
+                      event-input="calcTotal('numStrct2.3','TypeOfTempBuil_3StorAbov_Tota_NoOfStru10');" disabled
+                      numeric maxlength="10" no-label id="StorAbov_OutConsSite_NoOfSteeFramStru_NoOfStru10"
+                      field-name="Off-site TBs No. of Steel framed structures No. of Structures under Project Details">
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-textbox group="TBSGFAgroup"
+                      event-input="calcTotal('TBSGFAgroup','TypeOfTempBuil_3StorAbov_Tota_SGFA10');" disabled currency
+                      maxlength="10" event-keypress="maxV(this,event,7);" no-label
+                      id="StorAbov_OutConsSite_NoOfSteeFramStru_SGFA10"
+                      field-name="Off-site TBs No. of Steel framed structures SGFA under Project Details">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox disabled
+                      event-change="enableMandatoryField(this,['StorAbov_OutConsSite_NoOfCont_NoOfStru10','StorAbov_OutConsSite_NoOfCont_SGFA10']);calcTotal('numStrct2.3','TypeOfTempBuil_3StorAbov_Tota_NoOfStru10');calcTotal('TBSGFAgroup','TypeOfTempBuil_3StorAbov_Tota_SGFA10');"
+                      id="TypeOfTempBuil_3StorAbov_OutConsSite_NoOfCont10"
+                      field-name="Off-site TBs No. of containers under Project Details"></cn2-checkbox>
+                  </td>
+                  <td>No. of containers</td>
+                  <td>
+                    <cn2-textbox group="numStrct2.3"
+                      event-input="calcTotal('numStrct2.3','TypeOfTempBuil_3StorAbov_Tota_NoOfStru10');" disabled
+                      numeric maxlength="10" no-label id="StorAbov_OutConsSite_NoOfCont_NoOfStru10"
+                      field-name="Off-site TBs No. of containers No. of Structures under Project Details"></cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-textbox group="TBSGFAgroup"
+                      event-input="calcTotal('TBSGFAgroup','TypeOfTempBuil_3StorAbov_Tota_SGFA10');" disabled currency
+                      maxlength="10" event-keypress="maxV(this,event,7);" no-label
+                      id="StorAbov_OutConsSite_NoOfCont_SGFA10"
+                      field-name="Off-site TBs No. of containers SGFA under Project Details"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox disabled
+                      event-change="enableMandatoryField(this,['StorAbov_OutConsSite_ShowFlat_NoOfStru10','StorAbov_OutConsSite_ShowFlat_SGFA10']);calcTotal('numStrct2.3','TypeOfTempBuil_3StorAbov_Tota_NoOfStru10');calcTotal('TBSGFAgroup','TypeOfTempBuil_3StorAbov_Tota_SGFA10');"
+                      id="TypeOfTempBuil_3StorAbov_OutConsSite_ShowFlat10"
+                      field-name="Off-site TBs No. of show-flats or show-houses under Project Details"></cn2-checkbox>
+                  </td>
+                  <td>No. of show-flats or show-houses</td>
+                  <td>
+                    <cn2-textbox group="numStrct2.3"
+                      event-input="calcTotal('numStrct2.3','TypeOfTempBuil_3StorAbov_Tota_NoOfStru10');" disabled
+                      numeric maxlength="10" no-label id="StorAbov_OutConsSite_ShowFlat_NoOfStru10"
+                      field-name="Off-site TBs No. of show-flats or show-houses No. of Structures under Project Details">
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-textbox group="TBSGFAgroup"
+                      event-input="calcTotal('TBSGFAgroup','TypeOfTempBuil_3StorAbov_Tota_SGFA10');" disabled currency
+                      maxlength="10" event-keypress="maxV(this,event,7);" no-label
+                      id="StorAbov_OutConsSite_ShowFlat_SGFA10"
+                      field-name="Off-site TBs No. of show-flats or show-houses SGFA under Project Details">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox disabled
+                      event-change="enableMandatoryField(this,['StorAbov_OutConsSite_Othe_NoOfStru10','StorAbov_OutConsSite_Othe_SGFA10']);enableHiddenMandatoryField(this,'TypeOfTempBuil_3StorAbov_OutConsSite_Othe20','TypeOfTempBuil_3StorAbov_OutConsSite_Othe20_span');calcTotal('numStrct2.3','TypeOfTempBuil_3StorAbov_Tota_NoOfStru10');calcTotal('TBSGFAgroup','TypeOfTempBuil_3StorAbov_Tota_SGFA10');"
+                      id="TypeOfTempBuil_3StorAbov_OutConsSite_Othe10"
+                      field-name="Off-site TBs Others under Project Details"></cn2-checkbox>
+                  </td>
+                  <td>
+                    Others <span id="TypeOfTempBuil_3StorAbov_OutConsSite_Othe20_span"></span><br />
+                    <cn2-textarea hidden no-label id="TypeOfTempBuil_3StorAbov_OutConsSite_Othe20"
+                      field-name="Off-site TBs Others textarea under Project Details" maxlength="66">
+                    </cn2-textarea>
+                  </td>
+                  <td>
+                    <cn2-textbox group="numStrct2.3"
+                      event-input="calcTotal('numStrct2.3','TypeOfTempBuil_3StorAbov_Tota_NoOfStru10');" disabled
+                      numeric maxlength="10" no-label id="StorAbov_OutConsSite_Othe_NoOfStru10"
+                      field-name="Off-site TBs Others No. of Structures under Project Details"></cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-textbox group="TBSGFAgroup"
+                      event-input="calcTotal('TBSGFAgroup','TypeOfTempBuil_3StorAbov_Tota_SGFA10');" disabled currency
+                      maxlength="10" event-keypress="maxV(this,event,7);" no-label id="StorAbov_OutConsSite_Othe_SGFA10"
+                      field-name="Off-site TBs Others SGFA under Project Details"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-right"><b>Total:</b></td>
+                  <td>
+                    <cn2-textbox disabled no-label id="TypeOfTempBuil_3StorAbov_Tota_NoOfStru10"
+                      field-name="3 storeys Total No. of Structures under Project Details"></cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-textbox disabled no-label id="TypeOfTempBuil_3StorAbov_Tota_SGFA10"
+                      field-name="3 storeys Total SGFA under Project Details"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%" rowspan="14">2.4.</td>
+                  <td colspan="4">
+                    <u><b>Advertising Structures</b></u> <br />
+                    * Advertising structure means any frame, panel, hoarding,
+                    board or other structure that is designed or used
+                    primarily for the display of an advertisement, animated
+                    billboard, directional sign, signboard or skysign.
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td rowspan="13">
+                    <input type="radio" disabled name="projDetails" id="ProjDetl_TypeOfTempBuil_OutdStru10"
+                      field-name="Structure used only for outdoor display under Project Details" />
+                  </td>
+                  <td colspan="3">
+                    Structure used only for outdoor display of an
+                    advertisement or signboard Consultation no. :
+                    <br />
+                    <cn2-textbox template="#####/####/##/##" disabled maxlength="16" no-label
+                      id="TypeOfTempBuil_OutdStru_LiceNo10"
+                      field-name="Structure used only for outdoor display License No. under Project Details">
+                    </cn2-textbox>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox disabled
+                      event-change="enableMandatoryField(this,['TypeOfTempBuil_OutdStru_ExceSupp_NoOfStru10']);calcTotal('numStrct2.4','TypeOfTempBuil_OutdStru_Tota_NoOfStru10');"
+                      id="TypeOfTempBuil_OutdStru_ExceSupp10"
+                      field-name="No. of advertising signs /signboards exceeding 10m² supported under Project Details">
+                    </cn2-checkbox>
+                  </td>
+                  <td colspan="2">
+                    No. of advertising signs /signboards exceeding 10m²
+                    supported by an advertising Structure
+                  </td>
+                  <td>
+                    <cn2-textbox disabled numeric maxlength="10" group="numStrct2.4"
+                      event-input="calcTotal('numStrct2.4','TypeOfTempBuil_OutdStru_Tota_NoOfStru10');" no-label
+                      id="TypeOfTempBuil_OutdStru_ExceSupp_NoOfStru10"
+                      field-name="No. of advertising signs /signboards exceeding 10m² supported No. of Structures under Project Details">
+                    </cn2-textbox>
+                  </td>
+                  <td class="text-center"><b>N/A</b></td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox disabled
+                      event-change="enableMandatoryField(this,['TypeOfTempBuil_OutdStru_Exce_NoOfStru10']);calcTotal('numStrct2.4','TypeOfTempBuil_OutdStru_Tota_NoOfStru10');"
+                      id="TypeOfTempBuil_OutdStru_Exce10"
+                      field-name="No. of advertising structures exceeding 10m² under Project Details"></cn2-checkbox>
+                  </td>
+                  <td colspan="2">
+                    No. of advertising structures exceeding 10m²
+                  </td>
+                  <td>
+                    <cn2-textbox disabled numeric maxlength="10" group="numStrct2.4"
+                      event-input="calcTotal('numStrct2.4','TypeOfTempBuil_OutdStru_Tota_NoOfStru10');" no-label
+                      id="TypeOfTempBuil_OutdStru_Exce_NoOfStru10"
+                      field-name="No. of advertising structures exceeding 10m² No. of Structures under Project Details">
+                    </cn2-textbox>
+                  </td>
+                  <td class="text-center"><b>N/A</b></td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox disabled
+                      event-change="enableMandatoryField(this,['TypeOfTempBuil_OutdStru_UppeMost_NoOfStru10']);calcTotal('numStrct2.4','TypeOfTempBuil_OutdStru_Tota_NoOfStru10');"
+                      id="TypeOfTempBuil_OutdStru_UppeMost10"
+                      field-name="No. of advertising structures with height of 4 metres under Project Details">
+                    </cn2-checkbox>
+                  </td>
+                  <td colspan="2">
+                    No. of advertising structures with height of 4 metres and
+                    above that is capable of standing on its own on ground,
+                    roof or any horizontal plane
+                  </td>
+                  <td>
+                    <cn2-textbox disabled numeric maxlength="10" group="numStrct2.4"
+                      event-input="calcTotal('numStrct2.4','TypeOfTempBuil_OutdStru_Tota_NoOfStru10');" no-label
+                      id="TypeOfTempBuil_OutdStru_UppeMost_NoOfStru10"
+                      field-name="No. of advertising structures with height of 4 metres No. of Structures under Project Details">
+                    </cn2-textbox>
+                  </td>
+                  <td class="text-center"><b>N/A</b></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="text-right"><b>Total:</b></td>
+                  <td>
+                    <cn2-textbox disabled no-label id="TypeOfTempBuil_OutdStru_Tota_NoOfStru10"
+                      field-name="Structure used only for outdoor display Total No. of Structures under Project Details">
+                    </cn2-textbox>
+                  </td>
+                  <td class="text-center"><b>N/A</b></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page4">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>3. Particulars of Owner of Temporary Building / Structure</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Member_Name_OWNER10"
+                      field-name="Name under Particulars of Owner of Temporary Building / Structure" maxlength="66"
+                      mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name*</td>
+                  <td>
+                    <cn2-textbox mandatory no-label maxlength="66" id="Member_Firm_Name_OWNER10"
+                      field-name="Firm Name under Particulars of Owner of Temporary Building / Structure">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox template="#########@" event-blur="uenValidate(this);" no-label maxlength="10"
+                      id="Members_UEN_OWNER10"
+                      field-name="UEN under Particulars of Owner of Temporary Building / Structure">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Designation</td>
+                  <td>
+                    <cn2-textbox no-label maxlength="66" id="Member_Designation_OWNER10"
+                      field-name="Designation under Particulars of Owner of Temporary Building / Structure">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address*</td>
+                  <td>
+                    <cn2-textarea mandatory no-label id="Member_Address_OWNER10"
+                      field-name="Address under Particulars of Owner of Temporary Building / Structure"
+                      maxlength="32400">
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Tel_No_OWNER10"
+                      field-name="Telephone No. under Particulars of Owner of Temporary Building / Structure" numeric
+                      maxlength="12">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.*</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Mobile_No_OWNER10"
+                      field-name="Handphone No. under Particulars of Owner of Temporary Building / Structure" numeric
+                      maxlength="12" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address*</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Email_Address1_OWNER10"
+                      field-name="Email Address under Particulars of Owner of Temporary Building / Structure"
+                      placeholder="name@example.com" event-blur="EmailValidate(this)" maxlength="50" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>
+              4. Particulars of Owner of the Premises (if different from
+              Section 3) <br>
+              <span style="font-size:14px;">*Note: if section 4 is left empty, the PE is deemed to declare that the
+                owner of the Temporary Building is also the owner of the premises</span>
+            </h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Name</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Member_Name_OWNER20"
+                      field-name="Name under Particulars of Owner of the Premises" maxlength="66">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox no-label maxlength="66" id="Member_Firm_Name_OWNER20"
+                      field-name="Firm Name under Particulars of Owner of the Premises"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox template="#########@" event-blur="uenValidate(this);" no-label maxlength="10"
+                      id="Members_UEN_OWNER20" field-name="UEN under Particulars of Owner of the Premises">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Designation</td>
+                  <td>
+                    <cn2-textbox no-label maxlength="66" id="Member_Designation_OWNER20"
+                      field-name="Designation under Particulars of Owner of the Premises">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea no-label id="Member_Address_OWNER20"
+                      field-name="Address under Particulars of Owner of the Premises" maxlength="32400"></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Tel_No_OWNER20"
+                      field-name="Telephone No. under Particulars of Owner of the Premises" numeric maxlength="12">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Mobile_No_OWNER20"
+                      field-name="Handphone No. under Particulars of Owner of the Premises" numeric maxlength="12">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Email_Address1_OWNER20"
+                      field-name="Email Address under Particulars of Owner of the Premises"
+                      placeholder="name@example.com" event-blur="EmailValidate(this)" maxlength="50">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page5">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>5. Particulars of Professional Engineer</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Member_Name_QP10"
+                      field-name="Name under Particulars of Professional Engineer" maxlength="66" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>PE No.*</td>
+                  <td>
+                    <cn2-textbox no-label id="MemberRole_Professional_No_QP10"
+                      field-name="PE No. under Particulars of Professional Engineer" maxlength="4" numeric mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name*</td>
+                  <td>
+                    <cn2-textbox mandatory no-label maxlength="66" id="Member_Firm_Name_QP10"
+                      field-name="Firm Name under Particulars of Professional Engineer">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox template="#########@" event-blur="uenValidate(this);" no-label maxlength="10"
+                      id="Members_UEN_QP10" field-name="UEN under Particulars of Professional Engineer">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Designation</td>
+                  <td>
+                    <cn2-textbox no-label maxlength="66" id="Member_Designation_QP10"
+                      field-name="Designation under Particulars of Professional Engineer">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address*</td>
+                  <td>
+                    <cn2-textarea mandatory no-label id="Member_Address_QP10"
+                      field-name="Address under Particulars of Professional Engineer" maxlength="32400">
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Tel_No_QP10"
+                      field-name="Telephone No. under Particulars of Professional Engineer" numeric maxlength="12">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.*</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Mobile_No_QP10"
+                      field-name="Handphone No. under Particulars of Professional Engineer" numeric maxlength="12"
+                      mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address*</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Email_Address1_QP10"
+                      field-name="Email Address under Particulars of Professional Engineer"
+                      placeholder="name@example.com" event-blur="EmailValidate(this)" maxlength="50" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>6. Particulars of Builder</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Member_Name_BLDR10" field-name="Name under Particulars of Builder"
+                      maxlength="66" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name*</td>
+                  <td>
+                    <cn2-textbox mandatory no-label maxlength="66" id="Member_Firm_Name_BLDR10"
+                      field-name="Firm Name under Particulars of Builder">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox template="#########@" event-blur="uenValidate(this);" no-label maxlength="10"
+                      id="Member_UEN_BLDR10" field-name="UEN under Particulars of Builder">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Designation</td>
+                  <td>
+                    <cn2-textbox no-label maxlength="66" id="Member_Designation_BLDR10"
+                      field-name="Designation under Particulars of Builder">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address*</td>
+                  <td>
+                    <cn2-textarea mandatory no-label id="Member_Address1_BLDR10"
+                      field-name="Address under Particulars of Builder" maxlength="32400">
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Tel_No_BLDR10"
+                      field-name="Telephone No. under Particulars of Builder" numeric maxlength="12">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.*</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Mobile_No_BLDR10"
+                      field-name="Handphone No. under Particulars of Builder" numeric maxlength="12" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address*</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Email_Address1_BLDR10"
+                      field-name="Email Address under Particulars of Builder" placeholder="name@example.com"
+                      event-blur="EmailValidate(this)" maxlength="50" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page6">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>7. Application for the Permit to Use</h2>
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td colspan="3">
+                    <b>Declaration by Professional Engineer</b>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">I confirm that:</td>
+                </tr>
+                <tr>
+                  <td>7A</td>
+                  <td>
+                    I am appointed as the professional engineer to submit the
+                    application for a Permit to Use under regulation 9(1), on
+                    behalf of the temporary building owner.
+                  </td>
+                  <td>
+                    <cn2-checkbox id="ApplForPermErec_IAppoAsQP10"
+                      field-name="I am appointed as the professional engineer under Application for the Permit to Use">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>7B</td>
+                  <td>
+                    I have attached a scanned copy of the notification signed
+                    by the temporary building owner of my appointment as the
+                    professional engineer.
+                  </td>
+                  <td>
+                    <cn2-checkbox id="ApplForPermErec_IHaveAtta10"
+                      field-name="I have attached a scanned copy of the notification under Application for the Permit to Use">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>7C</td>
+                  <td>
+                    The temporary building(s)/ structure(s) shown in the
+                    attached plans have been designed by me in accordance with
+                    the provisions of the Building Control Act and the
+                    provisions of the Building Control (Temporary Buildings)
+                    Regulations; and I shall discharge the duties imposed on
+                    me by the Regulations.
+                  </td>
+                  <td>
+                    <cn2-checkbox id="ApplForPermErec_TempBuilShowAtta10"
+                      field-name="The temporary building(s)/ structure(s) shown in the attached plans under Application for the Permit to Use">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>7D</td>
+                  <td>
+                    I have submitted a copy of the Written Permission by the
+                    Competent Authority (URA) under the Planning Act (Cap 232)
+                    (where applicable for temporary building).
+                  </td>
+                  <td>
+                    <cn2-checkbox id="ApplForPermErec_IHaveSubmCopy10"
+                      field-name="I have submitted a copy of the Written Permission under Application for the Permit to Use">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>7E</td>
+                  <td>
+                    I have submitted a copy of the written consent of the
+                    owner of the premises (where applicable).
+                  </td>
+                  <td>
+                    <cn2-checkbox id="ApplForPermErec_IHaveSubmWritCons10"
+                      field-name="I have submitted a copy of the written consent under Application for the Permit to Use">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>7F</td>
+                  <td>
+                    On completion of the temporary building(s)/ structure(s),
+                    I shall submit the following as required in Building
+                    Control (Temporary Buildings) Regulations:
+                    <table class="table table-borderless table-sm" style="margin-bottom:0;">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <cn2-checkbox disabled id="ApplForPermErec_OnCompTempBuil20"
+                              field-name="On completion of the temporary building(s) checkbox2 under Application for the Permit to Use">
+                            </cn2-checkbox>
+                          </td>
+                          <td>
+                            Professional engineer's certificate of supervision
+                            for the building works;
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <cn2-checkbox disabled id="ApplForPermErec_OnCompTempBuil30"
+                              field-name="On completion of the temporary building(s) checkbox3 under Application for the Permit to Use">
+                            </cn2-checkbox>
+                          </td>
+                          <td>
+                            Professional electrical engineer's certificate of
+                            supervision for the installation of any lightning
+                            protection system;
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <cn2-checkbox event-change="ApplForPermErec_OnCompTempBuil10_change(this);"
+                      id="ApplForPermErec_OnCompTempBuil10"
+                      field-name="On completion of the temporary building(s) checkbox1 under Application for the Permit to Use">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-top:25px;">7G</td>
+                  <td style="line-height:50px;">
+                    The Permit to use is for a period of &nbsp;
+                    <cn2-textbox disabled maxlength="2" event-blur="ApplForPermErec_ThePermToErec10_input(this);"
+                      no-label id="ApplForPermErec_ThePermToErec10"
+                      field-name="The Permit to use textbox1 under Application for the Permit to Use" inline="2">
+                    </cn2-textbox>
+                    &nbsp; months &nbsp;
+                    <cn2-textbox disabled maxlength="2" event-blur="ApplForPermErec_ThePermToErec20_input(this);"
+                      no-label id="ApplForPermErec_ThePermToErec20"
+                      field-name="The Permit to use textbox2 under Application for the Permit to Use" inline="2">
+                    </cn2-textbox>&nbsp; days commencing
+                    from &nbsp;
+                    <cn2-datefield onfocusout="validateDate(this)" disabled id="ApplForPermErec_ThePermToErec30"
+                      field-name="The Permit to use datefield1 under Application for the Permit to Use" no-label
+                      inline="3"></cn2-datefield>&nbsp; to &nbsp;
+                    <cn2-datefield onfocusout="validateDate(this)" disabled id="ApplForPermErec_ThePermToErec40"
+                      field-name="The Permit to use datefield2 under Application for the Permit to Use" no-label
+                      inline="3"></cn2-datefield>.
+                    <br />
+                    * Permit to Use (not exceeding 36 months)
+                  </td>
+                  <td style="padding-top:25px;">
+                    <cn2-checkbox id="ApplForPermErec_TheConsInstTemp10"
+                      field-name="The Permit to use checkbox under Application for the Permit to Use"
+                      event-change="ApplForPermErec_TheConsInstTemp10_change(this);"></cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page7">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>
+              7. Application for the Extension / Renewal of Permit to Use
+            </h2>
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td colspan="3">
+                    <b>Declaration by Professional Engineer</b>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">I confirm that:</td>
+                </tr>
+                <tr>
+                  <td>7A</td>
+                  <td>
+                    I am appointed as the Professional Engineer to submit the
+                    application for the extension / renewal of Permit to Use
+                    under regulation 12(1) on behalf of the owner of the
+                    temporary building
+                  </td>
+                  <td>
+                    <cn2-checkbox id="ApplForRenePerm_IAmAppoQP10"
+                      field-name="I am appointed as the Professional Engineer under Application for the Extension / Renewal of Permit to Use">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>7B</td>
+                  <td>
+                    There are no deviations from the plans submitted on the
+                    application for permit to use that was issued on
+                    <cn2-datefield onfocusout="validateDate(this);" disabled no-label inline="3"
+                      id="ApplForRenePerm_TherNoDeviFrom20"
+                      field-name="There are no deviations from the plans datefield under Application for the Extension / Renewal of Permit to Use">
+                    </cn2-datefield>
+                  </td>
+                  <td>
+                    <cn2-checkbox event-change="enableMandatoryField(this,['ApplForRenePerm_TherNoDeviFrom20']);"
+                      id="ApplForRenePerm_TherNoDeviFrom10"
+                      field-name="There are no deviations from the plans checkbox under Application for the Extension / Renewal of Permit to Use">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>7C</td>
+                  <td>
+                    I have inspected the temporary building(s)/ structure(s)
+                    and submitted the following documents
+                    <table class="table table-borderless table-sm" style="margin-bottom:0;">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <cn2-checkbox disabled id="ApplForRenePerm_IHaveInspTemp_AnInspRepoIncl10"
+                              field-name="An inspection report under Application for the Extension / Renewal of Permit to Use">
+                            </cn2-checkbox>
+                          </td>
+                          <td>
+                            an inspection report including tests and
+                            recommended strengthening works where necessary.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <cn2-checkbox disabled id="ApplForRenePerm_IHaveInspTemp_CertTempWorkSafe10"
+                              field-name="A certification that the temporary building(s)/building works is safe under Application for the Extension / Renewal of Permit to Use">
+                            </cn2-checkbox>
+                          </td>
+                          <td>
+                            a certification that the temporary
+                            building(s)/building works is safe for continued
+                            use for the intended period of extended use.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <cn2-checkbox event-change="ApplForRenePerm_IHaveInspTemp10_change(this);"
+                      id="ApplForRenePerm_IHaveInspTemp10"
+                      field-name="I have inspected the temporary building(s)/ structure(s) under Application for the Extension / Renewal of Permit to Use">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td rowspan="2">7D</td>
+                  <td>
+                    I have submitted a copy of the Written Permission by the
+                    Competent Authority (URA) under the Planning Act (Cap 232)
+                    (where applicable for temporary building) <br />
+                  </td>
+                  <td rowspan="2">
+                    <cn2-checkbox id="ApplForRenePerm_IHaveSubmCert10"
+                      field-name="I have submitted a copy of the Written Permission under Application for the Extension / Renewal of Permit to Use">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="line-height: 50px;">
+                    The permit to Use is extended / renewed for a period of
+                    &nbsp;
+                    <cn2-textbox event-blur="ApplForPermErec_ThePermToErec10_input(this);" maxlength="2"
+                      id="ApplForRenePerm_ThePermUseRene20"
+                      field-name="The permit to Use is extended textbox under Application for the Extension / Renewal of Permit to Use"
+                      no-label inline="2"></cn2-textbox>
+                    &nbsp; months commencing from &nbsp;
+                    <cn2-datefield onfocusout="validateDate(this);" id="ApplForRenePerm_ThePermUseRene30"
+                      field-name="The permit to Use is extended datefield1 under Application for the Extension / Renewal of Permit to Use"
+                      no-label inline="3"></cn2-datefield>&nbsp; to &nbsp;
+                    <cn2-datefield onfocusout="validateDate(this);" id="ApplForRenePerm_ThePermUseRene40"
+                      field-name="The permit to Use is extended datefield2 under Application for the Extension / Renewal of Permit to Use"
+                      no-label inline="3"></cn2-datefield>.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page8">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>8. Permit Fee Computation</h2>
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td>Structure / Application Type</td>
+                  <td>SGFA(m2)/Structure</td>
+                  <td>Rate</td>
+                  <td>Computed Fee</td>
+                </tr>
+                <tr>
+                  <td rowspan="2">New Erection Buildings / Structures</td>
+                  <td>
+                    <cn2-textbox disabled no-label id="ApplForPermUse_SGFAStru_SGFAFromSect210"
+                      field-name="SGFA Structure under Permit Fee Computation"></cn2-textbox>
+                  </td>
+                  <td>$200 / 100m2 or part thereof</td>
+                  <td>
+                    $<cn2-textbox disabled inline="11" no-label
+                      id="ApplForPermUse_StruApplType_NewErecReteBuil_CompFee10"
+                      field-name="New Erection Buildings / Structures Computed Fee1 under Permit Fee Computation">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-textbox disabled no-label id="ApplForPermUse_Stru10"
+                      field-name="New Erection Buildings / Structures application per structure under Permit Fee Computation">
+                    </cn2-textbox>
+                  </td>
+                  <td>$200 / application per structure</td>
+                  <td>
+                    $<cn2-textbox disabled inline="11" no-label
+                      id="ApplForPermUse_StruApplType_NewErecReteBuil_CompFee20"
+                      field-name="New Erection Buildings / Structures Computed Fee2 under Permit Fee Computation">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Advertising Structures</td>
+                  <td>
+                    <cn2-textbox disabled no-label id="ApplForPermUse_StruApplType_AdveStru20"
+                      field-name="Advertising Structures application per structure under Permit Fee Computation">
+                    </cn2-textbox>
+                  </td>
+                  <td>$200 / application per structure</td>
+                  <td>
+                    $<cn2-textbox disabled inline="11" no-label id="ApplForPermUse_CompFee_AdveStru10"
+                      field-name="Advertising Structures Computed Fee under Permit Fee Computation"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Permit Extension / Renewal</td>
+                  <td>
+                    <cn2-textbox disabled no-label id="ApplForPermUse_StruApplType_PermRene10"
+                      field-name="Permit Extension / Renewal application per structure under Permit Fee Computation">
+                    </cn2-textbox>
+                  </td>
+                  <td>$200 / application per structure</td>
+                  <td>
+                    $<cn2-textbox disabled inline="11" no-label id="ApplForPermUse_CompFee_PermRene10"
+                      field-name="Permit Extension / Renewal Computed Fee under Permit Fee Computation"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Fee Payable</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>
+                    $<cn2-textbox disabled inline="11" no-label id="ApplForPermUse_StruApplType_FeePaya10"
+                      field-name="Fee Payable under Permit Fee Computation">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td colspan="4">
+                    Notes:
+                    <ol>
+                      <li>
+                        SGFA, Statistical Gross Floor Area means the aggregate
+                        of the floor areas of all the storeys, including
+                        basements, in all of the temporary buildings in the
+                        application.
+                      </li>
+                      <li>
+                        Advertising Structure means any frame, panel,
+                        hoarding, board or other structure that is designed or
+                        used primarily for the display of an advertisement,
+                        animated billboard, directional sign, signboard or
+                        skysign.
+                      </li>
+                    </ol>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4">Payment Mode:</td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <input type="radio" name="paymentMeth" onchange="paymentMeth(this);" id="PaymMode_Cheq10"
+                      field-name="Cheque radio under Permit Fee Computation" />
+                  </td>
+                  <td>Cheque</td>
+                  <td>
+                    <cn2-textbox disabled label="Cheque" id="PaymMode_Cheq20"
+                      field-name="Cheque textbox under Permit Fee Computation"></cn2-textbox>
+                    <br />
+                    <cn2-datefield disabled onfocusout="validateDate(this)" label="Cheque Date" id="PaymMode_Cheq30"
+                      field-name="Cheque datefield under Permit Fee Computation">
+                    </cn2-datefield>
+                  </td>
+                  <td>
+                    <cn2-textbox disabled label="Bank Name" id="PaymMode_Cheq40"
+                      field-name="Cheque Bank Name under Permit Fee Computation"></cn2-textbox>
+                    <br />
+                    $<cn2-textbox disabled inline="11" label="Amount Paid" id="PaymMode_Cheq50"
+                      field-name="Cheque Amount Paid under Permit Fee Computation"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="radio" name="paymentMeth" onchange="paymentMeth(this);" id="PaymMode_ePay10"
+                      field-name="ePayment under Permit Fee Computation" />
+                  </td>
+                  <td>ePayment</td>
+                  <td colspan="2">
+                    Please proceed to make ePayment after your e-Submission at
+                    <a style="cursor:pointer;"
+                      onclick="ipcRenderer.send('open-default-browser', 'https://www.bca.gov.sg/ePayment/ePayment.html')"><u>
+                        <font color="blue">https://www.bca.gov.sg/ePayment/ePayment.html</font>
+                      </u></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4">Payer’s Details :-</td>
+                </tr>
+                <tr>
+                  <td colspan="2">Name</td>
+                  <td colspan="2">
+                    <cn2-textbox id="PayeDeta_Name" field-name="Payer's Name under Permit Fee Computation"
+                      maxlength="66" no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">Company Name</td>
+                  <td colspan="2">
+                    <cn2-textbox maxlength="66" id="PayeDeta_CompName"
+                      field-name="Payer's Company Name under Permit Fee Computation" no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">Email</td>
+                  <td colspan="2">
+                    <cn2-textbox maxlength="50" placeholder="name@example.com" event-blur="EmailValidate(this);"
+                      id="PayeDeta_Email" field-name="Payer's Email under Permit Fee Computation" no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>
+              Annex Consultation with Relevant Authorities for Technical
+              Clearances
+            </h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    The applicant should consult and obtain approval and
+                    clearances required from the relevant landowners and
+                    authorities listed in the table below to enable their
+                    requirements to be incorporated in the plans before
+                    submission of the application.
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <b>List of Authorities to be consulted</b>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">a.</td>
+                  <td>
+                    Chief Engineer, Central Building Plan Unit, Pollution
+                    Control Department.
+                  </td>
+                </tr>
+                <tr>
+                  <td>b.</td>
+                  <td>
+                    Chief Engineer, Central Building Plan Unit, Sewerage and
+                    Drainage [Water Reclamation (Network) Department, PUB], if
+                    proposal involves the use of existing or new sanitary
+                    appliances and facilities.
+                  </td>
+                </tr>
+                <tr>
+                  <td>c.</td>
+                  <td>
+                    Chief Planner, URA (Development Control Group) if the
+                    period of the trade fair or exhibition exceeds a total of
+                    90 days in a year.
+                  </td>
+                </tr>
+                <tr>
+                  <td>d.</td>
+                  <td>
+                    Commissioner, Parks & Trees Regulatory Section, National
+                    Park Boards.
+                  </td>
+                </tr>
+                <tr>
+                  <td>e.</td>
+                  <td>Director, Fire Safety & Shelter Department, SCDF.</td>
+                </tr>
+                <tr>
+                  <td>f.</td>
+                  <td>
+                    Head URA (Car Parks Division) if public carparks are used.
+                  </td>
+                </tr>
+                <tr>
+                  <td>g.</td>
+                  <td>
+                    Licensing Officer, Singapore Police Force, Public
+                    Entertainment Licensing Unit.
+                  </td>
+                </tr>
+                <tr>
+                  <td>h.</td>
+                  <td>
+                    Manager, Land Transport Authority, Development & Building
+                    Control (Road & Transport).
+                  </td>
+                </tr>
+                <tr>
+                  <td>i.</td>
+                  <td>
+                    Manager, Land Transport Authority, Development & Building
+                    Control (Rail).
+                  </td>
+                </tr>
+                <tr>
+                  <td>j.</td>
+                  <td>
+                    Manager, Land Transport Authority, Development & Building
+                    Control (Vehicle Parking).
+                  </td>
+                </tr>
+                <tr>
+                  <td>k.</td>
+                  <td>
+                    Commissioner, Building Control, Advertisement Licensing
+                    Department, Building Plan & Management Group, BCA for a
+                    licence to display any advertisement or sign.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-version-footer></cn2-version-footer>
+    <cn2-fixed-footer></cn2-fixed-footer>
+  </div>
+</body>
+
+</html>

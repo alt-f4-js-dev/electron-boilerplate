@@ -1,0 +1,2351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PUB-DCCLR</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Syncfusion" />
+
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+    <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+    <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+    <script src="../cm/js/func/common.js"></script>
+    <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+    <script src="../cm/js/components/cn2sgheader.js"></script>
+    <script src="../cm/js/components/cn2masterhead.js"></script>
+    <script src="../cm/js/components/cn2versionfooter.js"></script>
+    <script src="../cm/js/components/cn2fixedfooter.js"></script>
+
+    <script src="../cm/js/components/cn2switchbutton.js"></script>
+    <script src="../cm/js/components/cn2navbutton.js"></script>
+    <script src="../cm/js/components/cn2textbox.js"></script>
+    <script src="../cm/js/components/cn2textarea.js"></script>
+    <script src="../cm/js/components/cn2checkbox.js"></script>
+    <script src="../cm/js/components/cn2select.js"></script>
+    <script src="../cm/js/components/cn2datefield.js"></script>
+    <script src="../cm/js/components/cn2button.js"></script>
+    <script src="../cm/resources/assets/js/jquery-3.4.1.min.js"></script>
+
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <cn2-master-head title="APPLICATION FOR DEVELOPMENT CONTROL (DC) CLEARANCE"></cn2-master-head>
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p style="margin: 0px">Help</p>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <b>For enquiries related to forms, please contact the following:</b>
+                </p>
+                <p><span id="RegulatoryAuthority_id"></span></p>
+                <div id="table-parent" style="width:auto">
+                    <table id="ContDetaTable_id" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Regulatory Authority</th>
+                                <th>Email Address</th>
+                                <th>Tel No.</th>
+                                <th>Area of Support</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PUB (Drainage)</td>
+                                <td>pub_bpu@pub.gov.sg</td>
+                                <td>67313512</td>
+                                <td>General Enquiry, Policies, Submissions</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="5">PUB (Sewerage)</td>
+                                <td>pub_bpu@pub.gov.sg</td>
+                                <td>67313512</td>
+                                <td>General Enquiry</td>
+                            </tr>
+                            <tr>
+                                <td>sophian_ismail@pub.gov.sg</td>
+                                <td>67313656</td>
+                                <td>Approval for works affecting public sewer/Pre & Post Construction CCTV submissions
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>LER_Seng_Chye@pub.gov.sg</td>
+                                <td>67313264</td>
+                                <td>Sewerage pre-consultation/ DC Plan Submissions</td>
+                            </tr>
+                            <tr>
+                                <td>teo_mok_tong@pub.gov.sg</td>
+                                <td>67313256</td>
+                                <td>Sewerage Clearance Submissions</td>
+                            </tr>
+                            <tr>
+                                <td>steven_cheong@pub.gov.sg</td>
+                                <td>67313339</td>
+                                <td>Code of Practice and Regulations</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" name="member_id" id="member_id">
+    <input type="hidden" name="form_validated" id="form_validated">
+    <div class="mls-espro-form-container">
+        <div class="row">
+            <div class="mls-espro-form-left-nav" id="menu">
+                <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+                <cn2-nav-button target="page2" page-number="2" label="Particulars of Project"></cn2-nav-button>
+                <cn2-nav-button target="page3" page-number="3" label="Particulars of Application"></cn2-nav-button>
+                <cn2-nav-button target="page4" page-number="4" label="Particulars of Qualified Person"></cn2-nav-button>
+                <cn2-nav-button target="page5" page-number="5" label="Particulars of Owner(s)"></cn2-nav-button>
+                <cn2-nav-button target="page6" page-number="6" label="Development Details"></cn2-nav-button>
+                <cn2-nav-button target="page7" page-number="7" label="Submission For Development Control (DC) Plan">
+                </cn2-nav-button>
+                <cn2-nav-button target="page8" page-number="8" hidden
+                    label="Public Utilities Board (PUB) Catchment & Waterways Department Checklist for DC Plans">
+                </cn2-nav-button>
+            </div>
+
+            <div class="e-content mls-espro-form-right" id="page">
+                <div id="page1">
+                    <div style="width: 100%; float: left; font-style: italic; padding: 0px; padding-left: 20px;"
+                        class="mls-espo-right-inner-container borderchecking">
+                        This form may take you 10 minutes to fill in. You will need the following information to fill in
+                        the form:<br>
+                        - Particulars of Project <br>
+                        - Particulars of Qualified Person<br><br>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+                        <table class="table table-borderless" style="margin-bottom:0">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">
+                                        <b>Date:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <cn2-textbox id="Date10" no-label inline="5" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="1%">
+                                        <b>To:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <div class="mls-espro-form-fields row">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-select no-label inline="5" id="Addr10" options="PUB:PUBBPU"
+                                                    disabled>
+                                                </cn2-select>
+                                            </div>
+                                        </div>
+                                        <div class="mls-espro-form-fields row pt-2">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-textarea id="Addr20" no-label inline="5" disabled
+                                                    style="height: 140px;">
+                                                </cn2-textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Instructions</h2>
+                        <ol class="mls-intro-list ">
+                            <li>
+                                This form is to be digitally signed by the Qualified Person
+                                responsible for the works.
+                            </li>
+                            <li>
+                                All fields in this form are mandatory and QP is to fill up /
+                                tick / insert a "N.A" reply.
+                            </li>
+                            <li>
+                                This form is to be accompanied by the relevant attachments.
+                            </li>
+                            <li>Please read the DC checklist before filling the form.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div id="page2">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Project</h2>
+                        <table class="table table-borderless" style="margin-bottom:0">
+                            <tbody>
+                                <tr>
+                                    <td width="35%">Project Reference Number</td>
+                                    <td>
+                                        <cn2-textbox no-label id="Project_Project_Ref_No10" mandatory disabled>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Project Title</td>
+                                    <td>
+                                        <cn2-textarea no-label id="Project_Title10" mandatory disabled></cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Location Description
+
+                                        [Include Lot/Plot, MK/TS, Building Address, House No. and Road Information]</td>
+                                    <td>
+                                        <cn2-textarea no-label id="Project_Location_Description10" mandatory disabled>
+                                        </cn2-textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="page3">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Application</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless" style="margin-bottom:0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="35%"></td>
+                                            <td>Receipt No.</td>
+                                            <td>Dated</td>
+                                        </tr>
+                                        <tr>
+                                            <td>SIP/DIP (if applicable)*</td>
+                                            <td>
+                                                <cn2-textbox mandatory no-label
+                                                    id="PartOfAppl_SIPDIPFromCBPU_RefeNumb10" maxlength="25">
+                                                </cn2-textbox>
+                                            </td>
+                                            <td>
+                                                <cn2-datefield mandatory no-label onfocusout="validateDate(this);"
+                                                    event-change="PartOfAppl_SIPDIPFromCBPU_Date10_change(this);"
+                                                    id="PartOfAppl_SIPDIPFromCBPU_Date10"></cn2-datefield>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page4">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Qualified Person</h2>
+                        <table class="table table-borderless" style="margin-bottom:0">
+                            <tbody>
+                                <tr>
+                                    <td width="35%">Name*</td>
+                                    <td>
+                                        <cn2-select id="Member_Member_Name_QP10" no-label mandatory
+                                            event-change="loadDropDownDetails(this),Member_Member_Name_QP10_change()"
+                                            data-options="qpDropdown"></cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Role in Project</td>
+                                    <td>
+                                        <cn2-textbox no-label id="MemberRole_Member_Role_Code_Desc_QP10" disabled>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Registration No.</td>
+                                    <td>
+                                        <cn2-textbox no-label id="MemberRole_Professional_No_QP10" disabled>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Firm Name</td>
+                                    <td>
+                                        <cn2-textarea no-label id="Member_Firm_Name_QP10" disabled></cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Firm Address</td>
+                                    <td>
+                                        <cn2-textarea no-label id="Member_Address_QP10" disabled></cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Telephone No.</td>
+                                    <td>
+                                        <cn2-textbox no-label id="Member_Tel_No_QP10" disabled numeric></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email Address</td>
+                                    <td>
+                                        <cn2-textbox no-label id="Member_Email_Address1_QP10" disabled
+                                            event-blur="checkEmail(this);" placeholder="example@email.com">
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="page5">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Owner(s)</h2>
+                        <table class="table table-borderless" style="margin-bottom:0">
+                            <tbody>
+                                <tr>
+                                    <td width="35%">Name*</td>
+                                    <td>
+                                        <cn2-select id="Member_Member_Name_OWNER10" no-label mandatory
+                                            data-options="ownerDropdown" event-change="loadDropDownDetails(this)">
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Address</td>
+                                    <td>
+                                        <cn2-textbox no-label disabled id="Member_Address_OWNER10"></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Contact No.</td>
+                                    <td>
+                                        <cn2-textbox no-label id="Member_Tel_No_OWNER10" disabled numeric></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>
+                                        <cn2-textbox no-label disabled id="Member_Email_Address1_OWNER10"
+                                            event-blur="checkEmail(this);" placeholder="example@email.com">
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="page6">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Development Details</h2>
+                        <table class="table table-borderless" style="margin-bottom:0">
+                            <tbody>
+                                <tr>
+                                    <td width="35%">Type of Project</td>
+                                    <td>
+                                        <cn2-select id="Member_Type_Submission" no-label
+                                            options="New Erection : New Erection,Reconstruction:Reconstruction, A&A:A&A">
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Type of Development*</td>
+                                    <td>
+                                        <cn2-select id="Member_TypeOfDeve10" no-label mandatory options="Landed Housing:Landed Housing, 
+                                            Bus Stop:Bus Stop, 
+                                            Linkway:Linkway, 
+                                            Strata Development/Public Housing:Strata Development/Public Housing,
+                                            Industrial:Industrial, 
+                                            Dormitories:Dormitories, Schools:Schools,
+                                            Infrastructures:Infrastructures, 
+                                            Commercial Complex:Commercial Complex, Farm:Farm,
+                                            Others:Others"></cn2-select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <h2>Type of Submission</h2>
+                                <ol>
+                                    <li>Selections here will determine compulsory fields in subsequent sections.</li>
+                                    <li>Choose SEW for Sanitary and Sewerage matters.</li>
+                                    <li>Choose DRA for Drainage matters.</li>
+                                    <li>For simplified submission, refer to next pages for requirements.</li>
+                                    <li>If making resubmission or amendment, please choose SEW and/or DRA under the
+                                        respective columns.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                            <table class="table table-borderless" id="tblChkBox">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2"><br></th>
+                                        <th class="text-center">New Submission</th>
+                                        <th class="text-center">Resubmission</th>
+                                        <th class="text-center">Amendment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="2" colspan="1">Development Control</th>
+                                        <td>SEW</td>
+                                        <td class="text-center">
+                                            <cn2-checkbox name="SEW" mandatory checked
+                                                id="DeveDeta_DeveCont_SEW_NewSubm10"
+                                                event-change="typeOfSubmission(this);typeOfSubmission_2(this);makeCheckManda(this);">
+                                            </cn2-checkbox>
+                                        </td>
+                                        <td class="text-center">
+                                            <cn2-checkbox name="SEW" id="DeveDeta_DeveCont_SEW_Resu10"
+                                                event-change="typeOfSubmission(this);makeCheckManda(this);removeSewManda(this);">
+                                            </cn2-checkbox>
+                                        </td>
+                                        <td class="text-center">
+                                            <cn2-checkbox name="SEW" id="DeveDeta_DeveCont_SEW_Amen10"
+                                                event-change="typeOfSubmission(this);makeCheckManda(this);removeSewManda(this);">
+                                            </cn2-checkbox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>DRA</td>
+                                        <td class="text-center">
+                                            <cn2-checkbox name="DRA" mandatory checked
+                                                id="DeveDeta_DeveCont_DRA_NewSubm10"
+                                                event-change="typeOfSubmission(this);typeOfSubmission_2(this);makeCheckManda(this);disableC(this);">
+                                            </cn2-checkbox>
+                                        </td>
+                                        <td class="text-center">
+                                            <cn2-checkbox name="DRA" id="DeveDeta_DeveCont_DRA_Resu10"
+                                                event-change="typeOfSubmission(this);makeCheckManda(this);removeDraManda(this);">
+                                            </cn2-checkbox>
+                                        </td>
+                                        <td class="text-center">
+                                            <cn2-checkbox name="DRA" id="DeveDeta_DeveCont_DRA_Amen10"
+                                                event-change="typeOfSubmission(this);makeCheckManda(this);removeDraManda(this);">
+                                            </cn2-checkbox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th rowspan="2" colspan="1">Simplified Submission</th>
+                                        <td>SEW</td>
+                                        <td class="text-center">
+                                            <cn2-checkbox id="DeveDeta_SimpSubm_SEW_NewSubm10"
+                                                event-change="typeOfSubmission(this);typeOfSubmission_2(this);">
+                                            </cn2-checkbox>
+                                        </td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>DRA</td>
+                                        <td class="text-center">
+                                            <cn2-checkbox id="DeveDeta_SimpSubm_DRA_NewSubm10"
+                                                event-change="typeOfSubmission(this);typeOfSubmission_2(this);simpSubm(this);">
+                                            </cn2-checkbox>
+                                        </td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <h2>Works Affecting Sanitary/Sewerage</h2>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                            <table class="table table-borderless" style="margin-bottom:0">
+                                <tbody>
+
+                                    <tr>
+                                        <td>
+                                            Check where applicable:
+                                            <table class="table table-borderless table-sm" style="margin-bottom:0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td width="1%">-</td>
+                                                        <td><span>
+                                                                Sanitary (e.g. internal sanitary reticulation up to last
+                                                                IC, new
+                                                                connection to sewer)</span></td>
+                                                        <td width="5%">
+                                                            <cn2-checkbox name="DeveDeta_WorkAffeSaniSewe"
+                                                                id="DeveDeta_WorkAffeSaniSewe_Sani10"
+                                                                event-change="Works_Aff_San_Sew(this);atleastOneCheck(this);"
+                                                                disabled>
+                                                            </cn2-checkbox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>-</td>
+                                                        <td><span>Sewerage (e.g. diversion of public sewer, proposed new
+                                                                sewer,
+                                                                proposed new manhole)</span></td>
+                                                        <td>
+                                                            <cn2-checkbox name="DeveDeta_WorkAffeSaniSewe"
+                                                                id="DeveDeta_WorkAffeSaniSewe_Sewe10" disabled
+                                                                event-change="Works_Aff_San_Sew(this);atleastOneCheck(this);">
+                                                            </cn2-checkbox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>-</td>
+                                                        <td><span>RC Trench</span></td>
+                                                        <td>
+                                                            <cn2-checkbox name="DeveDeta_WorkAffeSaniSewe"
+                                                                event-change="Works_Aff_San_Sew(this);atleastOneCheck(this);"
+                                                                id="DeveDeta_WorkAffeSaniSewe_RCTren10" disabled>
+                                                            </cn2-checkbox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>-</td>
+                                                        <td><span>Sewerage pump system</span></td>
+                                                        <td>
+                                                            <cn2-checkbox name="DeveDeta_WorkAffeSaniSewe"
+                                                                id="DeveDeta_WorkAffeSaniSewe_SewPumpSystn10"
+                                                                event-change="Works_Aff_San_Sew(this);atleastOneCheck(this);"
+                                                                disabled>
+                                                            </cn2-checkbox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>-</td>
+                                                        <td><span>Works affecting public sewer (e.g. building over
+                                                                sewer, footing
+                                                                within sewer setback, etc.)</span></td>
+                                                        <td>
+                                                            <cn2-checkbox name="DeveDeta_WorkAffeSaniSewe"
+                                                                id="DeveDeta_WorkAffeSaniSewe_WorkAffePublSew10"
+                                                                event-change="Works_Aff_San_Sew(this);atleastOneCheck(this);"
+                                                                disabled>
+                                                            </cn2-checkbox>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                            <table class="table table-borderless table-sm" style="margin-bottom:0">
+                                <tbody>
+                                    <tr>
+                                        <td><span>Is there sewer connection to neighbour house?</span></td>
+                                        <td>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                                                style="padding-left:0;">
+                                                <cn2-switchbutton disabled switch-id="Member_SewerCon_Yes_QP10"
+                                                    event-change="switchButton(this,'Member_SewerCon_Yes_QP10','Member_SewerCon_No_QP10')"
+                                                    data-on="Yes" data-off="No">
+                                                </cn2-switchbutton>
+                                                <cn2-checkbox id="Member_SewerCon_Yes_QP10" hidden></cn2-checkbox>
+                                                <cn2-checkbox id="Member_SewerCon_No_QP10" hidden>
+                                                </cn2-checkbox>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Is there public sewer in the development lot?</span></td>
+                                        <td>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                                                style="padding-left:0;">
+                                                <cn2-switchbutton disabled switch-id="Member_PublicSewer_Yes_QP10"
+                                                    event-change="switchButton(this,'Member_PublicSewer_Yes_QP10','Member_PublicSewer_No_QP10')"
+                                                    data-on="Yes" data-off="No">
+                                                </cn2-switchbutton>
+                                                <cn2-checkbox id="Member_PublicSewer_Yes_QP10" hidden></cn2-checkbox>
+                                                <cn2-checkbox id="Member_PublicSewer_No_QP10" hidden>
+                                                </cn2-checkbox>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>No. of storeys in development</span><span id="sewManda"></span></td>
+                                        <td>
+                                            <cn2-textbox id="NumberStoreys" maxlength="3" inline="8" no-label disabled>
+                                            </cn2-textbox>&nbsp;storeys
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Total used water discharge<span id="sewManda"></span>
+                                            <table class="table table-borderless" style="margin-bottom:0">
+                                                <tbody>
+
+                                                    <tr>
+                                                        <td width="1%">-</td>
+                                                        <td>
+                                                            Please refer to Used Water Discharge
+                                                            Calculation &nbsp;
+                                                            <cn2-button label="Here"
+                                                                event-click="openLink('https://www.pub.gov.sg/Documents/CircularonUsedWaterFlowRate_30062017.pdf')">
+                                                            </cn2-button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>-</td>
+                                                        <td>
+                                                            To include discharge by gravity and maximum pumped discharge
+                                                            rate
+                                                            (if any)
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>-</td>
+                                                        <td>
+                                                            Please seek advise of Licensed Plumber or PE (Mech)
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <cn2-textbox id="Member_WtrDischarge" inline="8" no-label currency disabled>
+                                            </cn2-textbox>&nbsp; L/s
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Used Water Catchment No.<span id="sewManda"></span>
+                                            <table class="table table-borderless" style="margin-bottom:0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td width="1%">-</td>
+                                                        <td>Please refer to catchment maps
+                                                            &nbsp; <cn2-button label="Here"
+                                                                event-click="openLink('https://www.pub.gov.sg/compliance/qualifiedpersonsportal/catchmentmaps')">
+                                                            </cn2-button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </td>
+                                        <td>
+                                            <cn2-select id="Member_WaterCatchment_QP10" disabled inline="8" no-label
+                                                options="1 : 1, 2 : 2, 3 : 3, 4 : 4, 5 : 5, 6 : 6">
+                                            </cn2-select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <h2>Works Affecting Drainage</h2>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                            <table class="table table-borderless" style="margin-bottom:0">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="2">
+                                            Check where applicable:
+                                            <table class="table table-borderless table-sm" style="margin-bottom:0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td colspan="2" style="padding-bottom:0;"><b>Works Affecting
+                                                                Minor
+                                                                Drainage</b>
+                                                            <table class="table table-borderless"
+                                                                style="margin-bottom:0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td width="1%">-</td>
+                                                                        <td width="99%">Internal drains</td>
+                                                                        <td width="1%">
+                                                                            <cn2-checkbox
+                                                                                name="DeveDeta_InteSurfWateDrai"
+                                                                                event-change="Works_Aff_San_Sew(this);atleastOneCheck(this);"
+                                                                                id="DeveDeta_InteSurfWateDrai10"
+                                                                                disabled>
+                                                                            </cn2-checkbox>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td colspan="2" style="padding-bottom:0;"><b>Works Affecting
+                                                                Other Drainage</b>
+                                                            <table class="table table-borderless"
+                                                                style="margin-bottom:0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>- </td>
+                                                                        <td colspan="2"
+                                                                            style="padding-right:0;padding-bottom:0;">
+                                                                            Structural detention and
+                                                                            retention features
+                                                                            <table class="table table-borderless"
+                                                                                style="margin-bottom:0">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td width="1%">a)</td>
+                                                                                        <td width="99%">Gravity
+                                                                                            discharge</td>
+                                                                                        <td>
+                                                                                            <cn2-checkbox
+                                                                                                name="DeveDeta_InteSurfWateDrai"
+                                                                                                id="DeveDeta_WorkAffeOtheDrai_DeteTank_GravDisc10"
+                                                                                                event-change="Works_Aff_San_Sew(this);atleastOneCheck(this);structuDetent(this);"
+                                                                                                disabled>
+                                                                                            </cn2-checkbox>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>b)</td>
+                                                                                        <td>Pumped discharge</td>
+                                                                                        <td>
+                                                                                            <cn2-checkbox
+                                                                                                name="DeveDeta_InteSurfWateDrai"
+                                                                                                id="DeveDeta_WorkAffeOtheDrai_DeteTank_PumpDisc10"
+                                                                                                event-change="Works_Aff_San_Sew(this);atleastOneCheck(this);structuDetent(this);"
+                                                                                                disabled>
+                                                                                            </cn2-checkbox>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>-</td>
+
+                                                                        <td width="99%">ABC Waters design features</td>
+                                                                        <td>
+                                                                            <cn2-checkbox
+                                                                                name="DeveDeta_InteSurfWateDrai"
+                                                                                id="DeveDeta_WorkAffeOtheDrai_ABCWateDesiFeat10"
+                                                                                event-change="Works_Aff_San_Sew(this),DeveDeta_WorkAffeOtheDrai_ABCWateDesiFeat10_change(this);atleastOneCheck(this);"
+                                                                                disabled>
+                                                                            </cn2-checkbox>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>-</td>
+                                                                        <td>Flood protection measures (e.g. flood
+                                                                            barriers/flood gates)</td>
+                                                                        <td>
+                                                                            <cn2-checkbox
+                                                                                name="DeveDeta_InteSurfWateDrai"
+                                                                                id="DeveDeta_WorkAffeOtheDrai_FlooProtMeas10"
+                                                                                event-change="Works_Aff_San_Sew(this);atleastOneCheck(this);"
+                                                                                disabled>
+                                                                            </cn2-checkbox>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>-</td>
+                                                                        <td colspan="2"
+                                                                            style="padding-right: 0;padding-bottom:0;">
+                                                                            Pumped drainage system
+                                                                            for development with
+                                                                            <table class="table table-borderless"
+                                                                                style="margin-bottom:0">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td width="99%">a) Linkages to
+                                                                                            underground special
+                                                                                            facilities</td>
+                                                                                        <td>
+                                                                                            <cn2-checkbox
+                                                                                                name="DeveDeta_InteSurfWateDrai"
+                                                                                                id="DeveDeta_WorkAffeOtheDrai_PumpDraiSystWithLink10"
+                                                                                                event-change="Works_Aff_San_Sew(this);atleastOneCheck(this);"
+                                                                                                disabled>
+                                                                                            </cn2-checkbox>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>b) No Linkages to
+                                                                                            underground special
+                                                                                            facilities</td>
+                                                                                        <td>
+                                                                                            <cn2-checkbox
+                                                                                                name="DeveDeta_InteSurfWateDrai"
+                                                                                                id="DeveDeta_PumpDraiSystWithNo10"
+                                                                                                event-change="Works_Aff_San_Sew(this);atleastOneCheck(this);"
+                                                                                                disabled>
+                                                                                            </cn2-checkbox>
+                                                                                        </td>
+                                                                                    </tr>
+
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                    <tr>
+                                                                        <td>-</td>
+                                                                        <td>Common drain</td>
+                                                                        <td>
+                                                                            <cn2-checkbox
+                                                                                name="DeveDeta_InteSurfWateDrai"
+                                                                                id="DeveDeta_WorkAffeOtheDrai_DraiReceRunoFrom10"
+                                                                                event-change="Works_Aff_San_Sew(this);atleastOneCheck(this);"
+                                                                                disabled>
+                                                                            </cn2-checkbox>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>-</td>
+                                                                        <td>Roadside drains</td>
+                                                                        <td>
+                                                                            <cn2-checkbox
+                                                                                name="DeveDeta_InteSurfWateDrai"
+                                                                                id="DeveDeta_WorkAffeOtheDrai_RoadDrai10"
+                                                                                event-change="Works_Aff_San_Sew(this);atleastOneCheck(this);"
+                                                                                disabled>
+                                                                            </cn2-checkbox>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>-</td>
+                                                                        <td>Entrance culverts</td>
+                                                                        <td>
+                                                                            <cn2-checkbox
+                                                                                name="DeveDeta_InteSurfWateDrai"
+                                                                                id="DeveDeta_WorkAffeOtheDrai_EntrCulv10"
+                                                                                event-change="Works_Aff_San_Sew(this);atleastOneCheck(this);"
+                                                                                disabled>
+                                                                            </cn2-checkbox>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>-</td>
+                                                                        <td>Drainage reserve</td>
+                                                                        <td>
+                                                                            <cn2-checkbox
+                                                                                name="DeveDeta_InteSurfWateDrai"
+                                                                                id="DeveDeta_WorkAffeOtheDrai_DraiRese10"
+                                                                                event-change="Works_Aff_San_Sew(this);atleastOneCheck(this);"
+                                                                                disabled>
+                                                                            </cn2-checkbox>
+                                                                        </td>
+                                                                    </tr>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </td>
+                            </tr>
+
+                            </tbody>
+                            </table>
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                            <table class="table table-borderless table-sm" style="margin-bottom:0">
+                                <tbody>
+                                    <tr>
+                                        <td><span>Is there basement?</span></td>
+                                        <td>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                                                style="padding-left:0;">
+                                                <cn2-switchbutton switch-id="DeveDeta_IsTherBase_Yes10" data-on="Yes"
+                                                    data-off="No"
+                                                    event-change="switchButton(this,'DeveDeta_IsTherBase_Yes10','DeveDeta_IsTherBase_No10')"
+                                                    disabled></cn2-switchbutton>
+                                            </div>
+                                            <cn2-checkbox id="DeveDeta_IsTherBase_Yes10" hidden>
+                                            </cn2-checkbox>
+                                            <cn2-checkbox id="DeveDeta_IsTherBase_No10" hidden></cn2-checkbox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Site Area (for A&A works, please input the affected area as stated in
+                                                the COP)</span><span id="draMandasign"></span></td>
+                                        <td>
+                                            <cn2-textbox disabled no-label currency
+                                                event-change="DeveDeta_AreaOfDeve10_change(this)"
+                                                id="DeveDeta_AreaOfDeve10"></cn2-textbox>
+                                        </td>
+                                        <td>ha</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>DR in the development</span></td>
+                                        <td>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                                                style="padding-left:0;">
+                                                <cn2-switchbutton switch-id="DeveDeta_DRInTheDeve_Yes10" data-on="Yes"
+                                                    data-off="No"
+                                                    event-change="switchButton(this,'DeveDeta_DRInTheDeve_Yes10','DeveDeta_DRInTheDeve_No10')"
+                                                    disabled></cn2-switchbutton>
+                                            </div>
+                                            <cn2-checkbox id="DeveDeta_DRInTheDeve_Yes10" hidden></cn2-checkbox>
+                                            <cn2-checkbox id="DeveDeta_DRInTheDeve_No10" hidden></cn2-checkbox>
+                                            </cn2-checkbox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Proposed MIN PLATFORM LEVEL<span id="draMandasign"></span></p>
+                                            <span><b>Please refer to boundary maps &nbsp;&nbsp;&nbsp; <cn2-button
+                                                        label="Here"
+                                                        event-click="openLink('https://www.pub.gov.sg/compliance/qualifiedpersonsportal/catchmentmaps')">
+                                                    </cn2-button></span>
+                                        </td>
+                                        <td>
+                                            <cn2-textbox no-label disabled currency id="DeveDeta_PropMinPlatLeve10"
+                                                event-change="DeveDeta_PropMinPlatLeve10_change(this)"></cn2-textbox>
+
+                                        </td>
+                                        <td width="5%">metres above SHD (0.00m) </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Max Adjacent Road
+                                            </span><span id="draMandasign"></span></td>
+                                        <td>
+                                            <cn2-textbox no-label disabled currency id="DeveDeta_MaxAdjaRoad10">
+                                            </cn2-textbox>
+                                        </td>
+                                        <td>metres above SHD
+                                            (0.00m)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>Any linkage to MRT</span></td>
+                                        <td>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                                                style="padding-left:0;">
+                                                <cn2-switchbutton switch-id="DeveDeta_AnyLinkToMRT_Yes10" data-on="Yes"
+                                                    event-change="switchButton(this,'DeveDeta_AnyLinkToMRT_Yes10','DeveDeta_AnyLinkToMRT_No10')"
+                                                    data-off="No" disabled></cn2-switchbutton>
+                                            </div>
+                                            <cn2-checkbox id="DeveDeta_AnyLinkToMRT_Yes10" hidden></cn2-checkbox>
+                                            <cn2-checkbox id="DeveDeta_AnyLinkToMRT_No10" hidden>
+                                            </cn2-checkbox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Drainage Catchment<span id="draMandasign"></span></p>
+                                            <span> <b>Please refer to catchment maps &nbsp;&nbsp;&nbsp; <cn2-button
+                                                        label="Here"
+                                                        event-click="openLink('https://www.pub.gov.sg/compliance/qualifiedpersonsportal/catchmentmaps')">
+                                                    </cn2-button></b>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <cn2-select id="DeveDeta_DraiCatc10" no-label
+                                                options="1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9,10:10" disabled>
+                                            </cn2-select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Proposed Crest Level<span id="draMandasign"></span></td>
+                                        <td>
+                                            <cn2-textbox no-label disabled currency id="DeveDeta_PropCresLeve10">
+                                            </cn2-textbox>
+                                        </td>
+                                        <td width="15%">metres above SHD (0.00m)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="page7">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Submission for Development Control (DC) Plan</h2>
+                        <span>Instruction:</span><br>
+                        <ol>
+                            <li>
+                                First Storey Plan/Site Plan for Section A and B can be submitted as one plan with clear
+                                layer and identification.
+                            </li>
+                            <li>
+                                Please check all the relevant information have been indicated and provided before
+                                submiting.
+                            </li>
+                            <li>Detailed Plan may be submitted if all COP requirements are met and are to based on
+                                approved Development Control Plan.</li>
+                        </ol>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Section A: Works Affecting Sanitary/Sewerage</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless" style="margin-bottom:0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="1%">1.</td>
+                                            <td>
+                                                Attachment of Site Plan and First Storey Plan <br>
+                                                to show: The sewer setback, propose and
+                                                existing sewer connection, top/invert level of MH, and platform
+                                                levels, propose and existing sanitary drainline, propose public
+                                                sewer (if any), manhole and sewer identification number. <span
+                                                    id="sectionAmanda"></span>
+                                            </td>
+                                            <td width="1%" style="padding-right:4.8px;">
+                                                <cn2-checkbox disabled id="SecA1_SANMEWORK_SitePlan10"
+                                                    event-change="remoMand(this);">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.</td>
+                                            <td colspan="2" style="padding-right:0;padding-bottom:0;"">
+                                            There are the following types of work in this
+                                            project:
+                                            <br>
+                                            <font style=" color: red;">(Read only. Editable on
+                                                page 6.)</font>
+                                                <table class="table table-borderless table-sm" style="margin-bottom:0">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="1%">-</td>
+                                                            <td>
+                                                                Sanitary (e.g. internal sanitary reticulation up to last
+                                                                IC,new
+                                                                connection to sewer)
+                                                            </td>
+                                                            <td width="1%">
+                                                                <cn2-checkbox id="SecA1_SANMEWORK_Sani10"
+                                                                    event-change="SecA1_SANMEWORK_change(this)"
+                                                                    disabled></cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>-</td>
+                                                            <td>
+                                                                Sewerage (e.g. diversion of public sewer, proposed new
+                                                                sewer,
+                                                                proposed new manhole)
+                                                            </td>
+                                                            <td>
+                                                                <cn2-checkbox id="SecA1_SANMEWORK_Sewe10" disabled>
+                                                                </cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>-</td>
+                                                            <td>
+                                                                RC trench
+                                                            </td>
+                                                            <td>
+                                                                <cn2-checkbox id="SecA1_SANMEWORK_RCTren10" disabled>
+                                                                </cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>-</td>
+                                                            <td>Sewerage pump system</td>
+                                                            <td>
+                                                                <cn2-checkbox id="SecA1_SANMEWORK_SewPumpSyst10"
+                                                                    disabled>
+                                                                </cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>-</td>
+                                                            <td>Works affecting public sewer (e.g. building over sewer,
+                                                                footing
+                                                                within sewer setback, etc.)</td>
+                                                            <td>
+                                                                <cn2-checkbox id="SecA1_SANMEWORK_WorkAffePublSewe10"
+                                                                    disabled>
+                                                                </cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Declaration</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless" style="margin-bottom:0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="1%">
+                                                <cn2-checkbox event-change="remoMand(this);" disabled
+                                                    id="Decl_IHereCertThat10"></cn2-checkbox>
+                                            </td>
+                                            <td>
+                                                <span>I hereby certify that these plans and the works shown therein
+                                                    comply with the provisions of the Sewerage and Drainage Act (Chapter
+                                                    294), the Sewerage and Drainage (Sanitary Works) Regulations and the
+                                                    current Code of Practice on the Sewerage and Sanitary
+                                                    Works.</span><span id="sectionAmanda"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="1%">
+                                                <cn2-checkbox event-change="remoMand(this);" disabled
+                                                    id="Decl_IHaveCarrOut10"></cn2-checkbox>
+                                            </td>
+                                            <td>
+                                                <span>I have carried out a thorough investigation of the existing
+                                                    sewerage system within the site and will take every practical
+                                                    measure to ensure that the proposed Development will not disrupt or
+                                                    affect any existing sewer / drain-line that serves other properties
+                                                    / premises.</span><span id="sectionAmanda"></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table table-borderless" style="margin-bottom:0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="35%">Please state if any deviation from the COP</td>
+                                            <td>
+                                                <cn2-textarea maxlength="1000" disabled no-label
+                                                    id='Decl_PleaStatIfAny10'>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Simplified Submission for Works Affecting Sanitary/Sewerage</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless" style="margin-bottom:0">
+                                    <tbody>
+                                        <tr>
+                                            <th colspan="2">I hereby declare that the project meets the following
+                                                criteria:</th>
+                                        </tr>
+                                        <tr>
+                                            <td width="1%"><input type="radio" id="Decl_SimpSubmForWork_AThePropInvo10"
+                                                    disabled name="SimSubSanSew"></td>
+                                            <td style="padding:0;">
+                                                <table class="table table-borderless table-sm" style="margin-bottom:0">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <b>A.</b>
+                                                            </td>
+                                                            <td>
+                                                                <b>A/A works to single landed residential house,
+                                                                    factory</b>
+                                                                (excluding worker's dormitory) <b>or shops</b>
+                                                                (excluding food shops
+                                                                or food establishments).
+                                                                <br><b>The proposal involves only construction
+                                                                    works/activities
+                                                                    within the existing building, which comply with the
+                                                                    following:</b>
+                                                                <table class="table table-borderless"
+                                                                    style="margin-bottom:0">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>1.</td>
+                                                                            <td>
+                                                                                New or alteration to the sanitary
+                                                                                facilities and sanitary
+                                                                                pipes and fully comply with the Code of
+                                                                                Practice on Sewerage and
+                                                                                Sanitary.
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2.</td>
+                                                                            <td>
+                                                                                Does not have any building/
+                                                                                structure/piling works outside
+                                                                                the existing building that affecting the
+                                                                                public sewer/combined
+                                                                                sanitary drainline.
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>3.</td>
+                                                                            <td>
+                                                                                No change to drainline connection to
+                                                                                public sewer.
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>4.</td>
+                                                                            <td>
+                                                                                No proposal of on-site facilities such
+                                                                                as retention tank,
+                                                                                holding tank and sewerage treatment
+                                                                                plant (STP).
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>5.</td>
+                                                                            <td>
+                                                                                Total discharge of used water will not
+                                                                                exceed 2 litres/second
+                                                                                (including ejector system).
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="radio" id="Decl_SimpSubmForWork_ThePropInvoExt10" disabled
+                                                    name="SimSubSanSew">
+                                            </td>
+                                            <td style="padding:0;">
+                                                <table class="table table-borderless table-sm" style="margin-bottom:0">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <b>B.</b>
+                                                            </td>
+                                                            <td>
+                                                                <b> New erection or reconstruction of single landed
+                                                                    residential
+                                                                    house, such as single unit of terrace house,
+                                                                    semi-detached
+                                                                    house, bungalow.</b>
+                                                                <br><b>The proposal meets the following conditions:</b>
+
+                                                                <table class="table table-borderless"
+                                                                    style="margin-bottom:0">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>1.</td>
+                                                                            <td>
+                                                                                Does not have public sewer or combined
+                                                                                sanitary drainline
+                                                                                within the lot.
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2.</td>
+                                                                            <td>
+                                                                                Reuse existing drainline connection
+                                                                                which is connected to the
+                                                                                public sewer located at public area.
+                                                                                <i>Fore reuse of existing
+                                                                                    drainline connection which is made
+                                                                                    to the neighbour's inspection
+                                                                                    chamber, pre-consultation with PUB
+                                                                                    to obtain a written advice
+                                                                                    before lodgement is required.</i>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>3.</td>
+                                                                            <td>
+                                                                                No new sewer.
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>4.</td>
+                                                                            <td>
+                                                                                No proposal of on-site facilities such
+                                                                                as retention tank,
+                                                                                holding tank and sewerage treatment
+                                                                                plant (STP).
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>5.</td>
+                                                                            <td>
+                                                                                Total discharge of used water will not
+                                                                                exceed 2 litres/second
+                                                                                (including ejector system).
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="radio" id="Decl_SimpSubmForWork_NewErecOrReco10" disabled
+                                                    name="SimSubSanSew">
+                                            </td>
+                                            <td style="padding:0;">
+                                                <table class="table table-borderless table-sm" style="margin-bottom:0">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <b>C.</b>
+                                                            </td>
+                                                            <td>
+                                                                <b> Erection of external structues such as covered
+                                                                    linkway, bus
+                                                                    shelter, pedestrian overhead bridge (POB)</b>
+
+                                                                <table class="table table-borderless"
+                                                                    style="margin-bottom:0">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td width="1%">1.</td>
+                                                                            <td>
+                                                                                No works proposed within the sewer
+                                                                                setback.
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <p>Simplified Submission is a lodgement process based on the QP's
+                                                    declaration. QP
+                                                    is reminded to check thoroughly before making submission for the
+                                                    project.</p>
+
+                                                <p>For proposals that does not meet any of the criteria or has obtained
+                                                    written
+                                                    direction from an earlier Development Control submission, QP is
+                                                    required to follow
+                                                    up with a Development Control submission. Simplified submission is
+                                                    not allowed
+                                                    for such cases.</p>
+
+                                                <p>Upon completion of work, QP is required to submit for PUB TOP/CSC
+                                                    clearance.</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Section B: Works Affecting Drainage</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless table-sm" style="margin-bottom:0">
+                                    <tbody>
+                                        <tr>
+                                            <td>1.</td>
+                                            <td>
+                                                Attachment of Site Plan and First Storey Plan.<span
+                                                    id="worksAffecDra1"></span>
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="WorkAffeDrai_AttaOfSitePlan10"
+                                                    event-change="remoMand(this);" disabled>
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.</td>
+                                            <td>
+                                                Attachment of Basement Plans.
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="WorkAffeDrai_AttaOfBasePlan10" disabled>
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3.</td>
+                                            <td>
+                                                Proposed plan showing crest levels, platform levels with and
+                                                without flood barriers at various entrance and exit points, and
+                                                flood barrier installed at all points of entry and exit for building
+                                                premises or for entire development.
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="WorkAffeDrai_PropPlanShowCres10" disabled>
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4.</td>
+                                            <td>
+                                                Attachment of DC Checklist.
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="WorkAffeDrai_AttaOfDCChec10" disabled></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5.</td>
+                                            <td colspan="2" style="padding-right:0;padding-bottom:0;"">
+                                        There are the following types of work in this
+                                        project, <font style=" color: red">(Read only. Editable on page 6.)
+                                                </font>
+                                                <br />
+                                                Works Affecting Minor Drainage
+                                                <table class="table table-borderless table-sm" style="margin-bottom:0">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="1%">-</td>
+                                                            <td>Internal drains</td>
+                                                            <td width="1%">
+                                                                <cn2-checkbox id="WorkAffeDrai_InteSurfWateDrai10"
+                                                                    disabled>
+                                                                </cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                Works Affecting Other Drainage
+                                                <table class="table table-borderless" style="margin-bottom:0">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="1%">-</td>
+                                                            <td colspan="2" style="padding-right:0;padding-bottom:0;">
+                                                                Structural detention and
+                                                                retention features
+                                                                <table class="table table-borderless table-sm"
+                                                                    style="padding-right:0;padding-bottom:0;margin-bottom:0">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td width="1%">a.</td>
+                                                                            <td>Gravity discharge</td>
+                                                                            <td width="1%">
+                                                                                <cn2-checkbox
+                                                                                    id="WorkAffeDrai_DeteTank_GravDisc10"
+                                                                                    disabled>
+                                                                                </cn2-checkbox>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="padding-bottom:0;" width="1%">b.
+                                                                            </td>
+                                                                            <td style="padding-bottom:0;">Pumped
+                                                                                discharge</td>
+                                                                            <td style="padding-bottom:0;" width="1%">
+                                                                                <cn2-checkbox
+                                                                                    id="WorkAffeDrai_DeteTank_PumpDisc10"
+                                                                                    disabled>
+                                                                                </cn2-checkbox>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        <tr>
+                                                            <td width="1%">-</td>
+                                                            <td>ABC Waters design features</td>
+                                                            <td width="1%">
+                                                                <cn2-checkbox id="WorkAffeDrai_ABCWateDesiFeat10"
+                                                                    disabled>
+                                                                </cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>-</td>
+                                                            <td>
+                                                                Flood protection measures (e.g. flood barriers/flood
+                                                                gates)
+                                                            </td>
+                                                            <td>
+                                                                <cn2-checkbox id="WorkAffeDrai_FlooProtMeas10" disabled>
+                                                                </cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>-</td>
+                                                            <td colspan="2" style="padding-right:0;padding-bottom:0;">
+                                                                Pumped drainage system for development with
+                                                                <table class="table table-borderless"
+                                                                    style="padding-right:0;padding-bottom:0;margin-bottom:0;">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td width="1%">a.</td>
+                                                                            <td>
+                                                                                linkages to underground special
+                                                                                facilities
+                                                                            </td>
+                                                                            <td width="1%">
+                                                                                <cn2-checkbox
+                                                                                    id="WorkAffeDrai_PumpDraiSystWithLink20"
+                                                                                    disabled>
+                                                                                </cn2-checkbox>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>b.</td>
+                                                                            <td>
+                                                                                No linkages to underground special
+                                                                                facilities
+                                                                            </td>
+                                                                            <td>
+                                                                                <cn2-checkbox
+                                                                                    id="WorkAffeDrai_PumpDraiSystWithNo10"
+                                                                                    disabled>
+                                                                                </cn2-checkbox>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding-top:0;">-</td>
+                                                            <td style="padding-top:0;">
+                                                                Common drain
+                                                            </td>
+                                                            <td style="padding-top:0;">
+                                                                <cn2-checkbox id="WorkAffeDrai_DraiReceRunoFrom10"
+                                                                    disabled>
+                                                                </cn2-checkbox>
+                                                            </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td>-</td>
+                                                            <td>
+                                                                Roadside drains
+                                                            </td>
+                                                            <td>
+                                                                <cn2-checkbox id="WorkAffeDrai_RoadDrai10" disabled>
+                                                                </cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>-</td>
+                                                            <td>
+                                                                Entrance culverts
+                                                            </td>
+                                                            <td>
+                                                                <cn2-checkbox id="WorkAffeDrai_EntrCulv10" disabled>
+                                                                </cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>-</td>
+                                                            <td>
+                                                                Drainage reserve
+                                                            </td>
+                                                            <td>
+                                                                <cn2-checkbox id="WorkAffeDrai_DraiRese10" disabled>
+                                                                </cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Declaration</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless" style="margin-bottom:0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="1%">
+                                                <cn2-checkbox id="WorkAffeDrai_Decl_ICertThatThe10"
+                                                    event-change="remoMand(this);" disabled>
+                                                </cn2-checkbox>
+                                            </td>
+                                            <td>
+                                                <span>I certify that the drainage work are designed in full compliance
+                                                    with PUB requirements including Sewerage and Drainage Act (Chapter
+                                                    294) and current edition of COP on Surface Water
+                                                    Drainage</span><span id="worksAffecDra1"></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table table-borderless" style="margin-bottom:0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="35%">Please state if any deviation from the COP</td>
+                                            <td>
+                                                <cn2-textarea no-label maxlength="1000"
+                                                    id='WorkAffeDrai_Decl_PleaStatIfAny10' disabled>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Simplified Submission for Works Affecting Drainage</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless" style="margin-bottom:0">
+                                    <tbody>
+                                        <tr>
+                                            <th colspan="3">I hereby declare that the project meets the following
+                                                criteria:</th>
+                                        </tr>
+                                        <tr>
+                                            <td width="1%">
+                                                <cn2-checkbox event-change="remoMand(this);"
+                                                    id='SimpSubmForWork_IHereDeclThat10' disabled>
+                                                </cn2-checkbox>
+                                            </td>
+                                            <td>A.</td>
+                                            <td>
+                                                A/A works to an existing building involving only the
+                                                construction of additional floors without reconstructing the
+                                                first storey (no increase of site area of building) and where
+                                                there are no linkages to special underground facilities. <span
+                                                    id="simpMandaSigns"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="1%">
+                                                <cn2-checkbox event-change="remoMand(this);"
+                                                    id="SimpSubmForWork_IHereDeclThat20" disabled>
+                                                </cn2-checkbox>
+                                            </td>
+                                            <td>B.</td>
+                                            <td>
+                                                External structures that are:
+                                                <table class="table table-borderless table-sm" style="margin-bottom:0">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="1%">1.</td>
+                                                            <td>
+                                                                Not affecting public drain (i.e. at least 300mm away
+                                                                from drain wall) or;
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2.</td>
+                                                            <td>
+                                                                Not within Drainage Reserve or;
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>3.</td>
+                                                            <td>
+                                                                Not Affected by common drain. <span
+                                                                    id="simpMandaSigns"></span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td style="padding-top:0;" colspan="3"><span>
+                                                    <p>Simplified Submission is a lodgement process based on the QP's
+                                                        declaration. QP is reminded to check thoroughly before making
+                                                        submission for the project.</p>
+                                                    <p>For proposals that does not meet any of the criteria or has
+                                                        obtained written direction from an earlier Development Control
+                                                        submission, QP is required to follow up with a Development
+                                                        Control submission. Simplified submission is not allowed for
+                                                        such cases.</p>
+                                                    <p>Upon completion of work,&nbsp;QP is required to submit for PUB
+                                                        TOP/CSC clearance.</p>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="page8">
+                    <!-- A -->
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>(A) General</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless" style="margin-bottom:0">
+                                    <tbody>
+                                        <tr>
+                                            <td>1.</td>
+                                            <td>
+                                                Date of Drainage Interpretation Plan (DIP) issuance <br>
+                                                <font style="color:red">(Read only. Editable on page 6.)</font>
+                                            </td>
+                                            <td>
+                                                <cn2-datefield id="DIPDate" inline="10" disabled no-label
+                                                    onfocusout="validateDate(this);">
+                                                </cn2-datefield>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.</td>
+                                            <td>
+                                                Site boundary lines are clearly indicated on plan.
+                                            </td>
+                                            <td>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                                                    style="padding-left:0;">
+                                                    <cn2-switchbutton data-on="Yes" data-off="No"
+                                                        id="SiteBounLineAre10">
+                                                    </cn2-switchbutton>
+                                                </div>
+                                                <!-- onclick="toggleRadioSpan('EmplReco_Yes10', 'SiteBounLineAre10', 'SiteBounLineAre20');" -->
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>3.</td>
+                                            <td><span>For JTC, HDB, URA developments, the drainage masterplan of the
+                                                    development site is attached together with the submission.</span>
+                                            </td>
+                                            <td>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                                                    style="padding-left:0;">
+                                                    <cn2-switchbutton data-on="Yes" data-off="NA" id="ForJTCHDBURA10">
+                                                    </cn2-switchbutton>
+                                                </div>
+                                                <!-- onclick="toggleRadioSpan('EmplReco_Yes10', 'ForJTCHDBURA10', 'ForJTCHDBURA20');" -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                4.
+                                            </td>
+                                            <td><span>If the proposed development site area exceeds 0.4 ha, hydraulic
+                                                    calculations for the proposed internal drainage facilities,
+                                                    including sub-catchment plans for the proposed development site
+                                                    endorsed by a Professional Engineer (Civil) to be submitted.</span>
+                                            </td>
+                                            <td>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                                                    style="padding-left:0;">
+                                                    <cn2-switchbutton data-on="Yes" data-off="NA" id="IfThePropDeve10">
+                                                    </cn2-switchbutton>
+                                                </div>
+                                                <!-- onclick="toggleRadioSpan('EmplReco_Yes10', 'IfThePropDeve10', 'IfThePropDeve20');" -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5.</td>
+                                            <td><span>There is upstream drainage connection
+                                                    from the neighbouring lots into the
+                                                    development site.</span>
+                                            </td>
+                                            <td>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                                                    style="padding-left:0;">
+                                                    <cn2-switchbutton data-on="Yes" data-off="NO" id="TherIsUpStre10">
+                                                    </cn2-switchbutton>
+                                                </div>
+                                                <!-- onclick="toggleRadioSpan('EmplReco_Yes10', 'TherIsUpStre10', 'TherIsUpStre20');" -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>6.</td>
+                                            <td><span>Site Area (for A&A works, please input the affected area as
+                                                    stated in the COP)<br>
+                                                    <font style="color:red">(Read only. Editable on page 6.)</font>
+                                                </span></td>
+                                            <td>
+                                                <cn2-textbox id="AreaOfDeve10" numeric inline="10" disabled no-label>
+                                                </cn2-textbox>&nbsp;Ha
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                7.
+                                            </td>
+                                            <td width="70%"><span>Post-development Runoff Coefficient*</span></td>
+                                            <td>
+                                                <cn2-textbox id="PostDeveRunOff10" disabled mandatory
+                                                    data-invalid-message="Please enter a valid value"
+                                                    event-change="PostDeveRunOff10_change(this)" no-label inline="10">
+                                                </cn2-textbox><br><span style="font-size: 12px">(Please indicate value
+                                                    between 0 to 1)</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- B -->
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>
+                            (B) Drainage Reserve
+                        </h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless" style="margin-bottom:0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="1%">8.</td>
+                                            <td width="70%"><span>Drainage Reserve lines and lot boundaries are
+                                                    indicated, dimensioned and highlighted.</span></td>
+                                            <td>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                                                    style="padding-left:0;">
+                                                    <cn2-switchbutton data-on="Yes" data-off="No"
+                                                        id="DraiReseLineAnd10">
+                                                    </cn2-switchbutton>
+                                                </div>
+                                                <!-- onclick="toggleRadioSpan('EmplReco_Yes10', 'DraiReseLineAnd10', 'DraiReseLineAnd20'); -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>9.</td>
+                                            <td><span>All embankments and structures are set outside the Drainage
+                                                    Reserve.</span></td>
+                                            <td>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                                                    style="padding-left:0;">
+                                                    <cn2-switchbutton data-on="Yes" data-off="No" id="AllEmbaAndStru10">
+                                                    </cn2-switchbutton>
+                                                </div>
+                                                <!-- onclick="toggleRadioSpan('EmplReco_Yes10', 'AllEmbaAndStru10', 'AllEmbaAndStru20');" -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>10.</td>
+                                            <td><span>Drainage Reserve are free from encumbrances.</span></td>
+                                            <td>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                                                    style="padding-left:0;">
+                                                    <cn2-switchbutton data-on="Yes" data-off="No" id="DraiReseAreFree10"
+                                                        s>
+                                                    </cn2-switchbutton>
+                                                </div>
+                                                <!-- onclick="toggleRadioSpan('EmplReco_Yes10', 'DraiReseAreFree10', 'DraiReseAreFree20');" -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>11.</td>
+                                            <td><span>Design of enbankment and structures near a drain or Drainage
+                                                    Reserve (within 2m) must not take into consideration the passive
+                                                    resistance offered by the existing or proposed drainage structures.
+                                                    (Note clause 5.3 of the latest edition of Code of Practice on
+                                                    Surface Water Drainage). The structural and stability calculations
+                                                    for an embankment or a structure within 2 m from the edge of
+                                                    Drainage Reserve shall be endorsed by a Profesional Engineer and
+                                                    submitted to the Board for record at Detailed Planning stage.</span>
+                                            </td>
+                                            <td>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                                                    style="padding-left:0;">
+                                                    <cn2-switchbutton data-on="Yes" data-off="No" id="DesiOfEmbaAnd10">
+                                                    </cn2-switchbutton>
+                                                </div>
+                                                <!-- onclick="toggleRadioSpan('EmplReco_Yes10', 'DesiOfEmbaAnd10', 'DesiOfEmbaAnd20');" -->
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- C -->
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>
+                            <div class="mls-espro-form-fields row">
+                                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                    (C) DETENTION TANK
+                                </div>
+                                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="margin-left:6.5%;">
+                                    <cn2-switchbutton disabled data-on="Yes" data-off="No" switch-id="DeteTank10"
+                                        event-change='switchButton(this,"DeteTank10","DeteTank20"),DeteTank10_change("DeteTank10")'>
+                                    </cn2-switchbutton>
+                                </div>
+                                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                    <cn2-checkbox id="DeteTank10" hidden></cn2-checkbox>
+                                    <cn2-checkbox id="DeteTank20" hidden></cn2-checkbox>
+                                </div>
+                            </div>
+                            <!-- onclick="toggleRadioSpan('EmplReco_Yes10', 'DeteTank10', 'DeteTank20');" -->
+                        </h2>
+                        <table class="table table-borderless" style="margin-bottom:0">
+                            <tbody>
+                                <tr>
+                                    <td width="50%">
+                                        <p>(i) Detention tanks: Volume</p>
+                                        <span>
+                                            <p>The design calculations, modelling, drawings and details of the detention
+                                                system, pumping system (if applicable) and Standard Operation Procedure
+                                                of the stormwater detention system duly endorsed by the QP shall be
+                                                submitted to PUB for approval at Detailed Planning Stage. For DC, QP
+                                                need
+                                                show only the location, size, discharge mode, inlet and outlet
+                                                discharge connections and points of the detention system.
+                                            </p>
+                                            Please refer to Technical Guide for stormwater detention tank system at
+                                            <br><br>
+                                            <cn2-button label="Qualified Persons Portal"
+                                                event-click="openLink('https://www.pub.gov.sg/compliance/qualifiedpersonsportal')">
+                                            </cn2-button>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <cn2-textbox inline no-label id="DeteTankVol" disabled></cn2-textbox><span>
+                                            <p>(Please indicate size < width (m) x length (m) x effective depth (m)>
+                                            </p>For irregular shape, please state total effective internal
+                                            tank volume
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- D -->
+                    <!-- NOTE: NA = Not Applicable -->
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <table class="table table-borderless" style="margin-bottom:0">
+                            <tbody>
+                                <h2>
+                                    <div class="mls-espro-form-fields row">
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                            <span>(D) ABC WATERS DESIGN FEATURES</span>
+                                        </div>
+                                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="margin-left:6.5%;">
+                                            <cn2-switchbutton disabled data-on="Yes" data-off="No"
+                                                event-change="switchButton(this,'ABCWateDesiFeat10','ABCWateDesiFeat20'),ABCWateDesiFeat_change('ABCWateDesiFeat10')"
+                                                switch-id="ABCWateDesiFeat10">
+                                            </cn2-switchbutton>
+                                        </div>
+                                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                            <cn2-checkbox id="ABCWateDesiFeat10" hidden></cn2-checkbox>
+                                            <cn2-checkbox id="ABCWateDesiFeat20" hidden></cn2-checkbox>
+                                        </div>
+
+                                    </div>
+                                </h2>
+                                <!-- onclick="toggleRadioSpan('EmplReco_Yes10', 'ABCWateDesiFeat10', 'ABCWateDesiFeat20');" -->
+                                <tr>
+                                    <td colspan="2"><span>Constructed Wetlands</span><span id="ABCmandatory"></span>
+                                    </td>
+                                    <td>
+                                        <cn2-select id="ConsWetLand10" no-label options="YES:Yes,N.A:N.A" disabled>
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><span>Bioretention Swales/Basins</span><span
+                                            id="ABCmandatory"></span></td>
+                                    <td>
+                                        <cn2-select id="BioReteSwalBasi10" no-label options="YES:Yes,N.A:N.A" disabled>
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><span>Rain Gardens</span><span id="ABCmandatory"></span></td>
+                                    <td>
+                                        <cn2-select id="RainGard10" no-label options="YES:Yes,N.A:N.A" disabled>
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><span>Retention/ sedimentation ponds</span><span
+                                            id="ABCmandatory"></span></td>
+                                    <td>
+                                        <cn2-select id="ReteSediPond10" no-label options="YES:Yes,N.A:N.A" disabled>
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><span>Green roofs</span><span id="ABCmandatory"></span></td>
+                                    <td>
+                                        <cn2-select id="GreenRoof10" no-label options="YES:Yes,N.A:N.A" disabled>
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><span>Planter boxes</span><span id="ABCmandatory"></span></td>
+                                    <td>
+                                        <cn2-select id="PlantBoxe10" no-label options="YES:Yes,N.A:N.A" disabled>
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><span>Porous pavements</span><span id="ABCmandatory"></span></td>
+                                    <td>
+                                        <cn2-select id="PoroPave10" no-label options="YES:Yes,N.A:N.A" disabled>
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><span>Others</span><span id="ABCmandatory"></span></td>
+                                    <td>
+                                        <cn2-textbox disabled no-label inline id="Others10"></cn2-textbox>
+                                        <span style="font-size: 13px">(Please indicate if any)</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>(a) </td>
+                                    <td><span>Names & Registration No. of ABC Waters Professional</span><span
+                                            id="ABCmandatory"></span></td>
+                                    <td>
+                                        <cn2-textbox disabled no-label inline id="NameRegiNoABC10"></cn2-textbox>
+                                        <span style="font-size: 13px">(Please indicate if name & registration no. of ABC
+                                            professional)</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>(b) </td>
+                                    <td><span>Concept design and design calculations (e.g. catchment area, treatment
+                                            area and
+                                            detainment volume etc for the ABC Waters design feature), endorsed by the
+                                            ABC Waters Professional are submitted to PUB.</span><span
+                                            id="ABCmandatory"></span></td>
+                                    <td>
+                                        <cn2-textbox disabled no-label inline id="ConcDesiAndDesi10"></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="1%">(c) </td>
+                                    <td width="70%"><span>Hydraulic calculation for the overflow system, endorsed by
+                                            ABC Waters Profesional (PE) are submitted PUB.</span><span
+                                            id="ABCmandatory"></span></td>
+                                    <td>
+                                        <cn2-textbox disabled no-label inline id="HydrCalcForThe10"></cn2-textbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- E -->
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>(E) MINIMUM PLATFORM LEVEL(MPL)</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless" style="margin-bottom:0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="1%">12.</td>
+                                            <td width="50%"><span>
+                                                    Proposed MPL of development
+                                                    <font style="color:red;">(Read only. Editable on page
+                                                        6.)</font>
+                                                </span></td>
+                                            <td>
+                                                <cn2-textbox inline no-label disabled id="PropMPLOfDeve10">
+                                                </cn2-textbox>
+
+                                            </td>
+                                            <td>metres above SHD (0.000m) </td>
+                                        </tr>
+                                        <tr>
+                                            <td>13.</td>
+                                            <td><span>For addition and alteration works sbmission, the existing
+                                                    platform levels are indicate.</span></td>
+                                            <td colspan="2">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <cn2-switchbutton data-on="Yes" data-off="No"
+                                                        id="ForAddiAndAlter10">
+                                                    </cn2-switchbutton>
+                                                </div>
+                                                <!-- onclick="toggleRadioSpan('EmplReco_Yes10', 'ForAddiAndAlter10', 'ForAddiAndAlter20');" -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.</td>
+                                            <td><span>Linkages (direct/indirect) to special underground facilities
+                                                    and basements, if any, are indicated and complied wit latest Code of
+                                                    Practice on Surface Water Drainage.</span></td>
+                                            <td colspan="2">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <cn2-switchbutton data-on="Yes" data-off="No" id="LinkDireIndiTo10">
+                                                    </cn2-switchbutton>
+                                                </div>
+                                                <!-- onclick="toggleRadioSpan('EmplReco_Yes10', 'LinkDireIndiTo10', 'LinkDireIndiTo20');" -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>15. </td>
+                                            <td>
+                                                Flood barrier (as stipulated in Section 2.4 of the latest Code of
+                                                Practice on Surface Water Drainage), if any, is incorporated into
+                                                the development site.<br /><br />
+                                                <span style="font-size: 14px;"> Details of the flood protection measures
+                                                    and Standard Operating Procedures (SOP) shall be submitted to PUB
+                                                    for record during Detailed Planning stage.</span>
+                                            </td>
+                                            <td colspan="2">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <cn2-switchbutton data-on="Yes" data-off="No" id="FlooBarrAsStip10">
+                                                    </cn2-switchbutton>
+                                                </div>
+                                                <!-- onclick="toggleRadioSpan('EmplReco_Yes10', 'FlooBarrAsStip10', 'FlooBarrAsStip20');" -->
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- F -->
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>(F) OPENING LEADING TO BASEMENT LEVEL</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless" style="margin-bottom:0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="1%">16.</td>
+                                            <td width="70%"><span>Crest level of access ways and openings leading
+                                                    into the basement is indicated and complied with the latest Code of
+                                                    Practice on Surface Water Drainage.</span></td>
+                                            <td>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <cn2-switchbutton data-on="Yes" data-off="No" id="CresLeveOfAcce10">
+                                                    </cn2-switchbutton>
+                                                </div>
+                                                <!-- onclick="toggleRadioSpan('EmplReco_Yes10', 'CresLeveOfAcce10', 'CresLeveOfAcce20');" -->
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- G -->
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>(G) COMMON DRAIN</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless" style="margin-bottom:0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="1%">17.</td>
+                                            <td><span>Alignment, size and flow of existing common drain
+                                                    indicated.</span></td>
+                                            <td>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <cn2-switchbutton data-on="Yes" data-off="No"
+                                                        id="AligSizeAndFlow10">
+                                                    </cn2-switchbutton>
+                                                </div>
+                                                <!-- onclick="toggleRadioSpan('EmplReco_Yes10', 'AligSizeAndFlow10', 'AligSizeAndFlow20');" -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>18.</td>
+                                            <td>
+
+                                                If there is common drain, the following shall be endorsed on the
+                                                plan:
+                                                <span style="font-size: 14px">"Surface runoff from the neighbouring lots
+                                                    shall continue to be allowed to discharge through this
+                                                    drain."</span>
+                                            </td>
+                                            <td>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <cn2-switchbutton data-on="Yes" data-off="No" id="IfThereIsDrain10">
+                                                    </cn2-switchbutton>
+                                                </div>
+                                                <!-- onclick="toggleRadioSpan('EmplReco_Yes10', 'IfThereIsDrain10', 'IfThereIsDrain20');" -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>19. </td>
+                                            <td width="70%"><span>The position of the existing/proposed boundary
+                                                    wall/fence is clearly indicated.</span></td>
+                                            <td>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <cn2-switchbutton data-on="Yes" data-off="No" id="ThePostOfExist10">
+                                                    </cn2-switchbutton>
+                                                </div>
+                                                <!-- onclick="toggleRadioSpan('EmplReco_Yes10', 'ThePostOfExist10', 'ThePostOfExist20');" -->
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- H -->
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>(H) PUMPED DRAINAGE SYSTEM</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless" style="margin-bottom:0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="1%">20.</td>
+                                            <td><span>Details of pumped drainage system and design computations duly
+                                                    endorsed by PE shall be submitted separately to PUB during Detailed
+                                                    Planning stage.</span></td>
+                                            <td>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <cn2-switchbutton data-on="Yes" data-off="No"
+                                                        id="DetaOfPumpDrain10">
+                                                    </cn2-switchbutton>
+                                                </div>
+                                                <!-- onclick="toggleRadioSpan('EmplReco_Yes10', 'DetaOfPumpDrain10', 'DetaOfPumpDrain20');" -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>21.</td>
+                                            <td><span>Source catchment area with surface runoff leading into the
+                                                    pumped drainage system is clearly indicated.</span></td>
+                                            <td>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <cn2-switchbutton data-on="Yes" data-off="No"
+                                                        id="SourCatcAreaWith10">
+                                                    </cn2-switchbutton>
+                                                </div>
+                                                <!-- onclick="toggleRadioSpan('EmplReco_Yes10', 'SourCatcAreaWith10', 'SourCatcAreaWith20');" -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>22.</td>
+                                            <td width="70%"><span>The location, size, inlet and outlet connections
+                                                    of the rainwater pump sump for the proposed pumped drainage system
+                                                    are clearly indicated.</span></td>
+                                            <td>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <cn2-switchbutton data-on="Yes" data-off="No"
+                                                        id="TheLocaSizeInlet10">
+                                                    </cn2-switchbutton>
+                                                </div>
+                                                <!-- onclick="toggleRadioSpan('EmplReco_Yes10', 'TheLocaSizeInlet10', 'TheLocaSizeInlet20');" -->
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- I -->
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>(I) DRAINAGE AFFECTING OTHER PREMISES</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless" style="margin-bottom:0">
+                                    <tbody>
+                                        <tr>
+                                            <td>23.</td>
+                                            <td><span>Minimum 600mm high solid boundary wall around development site
+                                                    is erected to prevent surface runoff from overflowing into adjacent
+                                                    premises on lower ground</span></td>
+                                            <td>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <cn2-switchbutton data-on="Yes" data-off="No"
+                                                        id="Mini600HighSolid10">
+                                                    </cn2-switchbutton>
+                                                </div>
+                                                <!-- onclick="toggleRadioSpan('EmplReco_Yes10', 'Mini600HighSolid10', 'Mini600HighSolid20');" -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">
+                                                Please refer to the guidelines on Submission of DC Plans at &nbsp;&nbsp;
+                                                <cn2-button label="Qualified Persons Portal"
+                                                    event-click="openLink('https://www.pub.gov.sg/compliance/qualifiedpersonsportal')">
+                                                </cn2-button>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">
+                                                I hereby confirm and endorse that I have complied with the above
+                                                items and Guidelines on Submission of DC Plans.
+
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3"> I hereby certify that the standard endorsement below will
+                                                also be
+                                                certified on the plans:-
+                                                <table class="table table-borderless" style="margin-bottom:0">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>(a) </td>
+                                                            <td>
+                                                                The planning, design, construction activities and
+                                                                procedures
+                                                                for plan submission shall comply fully with the
+                                                                requirements as
+                                                                stipulated in the latest edition of the Code of Pracice
+                                                                on
+                                                                Surface Water Drainage and the Sewerage and Drainage
+                                                                (Surface
+                                                                Water Drainage) Regulations 2007.
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>(b) </td>
+                                                            <td>
+                                                                The capacity of internal drains shall be sufficient to
+                                                                intercept and discharge all runoff fom the development
+                                                                site.
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>(c)</td>
+                                                            <td>
+                                                                The runoff within, upstream of and adjacent to the
+                                                                development lot can be effecively drained away without
+                                                                causing
+                                                                flooding within the lot or in areas outside the lot.
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">
+                                                * Public Utilities Board (PUB) reserves the right to report any
+                                                false declaration of information to the relevant professional
+                                                bodies for action in accordance to the Act/ethnics governing all
+                                                the Qualified Professional.*
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <cn2-fixed-footer></cn2-fixed-footer>
+        <cn2-version-footer></cn2-version-footer>
+    </div>
+
+</body>
+
+</html>

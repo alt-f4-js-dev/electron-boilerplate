@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <title>PUB-SEW-FORM_DLP</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head title=""> </cn2-master-head>
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p>
+          <b>For enquiries related to forms, please contact the following:</b>
+        </p>
+        <p><span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="5">PUB (Sewerage)</td>
+                <td>pub_bpu@pub.gov.sg</td>
+                <td>67313512</td>
+                <td>General Enquiry</td>
+              </tr>
+              <tr>
+                <td>sophian_ismail@pub.gov.sg</td>
+                <td>67313656</td>
+                <td>Approval for works affecting public sewer/Pre & Post Construction CCTV submissions
+                </td>
+              </tr>
+              <tr>
+                <td>LER_Seng_Chye@pub.gov.sg</td>
+                <td>67313264</td>
+                <td>Sewerage pre-consultation/ DC Plan Submissions</td>
+              </tr>
+              <tr>
+                <td>teo_mok_tong@pub.gov.sg</td>
+                <td>67313256</td>
+                <td>Sewerage Clearance Submissions</td>
+              </tr>
+              <tr>
+                <td>steven_cheong@pub.gov.sg</td>
+                <td>67313339</td>
+                <td>Code of Practice and Regulations</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+  <input type="hidden" id="member_id" name="member_id" />
+  <input type="hidden" id="form_validated" name="form_validated" />
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Project">
+        </cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars of Application">
+        </cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4" label="Particulars and Declaration of Qualified Person">
+        </cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" no-label inline="6" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To:</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textbox no-label inline="6" id="Addr10" disabled>
+                        </cn2-textbox>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea style="height: 158px;" id="Addr20" no-label inline="6" disabled
+                          style="height: 87px;">
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>
+                This form is to be digitally signed by the Qualified Person
+                responsible for the project(s).
+              </li>
+              <li>
+                This form is to be accompanied by the relevant acceptance
+                attachments.
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container">
+            <h2>Particulars of Project</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Project Reference Number</td>
+                  <td>
+                    <cn2-textbox disabled no-label id="Project_Project_Ref_No10">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="align-middle">Project Title</td>
+                  <td>
+                    <cn2-textarea disabled no-label id="Project_Title10"></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Location Description<br />[Include Lot/Plot, MK/TS, House
+                    No., Building Address and Road information]
+                  </td>
+                  <td>
+                    <cn2-textarea disabled no-label id="Project_Location_Description10">
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        MK/TS No.
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        (E.g.MK03-12345A)
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <cn2-textbox maxlength="32400" no-label id="FIELD2"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="align-middle">Postal Code</td>
+                  <td>
+                    <cn2-textarea maxlength="32400" no-label id="FIELD4" numeric></cn2-textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container">
+            <h2>Particulars of Application</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Type of Works</td>
+                  <td>
+                    <cn2-textbox maxlength="32400" no-label id="FIELD1" value="End of DLP Inspection of New Sewers">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="align-middle">
+                    Department File Reference Number
+                  </td>
+                  <td>
+                    <cn2-textarea maxlength="25" no-label id="PartOfAppl_DepaFileRefeNumb10">
+                    </cn2-textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page4">
+          <div class="mls-espo-right-inner-container">
+            <h2>Particulars of Qualified Person</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Name</td>
+                  <td>
+                    <cn2-select mandatory id="Member_Member_Name_QP10" no-label data-options="qpDropdown"
+                      event-change="loadDropDownDetails(this);">
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Role in Project</td>
+                  <td>
+                    <cn2-textbox disabled no-label id="MemberRole_Member_Role_Code_Desc_QP10">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox disabled no-label id="MemberRole_Professional_No_QP10">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox disabled no-label id="Member_Firm_Name_QP10"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr class="align-middle">
+                  <td>Firm Address</td>
+                  <td>
+                    <cn2-textarea disabled no-label id="Member_Address_QP10"></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox disabled no-label id="Member_Tel_No_QP10" numeric></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox disabled no-label id="Member_Email_Address1_QP10" event-blur="checkEmail(this);"
+                      placeholder="example@email.com"></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Declaration by Qualified Person</h2>
+            <div class="mls-espro-form-fields row pt-2">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td>1.</td>
+                      <td>
+                        <div>
+                          <span>I hereby certify that CCTV inspection surveys
+                            were conducted for all sewers (≥150mm diameter)
+                            and manholes for the above-mentioned project
+                            before the end of DLP. The particulars of the CCTV
+                            specialist is given below:</span>
+                        </div>
+                      </td>
+                      <td width="20%">
+                        <cn2-select no-label mandatory id="DeclByQualPers_IHereCertThat10"
+                          options="I Confirmed:I Confirmed" event-change="confirm1()">
+                        </cn2-select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <div class="mls-espro-form-fields row">
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            Name
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <cn2-textbox inline="11" disabled no-no-label maxlength="32400"
+                              id="Members_Member_Name_QP20">
+                            </cn2-textbox>
+                          </div>
+                        </div>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <div class="mls-espro-form-fields row">
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            Firm Name
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <cn2-textbox inline="11" disabled no-no-label maxlength="32400" id="Members_Firm_Name_QP20">
+                            </cn2-textbox>
+                          </div>
+                        </div>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <div class="mls-espro-form-fields row">
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            Tel No.
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <cn2-textbox inline="11" disabled no-no-label maxlength="32400" numeric
+                              id="Members_Tel_No_QP20">
+                            </cn2-textbox>
+                          </div>
+                        </div>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <div class="mls-espro-form-fields row">
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            Handphone No.
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <cn2-textbox inline="11" disabled no-no-label maxlength="32400" numeric
+                              id="Members_Mobile_No_QP20">
+                            </cn2-textbox>
+                          </div>
+                        </div>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <div class="mls-espro-form-fields row">
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            Email Address
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <cn2-textbox inline="11" disabled no-no-label maxlength="32400"
+                              event-blur="checkEmail(this);" placeholder="example@email.com"
+                              id="Members_Email_Address1_QP20"></cn2-textbox>
+                          </div>
+                        </div>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <div class="mls-espro-form-fields row">
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            WRc Certificate No. (if WRc certified)
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                            <cn2-textbox inline="11" disabled no-no-label maxlength="32400" id="Members_WrcCertNo_QP20">
+                            </cn2-textbox>
+                          </div>
+                        </div>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>2.</td>
+                      <td><span>I also certify that:</span></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <span>a. I have submitted 1 set of CCTV inspection survey
+                          report together CCTV video in accordance with
+                          PUB(WRN)'s CCTV inspection requirements posted on
+                          PUB's Internet Website, to PUB (WRN), Network
+                          Management Branch on
+                          <cn2-datefield disabled no-label inline="3" id="DeclByQualPers_IHaveSubmSet20"
+                            onfocusout="validateDate(this);">
+                          </cn2-datefield>(dd/mm/yyyy) which is at least one (1) month before
+                          the expiry DLP. The submission envelop was indicated
+                          <b>"END DLP CCTV INSPECTION REPORT" &amp; "Project
+                            Ref No. <span id="LABEL11"></span>"</span>
+                      </td>
+                      <td>
+                        <cn2-select no-label mandatory id="DeclByQualPers_IHaveSubmSet10"
+                          options="I Confirmed:I Confirmed" event-change="confirm2a()">
+                        </cn2-select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <span>b. I have consulted PUB(WRN), Network Management
+                          Branch for all defects found in the end of DLP CCTV
+                          inspection survey and all defect rectification works
+                          have been carried out as per PUB(WRN)
+                          requirements.</span>
+                      </td>
+                      <td>
+                        <cn2-select no-label mandatory id="POPUP1" options="I Confirmed:I Confirmed">
+                        </cn2-select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <span>c. I or my authorised representative (with letter
+                          of authorisation to be provided) will be present
+                          during PUB(WRN)'s audit inspection.</span>
+                      </td>
+                      <td>
+                        <cn2-select no-label mandatory id="DeclByQualPers_IOrMyAuth10"
+                          options="I Confirmed:I Confirmed"></cn2-select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>3.</td>
+                      <td>
+                        <span><b>Repeat CCTV inspection survey after rectification
+                            of defects</b></span>
+                      </td>
+                      <td>
+                        <cn2-select no-label mandatory id="DeclByQualPers_ForReccInspSurv10"
+                          options="Required:Required, Not Required:Not Required" event-change="confirm3()">
+                        </cn2-select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <span>a. I have completed the rectification of defects in
+                          the sewers and manholes and carried out another CCTV
+                          inspection survey of the defective sewer and the
+                          manholes. The final CCTV inspection survey report
+                          together CCTV video have been submitted to PUB
+                          (WRN), Network Management Branch on
+                          <cn2-datefield no-label disabled inline="3" id="DeclByQualPers_IHaveCompThe20"
+                            onfocusout="validateDate(this);">
+                          </cn2-datefield>
+                          for approval before end of DLP. The submission
+                          envelop shall be indicated
+                          <b>"END DLP RE-CCTV INSPECTION REPORT" & "Project
+                            Ref No.<span id="LABEL15"></span>"</b></span>
+                      </td>
+                      <td>
+                        <cn2-select no-label disabled id="DeclByQualPers_IHaveCompThe10"
+                          options="I Confirmed:I Confirmed" event-change="confirm3a()">
+                        </cn2-select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <span>b. I have consulted PUB(WRN), Network Management
+                          Branch for all defects found in the end of DLP CCTV
+                          inspection survey and all defect rectification works
+                          have been carried out as per PUB(WRN)
+                          requirements.</span>
+                      </td>
+                      <td>
+                        <cn2-select no-label disabled id="DeclByQualPers_IConfThatAll10"
+                          options="I Confirmed:I Confirmed"></cn2-select>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-version-footer></cn2-version-footer>
+    <cn2-fixed-footer></cn2-fixed-footer>
+  </div>
+</body>
+
+</html>

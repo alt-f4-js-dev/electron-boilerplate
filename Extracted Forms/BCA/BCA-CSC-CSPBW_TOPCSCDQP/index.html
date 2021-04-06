@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <title>BCA-CSC-CSPBW_TOPCSCDQP</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <script>
+    if (typeof module === 'object') {
+      window.module = module;
+      module = undefined;
+    }
+  </script>
+  <script src="../cm/resources/assets/js/jquery-3.4.1.min.js"></script>
+  <script src="../cm/resources/assets/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
+
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2switchbutton.js"></script>
+  <script src="index.js"></script>
+</head>
+
+<body style="visibility: visible; opacity: 1;" saved>
+  <cn2-master-head
+    title="CERTIFICATE OF SUPERVISION OF BUILDING WORKS&lt;br&gt;[Section 12 of the Building Control Act (Cap 29)]">
+  </cn2-master-head>
+  <input type="hidden" name="member_id" id="member_id">
+  <input type="hidden" name="form_validated" id="form_validated">
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p>
+          <b>For enquiries related to forms, please contact the following:</b>
+        </p>
+        <p><span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">BCA (ST)</td>
+                <td>wai_hui_ling@bca.gov.sg</td>
+                <td>68044609</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>chang_heng_choy@bca.gov.sg</td>
+                <td>68044646</td>
+                <td>Policies</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions and Application Type">
+        </cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Application">
+        </cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars and Declaration of Qualified Person">
+        </cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" no-label inline="5" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To: *</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-select no-label inline="5" id="Addr10" event-change="ToAgency_id_change(this)" mandatory
+                          options="Building and Construction Authority:BCA,Defence Science &amp; Technology Agency:DSTA">
+                        </cn2-select>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea id="Addr20" no-label inline="5" disabled style="height: 137px;">
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>
+                This form is to be digitally signed by the appointed Qualified Person responsible for the project.
+              </li>
+              <li>
+                This form may take you 8 mins to complete.
+              </li>
+            </ol>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 65px;">
+            <h2>Application Type</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">1</td>
+                  <td>
+                    Certificate of Supervision of Building Works
+                  </td>
+                  <td width="1%">
+                    <input type="radio" id="ApplType_BuilWork10" name="ApplType_name"
+                      onchange="ApplType_change(this)" />
+                  </td>
+                </tr>
+                <!-- <tr>
+                  <td>2</td>
+                  <td>
+                    Application For * Temporary Occupation Permit (TOP) /
+                    Certificate of Statutory Completion (CSC)
+                  </td>
+                  <td>
+                    <input type="radio" id="ApplType_ApplforTopCsc10" name="ApplType_name"
+                      onchange="ApplType_change(this)" />
+                  </td>
+                </tr> -->
+                <tr>
+                  <td>2</td>
+                  <td>
+                    Declaration by Qualified Person for the Application of
+                    Temporary Occupation Permit / Certificate of Statutory
+                    Completion for Building Works
+                  </td>
+                  <td>
+                    <input type="radio" id="ApplType_DeclQualPersFor10" name="ApplType_name"
+                      onchange="ApplType_change(this)" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Project Details</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="25%">
+                    Project Reference Number
+                  </td>
+                  <td>
+                    <cn2-textbox id="Project_Project_Ref_No10" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Project Title</td>
+                  <td>
+                    <cn2-textarea id="Project_Title10" no-label disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td id="Project_Title20_td">Description of Building Works</td>
+                  <td>
+                    <cn2-textarea id="Project_Title20" no-label maxlength="1000"></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Location Description</td>
+                  <td>
+                    <cn2-textarea id="Project_Location_Description10" no-label disabled></cn2-textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr id="PartOfAppl_NameOfDeve10_tr" hidden>
+                  <td width="25%">Name of Development</td>
+                  <td>
+                    <cn2-textarea id="PartOfAppl_NameOfDeve10" no-label maxlength="32400"></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="25%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        Plan Type *
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-4" style="margin-top: 6px;">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-button label="Add" event-click="insertDuplicate('stForm','A1');stFormAdd_Click('stForm');"
+                          id="PlanTypeAdd_id">
+                        </cn2-button>
+                      </div>
+                    </div>
+                  </td>
+                  <td id="stForm">
+                    <div class="mls-espro-form-fields row" id="A1">
+                      <div class="col-xs-5 col-sm-5 col-lg-5 col-md-5 pt-2">
+                        <cn2-select id="PartOfAppl_PlanType10" prefix="PartOfAppl_PlanTypeA" suffix="0" no-label
+                          options="BP:BP,ST:ST" mandatory></cn2-select>
+                      </div>
+                      <div class="col-xs-5 col-sm-5 col-lg-5 col-md-5 pt-2">
+                        <cn2-textbox id="PartOfAppl_PlanType20" maxlength="3" prefix="PartOfAppl_PlanTypeB" suffix="0"
+                          no-label numeric event-change="adjustNumberLength(this,3);PartOfAppl_PlanTypeB_change(this)"
+                          mandatory>
+                        </cn2-textbox>
+                      </div>
+                      <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2 pt-2">
+                        <cn2-button id="delete1" prefix="delete" label="Delete" danger disabled
+                          event-click="removeDuplicate(this.id,'A1','stForm');stFormDelete_click('stForm')"
+                          style="float: right;">
+                        </cn2-button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr id="PartOfAppl_ApplType10_tr" hidden>
+                  <td>
+                    Type of Application *
+                  </td>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                        <cn2-select id="PartOfAppl_ApplType10" no-label options="TOP:TOP,CSC:CSC">
+                        </cn2-select>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr id="dvForm_tr" hidden>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12" id="devType">
+                        Development Type *
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-4" style="margin-top: 6px;">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-button label="Add" event-click="insertDuplicate('dvForm','B1');dvFormAdd_click('dvForm')">
+                        </cn2-button>
+                      </div>
+                    </div>
+                  </td>
+                  <td id="dvForm">
+                    <div class="mls-espro-form-fields row" id="B1">
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 pt-2">
+                        <cn2-select id="PartOfAppl_DevtType10" prefix="PartOfAppl_DevtType" suffix="0" no-label
+                          event-change="PartOfAppl_DevtType10_change(this)"
+                          options="Residential (Landed):Residential (Landed), Residential (Non Landed):Residential (Non Landed), Commercial:Commercial, Institutional: Institutional, Industrial:Industrial, Bridge / Flyover:Bridge / Flyover ">
+                        </cn2-select>
+                      </div>
+                      <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2 pt-2">
+                        <cn2-button id="delete1B" prefix="delete" danger label="Delete" disabled
+                          event-click="removeDuplicate(this.id,'B1','dvForm');dvFormDelete_click('dvForm');PartOfAppl_DevtType10_change(this)"
+                          suffix="B" style="float: right;">
+                        </cn2-button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr id="PartOfAppl_AcceFund_tr" hidden>
+                  <td>Accessibility Fund is applicable</td>
+                  <td>
+                    <cn2-checkbox id="PartOfAppl_AcceFund"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr id="PartOfAppl_ContPers10_tr" hidden>
+                  <td>Contact Person *</td>
+                  <td>
+                    <cn2-textbox id="PartOfAppl_ContPers10" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr id="PartOfAppl_DateOfPermTo10_tr">
+                  <td>Date of Permit to commence work</td>
+                  <td>
+                    <cn2-datefield id="PartOfAppl_DateOfPermTo10" event-change="PartOfAppl_DateOfPermTo10_change()"
+                      onfocusout="validateDate(this)" no-label>
+                    </cn2-datefield>
+                  </td>
+                </tr>
+                <tr id="PartOfAppl_DateOfComp10_tr">
+                  <td>Date of Completion</td>
+                  <td>
+                    <cn2-datefield id="PartOfAppl_DateOfComp10" event-change="PartOfAppl_DateOfComp10_change()"
+                      onfocusout="validateDate(this)" no-label>
+                    </cn2-datefield>
+                  </td>
+                </tr>
+                <tr id="PartOfAppl_StatGrosFlooArea10_tr">
+                  <td>Statistical Gross Floor Area (sq. m)</td>
+                  <td>
+                    <cn2-textbox id="PartOfAppl_StatGrosFlooArea10" no-label numeric maxlength="14"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr id="PartOfAppl_FinaBuilCostExcl10_tr">
+                  <td>Final Building Cost, excluding cost of land and movable fixtures ($)</td>
+                  <td>
+                    <cn2-textbox id="PartOfAppl_FinaBuilCostExcl10" no-label currency maxlength="15">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr id="PartOfAppl_Rema10_tr">
+                  <td>Remarks</td>
+                  <td>
+                    <cn2-textarea id="PartOfAppl_Rema10" maxlength="1000" no-label></cn2-textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container">
+            <h2>Section I Particulars of Qualified Person</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td>Member ID</td>
+                  <td>
+                    <cn2-textbox id="Member_Member_SID_QP10" disabled no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="25%">Name *</td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_QP10" data-options="qpDropdown"
+                      event-change="loadDropDownDetails(this);togglePartQp()" no-label mandatory></cn2-select>
+                  </td>
+                </tr>
+                <tr id="Member_Member_IC_Passport_No_QP10_tr" hidden>
+                  <td>ID</td>
+                  <td>
+                    <cn2-textbox id="Member_Member_IC_Passport_No_QP10" disabled no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Professional_No_QP10" disabled no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox id="Member_Firm_Name_QP10" disabled no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_QP10" maxlength="10" template="#########@"
+                      event-blur="uenValidate(this)" no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea id="Members_Address_QP10" disabled no-label></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_QP10" disabled no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Mobile_No_QP10" disabled no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_QP10" disabled no-label></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2 id="declH2">Declaration by Qualified Person</h2>
+            <table class="table table-bordered" id="ApplType_BuilWork10_decl" style="margin-bottom: 0px;">
+              <tbody class="declByQualPers">
+                <tr>
+                  <td width="1%">I.1</td>
+                  <td id="ApplType_DeclQualPersFor10_td">
+                    I hereby certify that I have supervised the erection of the building works and that such works
+                    have been completed in accordance with the provisions of the Building Control Act, the regulations
+                    made thereunder and the conditions under which plans were approved.
+                  </td>
+                  <td width="1%">
+                    <cn2-checkbox id="DeclByQualPers_IHereCertThat10" event-change="removeMandatoryCheck(this)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-bordered" id="ApplType_BuilWork20_decl"
+              style="margin-top: 0px; margin-bottom: 0px;" hidden>
+              <tbody>
+                <tr>
+                  <td width="1%">I.1</td>
+                  <td id="ApplType_DeclQualPersFor10_td">
+                    I am the appropriate Qualified Person appointed under the Building Control Act in respect of the
+                    building works herein described.
+                  </td>
+                  <td width="1%">
+                    <cn2-checkbox id="DeclByQualPers_IAmTheQual10" event-change="removeMandatoryCheck(this)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">I.2</td>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 ">
+                        I have inspected the completed building works on  <cn2-datefield disabled
+                          onfocusout="validateDate(this)" id="DeclByQualPers_IHaveInspThe10" no-label inline="3">
+                        </cn2-datefield> and confirmed that the works are completed in accordance with :- *
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-1">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 text-center">
+                        -
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11 ">
+                        The provisions of the Building Control Act and Building Control Regulations.
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 text-center">
+                        -
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11 ">
+                        The relevant plans approved and the conditions under which the plans were approved.
+                      </div>
+                    </div>
+                  </td>
+                  <td width="1%">
+                    <cn2-checkbox id="DeclByQualPers_IHaveInspThe20"
+                      event-change="removeMandatoryCheck(this);DeclByQualPers_IHaveInspThe20_change(this)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>I.3</td>
+                  <td>
+                    For building works with building plans submission:<br />
+                    I certify that the building works do not deviate from the approved plans.
+                    <div class="mls-espro-form-fields row pt-1">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 ">
+                        The last approved plan is BP:  <cn2-textbox id="DeclByQualPers_TheLastApprPlan20" disabled
+                          no-label event-change="adjustNumberLength(this,3); PartOfAppl_PlanTypeB_change(this)"
+                          inline="3" numeric maxlength="3"></cn2-textbox>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-1">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 ">
+                        <cn2-checkbox id="DeclByQualPers_RecoPlanRP10" disabled
+                          event-change="DeclByQualPers_RecoPlanRP10_change(this)"></cn2-checkbox>   Record plan RP:
+                         
+                        <cn2-textbox id="DeclByQualPers_SubmToShowThe10" no-label disabled inline="3" numeric
+                          event-change="adjustNumberLength(this,3); PartOfAppl_PlanTypeB_change(this)" maxlength="3">
+                        </cn2-textbox> submitted to show the immaterial
+                        changes from the approved plans.
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_ICertThatThe20"
+                      event-change="DeclByQualPers_ICertThatThe20_change(this)"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>I.4</td>
+                  <td colspan="2">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        I further certify that there are:
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-1">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 text-center">
+                        <input type="radio" id="DeclByQualPers_NoDeviFromThe10" name="DeclByQualPers_name" />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        no deviation from the Planning/Written Permission from URA.
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-1">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 text-center">
+                        <input type="radio" id="DeclByQualPers_MinoDeviFromThe10" name="DeclByQualPers_name" />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        minor deviations from the Planning/Written Permission, covered in the list of items exempted
+                        from Planning Permission as issued by the Competent Authority.
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    I.5
+                  </td>
+                  <td colspan="2">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 text-center">
+                        <input type="radio" id="DeclByQualPers_ForNonResiBuil10" name="DeclByQualPers_ResiBuil_name"
+                          onchange="atLeastOne(this)" />
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 text-center">
+                        a)
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                        For non-residential buildings:<br />
+                        The applicable standard requirements which I have ticked below have been complied with.　
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 text-center">
+                        <input type="radio" id="DeclByQualPers_ForResiBuilThe10" name="DeclByQualPers_ResiBuil_name"
+                          onchange="atLeastOne(this)" />
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 text-center">
+                        b)
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                        For Residential Buildings:<br />
+                        The applicable requirements stipulated in the Standard Site Inspection Checklist for TOP/CSC
+                        Application (PC.08-1999) have been complied with.
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    I.6
+                  </td>
+                  <td colspan="2">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <b>LIFTS &amp; ESCALATORS</b>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        I confirm that there are:<br />
+                        <cn2-textbox id="DeclByQualPers_LiftAndEsca_NoOfLift10"
+                          event-blur="DeclByQualPers_LiftAndEsca_change(this)" numeric maxlength="3" inline="3"
+                          no-label>
+                        </cn2-textbox> number of lift(s) completed
+                        and;
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        I confirm that there are:<br />
+                        <cn2-textbox id="DeclByQualPers_LiftAndEsca_NoOfEsca10"
+                          event-blur="DeclByQualPers_LiftAndEsca_change(this)" numeric maxlength="3" inline="3"
+                          no-label>
+                        </cn2-textbox> number of escalator(s) completed
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    I.7
+                  </td>
+                  <td colspan="2">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <b>GLASS BARRIERS *</b>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        I confirm that
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 text-center">
+                        <input type="radio" id="DeclByQualPers_GlassBarr_Yes10" name="DeclByQualPers_GlassBarr"
+                          onchange="atLeastOne(this)" />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        The completed building works comply to Clause H.3.5 [Glass Barrier] of Approved Document<br />
+                        – Where glass is used as part or whole of a barrier, laminated glass are used. All glass used
+                        comply with SS341:
+                        Specification for Safety Glazing Materials for use in Buildings.　
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 text-center">
+                        <input type="radio" id="DeclByQualPers_GlassBarr_No10" name="DeclByQualPers_GlassBarr"
+                          onchange="atLeastOne(this)" />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        There are no glass barriers used in the completed building works.
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    I.8
+                  </td>
+                  <td colspan="2">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <b>GLASS AT HEIGHTS *</b>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        I confirm that
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 text-center">
+                        <input type="radio" id="DeclByQualPers_GlassAtHeig_Yes10" name="DeclByQualPers_GlassAtHeig"
+                          onchange="atLeastOne(this)" />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        The completed building works comply to Clause N.2.1 [Use of glass at height] of Approved
+                        Document – Where glass is used
+                        in a building located at height of 2.4m or more, appropriate measures have been taken to
+                        minimise the risk of injury to
+                        people in the event of spontaneous breakage of glass elements.
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 text-center">
+                        <input type="radio" id="DeclByQualPers_GlassAtHeig_No10" name="DeclByQualPers_GlassAtHeig"
+                          onchange="atLeastOne(this)" />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        There are no use of glass at height in the completed building works.
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    I.9
+                  </td>
+                  <td colspan="2">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <b>DAYLIGHT REFLECTANCE *</b>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        I confirm that
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 text-center">
+                        <input type="radio" id="DeclByQualPers_DaylRefl_Yes10" name="DeclByQualPers_DaylRefl"
+                          onchange="atLeastOne(this)" />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        The completed building works comply to Clause P.2.1 (Daylight Reflectance) of Approved Document
+                        – That the materials
+                        used on the exterior of building(s) meet the performance standard of the acceptable solutions.
+                        To provide the value of
+                        the daylight reflectance for the material (supplier’s specification) used for this
+                        development.There are no glass
+                        barriers used in the completed building works.
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 text-center">
+                        <input type="radio" id="DeclByQualPers_DaylRefl_No10" name="DeclByQualPers_DaylRefl"
+                          onchange="atLeastOne(this)" />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        There are no works to the exterior of the building(s).
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    I.10
+                  </td>
+                  <td colspan="2">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <b>AS-BUILT HEIGHT</b>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        I confirm that the as-built height of the building in the development does not exceed
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textbox id="DeclByQualPers_AsBuilHeig10" numeric maxlength="3" inline="3" no-label>
+                        </cn2-textbox> m AMSL, inclusive of all structures and fixtures above the rooftop, such as
+                        antennae, water
+                        tanks, lift motor rooms, maintenance equipment, lightning conductors etc.
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    I.11
+                  </td>
+                  <td colspan="2">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <b>CEILINGS *</b>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        I confirm that
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 text-center">
+                        <input type="radio" id="DeclByQualPers_Ceil10" name="DeclByQualPers_Ceil"
+                          onchange="atLeastOne(this)" />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        The suspended ceilings in the development meet the good practice in the design and installation
+                        of suspended ceilings.<br />
+                        <ul style="list-style-type:none;">
+                          <li>(a) conformance to established standards for design, installation and testing
+                            of suspended ceilings, including British/European Standard (BS EN
+                            13964:2014 – Suspended ceilings – Requirements and test methods);
+                          </li>
+                          <li>(b) provision of adequate openings in the false ceiling to allow discharge of
+                            water in the case of burst water pipes;
+                          </li>
+                          <li>(c) provision of separation between supporting frames (each not exceeding
+                            12 metres span) so as to mitigate the risk of large scale progressive
+                            collapse; and
+                          </li>
+                          <li>(d) Provision of durable material (corrosion-resistant) for load bearing
+                            components of the suspended ceiling to ensure safety of building users
+                            during occupation and maintenance
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 text-center">
+                        <input type="radio" id="DeclByQualPers_Ceil20" name="DeclByQualPers_Ceil"
+                          onchange="atLeastOne(this)" />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        There are no suspended ceilings installed in the completed building works.
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    I.12
+                  </td>
+                  <td colspan="2">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <b>WORKERS’ QUARTERS/SITE OFFICES/STORES/WORK SHEDS/HOARDINGS</b>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        All<cn2-select id="DeclByQualPers_ WorkQuarSiteOffi_Type10" inline="5"
+                          options="workers’ quarters:workers’ quarters,site offices:site offices,stores:stores,work sheds:work sheds,hoardings on-site:hoardings on-site,hoardings off-site:hoardings off-site"
+                          no-label></cn2-select> at <cn2-textbox no-label id="DeclByQualPers_ WorkQuarSiteOffi_Loca10"
+                          inline="11">
+                        </cn2-textbox> have been demolished and the site completely cleared of all construction
+                        materials and debris.
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-bordered" id="ApplType_BuilWork40_decl" style="margin-top: 0px;" hidden>
+              <tbody>
+                <tr>
+                  <td colspan="2"></td>
+                  <td>
+                    *Not Applicable / Complied With / Not Complied With but Waiver Sought
+                    (Select whichever is applicable)
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">I.13</td>
+                  <td>
+                    <u>NO OCCUPATION OF BUILDING *</u>
+                    <p>
+                      The building must not be occupied before a TOP/CSC has been issued as provided for under
+                      Section12(1) of the Act.
+                    </p>
+                  </td>
+                  <td>
+                    <p style="margin-bottom: 5px;"> </p>
+                    <cn2-select id="StanRequ_NoOccuOfBuil10" no-label
+                      options="Not Applicable:Not Applicable,Complied With:Complied With,Not Complied With but Waiver Sought:Not Complied With but Waiver Sought">
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">I.14</td>
+                  <td>
+                    <u>SITE OFFICES / STRUCTURES *</u>
+                    <p>
+                      All site offices / stores / work-sheds / hoardings have been demolished and the site
+                      completely cleared of all construction materials and debris.
+                    </p>
+                  </td>
+                  <td>
+                    <p style="margin-bottom: 5px;"> </p>
+                    <cn2-select id="StanRequ_SiteOffiStru10" no-label
+                      options="Not Applicable:Not Applicable,Complied With:Complied With,Not Complied With but Waiver Sought:Not Complied With but Waiver Sought">
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">I.15</td>
+                  <td>
+                    <u>PARTIAL TOP *</u>
+                    <p>
+                      For partial TOP applications, all areas to which the application relates have been
+                      satisfactorily separated from those areas under construction by means of robust hoardings /
+                      fencing.
+                    </p>
+                  </td>
+                  <td>
+                    <p style="margin-bottom: 5px;"> </p>
+                    <cn2-select id="StanRequ_PartTop10" no-label
+                      options="Not Applicable:Not Applicable,Complied With:Complied With,Not Complied With but Waiver Sought:Not Complied With but Waiver Sought">
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">I.16</td>
+                  <td>
+                    <u>FLOOR DIAGRAM *</u>
+                    <p>
+                      For non-residential building floor diagrams stating the imposed load in accordance with the
+                      Regulation 46 have been prominently displayed on every floor.
+                    </p>
+                  </td>
+                  <td>
+                    <p style="margin-bottom: 5px;"> </p>
+                    <cn2-select id="StanRequ_FlooDiag10" no-label
+                      options="Not Applicable:Not Applicable,Complied With:Complied With,Not Complied With but Waiver Sought:Not Complied With but Waiver Sought">
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    FOOTNOTE:
+                    <p>
+                      <i>(1) The qualified person is required to select every item in the schedule to indicate
+                        whether the particular item is applicable or not applicable to the building or building
+                        works.</i>
+
+                    </p>
+                    <p><i>(2) The date of inspection in this declaration should not be earlier than 3 months from
+                        the
+                        date of this application for TOP/CSC.</i></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    <div class="mls-espro-form-fields row pt-1">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        Building Details
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-1">
+                      <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
+                        Date of TOP/CSC:
+                      </div>
+                      <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
+                        <cn2-datefield id="BuilDeta_Date10" disabled no-label inline="6">
+                        </cn2-datefield>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-1">
+                      <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
+                        Height of building more than 13m :
+                      </div>
+                      <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
+                        <cn2-select id="BuilDeta_Heig10" options="Yes:Yes,No:No" inline="6" no-label>
+                        </cn2-select>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-bordered" id="ApplType_BuilWork30_decl" style="margin-top: 0px;" hidden>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <u>Type of Facade (to tick all relevant Facades)</u>*
+                      </div>
+                    </div>
+                    <br />
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfFaca_Tile10" name="declaQpFacade"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Tile
+                              </td>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfFaca_Plas10" name="declaQpFacade"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Plaster
+                              </td>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfFaca_BuilBoarClad10" name="declaQpFacade"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Building Board Cladding (Calcium Silicate, cement board, Fibre etc.)
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfFaca_CurtWallWithSSG10" event-change="atLeastOne(this)"
+                                  name="declaQpFacade"></cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Curtain Wall with Structural Sealant Glazing (SSG)
+                              </td>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfFaca_CurtWallWoutSSG10" event-change="atLeastOne(this)"
+                                  name="declaQpFacade"></cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Curtain Wall w/o SSG
+                              </td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfFaca_CompAlumClad10" name="declaQpFacade"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Composite Alum Cladding (ACP)
+                              </td>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfFaca_MetaCladWoutACP10" name="declaQpFacade"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Metal Cladding w/o ACP
+                              </td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfFaca_BricClad10" name="declaQpFacade"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Brick Cladding
+                              </td>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfFaca_TimbClad10" name="declaQpFacade"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Timber Cladding
+                              </td>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfFaca_StonClad10" name="declaQpFacade"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Stone Cladding
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfFaca_BricInfiWall10" name="declaQpFacade"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Brick infill/wall
+                              </td>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfFaca_GlasBlocInfiWall10" name="declaQpFacade"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Glass block infill wall
+                              </td>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfFaca_PrecConcWall10" name="declaQpFacade"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Precast Concrete Wall
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfFaca_ScreWall10" name="declaQpFacade"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Screen Wall
+                              </td>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfFaca_GreeWall10" name="declaQpFacade"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Green Wall
+                              </td>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfFaca_TensCablFaca10" name="declaQpFacade"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Tension Cable Facade
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfFaca_Othe10" name="declaQpFacade"
+                                  event-change="atLeastOne(this);otherTextBox(this, 'TypeOfFaca_Othe20')">
+                                </cn2-checkbox>
+                              </td>
+                              <td colspan="5">
+                                Others
+                                <cn2-textarea id="TypeOfFaca_Othe20" maxlength="250" no-label hidden
+                                  style="height: 80px;">
+
+                                </cn2-textarea>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <br />
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <u>Type of Attachment (to tick all relevant attachments)</u>*
+                      </div>
+                    </div>
+                    <br />
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfAtta_MetaSuns10" name="declaQpFacade2"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Metal Sunshade
+                              </td>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfAtta_Suns10" name="declaQpFacade2"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Sunshade (other
+                                than metal)
+                              </td>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfAtta_LighFixt10" name="declaQpFacade2"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="1%">
+                                Lighting Fixtures
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfAtta_MetaLouv10" event-change="atLeastOne(this)"
+                                  name="declaQpFacade2">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Metal Louvre
+                              </td>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfAtta_GlasLouv10" event-change="atLeastOne(this)"
+                                  name="declaQpFacade2">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Glass Louvre
+                              </td>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfAtta_ConcLouv10" name="declaQpFacade2"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Concrete Louvre
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfAtta_ConcFin10" name="declaQpFacade2"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Concrete Fin
+                              </td>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfAtta_MetaFin10" name="declaQpFacade2"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Metal Fin
+                              </td>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfAtta_GlasFin10" name="declaQpFacade2"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Glass Fin
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfAtta_AdveSign10" name="declaQpFacade2"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Advertisement/signage
+                              </td>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfAtta_ClotDryiRack10" name="declaQpFacade2"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+                              </td>
+                              <td width="20%">
+                                Clothes drying racks
+                              </td>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfAtta_PhotPane10" name="declaQpFacade2"
+                                  event-change="atLeastOne(this)">
+                                </cn2-checkbox>
+
+                              </td>
+                              <td width="20%">
+                                Photovoltaic Panels
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="1%">
+                                <cn2-checkbox id="TypeOfAtta_Othe10" name="declaQpFacade2"
+                                  event-change="atLeastOne(this);otherTextBox(this, 'TypeOfAtta_Othe20')">
+                                </cn2-checkbox>
+                              </td>
+                              <td colspan="6">
+                                Others
+                                <cn2-textarea id="TypeOfAtta_Othe20" maxlength="250" no-label hidden
+                                  style="height: 80px;">
+                                </cn2-textarea>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        The building height shall be measured from the ground level to the highest point of a building
+                        and does not include
+                        installations (e.g. equipment such as antenna) on the roof of the building. Height shall be
+                        measured from basement level
+                        if the basement is exposed.
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-version-footer hidden></cn2-version-footer>
+    <cn2-fixed-footer data-previous-page="page2"></cn2-fixed-footer>
+  </div>
+
+
+</body>
+
+</html>

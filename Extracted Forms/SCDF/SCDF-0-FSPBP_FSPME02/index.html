@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <title>SCDF-0-FSPBP_FSPME02</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+  <script src="../cm/js/components/cn2switchbutton.js"></script>
+
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head title="APPLICATION FOR APPROVAL OF PLANS" style="margin-top: 20px; width: 180px;">
+  </cn2-master-head>
+  <input type="hidden" id="member_id" name="member_id" />
+  <input type="hidden" id="form_validated" name="form_validated" />
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p><b>For enquiries related to forms, please contact the following:</b></p>
+        <p> <span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SCDF</td>
+                <td>TAN_Chung_Yee@scdf.gov.sg</td>
+                <td>68481457</td>
+                <td>Submissions</td>
+              </tr>
+              <tr>
+                <td>SCDF</td>
+                <td>&nbsp;</td>
+                <td>62800000</td>
+                <td>E-Payment / Status Of Application</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Project"></cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars of Application"></cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4" label="Plan Fee Computation"></cn2-nav-button>
+        <cn2-nav-button target="page5" page-number="5" label="Payment Mode"></cn2-nav-button>
+        <cn2-nav-button target="page6" page-number="6" label="Particulars and Declaration of Applicant">
+        </cn2-nav-button>
+        <cn2-nav-button target="page7" page-number="7"
+          label="Particulars, Confirmation and Declaration of Qualified Person">
+        </cn2-nav-button>
+        <cn2-nav-button target="page8" label="Particulars of Fire Safety Engineer and Declaration By Applicant" hidden>
+        </cn2-nav-button>
+        <cn2-nav-button target="page9" label="Particulars of Peer Reviewer and Declaration by Applicant" hidden>
+        </cn2-nav-button>
+        <cn2-nav-button target="page10" page-number="8" label="Submission Checklists"></cn2-nav-button>
+        <cn2-nav-button id="nav11" target="page11" page-number="9" label="Submission Guide" hidden>
+        </cn2-nav-button>
+      </div>
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="DateNowLabel" no-label inline="5" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To:</b>
+                  </td>
+                  <td width="15%">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pt-2">
+                        <cn2-select id="Addr10" options="FSSB:FSSB" hidden disabled></cn2-select>
+                        <cn2-textarea id="ToAgency_id" no-label inline="5" disabled>
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mls-espo-right-inner-container">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>
+                This form is to be digitally signed by the applicant and
+                appointed Qualified Person responsible for the project(s).
+              </li>
+              <li>
+                All forms are to be fully and correctly completed upon
+                submission, failing which the submission shall be rejected.
+              </li>
+              <li>
+                Please read the
+                <u><a onclick="linkToPage11()" style="cursor:pointer;">Submission Guide</a></u>
+                before making any submission.
+              </li>
+              <li>
+                It may take you 5 minutes to complete this form.
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking" id="iac">
+            <h2>Particulars of Project</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Project Reference No.</td>
+                  <td>
+                    <cn2-textbox no-label id="Project_Project_Ref_No10" disabled maxlength="50">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Project Title</td>
+                  <td>
+                    <cn2-textarea no-label id="Project_Title10" disabled maxlength="1000">
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Location Description[Include Lot/Plot, MK/TS, House No.,
+                    Building Address and Road information]
+                  </td>
+                  <td>
+                    <cn2-textarea no-label id="Project_Location_Description10" disabled maxlength="1024">
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr hidden>
+                  <td><span id="Project_Postal_Code10_label">Postal Code</span></td>
+                  <td>
+                    <cn2-textbox no-label id="Project_Postal_Code10" numeric maxlength="6">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container">
+            <h2>Particulars of Application</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">
+                    Full Title for Submission to SCDF* <br />
+                    <small>
+                      Note: This Full Title for submission will be the project
+                      title indicated on the approval letter.
+                    </small>
+                  </td>
+                  <td>
+                    <cn2-textarea id="PartOfAppl_Prop10" maxlength="1000" no-label mandatory>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Application Type*</td>
+                  <td>
+                    <cn2-select id="PartOfAppl_ApplType10" no-label event-change="PartOfAppl_ApplType10_change(this)"
+                      options="Building Plan:Building Plan,Fire Protection Plan:Fire Protection Plan,Mechanical Ventilation /Smoke Control/Air Conditioning Plan:Mechanical Ventilation /Smoke Control/Air Conditioning Plan"
+                      mandatory>
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Type of Plans*</td>
+                  <td>
+                    <input type="radio" id="PartOfAppl_TypeOfPlan10" name="PartOfAppl_TypeOfPlan"
+                      onchange="PartOfAppl_TypeOfPlan1030_change(this); qpShow(this)" />
+                    New fire safety works;
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <input type="radio" id="PartOfAppl_TypeOfPlan20" name="PartOfAppl_TypeOfPlan"
+                      onchange="PartOfAppl_TypeOfPlan20_change(this); qpShow(this)" />
+                    Amendment to approved fire safety works;
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <input type="radio" id="PartOfAppl_TypeOfPlan30" name="PartOfAppl_TypeOfPlan"
+                      onchange="PartOfAppl_TypeOfPlan1030_change(this); qpHidden(this)" />
+                    Change of Use / Alteration and Additions to existing fire
+                    safety works;
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span id="PartOfAppl_label">Building Categories*</span>
+                  </td>
+                  <td>
+                    <cn2-select id="PartOfAppl_BldgC10" no-label mandatory
+                      options="RESIDENTIAL - R:RESIDENTIAL-R,COMMERCIAL - C:COMMERCIAL-C,INDUSTRIAL - D:INDUSTRIAL-D,INSTITUTION - R:INSTITUTION-R,OTHERS - R:OTHERS-R,PIPELINE - P:PIPELINE-P,P & FM - P:P & FM-P">
+                    </cn2-select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Special features</td>
+                  <td>
+                    <cn2-checkbox type="checkbox" id="PartOfAppl_SpecialFeatures10">
+                    </cn2-checkbox>
+                    Mass Engineered Timber elements
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <cn2-checkbox type="checkbox" id="PartOfAppl_SpecialFeatures20">
+                    </cn2-checkbox>
+                    Fully Automated Mechanised Carpark
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <cn2-checkbox type="checkbox" id="PartOfAppl_SpecialFeatures30">
+                    </cn2-checkbox>
+                    Super-Highrise residential
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <cn2-checkbox type="checkbox" id="PartOfAppl_SpecialFeatures40">
+                    </cn2-checkbox>
+                    Solar PV Installation/ESS Storage
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <cn2-checkbox type="checkbox" id="PartOfAppl_SpecialFeatures50">
+                    </cn2-checkbox>
+                    P&FM, Hazardous storage, High containment facilities
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <cn2-checkbox type="checkbox" id="PartOfAppl_SpecialFeatures60">
+                    </cn2-checkbox>
+                    Intumescent paint/ Vermiculite spray
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <cn2-checkbox type="checkbox" id="PartOfAppl_SpecialFeatures70">
+                    </cn2-checkbox>
+                    Cold rooms
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <cn2-checkbox type="checkbox" id="PartOfAppl_SpecialFeatures80">
+                    </cn2-checkbox>
+                    Composite Claddings
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <cn2-checkbox type="checkbox" id="PartOfAppl_SpecialFeatures90">
+                    </cn2-checkbox>
+                    Capsule Hotels
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <cn2-checkbox type="checkbox" id="PartOfAppl_SpecialFeatures100">
+                    </cn2-checkbox>
+                    Old Building Upgrades
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <cn2-checkbox type="checkbox" id="PartOfAppl_SpecialFeatures110">
+                    </cn2-checkbox>
+                    Place of worship
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <cn2-checkbox type="checkbox" id="PartOfAppl_SpecialFeatures120">
+                    </cn2-checkbox>
+                    Institutions
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <cn2-checkbox type="checkbox" id="PartOfAppl_SpecialFeatures130">
+                    </cn2-checkbox>
+                    Healthcare
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <cn2-checkbox type="checkbox" id="PartOfAppl_SpecialFeatures140">
+                    </cn2-checkbox>
+                    Worker Dormitories
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <cn2-checkbox type="checkbox" id="PartOfAppl_SpecialFeatures150">
+                    </cn2-checkbox>
+                    Conservation Building
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>
+                    Is this a full performance-based submission?*
+                  </td>
+                  <td>
+                    <cn2-switchbutton switch-id="PartOfAppl_IsFullPerfBaseSub10"
+                      data-true="PartOfAppl_IsFullPerfBaseSub10" data-false="PartOfAppl_IsFullPerfBaseSub20"
+                      data-on="Yes" data-off="No"
+                      event-click="switchButton(this,'PartOfAppl_IsFullPerfBaseSub10','PartOfAppl_IsFullPerfBaseSub20'); PartOfAppl_IsFullPerfBaseSub10_changeYes(this)"
+                      style="float:right;">
+                    </cn2-switchbutton>
+                    <cn2-checkbox id="PartOfAppl_IsFullPerfBaseSub10" hidden></cn2-checkbox>
+                    <cn2-checkbox id="PartOfAppl_IsFullPerfBaseSub20" hidden></cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">
+                    <span id="PartOfAppl_FEDBRef10_label">FEDB Reference No.</span>
+                  </td>
+                  <td>
+                    <cn2-textbox no-label maxlength="16" id="PartOfAppl_FEDBRef10" uppercase template="FEDB/######/####"
+                      event-blur="validateBPMEAppFEDBRefNo(this); checkTemplateValid(this); mandaFEDB()"
+                      webservice="agencyUrl30">
+                    </cn2-textbox>
+                    <small><span style="color: red;" id="errMsgBPMEAppFEDBRefNo"></span></small>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Related BP/MV/FP plan submission<br />(if any)</td>
+                  <td>
+                    <cn2-textbox no-label maxlength="15" id="PartOfAppl_TheRegiNoOf10"
+                      event-change="validateBPMEApp(this)" uppercase template="@@@/@#####/####"
+                      event-blur="validateBPMEApp(this); checkTemplateValid(this)">
+                    </cn2-textbox>
+                    <small><span style="color: red;" id="errMsgBPMEApp"></span></small>
+                  </td>
+                </tr>
+                <tr id="PartOfAppl_ForAmenPlanSubm10tr" hidden>
+                  <td>
+                    <span id="ForAmenPlanSubm10_Label">For Amendment plans submission please state
+                      the original SCDF approved Plan Reference
+                    </span>
+                  </td>
+                  <td>
+                    <cn2-textbox no-label maxlength="15" id="PartOfAppl_ForAmenPlanSubm10" uppercase
+                      template="@@@/@#####/####" event-blur="checkTemplateValid(this); validateBPMEApp(this);">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    State whether this submission is arising from SCDF's audit
+                    checked on previous plan?
+                  </td>
+                  <td>
+                    <cn2-switchbutton switch-id="PartOfAppl_StatWhetThisSubm10"
+                      data-true="PartOfAppl_StatWhetThisSubm10" data-false="PartOfAppl_StatWhetThisSubm20" data-on="Yes"
+                      data-off="No"
+                      event-change="switchButton(this,'PartOfAppl_StatWhetThisSubm10','PartOfAppl_StatWhetThisSubm20'); PartOfAppl_StatWhetThisSubm10_change('ForAmenPlanSubm10_Label', 'PartOfAppl_ForAmenPlanSubm10')"
+                      style="float:right;">
+                    </cn2-switchbutton>
+                    <cn2-checkbox id="PartOfAppl_StatWhetThisSubm10" hidden></cn2-checkbox>
+                    <cn2-checkbox id="PartOfAppl_StatWhetThisSubm20" hidden>
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Pre-submission Consultation Ref No.<br />
+                    (If any)
+                  </td>
+                  <td>
+                    <cn2-textbox uppercase template="CON/@#####/##" maxlength="13" id="PartOfAppl_PreSubmConsRef10"
+                      no-label event-blur="validateBPMEAppConsRefNo(this); checkTemplateValid(this)"
+                      webservice="agencyUrl70">
+                    </cn2-textbox>
+                    <small><span style="color: red;" id="errMsgBPMEAppConsRefNo"></span></small>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Waiver Case Ref No.<br />(If any)</td>
+                  <td>
+                    <cn2-textbox maxlength="12" id="PartOfAppl_WaivCaseRefNo10" uppercase template="WVR/#####/##"
+                      no-label event-blur="validateBPMEAppWaiverRefNo(this); checkTemplateValid(this)"
+                      webservice="agencyUrl80">
+                    </cn2-textbox>
+                    <small><span style="color: red;" id="errMsgBPMEAppWaiverRefNo"></span></small>
+                  </td>
+                </tr>
+                <tr>
+                  <td>QRA Case Ref No.<br />(If any)</td>
+                  <td>
+                    <cn2-textbox uppercase maxlength="13" id="PartOfAppl_QRACaseRefNo10" template="QRA/######/##"
+                      no-label event-blur="checkTemplateValid(this)">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr group-id="subMFullPerm">
+                  <td>
+                    If this is <b>not</b> a full performance-based submission,
+                    then:
+                  </td>
+                  <td></td>
+                </tr>
+                <tr group-id="subMFullPerm">
+                  <td>
+                    Are the fire safety works carried out to an existing
+                    performance-based area or affecting an existing
+                    performance-based design?
+                  </td>
+                  <td>
+                    <cn2-switchbutton switch-id="PartOfAppl_IsWorkOnExistingPBArea10"
+                      data-true="PartOfAppl_IsWorkOnExistingPBArea10" data-false="PartOfAppl_IsWorkOnExistingPBArea20"
+                      data-on="Yes" data-off="No"
+                      event-click="switchButton(this,'PartOfAppl_IsWorkOnExistingPBArea10','PartOfAppl_IsWorkOnExistingPBArea20'); PartOfAppl_IsWorkOnExistingPBArea10(this)"
+                      style="float:right;">
+                    </cn2-switchbutton>
+                    <cn2-checkbox id="PartOfAppl_IsWorkOnExistingPBArea10" hidden></cn2-checkbox>
+                    <cn2-checkbox id="PartOfAppl_IsWorkOnExistingPBArea20" hidden>
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page4">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Plan Fee Computation</h2>
+            <div id="mePlanFee" hidden>
+              <table class="table table-borderless">
+                <thead>
+                  <tr>
+                    <td>Number of storey affected</td>
+                    <td>Plan Fee per storey affected (S$)</td>
+                    <td>Plan Fee Payable (S$)</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <cn2-textbox inline="8" numeric maxlength="3"
+                        event-change="PlanFeeComp_FlooAreaNo10_change(this,'PlanFeeComp_PlanFeePay10')" no-label
+                        id="PlanFeeComp_FlooAreaNo10">
+                      </cn2-textbox>&nbsp;
+                      storey
+                    </td>
+                    <td>
+                      <cn2-textbox inline disabled no-label id="PlanFeeComp_NewPlanFee10">
+                      </cn2-textbox>
+                    </td>
+                    <td>
+                      $
+                      <cn2-textbox disabled id="PlanFeeComp_PlanFeePay10" currency inline="8" no-label maxlength="11">
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="bpPlanFee" hidden>
+              <div class="mls-espro-form-fields row">
+                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <td>Type of work*</td>
+                        <td>Floor Area / No of<br />storey affected</td>
+                        <td>New Plan<br />Fee (S$)</td>
+                        <td>Plan Fee<br />Payable (S$)</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>New fire safety works (SGFA plans contain
+                          any prescribed fire safety measure (refer to item 23 of submission guide)</td>
+                        <td>
+                          <cn2-textbox inline="8" currency maxlength="8"
+                            event-change="PlanFeeComp_NewFireSafeWork_FlooAreaNoOf10_change(this,'PlanFeeComp_NewFireSafeWork_PlanFeePaya10')"
+                            event-input="onlyFloat(this)" no-label id="PlanFeeComp_NewFireSafeWork_FlooAreaNoOf10">
+                          </cn2-textbox>&nbsp;m²
+                        </td>
+                        <td>$160/100 m² or part of</td>
+                        <td>
+                          $&nbsp;<cn2-textbox disabled id="PlanFeeComp_NewFireSafeWork_PlanFeePaya10" currency
+                            inline="8" no-label maxlength="11"></cn2-textbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>New fire safety works (SGFA) – other plans without any prescribed fire safety measure</td>
+                        <td>
+                          <cn2-textbox inline="8" currency maxlength="8"
+                            event-change="PlanFeeComp_NewFireSafeWork_FlooAreaNoOf20_change(this,'PlanFeeComp_NewFireSafeWork_PlanFeePaya20')"
+                            event-input="onlyFloat(this)" no-label id="PlanFeeComp_NewFireSafeWork_FlooAreaNoOf20">
+                          </cn2-textbox>&nbsp;m²
+                        </td>
+                        <td>$100/100 m²</td>
+                        <td>
+                          $&nbsp;<cn2-textbox disabled id="PlanFeeComp_NewFireSafeWork_PlanFeePaya20" numeric inline="8"
+                            no-label maxlength="11"></cn2-textbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Amendment to approved fire safety works</td>
+                        <td>
+                          <cn2-textbox inline="8" numeric maxlength="3"
+                            event-change="PlanFeeComp_Storey_change(this,'PlanFeeComp_AmenToApprFire_PlanFeePaya10')"
+                            event-input="onlyFloat(this)" no-label id="PlanFeeComp_AmenToApprFire_FlooAreaNoOf10">
+                          </cn2-textbox>&nbsp;storey
+                        </td>
+                        <td>$90/storey</td>
+                        <td>
+                          $&nbsp;<cn2-textbox disabled id="PlanFeeComp_AmenToApprFire_PlanFeePaya10" numeric inline="8"
+                            no-label maxlength="11"></cn2-textbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Change of use / Alteration / Additions to existing
+                          fire safety works
+                        </td>
+                        <td>
+                          <cn2-textbox inline="8" numeric maxlength="3"
+                            event-change="PlanFeeComp_Storey_change(this,'PlanFeeComp_ChanOfUseAlte_PlanFeePaya10')"
+                            event-input="onlyFloat(this)" no-label id="PlanFeeComp_ChanOfUseAlte_FlooAreaNoOf10">
+                          </cn2-textbox>&nbsp;storey
+                        </td>
+                        <td>$90/storey</td>
+                        <td>
+                          $&nbsp;<cn2-textbox disabled id="PlanFeeComp_ChanOfUseAlte_PlanFeePaya10" numeric no-label
+                            inline="8" maxlength="11"></cn2-textbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">Others</td>
+                        <td>&nbsp;</td>
+                        <td>
+                          $&nbsp;<cn2-textbox id="PlanFeeComp_Others_PlanFeePaya10" inline="8" currency no-label
+                            maxlength="10" event-input="onlyFloat(this)"
+                            event-change="PlanFeeComp_Others_PlanFeePaya10_change(this)">
+                          </cn2-textbox>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page5">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Payment Mode</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td colspan="2">Total Plan Fee Payable</td>
+                      <td>
+                        $
+                        <cn2-textbox id="PaymMode_Paym10" disabled inline="8" maxlength="12" currency no-label>
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <small>Please make your payment at SCDF e-services</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page6">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Section I Particulars of Applicant</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_FSBAPPL10" no-label data-options="memberDropdown"
+                      event-change="loadDropDownDetails(this); rep(Member_IC_Passport_No_FSBAPPL10_mask); clearUEN('Members_UEN_FSBAPPL10')"
+                      mandatory>
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr hidden nricUnmasked>
+                  <td width="35%">NRIC No./Passport No.</td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_FSBAPPL10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr nricMasked>
+                  <td width="35%">NRIC No./Passport No.</td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_FSBAPPL10_mask" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Designation</td>
+                  <td>
+                    <cn2-textbox id="Member_Designation_FSBAPPL10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Firm Name</td>
+                  <td>
+                    <cn2-textbox id="Member_Firm_Name_FSBAPPL10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">ACRA UEN</td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_FSBAPPL10" no-label template="#########@" maxlength="10"
+                      event-blur="uenValidate(this)">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Address</td>
+                  <td>
+                    <cn2-textarea id="Member_Address_FSBAPPL10" no-label disabled>
+                    </cn2-textarea>
+                    <cn2-textbox id="Member_Address_Type_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Hse_Blk_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Bldg_Name_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Level_No_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Unit_No_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Road_Code_Desc_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Postal_Code_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine1_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine2_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine3_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine4_FSBAPPL10" no-label disabled hidden>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Telephone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_FSBAPPL10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Mobile Phone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Mobile_No_FSBAPPL10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Email Address</td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_FSBAPPL10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Declaration by Applicant*</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td>
+                        I have appointed
+                        <cn2-select no-label inline="3" options="Mr:Mr,Ms:Ms,Er:Er" id="DeclByAppl_IHaveAppoAs10"
+                          event-change="DeclByAppl_IHaveAppoAs10_change(this)" disabled>
+                        </cn2-select>
+                        <cn2-textbox disabled no-label inline="6" id="DeclByAppl_IHaveAppoAs20"
+                          style="margin-left: 10px;">
+                        </cn2-textbox>
+                      </td>
+                      <td width="1%">
+                        <cn2-checkbox id="DeclByAppl_IHaveAppoAs40" mandatory checked
+                          event-change="DeclByAppl_IHaveAppoAs40_change(this); remoMand(this)">
+                        </cn2-checkbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        as the Qualified Person and authorised
+                        <cn2-select disabled no-label inline="3" id="DeclByAppl_IHaveAppoAs30"
+                          event-change="DeclByAppl_IHaveAppoAs30_change(this)" options="him:him,her:her">
+                        </cn2-select>
+                        to act on my behalf.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page7">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Section II Particulars of Qualified Person</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_QP10" no-label data-options="peDropdown"
+                      event-change="loadDropDownDetails(this),Member_Member_Name_QP10_change(this); noObjection(); nricMaskingQP(Member_IC_Passport_No_QP10_mask); clearUEN('Members_UEN_QP10')"
+                      mandatory>
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Role In Project</td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Member_Role_Code_Desc_QP10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr nricUnmasked hidden>
+                  <td>NRIC No./FIN No.</td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_QP10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr nricMasked>
+                  <td>NRIC No./FIN No.</td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_QP10_mask" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Professional_No_QP10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox id="Member_QP_Firm_Name_10" no-label maxlength="64" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ACRA UEN</td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_QP10" no-label template="#########@" maxlength="10"
+                      event-blur="uenValidate(this)">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea id="Member_Address_QP10" no-label disabled>
+                    </cn2-textarea>
+                    <cn2-textbox id="Member_Address_Type_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Hse_Blk_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Bldg_Name_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Level_No_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Unit_No_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Road_Code_Desc_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Postal_Code_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine1_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine2_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine3_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine4_QP10" no-label disabled hidden>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_QP10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mobile Phone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Mobile_No_QP10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_QP10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Confirmation by Qualified Person*</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td>
+                        I, certify that the particulars given in this
+                        form are correct.
+                      </td>
+                      <td>
+                        <cn2-checkbox id="ConfByQualPers_ICertThatThe10" event-click="remoMand(this)" checked mandatory>
+                        </cn2-checkbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td id="qpHide" hidden>
+                        I, certify that for alteration/additions to the
+                        existing system(s) I, have taken into consideration the
+                        additional loads imposed by the proposed works on the
+                        existing building and will consult a Professional
+                        Civil or Structural Engineer if necessary.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        I, being a qualified person, hereby declare that I, have
+                        obtained consent from the owner of this project to
+                        submit plan to SCDF for
+                        approval.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Declaration by Qualified Person (Regulation 3 (c))</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <p>
+                          I, being a qualified person, hereby certify that the
+                          building works and fire safety works as shown on
+                          these plans have been designed in accordance with
+                          the provisions of the Code of Practice for Fire
+                          Precautions in Buildings, including all amendments
+                          applicable up to the date of this submission, the
+                          Fire Safety Act and its Regulations, the relevant
+                          code of practice or designed guidelines, subject to
+                          waivers granted under Section 27 of the Act. *
+                        </p>
+                        <p>
+                          Please Select Year of Fire Code Compliance
+                          <cn2-select id="DeclByQualPers_YearOfFireCodeComp10" inline="3" no-label
+                            options="2013:2013,2018:2018">
+                          </cn2-select>
+                        </p>
+                        <small>
+                          Note: The above QP's declaration(s) shall be
+                          endorsed on every plans.
+                        </small>
+                      </td>
+                      <td width="1%">
+                        <cn2-checkbox id="DeclByQualPers_QPDeclCertWork10" event-click="remoMand(this)" mandatory
+                          checked>
+                        </cn2-checkbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>
+                          I, being a Qualified Person, here by certify that
+                          the proposed&nbsp;
+                          <cn2-textarea id="DeclByQualPers_QPDeclCertSyst_PropSyst10" disabled maxlength="400"
+                            inline="4" no-label></cn2-textarea>&nbsp;
+                          system has been designed in
+                          accordance with the provisions of&nbsp;
+                          <cn2-textarea disabled id="DeclByQualPers_QPDeclCertSyst_Prov10" maxlength="400" inline="4"
+                            no-label>
+                          </cn2-textarea>&nbsp;
+                        </p>
+                        Note: The above QP's declaration(s) shall be endorsed
+                        on every plans
+                      </td>
+                      <td width="1%">
+                        <cn2-checkbox id="DeclByQualPers_QPDeclCertSyst10"
+                          event-change="DeclByQualPers_QPDeclCertSyst10_change(this)" mandatory>
+                        </cn2-checkbox>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page8">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Section III Particulars of Fire Safety Engineer</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_FSE10" no-label data-options="fseDropdown"
+                      event-change="loadDropDownDetails(this),Member_Member_Name_QP10_change(this); noObjection(); notSamePerson(); nricMaskingFSE(Member_IC_Passport_No_FSE10_mask);popUpName2(); popUpName('DeclByAppl_AppoFSE40', 'Member_Member_Name_FSE10', 'DeclByAppl_AppoFSE20'); validateBPMEAppFSE1(MemberRole_FSE_Reg_No_FSE10)"
+                      group="fieldsMand" webservice="agencyUrl10:MemberRole_FSE_Reg_No_FSE10">
+                    </cn2-select><small>
+                      <span id="Member_Member_Name_FSE10_notSame" style="color: red;" hidden>
+                        This field cannot be the same person to "Peer
+                        Reviewer".
+                      </span></small>
+                  </td>
+                </tr>
+                <tr>
+                  <td>FSE Registration No.</td>
+                  <td>
+                    <cn2-textbox id="MemberRole_FSE_Reg_No_FSE10" event-change="validateBPMEAppFSE2(this)" no-label
+                      disabled group="fields" webservice="agencyUrl20:">
+                    </cn2-textbox>
+                    <small>
+                      <span style="color: red;" id="errMsgBPMEAppFSE"></span>
+                    </small>
+                  </td>
+                </tr>
+                <tr nricUnmasked hidden>
+                  <td>NRIC No./Passport No.</td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_FSE10" no-label disabled group="fields">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr nricMasked>
+                  <td>NRIC No./Passport No.</td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_FSE10_mask" no-label disabled group="fields">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox id="Member_FSE_Firm_Name_FSE10" event-blur="notSamePerson()" no-label maxlength="64"
+                      group="fields">
+                    </cn2-textbox><small>
+                      <span id="Member_FSE_Firm_Name_FSE10_notSame" style="color: red;" hidden>
+                        "Peer reviewer and Fire Safety Engineer cannot be from the same company. Please update the "Firm
+                        Name" field accordingly"
+                      </span></small>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ACRA UEN</td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_FSE10" no-label template="#########@" maxlength="10"
+                      event-blur="uenValidate(this)" disabled group="fields">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea id="Member_Address_FSE10" no-label disabled group="fields">
+                    </cn2-textarea>
+                    <cn2-textbox id="Member_Address_Type_FSE10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Hse_Blk_FSE10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Bldg_Name_FSE10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Level_No_FSE10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Unit_No_FSE10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Road_Code_Desc_FSE10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Postal_Code_FSE10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine1_FSE10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine2_FSE10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine3_FSE10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine4_FSE10" no-label disabled hidden>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_FSE10" no-label disabled group="fields">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mobile Phone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Mobile_No_FSE10" no-label disabled group="fields">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_FSE10" no-label disabled group="fields">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Declaration by Applicant*</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>
+                    I have appointed
+                    <cn2-select no-label inline="3" options="Mr:Mr,Ms:Ms,Er:Er" id="DeclByAppl_AppoFSE10"
+                      event-change="DeclByAppl_AppoFSE10_change(this)" disabled group="fields">
+                    </cn2-select>
+                    <cn2-textbox disabled no-label inline="6" id="DeclByAppl_AppoFSE20" style="margin-left: 10px;"
+                      group="fields">
+                    </cn2-textbox>
+                  </td>
+                  <td width="1%">
+                    <cn2-checkbox id="DeclByAppl_AppoFSE40" mandatory checked
+                      event-click="remoMand(this); checkbox_enable_fields(this, [DeclByAppl_AppoFSE10, DeclByAppl_AppoFSE30]); popUpName('DeclByAppl_AppoFSE40', 'Member_Member_Name_FSE10', 'DeclByAppl_AppoFSE20')"
+                      group="checkboxMand">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    as the Fire Safety Engineer and authorised
+                    <cn2-select disabled no-label inline="3" id="DeclByAppl_AppoFSE30"
+                      event-change="DeclByAppl_AppoFSE30_change(this)" options="him:him,her:her" group="fields">
+                    </cn2-select>
+                    to act on my behalf.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+        <div id="page9">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Section IV Particulars of Peer Reviewer</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_PeerRev10" no-label data-options="fse2Dropdown" fse2
+                      event-change="loadDropDownDetails(this),notSamePerson(); nricMaskingFSE(Member_IC_Passport_No_FSE20_mask); popUpName('DeclByPeerRev_CertSolu10', 'Member_Member_Name_PeerRev10', 'DeclByPeerRev_PeerRevName10', 'Member_IC_Passport_No_FSE20_mask', 'DeclByPeerRev_PeerRevNRIC10'); validateBPMEAppFSE2(MemberRole_FSE_Reg_No_FSE20)"
+                      webservice="agencyUrl10:MemberRole_FSE_Reg_No_FSE20">
+                    </cn2-select>
+                    <small>
+                      <span id="Member_Member_Name_PeerRev10_notSame" fse2 style="color: red;" hidden>
+                        This field cannot be the same person to "Fire Safety Engineer".
+                      </span></small>
+                  </td>
+                </tr>
+                <tr>
+                  <td>FSE Registration No.</td>
+                  <td>
+                    <cn2-textbox id="MemberRole_FSE_Reg_No_PeerRev10" event-change="validateBPMEAppFSE2(this);"
+                      webservice="agencyUrl20:" fse2 no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr nricUnmasked hidden>
+                  <td>NRIC No./Passport No.</td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_PeerRev10_mask" fse2 no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr nricMasked>
+                  <td>NRIC No./Passport No.</td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_PeerRev10" fse2 no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox id="Member_FSE_Firm_Name_PeerRev0" fse2 event-blur="notSamePerson()" no-label
+                      maxlength="64">
+                    </cn2-textbox><small>
+                      <span id="Member_FSE_Firm_Name_FSE20_notSame" style="color: red;" hidden>
+                        "Peer reviewer and Fire Safety Engineer cannot be from the same company. Please update the "Firm
+                        Name" field accordingly"
+                      </span></small>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ACRA UEN</td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_PeerRev10" fse2 no-label template="#########@" maxlength="10"
+                      event-blur="uenValidate(this)">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea id="Member_Address_PeerRev10" fse2 no-label disabled>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_PeerRev10" fse2 no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mobile Phone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Mobile_No_PeerRev10" fse2 no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_PeerRev10" fse2 no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Declaration by Applicant*</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>
+                    I have appointed
+                    <cn2-select no-label inline="3" options="Mr:Mr,Ms:Ms,Er:Er" id="DeclByAppl_AppoPeerRev10"
+                      event-change="DeclByAppl_AppoPeerRev10_change(this)" disabled group="fields">
+                    </cn2-select>
+                    <cn2-textbox disabled no-label inline="6" id="DeclByAppl_AppoPeerRev20" style="margin-left: 10px;"
+                      group="fields">
+                    </cn2-textbox>
+                  </td>
+                  <td width="1%">
+                    <cn2-checkbox id="DeclByAppl_AppoPeerRev40"
+                      event-click="remoMand(this); checkbox_enable_fields(this, [DeclByAppl_AppoPeerRev10, DeclByAppl_AppoPeerRev30]); popUpName('DeclByAppl_AppoPeerRev40', 'Member_Member_Name_PeerRev10', 'DeclByAppl_AppoPeerRev20')"
+                      group="checkboxMand">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    as the Peer Reviewer and authorised
+                    <cn2-select disabled no-label inline="3" id="DeclByAppl_AppoPeerRev30"
+                      event-change="DeclByAppl_AppoPeerRev30_change(this)" options="him:him,her:her" group="fields">
+                    </cn2-select>
+                    to act on my behalf.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Confirmation by Fire Safety Engineer*</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>
+                    I, certify that the particulars given in this form are
+                    correct.
+                  </td>
+                  <td>
+                    <cn2-checkbox id="ConfByFSE_particular10" event-click="remoMand(this)" group="checkboxMand">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    I, being a fire safety engineer, hereby declare that I, have
+                    obtain consent from the owner of this project to submit
+                    plan to SCDF for approval.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Declaration by Fire Safety Engineer (Regulation 3 (c))*</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>
+                    I,
+                    <cn2-textbox no-label inline="4" id="DeclByFSE_FSEName10"
+                      event-change="DeclByAppl_IHaveAppoAs10_change(this)" disabled group="fields">
+                    </cn2-textbox>
+                    NRIC No./Passport No.<cn2-textbox disabled no-label inline="5" id="DeclByFSE_FSENRIC10"
+                      group="fields">
+                    </cn2-textbox>,<br />
+                    being a fire safety engineer under the Fire Safety Act,
+                    hereby certify that the alternative solution shown on
+                    these plans, and the fire safety engineering report,
+                    satisfy the fire performance requirements in the Fire
+                    Code, and comply with the provisions of the Fire Safety
+                    Act and any regulations made thereunder, the relevant
+                    codes of practice and design guidelines, subject to any
+                    deviation or modification approved by the Commissioner.
+                  </td>
+                  <td width="1%">
+                    <cn2-checkbox id="DeclByFSE_CertSolu10" group="checkboxMand"
+                      event-change="popUpName('DeclByFSE_CertSolu10', 'Member_Member_Name_FSE10', 'DeclByFSE_FSEName10', 'Member_IC_Passport_No_FSE10_mask', 'DeclByFSE_FSENRIC10');">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Confirmation by Peer Reviewer</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>
+                    I, certify that the particulars given in this form are
+                    correct.*
+                    <br /><br />
+                  </td>
+                  <td width="1%">
+                    <cn2-checkbox id="ConfByPeerRev_particular10" event-click="remoMand(this)" group="checkboxMand">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    I, being a peer reviewer, hereby declare that I have obtain
+                    consent from the owner of this project to submit plan to
+                    Fire Safety and Shelter Department for approval.*
+                  </td>
+                  <td width="1%">
+                    <cn2-checkbox id="ConfByPeerRev_authorisedl10" event-click="remoMand(this)" group="checkboxMand">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Declaration by Peer Reviewer (Regulation 3 (c))*</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>
+                    I,
+                    <cn2-textbox no-label inline="4" id="DeclByPeerRev_PeerRevName10"
+                      event-change="DeclByAppl_IHaveAppoAs10_change(this)" disabled group="fields">
+                    </cn2-textbox>
+                    NRIC No./Passport No.<cn2-textbox disabled no-label inline="5" id="DeclByPeerRev_PeerRevNRIC10"
+                      group="fields">
+                    </cn2-textbox>,<br />
+                    being a peer reviewer under the Fire Safety Act, hereby
+                    certify that the alternative solution
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByPeerRev_CertSolu10"
+                      event-click="popUpName('DeclByPeerRev_CertSolu10', 'Member_Member_Name_PeerRev10', 'DeclByPeerRev_PeerRevName10', 'Member_IC_Passport_No_FSE20_mask', 'DeclByPeerRev_PeerRevNRIC10'); satisfy(this)"
+                      style="float: right;" group="checkboxMand">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    shown on these plans, and the fire safety engineering
+                    report,
+                    <cn2-textbox no-label inline="3" id="DeclByPeerRev_SatiOfEngrRept10" disabled>
+                    </cn2-textbox>, subject to the conditions stated in my peer reviewer’s
+                    report the fire performance requirements in the Fire Code,
+                    and comply with the provisions of the Fire Safety Act and
+                    any regulations made thereunder, the relevant codes of
+                    practice and design guidelines, subject to any deviation
+                    or modification approved by the Commissioner.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page10">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Submission Checklists</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>The following are attached:</td>
+                </tr>
+                <tr>
+                  <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp; 1. Building Plans*
+                  </td>
+                  <td>
+                    <cn2-checkbox mandatory checked id="SubmChec_BuilPlan10" event-click="remoMand(this)"
+                      style="float:right;">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    &nbsp;&nbsp;&nbsp;&nbsp; 2. Calculations
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_Calc10" style="float:right;">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="SubmChec_A1_label">3. Others, Please
+                      specify</span><br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <cn2-button label=" Add" cn2-array-group="otherForm" cn2-array-group-id="SubmChec"
+                      cn2-array-group-enabled
+                      event-click="insertDuplicate('otherForm','A1');addSetDisabled('otherForm'); disableDelete('otherForm', '.delete1')">
+                    </cn2-button>
+                  </td>
+                  <td>
+                    <div id="otherForm">
+                      <div id="A1">
+                        <div class="mls-espro-form-fields row pt-2">
+                          <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                            <table class="table table-borderless">
+                              <tbody>
+                                <tr>
+                                  <td width="89%" style="padding-left: 0%;">
+                                    <cn2-textarea maxlength="255" prefix="SubmChec_A" disabled id="SubmChec_A1"
+                                      no-label>
+                                    </cn2-textarea>
+                                  </td>
+                                  <td width="1%">
+                                    <cn2-checkbox id="SubmChec_B1" event-change="SubmChec_change(this)"
+                                      prefix="SubmChec_B" group="othersCheck">
+                                    </cn2-checkbox>
+                                  </td>
+                                  <td width="10%">
+                                    <cn2-button label="Delete" danger id="delete1" class="delete1" prefix="delete"
+                                      disabled
+                                      event-click="removeDuplicate(this.id,'A1','otherForm'); disableDelete('otherForm', '.delete1'); otherLabel()">
+                                    </cn2-button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr group-id="fullBasedPerformance" hidden>
+                  <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span id="SubmChec_FireEngrDesiBrief10_label">
+                      4. Approved Fire Engineering Design Brief</span>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_FireEngrDesiBrief10" event-change="remoMand(this)" style="float:right;"
+                      disabled>
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr group-id="fullBasedPerformance" hidden>
+                  <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span id="SubmChec_FireSafeEngrRept10_label">
+                      5. Fire Safety Engineering Report</span>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_FireSafeEngrRept10" event-change="remoMand(this)" style="float:right;"
+                      disabled>
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr group-id="fullBasedPerformance" hidden>
+                  <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span id="SubmChec_OpsAndMainManu10_label">
+                      6. Operations and Maintenance Manual</span>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_OpsAndMainManu10" event-change="remoMand(this)" style="float:right;"
+                      disabled>
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr group-id="fullBasedPerformance" hidden>
+                  <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7. Fire/Evacuation
+                    simulation source codes
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_FireEvacSimuScouCode10" disabled style="float:right;">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr group-id="fullBasedPerformance" hidden>
+                  <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span id="SubmChec_PeerReviRept10_label">
+                      8. Peer Reviewer Report</span>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_PeerReviRept10" event-change="remoMand(this)" style="float:right;"
+                      disabled>
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr group-id="nonPerformance" hidden>
+                  <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span id="SubmChec_LettOfNOObje10_label">4. Letter of No Objection*</span>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_LettOfNOObje10"
+                      event-change="remoMand(this); SubmChec_LettOfNOObje10_change(this)" style="float:right;">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr group-id="nonPerformance2" hidden>
+                  <td>
+                    <br /><strong><u><span id="SubmChec_NameOfPersEndoLettOfNOObje10_label">
+                          Qualified Person / Fire Safety Engineer endorsing
+                          the Letter of No Objection
+                        </span></u></strong>
+                  </td>
+                </tr>
+                <tr group-id="nonPerformance2" hidden>
+                  <td>
+                    <cn2-select id="SubmChec_NameOfPersEndoLettOfNOObje10" disabled no-label inline="7">
+                    </cn2-select><br /><br />
+                  </td>
+                </tr>
+                <tr group-id="nonPerformance2" hidden>
+                  <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="label4">5.</span><span id="SubmChec_SuppAsseRept10_label">
+                      Supporting
+                      Assessment Report</span>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_SuppAsseRept10" disabled
+                      event-change="remoMand(this); SubmChec_SuppAsseRept10_change(this)" style="float:right;">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr group-id="nonPerformance3" hidden>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="label5">6.</span>
+                    Fire/Evacuation simulation source codes to support
+                    the Assessment Report
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_FireEvacSimuScouCode_AsseRept10" disabled style="float:right;">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page11">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <div id="subBPlan" hidden>
+              <h2>SCDF Submission Guide for Building Plan</h2>
+              <ol>
+                <li style="padding-bottom: 25px;">
+                  For the code requirements which have not been complied with
+                  or which need modification/waiver, the applications for
+                  modification or waiver of the requirements under Section 27
+                  of the Act shall be submitted and approval granted before
+                  submission of plans.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  The QP has to state clearly on the application form the SCDF
+                  reference nos. of all related applications for the same
+                  project.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  All plans are to be drawn to standard metric scale.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  Scale of each drawing is to be stated clearly on plans.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  All plans are to be drawn on sheets of the international "A"
+                  series and all drawings are of same standard size.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  Indicate clearly waiver approved location and quote the
+                  waiver reference number on plan
+                </li>
+                <li style="padding-bottom: 25px;">
+                  Site and key plans are to be duly coloured.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  Suitable sectional views incorporating the proposed system
+                  shall be provided.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  All floor plans and sectional views are to be complete with
+                  adequate location gridlines.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  All amendment and addition/alteration works are to be shown
+                  coloured except existing works.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  No of persons provided with means of escape is to be
+                  indicated below each floor plan description.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  Activities / usages of all rooms/areas/compartments are to
+                  be indicated on floor plan.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  Type of fire protection systems to be provided shall be
+                  indicated below each floor plan heading.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  Proposed change of use, if any, shall be specified clearly
+                  in the project title.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  A complete legend of symbols, abbreviations and/or colour
+                  scheme of fire doors & fire protection installations shall
+                  be provided on plans. All pasted portions are to be
+                  cross-signed by the QP.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  Provision of fire engine accessibility in accordance with
+                  current Fire Code has to be provided and shown on site plan.
+                  Designated driveways/access roads to withstand the operating
+                  load of fire engine appliances are to be hatched on plan.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  Fire resistance rating of fire doors, compartment
+                  walls/floors and elements of structure in accordance with
+                  the current Fire Code shall be indicated on plan.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  Calculations on the designed occupancy load and exit
+                  requirement <u>per storey</u> in FSSB-0-FSPBP02 are to be submitted
+                  (if applicable). These calculations are required even though
+                  the plan submission is for
+                  <u>a small part of the storey.</u>
+                </li>
+                <li style="padding-bottom: 25px;">
+                  Position of external hydrant/s along public roads in the
+                  vicinity of the subject site & additional provision of
+                  internal hydrant/s, if any, within the subject site shall be
+                  indicated on site plan.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  Position of breeching inlet/s, wet/dry riser outlets &
+                  hydraulic hose reels, whichever is applicable, shall be
+                  indicated in red on floor plan.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  Detail calculations of the unprotected openings on
+                  elevations shall be submitted on FSSB-0-FSPBP02.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  <strong>Fire Safety Report, Fire Safety Instruction Manual
+                    and any other reports (sprinkler hydraulic, engineering smoke control
+                    calculations etc.) shall be submitted to SCDF, if required</strong>
+                </li>
+                <li style="padding-bottom: 25px;">
+                  Applicable to plans that contain any prescribed fire safety measure, where prescribed fire safety
+                  measure means - <br><br>
+                  <table class="table table-borderless">
+                    <tbody>
+                      <tr>
+                        <td width="1%"
+                          style="padding-left: 0px; padding-right: 15px; padding-bottom: 5px; padding-top: 5px;">
+                          (a)
+                        </td>
+                        <td style="padding-left: 0px; padding-right: 15px; padding-bottom: 5px; padding-top: 5px;">
+                          an area of refuge;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="1%"
+                          style="padding-left: 0px; padding-right: 15px; padding-bottom: 5px; padding-top: 5px;">
+                          (b)
+                        </td>
+                        <td style="padding-left: 0px; padding-right: 15px; padding-bottom: 5px; padding-top: 5px;">
+                          an automatic fire alarm system;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="1%"
+                          style="padding-left: 0px; padding-right: 15px; padding-bottom: 5px; padding-top: 5px;">
+                          (c)
+                        </td>
+                        <td style="padding-left: 0px; padding-right: 15px; padding-bottom: 5px; padding-top: 5px;">
+                          an emergency voice communication system;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="1%"
+                          style="padding-left: 0px; padding-right: 15px; padding-bottom: 5px; padding-top: 5px;">
+                          (d)
+                        </td>
+                        <td style="padding-left: 0px; padding-right: 15px; padding-bottom: 5px; padding-top: 5px;">
+                          a Fire Command Centre;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="1%"
+                          style="padding-left: 0px; padding-right: 15px; padding-bottom: 5px; padding-top: 5px;">
+                          (e)
+                        </td>
+                        <td style="padding-left: 0px; padding-right: 15px; padding-bottom: 5px; padding-top: 5px;">
+                          a fire lift or fire escape bed lift;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="1%"
+                          style="padding-left: 0px; padding-right: 15px; padding-bottom: 5px; padding-top: 5px;">
+                          (f)
+                        </td>
+                        <td style="padding-left: 0px; padding-right: 15px; padding-bottom: 5px; padding-top: 5px;">
+                          a fire sprinkler or water mist system;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="1%"
+                          style="padding-left: 0px; padding-right: 15px; padding-bottom: 5px; padding-top: 5px;">
+                          (g)
+                        </td>
+                        <td style="padding-left: 0px; padding-right: 15px; padding-bottom: 5px; padding-top: 5px;">
+                          a pressurisation system;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="1%"
+                          style="padding-left: 0px; padding-right: 15px; padding-bottom: 5px; padding-top: 5px;">
+                          (h)
+                        </td>
+                        <td style="padding-left: 0px; padding-right: 15px; padding-bottom: 5px; padding-top: 5px;">
+                          a rising main or breeching inlet;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="1%"
+                          style="padding-left: 0px; padding-right: 15px; padding-bottom: 5px; padding-top: 5px;">
+                          (i)
+                        </td>
+                        <td style="padding-left: 0px; padding-right: 15px; padding-bottom: 5px; padding-top: 5px;">
+                          a smoke control system; or
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="1%"
+                          style="padding-left: 0px; padding-right: 15px; padding-bottom: 5px; padding-top: 5px;">
+                          (j)
+                        </td>
+                        <td style="padding-left: 0px; padding-right: 15px; padding-bottom: 5px; padding-top: 5px;">
+                          a smoke-free approach to exit staircase or smoke-free lobby.
+                        </td>
+                      </tr>
+                    <tbody>
+                  </table>
+                </li>
+              </ol>
+            </div>
+
+            <div id="subFMPlan" hidden>
+              <h2>
+                SCDF Submission Guide for Fire Protection and
+                Air-Conditioning/ Mechanical Ventilation Plan
+              </h2>
+              <ol>
+                <li style="padding-bottom: 25px;">
+                  As for the code requirements which have not been complied
+                  with or which need modification/waiver, the applications for
+                  modification or waiver of the requirements under Section 27
+                  have to be submitted and approval granted before submission
+                  of plans.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  For engineered smoke control system, the PE has to certify
+                  on all plans that the proposed smoke control system has been
+                  designed in accordance with the provisions of the accepted
+                  codes/guidelines (please state the codes/ guidelines used).
+                </li>
+                <li style="padding-bottom: 25px;">
+                  The PE has to state clearly on the application form the SCDF
+                  reference nos. of all related applications for the same
+                  project.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  All requirements in the related BP have to be incorporated
+                  in this submission.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  All plans are to be drawn to standard metric scale.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  Indicate clearly waiver approved location and quote the
+                  waiver reference number on plan.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  Scale of each drawing is to be stated clearly on plans.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  All plans are to be drawn on sheets of the international "A"
+                  series and all drawings are of same standard size.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  Site and key plans are to be duly coloured.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  Suitable sectional views incorporating the proposed system
+                  shall be provided.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  All floor plans and sectional views are to be complete with
+                  adequate location gridlines.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  Project title is to be correctly given on all plans to
+                  reflect the actual intention of the submission.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  A complete legend of all symbols, abbreviations and colour
+                  scheme/patterns shall be provided on plans.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  For alterations and additions submission, areas for
+                  submission shall be edged out clearly on floor plans.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  All new installations under this submission shall be fully
+                  presented in distinctive colour scheme or patterns.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  All existing/previously approved installations to be deleted
+                  shall be shown in yellow dotted lines only.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  All existing/previously approved installations to be
+                  retained shall be outlined in neutral tints of grey or
+                  black.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  All intermediate broken-off points in the proposed
+                  installation layout run shall be identified with their
+                  continuity links.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  Calculations and reports where applicable shall be
+                  submitted.
+                </li>
+                <span>
+                  The following items are applicable to air-conditioning and
+                  mechanical ventilation system plans only: </span><br /><br />
+                <li style="padding-bottom: 25px;">
+                  All the fire compartment walls shall be clearly edged out on
+                  the floor plans with colour scheme included in the legend.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  The installation air volume capacity of all respective fans
+                  and other air handling equipment shall be specified on
+                  plans.
+                </li>
+                <li style="padding-bottom: 25px;">
+                  Schematic air distribution line diagram for the proposed
+                  system shall be provided.
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-version-footer></cn2-version-footer>
+    <cn2-fixed-footer></cn2-fixed-footer>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,439 @@
+{
+  "form__name": "URA-FDALGCU",
+  "form__last_update_date": "",
+  "form__create_date": "",
+  "form__version": "1.0",
+  "Date10": "",
+  "Addr20": "Urban Redevelopment Authority (URA)\n45 Maxwell Road,\nThe URA Centre,\nSingapore 069118\nWebsite : http://www.ura.gov.sg",
+  "PartOfAppl_ApplTp10": "Change of Use (excluding Conserved Buildings outside Historic Districts & Residential Historic Districts)",
+  "PartOfAppl_LodgTp10": "Lodgement for Change of Use",
+  "PartOfAppl_SubmTp10": "New Submission (for fresh submission and fresh amendment submission to Written Permission)",
+  "MkTs_MkTs_Mk10": false,
+  "MkTs_MkTs_Ts10": false,
+  "MkTs_MkTsNo10": "",
+  "MkTs_LotNo10": "",
+  "MkTs_PartLotInd_Yes10": false,
+  "MkTs_PartLotInd_No10": false,
+  "SiteAddr_LodgCate10": "",
+  "SiteAddr_LodgCate": [
+    {
+      "SiteAddr_LodgCate10": "Approved Agriculture Development"
+    },
+    {
+      "SiteAddr_LodgCate10": "Approved Commercial Premises in Business Park"
+    },
+    {
+      "SiteAddr_LodgCate10": "Commercial Building"
+    },
+    {
+      "SiteAddr_LodgCate10": "Community Centre"
+    },
+    {
+      "SiteAddr_LodgCate10": "Shop Houses"
+    },
+    {
+      "SiteAddr_LodgCate10": "Childcare Centre, Kindergarten and Student Care Centre"
+    }
+  ],
+  "SiteAddr_DevTp10": "",
+  "SiteAddr_HseBlkNo10": "",
+  "SiteAddr_RoadNm10": "",
+  "SiteAddr_RoadNm": [
+    {
+      "SiteAddr_RoadNm10": ""
+    }
+  ],
+  "SiteAddr_BldgNm10": "",
+  "SiteAddr_Unit_Floor10": "",
+  "SiteAddr_Unit_Unit10": "",
+  "SiteAddr_PostCd10": "",
+  "SiteAddr_IsTheBldgWithPedeLink_Yes10": "",
+  "SiteAddr_IsTheBldgWithPedeLink_No10": "",
+  "SiteAddr_PropUse10": "",
+  "SiteAddr_PropUse_Others10": "",
+  "SiteAddr_PpsdUse_Gfa10": "",
+  "SiteAddr_TotaPpsdUseGfa10": "",
+  "PersAndOrg_Role10": "",
+  "PersAndOrg_Name10": "",
+  "PersAndOrg_FirmNm10": "",
+  "PersAndOrg_QpRegNo10": "",
+  "PersAndOrg_Format10": false,
+  "PersAndOrg_Unformat10": false,
+  "PersAndOrg_HseBlkNo10": "",
+  "PersAndOrg_RoadNm10": "",
+  "PersAndOrg_Unit_Floor10": "",
+  "PersAndOrg_Unit_Unit10": "",
+  "PersAndOrg_PostCd10": "",
+  "PersAndOrg_UnFoL110": "",
+  "PersAndOrg_UnFoL210": "",
+  "PersAndOrg_UnFoL310": "",
+  "PersAndOrg_UnFoL410": "",
+  "PersAndOrg_UnFoL510": "",
+  "PersAndOrg_Email10": "",
+  "PersAndOrg_Tel_No10": "",
+  "PersAndOrg_Extension10": "",
+  "PersAndOrg_Mobile_No10": "",
+  "ContDtls_Name10_10": "",
+  "ContDtls_Email10_10": "",
+  "ContDtls_Tel_No10_10": "",
+  "ContDtls_Extension10_10": "",
+  "ContDtls_Mobile_No10_10": "",
+  "SubmInfo_IsPropGovtDept_Or_MiniProj_Yes10": false,
+  "SubmInfo_IsPropGovtDept_Or_MiniProj_No10": false,
+  "SubmInfo_DateOfLeasExpi10": "",
+  "SubmInfo_AlrdyBeenBuilorCarrOut_Yes10": false,
+  "SubmInfo_AlrdyBeenBuilorCarrOut_No10": false,
+  "SubmInfo_PropDesc10": "LODGMENT FOR PROPOSED USE OF THE #-STOREY UNIT #? OF THE #-STOREY BUILDING FROM? TO?",
+  "DeclLodgForChan_SignBy10": "",
+  "Member_Member_SID_QP10": "",
+  "persAndOrgsDropdownDEVP": [
+    {
+      "Member_Member_SID_DEVP": "",
+      "Member_Member_Name_DEVP": "",
+      "Member_Road_Code_Desc_DEVP": "",
+      "Member_Postal_Code_DEVP": "",
+      "Member_Address1_DEVP": "",
+      "Member_Firm_Name_DEVP": "",
+      "MemberRole_Professional_No_DEVP": "",
+      "Member_House_Block_No_DEVP": "",
+      "Member_Unit_Floor_DEVP": "",
+      "Member_Unit_No_DEVP": "",
+      "Member_Address2_DEVP": "",
+      "Member_Address3_DEVP": "",
+      "Member_Address4_DEVP": "",
+      "Member_Email_Address_DEVP": "",
+      "Member_Tel_No_DEVP": "",
+      "Member_Tel_Ext_No_DEVP": "",
+      "Member_Hand_No_DEVP": "",
+      "Member_Cont_Member_Name_DEVP": "",
+      "Member_Cont_Email_Address_DEVP": "",
+      "Member_Cont_Tel_No_DEVP": "",
+      "Member_Cont_Tel_Ext_No_DEVP": "",
+      "Member_Cont_Hand_No_DEVP": ""
+    }
+  ],
+  "persAndOrgsDropdownOWN": [
+    {
+      "Member_Member_SID_OWN": "",
+      "Member_Member_Name_OWN": "",
+      "Member_Road_Code_Desc_OWN": "",
+      "Member_Postal_Code_OWN": "",
+      "Member_Address1_OWN": "",
+      "Member_Firm_Name_OWN": "",
+      "MemberRole_Professional_No_OWN": "",
+      "Member_House_Block_No_OWN": "",
+      "Member_Unit_Floor_OWN": "",
+      "Member_Unit_No_OWN": "",
+      "Member_Address2_OWN": "",
+      "Member_Address3_OWN": "",
+      "Member_Address4_OWN": "",
+      "Member_Email_Address_OWN": "",
+      "Member_Tel_No_OWN": "",
+      "Member_Tel_Ext_No_OWN": "",
+      "Member_Hand_No_OWN": "",
+      "Member_Cont_Member_Name_OWN": "",
+      "Member_Cont_Email_Address_OWN": "",
+      "Member_Cont_Tel_No_OWN": "",
+      "Member_Cont_Tel_Ext_No_OWN": "",
+      "Member_Cont_Hand_No_OWN": ""
+    }
+  ],
+  "persAndOrgsDropdownARCH": [
+    {
+      "Member_Member_SID_OWN": "",
+      "Member_Member_Name_ARCH": "",
+      "Member_Road_Code_Desc_ARCH": "",
+      "Member_Postal_Code_ARCH": "",
+      "Member_Address1_ARCH": "",
+      "Member_Firm_Name_ARCH": "",
+      "MemberRole_Professional_No_ARCH": "",
+      "Member_House_Block_No_ARCH": "",
+      "Member_Unit_Floor_ARCH": "",
+      "Member_Unit_No_ARCH": "",
+      "Member_Address2_ARCH": "",
+      "Member_Address3_ARCH": "",
+      "Member_Address4_ARCH": "",
+      "Member_Email_Address_ARCH": "",
+      "Member_Tel_No_ARCH": "",
+      "Member_Tel_Ext_No_ARCH": "",
+      "Member_Hand_No_ARCH": "",
+      "Member_Cont_Member_Name_ARCH": "",
+      "Member_Cont_Email_Address_ARCH": "",
+      "Member_Cont_Tel_No_ARCH": "",
+      "Member_Cont_Tel_Ext_No_ARCH": "",
+      "Member_Cont_Hand_No_ARCH": ""
+    }
+  ],
+  "persAndOrgsDropdownPE": [
+    {
+      "Member_Member_SID_PE": "",
+      "Member_Member_Name_PE": "",
+      "Member_Road_Code_Desc_PE": "",
+      "Member_Postal_Code_PE": "",
+      "Member_Address1_PE": "",
+      "Member_Firm_Name_PE": "",
+      "MemberRole_Professional_No_PE": "",
+      "Member_House_Block_No_PE": "",
+      "Member_Unit_Floor_PE": "",
+      "Member_Unit_No_PE": "",
+      "Member_Address2_PE": "",
+      "Member_Address3_PE": "",
+      "Member_Address4_PE": "",
+      "Member_Email_Address_PE": "",
+      "Member_Tel_No_PE": "",
+      "Member_Tel_Ext_No_PE": "",
+      "Member_Hand_No_PE": "",
+      "Member_Cont_Member_Name_PE": "",
+      "Member_Cont_Email_Address_PE": "",
+      "Member_Cont_Tel_No_PE": "",
+      "Member_Cont_Tel_Ext_No_PE": "",
+      "Member_Cont_Hand_No_PE": ""
+    }
+  ],
+  "persAndOrgsDropdownLESSEE": [
+    {
+      "Member_Member_SID_LESSEE": "",
+      "Member_Member_Name_LESSEE": "",
+      "Member_Road_Code_Desc_LESSEE": "",
+      "Member_Postal_Code_LESSEE": "",
+      "Member_Address1_LESSEE": "",
+      "Member_Firm_Name_LESSEE": "",
+      "MemberRole_Professional_No_LESSEE": "",
+      "Member_House_Block_No_LESSEE": "",
+      "Member_Unit_Floor_LESSEE": "",
+      "Member_Unit_No_LESSEE": "",
+      "Member_Address2_LESSEE": "",
+      "Member_Address3_LESSEE": "",
+      "Member_Address4_LESSEE": "",
+      "Member_Email_Address_LESSEE": "",
+      "Member_Tel_No_LESSEE": "",
+      "Member_Tel_Ext_No_LESSEE": "",
+      "Member_Hand_No_LESSEE": "",
+      "Member_Cont_Member_Name_LESSEE": "",
+      "Member_Cont_Email_Address_LESSEE": "",
+      "Member_Cont_Tel_No_LESSEE": "",
+      "Member_Cont_Tel_Ext_No_LESSEE": "",
+      "Member_Cont_Hand_No_LESSEE": ""
+    }
+  ],
+  "persAndOrgsDropdownMCST": [
+    {
+      "Member_Member_SID_MCST": "",
+      "Member_Member_Name_MCST": "",
+      "Member_Road_Code_Desc_MCST": "",
+      "Member_Postal_Code_MCST": "",
+      "Member_Address1_MCST": "",
+      "Member_Firm_Name_MCST": "",
+      "MemberRole_Professional_No_MCST": "",
+      "Member_House_Block_No_MCST": "",
+      "Member_Unit_Floor_MCST": "",
+      "Member_Unit_No_MCST": "",
+      "Member_Address2_MCST": "",
+      "Member_Address3_MCST": "",
+      "Member_Address4_MCST": "",
+      "Member_Email_Address_MCST": "",
+      "Member_Tel_No_MCST": "",
+      "Member_Tel_Ext_No_MCST": "",
+      "Member_Hand_No_MCST": "",
+      "Member_Cont_Member_Name_MCST": "",
+      "Member_Cont_Email_Address_MCST": "",
+      "Member_Cont_Tel_No_MCST": "",
+      "Member_Cont_Tel_Ext_No_MCST": "",
+      "Member_Cont_Hand_No_MCST": ""
+    }
+  ],
+  "persAndOrgsDropdownPP": [
+    {
+      "Member_Member_SID_PP": "",
+      "Member_Member_Name_PP": "",
+      "Member_Road_Code_Desc_PP": "",
+      "Member_Postal_Code_PP": "",
+      "Member_Address1_PP": "",
+      "Member_Firm_Name_PP": "",
+      "MemberRole_Professional_No_PP": "",
+      "Member_House_Block_No_PP": "",
+      "Member_Unit_Floor_PP": "",
+      "Member_Unit_No_PP": "",
+      "Member_Address2_PP": "",
+      "Member_Address3_PP": "",
+      "Member_Address4_PP": "",
+      "Member_Email_Address_PP": "",
+      "Member_Tel_No_PP": "",
+      "Member_Tel_Ext_No_PP": "",
+      "Member_Hand_No_PP": "",
+      "Member_Cont_Member_Name_PP": "",
+      "Member_Cont_Email_Address_PP": "",
+      "Member_Cont_Tel_No_PP": "",
+      "Member_Cont_Tel_Ext_No_PP": "",
+      "Member_Cont_Hand_No_PP": ""
+    }
+  ],
+  "persAndOrgsDropdownRLS": [
+    {
+      "Member_Member_SID_RLS": "",
+      "Member_Member_Name_RLS": "",
+      "Member_Road_Code_Desc_RLS": "",
+      "Member_Postal_Code_RLS": "",
+      "Member_Address1_RLS": "",
+      "Member_Firm_Name_RLS": "",
+      "MemberRole_Professional_No_RLS": "",
+      "Member_House_Block_No_RLS": "",
+      "Member_Unit_Floor_RLS": "",
+      "Member_Unit_No_RLS": "",
+      "Member_Address2_RLS": "",
+      "Member_Address3_RLS": "",
+      "Member_Address4_RLS": "",
+      "Member_Email_Address_RLS": "",
+      "Member_Tel_No_RLS": "",
+      "Member_Tel_Ext_No_RLS": "",
+      "Member_Hand_No_RLS": "",
+      "Member_Cont_Member_Name_RLS": "",
+      "Member_Cont_Email_Address_RLS": "",
+      "Member_Cont_Tel_No_RLS": "",
+      "Member_Cont_Tel_Ext_No_RLS": "",
+      "Member_Cont_Hand_No_RLS": ""
+    }
+  ],
+  "persAndOrgsDropdownTENANT": [
+    {
+      "Member_Member_SID_TENANT": "",
+      "Member_Member_Name_TENANT": "",
+      "Member_Road_Code_Desc_TENANT": "",
+      "Member_Postal_Code_TENANT": "",
+      "Member_Address1_TENANT": "",
+      "Member_Firm_Name_TENANT": "",
+      "MemberRole_Professional_No_TENANT": "",
+      "Member_House_Block_No_TENANT": "",
+      "Member_Unit_Floor_TENANT": "",
+      "Member_Unit_No_TENANT": "",
+      "Member_Address2_TENANT": "",
+      "Member_Address3_TENANT": "",
+      "Member_Address4_TENANT": "",
+      "Member_Email_Address_TENANT": "",
+      "Member_Tel_No_TENANT": "",
+      "Member_Tel_Ext_No_TENANT": "",
+      "Member_Hand_No_TENANT": "",
+      "Member_Cont_Member_Name_TENANT": "",
+      "Member_Cont_Email_Address_TENANT": "",
+      "Member_Cont_Tel_No_TENANT": "",
+      "Member_Cont_Tel_Ext_No_TENANT": "",
+      "Member_Cont_Hand_No_TENANT": ""
+    }
+  ],
+  "persAndOrgsDropdownQP": [
+    {
+      "Member_Member_SID_QP": "",
+      "Member_Member_Name_QP": "",
+      "Member_Road_Code_Desc_QP": "",
+      "Member_Postal_Code_QP": "",
+      "Member_Address1_QP": "",
+      "Member_Firm_Name_QP": "",
+      "MemberRole_Professional_No_QP": "",
+      "Member_House_Block_No_QP": "",
+      "Member_Unit_Floor_QP": "",
+      "Member_Unit_No_QP": "",
+      "Member_Address2_QP": "",
+      "Member_Address3_QP": "",
+      "Member_Address4_QP": "",
+      "Member_Email_Address_QP": "",
+      "Member_Tel_No_QP": "",
+      "Member_Tel_Ext_No_QP": "",
+      "Member_Hand_No_QP": "",
+      "Member_Cont_Member_Name_QP": "",
+      "Member_Cont_Email_Address_QP": "",
+      "Member_Cont_Tel_No_QP": "",
+      "Member_Cont_Tel_Ext_No_QP": "",
+      "Member_Cont_Hand_No_QP": ""
+    }
+  ],
+  "roadNameDropdownDEVP": [
+    {
+      "Member_Road_Code_Desc_DEVP10": ""
+    }
+  ],
+  "roadNameDropdownOWN": [
+    {
+      "Member_Road_Code_Desc_OWN10": ""
+    }
+  ],
+  "roadNameDropdownARCH": [
+    {
+      "Member_Road_Code_Desc_ARCH10": ""
+    }
+  ],
+  "roadNameDropdownPE": [
+    {
+      "Member_Road_Code_Desc_PE10": ""
+    }
+  ],
+  "roadNameDropdownLESSEE": [
+    {
+      "Member_Road_Code_Desc_LESSEE10": ""
+    }
+  ],
+  "roadNameDropdownMCST": [
+    {
+      "Member_Road_Code_Desc_MCST10": ""
+    }
+  ],
+  "roadNameDropdownPP": [
+    {
+      "Member_Road_Code_Desc_PP10": ""
+    }
+  ],
+  "roadNameDropdownRLS": [
+    {
+      "Member_Road_Code_Desc_RLS10": ""
+    }
+  ],
+  "roadNameDropdownTENANT": [
+    {
+      "Member_Road_Code_Desc_TENANT10": ""
+    }
+  ],
+  "roadNameDropdownQP": [
+    {
+      "Member_Road_Code_Desc_QP10": ""
+    }
+  ],
+  "roadNameDropdownOTH": [
+    {
+      "Member_Road_Code_Desc_OTH10": ""
+    }
+  ],
+  "agencyURL10": {
+    "url": "https://www.ura.gov.sg:443/corenet2DS/forms/rest/getCULodgementRoadName",
+    "params": "",
+    "body": {
+      "category_code": ""
+    }
+  },
+  "agencyURL20": {
+    "url": "https://www.ura.gov.sg:443/corenet2DS/forms/rest/getCULodgementBldgName",
+    "params": "",
+    "body": {
+      "category_code": "",
+      "road_name": ""
+    }
+  },
+  "agencyURL30": {
+    "url": "https://www.ura.gov.sg:443/corenet2DS/forms/rest/getCULodgementHouseBlkNo",
+    "params": "",
+    "body": {
+      "category_code": "",
+      "road_name": "",
+      "building_name": ""
+    }
+  },
+  "agencyURL40": {
+    "url": "https://www.ura.gov.sg:443/corenet2DS/forms/rest/validateLotNo",
+    "params": "",
+    "body": [
+      {
+        "mkts_ind": "",
+        "mkts_no": "",
+        "lot_no": ""
+      }
+    ]
+  }
+}

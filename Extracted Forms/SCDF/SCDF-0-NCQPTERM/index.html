@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <title>SCDF-0-NCQPTERM</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2standardfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head id="mastHead" title="NOTICE OF QP/FSE/PEER REVIEWER" style="margin-top: 20px; width: 180px;">
+  </cn2-master-head>
+  <input type="hidden" id="member_id" name="member_id" />
+  <input type="hidden" id="form_validated" name="form_validated" />
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p><b>For enquiries related to forms, please contact the following:</b></p>
+        <p> <span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SCDF</td>
+                <td>TAN_Chung_Yee@scdf.gov.sg</td>
+                <td>68481457</td>
+                <td>Submissions</td>
+              </tr>
+              <tr>
+                <td>SCDF</td>
+                <td>&nbsp;</td>
+                <td>62800000</td>
+                <td>E-Payment / Status Of Application</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">OK</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions" selected></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Project">
+        </cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars of Application">
+        </cn2-nav-button>
+        <cn2-nav-button id="partDeclAppl" target="page4" page-number="4" label="Particulars of Applicant">
+        </cn2-nav-button>
+        <cn2-nav-button id="tqpNav" target="page5" page-number="5" hidden
+          label="Particulars of Terminated Qualified Person/Fire Safety Engineer/Peer Reviewer">
+        </cn2-nav-button>
+        <cn2-nav-button id="tqpNav2" target="page6" page-number="6" hidden
+          label="Particulars of Appointed Qualified Person/Fire Safety Engineer/Peer Reviewer">
+        </cn2-nav-button>
+      </div>
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" no-label inline="6" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To:</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-select options="FSSB:FSSB" id="Addr10" disabled hidden></cn2-select>
+                        <cn2-textarea no-label inline="6" id="Addr20" style="overflow:auto;resize:none" disabled>
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>
+                This form is to be digitally signed by the appointed Qualified Person responsible for
+                the project(s).
+              </li>
+              <li>It may take you 2 minutes to complete this form</li>
+              <li>
+                Confirmation By QP/FSE/Peer Reviewer need not be filled up if the QP/FSE/Peer Reviewer
+                is deceased.
+                However, Death Certificate shall be provided.
+              </li>
+              <li>
+                Note: The Authorisation Letter ‘SCDF-0-AUTHL-CQP’ shall be submitted for Appointment of
+                QP/FSE/Peer
+                Reviewer
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container">
+            <h2>Particulars of Project</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Project Reference Number*</td>
+                  <td>
+                    <cn2-textbox id="Project_Project_Ref_No10" mandatory disabled no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Project Title</td>
+                  <td>
+                    <cn2-textarea id="Project_Title10" disabled no-label>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Location Description[Include Lot/Plot, MK/TS, House Number,
+                    Building Address and Road information]
+                  </td>
+                  <td>
+                    <cn2-textarea id="Project_Location_Description10" disabled no-label>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container">
+            <h2>Particulars of Application</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Description of Fire Safety Work*
+                    <br>
+                    <small>
+                      Note: This full title for submission will be the project title indicated on our
+                      letters.
+                    </small>
+                  </td>
+                  <td>
+                    <cn2-textarea id="PartOfAppl_DescOfFireSafe10" mandatory no-label>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    SCDF Reference(s) No.*<br />
+                    <cn2-button label="Add" cn2-array-group="otherForm" cn2-array-group-id="PartOfAppl"
+                      cn2-array-group-enabled
+                      event-click="insertDuplicate('otherForm','A1'); disableDelete('otherForm', '.delete1'); addTableSdfRef('otherForm'); addRemoveValidations('otherForm')">
+                    </cn2-button>
+                  </td>
+                  <td style="padding-left: 0;">
+                    <div id="otherForm">
+                      <div id="A1" parent>
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <cn2-textbox id="PartOfAppl_FSSBRefeNumb10" inline prefix="PartOfAppl_FSSBRefeNumb"
+                                  suffix="0" mandatory template="@@@/@#####/####" maxlength="14"
+                                  event-blur="validateTerminationAppSCDFRefNos(this); checkTemplateValid(this);"
+                                  no-label webservice="agencyUrl10">
+                                </cn2-textbox>
+                                <small><span style="color: red;" id="errMsgTerminationAppSCDFRefNos10"
+                                    prefix="errMsgTerminationAppSCDFRefNos" suffix="0"></span></small>
+                              </td>
+                              <td width="10%" style="padding-right: 0%;">
+                                <cn2-button label="Delete" danger id="delete1" class="delete1" prefix="delete" disabled
+                                  event-click="removeDuplicate(this.id, 'A1','otherForm'); disableDelete('otherForm', '.delete1')"
+                                  style="float: right;">
+                                </cn2-button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    Type of Notice*
+                  </td>
+                  <td>
+                    <cn2-select id="PartOfAppl_TypeOfNoti10"
+                      options="Termination:Termination,Appointment:Appointment,Termination & Appointment:Termination & Appointment"
+                      event-change="toggleTypeOfNotice();" no-label mandatory>
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    &nbsp;
+                  </td>
+                  <td>
+                    <cn2-checkbox id="PartOfAppl_TypeOfNoti_Role10" event-change="hideRolePR();setRolesQP(this)">
+                    </cn2-checkbox>&nbsp;Qualified Person (QP)
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    &nbsp;
+                  </td>
+                  <td>
+                    <cn2-checkbox id="PartOfAppl_TypeOfNoti_Role20" event-change="hideRolePR();setRolesFSE(this)">
+                    </cn2-checkbox>&nbsp;Fire Safety Engineer (FSE)
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    &nbsp;
+                  </td>
+                  <td>
+                    <cn2-checkbox id="PartOfAppl_TypeOfNoti_Role30" event-change="hideRoleQPAndFSE();setRolesPR(this)">
+                    </cn2-checkbox>&nbsp;Peer Reviewer
+                  </td>
+                </tr>
+
+                <tr id="dueTo" hidden>
+                  <td width="35%">
+                    Termination Due to:*
+                  </td>
+                  <td>
+                    <input type="radio" id="PartOfAppl_TermDueToReas10" name="termDueToReas"
+                      onclick="toggleTypeOfNotice();atLeastOne(this)" />&nbsp; Resignation of QP/FSE/Peer Reviewer
+                  </td>
+                </tr>
+                <tr id="byApplicant" hidden>
+                  <td width="35%"></td>
+                  <td>
+                    <input type="radio" id="PartOfAppl_TermDueToReas20" name="termDueToReas"
+                      onclick="toggleTypeOfNotice();atLeastOne(this)" />&nbsp; Termination by Applicant
+                  </td>
+                </tr>
+                <tr id="unavailability" hidden>
+                  <td width="35%"></td>
+                  <td>
+                    <input type="radio" id="PartOfAppl_TermDueToReas30" name="termDueToReas"
+                      onclick="toggleTypeOfNotice();atLeastOne(this)" />&nbsp; Unavailability of QP/FSE/Peer
+                    Reviewer whereabout
+                  </td>
+                </tr>
+                <tr id="deceased" hidden>
+                  <td width="35%"></td>
+                  <td>
+                    <input type="radio" id="PartOfAppl_TermDueToReas40" name="termDueToReas"
+                      onclick="toggleTypeOfNotice();atLeastOne(this)" />&nbsp; Deceased of QP/FSE/Peer Reviewer
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page4">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Applicant</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td width="35%">
+                    SID
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_SID_FSBAPPL10" no-label maxlength="64" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    Name*
+                  </td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_FSBAPPL10" data-options="applicantDropdown" mandatory
+                      event-change="loadDropDownDetails(this);nricMasking(Member_IC_Passport_No_FSBAPPL10_mask);"
+                      no-label>
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr hidden nricUnmasked>
+                  <td>NRIC No. / Passport No.</td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_FSBAPPL10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr nricMasked>
+                  <td>NRIC No. / Passport No.</td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_FSBAPPL10_mask" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    Firm Name
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_Firm_Name_FSBAPPL10" no-label maxlength="64" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="35%">
+                    Address
+                  </td>
+                  <td>
+                    <cn2-textarea id="Member_Address_FSBAPPL10" no-label disabled uppercase maxlength="1024">
+                    </cn2-textarea>
+                    <cn2-textbox id="Member_Address_Type_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Hse_Blk_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Bldg_Name_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Level_No_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Unit_No_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Road_Code_Desc_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Postal_Code_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine1_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine2_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine3_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine4_FSBAPPL10" no-label disabled hidden>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="35%">
+                    Contact No.
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_FSBAPPL10" no-label maxlength="15" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="35%">
+                    Email Address
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_FSBAPPL10" no-label disabled maxlength="100" uppercase>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div id="declaration" class="mls-espo-right-inner-container borderchecking" hidden>
+            <h2>Declaration by Applicant*</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        I have appointed&nbsp;<cn2-select no-label inline="3" options="Mr:Mr,Ms:Ms,ER:ER,AR:AR"
+                          id="DeclByAppl_IHaveAppoAs10" event-change="changeHimHer(this)" disabled>
+                        </cn2-select>&nbsp;
+                        <cn2-textbox disabled no-label inline="4" maxlength="64" id="DeclByAppl_IHaveAppoAs20">
+                        </cn2-textbox>
+                      </div>
+                    </div>
+                    <br />
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        &emsp;<cn2-checkbox id="DeclByApptQP_role10" disabled>
+                        </cn2-checkbox>
+                        Qualified Person
+                        <br /><br />
+                        &emsp;<cn2-checkbox id="DeclByApptQP_role20" disabled>
+                        </cn2-checkbox>
+                        Fire Safety Engineer
+                        <br /><br />
+                        &emsp;<cn2-checkbox id="DeclByApptQP_role30" disabled>
+                        </cn2-checkbox>
+                        Peer Reviewer
+                        <br /><br />
+                        and authorized &nbsp;<cn2-select no-label inline="3" id="DeclByAppl_IHaveAppoAs30"
+                          options="him:him,her:her" disabled>
+                        </cn2-select>
+                        &nbsp;to act on my behalf.
+                      </div>
+                    </div>
+                  </td>
+                  <td rowspan="2">
+                    <cn2-checkbox id="DeclByAppl_IHaveAppoAs40"
+                      event-change="DeclByAppl_IHaveAppoAs40_change(this); removeManda(this)" style="float: right;">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page5">
+          <div class="mls-espo-right-inner-container" id="trmqp">
+            <h2>
+              Particulars of Terminated Qualified Person/Fire Safety
+              Engineer/Peer Reviewer
+            </h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%"></td>
+                  <td></td>
+                </tr>
+                <tr hidden>
+                  <td>SID</td>
+                  <td>
+                    <cn2-textbox id="Member_SID_QP20" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Name*</td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_QP20" data-options="senderDropdown2"
+                      event-change="loadDropDownDetails(this); toggle_select(); clearUEN('Members_UEN_QP20');nricMasking(Member_IC_Passport_No_QP20_mask);"
+                      no-label mandatory>
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Role in Project</td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Member_Role_Code_Desc_QP20" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Professional_No_QP20" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr hidden nricUnmasked>
+                  <td>NRIC No. / Passport No.</td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_QP20" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr nricMasked>
+                  <td>NRIC No. / Passport No.</td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_QP20_mask" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name*</td>
+                  <td>
+                    <cn2-textbox id="Member_Firm_Name_QP20" no-label mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ACRA UEN</td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_QP20" no-label template="#########@" maxlength="10"
+                      event-blur="uenValidate(this)">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea id="Member_Address_QP20" no-label disabled>
+                    </cn2-textarea>
+                    <cn2-textbox id="Member_Address_Type_QP20" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Hse_Blk_QP20" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Bldg_Name_QP20" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Level_No_QP20" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Unit_No_QP20" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Road_Code_Desc_QP20" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Postal_Code_QP20" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine1_QP20" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine2_QP20" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine3_QP20" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine4_QP20" no-label disabled hidden>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_QP20" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_QP20" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div id="ctq" class="mls-espo-right-inner-container" hidden>
+            <h2>
+              Confirmation by Terminated Qualified Person/Fire Safety
+              Engineer/Peer Reviewer*
+            </h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td id="confi" hidden>
+                    As required by Section 25(2) of the Act, I am
+                    notifying that, with
+                    effect from, I have ceased to
+                  </td>
+                  <td>
+                    <cn2-checkbox id="ConfByTermQP_Conf20"
+                      event-change="ConfByTermQP_Conf_change(this); removeManda(this)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    <cn2-datefield onfocusout="validateDate(this)" id="ConfByQualPers_AsRequBySect10" no-label
+                      inline="3" disabled>
+                    </cn2-datefield>
+                  </td>
+                </tr>
+                <tr>
+                  <td id="confi1" hidden>
+                    carry out my duties as the
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox id="ConfByTermQP_Role40" disabled>
+                    </cn2-checkbox>
+                    Qualified Person
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox id="ConfByTermQP_Role50" disabled>
+                    </cn2-checkbox>
+                    Fire Safety Engineer
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox id="ConfByTermQP_Role60" disabled>
+                    </cn2-checkbox>
+                    Peer Reviewer
+                  </td>
+                </tr>
+                <tr>
+                  <td id="confSection1" hidden>
+                    in respect of the fire safety works described herein
+                    as :-
+                    <br /><br />
+                    <input type="radio" id="ConfByQualPers_AsRequBySect_IHaveTermMy20" name="radio1" disabled />
+                    I have terminated my appointment as the
+                    <br /><br />
+                    &emsp;<cn2-checkbox id="ConfByTermQP_TermReas10_role10" disabled>
+                    </cn2-checkbox>
+                    Qualified Person
+                    <br /><br />
+                    &emsp;<cn2-checkbox id="ConfByTermQP_TermReas10_role20" disabled>
+                    </cn2-checkbox>
+                    Fire Safety Engineer
+                    <br /><br />
+                    &emsp;<cn2-checkbox id="ConfByTermQP_TermReas10_role30" disabled>
+                    </cn2-checkbox>
+                    Peer Reviewer
+                    <br /><br />
+                    <input type="radio" id="ConfByQualPers_AsRequBySect_MyAppoAsThe30" name="radio1"
+                      onclick="ConfByTermQP_TermReas_select();" disabled />
+                    My appointment as the <br /><br />
+                    &emsp;<cn2-checkbox id="ConfByTermQP_TermReas20_role10" disabled>
+                    </cn2-checkbox>
+                    Qualified Person
+                    <br /><br />
+                    &emsp;<cn2-checkbox id="ConfByTermQP_TermReas20_role20" disabled>
+                    </cn2-checkbox>
+                    Fire Safety Engineer
+                    <br /><br />
+                    &emsp;<cn2-checkbox id="ConfByTermQP_TermReas20_role30" disabled>
+                    </cn2-checkbox>
+                    Peer Reviewer
+                    <br /><br />
+                    has been terminated by the applicant;
+                  </td>
+                </tr>
+                <tr>
+                  <td id="confSection2" hidden>
+                    I confirm that fire safety works
+                    <cn2-select options="have:have,have not:have not" id="ConfByQualPers_IConfThatFire10" inline="3"
+                      disabled>
+                    </cn2-select>
+                    been commenced or carried out at the site. I
+                    have, on
+                    <cn2-datefield onfocusout="validateDate(this)" id="ConfByQualPers_IHaveOnNoti10" inline="3"
+                      disabled>
+                    </cn2-datefield>
+                    , notified the applicant that I have ceased to carry
+                    out my duties as the
+
+                    <br /><br />
+                    &emsp;<cn2-checkbox id="ConfByTermQP_IHaveOnNoti10_role10" disabled>
+                    </cn2-checkbox>
+                    Qualified Person
+                    <br /><br />
+                    &emsp;<cn2-checkbox id="ConfByTermQP_IHaveOnNoti10_role20" disabled>
+                    </cn2-checkbox>
+                    Fire Safety Engineer
+                    <br /><br />
+                    &emsp;<cn2-checkbox id="ConfByTermQP_IHaveOnNoti10_role30" disabled>
+                    </cn2-checkbox>
+                    Peer Reviewer
+                  </td>
+                </tr>
+                <tr>
+                  <td id="confSection3" hidden>I have also instructed the applicant not to commence
+                    or carry out any fire safety works at the site until
+                    another
+                    <br /><br />
+                    &emsp;<cn2-checkbox id="ConfByTermQP_IHaveOnNoti20_role10" disabled>
+                    </cn2-checkbox>
+                    Qualified Person
+                    <br /><br />
+                    &emsp;<cn2-checkbox id="ConfByTermQP_IHaveOnNoti20_role20" disabled>
+                    </cn2-checkbox>
+                    Fire Safety Engineer
+                    <br /><br />
+                    &emsp;<cn2-checkbox id="ConfByTermQP_IHaveOnNoti20_role30" disabled>
+                    </cn2-checkbox>
+                    Peer Reviewer
+                    <br /><br />
+                    has been appointed by the applicant.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="submChecklist" class="mls-espo-right-inner-container" hidden>
+            <h2>Submission Checklist*</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td width="85%">
+                        The following are attached:
+                      </td>
+                      <td>
+                        &nbsp;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="85%">
+                        1. Death Certificate of Deceased QP/FSE/Peer Reviewer
+                      </td>
+                      <td width="1%">
+                        <cn2-checkbox id="SubmChec_check10" event-change="removeManda(this)">
+                        </cn2-checkbox>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div id="apq2" class="mls-espo-right-inner-container" hidden>
+            <h2>
+              Declaration by Appointed Qualified Person/Fire Safety
+              Engineer/Peer Reviewer*
+            </h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>
+                    As required by Section 25(1) or
+                    25(3) of the Fire
+                    Safety Act, I
+                    have no
+                    objection to perform the
+                    stated role(s) below and take over the professional duties for the
+                    above-mentioned works with
+                    effect from,
+                  </td>
+                  <td>
+                    <cn2-checkbox id="ConfByTermQP_Conf30"
+                      event-change="ConfByTermQP_Conf_change(this); removeManda(this)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    <cn2-datefield onfocusout="validateDate(this)" id="ConfByTermQP_TermDate30" no-label inline="3"
+                      disabled>
+                    </cn2-datefield>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    as the appointed
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox id="ConfByTermQP_Role70" disabled>
+                    </cn2-checkbox>
+                    Qualified Person
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox id="ConfByTermQP_Role80" disabled>
+                    </cn2-checkbox>
+                    Fire Safety Engineer
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox id="ConfByTermQP_Role90" disabled>
+                    </cn2-checkbox>
+                    Peer Reviewer
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page6">
+          <div class="mls-espo-right-inner-container">
+            <h2>
+              <span id="partTQP">Particulars of Terminated Qualified Person/Fire Safety
+                Engineer/Peer Reviewer</span>
+            </h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td>SID</td>
+                  <td>
+                    <cn2-textbox id="Member_SID_QP10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%"></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Name*</td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_QP10" data-options="senderDropdown"
+                      event-change="loadDropDownDetails(this); toggle_select(); clearUEN('Members_UEN_QP10');nricMasking(Member_IC_Passport_No_QP10_mask);"
+                      no-label mandatory>
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Role in Project</td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Member_Role_Code_Desc_QP10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Professional_No_QP10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr hidden nricUnmasked>
+                  <td>NRIC No. / Passport No.</td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_QP10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr nricMasked>
+                  <td>NRIC No. / Passport No.</td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_QP10_mask" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name*</td>
+                  <td>
+                    <cn2-textbox id="Member_QP_Firm_Name_10" no-label mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ACRA UEN</td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_QP10" no-label template="#########@" maxlength="10"
+                      event-blur="uenValidate(this)">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea id="Member_Address_QP10" no-label disabled>
+                    </cn2-textarea>
+                    <cn2-textbox id="Member_Address_Type_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Hse_Blk_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Bldg_Name_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Level_No_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Unit_No_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Road_Code_Desc_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Postal_Code_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine1_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine2_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine3_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine4_QP10" no-label disabled hidden>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_QP10" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_QP10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="apq" class="mls-espo-right-inner-container" hidden>
+            <h2>
+              Declaration by Appointed Qualified Person/Fire Safety
+              Engineer/Peer Reviewer*
+            </h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td id="declr" hidden>
+                    As required by Section 25(1) or
+                    25(3) of the Fire
+                    Safety Act, I
+                    have no
+                    objection to perform the
+                    stated role(s) below and take over the professional duties for the
+                    above-mentioned works with
+                    effect from,
+                  </td>
+                  <td>
+                    <cn2-checkbox id="ConfByTermQP_Conf10"
+                      event-change="ConfByTermQP_Conf_change(this); removeManda(this)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    <cn2-datefield onfocusout="validateDate(this)" id="ConfByTermQP_TermDate10" no-label inline="3"
+                      disabled>
+                    </cn2-datefield>
+                  </td>
+                </tr>
+                <tr>
+                  <td id="declr1" hidden>
+                    as the appointed
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox id="ConfByTermQP_Role10" disabled>
+                    </cn2-checkbox>
+                    Qualified Person
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox id="ConfByTermQP_Role20" disabled>
+                    </cn2-checkbox>
+                    Fire Safety Engineer
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox id="ConfByTermQP_Role30" disabled>
+                    </cn2-checkbox>
+                    Peer Reviewer
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-fixed-footer></cn2-fixed-footer>
+    <cn2-version-footer></cn2-version-footer>
+  </div>
+</body>
+
+</html>

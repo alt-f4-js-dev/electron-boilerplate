@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <title>PUB-SEW-FORM_B</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Syncfusion" />
+
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+    <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+    <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+    <script src="../cm/js/func/common.js"></script>
+    <script src="../cm/js/components/cn2commonfunc.js"></script>
+    <script src="../cm/js/components/cn2sgheader.js"></script>
+    <script src="../cm/js/components/cn2masterhead.js"></script>
+    <script src="../cm/js/components/cn2standardfooter.js"></script>
+    <script src="../cm/js/components/cn2fixedfooter.js"></script>
+    <script src="../cm/js/components/cn2textbox.js"></script>
+    <script src="../cm/js/components/cn2textarea.js"></script>
+    <script src="../cm/js/components/cn2checkbox.js"></script>
+    <script src="../cm/js/components/cn2versionfooter.js"></script>
+    <script src="../cm/js/components/cn2select.js"></script>
+    <script src="../cm/js/components/cn2navbutton.js"></script>
+    <script src="../cm/js/components/cn2datefield.js"></script>
+    <script src="../cm/js/components/cn2button.js"></script>
+
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <cn2-master-head title=""></cn2-master-head>
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p style="margin: 0px">Help</p>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <b>For enquiries related to forms, please contact the following:</b>
+                </p>
+                <p><span id="RegulatoryAuthority_id"></span></p>
+                <div id="table-parent" style="width:auto">
+                    <table id="ContDetaTable_id" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Regulatory Authority</th>
+                                <th>Email Address</th>
+                                <th>Tel No.</th>
+                                <th>Area of Support</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="5">PUB (Sewerage)</td>
+                                <td>pub_bpu@pub.gov.sg</td>
+                                <td>67313512</td>
+                                <td>General Enquiry</td>
+                            </tr>
+                            <tr>
+                                <td>sophian_ismail@pub.gov.sg</td>
+                                <td>67313656</td>
+                                <td>Approval for works affecting public sewer/Pre & Post Construction CCTV submissions
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>LER_Seng_Chye@pub.gov.sg</td>
+                                <td>67313264</td>
+                                <td>Sewerage pre-consultation/ DC Plan Submissions</td>
+                            </tr>
+                            <tr>
+                                <td>teo_mok_tong@pub.gov.sg</td>
+                                <td>67313256</td>
+                                <td>Sewerage Clearance Submissions</td>
+                            </tr>
+                            <tr>
+                                <td>steven_cheong@pub.gov.sg</td>
+                                <td>67313339</td>
+                                <td>Code of Practice and Regulations</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" name="member_id" id="member_id" />
+    <input type="hidden" name="form_validated" id="form_validated" />
+    <div class="mls-espro-form-container">
+        <div class="row">
+            <div class="mls-espro-form-left-nav" id="menu">
+                <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+                <cn2-nav-button target="page2" page-number="2" label="Particulars of Project">
+                </cn2-nav-button>
+                <cn2-nav-button target="page3" page-number="3" label="Particulars of Application">
+                </cn2-nav-button>
+                <cn2-nav-button target="page4" page-number="4" label="Particulars of Qualified Person">
+                </cn2-nav-button>
+                <cn2-nav-button target="page5" page-number="5" label="Particulars of Licensed Plumber">
+                </cn2-nav-button>
+                <cn2-nav-button target="page6" page-number="6" label="Particulars of Contractor">
+                </cn2-nav-button>
+                <cn2-nav-button target="page7" page-number="7" label="Particulars of CCTV Contractor">
+                </cn2-nav-button>
+                <cn2-nav-button target="page8" page-number="8" label="Particulars of Authorized Manager Contractor">
+                </cn2-nav-button>
+                <cn2-nav-button target="page9" page-number="9"
+                    label="Confirmation of Applicant and Attachments Required">
+                </cn2-nav-button>
+
+            </div>
+
+            <div class="e-content mls-espro-form-right" id="page">
+                <div id="page1">
+                    <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">
+                                        <b>Date:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <cn2-textbox id="Date10" no-label inline="6" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="1%">
+                                        <b>To:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-textbox no-label inline="6" id="Addr10" disabled>
+                                                </cn2-textbox><br />
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pt-2">
+                                                <cn2-textarea id="Addr20" no-label inline="6" mandatory disabled
+                                                    style="height: 140px;">
+                                                </cn2-textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Instructions</h2>
+                        <ol class="mls-intro-list">
+                            <li>This form, with all the required attachments, shall be
+                                submitted to PUB for approval no later
+                                than 14 days prior to commencement of work. Any incomplete form will be rejected.</li>
+                            <li>This form is to be digitally signed and submitted by the following person:
+                                <ol style="list-style: lower-latin;">
+                                    <li>For projects registered with BCA, the QP shall make the submission through
+                                        CORENET
+                                        e-submission.</li>
+                                    <li>
+                                        For projects that are not registered with BCA, the Plumber or the Contractor
+                                        responsible
+                                        for the projects shall make the submission. <br> The form shall be submitted
+                                        through the QP Portal <cn2-button onclick="openUrl();" label="Here">
+                                        </cn2-button>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                If any man-entry into the sewer manholes is required, the QP or Plumber/Contractor shall
+                                ensure
+                                that all requirements as stated in the Workplace Safety and Health (WSH) (Confined
+                                Spaces)
+                                Regulations are fully complied with.
+                            </li>
+
+                            <li><u>Incident Reporting</u>
+                                <p>
+                                    In the event of any used water overflow, damage to the sewers or injury to any
+                                    person
+                                    while
+                                    carrying out the works, the contractor shall inform Water Reclamation (Network)
+                                    Department
+                                    immediately with all the details via the PUB's 24-hr Call Centre PUB-One at
+                                    1800-2255782.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div id="page2">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Project</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td width="35%">Project Reference Number</td>
+                                            <td>
+                                                <cn2-textbox id="Project_Project_Ref_No10" mandatory disabled no-label>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Project Title</td>
+                                            <td>
+                                                <cn2-textarea id="Project_Title10" disabled no-label></cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Location Description [Include Lot/Plot, MK/TS, House No., Building
+                                                Address and Road information]</td>
+                                            <td>
+                                                <cn2-textarea id="Project_Location_Description10" disabled no-label>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page3">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Application</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td width="35%">Type of Works*</td>
+                                            <td>
+                                                <cn2-select mandatory no-label id="PartOfAppl_TypeOfWork10"
+                                                    event-change="toggleDecl(this);"
+                                                    options="Permanent connection to the existing sewerage:Permanent connection to the existing sewerage system,Temporary connection to the existing sewerage:Temporary connection to the existing sewerage system,Manhole raising/lowering:Manhole raising/lowering,Overpumping:Overpumping,Repair Works:Repair works,Sealing/Grouting/Abandoning of an existing sewerline and/or manhole:Sealing/Grouting/Abandoning of an existing sewerline and/or manhole,CCTV:CCTV,Flowgauge Installation:Flowgauge installation,Others:Others">
+                                                </cn2-select>
+                                            </td>
+                                        </tr>
+                                        <tr id="workDescription10" hidden>
+                                            <td>Work Description*</td>
+                                            <td>
+                                                <cn2-textarea disabled id="PartOfAppl_WorkDesc10" no-label
+                                                    maxlength="1000"></cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Form E/F/I Submission No. *</td>
+                                            <td>
+                                                <cn2-textbox id="PartOfAppl_WRNRefNo10" maxlength="25" no-label
+                                                    mandatory>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">Risk Assessment Validity*</td>
+                                            <td class="row">
+                                                <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                                                    From*
+                                                </div>
+                                                <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                                                    <cn2-datefield onfocusout="validateDate(this);"
+                                                        event-change="PartOfAppl_RiskAsseVali_From10_change(this,'PartOfAppl_RiskAsseVali_To10');validateDate(this)"
+                                                        id="PartOfAppl_RiskAsseVali_From10" mandatory no-label>
+                                                    </cn2-datefield>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="row">
+                                                <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                                                    To*
+                                                </div>
+                                                <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                                                    <cn2-datefield onfocusout="validateDate(this);"
+                                                        event-change="PartOfAppl_RiskAsseVali_To10_change(this,'PartOfAppl_RiskAsseVali_From10');validateDate(this)"
+                                                        id="PartOfAppl_RiskAsseVali_To10" mandatory no-label>
+                                                    </cn2-datefield>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page4">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Section I Particulars of Qualified Person</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2">
+                                                (Including Professional Engineer/Architect)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">Name *</td>
+                                            <td>
+                                                <cn2-select id="Member_Member_Name_QP10" data-options="qpDropdown"
+                                                    event-change="loadDropDownDetails(this)" no-label mandatory>
+                                                </cn2-select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Role in Project</td>
+                                            <td>
+                                                <cn2-textbox id="MemberRole_Member_Role_Code_Desc_QP10" no-label
+                                                    disabled></cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Registration No.</td>
+                                            <td>
+                                                <cn2-textbox id="MemberRole_Professional_No_QP10" no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Company Name</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Firm_Name_QP10" disabled no-label></cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Office Address</td>
+                                            <td>
+                                                <cn2-textarea id="Member_Address_QP10" no-label disabled></cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contact No.</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Tel_No_QP10" no-label disabled numeric>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email Address</td>
+                                            <td>
+                                                <cn2-textbox disabled id="Member_Email_Address1_QP10" no-label
+                                                    event-blur="checkEmail(this);" placeholder="example@email.com">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page5">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>
+                            Section II Particulars of Licensed Plumber &nbsp;&nbsp;&nbsp;&nbsp;
+                            <cn2-checkbox id="PartOfThePLUMBCONTR10" event-change="toggleDecl(this);">
+                            </cn2-checkbox>
+                        </h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td width="35%"><span id="prtclrPlumb">Name*</span></td>
+                                            <td>
+                                                <cn2-select id="Member_Member_Name_LPLUMB10"
+                                                    data-options="lPlumberDropdown"
+                                                    event-change="loadDropDownDetails(this)" no-label mandatory>
+                                                </cn2-select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Designation</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Designation_LPLUMB10" no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Company Name</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Firm_Name_LPLUMB10" disabled no-label>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Office Address</td>
+                                            <td>
+                                                <cn2-textarea id="Member_Address_LPLUMB10" no-label disabled>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mobile No.</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Tel_No_LPLUMB10" no-label disabled numeric>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email Address</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Email_Address1_LPLUMB10" disabled no-label
+                                                    numeric event-blur="checkEmail(this);"
+                                                    placeholder="example@email.com">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page6">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>
+                            Section III Particulars of Contractor &nbsp;
+                            <cn2-checkbox id="PartOfTheCont10" event-change="toggleDecl(this);"></cn2-checkbox>
+                        </h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td width="35%"><span id="prtclrCont">Name</span></td>
+                                            <td>
+                                                <cn2-select id="Member_Member_Name_PLUMBCONTR10"
+                                                    data-options="contractorDropdown"
+                                                    event-change="loadDropDownDetails(this)" no-label disabled>
+                                                </cn2-select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Designation</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Designation_PLUMBCONTR10" no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Company Name</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Firm_Name_PLUMBCONTR10" disabled no-label>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Office Address</td>
+                                            <td>
+                                                <cn2-textarea id="Member_Address_PLUMBCONTR10" no-label disabled>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mobile No.</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Tel_No_PLUMBCONTR10" no-label disabled numeric>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email Address</td>
+                                            <td>
+                                                <cn2-textbox disabled id="Member_Email_Address1_PLUMBCONTR10" no-label
+                                                    event-blur="checkEmail(this);" placeholder="example@email.com">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page7">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>
+                            Section IV Particulars of CCTV Contractor &nbsp;
+                            <cn2-checkbox id="PartOfCCTVCont10" event-change="toggleDecl(this);"></cn2-checkbox>
+                        </h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td width="35%"><span id="prtclrCcCont">Name</span></td>
+                                            <td>
+                                                <cn2-select id="Member_Member_Name_PLUMBCONT10"
+                                                    data-options="cctvContractorDropdown"
+                                                    event-change="loadDropDownDetails(this)" no-label disabled>
+                                                </cn2-select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Designation</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Designation_PLUMBCONT10" no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Company Name</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Firm_Name_PLUMBCONT10" disabled no-label>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Office Address</td>
+                                            <td>
+                                                <cn2-textarea id="Member_Address_PLUMBCONT10" no-label disabled>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mobile No.</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Tel_No_PLUMBCONT10" no-label disabled numeric>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email Address</td>
+                                            <td>
+                                                <cn2-textbox disabled id="Member_Email_Address1_PLUMBCONT10" no-label
+                                                    event-blur="checkEmail(this);" placeholder="example@email.com">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page8">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>
+                            Section V Particulars of Authorized Manager Contractor &nbsp;
+                            <cn2-checkbox id="PartOfTheCompPers10" event-change="toggleDecl(this);"></cn2-checkbox>
+                        </h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2">
+                                                (Applicable for Man-Entry Confined Space Works)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%"><span id="authManCont">Authorized Manager Name</span></td>
+                                            <td>
+                                                <cn2-textbox disabled id="PartOfTheCompPers_AuthManaName10" no-label>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>MOM's Certificate Ref. No.</td>
+                                            <td>
+                                                <cn2-textbox disabled id="PartOfTheCompPers_MOMCertRefNo10" no-label>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contact No.</td>
+                                            <td>
+                                                <cn2-textbox disabled id="PartOfTheCompPers_ContNo10" no-label numeric>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email Address</td>
+                                            <td>
+                                                <cn2-textbox disabled event-blur="checkEmail(this);"
+                                                    placeholder="example@email.com" id="PartOfTheCompPers_EmailAddr10"
+                                                    no-label>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page9">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <h2>Confirmation by Applicant</h2>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                I, <cn2-select id="POPUP1" options="QP:QP" inline="3" no-label disabled>
+                                                </cn2-select>, have read
+                                                and
+                                                fully
+                                                understood the following Acts and its Regulations, and shall ensure
+                                                that
+                                                they are fully complied with.<br><br>
+                                                <ul style="list-style-type: disc">
+                                                    <li>Sewerage and Drainage Act (PUB)</li>
+                                                    <li>Workplace Safety and Health Act (MOM)</li>
+                                                    <li>Street Works Act (LTA)</li>
+                                                    <li>Environmental Protection and Management Act (NEA)</li>
+                                                    <li>Any other legislations which are in force and applicable to
+                                                        the
+                                                        works</li>
+                                                </ul>
+                                            <td width="5%" style="padding-top : 22px">
+                                                <cn2-checkbox id="DeclByBCARegi_ITheUndeConf10"
+                                                    event-change="toggleDecl(this);"></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <h2>Attachments Required</h2>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <ul style="list-style: disc;padding-inline-start: 30px;">
+                                    <li>Certificate of Factory Registration or Confirmation of Factory Notification</li>
+                                    <li>Sewerage Interpretation Plan (SIP) with indication of the location of proposed
+                                        works</li>
+                                    <li>Valid Risk Assessment (RA) Form. </li>
+                                    <li>Valid Confined Space Safety Assessor (CSSA) Certificate or Valid Manhole Safety
+                                        Assessor Certificate (If required)</li>
+                                    <li>Safe Work Method statement / Safe Work Procedure</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <cn2-fixed-footer></cn2-fixed-footer>
+        <cn2-version-footer></cn2-version-footer>
+    </div>
+
+</body>
+
+</html>

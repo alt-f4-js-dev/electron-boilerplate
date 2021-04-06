@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <title>ENV-CBPU-CORR</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/resources/assets/js/jquery-3.4.1.min.js"></script>
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head title="CORRESPONDENCE TO CBPU"></cn2-master-head>
+  <input type="hidden" name="member_id" id="member_id">
+  <input type="hidden" name="form_validated" id="form_validated">
+
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p><b>For enquiries related to forms, please contact the following:</b></p>
+        <p> <span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>NEA (CBPU)</td>
+                <td>nur_hanisah_hamdan@nea.gov.sg</td>
+                <td>67319208</td>
+                <td>General Matters for Building Plan Submissions</td>
+              </tr>
+              <tr>
+                <td>NEA (CBPU)</td>
+                <td>charles_lee@nea.gov.sg</td>
+                <td>67319204</td>
+                <td>General Matters for Building Plan Submissions</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Information About Correspondence">
+        </cn2-nav-button>
+      </div>
+
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" no-label inline="5" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td><b>To:</b></td>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textbox id="Addr10" no-label inline="5" disabled>
+                        </cn2-textbox>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>This file shall be submitted as part of the correspondence attachment.</li>
+              <li>This form may take you 1-2 mins to complete.</li>
+            </ol>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Information About Correspondence</h2>
+            <div class="mls-espro-form-fields row">
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td width="35%">Project Reference Number</td>
+                    <td>
+                      <cn2-textbox no-label id="Project_Project_Ref_No10" disabled
+                        field-name="Project Reference Number under Information About Correspondence">
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Project Title</td>
+                    <td>
+                      <cn2-textarea no-label id="Project_Title10" disabled
+                        field-name="Project title under Information About Correspondence"></cn2-textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Location Description [Includes Lot/Plot, MK/TS, Address/Road and Building
+                      Name if any]</td>
+                    <td>
+                      <cn2-textarea no-label id="Project_Location_Description10" disabled
+                        field-name="Location Description under Information About Correspondence">
+                      </cn2-textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Agency File Ref</td>
+                    <td>
+                      <cn2-textbox no-label id="lblProject_File_Ref_No10" maxlength="50"
+                        field-name="Agency File Ref under Information About Correspondence">
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Correspondence Type*</td>
+                    <td>
+                      <cn2-select options="General Correspondence:General Correspondence, URA - EDARAD:URA - EDARAD"
+                        id="Project_CorrType10" no-label mandatory
+                        field-name="Correspondence Type under Information About Correspondence"></cn2-select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>CBPU Processing Officer</td>
+                    <td>
+                      <cn2-textbox no-label id="Project_ProcessingOfficer_No10"
+                        field-name="CBPU Processing Officer under Information About Correspondence">
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Applicant's Email Address</td>
+                    <td>
+                      <cn2-textbox placeholder="name@example.com" event-blur="checkEmail(this);" no-label
+                        id="Project_emailAdd_No10"
+                        field-name="Applicant EmailAdd under Information About Correspondence">
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>CBPU File Ref/Case ID</td>
+                    <td>
+                      <cn2-textbox no-label id="Project_FileRef_No10"
+                        field-name="CBPU File/Ref Case ID under Information About Correspondence">
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Remarks<br>Note: Please indicate the Processing officer from BCA if you are complying with any
+                      request.</td>
+                    <td>
+                      <cn2-textarea no-label id="FIELD1" maxlength="32400"
+                        field-name="Remarks under Information About Correspondence">
+                        </cn2-textare>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-fixed-footer></cn2-fixed-footer>
+    <cn2-version-footer></cn2-version-footer>
+  </div>
+
+
+</body>
+
+</html>

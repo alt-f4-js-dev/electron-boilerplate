@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <title>NEA-DCLD-BPPC-RESUB</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Syncfusion" />
+
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+    <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+    <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+    <script src="../cm/js/func/common.js"></script>
+    <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+    <script src="../cm/js/components/cn2sgheader.js"></script>
+    <script src="../cm/js/components/cn2masterhead.js"></script>
+    <script src="../cm/js/components/cn2fixedfooter.js"></script>
+    <script src="../cm/js/components/cn2versionfooter.js"></script>
+
+    <script src="../cm/js/components/cn2navbutton.js"></script>
+    <script src="../cm/js/components/cn2textbox.js"></script>
+    <script src="../cm/js/components/cn2textarea.js"></script>
+    <script src="../cm/js/components/cn2select.js"></script>
+    <script src="../cm/js/components/cn2datefield.js"></script>
+    <script src="../cm/js/components/cn2checkbox.js"></script>
+    <script src="../cm/js/components/cn2switchbutton.js"></script>
+
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <cn2-master-head title="APPLICATION FOR CLEARANCE CERTIFICATE FOR BUILDING PLAN ON POLLUTION CONTROL FOR INDUSTRIAL PLANT WORKS - RESUBMISSION
+        [UNDER SECTION 33(1) OF THE ENVIRONMENTAL PROTECTION AND MANAGEMENT ACT (EPMA), Chapter 94A]">
+    </cn2-master-head>
+    <input type="hidden" name="member_id" id="member_id">
+    <input type="hidden" name="form_validated" id="form_validated">
+
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p style="margin: 0px">Help</p>
+            </div>
+            <div class="modal-body">
+                <p><b>For enquiries related to forms, please contact the following:</b></p>
+                <p> <span id="RegulatoryAuthority_id"></span></p>
+                <div id="table-parent" style="width:auto">
+                    <table id="ContDetaTable_id" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Regulatory Authority</th>
+                                <th>Email Address</th>
+                                <th>Tel No.</th>
+                                <th>Area of Support</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">NEA (CBPU)</td>
+                                <td>wong_hin_mun@nea.gov.sg</td>
+                                <td>67319644</td>
+                                <td rowspan="2">Building Plan (BP)</td>
+                            </tr>
+                            <tr>
+                                <td>long_han_boon@nea.gov.sg</td>
+                                <td>67319624</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="closer btn" onclick="hideHelp()"
+                    style="background-color:#037ebb;color:white;">OK</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mls-espro-form-container">
+        <div class="row">
+            <div class="mls-espro-form-left-nav" id="menu">
+                <cn2-nav-button target="page1" page-number="1" label="Instructions and Information">
+                </cn2-nav-button>
+                <cn2-nav-button target="page2" page-number="2" label="Particulars of Project"></cn2-nav-button>
+                <cn2-nav-button target="page3" page-number="3" label="Particulars of Application">
+                </cn2-nav-button>
+                <cn2-nav-button target="page4" page-number="4" label="Particulars and Declaration of Qualified Person">
+                </cn2-nav-button>
+                <cn2-nav-button target="page5" page-number="5" label="Attachments">
+                </cn2-nav-button>
+            </div>
+            <div class="e-content mls-espro-form-right" id="page">
+                <div id="page1">
+                    <div class="mls-espo-right-inner-container">
+                        <p class="mls-intro-list" style="margin-left: -25px;">
+                            This form may take you 10 minutes to fill in. You will need the following information to
+                            fill in the form:-
+
+                        </p>
+                        <div class="mls-intro-list">
+                            - Particulars of Project<br>
+                            - Particulars of Qualified Person<br>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">
+                                        <b>Date:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <cn2-textbox disabled id="Date10" no-label inline="7"></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="1%">
+                                        <b>To:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <div class="mls-espro-form-fields row">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-textbox no-label inline="7" id="Addr10" disabled>
+                                                </cn2-textbox>
+                                            </div>
+                                        </div>
+                                        <div class="mls-espro-form-fields row pt-2">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-textarea style="height:150px;" id="Addr20" no-label inline="7"
+                                                    disabled style="height: 134px;">
+                                                </cn2-textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Instructions</h2>
+                        <ol class="mls-intro-list">
+                            <li>This form is to be digitally signed by the Qualified Person responsible for the works.
+                            </li>
+                            <li>This form is to be accompanied by the relevant attachments.</li>
+
+                        </ol>
+                    </div>
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Information</h2>
+                        <ol class="mls-intro-list">
+                            <li>Service Standard: Within 7 working days.</li>
+                            <li>For enquiries on application of status, please call or email directly the processing
+                                officer
+                                given in the submission acknowledgement email from CBPU.</li>
+                            <li>For complex/complicated cases, an email will be sent to inform the extra processing time
+                                (beyond 7 working days required)</li>
+
+                        </ol>
+                    </div>
+                </div>
+                <div id="page2">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Project</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="35%" class="align-middle">
+                                        Project Reference Number
+                                    </td>
+                                    <td colspan="2">
+                                        <cn2-textbox no-label id="Project_Project_Ref_No10" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%" class="align-middle">
+                                        Project Title
+                                    </td>
+                                    <td colspan="2">
+                                        <cn2-textarea no-label id="Project_Title10" disabled></cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%" class="align-middle">
+                                        Location Description [Include Lot/Plot, MK/TS, House No, Building Address and
+                                        Road information]
+                                    </td>
+                                    <td colspan="2">
+                                        <cn2-textarea no-label id="Project_Location_Description10" disabled>
+                                        </cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%" class="align-middle">
+                                        Plan Type*
+                                    </td>
+                                    <td>
+                                        <cn2-select mandatory id="PartOfAppl_PlanType_A1" no-label options="BP:BP">
+                                        </cn2-select>
+                                    </td>
+                                    <td>
+                                        <cn2-select no-label id="PartOfAppl_PlanType_B1"
+                                            options="001:001,002:002,003:003,004:004,005:005,006:006,007:007,008:008,009:009,010:010">
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <div id="page3">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Application</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="35%" class="align-middle">
+                                        Submission Type*
+                                    </td>
+                                    <td colspan="2">
+                                        <cn2-select id="PartOfAppl_SubmType10" no-label
+                                            options="Resubmission:Resubmission, Revised Plan Submission:Revised Plan Submission,Amendment Plan Submission:Amendment Plan Submission"
+                                            mandatory></cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%" class="align-middle">
+                                        Development Proposal Application*
+                                    </td>
+                                    <td colspan="2">
+                                        <cn2-select id="PartOfAppl_DevePropAppl10" no-label
+                                            options="Industrial:Industrial, Non-industrial:Non-industrial" mandatory>
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <th class="text-center">File ref. No/ Case Id</th>
+                                    <th class="text-center">Dated</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Environmental Information (EI) from DCLD (if applicable)
+                                    </td>
+                                    <td>
+                                        <cn2-textbox id="lblPartOfAppl_RefeNumb10" maxlength="25" no-label>
+                                        </cn2-textbox>
+                                    </td>
+                                    <td>
+                                        <cn2-datefield onfocusout="validateDate(this)"
+                                            id="PartOfAppl_Date_SIPDIPFromCBPU10" no-label></cn2-datefield>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        DC Clearance from DCLD (if applicable or unless a written direction have been
+                                        obtained)
+                                    </td>
+                                    <td>
+                                        <cn2-textbox id="PartOfAppl_RefeNumb_DCCleaFromCBPU" maxlength="25" no-label>
+                                        </cn2-textbox>
+                                    </td>
+                                    <td>
+                                        <cn2-datefield onfocusout="validateDate(this)"
+                                            id="PartOfAppl_Date_DCCleaFromCBPU" no-label></cn2-datefield>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Previous BP Advice from
+                                        CBPU (if applicable)
+
+                                    </td>
+                                    <td colspan="2">
+                                        <cn2-textbox no-label id="PartOfProj_PrevBPAdv10" maxlength="25">
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        CBPU Processing Officer
+                                    </td>
+                                    <td colspan="2">
+                                        <cn2-textbox no-label id="PartOfProj_ProcOfficer10" maxlength="25">
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="page4">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Qualified Person</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr hidden>
+                                    <td width="30%">
+                                        SID
+                                    </td>
+                                    <td>
+                                        <cn2-textbox no-label id="Member_SID_QP10" disabled>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="30%">
+                                        Name*
+                                    </td>
+                                    <td>
+                                        <cn2-select mandatory id="Member_Member_Name_QP10" no-label
+                                            data-options="qpDropdown"
+                                            event-change="loadDropDownDetails(this);togglePartQp();">
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="30%">
+                                        Role in Project
+                                    </td>
+                                    <td>
+                                        <cn2-textbox no-label id="MemberRole_Member_Role_Code_Desc_QP10" disabled>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="30%">
+                                        Registration No.
+                                    </td>
+                                    <td>
+                                        <cn2-textbox no-label id="MemberRole_Professional_No_QP10" disabled>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="30%">
+                                        Firm Name
+                                    </td>
+                                    <td>
+                                        <cn2-textbox no-label id="Member_Firm_Name_QP10" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="30%">
+                                        UEN
+                                    </td>
+                                    <td>
+                                        <cn2-textbox no-label event-blur="uenValidate(this);" id="Members_UEN_QP10"
+                                            template="#########@" maxlength="10"></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="30%">
+                                        Firm Address
+                                    </td>
+                                    <td>
+                                        <cn2-textarea no-label id="Member_Address_QP10" disabled></cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="30%">
+                                        Telephone No.
+                                    </td>
+                                    <td>
+                                        <cn2-textbox no-label id="Member_Tel_No_QP10" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="30%">
+                                        Extension No.
+                                    </td>
+                                    <td>
+                                        <cn2-textbox no-label id="Member_Tel_Ext_No_QP10"></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="30%">
+                                        Fax No.
+                                    </td>
+                                    <td>
+                                        <cn2-textbox no-label id="Member_Fax_No_QP10"></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="30%">
+                                        Email Address
+                                    </td>
+                                    <td>
+                                        <cn2-textbox no-label id="Member_Email_Address1_QP10" disabled>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <h2>Declaration by Qualified Person</h2>
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2">
+                                                <p style="font-style:italic;">Note: It is the Qualified Person's
+                                                    responsibility to ensure that the
+                                                    development
+                                                    comply with all the environmental requirements (environmental health
+                                                    and
+                                                    pollution control) including Acts, Regulations, Codes of Practice,
+                                                    Guidelines, etc. Any clearances issued by National Environment
+                                                    Agency do not
+                                                    relinquish the Qualified Person's responsibility. Please note that
+                                                    clearances
+                                                    granted may be revoked if the plans are subsequently found to
+                                                    contain any
+                                                    non-compliances. National Environment Agency will also initiate
+                                                    actions against any
+                                                    false or untruthful declaration.</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <span>I</span>
+                                                <cn2-select id="DeclByQualPers_TitlePopup"
+                                                    options="Mr:Mr, Ms:Ms, Mrs:Mrs, Mdm:Mdm, Dr:Dr" no-label inline="2"
+                                                    mandatory></cn2-select>
+                                                <span>Name</span>
+                                                <cn2-textbox id="DeclByQualPers_Name" no-label inline="3" maxlength="25"
+                                                    mandatory></cn2-textbox>
+                                                <span>, Qualified Person (QP)
+                                                    for the proposed development, hereby confirm and certify that my
+                                                    submissions (i.e. plans and building works) shown therein comply
+                                                    strictly
+                                                    with all the environmental requirements (environmental health and
+                                                    pollution
+                                                    control) including Acts, Regulations, Codes of Practice, Guidelines,
+                                                    etc and
+                                                    also with the provisions of the current Codes, guideline, etc. as
+                                                    below:-</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Qualified Person appointed under Section 6(3) or 9(2)(b) of the
+                                                Building
+                                                Control Act (Cap. 29) in respect of the works described which
+                                                include the
+                                                environmental pollution control matters; and my qualification is
+                                                appropriate
+                                                to the nature of these works
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <cn2-checkbox id="DeclByQualPers_ThePartOfProj11"></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                The pollution control works shown on the building plans have been
+                                                designed
+                                                in accordance to the current SS593: Code of Practice on Pollution
+                                                Control.
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <cn2-checkbox id="DeclByQualPers_ThePartOfProj12"></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                The particulars of Project and Application given in this form are
+                                                correct
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <cn2-checkbox id="DeclByQualPers_ThePartOfProj13"></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Waiver
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <cn2-switchbutton data-on="Yes" data-off="No"
+                                                    switch-id="DeclByQualPers_ThePartOfProj15"
+                                                    event-change="switchButton(this, 'DeclByQualPers_ThePartOfProj15', 'DeclByQualPers_ThePartOfProj16'); &#10;                                                    DeclByQualPers_ThePartOfProj15_change(this)">
+                                                </cn2-switchbutton>
+                                                <cn2-checkbox id="DeclByQualPers_ThePartOfProj15" hidden>
+                                                </cn2-checkbox>
+                                                <cn2-checkbox id="DeclByQualPers_ThePartOfProj16" hidden>
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                These plans and the building works shown therein comply strictly with
+                                                the
+                                                provisions of the current environmental pollution control
+                                                requirements,
+                                                except for those provisions where waiver have been obtained from
+                                                the,
+                                                National Environment Agency in writing<br><br>
+                                                <div class="mls-espro-form-fields row">
+                                                    <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                                                        <cn2-textbox label="Type of Waiver"
+                                                            id="Member_Email_Address1_QP10_1" maxlength="250">
+                                                        </cn2-textbox>
+                                                    </div>
+                                                    <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                                                        <cn2-textbox label="Attachment of waiver letter"
+                                                            id="Member_Email_Address1_QP11" maxlength="250">
+                                                        </cn2-textbox>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <cn2-checkbox id="DeclByQualPers_ThePartOfProj18">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                BPPC Checklist
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                BPPC Checklist: Please refer to the NEA DCLD's webpage to retrieve
+                                                the
+                                                BPPC checklist
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <cn2-checkbox id="DeclByQualPers_ThePartOfProj19">
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="1">
+                                                <cn2-textbox label="Attachment of BPPC Checklist"
+                                                    id="Member_Email_Address1_QP11_1"></cn2-textbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page5">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Attachments</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                Attached the relevant plans and supporting documents.
+                                            </td>
+                                            <td width="1%">
+                                                <cn2-checkbox id="SubmChec_BuilPlanOnEnvi10"></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <cn2-version-footer></cn2-version-footer>
+        <cn2-fixed-footer></cn2-fixed-footer>
+    </div>
+
+
+
+</body>
+
+</html>

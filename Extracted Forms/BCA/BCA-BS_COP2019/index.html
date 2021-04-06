@@ -1,0 +1,2324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BCA-BS01_COP2019</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Syncfusion" />
+
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link href="../cm/resources/assets/bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../cm/styles/fontawesome-free-5.11.2-web/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+    <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+    <script>
+        if (typeof module === "object") {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script src="../cm/resources/assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../cm/resources/assets/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../cm/js/func/common.js"></script>
+    <!-- <script src="../cm/js/func/uracommon.js"></script> -->
+    <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+    <script src="../cm/js/components/cn2sgheader.js"></script>
+    <script src="../cm/js/components/cn2masterhead.js"></script>
+    <script src="../cm/js/components/cn2versionfooter.js"></script>
+    <script src="../cm/js/components/cn2fixedfooter.js"></script>
+    <script src="../cm/js/components/cn2navbutton.js"></script>
+
+    <script src="../cm/js/components/cn2textbox.js"></script>
+    <script src="../cm/js/components/cn2textarea.js"></script>
+    <script src="../cm/js/components/cn2select.js"></script>
+    <script src="../cm/js/components/cn2button.js"></script>
+    <script src="../cm/js/components/cn2datefield.js"></script>
+    <script src="../cm/js/components/cn2checkbox.js"></script>
+    <script src="../cm/js/components/cn2switchbutton.js"></script>
+    <script src="index.js"></script>
+
+    <style>
+        .part1-label {
+            border: 1px solid #dee2e6 !important;
+        }
+
+        .part1-check {
+            border-top: 1px solid #dee2e6 !important;
+            border-bottom: 1px solid #dee2e6 !important;
+        }
+
+        .part1-text {
+            border-top: 1px solid #dee2e6 !important;
+            border-right: 1px solid #dee2e6 !important;
+            border-bottom: 1px solid #dee2e6 !important;
+        }
+
+        .active {
+            color: white !important;
+        }
+
+        #maskID {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 1000;
+        }
+
+        #maskID table {
+            position: relative;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <cn2-master-head
+        title="SUBMISSION OF BUILDABLE DESIGN SCORE CALCULATIONS <br> Regulation 6 of the Building Control (Buildability & Productivity) Regulations (Cap.29)"
+        agency="logo.png">
+    </cn2-master-head>
+
+    <input type="hidden" name="member_id" id="member_id" />
+    <input type="hidden" name="form_validated" id="form_validated" />
+
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p style="margin: 0px">Help</p>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <b>For enquiries related to forms, please contact the following:</b>
+                </p>
+                <p><span id="RegulatoryAuthority_id"></span></p>
+                <div id="table-parent" style="width:auto">
+                    <table id="ContDetaTable_id" class="table-bordered">
+                        <tr></tr>
+                        <tr>
+                            <td>Regulatory Authority</td>
+                            <td>Email Address</td>
+                            <td>Tel No.</td>
+                            <td>Area of Support</td>
+                        </tr>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">BCA (ST)</td>
+                                <td>wai_hui_ling@bca.gov.sg</td>
+                                <td>68044609</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>chang_heng_choy@bca.gov.sg</td>
+                                <td>68044646</td>
+                                <td>Policies</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loader -->
+    <div id="maskID" hidden class="text-center align-middle">
+        <table class="table table-borderless mb-0">
+            <tbody>
+                <tr>
+                    <td loader class="align-middle p-0">
+                        <img src="loader.gif" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mls-espro-form-container">
+        <div class="row">
+            <div class="mls-espro-form-left-nav" id="menu">
+                <cn2-nav-button target="page1" page-number="1" label="Instructions and Application Type">
+                </cn2-nav-button>
+                <cn2-nav-button target="page2" page-number="2" label="Explanatory Notes" app-show>
+                </cn2-nav-button>
+                <cn2-nav-button target="page3" page-number="3" label="Particulars of Application" app-show>
+                </cn2-nav-button>
+                <cn2-nav-button target="page4" page-number="4"
+                    label="Particulars and Declaration by Qualified Person for Architectural and  Structural Works"
+                    app-show>
+                </cn2-nav-button>
+                <cn2-nav-button target="page5" page-number="5" label="Calculations of Overall Buildable Design Score"
+                    projDetailsName app-show>
+                </cn2-nav-button>
+                <cn2-nav-button target="page6" page-number="6" label="01" superstructure project-details-show hidden>
+                </cn2-nav-button>
+                <cn2-nav-button target="page7" page-number="7" label="B01" basement project-details-show hidden>
+                </cn2-nav-button>
+            </div>
+
+            <div class="e-content mls-espro-form-right" id="page">
+                <div id="page1">
+                    <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">
+                                        <b>Date:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <cn2-textbox id="Date10" no-label inline="5" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="1%">
+                                        <b>To:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <div class="mls-espro-form-fields row">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-textbox no-label inline="5" id="Addr10" disabled>
+                                                </cn2-textbox>
+                                            </div>
+                                        </div>
+                                        <div class="mls-espro-form-fields row pt-2">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-textarea style="height:150px;" id="Addr20" no-label inline="5"
+                                                    disabled>
+                                                </cn2-textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Instructions</h2>
+                        <ol class=" mls-intro-list">
+                            <li>
+                                Please refer to the Explanatory Notes attached before completing these forms.
+                            </li>
+                            <li>
+                                Use a separate set of BPD_BS01/BPD_BS03 for each block of the building in the project.
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Application Type*</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td width="1%">1.</td>
+                                            <td>BS01_COP2019 (DEC 2019)</td>
+                                            <td width="1%">
+                                                <input type="radio" name="appTypeRadio" id="PartOfAppl_Bs01_Cop10"
+                                                    app-type="bs01" onclick="showByAppType(this);" />
+                                            </td>
+                                        </tr>
+                                        <!-- <tr>
+                                            <td width="1%">2.</td>
+                                            <td>BS02_COP2019 (DEC 2019)</td>
+                                            <td width="1%">
+                                                <input type="radio" name="appTypeRadio" id="PartOfAppl_Bs02_Cop10"
+                                                    app-type="bs02"
+                                                    onclick="showByAppType(this);" />
+                                            </td>
+                                        </tr> -->
+                                        <tr>
+                                            <td width="1%">2.</td>
+                                            <td>BS03_COP2019 (DEC 2019)</td>
+                                            <td width="1%">
+                                                <input type="radio" name="appTypeRadio" id="PartOfAppl_Bs03_Cop10"
+                                                    app-type="bs03" onclick="showByAppType(this);" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page2" app-show>
+                    <div class="mls-espo-right-inner-container" app-type-bs01 id="page3-1">
+                        <h2>Explanatory Notes</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="color: #0000ff;">Form BPD_BS01</span>
+                                <p>
+                                    Form BPD_BS01 must be completed and submitted together with the application for
+                                    approval of building plans for projects subjected to buildable design requirement.
+                                </p>
+                                <p>
+                                    For projects with multiple blocks, please submit 1 copy of the BPD_BS01 form for
+                                    every block.
+                                </p>
+                                <p>
+                                    For additional building blocks, select the SUMMARY sheet. Click the "Add Block"
+                                    button. Click OK to confirm to add a block.
+                                </p>
+                                <p>
+                                    To delete a building block, click the "Delete Block" button. Enter the sheet name of
+                                    the block to delete. Click OK to confirm deletion.
+                                </p>
+                                <p>
+                                    Minimum Prefabrication Level for developments sold under Industrial Government Land
+                                    Sales (IGLS) programme from 1<sup>st</sup> May 2017.
+                                </p>
+                                <p>
+                                    <table class="table table-bordered" style="margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <th class="text-center" bgcolor="#c0c0c0" style="min-width: 580px;">
+                                                    <b>Minimum
+                                                        Prefabrication
+                                                        Level</b></th>
+                                                <th class="text-center" bgcolor="#c0c0c0" width="150px"><b>5,000
+                                                        m<sup>2</sup> ≤ GFA < 25,000 m<sup>2</sup></b> </th>
+                                                <th class="text-center" bgcolor="#c0c0c0" width="150px">
+                                                    <b>GFA ≥ 25,000 m<sup>2</sup></b></th>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-left">
+                                                    Structural system in respect of total structural floor area of the
+                                                    building works
+                                                </td>
+                                                <td class="text-center">25%</td>
+                                                <td class="text-center">40%</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-left"> Wall system in respect of total wall length
+                                                    of the building works
+                                                </td>
+                                                <td class="text-center">45%</td>
+                                                <td class="text-center">60%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </p>
+                                <span><u><b>Structural System</b></u></span><br>
+                                <p>
+                                    (1) At least 80% of the steel reinforcement for composite slab must be welded mesh.
+                                </p>
+                                <p>
+                                    (2) The use of welded mesh is mandated for all developments where cast in-situ slab
+                                    has been adopted in the design. The minimum usage of welded mesh must be at
+                                    least 65% of all cast in-situ slab area.
+                                </p>
+                                <p>
+                                    (3) For designs of residential non-landed projects that incorporate household
+                                    shelters, it is mandatory for these household shelters to be precast.
+                                </p>
+                                <p>
+                                    (4) High strength concrete of at least Grade 70 must be used for at least 5% of the
+                                    total concrete volume.
+                                </p>
+                                <p>
+                                    (5) Self-compacting concrete must be used for at least 30% of the total concrete
+                                    volume.
+                                </p>
+                                <p>
+                                    (6) Diaphragm wall must be adopted for at least 65% of the permanent retaining wall
+                                    at basement.
+                                </p>
+
+                                <span><u><b>Wall System</b></u></span><br>
+                                <p>
+                                    (7) Drywall partition consists of prefabricated boards typically made of gypsum (or
+                                    other materials such as calcium silicate or fibre-based cement) that are
+                                    screw-fastened to both sides of a metal stud framing system. No wet trades are
+                                    involved. The type and number of layers of the boards, and the insulation
+                                    material within the space formed by the metal framing system are determined by
+                                    the desired strength, acoustic, fire and other performance criteria required of
+                                    the partition. For mandatory use of drywall under item 1.1, the drywall used
+                                    must achieve a performance grading of Severe Duty for strength and robustness.
+                                </p>
+                                <p>
+                                    (8) Lightweight concrete panels include autoclaved lightweight concrete (ALC)
+                                    panels, autoclaved aerated concrete (AAC) panels.
+                                </p>
+                                <p>
+                                    (9) Precision blocks refer to lightweight concrete blocks that have precise
+                                    dimensions (± 1mm dimensional tolerance) and can be laid on thin bed adhesive
+                                    mortar.
+                                </p>
+                                <p>
+                                    (10) The use of brickwall/blockwall, once used, must be indicated and shown under
+                                    wall system by its wall length. Demerit points for using brickwall/blockwall
+                                    will be auto-generated under item 14.5 on Demerit Points.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <div style="padding-left: 30px;">
+                                    <p><b>Table A: Direct Points for Designs with High Voids*</b></p>
+                                    <table class="table table-bordered" style="width:60%">
+                                        <tbody>
+                                            <tr>
+                                                <th bgcolor="#ccffcc" class="text-center">Case</th>
+                                                <th bgcolor="#ccffcc" class="text-center">
+                                                    <u>Total void height (Only those > 9m)</u><br />
+                                                    Total building height
+                                                </th>
+                                                <th bgcolor="#ccffcc" class="text-center">Points</th>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">1</td>
+                                                <td class="text-center">0% (no high voids)</td>
+                                                <td class="text-center">2.0</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">2</td>
+                                                <td class="text-center">> 0% to &lt; 10%</td>
+                                                <td class="text-center">1.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">3</td>
+                                                <td class="text-center">≥ 10% to &lt; 15%</td>
+                                                <td class="text-center">1.0</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">4</td>
+                                                <td class="text-center">≥ 15% to &lt; 20%</td>
+                                                <td class="text-center">0.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">5</td>
+                                                <td class="text-center">≥ 20%</td>
+                                                <td class="text-center">0.0</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <span style="font-size: 14px;">
+                                        * High voids refer to heights that are more than 9m.
+                                        <br />
+                                        * A design that does not have any void height greater than 9m throughout its
+                                        building height will
+                                        get a maximum 2 points.
+                                    </span>
+                                    <p><b>Table B: Direct Points for Designs with Varying Forms</b></p>
+                                    <table class="table table-bordered" style="width:100%;margin-top: 10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center" bgcolor="#ccffcc"><b>Scenario</b></td>
+                                                <td class="text-center" bgcolor="#ccffcc"><b>1</b></td>
+                                                <td class="text-center" bgcolor="#ccffcc"><b>2</b></td>
+                                                <td class="text-center" bgcolor="#ccffcc"><b>3</b></td>
+                                                <td class="text-center" bgcolor="#ccffcc"><b>4</b></td>
+                                                <td class="text-center" bgcolor="#ccffcc"><b>5</b></td>
+                                                <td class="text-center" bgcolor="#ccffcc"><b>6</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="20%" rowspan="2" bgcolor="#ccffcc">
+                                                    <div style="font-size:13px;text-align: right;"><b>Maximum Offset
+                                                            <br> <span style="font-size: 15px;">OR*</span>
+                                                            % of Offset floors</div></b>
+                                                    <hr
+                                                        style="transform: rotate(20deg);height: 0px;background-color: black;">
+                                                    <div style="font-size:13px;text-align: left;"><b>Height of
+                                                            Building</b>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center" bgcolor="#ccffcc"><b>NIL</b></td>
+                                                <td class="text-center" bgcolor="#ccffcc"><b>0 m to < 1 m</b> </td> <td
+                                                            class="text-center" bgcolor="#ccffcc"><b>1 m to < 2 m</b>
+                                                                    </td> <td class="text-center" bgcolor="#ccffcc"><b>2
+                                                                        m to < 3 m</b> </td> <td class="text-center"
+                                                                            bgcolor="#ccffcc">
+                                                                            <b>3 m to < 4 m</b> </td> <td
+                                                                                    class="text-center"
+                                                                                    bgcolor="#ccffcc">
+                                                                                    <b>≥ 4 m</b>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center" bgcolor="#ccffcc">&nbsp;</td>
+                                                <td class="text-center" bgcolor="#ccffcc"><b>less than 5%
+                                                        <br>offset</b></td>
+                                                <td class="text-center" bgcolor="#ccffcc"><b>5% to < 15% <br>
+                                                            offset</b></td>
+                                                <td class="text-center" bgcolor="#ccffcc"><b>15% to < 25% <br>
+                                                            offset</b></td>
+                                                <td class="text-center" bgcolor="#ccffcc"><b>25% to < 35% <br>
+                                                            offset</b></td>
+                                                <td class="text-center" bgcolor="#ccffcc"><b>≥ 35% <br>offset</b>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">0 m to < 15 m</td> <td class="text-center">
+                                                        3.00</td>
+                                                <td class="text-center">3.00</td>
+                                                <td class="text-center">3.00</td>
+                                                <td class="text-center">2.50</td>
+                                                <td class="text-center">1.50</td>
+                                                <td class="text-center">0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">15 m to < 45 m</td> <td class="text-center">
+                                                        3.00</td>
+                                                <td class="text-center">3.00</td>
+                                                <td class="text-center">2.50</td>
+                                                <td class="text-center">1.50</td>
+                                                <td class="text-center">1.00</td>
+                                                <td class="text-center">0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">45 m to < 90 m</td> <td class="text-center">
+                                                        3.00</td>
+                                                <td class="text-center">2.50</td>
+                                                <td class="text-center">1.50</td>
+                                                <td class="text-center">1.00</td>
+                                                <td class="text-center">0.00</td>
+                                                <td class="text-center">0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">90 m to < 135 m</td> <td class="text-center">
+                                                        3.00
+                                                </td>
+                                                <td class="text-center">1.50</td>
+                                                <td class="text-center">1.00</td>
+                                                <td class="text-center">0.00</td>
+                                                <td class="text-center">0.00</td>
+                                                <td class="text-center">0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">≥ 135 m</td>
+                                                <td class="text-center">3.00</td>
+                                                <td class="text-center">1.00</td>
+                                                <td class="text-center">0.00</td>
+                                                <td class="text-center">0.00</td>
+                                                <td class="text-center">0.00</td>
+                                                <td class="text-center">0.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <span style="font-size: 14px;">
+                                        * Direct points to be given based on <b>worse scenario</b> of the two i.e
+                                        <u>Maximum Offset</u> OR* <u>% of offset
+                                            floors</u> (% of floors with offset /no. of floors)
+                                    </span>
+                                    </p>
+                                    <p>
+                                        (11) Industry standardised door structural openings with any of the following
+                                        width
+                                        dimensions:
+
+                                        <table class="table table-bordered" style="width:60%; margin-top: 10px;">
+                                            <tbody>
+                                                <tr>
+                                                    <th bgcolor="#8db4e2" width="5%" class="text-center">
+                                                        S/No
+                                                    </th>
+                                                    <th bgcolor="#8db4e2" class="text-center">
+                                                        Door Structural Opening<br />
+                                                        (Width) (mm)
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td class="text-center">900</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td class="text-center">1000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">3</td>
+                                                    <td class="text-center">1100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">4</td>
+                                                    <td class="text-center">1200</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">5</td>
+                                                    <td class="text-center">1250</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">6</td>
+                                                    <td class="text-center">1500</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">7</td>
+                                                    <td class="text-center">2000</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </p>
+                                    <p>
+                                        (12) Industry standardised precast refuse chutes with any of the following
+                                        sizes:<br />
+                                        <table class="table table-bordered" style="width:60%;margin-top: 10px;">
+                                            <tbody>
+                                                <tr>
+                                                    <th bgcolor="#8db4e2" width="5%" class="text-center">S/No</th>
+                                                    <th bgcolor="#8db4e2" class="text-center">Outer Dimensions (m)</th>
+                                                    <th bgcolor="#8db4e2" class="text-center">Inner Dimensions (m)</th>
+                                                    <th bgcolor="#8db4e2" class="text-center">Chamfer Radius (mm)</th>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td class="text-center">1.0 x 1.0</td>
+                                                    <td class="text-center">0.8 x 0.8</td>
+                                                    <td class="text-center">150</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td class="text-center">0.9 x 0.9</td>
+                                                    <td class="text-center">0.7 diameter</td>
+                                                    <td class="text-center"><b>N.A.</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">3</td>
+                                                    <td class="text-center">0.8 x 0.8</td>
+                                                    <td class="text-center">0.5 or 0.6 diameter</td>
+                                                    <td class="text-center"><b>N.A.</b></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </p>
+                                    <p>
+                                        (13) Industry standardised precast household shelters with any of the following
+                                        sizes:<br />
+                                        <table class="table table-bordered" style="margin-top: 10px;">
+                                            <tbody>
+                                                <tr>
+                                                    <th bgcolor="#8db4e2" width="4%" class="text-center">
+                                                        S/No
+                                                    </th>
+                                                    <th bgcolor="#8db4e2" class="text-center" width="24%">
+                                                        GFA of Dwelling Unit (m<sup>2</sup>)
+                                                    </th>
+                                                    <th bgcolor="#8db4e2" class="text-center" width="24%">
+                                                        Min Inner Floor Area (m<sup>2</sup>)
+                                                    </th>
+                                                    <th bgcolor="#8db4e2" class="text-center" width="24%">
+                                                        Size (m/m)
+                                                    </th>
+                                                    <th bgcolor="#8db4e2" class="text-center" width="24%">
+                                                        Wall Thickness (mm)
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td class="text-center">45 &lt; GFA ≤ 75</td>
+                                                    <td class="text-center">2.2</td>
+                                                    <td class="text-center">1.2 x 1.9, 1.3 x 1.7, 1.45 x 1.6</td>
+                                                    <td class="text-center">250 or 300</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td class="text-center">75 &lt; GFA ≤ 140</td>
+                                                    <td class="text-center">2.8</td>
+                                                    <td class="text-center">1.2 x 2.4, 1.25 x 2.3, 1.3 x 2.2, 1.35 x
+                                                        2.1, 1.45 x 1.95</td>
+                                                    <td class="text-center">250 or 300</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">3</td>
+                                                    <td class="text-center">GFA > 140</td>
+                                                    <td class="text-center">3.4</td>
+                                                    <td class="text-center">1.5 x 2.4, 1.6 x 2.2</td>
+                                                    <td class="text-center">250 or 300</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </p>
+                                    <p>
+                                        (14) Industry standardised prefabricated bathroom units with any of the
+                                        following
+                                        sizes:<br />
+                                        <table class="table table-bordered" style="width: 60%;margin-top: 10px;">
+                                            <tbody>
+                                                <tr>
+                                                    <th bgcolor="#8db4e2" rowspan="2" width="5%"
+                                                        class="text-center align-middle">
+                                                        S/No
+                                                    </th>
+                                                    <th bgcolor="#8db4e2" colspan="3" class="text-center">Internal
+                                                        Dimensions (m)</th>
+                                                </tr>
+                                                <tr>
+                                                    <th bgcolor="#8db4e2" class="text-center">Master Bath</th>
+                                                    <th bgcolor="#8db4e2" class="text-center">Common Bath</th>
+                                                    <th bgcolor="#8db4e2" class="text-center">Maid/Yard Bath</th>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td class="text-center">1.8 x 2.6</td>
+                                                    <td class="text-center">1.5 x 2.5</td>
+                                                    <td class="text-center">0.8 x 1.5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td class="text-center">2.0 x 2.4</td>
+                                                    <td class="text-center">1.7 x 1.8</td>
+                                                    <td class="text-center">1.2 x 1.5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">3</td>
+                                                    <td class="text-center">2.0 x 2.6</td>
+                                                    <td class="text-center">1.7 x 2.0</td>
+                                                    <td class="text-center">1.2 x 1.6</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">4</td>
+                                                    <td class="text-center">2.0 x 3.4</td>
+                                                    <td class="text-center">1.7 x 2.2</td>
+                                                    <td class="text-center">1.2 x 2.2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">5</td>
+                                                    <td class="text-center">2.2 x 2.8</td>
+                                                    <td class="text-center">1.8 x 2.8</td>
+                                                    <td class="text-center">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">6</td>
+                                                    <td class="text-center">&nbsp;</td>
+                                                    <td class="text-center">1.9 x 1.9</td>
+                                                    <td class="text-center">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">7</td>
+                                                    <td class="text-center">&nbsp;</td>
+                                                    <td class="text-center">2.0 x 2.0</td>
+                                                    <td class="text-center">&nbsp;</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </p>
+                                </div>
+                                <span><u><b>Design for Manufacturing & Assembly (DfMA) technologies</b></u></span><br>
+                                <p>(15) Please refer to BCA website for the list of accepted PPVC systems.</p>
+                                <p>(16) Innovative structural steel connections refer to those that do not require site
+                                    welding and allow faster erection and easy on-site installation of steel
+                                    members.</p>
+                                <p>(17) PBU system has to be accepted by the Building Innovation Panel (BIP) and
+                                    accredited under the PBU Manufacturer Accreditation Scheme. Please refer to BCA
+                                    website for the list of accepted PBU systems.</p>
+                                <p>(18) At least 80% of the precast component must use mechanical connection.</p>
+                                <p>(19) The Qualified Persons shall ensure the relevant MEP systems are adopted.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container" app-type-bs03 hidden id="page3-3">
+                        <h2>Explanatory Notes</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="color: #0000ff;">Form BPD_ BS03</span>
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td width="1%" class="align-top">(1)</td>
+                                            <td>Only one copy of this Form need to be submitted. This form is to be
+                                                submitted together with TOP/CSC application. All items/blanks must be
+                                                completed. </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-top">(2)</td>
+                                            <td>For projects with multiple blocks, please submit 1 copy of the BPD_BS03
+                                                for every block.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-top">(3)</td>
+                                            <td>For additional building blocks, select the SUMMARY sheet. Click the "Add
+                                                Block" button. Click OK to confirm to add a block.</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">To delete a building block, click the "Delete Block" button.
+                                                Enter the sheet name of the block to delete. Click OK to confirm
+                                                deletion. </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">For additional building blocks, select the SUMMARY sheet.
+                                                Click the "Add Block" button. Click OK to confirm to add a block. </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <span><b><u>Structural System</u></b></span><br />
+                        <!-- <ul style="padding-inline-start: 15px;margin-top:15px;"> -->
+                        (1) At least 80% of the steel reinforcement for composite slab must be welded mesh. <br>
+                        (2) The use of welded mesh is mandated for all developments where cast in-situ slab has been
+                        adopted in the design. The minimum usage of welded mesh must be at least 65% of all cast
+                        in-situ slab area. <br>
+                        (3) For designs of residential non-landed projects that incorporate household shelters, it
+                        is mandatory for these household shelters to be precast. <br>
+                        (4) High strength concrete of at least Grade 70 must be used for at least 5% of the total
+                        concrete volume. <br>
+                        (5) Self-compacting concrete must be used for at least 30% of the total concrete volume. <br>
+                        (6) Diaphragm wall must be adopted for at least 65% of the permanent retaining wall at
+                        basement. <br><br>
+                        <!-- </ul> -->
+                        <span><b><u>Wall System</u></b></span><br />
+                        <!-- <ul style="padding-inline-start: 15px;margin-top:15px;"> -->
+                        (7) Drywall partition consists of prefabricated boards typically made of gypsum (or
+                        other
+                        materials such as calcium silicate or fibre-based cement) that are screw-fastened to
+                        both sides of a metal stud framing system. No wet trades are involved. The type and
+                        number of layers of the boards, and the insulation material within the space formed
+                        by
+                        the metal framing system are determined by the desired strength, acoustic, fire and
+                        other performance criteria required of the partition. For mandatory use of drywall
+                        under
+                        item 1.1, the drywall used must achieve a performance grading of Severe Duty for
+                        strength and robustness. <br>
+                        (8) Lightweight concrete panels include autoclaved lightweight concrete (ALC) panels,
+                        autoclaved aerated concrete (AAC) panels. <br>
+                        (9) Precision blocks refer to lightweight concrete blocks that have precise dimensions
+                        (±
+                        1mm dimensional tolerance) and can be laid on thin bed adhesive mortar. <br>
+                        (10) The use of brickwall/blockwall, once used, must be indicated and shown under wall
+                        system
+                        by its wall length. Demerit points for using brickwall/blockwall will be
+                        auto-generated
+                        under item 14.5 on Demerit Points.
+                        <!-- </ul> -->
+                        <ul style="padding-inline-start: 15px;margin-top:15px;">
+                            <!-- <li> -->
+                            <p><b>Table A: Direct Points for Designs with High Voids*</b></p>
+                            <table class="table table-bordered" style="width:60%">
+                                <tbody>
+                                    <tr>
+                                        <th bgcolor="#ccffcc" class="text-center">Case</th>
+                                        <th bgcolor="#ccffcc" class="text-center">
+                                            <u>Total void height (Only those > 9m)</u><br />
+                                            Total building height
+                                        </th>
+                                        <th bgcolor="#ccffcc" class="text-center">Points</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center">0% (no high voids)</td>
+                                        <td class="text-center">2.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">> 0% to &lt; 10%</td>
+                                        <td class="text-center">1.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">3</td>
+                                        <td class="text-center">≥ 10% to &lt; 15%</td>
+                                        <td class="text-center">1.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">4</td>
+                                        <td class="text-center">≥ 15% to &lt; 20%</td>
+                                        <td class="text-center">0.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">≥ 20%</td>
+                                        <td class="text-center">0.0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <span style="font-size: 14px;">
+                                * High voids refer to heights that are more than 9m.
+                                <br />
+                                * A design that does not have any void height greater than 9m throughout
+                                its
+                                building height will
+                                get a maximum 2 points.
+                            </span>
+                            <p><b>Table B: Direct Points for Designs with Varying Forms</b></p>
+                            <table class="table table-bordered" style="width:100%;margin-top: 10px;">
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center" bgcolor="#ccffcc"><b>Scenario</b></td>
+                                        <td class="text-center" bgcolor="#ccffcc"><b>1</b></td>
+                                        <td class="text-center" bgcolor="#ccffcc"><b>2</b></td>
+                                        <td class="text-center" bgcolor="#ccffcc"><b>3</b></td>
+                                        <td class="text-center" bgcolor="#ccffcc"><b>4</b></td>
+                                        <td class="text-center" bgcolor="#ccffcc"><b>5</b></td>
+                                        <td class="text-center" bgcolor="#ccffcc"><b>6</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="20%" rowspan="2" bgcolor="#ccffcc">
+                                            <div style="font-size:13px;text-align: right;"><b>Maximum Offset
+                                                    <br> <span style="font-size: 15px;">OR*</span>
+                                                    % of Offset floors</div></b>
+                                            <hr style="transform: rotate(20deg);height: 0px;background-color: black;">
+                                            <div style="font-size:13px;text-align: left;"><b>Height of
+                                                    Building</b>
+                                            </div>
+                                        </td>
+                                        <td class="text-center" bgcolor="#ccffcc"><b>NIL</b></td>
+                                        <td class="text-center" bgcolor="#ccffcc"><b>0 m to < 1 m</b> </td> <td
+                                                    class="text-center" bgcolor="#ccffcc"><b>1
+                                                        m to < 2 m</b> </td> <td class="text-center" bgcolor="#ccffcc">
+                                                            <b>2
+                                                                m to < 3 m</b> </td> <td class="text-center"
+                                                                    bgcolor="#ccffcc">
+                                                                    <b>3 m to < 4 m</b> </td> <td class="text-center"
+                                                                            bgcolor="#ccffcc">
+                                                                            <b>≥ 4 m</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center" bgcolor="#ccffcc">&nbsp;</td>
+                                        <td class="text-center" bgcolor="#ccffcc"><b>less than 5%
+                                                <br>offset</b></td>
+                                        <td class="text-center" bgcolor="#ccffcc"><b>5% to < 15% <br>
+                                                    offset</b></td>
+                                        <td class="text-center" bgcolor="#ccffcc"><b>15% to < 25% <br>
+                                                    offset</b></td>
+                                        <td class="text-center" bgcolor="#ccffcc"><b>25% to < 35% <br>
+                                                    offset</b></td>
+                                        <td class="text-center" bgcolor="#ccffcc"><b>≥ 35% <br>offset</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">0 m to < 15 m</td> <td class="text-center">
+                                                3.00</td>
+                                        <td class="text-center">3.00</td>
+                                        <td class="text-center">3.00</td>
+                                        <td class="text-center">2.50</td>
+                                        <td class="text-center">1.50</td>
+                                        <td class="text-center">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">15 m to < 45 m</td> <td class="text-center">
+                                                3.00</td>
+                                        <td class="text-center">3.00</td>
+                                        <td class="text-center">2.50</td>
+                                        <td class="text-center">1.50</td>
+                                        <td class="text-center">1.00</td>
+                                        <td class="text-center">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">45 m to < 90 m</td> <td class="text-center">
+                                                3.00</td>
+                                        <td class="text-center">2.50</td>
+                                        <td class="text-center">1.50</td>
+                                        <td class="text-center">1.00</td>
+                                        <td class="text-center">0.00</td>
+                                        <td class="text-center">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">90 m to < 135 m</td> <td class="text-center">
+                                                3.00
+                                        </td>
+                                        <td class="text-center">1.50</td>
+                                        <td class="text-center">1.00</td>
+                                        <td class="text-center">0.00</td>
+                                        <td class="text-center">0.00</td>
+                                        <td class="text-center">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">≥ 135 m</td>
+                                        <td class="text-center">3.00</td>
+                                        <td class="text-center">1.00</td>
+                                        <td class="text-center">0.00</td>
+                                        <td class="text-center">0.00</td>
+                                        <td class="text-center">0.00</td>
+                                        <td class="text-center">0.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <span style="font-size: 14px;">
+                                * Direct points to be given based on <b>worse scenario</b> of the two i.e
+                                <u>Maximum Offset</u> OR* <u>% of offset
+                                    floors</u> (% of floors with offset /no. of floors)
+                            </span>
+                            <!-- </li> -->
+                        </ul>
+                        <ul style="padding-inline-start: 15px;margin-top:15px;">
+                            <!-- <li> -->
+                            (11) Industry standardised door structural openings with any of the following
+                            width
+                            dimensions: <br />
+                            <table class="table table-bordered" style="width:60%; margin-top: 10px;">
+                                <tbody>
+                                    <tr>
+                                        <th bgcolor="#8db4e2" width="5%" class="text-center">
+                                            S/No
+                                        </th>
+                                        <th bgcolor="#8db4e2" class="text-center">
+                                            Door Structural Opening<br />
+                                            (Width) (mm)
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center">900</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">1000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">3</td>
+                                        <td class="text-center">1100</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">4</td>
+                                        <td class="text-center">1200</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">1250</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">6</td>
+                                        <td class="text-center">1500</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">7</td>
+                                        <td class="text-center">2000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- </li> -->
+                            <!-- <li> -->
+                            (12) Industry standardised precast refuse chutes with any of the following
+                            sizes:<br />
+                            <table class="table table-bordered" style="width:60%;margin-top: 10px;">
+                                <tbody>
+                                    <tr>
+                                        <th bgcolor="#8db4e2" width="5%" class="text-center">S/No</th>
+                                        <th bgcolor="#8db4e2" class="text-center">Outer Dimensions (m)
+                                        </th>
+                                        <th bgcolor="#8db4e2" class="text-center">Inner Dimensions (m)
+                                        </th>
+                                        <th bgcolor="#8db4e2" class="text-center">Chamfer Radius (mm)
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center">1.0 x 1.0</td>
+                                        <td class="text-center">0.8 x 0.8</td>
+                                        <td class="text-center">150</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">0.9 x 0.9</td>
+                                        <td class="text-center">0.7 diameter</td>
+                                        <td class="text-center"><b>N.A.</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">3</td>
+                                        <td class="text-center">0.8 x 0.8</td>
+                                        <td class="text-center">0.5 or 0.6 diameter</td>
+                                        <td class="text-center"><b>N.A.</b></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- </li> -->
+                            <!-- <li> -->
+                            (13) Industry standardised precast household shelters with any of the following
+                            sizes:<br />
+                            <table class="table table-bordered" style="margin-top: 10px;">
+                                <tbody>
+                                    <tr>
+                                        <th bgcolor="#8db4e2" width="4%" class="text-center">
+                                            S/No
+                                        </th>
+                                        <th bgcolor="#8db4e2" class="text-center" width="24%">
+                                            GFA of Dwelling Unit (m<sup>2</sup>)
+                                        </th>
+                                        <th bgcolor="#8db4e2" class="text-center" width="24%">
+                                            Min Inner Floor Area (m<sup>2</sup>)
+                                        </th>
+                                        <th bgcolor="#8db4e2" class="text-center" width="24%">
+                                            Size (m/m)
+                                        </th>
+                                        <th bgcolor="#8db4e2" class="text-center" width="24%">
+                                            Wall Thickness (mm)
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center">45 &lt; GFA ≤ 75</td>
+                                        <td class="text-center">2.2</td>
+                                        <td class="text-center">1.2 x 1.9, 1.3 x 1.7, 1.45 x 1.6</td>
+                                        <td class="text-center">250 or 300</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">75 &lt; GFA ≤ 140</td>
+                                        <td class="text-center">2.8</td>
+                                        <td class="text-center">1.2 x 2.4, 1.25 x 2.3, 1.3 x 2.2, 1.35 x
+                                            2.1, 1.45 x 1.95</td>
+                                        <td class="text-center">250 or 300</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">3</td>
+                                        <td class="text-center">GFA > 140</td>
+                                        <td class="text-center">3.4</td>
+                                        <td class="text-center">1.5 x 2.4, 1.6 x 2.2</td>
+                                        <td class="text-center">250 or 300</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- </li> -->
+                            <!-- <li> -->
+                            (14) Industry standardised prefabricated bathroom units with any of the
+                            following
+                            sizes:<br />
+                            <table class="table table-bordered" style="width: 60%;margin-top: 10px;">
+                                <tbody>
+                                    <tr>
+                                        <th bgcolor="#8db4e2" rowspan="2" width="5%" class="text-center align-middle">
+                                            S/No
+                                        </th>
+                                        <th bgcolor="#8db4e2" colspan="3" class="text-center">Internal
+                                            Dimensions (m)</th>
+                                    </tr>
+                                    <tr>
+                                        <th bgcolor="#8db4e2" class="text-center">Master Bath</th>
+                                        <th bgcolor="#8db4e2" class="text-center">Common Bath</th>
+                                        <th bgcolor="#8db4e2" class="text-center">Maid/Yard Bath</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center">1.8 x 2.6</td>
+                                        <td class="text-center">1.5 x 2.5</td>
+                                        <td class="text-center">0.8 x 1.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">2</td>
+                                        <td class="text-center">2.0 x 2.4</td>
+                                        <td class="text-center">1.7 x 1.8</td>
+                                        <td class="text-center">1.2 x 1.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">3</td>
+                                        <td class="text-center">2.0 x 2.6</td>
+                                        <td class="text-center">1.7 x 2.0</td>
+                                        <td class="text-center">1.2 x 1.6</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">4</td>
+                                        <td class="text-center">2.0 x 3.4</td>
+                                        <td class="text-center">1.7 x 2.2</td>
+                                        <td class="text-center">1.2 x 2.2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">5</td>
+                                        <td class="text-center">2.2 x 2.8</td>
+                                        <td class="text-center">1.8 x 2.8</td>
+                                        <td class="text-center">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">6</td>
+                                        <td class="text-center">&nbsp;</td>
+                                        <td class="text-center">1.9 x 1.9</td>
+                                        <td class="text-center">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">7</td>
+                                        <td class="text-center">&nbsp;</td>
+                                        <td class="text-center">2.0 x 2.0</td>
+                                        <td class="text-center">&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- </li> -->
+                        </ul>
+                        <span><b><u>Design for Manufacturing & Assembly (DfMA) technologies</u></b></span><br>
+                        <!-- <ul style="padding-inline-start: 15px;margin-top:15px;"> -->
+                        (15) Please refer to BCA website for the list of accepted PPVC systems.<br>
+                        (16) Innovative structural steel connections refer to those that do not require
+                        site
+                        welding and allow faster erection and easy on-site installation of steel
+                        members.<br>
+                        (17) PBU system has to be accepted by the Building Innovation Panel (BIP) and
+                        accredited under the PBU Manufacturer Accreditation Scheme. Please refer to
+                        BCA
+                        website for the list of accepted PBU systems.<br>
+                        (18) At least 80% of the precast component must use mechanical connection.<br>
+                        (19) The Qualified Persons shall ensure the relevant MEP systems are adopted.
+                        <br>
+                        <!-- </ul> -->
+                    </div>
+                </div>
+                <div id="page3" app-show>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Section I Particulars of Application</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td colspan="2">
+                                        <table class="table table-borderless">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="pl-0" width="35%">Project Reference Number</td>
+                                                    <td>
+                                                        <cn2-textbox no-label id='PartoOfAppl_ProjRefNo10' disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pl-0">Description of Building Works*</td>
+                                                    <td>
+                                                        <cn2-textbox no-label id='PartoOfAppl_DescOfBldgWrks10'
+                                                            maxlength="32400" mandatory>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="pl-0">Location Description</td>
+                                                    <td>
+                                                        <cn2-textarea no-label id="PartOfAppl_LocaDesc10" disabled>
+                                                        </cn2-textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="page4" app-show>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>
+                            Section II Particulars of Qualified Person for Architectural
+                            Works
+                        </h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr hidden>
+                                            <td>Member ID</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Member_SID_QPAW10" no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">Name*</td>
+                                            <td>
+                                                <cn2-select id="Member_Member_Name_QPAW10" no-label mandatory
+                                                    data-options="qpAWDropdown"
+                                                    event-change="loadDropDownDetails(this); removeSelectUENerror('Member_UEN_QPAW10', 'Member_Date_QPAW10');">
+                                                </cn2-select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Firm Name</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Firm_Name_QPAW10" no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>UEN</td>
+                                            <td>
+                                                <cn2-textbox id="Member_UEN_QPAW10" no-label maxlength="10"
+                                                    template="#########@" event-blur="uenValidate(this)"></cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Firm Address</td>
+                                            <td>
+                                                <cn2-textarea id="Member_Firm_Addr_QPAW10" no-label disabled>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date*</td>
+                                            <td>
+                                                <cn2-datefield id="Member_Date_QPAW10" no-label mandatory
+                                                    onfocusout="validateDate(this);">
+                                                </cn2-datefield>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Telephone No.</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Tel_No_QPAW10" no-label disabled></cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fax No.</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Fax_No_QPAW10" no-label></cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email Address</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Email_QPAW10" no-label disabled></cn2-textbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>
+                            Section III Particulars of Qualified Person for Structural Works
+                        </h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr hidden>
+                                            <td>Member ID</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Member_SID_QPSW10" no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">Name*</td>
+                                            <td>
+                                                <cn2-select id="Member_Member_Name_QPSW10" no-label mandatory
+                                                    data-options="qpSWDropdown"
+                                                    event-change="loadDropDownDetails(this); removeSelectUENerror('Member_UEN_QPSW10', 'Member_Date_QPSW10');">
+                                                </cn2-select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Firm Name</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Firm_Name_QPSW10" no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>UEN</td>
+                                            <td>
+                                                <cn2-textbox id="Member_UEN_QPSW10" no-label maxlength="10"
+                                                    template="#########@" event-blur="uenValidate(this)"></cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Firm Address</td>
+                                            <td>
+                                                <cn2-textarea id="Member_Firm_Addr_QPSW10" no-label disabled>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date*</td>
+                                            <td>
+                                                <cn2-datefield id="Member_Date_QPSW10" no-label mandatory
+                                                    onfocusout="validateDate(this);">
+                                                </cn2-datefield>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Telephone No.</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Tel_No_QPSW10" no-label disabled></cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fax No.</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Fax_No_QPSW10" no-label></cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email Address</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Email_QPSW10" no-label disabled></cn2-textbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking" app-type-bs-01-03>
+                        <h2>Declaration by Qualified Persons</h2>
+                        <div class="mls-espro-form-fields row pb-2">
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <td width="1%" class="align-top">1)</td>
+                                        <td colspan="3">
+                                            We confirm that we are the qualified persons appointed in respect of the
+                                            building works herein described under Section 8(1)(a) of the Building
+                                            Control Act (Cap 29).
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="6" class="align-top">2)</td>
+                                        <td colspan="3">
+                                            Please tick one of the following :
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1%" class="align-top">
+                                            a.
+                                        </td>
+                                        <td width="5%" class="align-top">
+                                            <cn2-checkbox no-label name="declItemTwo" id="CHECK10" mandatory checked
+                                                onclick="showParticularTotals(this);"></cn2-checkbox>
+                                        </td>
+                                        <td>
+                                            We hereby declare that the buildable design score submitted herewith
+                                            complies with the minimum buildable design score requirement under the
+                                            Building Control (Buildability & Productivity) Regulations and the
+                                            computation of the <span bs03 hidden>as-built</span> buildable design score
+                                            is as stated in Form
+                                            BPD_BS<span copLabel>01</span>. We
+                                            further declare that the particulars required for this submission and as
+                                            stated in these forms are correct.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <table class="table table-borderless mb-0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="pl-0" width="75%">The <span copLabel2>total</span>
+                                                            buildable design score
+                                                            for
+                                                            the proposed superstructure works is</td>
+                                                        <td>
+                                                            <cn2-textbox page4-totalSuperBDS no-label disabled
+                                                                id="PartOfAppl_BuilDesiScorSame10">
+                                                            </cn2-textbox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pl-0">The <span copLabel2>total</span> buildable
+                                                            design score for the
+                                                            proposed
+                                                            basement works is</td>
+                                                        <td>
+                                                            <cn2-textbox no-label page4-totalBaseBDS
+                                                                id="PartOfAppl_BuilDesiScorDiff10" disabled>
+                                                            </cn2-textbox>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            Only for residential non-landed projects with Gross Floor Area (GFA)
+                                            ≥ 25,000 m<sup>2</sup> and with first application
+                                            for planning permission made on or after 15 December 2019
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1%" class="align-top">
+                                            b.
+                                        </td>
+                                        <td width="5%" class="align-top">
+                                            <cn2-checkbox no-label name="declItemTwo" id="CHECK20" mandatory checked
+                                                onclick="showParticularTotals(this);"></cn2-checkbox>
+                                        </td>
+                                        <td>
+                                            We hereby declare that we are submitting one of the outcome-based proposals
+                                            (as stated in summary sheet) for the project in lieu of <span
+                                                bs0103>a</span> <span bs03 hidden>as-built</span>
+                                            buildable design
+                                            score as stated in 2a above. <br> <br> We hereby accept that the default
+                                            <span bs03 hidden>as-built</span> buildable design score for the project is
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <table class="table table-borderless mb-0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="pl-0" width="75%">The <span copLabel2>total</span>
+                                                            buildable design score
+                                                            for
+                                                            the proposed superstructure works is</td>
+                                                        <td>
+                                                            <cn2-textbox page4-totalSuperBDSMin no-label disabled
+                                                                id="PartOfAppl_BuilDesiScorSame20">
+                                                            </cn2-textbox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pl-0">The <span copLabel2>total</span> buildable
+                                                            design score for the
+                                                            proposed
+                                                            basement works is</td>
+                                                        <td>
+                                                            <cn2-textbox no-label page4-totalBaseBDSMin
+                                                                id="PartOfAppl_BuilDesiScorDiff20" disabled>
+                                                            </cn2-textbox>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="page5" app-show>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <div class="text-center ">
+                            <h3 projDetailsTitle>
+                                CALCULATIONS OF OVERALL BUILDABLE DESIGN SCORE
+                            </h3>
+                        </div>
+                        <h2 style="margin-top: 20px;">PART I : PROJECT DETAILS</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless" style="margin-bottom: 30px;">
+                                    <tbody>
+                                        <tr>
+                                            <td width="35%">
+                                                Project Reference No.
+                                            </td>
+                                            <td>
+                                                <cn2-textbox id="CalcOfOverBuil_ProjDetl_ProjRefNo10" no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                For mixed development and A & A project, please
+                                                indicate the GFA for each category and type of work,
+                                                where applicable
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div id="gfaContainer">
+                                    <table class="table table-bordered" gfa-table>
+                                        <tbody>
+                                            <tr>
+                                                <td>Please enter the GFA for the development:</td>
+                                                <td width="1%">&nbsp;</td>
+                                                <td class="text-left"><b><u>New Work</u></b> </td>
+                                                <td width="1%">&nbsp;</td>
+                                                <td class="text-left">
+                                                    <b><u>Work within existing building</u></b>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Residential (landed) <span id="residentialSign"></span></td>
+                                                <td>
+                                                    <cn2-checkbox mandatory checked name="CalcOfOverBuil"
+                                                        event-change="enableMandaTextboxResidential(this);summationNewWork();removeMandIfOneChecked(this);"
+                                                        id="CalcOfOverBuil_ProjDetl_ResiLand10"></cn2-checkbox>
+                                                </td>
+                                                <td>
+                                                    <cn2-textbox event-keypress="maxV(this,event,14);"
+                                                        event-input="maxD(this,event,3);summationNewWork();"
+                                                        maxlength="18" id="CalcOfOverBuil_ProjDetl_ResiLand20" no-label
+                                                        disabled currency gfa-type="0" inline="10">
+                                                    </cn2-textbox>
+                                                    &nbsp;m<sup>2</sup>
+                                                </td>
+                                                <td>
+                                                    <cn2-checkbox mandatory checked name="CalcOfOverBuil"
+                                                        event-change="enableMandaTextboxResidential(this);summationExistingWork();removeMandIfOneChecked(this);"
+                                                        id="CalcOfOverBuil_ProjDetl_ResiLand30"></cn2-checkbox>
+                                                </td>
+                                                <td>
+                                                    <cn2-textbox event-keypress="maxV(this,event,14);"
+                                                        event-input="maxD(this,event,3);summationExistingWork();"
+                                                        maxlength="18" id="CalcOfOverBuil_ProjDetl_ResiLand40" no-label
+                                                        disabled currency gfa-type="1" inline="10">
+                                                    </cn2-textbox>
+                                                    &nbsp;m<sup>2</sup>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Residential (non-landed) <span id="NonResidentialSign"></span></td>
+                                                <td>
+                                                    <cn2-checkbox mandatory checked name="CalcOfOverBuil"
+                                                        event-change="enableMandaTextboxNonResidential(this);removeMandIfOneChecked(this);summationNewWork();"
+                                                        id="CalcOfOverBuil_ProjDetl_ResiNonLand10"></cn2-checkbox>
+                                                </td>
+                                                <td>
+                                                    <cn2-textbox event-keypress="maxV(this,event,14);"
+                                                        event-input="maxD(this,event,3);summationNewWork();"
+                                                        maxlength="18" id="CalcOfOverBuil_ProjDetl_ResiNonLand20"
+                                                        no-label disabled currency gfa-type="2" inline="10">
+                                                    </cn2-textbox>
+                                                    &nbsp;m<sup>2</sup>
+                                                </td>
+                                                <td>
+                                                    <cn2-checkbox mandatory checked name="CalcOfOverBuil"
+                                                        event-change="enableMandaTextboxNonResidential(this);removeMandIfOneChecked(this);summationExistingWork();"
+                                                        id="CalcOfOverBuil_ProjDetl_ResiNonLand30"></cn2-checkbox>
+                                                </td>
+                                                <td>
+                                                    <cn2-textbox event-keypress="maxV(this,event,14);"
+                                                        event-input="maxD(this,event,3);summationExistingWork();"
+                                                        maxlength="18" id="CalcOfOverBuil_ProjDetl_ResiNonLand40"
+                                                        no-label disabled currency gfa-type="3" inline="10">
+                                                    </cn2-textbox>
+                                                    &nbsp;m<sup>2</sup>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Commercial <span id="CommercialSign"></span></td>
+                                                <td>
+                                                    <cn2-checkbox mandatory checked name="CalcOfOverBuil"
+                                                        event-change="enableMandaTextboxCommercial(this);summationNewWork();removeMandIfOneChecked(this);"
+                                                        id="CalcOfOverBuil_ProjDetl_Comm10"></cn2-checkbox>
+                                                </td>
+                                                <td>
+                                                    <cn2-textbox event-keypress="maxV(this,event,14);"
+                                                        event-input="maxD(this,event,3);summationNewWork();"
+                                                        maxlength="18" id="CalcOfOverBuil_ProjDetl_Comm20" no-label
+                                                        disabled currency gfa-type="4" inline="10">
+                                                    </cn2-textbox>
+                                                    &nbsp;m<sup>2</sup>
+                                                </td>
+                                                <td>
+                                                    <cn2-checkbox mandatory checked name="CalcOfOverBuil"
+                                                        event-change="enableMandaTextboxCommercial(this);removeMandIfOneChecked(this);summationExistingWork();"
+                                                        id="CalcOfOverBuil_ProjDetl_Comm30"></cn2-checkbox>
+                                                </td>
+                                                <td>
+                                                    <cn2-textbox event-keypress="maxV(this,event,14);"
+                                                        event-input="maxD(this,event,3);summationExistingWork();"
+                                                        maxlength="18" id="CalcOfOverBuil_ProjDetl_Comm40" no-label
+                                                        disabled currency gfa-type="5" inline="10">
+                                                    </cn2-textbox>
+                                                    &nbsp;m<sup>2</sup>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Industrial <span id="IndustrialSign"></span></td>
+                                                <td>
+                                                    <cn2-checkbox mandatory checked name="CalcOfOverBuil"
+                                                        event-change="enableMandaTextboxIndustrial(this);removeMandIfOneChecked(this);summationNewWork();"
+                                                        id="CalcOfOverBuil_ProjDetl_Indu10"></cn2-checkbox>
+                                                </td>
+                                                <td>
+                                                    <cn2-textbox event-keypress="maxV(this,event,14);"
+                                                        event-input="maxD(this,event,3);summationNewWork();"
+                                                        maxlength="18" id="CalcOfOverBuil_ProjDetl_Indu20" no-label
+                                                        disabled currency gfa-type="6" inline="10">
+                                                    </cn2-textbox>
+                                                    &nbsp;m<sup>2</sup>
+                                                </td>
+                                                <td>
+                                                    <cn2-checkbox mandatory checked name="CalcOfOverBuil"
+                                                        event-change="enableMandaTextboxIndustrial(this);removeMandIfOneChecked(this);summationExistingWork();"
+                                                        id="CalcOfOverBuil_ProjDetl_Indu30"></cn2-checkbox>
+                                                </td>
+                                                <td>
+                                                    <cn2-textbox event-keypress="maxV(this,event,14);"
+                                                        event-input="maxD(this,event,3);summationExistingWork();"
+                                                        maxlength="18" id="CalcOfOverBuil_ProjDetl_Indu40" no-label
+                                                        disabled currency gfa-type="7" inline="10">
+                                                    </cn2-textbox>
+                                                    &nbsp;m<sup>2</sup>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Institutional & Others <span id="InstitutionalSign"></span></td>
+                                                <td>
+                                                    <cn2-checkbox mandatory checked name="CalcOfOverBuil"
+                                                        event-change="enableMandaTextboxInstitutional(this);removeMandIfOneChecked(this);summationNewWork();"
+                                                        id="CalcOfOverBuil_ProjDetl_InstAndOther10"></cn2-checkbox>
+                                                </td>
+                                                <td>
+                                                    <cn2-textbox event-keypress="maxV(this,event,14);"
+                                                        event-input="maxD(this,event,3);summationNewWork();"
+                                                        maxlength="18" id="CalcOfOverBuil_ProjDetl_InstAndOther20"
+                                                        no-label currency gfa-type="8" disabled inline="10">
+                                                    </cn2-textbox>
+                                                    &nbsp;m<sup>2</sup>
+                                                </td>
+                                                <td>
+                                                    <cn2-checkbox mandatory checked name="CalcOfOverBuil"
+                                                        event-change="enableMandaTextboxInstitutional(this);removeMandIfOneChecked(this);summationExistingWork();"
+                                                        id="CalcOfOverBuil_ProjDetl_InstAndOther30"></cn2-checkbox>
+                                                </td>
+                                                <td>
+                                                    <cn2-textbox event-keypress="maxV(this,event,14);"
+                                                        event-input="maxD(this,event,3);summationExistingWork();"
+                                                        maxlength="18" currency gfa-type="9"
+                                                        id="CalcOfOverBuil_ProjDetl_InstAndOther40" no-label disabled
+                                                        inline="10">
+                                                    </cn2-textbox>
+                                                    &nbsp;m<sup>2</sup>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>School <span id="SchoolSign"></span></td>
+                                                <td>
+                                                    <cn2-checkbox mandatory checked name="CalcOfOverBuil"
+                                                        event-change="enableMandaTextboxSchool(this);removeMandIfOneChecked(this);summationNewWork();"
+                                                        id="CalcOfOverBuil_ProjDetl_Scho10"></cn2-checkbox>
+                                                </td>
+                                                <td>
+                                                    <cn2-textbox event-keypress="maxV(this,event,14);"
+                                                        event-input="maxD(this,event,3);summationNewWork();"
+                                                        maxlength="18" id="CalcOfOverBuil_ProjDetl_Scho20" no-label
+                                                        disabled currency gfa-type="10" inline="10">
+                                                    </cn2-textbox>
+                                                    &nbsp;m<sup>2</sup>
+                                                </td>
+                                                <td>
+                                                    <cn2-checkbox mandatory checked name="CalcOfOverBuil"
+                                                        event-change="enableMandaTextboxSchool(this);removeMandIfOneChecked(this);summationExistingWork();"
+                                                        id="CalcOfOverBuil_ProjDetl_Scho30"></cn2-checkbox>
+                                                </td>
+                                                <td>
+                                                    <cn2-textbox event-keypress="maxV(this,event,14);"
+                                                        event-input="maxD(this,event,3);summationExistingWork();"
+                                                        maxlength="18" id="CalcOfOverBuil_ProjDetl_Scho40" no-label
+                                                        disabled currency gfa-type="11" inline="10">
+                                                    </cn2-textbox>
+                                                    &nbsp;m<sup>2</sup>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="2">Sub GFA :</th>
+                                                <th>
+                                                    <cn2-textbox id="CalcOfOverBuil_ProjDetl_SubGfa_NewWork10" no-label
+                                                        disabled inline="10" placeholder="0.00"></cn2-textbox>
+                                                    &nbsp;m<sup>2</sup>
+                                                </th>
+                                                <td style="border: none;">&nbsp;</td>
+                                                <th style="border-left: none;">
+                                                    <cn2-textbox id="CalcOfOverBuil_ProjDetl_SubGfa_WorkWithExisBldg10"
+                                                        no-label disabled inline="10" placeholder="0.00"></cn2-textbox>
+                                                    &nbsp;m<sup>2</sup>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="2">
+                                                    <span style="color: #0000ff;">Total GFA :</span>
+                                                </th>
+                                                <th>
+                                                    <cn2-textbox id="CalcOfOverBuil_ProjDetl_TotaGfa10" no-label
+                                                        disabled placeholder="0.00" inline="10">
+                                                    </cn2-textbox>&nbsp;<span
+                                                        style="color: #0000ff;">m<sup>2</sup></span>
+                                                </th>
+                                                <td colspan="2">&nbsp;</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table table-bordered" style="margin-top: 0px;" proj-det-radio>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <b>
+                                                        Note: New work includes extension/addition outside
+                                                        existing building
+                                                    </b>
+                                                    <br />
+                                                    Please indicate one of the following (this is a
+                                                    compulsory field):
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="3%"></td>
+                                                <td class="align-top" width="1%">
+                                                    1.
+                                                </td>
+                                                <td>
+                                                    The project is submitting the outcome-based proposal below with the
+                                                    default buildable design score <br> <b><i>(applicable only for
+                                                            residential
+                                                            non-landed projects with GFA ≥ 25,000 m2 and with first
+                                                            application
+                                                            for planning permission made on or after 15 December 2019
+                                                            only)</i></b>
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="radio" checked mandatory name="devtype"
+                                                        onclick="devType(this);" no-label
+                                                        id="CalcOfOverBuil_ProjDetl_ProjSubmOutcPropA10"></input>
+                                                </td>
+                                                <td>
+                                                    (a)
+                                                </td>
+                                                <td>
+                                                    &ge; 60% of Prefabricated Prefinished Volumetric Construction (PPVC)
+                                                </td>
+                                                <td width="20%">
+                                                    <cn2-textbox no-label disabled center-textbox
+                                                        id="CalcOfOverBuil_ProjDetl_ProjSubmOutcPropA20"></cn2-textbox>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    (The PPVC system is accepted by the Building Innovation Panel
+                                                    (BIP) and accredited under the PPVC Manufacturer Accreditation
+                                                    Scheme. The PPVC meets the requirements stipulated in COP 2019)
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <table class="table table-borderless mb-0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="pl-0" width="300px">
+                                                                    Description of accepted PPVC system :
+                                                                </td>
+                                                                <td class="pl-0 pr-0">
+                                                                    <cn2-textbox no-label maxlength="32400" no-event
+                                                                        id="CalcOfOverBuil_ProjDetl_ProjSubmOutcPropA_DescAccePpvcSyst10">
+                                                                    </cn2-textbox>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    or
+                                                </td>
+                                                <td colspan="2"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="radio" name="devtype" checked mandatory
+                                                        onclick="devType(this);" no-label
+                                                        id="CalcOfOverBuil_ProjDetl_ProjSubmOutcPropB10"></input>
+                                                </td>
+                                                <td>
+                                                    (b)
+                                                </td>
+                                                <td>
+                                                    &ge; 60% of Prefabricated Prefinished Volumetric Construction
+                                                    (PPVC)
+                                                </td>
+                                                <td width="20%">
+                                                    <cn2-textbox no-label disabled center-textbox
+                                                        id="CalcOfOverBuil_ProjDetl_ProjSubmOutcPropB20"></cn2-textbox>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    (The PPVC meets the requirements stipulated in COP 2019)
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    or
+                                                </td>
+                                                <td colspan="2"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="radio" name="devtype" checked mandatory
+                                                        onclick="devType(this);" no-label
+                                                        id="CalcOfOverBuil_ProjDetl_ProjSubmOutcPropC10"></input>
+                                                </td>
+                                                <td>
+                                                    (c)
+                                                </td>
+                                                <td>
+                                                    &ge; 65% of prefabricated system and
+                                                </td>
+                                                <td width="20%">
+                                                    <cn2-textbox no-label disabled center-textbox
+                                                        id="CalcOfOverBuil_ProjDetl_ProjSubmOutcPropC20"></cn2-textbox>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    &ge; 70% of system formwork
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    or
+                                                </td>
+                                                <td colspan="2"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="radio" name="devtype" checked mandatory
+                                                        onclick="devType(this);" no-label
+                                                        id="CalcOfOverBuil_ProjDetl_ProjSubmOutcPropD10"></input>
+                                                </td>
+                                                <td>
+                                                    (d)
+                                                </td>
+                                                <td>
+                                                    &ge; 50% of prefabricated system,
+                                                </td>
+                                                <td width="20%">
+                                                    <cn2-textbox no-label disabled center-textbox
+                                                        id="CalcOfOverBuil_ProjDetl_ProjSubmOutcPropD20"></cn2-textbox>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    &ge; 70% of system formwork and
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    &ge; 50% of prefabricated MEP system
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    or
+                                                </td>
+                                                <td colspan="2"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="radio" name="devtype" checked mandatory
+                                                        onclick="devType(this);" no-label
+                                                        id="CalcOfOverBuil_ProjDetl_ProjSubmOutcPropE10"></input>
+                                                </td>
+                                                <td>
+                                                    (e)
+                                                </td>
+                                                <td>
+                                                    open option proposal that can achieve minimum 20% productivity
+                                                    improvement from 2010 level
+                                                </td>
+                                                <td width="20%">
+                                                    <cn2-textbox no-label no-event numeric
+                                                        event-blur="validRange(this, 0, 110);" center-textbox
+                                                        id="CalcOfOverBuil_ProjDetl_ProjSubmOutcPropE20"></cn2-textbox>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <i>Note: please consult BCA for the default buildable design score
+                                                        for the proposal</i>
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td colspan="2"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <cn2-checkbox onclick="devType(this);" no-label not-included
+                                                        id="CalcOfOverBuil_ProjDetl_ProjSubmOutcProp_DefaBuilDesiScor10">
+                                                    </cn2-checkbox>
+                                                </td>
+                                                <td colspan="2">
+                                                    the default buildable design score for basement works (where
+                                                    applicable)
+                                                </td>
+                                                <td width="20%">
+                                                    <cn2-textbox no-label disabled center-textbox
+                                                        id="CalcOfOverBuil_ProjDetl_ProjSubmOutcProp_DefaBuilDesiScor20">
+                                                    </cn2-textbox>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    OR
+                                                </td>
+                                                <td colspan="3"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="radio" name="devtype" checked mandatory
+                                                        onclick="devType(this);" no-label
+                                                        id="CalcOfOverBuil_ProjDetl_ProjCompWithMini10"></input>
+                                                </td>
+                                                <td>
+                                                    2.
+                                                </td>
+                                                <td>
+                                                    The project complies with the minimum buildable design score
+                                                    requirement
+                                                </td>
+                                                <td width="20%"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>PART II : BUILDABLE DESIGN SCORE SUMMARY SHEET FOR SUPERSTRUCTURE</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <div id="superstructureContainer" style="border-bottom: 1px solid #e2e2e2;">
+                                    <table class="table table-borderless" style="margin-bottom: 30px;">
+                                        <tbody>
+                                            <tr>
+                                                <td width="250px"><b> Total no. of blocks </b></td>
+                                                <td width="250px">
+                                                    <cn2-textbox id="CalcOfOverBuil_ProjDetl_TotaNoOfBlk10" total-blocks
+                                                        no-label disabled>
+                                                    </cn2-textbox>
+                                                </td>
+                                                <td>
+                                                    <cn2-button label="Add Block" id="addBlocks" total-blocks-add
+                                                        event-click="duplicatePage(this);" disabled>
+                                                    </cn2-button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table table-bordered" style="margin-top: 0px; margin-bottom: 0px;">
+                                        <tbody>
+                                            <tr class="text-center" style="font-weight: bold;">
+                                                <td width="16%">Block Name</td>
+                                                <td width="16%">Floor Area (m<sup>2</sup>) (a)</td>
+                                                <td width="16%">Percentage of Floor Area (b)</td>
+                                                <td width="16%">Buildable Design Score (c)</td>
+                                                <td width="16%">
+                                                    Apportionate Buildable Design Score (b) x (c)
+                                                </td>
+                                                <td width="16%"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table table-bordered" style="margin-top: 0px; margin-bottom: 0px;">
+                                        <tbody block-tr>
+                                            <tr blocktr="01">
+                                                <td width="16%">
+                                                    <cn2-textbox id="CalcOfOverBuil_BuilDesiScoreSumm_BlkNm10"
+                                                        prefix="CalcOfOverBuil_BuilDesiScoreSumm_BlkNm" suffix="0" block
+                                                        no-label center-textbox disabled>
+                                                    </cn2-textbox>
+                                                </td>
+                                                <td width="16%">
+                                                    <cn2-textbox id="CalcOfOverBuil_BuilDesiScoreSumm_FlooArea10"
+                                                        prefix="CalcOfOverBuil_BuilDesiScoreSumm_FlooArea" suffix="0"
+                                                        floor no-label center-textbox disabled>
+                                                    </cn2-textbox>
+                                                </td>
+                                                <td width="16%">
+                                                    <cn2-textbox id="CalcOfOverBuil_BuilDesiScoreSumm_PercOfFlooArea10"
+                                                        prefix="CalcOfOverBuil_BuilDesiScoreSumm_PercOfFlooArea"
+                                                        suffix="0" percent-floor no-label center-textbox disabled
+                                                        inline="10">
+                                                    </cn2-textbox>
+                                                    <span>%</span>
+                                                </td>
+                                                <td width="16%">
+                                                    <cn2-textbox id="CalcOfOverBuil_BuilDesiScoreSumm_BuilDesiScor10"
+                                                        prefix="CalcOfOverBuil_BuilDesiScoreSumm_BuilDesiScor"
+                                                        suffix="0" bds no-label center-textbox disabled>
+                                                    </cn2-textbox>
+                                                </td>
+                                                <td width="16%">
+                                                    <cn2-textbox
+                                                        id="CalcOfOverBuil_BuilDesiScoreSumm_AppoBuilDesiScor10"
+                                                        prefix="CalcOfOverBuil_BuilDesiScoreSumm_AppoBuilDesiScor"
+                                                        suffix="0" abds no-label center-textbox disabled>
+                                                    </cn2-textbox>
+                                                </td>
+                                                <td width="16%" class="text-center">
+                                                    <cn2-button id="deleteBlock10" prefix="deleteBlock" suffix="0"
+                                                        blockOwner="01" label="Delete Block" danger danger-bdsss
+                                                        event-click="removePage(this);" disabled>
+                                                    </cn2-button>
+                                                </td>
+                                            </tr>
+                                            <tr blockchildtr="01">
+                                                <td colspan="6" style="margin: 0px; padding: 0px;"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table table-bordered" style="margin-top: 0px; margin-bottom: 30px;">
+                                        <tbody>
+                                            <tr>
+                                                <td class="part1-label" width="16%"></td>
+                                                <td class="part1-label" width="16%"></td>
+                                                <td class="part1-label" width="16%"></td>
+                                                <td class="part1-label" width="16%"></td>
+                                                <td class="part1-label" width="16%"></td>
+                                                <td class="part1-label" width="16%"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><b> TOTAL </b></td>
+                                                <td>
+                                                    <cn2-textbox id="CalcOfOverBuil_BuilDesiScoreSumm_TotaFlooArea10"
+                                                        total-area no-label disabled center-textbox></cn2-textbox>
+                                                </td>
+                                                <td>
+                                                    <cn2-textbox
+                                                        id="CalcOfOverBuil_BuilDesiScoreSumm_TotaPercFlooArea10"
+                                                        total-percent no-label disabled center-textbox inline="10">
+                                                    </cn2-textbox>
+                                                    <span>%</span>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <cn2-textbox id="CalcOfOverBuil_BuilDesiScoreSumm_TotaAppoBuil10"
+                                                        total-abds no-label disabled center-textbox></cn2-textbox>
+                                                </td>
+                                                <td colspan="2" class="part1-label"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table table-borderless" style="margin-top: 0px;">
+                                        <tbody>
+                                            <tr class="text-center">
+                                                <td class="text-right">
+                                                    TOTAL BUILDABLE DESIGN SCORE FOR THIS PROJECT (SUPERSTRUCTURE)
+                                                </td>
+                                                <td width="1%">=</td>
+                                                <td width="20%">
+                                                    <cn2-textbox no-label
+                                                        id="CalcOfOverBuil_BuilDesiScoreSumm_TotaBuilDesiScorForThisProj10"
+                                                        total-abds-rounded center-textbox disabled></cn2-textbox>
+                                                </td>
+                                            </tr>
+                                            <tr class="text-center">
+                                                <td class="text-right">
+                                                    MINIMUM BUILDABLE DESIGN SCORE REQUIRED (SUPERSTRUCTURE)
+                                                </td>
+                                                <td width="1%">=</td>
+                                                <td width="20%">
+                                                    <cn2-textbox no-label
+                                                        id="CalcOfOverBuil_BuilDesiScoreSumm_TotaBuilDesiScorRequ10"
+                                                        total-bds-round center-textbox disabled>
+                                                    </cn2-textbox>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <table class="table table-borderless" style="margin-top: 0px;">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="3">
+                                                <b>*PREFABRICATION LEVEL (%) FOR DEVELOPMENT ON IGLS SITE <sup>See
+                                                        Explanatory Notes</sup></b>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div id="basementContainer">
+                                    <table class="table table-borderless" style="margin-bottom: 30px;">
+                                        <tbody>
+                                            <tr>
+                                                <td width="250px">
+                                                    (a) STRUCTURAL SYSTEM
+                                                </td>
+                                                <td width="250px">
+                                                    <cn2-textbox
+                                                        id="CalcOfOverBuil_ProjDetl_PrefLeveForDeveOnIGLSSiteStruc"
+                                                        no-label>
+                                                    </cn2-textbox>
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    (b) WALL SYSTEM
+                                                </td>
+                                                <td>
+                                                    <cn2-textbox
+                                                        id="CalcOfOverBuil_ProjDetl_PrefLeveForDeveOnIGLSSiteWall"
+                                                        no-label>
+                                                    </cn2-textbox>
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3"></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3" style="padding: 5px 0; margin: 0;">
+                                                    <h2>PART III : BUILDABLE DESIGN SCORE SUMMARY SHEET FOR BASEMENT
+                                                    </h2>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><b> Total no. of blocks </b></td>
+                                                <td>
+                                                    <cn2-textbox id="CalcOfOverBuil_ProjDetlBase_TotaNoOfBlk10"
+                                                        total-blocks no-label disabled>
+                                                    </cn2-textbox>
+                                                </td>
+                                                <td>
+                                                    <cn2-button label="Add Block" id="addBlocksBase" total-blocks-add
+                                                        event-click="duplicatePage(this, 'basement');" disabled>
+                                                    </cn2-button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table table-bordered" style="margin-top: 0px; margin-bottom: 0px;">
+                                        <tbody>
+                                            <tr class="text-center" style="font-weight: bold;">
+                                                <td width="16%">Block Name</td>
+                                                <td width="16%">Floor Area (m<sup>2</sup>) (a)</td>
+                                                <td width="16%">Percentage of Floor Area (b)</td>
+                                                <td width="16%">Buildable Design Score (c)</td>
+                                                <td width="16%">
+                                                    Apportionate Buildable Design Score (b) x (c)
+                                                </td>
+                                                <td width="16%"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table table-bordered" style="margin-top: 0px; margin-bottom: 0px;">
+                                        <tbody block-tr>
+                                            <tr blocktr="B01">
+                                                <td width="16%">
+                                                    <cn2-textbox id="CalcOfOverBuil_BuilDesiScoreSummBase_BlkNm10"
+                                                        prefix="CalcOfOverBuil_BuilDesiScoreSummBase_BlkNm" suffix="0"
+                                                        block no-label center-textbox disabled>
+                                                    </cn2-textbox>
+                                                </td>
+                                                <td width="16%">
+                                                    <cn2-textbox id="CalcOfOverBuil_BuilDesiScoreSummBase_FlooArea10"
+                                                        prefix="CalcOfOverBuil_BuilDesiScoreSummBase_FlooArea"
+                                                        suffix="0" floor no-label center-textbox disabled>
+                                                    </cn2-textbox>
+                                                </td>
+                                                <td width="16%">
+                                                    <cn2-textbox
+                                                        id="CalcOfOverBuil_BuilDesiScoreSummBase_PercOfFlooArea10"
+                                                        prefix="CalcOfOverBuil_BuilDesiScoreSummBase_PercOfFlooArea"
+                                                        suffix="0" percent-floor no-label center-textbox disabled
+                                                        inline="10">
+                                                    </cn2-textbox>
+                                                    <span>%</span>
+                                                </td>
+                                                <td width="16%">
+                                                    <cn2-textbox
+                                                        id="CalcOfOverBuil_BuilDesiScoreSummBase_BuilDesiScor10"
+                                                        prefix="CalcOfOverBuil_BuilDesiScoreSummBase_BuilDesiScor"
+                                                        suffix="0" bds no-label center-textbox disabled>
+                                                    </cn2-textbox>
+                                                </td>
+                                                <td width="16%">
+                                                    <cn2-textbox
+                                                        id="CalcOfOverBuil_BuilDesiScoreSummBase_AppoBuilDesiScor10"
+                                                        prefix="CalcOfOverBuil_BuilDesiScoreSummBase_AppoBuilDesiScor"
+                                                        suffix="0" abds no-label center-textbox disabled>
+                                                    </cn2-textbox>
+                                                </td>
+                                                <td width="16%" class="text-center">
+                                                    <cn2-button id="deleteBlockBase10" prefix="deleteBlockBase"
+                                                        suffix="0" blockOwner="B01" label="Delete Block" danger
+                                                        danger-bdsss event-click="removePage(this, 'basement');"
+                                                        disabled>
+                                                    </cn2-button>
+                                                </td>
+                                            </tr>
+                                            <tr blockchildtr="B01">
+                                                <td colspan="6" style="margin: 0px; padding: 0px;"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table table-bordered" style="margin-top: 0px; margin-bottom: 30px;">
+                                        <tbody>
+                                            <tr>
+                                                <td class="part1-label" width="16%"></td>
+                                                <td class="part1-label" width="16%"></td>
+                                                <td class="part1-label" width="16%"></td>
+                                                <td class="part1-label" width="16%"></td>
+                                                <td class="part1-label" width="16%"></td>
+                                                <td class="part1-label" width="16%"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><b> TOTAL </b></td>
+                                                <td>
+                                                    <cn2-textbox
+                                                        id="CalcOfOverBuil_BuilDesiScoreSummBase_TotaFlooArea10"
+                                                        total-area no-label disabled center-textbox></cn2-textbox>
+                                                </td>
+                                                <td>
+                                                    <cn2-textbox
+                                                        id="CalcOfOverBuil_BuilDesiScoreSummBase_TotaPercFlooArea10"
+                                                        total-percent no-label disabled center-textbox inline="10">
+                                                    </cn2-textbox>
+                                                    <span>%</span>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <cn2-textbox
+                                                        id="CalcOfOverBuil_BuilDesiScoreSummBase_TotaAppoBuil10"
+                                                        total-abds no-label disabled center-textbox></cn2-textbox>
+                                                </td>
+                                                <td colspan="2" class="part1-label"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table table-borderless" style="margin-top: 0px;">
+                                        <tbody>
+                                            <tr class="text-center">
+                                                <td class="text-right">
+                                                    TOTAL BUILDABLE DESIGN SCORE FOR THIS PROJECT (BASEMENT)
+                                                </td>
+                                                <td width="1%">=</td>
+                                                <td width="20%">
+                                                    <cn2-textbox no-label
+                                                        id="CalcOfOverBuil_BuilDesiScoreSummBase_TotaBuilDesiScorForThisProj10"
+                                                        total-abds-rounded center-textbox disabled></cn2-textbox>
+                                                </td>
+                                            </tr>
+                                            <tr class="text-center">
+                                                <td class="text-right">
+                                                    MINIMUM BUILDABLE DESIGN SCORE REQUIRED (BASEMENT)
+                                                </td>
+                                                <td width="1%">=</td>
+                                                <td width="20%">
+                                                    <cn2-textbox no-label
+                                                        id="CalcOfOverBuil_BuilDesiScoreSummBase_TotaBuilDesiScorRequ10"
+                                                        total-bds-round center-textbox disabled>
+                                                    </cn2-textbox>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page6" project-details-show hidden block-page="01" superstructure></div>
+                <div id="page7" project-details-show hidden block-page="B01" basement></div>
+            </div>
+        </div>
+    </div>
+    <cn2-version-footer></cn2-version-footer>
+    <cn2-fixed-footer></cn2-fixed-footer>
+    </div>
+</body>
+
+</html>

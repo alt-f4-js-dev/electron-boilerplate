@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <title>SCDF-0-MAACFSW</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/resources/assets/js/jquery-3.4.1.min.js"></script>
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+
+  <script src="index.js"></script>
+</head>
+
+<body style="visibility: visible; opacity: 1;">
+  <cn2-master-head
+    title="CERTIFICATE FOR FIRE SAFETY WORKS&lt;br&gt;(Minor Additions and Alterations Works)&lt;br&gt;[Regulation 4(5) of Fire Safety (Building and Pipeline Fire Safety) Regulations]"
+    style="margin-top: 20px; width: 180px;" agency="logo.png"></cn2-master-head>
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p><b>For enquiries related to forms, please contact the following:</b></p>
+        <p> <span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SCDF</td>
+                <td>TAN_Chung_Yee@scdf.gov.sg</td>
+                <td>68481457</td>
+                <td>Submissions</td>
+              </tr>
+              <tr>
+                <td>SCDF</td>
+                <td> </td>
+                <td>62800000</td>
+                <td>E-Payment / Status Of Application</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">OK</button>
+      </div>
+    </div>
+  </div>
+  <input type="hidden" id="member_id" name="member_id" />
+  <input type="hidden" id="form_validated" name="form_validated" />
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Project">
+        </cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars and Declaration of Qualified Person for MAA">
+        </cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4" label="Submission Checklists">
+        </cn2-nav-button>
+        <cn2-nav-button target="page5" page-number="5" label="Certification by Qualified Persons">
+        </cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" no-label inline="5" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td><b>To:</b></td>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea id="Addr10" no-label inline="5" disabled>
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container" style="margin-bottom: 65px;">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>
+                This Form shall be completed and digitally signed by the Qualified Person (QP) and
+                Professional Engineer wherever applicable.
+              </li>
+              <li>
+                It may take you 5 minutes to complete this form.
+              </li>
+
+            </ol>
+          </div>
+        </div>
+        <div id="page2" style="display: none;">
+          <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 65px;">
+            <h2>Particulars of Project</h2>
+            <div class="mls-espro-form-fields row">
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td width="35%">Project Reference Number</td>
+                    <td>
+                      <cn2-textbox no-label id="Project_Project_Ref_No10" disabled>
+                      </cn2-textbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Project Title</td>
+                    <td>
+                      <cn2-textarea no-label id="Project_Title10" disabled></cn2-textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Location Description [Includes Lot/Plot, MK/TS,
+                      Address/Road and Building Name if any]
+                    </td>
+                    <td>
+                      <cn2-textarea no-label id="Project_Location_Description10" disabled>
+                      </cn2-textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>MAA Reference No.*</td>
+                    <td>
+                      <cn2-textbox id="PartOfFSSBAppr_plan_no10" maxlength="15" no-label mandatory
+                        event-blur="checkTemplateValid(this); validateMaaRefNo(this)" template="MAA/A#####/####">
+                      </cn2-textbox>
+                      <small style="color: red;"><span id="errMsgMaaRefNo"></span></small>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div id="page3" style="display: none;">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Qualified Person for MAA</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td>SID</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_SID_QP10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-select no-label id="Member_Member_Name_QP10" mandatory data-options="qpDropdown"
+                      event-change="loadDropDownDetails(this); nricMasking(Member_IC_Passport_No_QP10_mask); clearUEN('Members_UEN_QP10'); validateQPName(this)">
+                    </cn2-select>
+                    <small style="color: red;"><span id="errMsgQPName"></span></small>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Role In Project</td>
+                  <td>
+                    <cn2-textbox no-label id="MemberRole_Member_Role_Code_Desc_QP10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox no-label id="MemberRole_Professional_No_QP10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr nricUnmasked hidden>
+                  <td>NRIC/FIN No.</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_IC_Passport_No_QP10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr nricMasked>
+                  <td>NRIC/FIN No.</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_IC_Passport_No_QP10_mask" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Firm_Name_QP10" uppercase></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea no-label id="Member_Address_QP10" disabled></cn2-textarea>
+                    <cn2-textbox id="Member_Address_Type_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Hse_Blk_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Bldg_Name_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Level_No_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Unit_No_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Road_Code_Desc_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Postal_Code_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine1_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine2_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine3_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine4_QP10" no-label disabled hidden>
+                  </td>
+                </tr>
+                <tr>
+                  <td>ACRA UEN</td>
+                  <td>
+                    <cn2-textbox no-label id="Members_UEN_QP10" event-blur="uenValidate(this)" template="#########@"
+                      maxlength="10"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No./HP No.</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Tel_No_QP10" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Email_Address1_QP10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 65px;">
+            <h2>QP’s Declaration on Regulated Fire Safety Products used in this project</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <input type="radio" id="QPDeclCertConf_IsPLSUsed10" name="QPDeclCertConf_IsPLSUsed" mandatory
+                      checked
+                      onchange="atleastOne(`[name='QPDeclCertConf_IsPLSUsed']`); QPDeclCertConf_IsPLSUsed_change(this); fileAttachCheck(QPDeclCertConf_IsPLSUsed20, 'fileAttach10', true, 'SCDF_MAA_PLS.xls', 'Particulars and Declaration of Qualified Person for MAA')" />
+                  </td>
+                  <td>
+                    I declare that there are no regulated fire safety products used in this project.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="radio" id="QPDeclCertConf_IsPLSUsed20" name="QPDeclCertConf_IsPLSUsed" mandatory
+                      checked
+                      onchange="atleastOne(`[name='QPDeclCertConf_IsPLSUsed']`); QPDeclCertConf_IsPLSUsed_change(this); fileAttachCheck(QPDeclCertConf_IsPLSUsed20, 'fileAttach10', true, 'SCDF_MAA_PLS.xls', 'Particulars and Declaration of Qualified Person for MAA')" />
+                  </td>
+                  <td>
+                    I declare that all regulated fire
+                    safety products used in this project as indicated in “SCDF_MAA_PLS.xls” are in
+                    accordance to the Fire Code
+                  </td>
+                </tr>
+                <tr id="note1" hidden>
+                  <td>&nbsp;</td>
+                  <td>
+                    Note :
+                    <ol>
+                      <li>QP to provide the Product/Material & CoC
+                        details and to complete</li>
+                      <li>Mandatory to complete and
+                        submit SCDF_MAA_PLS.xls as part of the submission</li>
+                    </ol>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+        <div id="page4" style="display: none;">
+          <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 65px;">
+            <h2>Submission Checklists</h2>
+            The following are attached:
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>1.</td>
+                  <td>Final MAA Plans*</td>
+                  <td width="1%">
+                    <cn2-checkbox id="SubmChec_MEPlan10" checked mandatory
+                      event-change="remoMand(this); SubmChec_MEPlan10_change(this)">
+
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td> </td>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                        <b><span id="drawFileName">Drawing File Name</span></b><br />
+                        <b>[Enter Drawing File Name attached with CR application]</b>
+                      </div>
+                      <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                        <cn2-textbox no-label id="SubmCheck_DrawFileName10"
+                          event-blur="fileAttach(this, 'fileAttach20', false)" disabled>
+                        </cn2-textbox>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>Regulated Fire Safety Products Listing Declaration (SCDF_MAA_PLS.xls)</td>
+                  <td>
+                    <cn2-checkbox id="QPDeclFSC0_IDecl_PLSDecl10"
+                      event-click="fileAttachCheck(this, 'fileAttach10', false, 'SCDF_MAA_PLS.xls', 'Submission Checklists')">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>CoC for Regulated Fire Safety Products</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>4.</td>
+                  <td>Delivery Orders for Regulated Fire Safety Products</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>5.</td>
+                  <td>
+                    <span id="SubmChec_B1_label">Others please specify</span>
+                    <br /><br />
+                    <cn2-textarea no-label id="SubmChec_A1" disabled></cn2-textarea>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_B1" event-change="SubmChec_B1_change(this)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+        <div id="page5" style="display: none;">
+          <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 65px;">
+            <h2>Certification by Qualified Persons*</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>
+                    I, hereby certify that the fire safety works for the above project given in this
+                    form, have been completed in accordance with the Code for Fire Precautions in
+                    Buildings, Fire Safety Act and its Regulations and relevant Codes of Practice.
+                  </td>
+                  <td width="1%">
+                    <cn2-checkbox id="CertByQualPers_IHereCertThat10" checked mandatory event-change="remoMand(this)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+      <cn2-fixed-footer></cn2-fixed-footer>
+      <cn2-version-footer></cn2-version-footer>
+    </div>
+
+</body>
+
+</html>

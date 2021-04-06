@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PUB-DPCLR</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Syncfusion" />
+
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+    <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+    <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+    <script src="../cm/js/func/common.js"></script>
+    <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+    <script src="../cm/js/components/cn2sgheader.js"></script>
+    <script src="../cm/js/components/cn2masterhead.js"></script>
+    <script src="../cm/js/components/cn2versionfooter.js"></script>
+    <script src="../cm/js/components/cn2fixedfooter.js"></script>
+
+    <script src="../cm/js/components/cn2switchbutton.js"></script>
+    <script src="../cm/js/components/cn2navbutton.js"></script>
+    <script src="../cm/js/components/cn2textbox.js"></script>
+    <script src="../cm/js/components/cn2textarea.js"></script>
+    <script src="../cm/js/components/cn2checkbox.js"></script>
+    <script src="../cm/js/components/cn2select.js"></script>
+    <script src="../cm/js/components/cn2datefield.js"></script>
+    <script src="../cm/js/components/cn2button.js"></script>
+    <script src="../cm/resources/assets/js/jquery-3.4.1.min.js"></script>
+
+
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <cn2-master-head
+        title="APPLICATION FOR CLEARANCE CERTIFICATE FOR DETAILED PLAN ON DRAINAGE AND SEWERAGE (SANITARY/SEWER) WORKS<br />[UNDER SECTION 33(1) OF THE SEWERAGE AND DRAINAGE ACT (SDA), CHAPTER 294]">
+    </cn2-master-head>
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p style="margin: 0px">Help</p>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <b>For enquiries related to forms, please contact the following:</b>
+                </p>
+                <p><span id="RegulatoryAuthority_id"></span></p>
+                <div id="table-parent" style="width:auto">
+                    <table id="ContDetaTable_id" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Regulatory Authority</th>
+                                <th>Email Address</th>
+                                <th>Tel No.</th>
+                                <th>Area of Support</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PUB (Drainage)</td>
+                                <td>pub_bpu@pub.gov.sg</td>
+                                <td>67313512</td>
+                                <td>General Enquiry, Policies, Submissions</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="5">PUB (Sewerage)</td>
+                                <td>pub_bpu@pub.gov.sg</td>
+                                <td>67313512</td>
+                                <td>General Enquiry</td>
+                            </tr>
+                            <tr>
+                                <td>sophian_ismail@pub.gov.sg</td>
+                                <td>67313656</td>
+                                <td>Approval for works affecting public sewer/Pre & Post Construction CCTV submissions
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>LER_Seng_Chye@pub.gov.sg</td>
+                                <td>67313264</td>
+                                <td>Sewerage pre-consultation/ DC Plan Submissions</td>
+                            </tr>
+                            <tr>
+                                <td>teo_mok_tong@pub.gov.sg</td>
+                                <td>67313256</td>
+                                <td>Sewerage Clearance Submissions</td>
+                            </tr>
+                            <tr>
+                                <td>steven_cheong@pub.gov.sg</td>
+                                <td>67313339</td>
+                                <td>Code of Practice and Regulations</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" name="member_id" id="member_id" />
+    <input type="hidden" name="form_validated" id="form_validated" />
+    <div class="mls-espro-form-container">
+        <div class="row">
+            <div class="mls-espro-form-left-nav" id="menu">
+                <cn2-nav-button target="page1" page-number="1" label="Instructions">
+                </cn2-nav-button>
+                <cn2-nav-button target="page2" page-number="2" label="Particulars of Project"></cn2-nav-button>
+                <cn2-nav-button target="page3" page-number="3" label="Particulars of Application"></cn2-nav-button>
+                <cn2-nav-button target="page4" page-number="4" label="Section A1: Works Affecting Sanitary">
+                </cn2-nav-button>
+                <cn2-nav-button target="page5" page-number="5" label="Section A2: Used Water Pumping System (M&E)">
+                </cn2-nav-button>
+                <cn2-nav-button target="page6" page-number="6" label="Section A3: Works Affecting Sewer">
+                </cn2-nav-button>
+                <cn2-nav-button target="page7" page-number="7" label="Section A4: RC Trench">
+                </cn2-nav-button>
+                <cn2-nav-button target="page8" page-number="8" label="Section B: Works Affecting Drainage">
+                </cn2-nav-button>
+            </div>
+
+            <div class="e-content mls-espro-form-right" id="page">
+                <div id="page1">
+                    <div class="mls-espo-right-inner-container borderchecking"
+                        style="padding-bottom:0px;font-size:18pt;">
+                        <p>
+                            This form may take you 10 minutes to fill in. You will need the
+                            following information to fill in the form: <br />- Particulars
+                            of Project <br />- Particulars of Qualified Person
+                        </p>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">
+                                        <b>Date:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <cn2-textbox id="Date10" no-label inline="5" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="1%">
+                                        <b>To:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <div class="mls-espro-form-fields row">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-select id="Addr10" no-label inline="5" options="PUB:PUBBPU" disabled>
+                                                </cn2-select>
+                                            </div>
+                                        </div>
+                                        <div class="mls-espro-form-fields row pt-2">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-textarea id="Addr20" no-label inline="5" disabled
+                                                    style="height: 140px;">
+                                                </cn2-textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Instructions</h2>
+                        <ol class="mls-intro-list">
+                            <li>
+                                This form is to be digitally signed by the Qualified Person
+                                responsible for the works.
+                            </li>
+                            <li>
+                                All fields in this form are mandatory and QP is to fill up /
+                                tick / insert a "N.A" reply.
+                            </li>
+                            <li>
+                                This form is to be accompanied by the relevant attachments.
+                            </li>
+                            <li>
+                                Detailed plan submission not required for simplified
+                                submission.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div id="page2">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Project</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="35%">Project Reference Number</td>
+                                    <td>
+                                        <cn2-textbox no-label id="Project_Project_Ref_No10" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Project Title</td>
+                                    <td>
+                                        <cn2-textarea no-label id="Project_Title10" disabled></cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Location Description [Includes Lot/Plot, MK/TS,
+                                        Address/Road and Building Name if any]
+                                    </td>
+                                    <td>
+                                        <cn2-textarea no-label id="Project_Location_Description10" disabled>
+                                        </cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Project Address</td>
+                                    <td>
+                                        <cn2-textarea no-label id="Project_Address10"></cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Plan Type*</td>
+                                    <td>
+                                        BP&nbsp;&nbsp;&nbsp;<cn2-select id="PartOfAppl_PlanType_A1" no-label inline="5"
+                                            options="01:01,02:02,03:03,04:04,05:05,06:06,07:07,08:08,09:09,10:10"
+                                            mandatory></cn2-select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="page3">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Application</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td rowspan="6" width="35%">Submission Type*</td>
+                                            <td>
+                                                <cn2-checkbox mandatory checked id="PartOfAppl_SubmType_SaniWork10"
+                                                    event-change="PartOfAppl_SubmType_SaniWork10_change(this);mustChecked(this);setTextManda(this);">
+                                                </cn2-checkbox>&emsp;Sanitary Works
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <cn2-checkbox mandatory checked
+                                                    id="PartOfAppl_SubmType_UsedWatePumpSyst10"
+                                                    event-change="PartOfAppl_SubmType_UsedWatePumpSyst10_change(this);mustChecked(this);setTextManda(this);">
+                                                </cn2-checkbox>&emsp;Used Water Pumping System (M&E)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <cn2-checkbox mandatory checked id="PartOfAppl_SubmType_WorkAffeSewe10"
+                                                    event-change="PartOfAppl_SubmType_WorkAffeSewe10_change(this);mustChecked(this);setTextManda(this);">
+                                                </cn2-checkbox>&emsp;Works Affecting Sewer
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <cn2-checkbox mandatory checked id="PartOfAppl_SubmType_RCTren10"
+                                                    event-change="PartOfAppl_SubmType_RCTren10_change(this);mustChecked(this);setTextManda(this);">
+                                                </cn2-checkbox>&emsp;RC Trench
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <cn2-checkbox mandatory checked id="PartOfAppl_SubmType_WorkAffeDrai10"
+                                                    event-change="PartOfAppl_SubmType_WorkAffeDrai10_change(this);mustChecked(this);setTextManda(this);">
+                                                </cn2-checkbox>&emsp;Works Affecting Drainage
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">
+                                                Department File Reference No. (if applicable)
+                                            </td>
+                                            <td>
+                                                <cn2-textbox inline no-label id="PartOfAppl_DepaFileRefeNo10">
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page4">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Section A1: Sanitary Works</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2">Attachments:</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span id="detailedSnPln">1. Detailed Sanitary Plan</span>
+                                            </td>
+                                            <td width="1%">
+                                                <cn2-checkbox id="SanWrk_DetailSanWork10"
+                                                    event-change="checkboxChecked(this)" disabled></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <b>Declaration</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    I hereby certify that these plans and the works
+                                                    shown therein comply with the provisions of the
+                                                    Sewerage and Drainage Act (Chapter 294), the
+                                                    Sewerage and Drainage (Sanitary Works) Regulations
+                                                    and the current Code of Practice on the Sewerage and
+                                                    Sanitary Works.
+                                                </p>
+
+                                                I confirm that the requirements of sanitary system
+                                                design and the position of sanitary pipes stipulated
+                                                in Part 4 of the Code of Practice on Sewerage and
+                                                Sanitary Works have been complied with, subject to
+                                                such waiver/modification granted by PUB.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="mls-espro-form-fields row pt-2 pl-5 pr-5">
+                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                        <table class="table table-borderless">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="35%"><span id="A1name">Name</span></td>
+                                                    <td>
+                                                        <cn2-select id="Member_Member_Name_QP10"
+                                                            data-options="qpDropdown10"
+                                                            event-change="loadDropDownDetails(this)" disabled no-label
+                                                            inline></cn2-select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Role</td>
+                                                    <td>
+                                                        <cn2-textbox id="MemberRole_Member_Role_Code_Desc_QP10" disabled
+                                                            inline no-label>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Telephone No.</td>
+                                                    <td>
+                                                        <cn2-textbox id="Member_Tel_No_QP10" disabled inline no-label
+                                                            numeric>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Email</td>
+                                                    <td>
+                                                        <cn2-textbox id="Member_Email_Address1_QP10"
+                                                            event-blur="checkEmail(this);"
+                                                            placeholder="example@email.com" disabled inline no-label>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Firm Name</td>
+                                                    <td>
+                                                        <cn2-textbox id="Member_Firm_Name_QP10" disabled inline
+                                                            no-label></cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Arch / PE Reg. No.</td>
+                                                    <td>
+                                                        <cn2-textbox id="Member_Professional_No_QP10" disabled inline
+                                                            no-label></cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Please state if any deviation from the COP</td>
+                                                    <td>
+                                                        <cn2-textarea id="SanWrk_Dev_COP10" disabled no-label inline>
+                                                        </cn2-textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Plumber/Contractor</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="35%">Name</td>
+                                    <td>
+                                        <cn2-select no-label id="Member_Member_Name_LPLUMBCONT10" disabled
+                                            data-options="plumberDropdown10" event-change="loadDropDownDetails(this)">
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Firm Details</td>
+                                    <td>
+                                        <cn2-textbox id="Member_Firm_Name_LPLUMBCONT10" no-label disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Contact No.</td>
+                                    <td>
+                                        <cn2-textbox id="Member_Tel_No_LPLUMBCONT10" no-label disabled numeric>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>
+                                        <cn2-textbox id="Member_Email_Address1_LPLUMBCONT10"
+                                            event-blur="checkEmail(this);" placeholder="example@email.com" no-label
+                                            disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">
+                                        Please indicate your Registration / License No.
+                                    </td>
+                                    <td>
+                                        <div class="mls-espro-form-fields row">
+                                            <table class="table table-borderless">
+                                                <tbody>
+                                                    <tr>
+                                                        <td width="1%">
+                                                            <cn2-checkbox id="PartofPlumber_Reg_SPS10_A1"
+                                                                event-change="PartofPlumber_Reg_SPS10_A1_change(this);setTextManda(this);"
+                                                                disabled></cn2-checkbox>
+                                                        </td>
+                                                        <td id="A1plum1" width="20%">SPS Registered</td>
+                                                        <td>
+                                                            <cn2-textbox id="PartofPlumber_Reg_SPS10_B1" inline no-label
+                                                                disabled></cn2-textbox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="1%">
+                                                            <cn2-checkbox id="PartofPlumber_Reg_PUB10_A1"
+                                                                event-change="PartofPlumber_Reg_PUB10_A1_change(this);setTextManda(this);"
+                                                                disabled></cn2-checkbox>
+                                                        </td>
+                                                        <td id="A1plum2" width="20%">PUB LP</td>
+                                                        <td>
+                                                            <cn2-textbox id="PartofPlumber_Reg_PUB10_B1" inline no-label
+                                                                disabled></cn2-textbox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="1%">
+                                                            <cn2-checkbox id="PartofPlumber_Reg_NA10"
+                                                                event-change="PartofPlumber_Reg_NA10_change(this)"
+                                                                disabled>
+                                                            </cn2-checkbox>
+                                                        </td>
+                                                        <td colspan="2">NA</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="page5">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Section A2: Used Water Pumping System (M&E)</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2"><b>Declaration</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    I, being a Professional Engineer hereby certify that
+                                                    the proposed mechanical and electrical (M&E) works
+                                                    of the above mentioned project are in accordance
+                                                    with the current Code of Practice on Sewerage and
+                                                    Sanitary Works, Sewerage and Drainage Act (Chapter
+                                                    294) and other sewerage requirements as stipulated
+                                                    by Water Reclamation (Network) Department and have
+                                                    been fully and accurately reflected in the submitted
+                                                    detail plan drawings.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pl-5 pr-5">
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <tr>
+                                        <td width="35%">
+                                            <span id="A2name">Name</span>
+                                        </td>
+                                        <td>
+                                            <cn2-select id="Member_Member_Name_QP40" data-options="qpDropdown40"
+                                                event-change="loadDropDownDetails(this)" no-label inline disabled>
+                                            </cn2-select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Role</td>
+                                        <td>
+                                            <cn2-textbox id="MemberRole_Member_Role_Code_Desc_QP40" inline no-label
+                                                disabled>
+                                            </cn2-textbox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Telephone No.</td>
+                                        <td>
+                                            <cn2-textbox id="Member_Tel_No_QP40" inline no-label disabled numeric>
+                                            </cn2-textbox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>
+                                            <cn2-textbox id="Member_Email_Address1_QP40" event-blur="checkEmail(this);"
+                                                placeholder="example@email.com" inline no-label disabled>
+                                            </cn2-textbox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Firm Name</td>
+                                        <td>
+                                            <cn2-textbox id="Member_Firm_Name_QP40" inline no-label disabled>
+                                            </cn2-textbox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Arch / PE Reg. No.</td>
+                                        <td>
+                                            <cn2-textbox id="Member_Professional_No_QP40" inline no-label disabled>
+                                            </cn2-textbox>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <table class="table table-borderless table-sm"
+                            style="padding-right:12px;margin-right:6px;margin-left:6px;">
+                            <tbody>
+                                <tr>
+                                    <td colspan="2">Attachments:</td>
+                                </tr>
+                                <tr>
+                                    <td width="1%">1.</td>
+                                    <td>
+                                        <span id="detPlnUseWtr">Detail plan drawings of used water pumping
+                                            system(s)</span>.
+                                    </td>
+                                    <td class="text-center">
+                                        <cn2-checkbox event-change="checkboxChecked(this)" id="Atta_DetaPlanDrawOf10"
+                                            disabled></cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2.</td>
+                                    <td>
+                                        <span id="attchD2QPalt">Attached Form D2/QP if an alternate power source is not
+                                            available.</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <cn2-checkbox event-change="checkboxChecked(this)" id="Atta_AttaFormD2QP10"
+                                            disabled></cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3.</td>
+                                    <td>
+                                        <span id="dsgnCalc">Design Calculations.</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <cn2-checkbox event-change="checkboxChecked(this)" id="Atta_DesiCalc10"
+                                            disabled></cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4.</td>
+                                    <td>
+                                        <span id="pumpSysCur">Pump and system curves.</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <cn2-checkbox event-change="checkboxChecked(this)" id="Atta_PumpAndSystCurv10"
+                                            disabled></cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5.</td>
+                                    <td>
+                                        <span id="relvntEqCh"> Relevant equipment changes.</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <cn2-checkbox event-change="checkboxChecked(this)" id="Atta_ReleEquiCata10"
+                                            disabled></cn2-checkbox>
+                                    </td>
+                                </tr>
+                                <tr></tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="25%">
+                                        Please state if any deviation from the COP
+                                    </td>
+                                    <td>
+                                        <cn2-textarea id="SeweWrkRC_COP10" inline maxlength="1000" no-label disabled>
+                                        </cn2-textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12" style="padding: 0px">
+                            <div id="pumpForm">
+                                <div id="A1">
+                                    <table class="table table-borderless">
+                                        <tbody>
+                                            <tr>
+                                                <td style="padding: 0px">
+                                                    <table class="table table-bordered">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td width="35%">Pump Design Condition <br> Pump
+                                                                    Application</td>
+                                                                <td>
+                                                                    <cn2-select id="PumpApplication10_A1" no-label
+                                                                        prefix="PumpApplication10_A" inline disabled
+                                                                        options="Pumping Installation:Pumping Installation, Ejector:Ejector, Sump:Sump, Carpark:Carpark, Swimming Pool:Swimming Pool">
+                                                                    </cn2-select>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Brand</td>
+                                                                <td>
+                                                                    <cn2-textbox id="PumpApplication10_B1" inline
+                                                                        prefix="PumpApplication10_B" no-label disabled>
+                                                                    </cn2-textbox>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Model</td>
+                                                                <td>
+                                                                    <cn2-textbox id="PumpApplication10_C1" inline
+                                                                        prefix="PumpApplication10_C" no-label disabled>
+                                                                    </cn2-textbox>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Estimated inflows (l/s)</td>
+                                                                <td>
+                                                                    <cn2-textbox id="PumpApplication10_D1" inline
+                                                                        prefix="PumpApplication10_D" no-label currency
+                                                                        disabled>
+                                                                    </cn2-textbox>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Pump Operating capacity (l/s)</td>
+                                                                <td>
+                                                                    <cn2-textbox id="PumpApplication10_E1" inline
+                                                                        prefix="PumpApplication10_E" no-label currency
+                                                                        disabled>
+                                                                    </cn2-textbox>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Pump operating head (m)</td>
+                                                                <td>
+                                                                    <cn2-textbox id="PumpApplication10_F1" inline
+                                                                        prefix="PumpApplication10_F" no-label currency
+                                                                        disabled>
+                                                                    </cn2-textbox>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Solid free passage size (mm)</td>
+                                                                <td>
+                                                                    <cn2-textbox id="PumpApplication10_G1"
+                                                                        prefix="PumpApplication10_G" inline no-label
+                                                                        currency disabled>
+                                                                    </cn2-textbox>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Motor rating (kw)</td>
+                                                                <td>
+                                                                    <cn2-textbox id="PumpApplication10_H1"
+                                                                        prefix="PumpApplication10_H" inline no-label
+                                                                        currency disabled>
+                                                                    </cn2-textbox>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2">
+                                                                    <cn2-button id="delete1A" class="delete1A"
+                                                                        prefix="delete" suffix="A" disabled
+                                                                        style="float: right"
+                                                                        event-click="removeDuplicate(this.id,'A1','pumpForm'); disableDelete('pumpForm', '.delete1A');"
+                                                                        danger label="Delete"></cn2-button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <thead>
+                                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                    <cn2-button label="Add" id="addButton"
+                                        event-click="insertDuplicate('pumpForm','A1'); disableDelete('pumpForm', '.delete1A')"
+                                        disabled>
+                                    </cn2-button>
+                                </div>
+                            </thead>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Plumber/Contractor</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="35%">Name</td>
+                                    <td>
+                                        <cn2-select no-label id="Member_Member_Name_LPLUMBCONT20" disabled
+                                            data-options="plumberDropdown20" event-change="loadDropDownDetails(this)">
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Firm Details</td>
+                                    <td>
+                                        <cn2-textbox id="Member_Firm_Name_LPLUMBCONT20" no-label disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Contact No.</td>
+                                    <td>
+                                        <cn2-textbox id="Member_Tel_No_LPLUMBCONT20" no-label disabled numeric>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>
+                                        <cn2-textbox placeholder="name@example.com"
+                                            id="Member_Email_Address1_LPLUMBCONT20" event-blur="checkEmail(this);"
+                                            placeholder="example@email.com" no-label disabled>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">
+                                        Please indicate your Registration / License No.
+                                    </td>
+                                    <td>
+                                        <div class="mls-espro-form-fields row">
+                                            <table class="table table-borderless">
+                                                <tbody>
+                                                    <tr>
+                                                        <td width="1%">
+                                                            <cn2-checkbox id="PartofPlumber_Regno_SPS20_A1"
+                                                                event-change="PartofPlumber_Regno_SPS20_A1_change(this);setTextManda(this);"
+                                                                disabled></cn2-checkbox>
+                                                        </td>
+                                                        <td id="A2plum1" width="20%">SPS Registered</td>
+                                                        <td>
+                                                            <cn2-textbox id="PartofPlumber_Regno_SPS20_B1" inline
+                                                                no-label disabled></cn2-textbox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="1%">
+                                                            <cn2-checkbox id="PartofPlumber_Regno_PUB20_A1"
+                                                                event-change="PartofPlumber_Regno_PUB20_A1_change(this);setTextManda(this);"
+                                                                disabled></cn2-checkbox>
+                                                        </td>
+                                                        <td id="A2plum2" width="20%">PUB LP</td>
+                                                        <td>
+                                                            <cn2-textbox id="PartofPlumber_Regno_PUB20_B1" inline
+                                                                no-label disabled></cn2-textbox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="1%">
+                                                            <cn2-checkbox id="PartofPlumber_Regno_NA20"
+                                                                event-change="PartofPlumber_Regno_NA20_change(this)"
+                                                                disabled>
+                                                            </cn2-checkbox>
+                                                        </td>
+                                                        <td colspan="2">NA</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="page6">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Section A3: Works Affecting Sewer</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td id="A3intro">
+                                                1. Detailed Sewerage Plan (to indicate: diameter, pipe
+                                                material, gradient, manhole detail and longitudal
+                                                section)
+                                            </td>
+                                            <td width="1%">
+                                                <cn2-checkbox id="WorkAffeSew_DetaSewPlan10"
+                                                    event-change="checkboxChecked(this)" disabled></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2"><b>Declaration</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    By PE (Civil): I hereby certify that the sewerage
+                                                    plans and the works shown therein comply with the
+                                                    provisions of the Sewerage and Drainage Act (Chapter
+                                                    294), the Sewerage and Drainage (Sanitary Works)
+                                                    Regulations, the current code of practice on the
+                                                    sewerage and sanitary works.
+                                                </p>
+                                                <p>
+                                                    I also declare that I have carried out a thorough
+                                                    investigation of the existing sewerage system within
+                                                    the site and will take every practical measure to
+                                                    ensure that the proposed development will not
+                                                    disrupt or affect any existing sewer/drainline that
+                                                    serves other properties/premises.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="mls-espro-form-fields row pl-5 pr-5">
+                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                        <table class="table table-borderless">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="35%" id="A3name">Name</td>
+                                                    <td>
+                                                        <cn2-select id="Member_Member_Name_QP70"
+                                                            data-options="qpDropdown70"
+                                                            event-change="loadDropDownDetails(this)" no-label inline
+                                                            disabled>
+                                                        </cn2-select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Role</td>
+                                                    <td>
+                                                        <cn2-textbox id="MemberRole_Member_Role_Code_Desc_QP70" no-label
+                                                            inline disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Telephone No.</td>
+                                                    <td>
+                                                        <cn2-textbox id="Member_Tel_No_QP70" no-label inline disabled
+                                                            numeric>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Email</td>
+                                                    <td>
+                                                        <cn2-textbox id="Member_Email_Address1_QP70"
+                                                            event-blur="checkEmail(this);"
+                                                            placeholder="example@email.com" no-label inline disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Firm Name</td>
+                                                    <td>
+                                                        <cn2-textbox id="Member_Firm_Name_QP70" no-label inline
+                                                            disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Arch / PE Reg. No.</td>
+                                                    <td>
+                                                        <cn2-textbox id="Member_Professional_No_QP70" no-label inline
+                                                            disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Plumber/Contractor</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="35%">Name</td>
+                                    <td>
+                                        <cn2-select no-label id="Member_Member_Name_LPLUMBCONT30"
+                                            data-options="plumberDropdown30" event-change="loadDropDownDetails(this)"
+                                            disabled>
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Firm Details</td>
+                                    <td>
+                                        <cn2-textbox id="Member_Firm_Name_LPLUMBCONT30" no-label disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Contact No.</td>
+                                    <td>
+                                        <cn2-textbox id="Member_Tel_No_LPLUMBCONT30" no-label disabled numeric>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>
+                                        <cn2-textbox event-blur="checkEmail(this);" placeholder="example@email.com"
+                                            id="Member_Email_Address1_LPLUMBCONT30" no-label disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">
+                                        Please indicate your Registration / License No.
+                                    </td>
+                                    <td>
+                                        <div class="mls-espro-form-fields row">
+                                            <table class="table table-borderless">
+                                                <tbody>
+                                                    <tr>
+                                                        <td width="1%">
+                                                            <cn2-checkbox id="WorkAffeSew_PartofPlumCont_SPS30"
+                                                                event-change="WorkAffeSew_PartofPlumCont_SPS30_change(this); setTextManda(this);"
+                                                                disabled></cn2-checkbox>
+                                                        </td>
+                                                        <td id="A3plum1" width="20%">SPS Registered</td>
+                                                        <td>
+                                                            <cn2-textbox id="WorkAffeSew_PartofPlumCont_SPS30_B1" inline
+                                                                no-label disabled></cn2-textbox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="1%">
+                                                            <cn2-checkbox id="WorkAffeSew_PartofPlumCont_PUB30_A1"
+                                                                event-change="WorkAffeSew_PartofPlumCont_PUB30_A1_change(this);setTextManda(this);"
+                                                                disabled></cn2-checkbox>
+                                                        </td>
+                                                        <td id="A3plum2" width="20%">PUB LP</td>
+                                                        <td>
+                                                            <cn2-textbox id="WorkAffeSew_PartofPlumCont_PUB30_B1" inline
+                                                                no-label disabled></cn2-textbox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="1%">
+                                                            <cn2-checkbox id="WorkAffeSew_PartofPlumCont_NA30"
+                                                                event-change="WorkAffeSew_PartofPlumCont_NA30_change(this)"
+                                                                disabled></cn2-checkbox>
+                                                        </td>
+                                                        <td colspan="2">NA</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="page7">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Section A4: RC Trench</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td width="1%">1.</td>
+                                            <td id="A4intro1">
+                                                Detailed Sewerage Plan (to indicate layout and
+                                                dimensions of RC Trench and position of existing
+                                                sewer)
+                                            </td>
+                                            <td width="1%">
+                                                <cn2-checkbox event-change="checkboxChecked(this)"
+                                                    id="SectA4RCTren_DetaSewPlanTo10" disabled></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.</td>
+                                            <td id="A4intro2">
+                                                Design & Calculation of RC Trench. PE to endorse
+                                                drawing
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox event-change="checkboxChecked(this)"
+                                                    id="SectA4RCTren_DesiCalcRCTren10" disabled></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2"><b>Declaration</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    By PE (Civil): I hereby certify that the sewerage
+                                                    plans and the works shown therein comply with the
+                                                    provisions of the Sewerage and Drainage Act (Chapter
+                                                    294), the Sewerage and Drainage (Sanitary works)
+                                                    Regulations, the current code of practice on the
+                                                    sewerage and sanitary works.
+                                                </p>
+                                                <p>
+                                                    I also declare that i have carried out a thorough
+                                                    investigation of the existing sewerage system within
+                                                    the site and will take every practical measure to
+                                                    ensure that the proposed development will not disrupt
+                                                    or affect any existing sewer/drainline that serves
+                                                    other properties / premises.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="mls-espro-form-fields row pl-5 pr-5">
+                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                        <table class="table table-borderless">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="35%"><span id="A4name">Name</span></td>
+                                                    <td>
+                                                        <cn2-select id="Member_Member_Name_QP80"
+                                                            data-options="qpDropdown80"
+                                                            event-change="loadDropDownDetails(this)" no-label inline
+                                                            disabled>
+                                                        </cn2-select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Role</td>
+                                                    <td>
+                                                        <cn2-textbox id="MemberRole_Member_Role_Code_Desc_QP80" no-label
+                                                            inline disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Telephone No.</td>
+                                                    <td>
+                                                        <cn2-textbox id="Member_Tel_No_QP80" no-label inline disabled
+                                                            numeric>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Email</td>
+                                                    <td>
+                                                        <cn2-textbox id="Member_Email_Address1_QP80"
+                                                            event-blur="checkEmail(this);"
+                                                            placeholder="example@email.com" no-label inline disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Firm Name</td>
+                                                    <td>
+                                                        <cn2-textbox id="Member_Firm_Name_QP80" no-label inline
+                                                            disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Arch / PE Reg. No.</td>
+                                                    <td>
+                                                        <cn2-textbox id="Member_Professional_No_QP80" no-label inline
+                                                            disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Plumber/Contractor</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="35%">Name</td>
+                                    <td>
+                                        <cn2-select no-label id="Member_Member_Name_LPLUMBCONT40" disabled
+                                            data-options="plumberDropdown40" event-change="loadDropDownDetails(this)">
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Firm Details</td>
+                                    <td>
+                                        <cn2-textbox id="Member_Firm_Name_LPLUMBCONT40" no-label disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Contact No.</td>
+                                    <td>
+                                        <cn2-textbox id="Member_Tel_No_LPLUMBCONT40" no-label disabled numeric>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>
+                                        <cn2-textbox event-blur="checkEmail(this);" placeholder="example@email.com"
+                                            id="Member_Email_Address1_LPLUMBCONT40" no-label disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">
+                                        Please indicate your Registration / License No.
+                                    </td>
+                                    <td>
+                                        <div class="mls-espro-form-fields row">
+                                            <table class="table table-borderless">
+                                                <tbody>
+                                                    <tr>
+                                                        <td width="1%">
+                                                            <cn2-checkbox id="WorkAffeSew_PartofPlumCont_SPS40"
+                                                                event-change="WorkAffeSew_PartofPlumCont_SPS40_change(this);setTextManda(this);"
+                                                                disabled></cn2-checkbox>
+                                                        </td>
+                                                        <td id="A4plum1" width="20%">SPS Registered</td>
+                                                        <td>
+                                                            <cn2-textbox id="WorkAffeSew_PartofPlumCont_SPS40_B1" inline
+                                                                no-label disabled></cn2-textbox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="1%">
+                                                            <cn2-checkbox id="WorkAffeSew_PartofPlumCont_PUB40_A1"
+                                                                event-change="WorkAffeSew_PartofPlumCont_PUB40_A1_change(this);setTextManda(this);"
+                                                                disabled></cn2-checkbox>
+                                                        </td>
+                                                        <td id="A4plum2" width="20%">PUB LP</td>
+                                                        <td>
+                                                            <cn2-textbox id="WorkAffeSew_PartofPlumCont_PUB40_B1" inline
+                                                                no-label disabled></cn2-textbox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="1%">
+                                                            <cn2-checkbox id="WorkAffeSew_PartofPlumCont_NA40"
+                                                                event-change="WorkAffeSew_PartofPlumCont_NA40_change(this)"
+                                                                disabled></cn2-checkbox>
+                                                        </td>
+                                                        <td colspan="2">NA</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="page8">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>SECTION B: WORKS AFFECTING DRAINAGE</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless table-sm"
+                                    style="padding-right: 0;padding-bottom:0;">
+                                    <tbody>
+                                        <tr>
+                                            <th colspan="7">
+                                                Please tick if this submission pertains to :
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="6">
+                                                Works Affecting Drainage (Read only. Editable on Page
+                                                3)
+                                            </td>
+                                            <td class="text-center" width="1%">
+                                                <cn2-checkbox id="DrainWrk_WorkAffeMinoDrai10" disabled></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="7" style="padding-right: 0;padding-bottom:0;">
+                                                <table class="table table-borderless table-sm"
+                                                    style="padding-right: 0;padding-bottom:0;">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="1%">-</td>
+                                                            <td colspan="2" style="padding-right: 0;padding-bottom:0;">
+                                                                Structural detention and retention features
+                                                                <table class="table table-borderless"
+                                                                    style="padding-right: 0;padding-bottom:0;margin-bottom:0;">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td width="1%">a)</td>
+                                                                            <td>Gravity discharge</td>
+                                                                            <td width="1%">
+                                                                                <cn2-checkbox id="DeteTank_GravDisc10"
+                                                                                    disabled>
+                                                                                </cn2-checkbox>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="1%">b)</td>
+                                                                            <td>Pumped discharge</td>
+                                                                            <td width="1%">
+                                                                                <cn2-checkbox id="DeteTank_PumpDisc10"
+                                                                                    disabled>
+                                                                                </cn2-checkbox>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="1%">-</td>
+                                                            <td>
+                                                                Flood protection measures (e.g. flood
+                                                                barriers/flood gates)
+                                                            </td>
+                                                            <td>
+                                                                <cn2-checkbox id="FlooProtMeas10" disabled>
+                                                                </cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="1%">-</td>
+                                                            <td colspan="2" style="padding-right: 0;padding-bottom:0;">
+                                                                Pumped drainage system for development with
+                                                                <table class="table table-borderless table-sm"
+                                                                    style="padding-right: 0;padding-bottom:0;margin-bottom:0;">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td width="1%">a)</td>
+                                                                            <td>
+                                                                                Linkages to underground special
+                                                                                facilities
+                                                                            </td>
+                                                                            <td width="1%">
+                                                                                <cn2-checkbox id="PumpDraiSystWith10"
+                                                                                    disabled>
+                                                                                </cn2-checkbox>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td width="1%">b)</td>
+                                                                            <td>
+                                                                                No linkages to underground special
+                                                                                facilities
+                                                                            </td>
+                                                                            <td width="1%">
+                                                                                <cn2-checkbox
+                                                                                    id="DrainWrk_PumpDraiSystWith10"
+                                                                                    disabled></cn2-checkbox>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="1%">-</td>
+                                                            <td>Common drain</td>
+                                                            <td width="1%">
+                                                                <cn2-checkbox id="DrainReceRuno10" disabled>
+                                                                </cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="1%">-</td>
+                                                            <td>Roadside drains</td>
+                                                            <td width="1%">
+                                                                <cn2-checkbox id="RoadDrain10" disabled></cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="1%">-</td>
+                                                            <td>Entrance culverts</td>
+                                                            <td width="1%">
+                                                                <cn2-checkbox id="EntrCulv10" disabled></cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="1%">-</td>
+                                                            <td>Drainage reserve</td>
+                                                            <td width="1%">
+                                                                <cn2-checkbox id="DraiRese10" disabled></cn2-checkbox>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="7">Attachments :</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="6" id="Battach">
+                                                1. Details Plan on Drainage Works as required under
+                                                Section 33(3) and 33(4) of the SDA, Chapter 294.
+                                            </td>
+                                            <td width="1%">
+                                                <cn2-checkbox event-change="checkboxChecked(this)"
+                                                    id="DrainWrk_DetailPlanChk10" disabled></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="7"><b>Declaration</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="7">
+                                                <p>
+                                                    I hereby certify that the drainage work/related
+                                                    system shown on the detailed plans have been
+                                                    designed in accordance with the provisions of the
+                                                    SDA, Chapter 294, Sewerage and Drainage (Surface
+                                                    Water Drainage) Regulations, current Code of
+                                                    Practice on Surface Water Drainage and the drainage
+                                                    requirements stipulated during planning stage (if
+                                                    applicable) except for those provisions where
+                                                    waivers have been obtained from the Public Utilities
+                                                    Board in writing.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="mls-espro-form-fields row pr-5 pl-5">
+                                    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                        <table class="table table-borderless">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="25%" id="Bname">Name</td>
+                                                    <td>
+                                                        <cn2-select id="Member_Member_Name_QP50"
+                                                            event-change="loadDropDownDetails(this)"
+                                                            data-options="qpDropdown50" inline no-label disabled>
+                                                        </cn2-select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Role
+                                                    </td>
+                                                    <td>
+                                                        <cn2-textbox id="MemberRole_Member_Role_Code_Desc_QP50" inline
+                                                            no-label disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Telephone No.</td>
+                                                    <td>
+                                                        <cn2-textbox id="Member_Tel_No_QP50" inline no-label disabled
+                                                            numeric>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Email</td>
+                                                    <td>
+                                                        <cn2-textbox id="Member_Email_Address1_QP50"
+                                                            event-blur="checkEmail(this);"
+                                                            placeholder="example@email.com" inline no-label disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Firm Name</td>
+                                                    <td>
+                                                        <cn2-textbox id="Member_Firm_Name_QP50" inline no-label
+                                                            disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Arch / PE Reg. No.</td>
+                                                    <td>
+                                                        <cn2-textbox id="Member_Professional_No_QP50" inline no-label
+                                                            disabled>
+                                                        </cn2-textbox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Please state if any deviation from the COP</td>
+                                                    <td>
+                                                        <cn2-textarea id="DrainWrk_PUB10" no-label inline
+                                                            maxlength="1000" disabled>
+                                                        </cn2-textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <cn2-version-footer></cn2-version-footer>
+        <cn2-fixed-footer></cn2-fixed-footer>
+    </div>
+</body>
+
+</html>

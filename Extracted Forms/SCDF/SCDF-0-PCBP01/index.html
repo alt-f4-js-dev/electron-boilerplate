@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>SCDF-0-PCBP01</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2switchbutton.js"></script>
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head title="PRE-SUBMISSION CONSULTATION/CONSULTATION" style="margin-top: 20px; width: 180px;">
+  </cn2-master-head>
+  <input type="hidden" id="member_id" name="member_id" />
+  <input type="hidden" id="form_validated" name="form_validated" />
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p><b>For enquiries related to forms, please contact the following:</b></p>
+        <p> <span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SCDF</td>
+                <td>TAN_Chung_Yee@scdf.gov.sg</td>
+                <td>68481457</td>
+                <td>Submissions</td>
+              </tr>
+              <tr>
+                <td>SCDF</td>
+                <td>&nbsp;</td>
+                <td>62800000</td>
+                <td>E-Payment / Status Of Application</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button selected target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Project"></cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars of Application"></cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4" label="Particulars of Consultation Items">
+        </cn2-nav-button>
+        <cn2-nav-button target="page5" page-number="5" label="Particulars of Applicant"></cn2-nav-button>
+        <cn2-nav-button target="page6" page-number="6" label="Particulars of Qualified Person">
+        </cn2-nav-button>
+        <cn2-nav-button target="page7" page-number="7" label="Submission Checklists">
+        </cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" no-label inline="5" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To:</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-select id="Addr10" options="FSSB:FSSB" disabled hidden></cn2-select>
+                        <cn2-textarea no-label inline="5" disabled id="Addr20">
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>
+                This form is to be digitally signed by the appointed Qualified Person responsible for
+                the Project(s).
+              </li>
+              <li>
+                It may take you 3 minutes to complete this form.
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Project</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Project Reference Number</td>
+                  <td>
+                    <cn2-textbox id="Project_Project_Ref_No10" maxlength="50" disabled mandatory no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Project Title</td>
+                  <td>
+                    <cn2-textarea id="Project_Title10" disabled maxlength="1000" mandatory no-label>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Location Description [Include Lot/Plot, MK/TS, House No., Building
+                    Address and Road information]</td>
+                  <td>
+                    <cn2-textarea id="Project_Location_Description10" disabled maxlength="1024" mandatory no-label>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+              </tbody>
+
+            </table>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Application</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Consultation Type*</td>
+                  <td>
+                    <cn2-select no-label mandatory id="PartOfAppl_ConsultationType" options="Plan Submission/Lodgement matter:Plan Submission/Lodgement matter,
+                                        Project specific fire safety requirements matter:Project specific fire safety requirements matter,
+                                        Non-Project specific fire safety requirements matter:Non-Project specific fire safety requirements matter,
+                                        Performance Based (PB) requirements matter:Performance Based (PB) requirements matter,
+                                        P & FM/QRA requirements matter:P & FM/QRA requirements matter,
+                                        FMS/FMT/Pipelines Licensing matter:FMS/FMT/Pipelines Licensing matter,
+                                        CD Shelter matter:CD Shelter matter,
+                                        TFP/FSC/Temporary Permit matter:TFP/FSC/Temporary Permit matter,
+                                        Fire Certification (FC) matter:Fire Certification (FC) matter,
+                                        Enforcement matter:Enforcement matter">
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">SCDF Building Plan Reference<br>
+                    <small>
+                      (if any)
+                    </small>
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="PartOfAppl_FSSBBuilPlanRefe10" template="@@@/@#####/####" maxlength="15"
+                      event-blur="checkTemplateValid(this); validateSCDFBuilPlanRef(this)">
+                    </cn2-textbox>
+                    <small style="color: red;"><span id="errMsgSCDFBuilPlanRef"></span></small>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Waiver Case Ref No.<br>
+                    <small>
+                      (if any)
+                    </small>
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="PartOfAppl_WaivCaseRefNo10" template="WVR/#####/##" maxlength="12"
+                      event-blur="checkTemplateValid(this); validateWaiveCasRefNo(this)">
+                    </cn2-textbox>
+                    <small style="color: red;"><span id="errMsgWaiveCasRefNo"></span></small>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">QRA Case Ref No.<br>
+                    <small>
+                      (if any)
+                    </small>
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="PartOfAppl_QRACaseRefNo10" template="QRA/######/##" maxlength="13"
+                      data-invalid-message="This field is limited to 13 characters and the QRA Reference No. format is QRA/YYYYYY/YY"
+                      event-blur="checkTemplateValid(this);">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Previous Consultation Case Ref No.<br>
+                    <small>
+                      (if any)
+                    </small>
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="PartOfAppl_PrevConsCaseRef10" template="CON/@#####/##" maxlength="13"
+                      event-blur="checkTemplateValid(this); validatePrevConsCaseRefNo(this)">
+                    </cn2-textbox>
+                    <small style="color: red;"><span id="errMsgPrevConsCaseRefNo"></span></small>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page4">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Consultation Items*</h2>
+            <table class="table table-bordered" style="margin-bottom: 0px;">
+              <tbody>
+                <tr align="center">
+                  <td width="10%">A</td>
+                  <td width="40%">B</td>
+                  <td>C</td>
+                  <td width="12%"></td>
+                </tr>
+                <tr align="center">
+                  <td width="10%">S/N</td>
+                  <td width="40%">
+                    Description of the requirements
+                  </td>
+                  <td>
+                    Aspects of requirements that need clarification
+                  </td>
+                  <td width="12%"></td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="waiverForm">
+              <div id="A1">
+                <table class="table table-bordered" style="margin-top: 0px;margin-bottom: 0px;">
+                  <tbody>
+                    <tr align="center">
+                      <td width="10%">
+                        <cn2-textbox no-label inline="9" disabled id="PartOfConsItem_A1" prefix="PartOfConsItem_A">
+                        </cn2-textbox>
+                      </td>
+                      <td width="40%">
+                        <cn2-textarea id="PartOfConsItem_B1" prefix="PartOfConsItem_B" mandatory maxlength="255" inline
+                          no-label></cn2-textarea>
+                      </td>
+                      <td>
+                        <cn2-textarea id="PartOfConsItem_C1" prefix="PartOfConsItem_C" mandatory maxlength="255" inline
+                          no-label>
+                        </cn2-textarea>
+                      </td>
+                      <td width="12%">
+                        <cn2-button id="delete1" label="Delete" prefix="delete" danger disabled
+                          event-click="removeDuplicate(this.id,'A1','waiverForm');setSNO();attachment_deleteButton('waiverForm');">
+                        </cn2-button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="mls-espro-form-fields row pt-2">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <cn2-button label="Add" id="PartOfWaivItem_E1" cn2-array-group="waiverForm"
+                  cn2-array-group-id="PartOfConsItem" cn2-array-group-enabled
+                  event-click="insertDuplicate('waiverForm','A1');setSNO();addSetDisabled('waiverForm');">
+                </cn2-button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page5">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Applicant</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td width="35%">SID</td>
+                  <td>
+                    <cn2-textbox id="Member_SID_FSBAPPL10" uppercase maxlength="64" disabled no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_FSBAPPL10" mandatory data-options="applicantDropdown"
+                      event-change="loadDropDownDetails(this); nricMaskingApp(Member_IC_Passport_No_FSBAPPL10_mask); clearUEN('Members_UEN_FSBAPPL10')"
+                      no-label>
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr nricUnmasked hidden>
+                  <td width="35%">NRIC No. / Passport No.</td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_FSBAPPL10" disabled no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr nricMasked>
+                  <td width="35%">NRIC No. / Passport No.</td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_FSBAPPL10_mask" disabled no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Designation</td>
+                  <td>
+                    <cn2-textbox id="Member_Designation_FSBAPPL10" uppercase maxlength="64" disabled no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Firm Name</td>
+                  <td>
+                    <cn2-textbox id="Member_Firm_Name_FSBAPPL10" maxlength="64" disabled no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">ACRA UEN</td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_FSBAPPL10" uppercase no-label template="#########@" maxlength="10"
+                      event-blur="uenValidate(this)">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Address</td>
+                  <td>
+                    <cn2-textarea id="Member_Address_FSBAPPL10" disabled maxlength="1024" no-label>
+                    </cn2-textarea>
+                    <cn2-textbox id="Member_Address_Type_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Hse_Blk_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Bldg_Name_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Level_No_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Unit_No_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Road_Code_Desc_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Postal_Code_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine1_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine2_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine3_FSBAPPL10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine4_FSBAPPL10" no-label disabled hidden>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Telephone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_FSBAPPL10" maxlength="15" disabled no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Mobile Phone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Mobile_No_FSBAPPL10" maxlength="15" disabled no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Email Address</td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_FSBAPPL10" disabled maxlength="100" uppercase no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page6">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Qualified Person</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td width="35%">SID</td>
+                  <td>
+                    <cn2-textbox id="Member_SID_QP10" disabled no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_QP10" data-options="qpDropdown"
+                      event-change="loadDropDownDetails(this); nricMaskingQP(Member_IC_Passport_No_QP10_mask); clearUEN('Members_UEN_QP10')"
+                      mandatory no-label>
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Role in Project</td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Member_Role_Code_Desc_QP10" disabled no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Registration No.</td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Professional_No_QP10" disabled no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr nricUnmasked hidden>
+                  <td width="35%">NRIC No. / Passport No.</td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_QP10" disabled no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr nricMasked>
+                  <td width="35%">NRIC No. / Passport No.</td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_QP10_mask" disabled no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Firm Name</td>
+                  <td>
+                    <cn2-textbox id="Member_QP_Firm_Name_10" disabled no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">ACRA UEN</td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_QP10" uppercase no-label template="#########@" maxlength="10"
+                      event-blur="uenValidate(this)">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Address</td>
+                  <td>
+                    <cn2-textarea id="Member_Address_QP10" disabled no-label>
+                    </cn2-textarea>
+                    <cn2-textbox id="Member_Address_Type_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Hse_Blk_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Bldg_Name_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Level_No_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Unit_No_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Road_Code_Desc_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Postal_Code_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine1_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine2_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine3_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine4_QP10" no-label disabled hidden>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Telephone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_QP10" disabled no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Mobile Phone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Mobile_No_QP10" disabled no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Email Address</td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_QP10" disabled no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page7">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Submission Checklists</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>
+                    1. Plan
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_Plan10" style="float: right; margin-right:10px;">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <span id="attcOth_id">2. Others, please specify</span>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-1">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-button cn2-array-group="attachmentsForm" cn2-array-group-id="SubmChec"
+                          cn2-array-group-enabled
+                          event-click="insertDuplicate('attachmentsForm','form1'); addSetDisabled('attachmentsForm'); setAsterisk();"
+                          label="Add">
+                        </cn2-button>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div id="attachmentsForm">
+                      <div id="form1">
+                        <table class="table table-borderless">
+                          <tr>
+                            <td>
+                              <cn2-textarea no-label maxlength="250" id="SubmChec_A1" disabled prefix="SubmChec_A">
+                              </cn2-textarea>
+                            </td>
+                            <td style="text-align: center;" width="1%">
+                              <cn2-checkbox id='SubmChec_B1' event-click='enableAttachmentField(this,"attachmentsForm")'
+                                prefix="SubmChec_B" maxlength="255">
+                              </cn2-checkbox>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <cn2-button
+                                event-click="removeDuplicate(this.id,'form1','attachmentsForm'); attachment_deleteButton('attachmentsForm'); setAsterisk();"
+                                id="remove10" prefix="remove" suffix="0" danger label="Delete" style="float: right;"
+                                disabled>
+                              </cn2-button>
+                            </td>
+                            <td>&nbsp;</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-version-footer></cn2-version-footer>
+    <cn2-fixed-footer></cn2-fixed-footer>
+  </div>
+</body>
+
+</html>

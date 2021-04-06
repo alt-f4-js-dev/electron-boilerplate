@@ -1,0 +1,1956 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <title>BCA-EB-DEABS01</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script>
+    if (typeof module === "object") {
+      window.module = module;
+      module = undefined;
+    }
+  </script>
+  <script src="../cm/resources/assets/js/jquery-3.4.1.min.js"></script>
+  <script src="../cm/resources/assets/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2switchbutton.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+
+  <script src="index.js"></script>
+</head>
+
+<body style="visibility: visible; opacity: 1;">
+  <cn2-master-head
+    title="APPLICATION FOR APPROVAL OF DESIGN SCORE FOR BUILDING UNDERGOING&lt;br&gt;MAJOR ENERGY-USE CHANGE&lt;br&gt;[Section 22FB of the Building Control Act (Cap.29)]"
+    agency="logo.png">
+  </cn2-master-head>
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p><b>For enquiries related to forms, please contact the following:</b></p>
+        <p> <span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>BCA(BP) &amp; (TOP)</td>
+                <td>bca_enquiry@bca.gov.sg</td>
+                <td>1800-3425222</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td rowspan="3">BCA (Buildable Design and Constructability)</td>
+                <td>kong_chew_kwek@bca.gov.sg</td>
+                <td>68044228</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>terence_teo@bca.gov.sg</td>
+                <td>68044231</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>chin_kim_hong@bca.gov.sg</td>
+                <td> 68044234</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td rowspan="2">BCA(ST)</td>
+                <td>wai_hui_ling@bca.gov.sg</td>
+                <td>68044609</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>chang_heng_choy@bca.gov.sg</td>
+                <td>68044646</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td rowspan="2">BCA(CD Shelter)</td>
+                <td>lee_pheck_hoon@bca.gov.sg</td>
+                <td>68044410</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>yeo_keng@bca.gov.sg</td>
+                <td>68044416</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>BCA(Transit Shelter)</td>
+                <td>tan_wee_kian@bca.gov.sg</td>
+                <td>63961408</td>
+                <td>Policies</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <input type="hidden" name="member_id" id="member_id" />
+  <input type="hidden" name="form_validated" id="form_validated" />
+
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu" style="height: 530px;">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Application"></cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars of Building Owner(s)/Management Corporation">
+        </cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4" label="Particulars and Declaration by Mechanical Engineer">
+        </cn2-nav-button>
+        <cn2-nav-button target="page5" page-number="5"
+          label="Submission Details, Pre-Requisites and Submission Checklist">
+        </cn2-nav-button>
+        <cn2-nav-button target="page6" page-number="6" label="Fee Computation and Payment Mode">
+        </cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page" style="height: 530px;">
+        <div id="page1" mandatory-fields-count="0" style="display: none;">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" no-label inline="6" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To:</b>
+                  </td>
+                  <td width="15%">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-select id="Addr10" options="Building and Construction Authority:BCA" no-label inline="6"
+                          disabled>
+                          <br />
+                        </cn2-select>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pt-2">
+                        <cn2-textarea id="Addr20" no-label inline="6" mandatory disabled style="height: 140px;">
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>
+                This form may be submitted electronically.
+                <ol type="a">
+                  <li>
+                    All electronic submissions are to be digitally signed by
+                    the appointed Professional Engineer(Mech).
+                  </li>
+                  <li>
+                    GFA for the respective building type shall be input with
+                    reference to URA Written Permission.
+                  </li>
+                </ol>
+              </li>
+              <li>This form may take 5-10 mins to complete.</li>
+            </ol>
+          </div>
+        </div>
+        <div id="page2" style="display: none;" mandatory-fields-count="8">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Application Type*</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>1.</td>
+                  <td>
+                    Application for Approval of Design Score for Building
+                    Undergoing Major Energy-Use Change
+                  </td>
+                  <td>
+                    <input type="radio" id="ApplType_DesiScorForBldg10" name="appType" onchange="ApplicationType()" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>
+                    Application for Approval of Completion of Major Energy-Use
+                    Change and Submission of As-Built Score
+                  </td>
+                  <td>
+                    <input type="radio" id="ApplType_CompOfMajoEner10" name="appType" onchange="ApplicationType()" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Application</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Project Reference Number</td>
+                  <td>
+                    <cn2-textbox no-label id="Project_Project_Ref_No10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <th width="30%">Building Name*</th>
+                  <th width="19.3%">Block Number*</th>
+                  <th width="19.4%">Road Name*</th>
+                  <th width="19.7%">Postal Code*</th>
+                  <th></th>
+                </tr>
+              </tbody>
+            </table>
+            <div id="psda-container1">
+              <div id="A1">
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <td width="30%">
+                        <cn2-textbox no-label id="PartOfAppl_BuilName100" prefix="PartOfAppl_BuilName" suffix="00"
+                          mandatory>
+                        </cn2-textbox>
+                      </td>
+                      <td width="19.3%">
+                        <cn2-textbox no-label id="PartOfAppl_BlocNumb100" prefix="PartOfAppl_BlocNumb" suffix="00"
+                          maxlength="10" mandatory>
+                        </cn2-textbox>
+                      </td>
+                      <td width="19.4%">
+                        <cn2-textbox no-label id="PartOfAppl_RoadName100" prefix="PartOfAppl_RoadName" suffix="00"
+                          maxlength="256" mandatory>
+                        </cn2-textbox>
+                      </td>
+                      <td width="19.7%">
+                        <cn2-textbox no-label id="PartOfAppl_PostCode100" numeric prefix="PartOfAppl_PostCode"
+                          maxlength="6" suffix="00" mandatory>
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-button type="button" id="delete1" prefix="delete" danger
+                          event-click="removeDuplicate(this.id,'A1','psda-container1');disableDelete('psda-container1', `[group='del']`)"
+                          label="Delete" group="del" disabled style="float: right;">
+                        </cn2-button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pb-2">
+              <cn2-button type="button" label="Add"
+                event-click="insertDuplicate('psda-container1','A1'); disableDelete('psda-container1', `[group='del']`)">
+              </cn2-button>
+            </div>
+
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Building Sector*</td>
+                  <td>
+                    <cn2-select options="Private:Private, Public:Public" mandatory id="PartOfAppl_BuilSect10" no-label>
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Building Age*
+                  </td>
+                  <td>
+                    <cn2-textbox inline="10" id="PartOfAppl_BuilAge10" numeric maxlength="10" no-label mandatory>
+                    </cn2-textbox> years
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="20%">
+                    <input type="radio" name="chkPart" id="chkPartOfAppl_SingUsed10" />
+                    Single-Used
+                  </td>
+                  <td>
+                    <input type="radio" name="chkPart" id="chkPartOfAppl_MixeUsed10" />
+                    Mixed-Used
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <th width="34.5%">Building Type*</th>
+                  <th width="23.7%">GFA(m²)*</th>
+                  <th width="24%">
+                    Others<span id="PartOfAppl_GfaOthe_aste"></span>
+                  </th>
+                  <th> </th>
+                </tr>
+              </tbody>
+            </table>
+            <div id="psda-container2">
+              <div id="B1">
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <td width="34.5%">
+                        <cn2-select
+                          options="Hotel:Hotel, Office:Office, Retail:Retail, Convention Centre:Convention Centre, Service Apartment:Service Apartment, Institute of Higher Learning / School:Institute of Higher Learning / School, Sport and Recreational:Sport and Recreational, Healthcare:Healthcare, Depots / Interchange:Depots / Interchange, Community Building:Community Building, Business Parks:Business Parks, Others:Others"
+                          mandatory id="chkPartOfAppl_BuilType10" prefix="chkPartOfAppl_BuilType" suffix="0" no-label
+                          event-change="chkPartOfAppl_BuilType_change(this,'PartOfAppl_GfaOthe10')">
+                        </cn2-select>
+                      </td>
+                      <td width="23.7%">
+                        <cn2-textbox mandatory no-label event-change="chkPartOfAppl_Other_change('psda-container2')"
+                          id="chkPartOfAppl_Other10" currency prefix="chkPartOfAppl_Other" suffix="0">
+                        </cn2-textbox>
+                      </td>
+                      <td width="30%">
+                        <cn2-textbox disabled maxlength="256" no-label id="PartOfAppl_GfaOthe10"
+                          prefix="PartOfAppl_GfaOthe" suffix="0">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-button type="button" label="Delete" id="delete1" prefix="delete" danger group="btDel"
+                          disabled
+                          event-click="removeDuplicate(this.id,'B1','psda-container2');chkPartOfAppl_Other_change('psda-container2');otherAsterisk(); disableDelete('psda-container2', `[group='btDel']`)"
+                          style="float: right;">
+                        </cn2-button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>
+                    <cn2-button label="Add"
+                      event-click="insertDuplicate('psda-container2','B1'); disableDelete('psda-container2', `[group='btDel']`);disableOthers();"
+                      style="float:left">
+                    </cn2-button>
+                    <span style="float:right">
+                      Total: 
+                      <cn2-textbox id="PartOfAppl_TotalGFA10" inline="9" currency no-label disabled>
+                      </cn2-textbox>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span>*For mixed development, fill in the areas for the
+                      respective building type.</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page3" style="display: none;" mandatory-fields-count="0">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>
+              Section I Particulars of Building Owner(s)/Management
+              Corporation
+            </h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <cn2-button label="Add" id="PartOfTheOWNER_Add10"
+                  event-click="insertDuplicate('psda-container3','C1'); disableDelete('psda-container3', `[group='delParticular']`);removeUENerror('psda-container3','Members_UEN_OWNER');">
+                </cn2-button>
+              </div>
+            </div>
+
+            <div id="accordion">
+              <div id="psda-container3">
+                <div id="C1" parent>
+                  <h2 class="accordion-toggle">
+                    <table class="table table-borderless">
+                      <tbody>
+                        <tr>
+                          <td class="align-middle">Name*</td>
+                          <td class="align-middle">
+                            <cn2-select data-options="ownerDropdown"
+                              event-change="loadDropDownDetails(this);togglePartDev(this)" mandatory
+                              id="Member_Member_Name_OWNER100" no-label prefix="Member_Member_Name_OWNER" suffix="00">
+                            </cn2-select>
+                          </td>
+                          <td class="align-middle">Company Name</td>
+                          <td class="align-middle">
+                            <cn2-textbox no-label id="Member_Firm_Name_OWNER100" prefix="Member_Firm_Name_OWNER"
+                              suffix="00" disabled>
+                            </cn2-textbox>
+                          </td>
+                          <td class="align-middle">
+                            <cn2-button style="float:right" label="Delete" id="delete1" prefix="delete" danger disabled
+                              group="delParticular"
+                              event-click="removeDuplicate(this.id,'C1','psda-container3'); disableDelete('psda-container3', `[group='delParticular']`)">
+                            </cn2-button>
+                          </td>
+                          <td class="align-middle">
+                            <span class="fa fa-angle-up" data-toggle="collapse" href="#collapse1" id="#collapse1"
+                              prefix="#collapse" child onclick="spanUpDown(this)" aria-expanded="true"></span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </h2>
+                  <div id="collapse1" class="panel-collapse collapse show" child="div" prefix="collapse" style>
+                    <table class="table table-borderless">
+                      <tbody>
+                        <tr hidden>
+                          <td>Member ID</td>
+                          <td>
+                            <cn2-textbox no-label numeric id="Member_Member_SID_OWNER100" disabled
+                              prefix="Member_Member_SID_OWNER" suffix="00">
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="35%">UEN</td>
+                          <td>
+                            <cn2-textbox no-label id="Members_UEN_OWNER100" prefix="Members_UEN_OWNER" suffix="00"
+                              maxlength="10" template="#########@" event-blur="uenValidate(this)"></cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Designation</td>
+                          <td>
+                            <cn2-textbox no-label id="Member_Designation_OWNER100" disabled
+                              prefix="Member_Designation_OWNER" suffix="00"></cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Address</td>
+                          <td>
+                            <cn2-textarea no-label id="Member_Address_OWNER100" disabled prefix="Member_Address_OWNER"
+                              suffix="00"></cn2-textarea>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Telephone No.</td>
+                          <td>
+                            <cn2-textbox no-label numeric id="Member_Tel_No_OWNER100" disabled
+                              prefix="Member_Tel_No_OWNER" suffix="00"></cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Handphone No.</td>
+                          <td>
+                            <cn2-textbox no-label numeric id="Member_Mobile_No_OWNER100" disabled
+                              prefix="Member_Mobile_No_OWNER" suffix="00"></cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Email Address</td>
+                          <td>
+                            <cn2-textbox no-label id="Member_Email_Address1_OWNER100" disabled
+                              prefix="Member_Email_Address1_OWNER" suffix="00"></cn2-textbox>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page4" style="display: none;" mandatory-fields-count="5">
+          <div class="mls-espo-right-inner-container">
+            <h2>Section II Particulars of Professional Engineer (Mech)</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td>Member ID</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Member_SID_PEME10" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-select data-options="peDropDown" mandatory id="Member_Member_Name_PEME10" no-label
+                      event-change="loadDropDownDetails(this); togglePartQp('Members_UEN_PEME10')"></cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox no-label id="MemberRole_Professional_No_PEME10" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Firm_Name_PEME10" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN*</td>
+                  <td>
+                    <cn2-textbox no-label id="Members_UEN_PEME10" maxlength="10" template="#########@"
+                      event-blur="uenValidate(this)" mandatory></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea no-label id="Member_Address_PEME10" disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox no-label numeric id="Member_Tel_No_PEME10" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox no-label numeric id="Member_Mobile_No_PEME10" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Email_Address1_PEME10" disabled></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" id="decAppType1">
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <h2>Declaration by Mechanical Engineer</h2>
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td>II.1.</td>
+                      <td>
+                        I, confirm that I have been appointed under Section
+                        22FB of the Act as the Mechanical Engineer in respect
+                        of the works herein described.*
+                      </td>
+                      <td>
+                        <cn2-checkbox id="DeclByMachEngi_IConfThat10" class="type1num1" mandatory checked
+                          event-click="remoMand(this)" group="type1DecMandCheckbox">
+                        </cn2-checkbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>II.2.</td>
+                      <td>
+                        I, hereby confirm that the notification of
+                        appointment/authorization form titled 'BCA-EB-NAPPE01'
+                        is duly signed by the relevant parties and attached to
+                        this application.*
+                      </td>
+                      <td>
+                        <cn2-checkbox id="DeclByMachEngi_NotiOfAppoAuth10" mandatory checked
+                          event-click="remoMand(this)" group="type1DecMandCheckbox">
+                        </cn2-checkbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>II.3.</td>
+                      <td>
+                        I, certify that I have prepared the works shown in the
+                        plans and assessed the design score submitted with
+                        this application and I hereby declare that the said
+                        works and design score meet the minimum environmental
+                        sustainability standard applicable to the building
+                        subject to such waiver/ modification granted under
+                        Section 22FB(5) of the Act and are in accordance with
+                        the Act and the Building Control (Environmental
+                        Sustainability Measures for Existing Buildings)
+                        Regulations 2013.*
+                      </td>
+                      <td>
+                        <cn2-checkbox id="DeclByMachEngi_IHereDeclThat10" mandatory checked event-click="remoMand(this)"
+                          group="type1DecMandCheckbox">
+                        </cn2-checkbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>II.4.</td>
+                      <td>
+                        I, hereby declare that the particulars provided in
+                        this application and the attached forms/documents are
+                        correct.*
+                      </td>
+                      <td>
+                        <cn2-checkbox id="DeclByMachEngi_IHereConfThat10" mandatory checked event-click="remoMand(this)"
+                          group="type1DecMandCheckbox">
+                        </cn2-checkbox>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="mls-espo-right-inner-container borderchecking" id="decAppType2" hidden>
+            <h2>Declaration by Mechanical Engineer</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>II.1.</td>
+                  <td>
+                    I, confirm that I have been appointed under Section 22FB /
+                    Section 22FE of the Act as the Mechanical Engineer in
+                    respect of the works herein described.*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByMachEngi_IConfThat10" class="type2num1" event-click="remoMand(this)"
+                      group="type2DecMandCheckbox">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>II.2.</td>
+                  <td>
+                    I, hereby confirm that the notification of
+                    appointment/authorization form titled 'BCA-EB-NAPPE01' and
+                    attached to this application is duly signed by the
+                    relevant partied.*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByMechEngi_IHaveBeenAppointed10" event-click="remoMand(this)"
+                      group="type2DecMandCheckbox">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>II.3.</td>
+                  <td>
+                    I, certify that I have prepared the works shown in the
+                    plans and assessed the as-built score submitted with this
+                    application and I hereby declare that the said works and
+                    as-built score meet the prevailing minimum environmental
+                    sustainability standard applicable to the building and are
+                    in accordance with the Act and the Building Control
+                    (Environmental Sustainability Measures for Existing
+                    Buildings) Regulations.*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByMechEngi_IHavePrepared10" event-click="remoMand(this)"
+                      group="type2DecMandCheckbox">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>II.4.</td>
+                  <td>
+                    The works for major energy-use change have been completed
+                    on<span id="num4DateMand"></span>
+                    <cn2-datefield onfocusout="validateDate(this)" inline="4" disabled no-label
+                      id="DeclByMechEngi_TheWorksForMajo20">
+                    </cn2-datefield>
+                    [dd/mm/yyyy] in accordance with the design score approved
+                    by Commissioner of Building Control, subject to any
+                    departure or deviation that complies with section 22FC of
+                    the Act.*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByMechEngi_TheWorksForMajo10"
+                      event-click="remoMand(this); DeclByMechEngi_TheWorksForMajo10_change(this)"
+                      group="type2DecMandCheckbox">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>II.5.</td>
+                  <td>
+                    I, hereby declare that the particulars provided in this
+                    application and the attached forms/documents are correct.*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByMechEngi_NotiOfAppoAuth10" event-click="remoMand(this)"
+                      group="type2DecMandCheckbox">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>II.6.</td>
+                  <td>
+                    For design score approved before 01 April 2019, I hereby
+                    confirm the correctness of the as-built score for the
+                    above building as provided in the declaration letter
+                    (Submission of As-built Score Calculations) to the owner
+                    as attached.
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByMechEngi_IHaveDeclaredThat10">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page5" style="display: none;" mandatory-fields-count="21">
+          <div class="mls-espo-right-inner-container">
+            <h2>Section III Submission Details</h2>
+            <div id="subAppType1">
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td width="35%">
+                      Age of building cooling system before retrofit*
+                    </td>
+                    <td>
+                      <cn2-textbox id="SubmDeta_AgeOfBuilCool10" maxlength="1024" mandatory numeric no-label inline="5"
+                        group="page5MandText1">
+                      </cn2-textbox>years
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Expected date of commencement of retrofitting works*
+                    </td>
+                    <td>
+                      <cn2-datefield inline="5" onfocusout="validateDate(this)" id="SubmDeta_ExpeDateOfComm10" mandatory
+                        no-label group="page5MandText1">
+                      </cn2-datefield>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Expected Completion Date*</td>
+                    <td>
+                      <cn2-datefield inline="5" onfocusout="validateDate(this)" id="SubmDeta_ExpeCompDate10" mandatory
+                        no-label group="page5MandText1">
+                      </cn2-datefield>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td width="35%">Building Cooling Load Details*</td>
+                    <td>
+                      <input type="radio" id="SubmDeta_CoolLoad_Audi10" name="SubmDeta" group="page5Radio1" />
+                        Audited
+                    </td>
+                    <td>
+                      <input type="radio" id="SubmDeta_CoolLoad_Desi10" name="SubmDeta" group="page5Radio1" />
+                        Designed
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td width="35%">
+                      Building Energy Consumption Prior to Retrofit
+                    </td>
+                    <td>
+                      <cn2-textbox id="SubmDeta_BuilEnerPrioRetro10" currency maxlength="1024" no-label inline="10"
+                        group="page5Text1">
+                      </cn2-textbox>kWh/yr
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Building Energy Consumption after Retrofit<br />(Estimated)
+                    </td>
+                    <td>
+                      <cn2-textbox id="SubmDeta_BuilEnerAfteRetro10" currency maxlength="1024" no-label inline="10"
+                        group="page5Text1">
+                      </cn2-textbox>kWh/yr
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="subAppType2" hidden>
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td width="35%">Air-Con area*</td>
+                    <td>
+                      <cn2-textbox id="SubmDeta_AirConArea10" maxlength="1024" numeric no-label inline="10"
+                        group="page5MandText2">
+                      </cn2-textbox>
+                      m<sup>2</sup>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="mls-espo-right-inner-container">
+            <h2>(a) Current Building Cooling System Details</h2>
+            <cn2-checkbox id="SubmDeta_Curr_UnitSystSplitSyst10"
+              event-change="SubmDeta_Curr_UnitSystSplitSyst10_change(this)" group="page5Check"></cn2-checkbox>
+             <strong>Unitary System – Split Systems / Variable Refrigerant Flow /
+              Packaged Units</strong><br />
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%" span="1">
+                    Description of air-conditioning system
+                  </td>
+                  <td>
+                    <cn2-textbox id="SubmDeta_Curr_AirConAreaUni10" maxlength="1024" no-label disabled
+                      group="page5DisableText"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td span="1">
+                    Air-Con area served by unitary system<span id="SubmDeta_AirConServedBy10_aste"
+                      group="page5Aste"></span>
+                  </td>
+                  <td>
+                    <cn2-textbox id="SubmDeta_AirConServedBy10" maxlength="1024" currency no-label inline="10" disabled
+                      group="page5DisableText">
+                    </cn2-textbox>
+                    m<sup>2</sup>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Total Installed Cooling Capacity</td>
+                  <td>
+                    <cn2-textbox id="SubmDeta_Curr_TotaInstCapa_Rt10" maxlength="1024" currency no-label inline="8"
+                      event-input="SubmDeta_Curr_TotaInstCapa_Rt10_change();" disabled group="page5DisableText">
+                    </cn2-textbox>
+                    RT
+                  </td>
+                  <td>
+                    <cn2-textbox id="SubmDeta_Curr_TotaInstCapa_Kw10" maxlength="1024" currency no-label inline="8"
+                      event-input="SubmDeta_Curr_TotaInstCapa_Kw10_change();" disabled group="page5DisableText">
+                    </cn2-textbox>
+                    kW
+                  </td>
+                </tr>
+                <tr>
+                  <td>Total System Efficiency</td>
+                  <td>
+                    <cn2-textbox id="SubmDeta_Curr_TotaSystEffi_Kwrt10" maxlength="1024" currency no-label inline="8"
+                      event-input="SubmDeta_Curr_TotaSystEffi_Kwrt10_change(this)" disabled group="page5DisableText">
+                    </cn2-textbox>
+                    kW/RT
+                  </td>
+                  <td>
+                    <cn2-textbox id="SubmDeta_Curr_TotaSystEffi_Cop10" maxlength="1024" currency no-label inline="8"
+                      event-input="SubmDeta_Curr_TotaSystEffi_Cop10_change(this)" disabled group="page5DisableText">
+                    </cn2-textbox>
+                    COP
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <cn2-checkbox id="SubmDeta_Curr_ChillPlanSyst10" event-change="SubmDeta_Curr_ChillPlanSyst10_change(this)"
+              group="page5Check">
+            </cn2-checkbox> <strong>Chiller Plant System</strong><br />
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%"></td>
+                  <td>
+                    <input type="radio" id="SubmDeta_Curr_AirCool10" name="SubmDeta_Curr_AirCool10" disabled
+                      group="page5DisableRadio" onclick="enableCPC(this);" />
+                      Air-Cooled
+                  </td>
+                  <td>
+                    <input type="radio" id="SubmDeta_Curr_WateCool10" name="SubmDeta_Curr_AirCool10" disabled
+                      group="page5DisableRadio" onclick="enableCPC(this);" />
+                      Water-Cooled
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">
+                    Chiller Plant Configuration<span id="cpcManda"></span>
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="SubmDeta_Curr_ChilPlanConf10" disabled group="page5DisableText">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Air-Con area served by chiller plant system<span group="page5Aste" cps></span>
+                  </td>
+                  <td>
+                    <cn2-textbox currency no-label id="SubmDeta_Curr_AirConAreaChill10" inline="10"
+                      event-input="SubmDeta_Curr_AirConAreaChill10_change()" disabled group="page5DisableText">
+                    </cn2-textbox> m<sup>2</sup>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>
+                    Daytime average cooling load<span id="SubmDeta_Curr_DaytAverCoolLoad10_aste" group="page5Aste"
+                      cps></span>
+                  </td>
+                  <td>
+                    <cn2-textbox currency no-label id="SubmDeta_Curr_DaytAverCoolLoad10" inline="8"
+                      event-input="SubmDeta_Curr_DaytAverCoolLoad10_change()" disabled group="page5DisableText">
+                    </cn2-textbox>RT
+                  </td>
+                  <td>
+                    Nighttime average cooling load<span id="SubmDeta_Curr_NighAverCoolLoad10_aste"
+                      group="page5Aste"></span>
+                  </td>
+                  <td>
+                    <cn2-textbox currency disabled no-label id="SubmDeta_Curr_NighAverCoolLoad10" inline="8"
+                      event-input="SubmDeta_Curr_NighAverCoolLoad10_change(this)" group="page5DisableText">
+                    </cn2-textbox>RT
+                  </td>
+                </tr>
+                <tr>
+                  <td>Daytime average cooling load per air-con area</td>
+                  <td>
+                    <cn2-textbox currency disabled no-label id="SubmDeta_Curr_DaytAverCoolLoad20" inline="8"
+                      group="page5DisableText">
+                    </cn2-textbox>W/m<sup>2</sup>
+                  </td>
+                  <td>Nighttime average cooling load per air-con area</td>
+                  <td>
+                    <cn2-textbox currency disabled no-label id="SubmDeta_Curr_NighAverCoolLoad20" inline="8"
+                      group="page5DisableText">
+                    </cn2-textbox>W/m<sup>2</sup>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless" style="margin-bottom:0px;">
+              <tbody>
+                <tr>
+                  <td class="align-bottom" width="20%" colspan="2">
+                    <cn2-button label="Add" id="chillerFormAdd" disabled
+                      event-click="insertDuplicate('chillerForm','chill'); disableDelete('chillerForm', '.deleteNightDay');removeMandatoryField('chillerForm');makeDefaultZero();disablehour24fields();">
+                    </cn2-button>
+                  </td>
+                  <td width="15%">
+                    Chiller<br />
+                    (kW/RT)
+                  </td>
+                  <td width="15%">
+                    Chiller water pump<br />
+                    (kW/RT)
+                  </td>
+                  <td width="12%">
+                    Condenser water pump<br />
+                    (kW/RT)
+                  </td>
+                  <td width="13%">
+                    Cooling Towers<br />
+                    (kW/RT)
+                  </td>
+                  <td width="15%">
+                    Total System<br />
+                    (kW/RT)
+                  </td>
+                  <td width="10%"></td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="chillerForm">
+              <div id="chill1" class="chill1">
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <td rowspan="2" width="10%">
+                        <cn2-checkbox id="SubmDeta_Curr_24Hrs10" disabled
+                          event-change="SubmDeta_Curr_24Hrs_change(this); enableCurrNight()"
+                          prefix="SubmDeta_Curr_24Hrs" suffix="0">
+                        </cn2-checkbox>
+                        24 Hrs
+                      </td>
+                      <td>
+                        Daytime<span id="SubmDeta_Curr_Dayt_Chil10_aste" group="page5Aste" cps></span>
+                      </td>
+                      <td>
+                        <cn2-textbox disabled id="SubmDeta_Curr_Dayt_Chil10" currency prefix="SubmDeta_Curr_Dayt_Chil"
+                          suffix="0" event-blur="calcChillerTable(this);" no-label>
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox no-label disabled id="SubmDeta_Curr_Dayt_ChilWatePump10" currency
+                          prefix="SubmDeta_Curr_Dayt_ChilWatePump" suffix="0" event-blur="calcChillerTable(this);">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox no-label disabled id="SubmDeta_Curr_Dayt_CondWatePump10" currency
+                          prefix="SubmDeta_Curr_Dayt_CondWatePump" suffix="0" event-blur="calcChillerTable(this);">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox no-label disabled id="SubmDeta_Curr_Dayt_CoolTowe10" currency
+                          prefix="SubmDeta_Curr_Dayt_CoolTowe" suffix="0" event-blur="calcChillerTable(this);">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox no-label id="SubmDeta_Curr_Dayt_TotaSyst10" prefix="SubmDeta_Curr_Dayt_TotaSyst"
+                          suffix="0" disabled>
+                        </cn2-textbox>
+                      </td>
+                      <td rowspan="3">
+                        <cn2-button type="button" label="Delete" id="chillerform_delete10" prefix="chillerform_delete"
+                          suffix="0" danger class="deleteNightDay" disabled
+                          event-click="removeDuplicate(this.id,'chill','chillerForm'); disableDelete('chillerForm', '.deleteNightDay')">
+                        </cn2-button>
+                      </td>
+                    </tr>
+                    <tr id="nightForm" class="nightForm">
+                      <td>
+                        Nighttime<span id="SubmDeta_Curr_Night_Chil10_aste" group="page5Aste"></span>
+                      </td>
+                      <td>
+                        <cn2-textbox no-label id="SubmDeta_Curr_Night_Chil10" currency prefix="SubmDeta_Curr_Night_Chil"
+                          suffix="0" event-blur="calcChillerTable(this);" disabled>
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox no-label id="SubmDeta_Curr_Night_ChilWatePump10" currency
+                          prefix="SubmDeta_Curr_Night_ChilWatePump" suffix="0" event-blur="calcChillerTable(this);"
+                          disabled>
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox no-label id="SubmDeta_Curr_Night_CondWatePump10" currency
+                          prefix="SubmDeta_Curr_Night_CondWatePump" suffix="0" event-blur="calcChillerTable(this);"
+                          disabled>
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox no-label id="SubmDeta_Curr_Night_CoolTowe10" currency
+                          prefix="SubmDeta_Curr_Night_CoolTowe" suffix="0" event-blur="calcChillerTable(this);"
+                          disabled>
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox no-label id="SubmDeta_Curr_Night_TotaSyst10" prefix="SubmDeta_Curr_Night_TotaSyst"
+                          suffix="0" disabled>
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">24 hours Average</td>
+                      <td>
+                        <cn2-textbox currency disabled event-blur="calcChillerTable(this);"
+                          id="SubmDeta_Curr_24Hour_Chil10" no-label prefix="SubmDeta_Curr_24Hour_Chil" suffix="0">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox currency disabled event-blur="calcChillerTable(this);"
+                          id="SubmDeta_Curr_24Hour_ChilWatePump10" no-label prefix="SubmDeta_Curr_24Hour_ChilWatePump"
+                          suffix="0">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox currency disabled event-blur="calcChillerTable(this);"
+                          id="SubmDeta_Curr_24Hour_CondWatePump10" no-label prefix="SubmDeta_Curr_24Hour_CondWatePump"
+                          suffix="0">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox currency disabled event-blur="calcChillerTable(this);"
+                          id="SubmDeta_Curr_24Hour_CoolTowe10" no-label prefix="SubmDeta_Curr_24Hour_CoolTowe"
+                          suffix="0">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox id="SubmDeta_Curr_24Hour_TotaSyst10" no-label
+                          prefix="SubmDeta_Curr_24Hour_TotaSyst" suffix="0" disabled>
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <table class="table table-borderless" id="heatFieldTable" hidden>
+              <tbody>
+                <tr>
+                  <td colspan="2"><strong>Heat Balance</strong></td>
+                </tr>
+                <tr>
+                  <td width="35%">% Heat Balance within ±5% error*</td>
+                  <td>
+                    <cn2-textbox id="SubmDeta_HeatBalaWithErro10" numeric inline="10" maxlength="1024" no-label>
+                    </cn2-textbox>%
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container" id="bAppType1">
+            <h2>(b) Proposed Building Cooling System Details</h2>
+            <cn2-checkbox id="SubmDeta_Prop_UnitSystSplitSyst10"
+              event-change="SubmDeta_Prop_UnitSystSplitSyst10_change(this)" group="page5Check"></cn2-checkbox>
+             <strong>Unitary System – Split Systems / Variable Refrigerant Flow /
+              Packaged Units</strong><br />
+
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Description of air-conditioning system</td>
+                  <td colspan="2">
+                    <cn2-textbox id="SubmDeta_Prop_AirCondConf10" maxlength="1024" no-label disabled
+                      group="page5DisableText"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Air-Con area served by unitary system</td>
+                  <td colspan="2">
+                    <cn2-textbox id="SubmDeta_Prop_AirConAreaUni10" currency maxlength="1024" inline="10" no-label
+                      disabled group="page5DisableText">
+                    </cn2-textbox>
+                    m<sup>2</sup>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Total Installed Cooling Capacity</td>
+                  <td>
+                    <cn2-textbox id="SubmDeta_Prop_TotaInstCapa_Rt10" maxlength="1024" inline="8" no-label
+                      event-input="SubmDeta_Prop_TotaInstCapa_Rt10_change(this)" currency disabled
+                      group="page5DisableText">
+                    </cn2-textbox>RT
+                  </td>
+                  <td>
+                    <cn2-textbox id="SubmDeta_Prop_TotaInstCapa_Kw10" maxlength="1024" inline="8" no-label
+                      event-input="SubmDeta_Prop_TotaInstCapa_Kw10_change(this)" currency disabled
+                      group="page5DisableText">
+                    </cn2-textbox>kW
+                  </td>
+                </tr>
+                <tr>
+                  <td>Total System Efficiency</td>
+                  <td>
+                    <cn2-textbox id="SubmDeta_Prop_TotaSystEffi_Kwrt10" maxlength="1024" inline="8" no-label currency
+                      event-input="SubmDeta_Prop_TotaSystEffi_Kwrt10_change(this)" disabled group="page5DisableText">
+                    </cn2-textbox>kW/RT
+                  </td>
+                  <td>
+                    <cn2-textbox id="SubmDeta_Prop_TotaSystEffi_Cop10" maxlength="1024" inline="8" no-label currency
+                      event-input="SubmDeta_Prop_TotaSystEffi_Cop10_change(this)" disabled group="page5DisableText">
+                    </cn2-textbox>COP
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <cn2-checkbox id="SubmDeta_Prop_ChillPlanSyst10" event-change="SubmDeta_Prop_ChillPlanSyst10_change(this)">
+            </cn2-checkbox> <strong>Chiller Plant System</strong><br />
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%"></td>
+                  <td>
+                    <input type="radio" id="SubmDeta_Prop_AirCool10" onchange="SubmDeta_Prop_change(this);"
+                      name="SubmDeta_Prop" disabled group="page5DisableRadio" />
+                      Air-Cooled
+                  </td>
+                  <td>
+                    <input type="radio" id="SubmDeta_Prop_WateCool10" onchange="SubmDeta_Prop_change(this);"
+                      name="SubmDeta_Prop" disabled group="page5DisableRadio" />
+                      Water-Cooled
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">
+                    Chiller Plant Configuration<span id="cpc2Manda"></span>
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="SubmDeta_Prop_ChilPlanConf10" disabled group="page5DisableText">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Air-Con area served by chiller plant system</td>
+                  <td>
+                    <cn2-textbox currency no-label id="SubmDeta_Prop_AirConAreaChill10" disabled
+                      group="page5DisableText" inline="10" event-input="SubmDeta_Prop_NighAverCoolLoad10_change(this)">
+                    </cn2-textbox> m<sup>2</sup>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>Daytime average cooling load</td>
+                  <td>
+                    <cn2-textbox currency no-label id="SubmDeta_Prop_DaytAverCoolLoad10"
+                      event-input="SubmDeta_Prop_DaytAverCoolLoad10_change(this)" inline="8" disabled
+                      group="page5DisableText">
+                    </cn2-textbox>RT
+                  </td>
+                  <td>Nighttime average cooling load*</td>
+                  <td>
+                    <cn2-textbox currency no-label id="SubmDeta_Prop_NighAverCoolLoad10" inline="8"
+                      event-input="SubmDeta_Prop_NighAverCoolLoad10_change(this)" disabled group="page5DisableText">
+                    </cn2-textbox>RT
+                  </td>
+                </tr>
+                <tr>
+                  <td>Daytime average cooling load per air-con area</td>
+                  <td>
+                    <cn2-textbox numeric disabled no-label id="SubmDeta_Prop_DaytAverCoolLoad20" inline="8"
+                      group="page5DisableText">
+                    </cn2-textbox>W/m<sup>2</sup>
+                  </td>
+                  <td>Nighttime average cooling load per air-con area</td>
+                  <td>
+                    <cn2-textbox numeric disabled no-label id="SubmDeta_Prop_NighAverCoolLoad20" inline="8"
+                      group="page5DisableText">
+                    </cn2-textbox>W/m<sup>2</sup>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless" style="margin-bottom:0px;">
+              <tbody>
+                <tr>
+                  <td class="align-bottom" width="20%" colspan="2">
+                    <cn2-button label="Add" id="chillerFormAdd2" disabled
+                      event-click="insertDuplicate('chiller2Form','chillf1'); disableDelete('chiller2Form', '.deleteNightDay');removeMandatoryField('chiller2Form');makeDefaultZero2();disablehour24fields2();">
+                    </cn2-button>
+                  </td>
+                  <td width="15%">
+                    Chiller<br />
+                    (kW/RT)
+                  </td>
+                  <td width="15%">
+                    Chiller water pump<br />
+                    (kW/RT)
+                  </td>
+                  <td width="12%">
+                    Condenser water pump<br />
+                    (kW/RT)
+                  </td>
+                  <td width="13%">
+                    Cooling Towers<br />
+                    (kW/RT)
+                  </td>
+                  <td width="15%">
+                    Total System<br />
+                    (kW/RT)
+                  </td>
+                  <td width="10%"></td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="chiller2Form">
+              <div id="chillf1" class="chillf2">
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <td rowspan="2" width="10%">
+                        <cn2-checkbox id="SubmDeta_24Hrs10" disabled
+                          event-change="SubmDeta_24Hrs_change(this);enableCurrNight2();" prefix="SubmDeta_24Hrs"
+                          suffix="0">
+                        </cn2-checkbox>
+                        24 Hrs
+                      </td>
+                      <td>Daytime<span id="daytime2sign"></span></td>
+                      <td>
+                        <cn2-textbox disabled id="SubmDeta_Dayt_Chil10" currency prefix="SubmDeta_Dayt_Chil" suffix="0"
+                          event-blur="calcChillerTable2(this);" no-label></cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox no-label disabled id="SubmDeta_Dayt_ChilWatePump10" currency
+                          prefix="SubmDeta_Dayt_ChilWatePump" suffix="0" event-blur="calcChillerTable2(this);">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox no-label disabled id="SubmDeta_Dayt_CondWatePump10" currency
+                          prefix="SubmDeta_Dayt_CondWatePump" suffix="0" event-blur="calcChillerTable2(this);">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox no-label disabled id="SubmDeta_Dayt_CoolTowe10" currency
+                          prefix="SubmDeta_Dayt_CoolTowe" suffix="0" event-blur="calcChillerTable2(this);">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox no-label id="SubmDeta_Dayt_TotaSyst10" prefix="SubmDeta_Dayt_TotaSyst" suffix="0"
+                          disabled>
+                        </cn2-textbox>
+                      </td>
+                      <td rowspan="3">
+                        <cn2-button type="button" label="Delete" id="chiller2form_delete10" prefix="chiller2form_delete"
+                          suffix="0" danger class="deleteNightDay" disabled
+                          event-click="removeDuplicate(this.id,'chillf1','chiller2Form'); disableDelete('chiller2Form', '.deleteNightDay')">
+                        </cn2-button>
+                      </td>
+                    </tr>
+                    <tr id="nightForm" class="nightForm">
+                      <td>Nighttime<span group="nightAste"></span></td>
+                      <td>
+                        <cn2-textbox no-label id="SubmDeta_Night_Chil10" currency prefix="SubmDeta_Night_Chil"
+                          suffix="0" event-blur="calcChillerTable2(this);" disabled></cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox no-label id="SubmDeta_Night_ChilWatePump10" currency
+                          prefix="SubmDeta_Night_ChilWatePump" suffix="0" event-blur="calcChillerTable2(this);"
+                          disabled>
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox no-label id="SubmDeta_Night_CondWatePump10" currency
+                          prefix="SubmDeta_Night_CondWatePump" suffix="0" event-blur="calcChillerTable2(this);"
+                          disabled>
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox no-label id="SubmDeta_Night_CoolTowe10" currency prefix="SubmDeta_Night_CoolTowe"
+                          suffix="0" event-blur="calcChillerTable2(this);" disabled>
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox no-label id="SubmDeta_Night_TotaSyst10" prefix="SubmDeta_Night_TotaSyst" suffix="0"
+                          disabled>
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">24 hours Average</td>
+                      <td>
+                        <cn2-textbox disabled id="SubmDeta_24Hour_Chil10" event-blur="calcChillerTable2(this);" no-label
+                          prefix="SubmDeta_24Hour_Chil" currency suffix="0">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox disabled id="SubmDeta_24Hour_ChilWatePump10" event-blur="calcChillerTable2(this);"
+                          no-label prefix="SubmDeta_24Hour_ChilWatePump" currency suffix="0">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox disabled id="SubmDeta_24Hour_CondWatePump10" event-blur="calcChillerTable2(this);"
+                          no-label prefix="SubmDeta_24Hour_CondWatePump" currency suffix="0">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox disabled id="SubmDeta_24Hour_CoolTowe10" event-blur="calcChillerTable2(this);"
+                          no-label prefix="SubmDeta_24Hour_CoolTowe" currency suffix="0">
+                        </cn2-textbox>
+                      </td>
+                      <td>
+                        <cn2-textbox id="SubmDeta_24Hour_TotaSyst10" no-label prefix="SubmDeta_24Hour_TotaSyst"
+                          suffix="0" disabled>
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="mls-espo-right-inner-container">
+            <div id="section4AppType1">
+              <h2>Section IV Prerequisites</h2>
+            </div>
+            <div id="section4AppType2" hidden>
+              <h2>
+                Section IV Prerequisites (Applicable for projects As-built
+                Score Submission on or after 1 April 2019)
+              </h2>
+            </div>
+            I, confirm that the following prerequisites will be complied with
+            in the As-Built Submission.
+
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td><strong>1.</strong></td>
+                  <td>
+                    <strong>Energy Consumption Monitoring* </strong><br />
+                    The building's Energy Use Intensity (EUI) for the past 3
+                    years shall be calculated and submitted. The project
+                    should also calculated the projected post retrofit EUI.
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_EnerConsMoni10" mandatory checked event-click="remoMand(this)"
+                      group="page5MandCheck">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>2. </strong></td>
+                  <td>
+                    <strong>Air-Conditioning System Minimum Operating Efficiency* </strong><br />
+                    The system efficiency shall not exceed the limits
+                    indicated in the tables as required in the prevailing code
+                    on Environmental Sustainability Measures for Existing
+                    Buildings.
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_AirCondSyst10" mandatory checked event-click="remoMand(this)"
+                      group="page5MandCheck">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>3. </strong></td>
+                  <td>
+                    <strong>Energy Improvement on Lighting System* </strong><br />
+                    To demonstrate at least 20% improvement in the lighting
+                    power budget for common areas over the baseline as
+                    required in the prevailing code on Environmental
+                    Sustainability Measures for Existing Buildings.
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_EnerImprOnLighSyst10" mandatory checked event-click="remoMand(this)"
+                      group="page5MandCheck">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>4. </strong></td>
+                  <td>
+                    <strong>Water Consumption Monitoring* </strong><br />
+                    The building's yearly water consumption (m³/GFA(m²)) for
+                    the past 3 years shall be calculated and submitted. The
+                    project shall also compute the projected water savings
+                    based on the proposed water saving measures.
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_WateConsMoni10" mandatory checked event-click="remoMand(this)"
+                      group="page5MandCheck">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>5. </strong></td>
+                  <td>
+                    <strong>Permanent Instrumentation for the Measurement and
+                      Verification of Chilled Water Air Conditioning Systems* </strong><br />
+                    Permanent measuring instruments for monitoring of central
+                    chilled-water system operating efficiency shall be
+                    provided as required in the prevailing code on
+                    Environmental Sustainability Measures for Existing
+                    Buildings.
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_PermInstMeasAndVeriChilWate10" mandatory checked
+                      event-click="remoMand(this)" group="page5MandCheck"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>6. </strong></td>
+                  <td>
+                    <strong>Indoor Temperature* </strong><br />
+                    The normal dry-bulb temperature setting for comfort
+                    air-conditioning shall be maintained at 23ºC and above to
+                    prevent overcooling.
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_IndoTemp10" mandatory checked event-click="remoMand(this)"
+                      group="page5MandCheck">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>7. </strong></td>
+                  <td>
+                    <strong>Indoor Air Quality (IAQ) Surveillance Audit* </strong><br />
+                    To commit and conduct a post-retrofit IAQ surveillance
+                    audit based on the indicative methods according to SS 554
+                    Code of Practice for Indoor Air Quality for
+                    Air-Conditioned Buildings or demonstrate good IAQ
+                    performance according to NEA's Guidelines for Good Indoor
+                    Air Quality in Office Premises.
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_IndoAirQualSurvAudi10" mandatory checked event-click="remoMand(this)"
+                      group="page5MandCheck">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong> </strong></td>
+                  <td><strong> </strong><br /></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container" id="section5AppType1">
+            <h2>Section V Requirements and Submission Checklist</h2>
+            I, confirm that the following documents have been submitted along
+            with this application
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td>a)</td>
+                  <td>
+                    Audit report on current air-conditioning system before
+                    retrofitting works is attached*<br />(applicable to
+                    central chilled-water plant only)
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_AudiRepoOnCurr10" event-click="remoMand(this)" mandatory checked
+                      group="page5MandCheck1"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>b)</td>
+                  <td>
+                    Cooling load calculations*<br />(if there is a change in
+                    cooling load or unitary air-conditioning systems
+                    installed)
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_CoolLoadCalc10" event-click="remoMand(this)" mandatory checked
+                      group="page5MandCheck1"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>c)</td>
+                  <td>
+                    Design schematic drawing of proposed air-conditioning
+                    system (water-side) is attached*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_DesiScheDrawOF10" event-click="remoMand(this)" mandatory checked
+                      group="page5MandCheck1"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>d)</td>
+                  <td>
+                    Chiller plant room layout drawing including position of
+                    M&amp;V instruments using symbol and color scheme is attached*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_ChilPlanRoomLayo10" event-click="remoMand(this)" mandatory checked
+                      group="page5MandCheck1"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>e)</td>
+                  <td>
+                    Chiller part-load performance data sheet from equipment
+                    supplier is attached*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_ChilPartLoadPerf10" event-click="remoMand(this)" mandatory checked
+                      group="page5MandCheck1"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>f)</td>
+                  <td>
+                    Chilled water pump selection data sheet and pump curves
+                    showing design flow and head, pump hydraulic efficiency,
+                    motor absorbed power and efficiency is attached*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_ChilWatePumpSele10" event-click="remoMand(this)" mandatory checked
+                      group="page5MandCheck1"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>g)</td>
+                  <td>
+                    Condenser water pump selection data sheet and pump curves
+                    showing design flow and head, pump hydraulic efficiency,
+                    motor absorbed power and efficiency is attached*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_CondWatePumpSele10" event-click="remoMand(this)" mandatory checked
+                      group="page5MandCheck1"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>h)</td>
+                  <td>
+                    Cooling tower selection data sheet and location plans are
+                    attached*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_CoolToweSeleData10" event-click="remoMand(this)" mandatory checked
+                      group="page5MandCheck1"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>i)</td>
+                  <td>
+                    Project schedule for retrofitting works is attached*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_ProjScheForRetr10" event-click="remoMand(this)" mandatory checked
+                      group="page5MandCheck1"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>j)</td>
+                  <td>
+                    Attach a excel worksheet for Chiller Plant efficiency
+                    computation template as supporting document*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_DetaChilPlanEffi10" event-click="remoMand(this)" mandatory checked
+                      group="page5MandCheck1"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>k)</td>
+                  <td>
+                    Declaration of GFA with supporting documents*<br />(e.g.
+                    URA document)
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_DeclOfGfaWith10" event-click="remoMand(this)" mandatory checked
+                      group="page5MandCheck1"></cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container" id="section5AppType2" hidden>
+            <h2>
+              Section V Prerequisites (Applicable for projects As-built Score
+              Submission on or after 1 April 2019)
+            </h2>
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    I, confirm that the following documents have been
+                    submitted along with this application*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_CertOfCompOf10" event-click="remoMand(this)" group="page5MandCheck2">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>a)</td>
+                  <td>
+                    As-built schematic drawing of air-conditioning system
+                    (water-side) is attached*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_CertOfCompOf20" event-click="remoMand(this)" group="page5MandCheck2">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>b)</td>
+                  <td>
+                    As-built chiller plant room layout drawing indicating
+                    position of M&amp;V instruments using symbol and color scheme
+                    is attached*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_AsBuilScheDraw10" event-click="remoMand(this)" group="page5MandCheck2">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>c)</td>
+                  <td>
+                    As-built chiller part-load performance data sheet from
+                    equipment supplier is attached*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_AsBuilChilPlan10" event-click="remoMand(this)" group="page5MandCheck2">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>d)</td>
+                  <td>
+                    As-built chilled water pump selection data sheet and pump
+                    curves showing design flow and head, pump hydraulic
+                    efficiency, motor absorbed power and efficiency is
+                    attached*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_AsBuilChilPart10" event-click="remoMand(this)" group="page5MandCheck2">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>e)</td>
+                  <td>
+                    As-built condenser water pump selection data sheet and
+                    pump curves showing design flow and head, pump hydraulic
+                    efficiency, motor absorbed power and efficiency is
+                    attached*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_AsBuilChilWate10" event-click="remoMand(this)" group="page5MandCheck2">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>f)</td>
+                  <td>
+                    As-built cooling tower selection data sheet and location
+                    plans are attached*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_AsBuilCondWate10" event-click="remoMand(this)" group="page5MandCheck2">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>g)</td>
+                  <td>
+                    Instruments' calibration certificate from accredited
+                    laboratory and batch calibration certificates from
+                    manufacturers*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_AsBuilCoolTowe10" event-click="remoMand(this)" group="page5MandCheck2">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>h)</td>
+                  <td>
+                    Construction drawings of the instruments showing the
+                    details of installation*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_InstCaliCertFrom10" event-click="remoMand(this)" group="page5MandCheck2">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>i)</td>
+                  <td>
+                    1 week raw data of the following data points in excel
+                    format (.xls) with date and time stamp: chilled water
+                    supply temperature (C); chilled water return temperature
+                    (C); condenser water supply temperature (C); condenser
+                    water return temperature (C); chilled water flow rate
+                    (I/s); condenser water flow rate (I/s); electrical power
+                    of chiller(s), chilled water pump(s), condenser water
+                    pump(s) &amp; cooling tower(s) (kW). the excel file should
+                    include all the chart plots specified in Annex B of the
+                    Code on Periodic Energy Audit of Building Cooling Systems*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_AsBuilChilPlan20" event-click="remoMand(this)" group="page5MandCheck2">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>j)</td>
+                  <td>
+                    Energy Audit report<br />(format in accordance to Annex B
+                    of "Code on Periodic Energy Audit of Building Cooling
+                    Systems")*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="SubmChec_ConsDrawOfThe10" event-click="remoMand(this)" group="page5MandCheck2">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page6" style="display: block;" mandatory-fields-count="1">
+          <div class="mls-espo-right-inner-container" id="page6Display1">
+            <h2>
+              Fee Computation for approval of Design score for Building
+              Undergoing Major Energy-Use Change
+            </h2>
+            <table class="table table-borderless">
+              <thead>
+                <tr>
+                  <th class="text-center">
+                    Gross Floor Area (m<sup>2</sup>)
+                  </th>
+                  <th class="text-center">
+                    Computed Fees
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <cn2-textbox id="PaymentGFA1" no-label disabled></cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-textbox id="PaymentTotal1" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <u>Rates</u><br />
+            $8,900 for the first 15,000 m2 (or part thereof), and<br />
+            $0.15 for every subsequent m2 (or part thereof) of the gross floor
+            area.<br /><br />
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Total Plan Fee Payable</td>
+                  <td>
+                    $<cn2-textbox id="PaymMode_Paym10" no-label disabled inline="10"></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container" id="page6Display2">
+            <h2>Payment Mode</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%" rowspan="2">
+                    <input type="radio" id="PaymMode_Cheq10" onchange="PaymMode_change()" name="PaymMode" /> 
+                    Cheque
+                  </td>
+                  <td>
+                    <cn2-textbox id="PaymMode_Cheq20" label="Cheque No." maxlength="15" disabled
+                      group="page6DisableText"></cn2-textbox>
+                  </td>
+                  <td>
+                    <cn2-textbox id="PaymMode_Cheq40" label="Bank Name" maxlength="255" disabled
+                      group="page6DisableText"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-datefield onfocusout="validateDate(this)" id="PaymMode_Cheq30" label="Cheque Date" disabled
+                      group="page6DisableText">
+                    </cn2-datefield>
+                  </td>
+                  <td>
+                    <cn2-textbox id="PaymMode_Cheq50" label="Amount Paid" maxlength="1024" numeric disabled
+                      group="page6DisableText">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="align-middle">
+                    <input type="radio" id="PaymMode_ePay10" onchange="PaymMode_change()" name="PaymMode" /> 
+                    ePayment
+                  </td>
+                  <td colspan="2">
+                    Please proceed to make ePayment after your e-Submission
+                    at<br />
+
+                    <a onclick=" ipcRenderer.send('open-default-browser', 'http://www.bca.gov.sg/ePayment/ePayment.html');"
+                      href="#">http://www.bca.gov.sg/ePayment/ePayment.html</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="align-middle">
+                    <input type="radio" id="PaymMode_PaidEarl10" onchange="PaymMode_change()" name="PaymMode" /> 
+                    Paid Earlier<span id="PaymMode_PaidEarl20_aste">*</span>
+                  </td>
+                  <td colspan="2">
+                    <cn2-select mandatory no-label options="GMEB Design Submission:GMEB Design Submission"
+                      id="PaymMode_PaidEarl20"></cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Payer’s Detail:-</td>
+                </tr>
+                <tr>
+                  <td>Name</td>
+                  <td colspan="2">
+                    <cn2-textbox id="PayeDeta_Name" no-label maxlength="1024" group="page6text"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Company Name</td>
+                  <td colspan="2">
+                    <cn2-textbox id="PayeDeta_CompName" no-label maxlength="1024" group="page6text"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td colspan="2">
+                    <cn2-textbox id="PayeDeta_Email" event-blur="checkEmail(this);" placeholder="name@example.com"
+                      no-label maxlength="1024" group="page6text"></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-version-footer hidden></cn2-version-footer>
+    <cn2-fixed-footer data-previous-page="page5"></cn2-fixed-footer>
+  </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,2351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>BCA-BP-BPAPPV01</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+
+  <script>
+    if (typeof module === 'object') {
+      window.module = module;
+      module = undefined;
+    }
+  </script>
+  <script src="../cm/resources/assets/js/jquery-3.4.1.min.js"></script>
+  <script src="../cm/resources/assets/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
+
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2switchbutton.js"></script>
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head
+    title="APPLICATION FOR APPROVAL OF BUILDING PLANS &lt;br&gt; [Section 5/Section 5A of the Building Control Act (Cap.29)]">
+  </cn2-master-head>
+  <input type="hidden" name="member_id" id="member_id">
+  <input type="hidden" name="form_validated" id="form_validated">
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p>
+          <b>For enquiries related to forms, please contact the following:</b>
+        </p>
+        <p><span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>BCA(BP) & (TOP)</td>
+                <td>bca_enquiry@bca.gov.sg</td>
+                <td>1800-3425222</td>
+                <td>Policies</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Application">
+        </cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars and Declaration by Developer(s)">
+        </cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4" label="Particulars and Declaration by Qualified Person">
+        </cn2-nav-button>
+        <cn2-nav-button target="page5" page-number="5" label="Submission Checklist">
+        </cn2-nav-button>
+        <cn2-nav-button target="page6" page-number="6" label="Fee Computation for Plans of Building Works">
+        </cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <input type="radio" id="SubmChec_UndeTheBuilCont_NotAppl_Defult" hidden disabled />
+          <input type="radio" id="SubmChec_UndeTheBuilCont_NotAppl_PlanPermRequ_Defult" hidden disabled />
+          <input type="radio" id="SubmChec_UndeTheBuilCont_Appl_Defult" hidden disabled />
+          <input type="radio" id="SubmChec_UndeTheBuilCont_Defult" hidden disabled />
+          <input type="radio" id="SubmChec_UndeTheBuilCont_Defult" hidden disabled />
+          <input type="radio" id="SubmChec_GrosFlooAreaOf_Hide10" hidden disabled />
+          <input type="radio" id="PaymMode_Hide10" hidden disabled />
+          <input type="radio" id="ChkNewBuilBuilWork1Show" hidden disabled />
+          <input type="radio" id="ChkNewBuilBuilWork2Show" hidden disabled />
+          <input type="radio" id="ChkNewStru1Show" hidden disabled />
+          <input type="radio" id="ChkNewStru2Show" hidden disabled />
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" no-label inline="5" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To: *</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-select no-label inline="5" id="Addr10" disabled
+                          options="Building and Construction Authority:BCA">
+                        </cn2-select>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea id="Addr20" no-label inline="5" disabled style="height: 159px;">
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>
+                This form is to be digitally signed by the appointed Qualified
+                Person and/or Developer.
+              </li>
+              <li>
+                For Design & Build project, document stating that the Builder
+                is appointing the Qualified Person is to be attached.
+              </li>
+              <li>
+                For waiver application BCA-BP-WVBP01.XFD (if any), to be
+                submitted separately using BCA-BP-Waiver application
+                folder in ESPro.
+              </li>
+              <li>
+                For A&A Works, every application for approval of building
+                plans involving repairs, alterations and/or additions to an
+                existing building is required to be submitted together.
+              </li>
+              <li>
+                From 1 July 2013, all architectural plans with 1<sup>st</sup> application
+                for planning permission dated on or after 1 July 2013, for new
+                developments with gross floor area (GFA) of 20,000 sq. m. and
+                above are required to be submitted in BIM format for approval.
+              </li>
+              <li>
+                From 1 July 2015, all architectural plans with 1<sup>st</sup> application
+                for planning permission dated on or after 1 July 2015, for
+                new developments with gross floor area (GFA) of more than 5000
+                square meters are required to be submitted in BIM Format for
+                approval.
+              </li>
+              <li>
+                Full plan fees for the building works of the entire
+                development shall be payable upon submission of the first set
+                of plans to the Commissioner Building Control for approval.
+              </li>
+              <li>This form may take 4-6 mins to complete.</li>
+            </ol>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container">
+            <h2>Project Details</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="25%">Project Reference Number</td>
+                  <td>
+                    <cn2-textbox id="Project_Project_Ref_No10" disabled no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Project Title</td>
+                  <td>
+                    <cn2-textarea id="Project_Title10" no-label disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Description of Building Works
+                  </td>
+                  <td>
+                    <cn2-textarea id="Project_Title20" no-label maxlength="1000"></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Location Description <br />
+                    <span>(lot/mk numbers and address)</span>
+                  </td>
+                  <td>
+                    <cn2-textarea id="Project_Location_Description_Description10" no-label disabled>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Application Details</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="25%">Plan Type *</td>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                        <cn2-select id="PartOfAppl_PlanType10" options="BP:BP" no-label disabled></cn2-select>
+                      </div>
+                      <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                        <cn2-textbox id="PartOfAppl_PlanType20" no-label mandatory maxlength="3" numeric
+                          event-change="adjustNumberLength(this, 3); PartOfAppl_PlanType20_change(this)"
+                          event-keypress="PartOfAppl_PlanType20_keypress(event,this)"
+                          event-blur="validateCaseRefNo(this);">
+                        </cn2-textbox>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Classification of Works</h2>
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td rowspan="3" width="25%">
+                    Classification of Works *
+                  </td>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <u>New Development</u>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                        New GFA
+                      </div>
+                      <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
+                        <cn2-textbox id="DeclByAppl_ClasOfWork_NewGFA10" no-label currency inline="10" disabled>
+                        </cn2-textbox>
+                        &nbsp;m<sup>2</sup>
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <input type="radio" id="DeclByAppl_ClasOfWork_NewGFA20"
+                          onchange="DeclByAppl_ClasOfWork_change(this)" name="DeclByAppl_ClasOfWork_name" disabled />
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                        Amendment GFA<br />(increase)
+                      </div>
+                      <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
+                        <cn2-textbox id="DeclByAppl_ClasOfWork_AmendGFAIncr10" no-label currency inline="10" disabled>
+                        </cn2-textbox>&nbsp;m<sup>2</sup>
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <input type="radio" id="DeclByAppl_ClasOfWork_AmendGFAIncr40"
+                          onchange="DeclByAppl_ClasOfWork_change(this)" name="DeclByAppl_ClasOfWork_name" disabled />
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByAppl_ClasOfWork10" group-id="DeclByAppl_id"
+                      event-change="DeclByAppl_change(this);DeclByAppl_ClasOfWork10_change(this)" checked mandatory>
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <u>A&A Works</u><br>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                        New GFA
+                      </div>
+                      <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
+                        <cn2-textbox id="DeclByAppl_ClasOfWork_IncrGFA10" currency no-label inline="10" disabled>
+                        </cn2-textbox>
+                        &nbsp;m<sup>2</sup>
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <input type="radio" id="AA_Work_Increase_GFA_10" onchange="AA_Work_change(this)"
+                          name="AA_Work_name" disabled />
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                        Amendment GFA<br />(increase)
+                      </div>
+                      <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
+                        <cn2-textbox id="DeclByAppl_ClasOfWork_AmendGFAIncr20" currency no-label inline="10" disabled>
+                        </cn2-textbox>&nbsp;m<sup>2</sup>
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <input type="radio" id="DeclByAppl_ClasOfWork_AmendGFAIncr30" onchange="AA_Work_change(this)"
+                          name="AA_Work_name" disabled />
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByAppl_ClasOfWork20" group-id="DeclByAppl_id"
+                      event-change="DeclByAppl_change(this);DeclByAppl_ClasOfWork20_change(this)" checked mandatory>
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <u>Retention Works</u>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                        Increase GFA
+                      </div>
+                      <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
+                        <cn2-textbox id="DeclByAppl_ClasOfWork_IncrGFA20" no-label inline="10" currency disabled>
+                        </cn2-textbox>
+                        &nbsp;m<sup>2</sup>
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        &nbsp;
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                        Existing GFA
+                      </div>
+                      <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
+                        <cn2-textbox id="DeclByAppl_ClasOfWork_ExisGFA20" no-label inline="10" currency disabled>
+                        </cn2-textbox>
+                        &nbsp;m<sup>2</sup>
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        &nbsp;
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByAppl_ClasOfWork30" group-id="DeclByAppl_id"
+                      event-change="DeclByAppl_change(this);DeclByAppl_ClasOfWork30_change(this)" checked mandatory>
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Planning Permission Date 1<sup>st</sup> applied on *</td>
+                  <td colspan="2">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                        <cn2-datefield id="DCSubmissionDate10" no-label mandatory onfocusout="validateDate(this)"
+                          event-change="DCSubmissionDate30_change()">
+                        </cn2-datefield>
+                      </div>
+                      <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                        NA&nbsp;<cn2-checkbox id="DCSubmissionDate20"
+                          event-change="DCSubmissionDate20_change(this); DCSubmissionDate30_change()">
+                        </cn2-checkbox>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3D BIM Submission *</td>
+                  <td colspan="2">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                        <cn2-select id="DeclByAppl_3DBIMSubm10" options="Yes:Yes,No:No" no-label mandatory></cn2-select>
+                      </div>
+                      <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                        &nbsp;
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container">
+            <h2>Section I Particulars of Developer</h2>
+            <div class="mls-espro-form-fields row ">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 ">
+                <cn2-button label="Add"
+                  event-click="insertDuplicate('particularsOfApplicationForm','form1');particularsOfApplicationFormAdd_click('particularsOfApplicationForm')">
+                </cn2-button>
+              </div>
+            </div>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 ">
+                <div id="accordion">
+                  <div id="particularsOfApplicationForm">
+                    <div id="form1" parent>
+                      <h2 class="accordion-toggle">
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td width="20%">
+                                <cn2-select data-options="ownerDropdown" label="Name"
+                                  event-change="loadDropDownDetails(this);togglePartDev(this);nricMaskingAccor(this,'Member_IC_Passport_No_Masking_OWNER')"
+                                  mandatory prefix="Member_Member_Name_OWNER" suffix="0"
+                                  id="Member_Member_Name_OWNER10">
+                                </cn2-select>
+                              </td>
+                              <td width="20%">
+                                <cn2-textbox label="Firm Name" id="Member_Firm_Name_OWNER10" disabled
+                                  prefix="Member_Firm_Name_OWNER" suffix="0">
+                                </cn2-textbox>
+                              </td>
+                              <td width="20%">
+                                <cn2-textbox label="Designation" id="Member_Designation_OWNER10" disabled
+                                  prefix="Member_Designation_OWNER" suffix="0">
+                                </cn2-textbox>
+                              </td>
+                              <td width="10%">
+                                <div class="mls-espro-form-fields row pt-4">
+                                  <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 pt-1 text-center">
+                                    <cn2-button label="Delete" id="PartOfTheOWNER_Delete10" disabled
+                                      prefix="PartOfTheOWNER_Delete" suffix="0" danger
+                                      event-click="removeDuplicate(this.id,'form1','particularsOfApplicationForm');particularsOfApplicationFormDelete_click('particularsOfApplicationForm');">
+                                    </cn2-button>
+                                  </div>
+                                </div>
+                              </td>
+                              <td width="5%">
+                                <span class="fa fa-angle-down collapsed" data-toggle="collapse" href="#collapse1"
+                                  id="#collapse1" prefix="#collapse" child onclick="spanUpDown(this)"
+                                  aria-expanded="false"></span>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </h2>
+                      <div id="collapse1" class="panel-collapse collapse" child="div" prefix="collapse">
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr hidden>
+                              <td>Member ID</td>
+                              <td>
+                                <cn2-textarea no-label id="Member_Member_SID_OWNER10" prefix="Member_Member_SID_OWNER"
+                                  suffix="0" disabled>
+                                </cn2-textarea>
+                              </td>
+                            </tr>
+                            <tr nricUnmasked hidden>
+                              <td>NRIC/Passport No.</td>
+                              <td>
+                                <cn2-textbox no-label prefix="Member_IC_Passport_No_OWNER" suffix="0"
+                                  id="Member_IC_Passport_No_OWNER10" disabled>
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr nricMasked>
+                              <td>NRIC/Passport No.</td>
+                              <td>
+                                <cn2-textbox no-label prefix="Member_IC_Passport_No_Masking_OWNER" suffix="0"
+                                  id="Member_IC_Passport_No_Masking_OWNER10" disabled>
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="25%">UEN</td>
+                              <td>
+                                <cn2-textbox no-label id="Members_UEN_OWNER10" maxlength="10" template="#########@"
+                                  event-blur="uenValidate(this)" prefix="Members_UEN_OWNER" suffix="0">
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Address</td>
+                              <td>
+                                <cn2-textarea no-label id="Member_Address_OWNER10" prefix="Member_Address_OWNER"
+                                  suffix="0" disabled>
+                                </cn2-textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Telephone No.</td>
+                              <td>
+                                <cn2-textarea no-label id="Member_Tel_No_OWNER10" disabled prefix="Member_Tel_No_OWNER"
+                                  suffix="0" numeric>
+                                </cn2-textarea>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Handphone No.</td>
+                              <td>
+                                <cn2-textbox no-label id="Member_Mobile_No_OWNER10" prefix="Member_Mobile_No_OWNER"
+                                  suffix="0" disabled numeric>
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Email Address</td>
+                              <td>
+                                <cn2-textbox no-label id="Member_Email_Address1_OWNER10" event-blur="checkEmail(this);"
+                                  placeholder="example@email.com" prefix="Member_Email_Address1_OWNER" suffix="0"
+                                  disabled>
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Declaration By Developer(s)</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%" style="padding-top: 17px;">I.1</td>
+                  <td>
+                    In accordance with section 8(1)(a) of the Act
+                    &nbsp;<cn2-textbox id="DeclByAppl_InAccoWithSect10" no-label inline="3" disabled></cn2-textbox>
+                    &nbsp;as the qualified person in respect of the building
+                    works herein described.
+                  </td>
+                  <td width="1%" style="padding-top: 19px;">
+                    <input type="radio" id="DeclByAppl_InAccoWithSect20" name="DeclByAppl_InAccoWithSect_name"
+                      onchange="DeclByAppl_InAccoWithSect20_change(this)" />
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-top: 17px;">I.2</td>
+                  <td>
+                    In accordance with section 11(1)(d)(i), the builder have
+                    appointed &nbsp;<cn2-textbox id="Member_Member_SID_QP20" no-label inline="3" disabled hidden>
+                    </cn2-textbox>
+                    <cn2-select id="Member_Member_Name_QP20" disabled inline="3" no-label
+                      event-change="loadDropDownDetails(this);" data-options="qpList">
+                    </cn2-select>&nbsp; as the
+                    qualified
+                    person in respect of the building
+                    works herein described.
+                  </td>
+                  <td style="padding-top: 19px;">
+                    <input type="radio" id="DeclByAppl_InAccoWithSect30" name="DeclByAppl_InAccoWithSect_name"
+                      onchange="DeclByAppl_InAccoWithSect20_change(this)" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page4">
+          <div class="mls-espo-right-inner-container">
+            <h2>Section II Particulars of Qualified Person</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td>Member ID</td>
+                  <td>
+                    <cn2-textbox id="Member_Member_SID_QP10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="25%">
+                    Name *
+                  </td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_QP10" data-options="qpDropdown"
+                      event-change="loadDropDownDetails(this);Member_Member_Name_QP10_change(this);togglePartQp()"
+                      no-label mandatory>
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Professional_No_QP10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox id="Member_Firm_Name_QP10" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_QP10" no-label maxlength="10" event-blur="uenValidate(this)"
+                      template="#########@"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Designation</td>
+                  <td>
+                    <cn2-textbox id="Members_Designation_QP10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea id="Member_Address_QP10" no-label disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_QP10" no-label disabled numeric></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Mobile_No_QP10" no-label disabled numeric></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_QP10" no-label disabled event-blur="checkEmail(this);">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Declaration By Qualified Person</h2>
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td width="1%">II.1</td>
+                  <td>
+                    I confirm that I have been appointed under section 8(1)(a)
+                    of the Act as the qualified person in respect of the
+                    building works herein describe. I certify that the
+                    building works shown in the plans submitted with this
+                    application are in accordance with the Act and the
+                    building regulations, subject to such waiver/modification
+                    granted under section 6A of the Act. *
+                  </td>
+                  <td width="1%">
+                    <cn2-checkbox id="DeclByQualPers_IConfThatI10" checked mandatory
+                      event-change="removeMandCheck(this)"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>II.2</td>
+                  <td>
+                    I hereby declare that the particulars required for this
+                    application and as stated in these forms are correct. *
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_IHereDeclThat10" checked mandatory
+                      event-change="removeMandCheck(this)"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>II.3</td>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 ">
+                        I confirm that *
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        I.
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        <input type="radio" id="DeclByQualPers_IConfThat_I10" name="DeclByQualPers_IConfThat_name"
+                          onchange="DeclByQualPers_IConfThat_change(this)" disabled />
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 ">
+                        written permission for the building works is not
+                        applicable.
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        II.
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        <input type="radio" id="DeclByQualPers_IConfThat_II10" name="DeclByQualPers_IConfThat_name"
+                          onchange="DeclByQualPers_IConfThat_change(this)" disabled />
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 ">
+                        the building works have been submitted to the Chief
+                        Planner, Urban Redevelopment Authority under the
+                        lodgement scheme; or
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        III.
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        <input type="radio" id="DeclByQualPers_IConfThat_III10" name="DeclByQualPers_IConfThat_name"
+                          onchange="DeclByQualPers_IConfThat_change(this)" disabled />
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 ">
+                        provisional permission for the building works has been
+                        granted by the Competent Authority. The provisional
+                        permission is registered under submission
+                        no.&nbsp;<cn2-textbox id="DeclByQualPers_IConfThat_III_SubmissionNo10" maxlength="50" no-label
+                          inline="3" disabled></cn2-textbox>&nbsp; and
+                        is valid up to &nbsp;<cn2-datefield id="DeclByQualPers_IConfThat_III_Date10"
+                          onfocusout="validateDate(this)" no-label disabled inline="3">
+                        </cn2-datefield>
+                        .
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        IV.
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        <input type="radio" id="DeclByQualPers_IConfThat_IV10" name="DeclByQualPers_IConfThat_name"
+                          onchange="DeclByQualPers_IConfThat_change(this)" disabled />
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 ">
+                        written permission for the building works is
+                        applicable and has been granted by the Competent
+                        Authority. The written permission in DC
+                        &nbsp;<cn2-textbox id="DeclByQualPers_IConfThat_IV_DC10" maxlength="50" no-label inline="3"
+                          disabled>
+                        </cn2-textbox>&nbsp; or Electronic submission approval no:
+                        <p style="margin-top: 5px;">
+                          <cn2-textbox id="DeclByQualPers_IConfThat_IV_EsAppvNo10" maxlength="50" no-label inline="3"
+                            disabled>
+                          </cn2-textbox>&nbsp; and is valid up to &nbsp;
+                          <cn2-datefield id="DeclByQualPers_IConfThat_IV_Date10" onfocusout="validateDate(this)"
+                            no-label disabled inline="3">
+                          </cn2-datefield>
+                          .
+                        </p>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 ">
+                        I hereby declare that
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        &nbsp;
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        <input type="radio" id="DeclByQualPers_IConfThat_IV_IHereDeclThat10"
+                          name="DeclByQualPers_IConfThat_IV_IHereDeclThat_name" disabled />
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                        The building plans do not deviate form approved plan
+                        submitted to URA.
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        &nbsp;
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1 ">
+                        <input type="radio" id="DeclByQualPers_C10"
+                          name="DeclByQualPers_IConfThat_IV_IHereDeclThat_name" disabled />
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 ">
+                        The building plans contain minor deviations from
+                        approved plan submitted to URA. These minor deviations
+                        are covered in the list of items exempted from
+                        Planning Permission as issued by the Competent
+                        Authority.
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_IConfThat10" checked mandatory
+                      event-change="DeclByQualPers_IConfThat10_change(this)"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>II.4</td>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        I confirm that the provision of
+                        <cn2-select id="DeclByQualPers_IConfThatThe10" no-label inline="3" disabled
+                          options="Household:Household,Storey:Storey">
+                        </cn2-select>&nbsp;shelter is
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        (a)
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <input type="radio" id="DeclByQualPers_IConfThatThe_B10" name="DeclByQualPers_IConfThatThe_name"
+                          disabled onchange="DeclByQualPers_IConfThatThe_change(this)" />
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                        Applicable and I will obtain Notice of Approval of
+                        shelter plans from Special Functions Group of BCA.
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        (b)
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <input type="radio" id="DeclByQualPers_IConfThatThe_A10" name="DeclByQualPers_IConfThatThe_name"
+                          disabled onchange="DeclByQualPers_IConfThatThe_change(this)" />
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                        Not applicable, the reason being
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1" style="text-indent: 30px">
+                        &nbsp;
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1" style="text-indent: 50px">
+                        <input type="radio" id="DeclByQualPers_IConfThatThe_A_ThereIsNoResi10"
+                          name="DeclByQualPers_IConfThatThe_A_name" disabled />
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                        There is no residential dwelling house or flat in the
+                        building works.
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1" style="text-indent: 30px">
+                        &nbsp;
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1" style="text-indent: 50px">
+                        <input type="radio" id="DeclByQualPers_IConfThatThe_A_ItIsAddiAnd10"
+                          name="DeclByQualPers_IConfThatThe_A_name" disabled />
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                        It is addition and alteration works.
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1" style="text-indent: 30px">
+                        &nbsp;
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1" style="text-indent: 50px">
+                        <input type="radio" id="DeclByQualPers_IConfThatThe_A_QPHasSougAdvi10"
+                          name="DeclByQualPers_IConfThatThe_A_name" disabled />
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                        QP has sought advice with SCDF and obtained a
+                        confirmation in writing from SCDF that provision of HS
+                        is not required for reconstruction works.
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_IConfThatThe20"
+                      event-change="DeclByQualPers_IConfThatThe20_change(this)"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>II.5</td>
+                  <td colspan="2">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        I confirm that the project *
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        (a)
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <input type="radio" id="SubmChec_DoesNotInvoAny10" name="SubmChec_name"
+                          onchange="SubmChec_change(this)" checked mandatory />
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                        does not involve any complex building structures.
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        (b)
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <input type="radio" id="SubmChec_InvoOneOrMore10" name="SubmChec_name"
+                          onchange="SubmChec_change(this)" checked mandatory />
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                        Involves one or more building structures as shown in the attached form
+                        (BE-EP-ANNEX_C).
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page5">
+          <div class="mls-espo-right-inner-container">
+            <h2>Section III Submission Checklist</h2>
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    III.1
+                  </td>
+                  <td colspan="3">
+                    Notification of appointment/authorisation from
+                    BCA-LU-NAPPQP01:
+                  </td>
+                  <td width="1%">
+                    <cn2-checkbox id="SubmChec_NotiOfAppoAuth10" event-change="SubmChec_NotiOfAppoAuth10_change(this)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td colspan="4">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <input type="radio" id="SubmChec_NotiOfAppoAuth_IsAtta10" disabled
+                          name="SubmChec_NotiOfAppoAuth_name" onchange="SubmChec_NotiOfAppoAuth_change(this)" />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        Is attached
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <input type="radio" id="SubmChec_NotiOfAppoAuth_HadBeenSubmPrev10" disabled
+                          name="SubmChec_NotiOfAppoAuth_name" onchange="SubmChec_NotiOfAppoAuth_change(this)" />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        Had been submitted previously on &nbsp;<cn2-datefield
+                          id="SubmChec_NotiOfAppoAuth_HadBeenSubmPrev20" disabled no-label inline="3"
+                          onfocusout="validateDate(this)"></cn2-datefield>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>III.2</td>
+                  <td colspan="4">The building works have</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td colspan="4">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <input type="radio" id="SubmChec_TheBuilWorkHave_CommOn10"
+                          onchange="SubmChec_TheBuilWorkHave_change(this)" name="SubmChec_TheBuilWorkHave_name" />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        Commenced on &nbsp;
+                        <cn2-datefield id="SubmChec_TheBuilWorkHave_CommOn20" disabled onfocusout="validateDate(this)"
+                          no-label inline="3"></cn2-datefield>
+                        &nbsp;
+                        <cn2-select id="SubmChec_TheBuilWorkHave_CommOn30" disabled no-label inline="3"
+                          options="with:with,without:without"></cn2-select>&nbsp; a
+                        permit to carry out building works.
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <input type="radio" id="SubmChec_TheBuilWorkHave_NotComm10"
+                          onchange="SubmChec_TheBuilWorkHave_change(this)" name="SubmChec_TheBuilWorkHave_name" />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        Not commenced.
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>III.3</td>
+                  <td colspan="4">Alternative solutions are</td>
+                </tr>
+                <tr>
+                  <td>
+                    &nbsp;
+                  </td>
+                  <td colspan="4">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <input type="radio" id="SubmChec_AlteSoluAre_NotAdop10"
+                          onchange="SubmChec_AlteSoluAre_change(this)" name="SubmChec_AlteSoluAre_name" />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        Not adopted
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <input type="radio" id="SubmChec_AlteSoluAre_AdopFor10"
+                          onchange="SubmChec_AlteSoluAre_change(this)" name="SubmChec_AlteSoluAre_name" />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        <div class="mls-espro-form-fields row">
+                          <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                            Adopted (Form BCA-BP-AS attached) for:
+                          </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2">
+                          <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                            For Section of<br>the Approved Documents:
+                          </div>
+                          <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                            <table class="table table-bordered">
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <cn2-checkbox id="lblSubmChec_AlteSoluAre_AdopFor10_10"
+                                      group-id="lblSubmChec_AlteSoluAre_AdopFor_id" disabled></cn2-checkbox>&nbsp;B
+                                  </td>
+                                  <td>
+                                    <cn2-checkbox id="lblSubmChec_AlteSoluAre_AdopFor20"
+                                      group-id="lblSubmChec_AlteSoluAre_AdopFor_id" disabled></cn2-checkbox>&nbsp;C
+                                  </td>
+                                  <td>
+                                    <cn2-checkbox id="lblSubmChec_AlteSoluAre_AdopFor30"
+                                      group-id="lblSubmChec_AlteSoluAre_AdopFor_id" disabled></cn2-checkbox>&nbsp;D
+                                  </td>
+                                  <td>
+                                    <cn2-checkbox id="lblSubmChec_AlteSoluAre_AdopFor40"
+                                      group-id="lblSubmChec_AlteSoluAre_AdopFor_id" disabled></cn2-checkbox>&nbsp;E
+                                  </td>
+                                  <td>
+                                    <cn2-checkbox id="lblSubmChec_AlteSoluAre_AdopFor50"
+                                      group-id="lblSubmChec_AlteSoluAre_AdopFor_id" disabled></cn2-checkbox>&nbsp;F
+                                  </td>
+                                  <td>
+                                    <cn2-checkbox id="lblSubmChec_AlteSoluAre_AdopFor60"
+                                      group-id="lblSubmChec_AlteSoluAre_AdopFor_id" disabled></cn2-checkbox>&nbsp;G
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <cn2-checkbox id="lblSubmChec_AlteSoluAre_AdopFor70"
+                                      group-id="lblSubmChec_AlteSoluAre_AdopFor_id" disabled></cn2-checkbox>&nbsp;H
+                                  </td>
+                                  <td>
+                                    <cn2-checkbox id="lblSubmChec_AlteSoluAre_AdopFor80"
+                                      group-id="lblSubmChec_AlteSoluAre_AdopFor_id" disabled></cn2-checkbox>&nbsp;I
+                                  </td>
+                                  <td>
+                                    <cn2-checkbox id="lblSubmChec_AlteSoluAre_AdopFor90"
+                                      group-id="lblSubmChec_AlteSoluAre_AdopFor_id" disabled></cn2-checkbox>&nbsp;J
+                                  </td>
+                                  <td>
+                                    <cn2-checkbox id="lblSubmChec_AlteSoluAre_AdopFor100"
+                                      group-id="lblSubmChec_AlteSoluAre_AdopFor_id" disabled></cn2-checkbox>&nbsp;K
+                                  </td>
+                                  <td>
+                                    <cn2-checkbox id="lblSubmChec_AlteSoluAre_AdopFor110"
+                                      group-id="lblSubmChec_AlteSoluAre_AdopFor_id" disabled></cn2-checkbox>&nbsp;L
+                                  </td>
+                                  <td>
+                                    <cn2-checkbox id="lblSubmChec_AlteSoluAre_AdopFor120"
+                                      group-id="lblSubmChec_AlteSoluAre_AdopFor_id" disabled></cn2-checkbox>&nbsp;M
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <cn2-checkbox id="lblSubmChec_AlteSoluAre_AdopFor130"
+                                      group-id="lblSubmChec_AlteSoluAre_AdopFor_id" disabled></cn2-checkbox>&nbsp;N
+                                  </td>
+                                  <td>
+                                    <cn2-checkbox id="lblSubmChec_AlteSoluAre_AdopFor140"
+                                      group-id="lblSubmChec_AlteSoluAre_AdopFor_id" disabled></cn2-checkbox>&nbsp;O
+                                  </td>
+                                  <td>
+                                    <cn2-checkbox id="lblSubmChec_AlteSoluAre_AdopFor150"
+                                      group-id="lblSubmChec_AlteSoluAre_AdopFor_id" disabled></cn2-checkbox>&nbsp;P
+                                  </td>
+                                  <td>
+                                    &nbsp;
+                                  </td>
+                                  <td>
+                                    &nbsp;
+                                  </td>
+                                  <td>
+                                    &nbsp;
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%" rowspan="8">III.4</td>
+                  <td colspan="4">
+                    Building Control (Buildability and Productivity)
+                    Regulations 2011, submission of buildable design score is
+                    –
+                  </td>
+                </tr>
+                <tr>
+                  <td width="20%" rowspan="4">
+                    <input type="radio" id="SubmChec_UndeTheBuilCont_Appl10" checked mandatory
+                      onchange="SubmChec_UndeTheBuilCont_change(this)"
+                      name="SubmChec_UndeTheBuilCont_name" />&nbsp;Applicable
+                  </td>
+                  <td width="1%">
+                    <cn2-checkbox id="SubmChec_UndeTheBuilCont_Appl_TheSaidPlotIs10"
+                      event-change="SubmChec_UndeTheBuilCont_Appl_TheSaidPlotIs10_change(this)" disabled>
+                    </cn2-checkbox>
+                  </td>
+                  <td colspan="2">
+                    The land on which the development lies was sold under
+                    the Government Land Sale programme on &nbsp;
+                    <cn2-datefield id="SubmChec_UndeTheBuilCont_Appl_TheSaidPlotIs20" onfocusout="validateDate(this)"
+                      no-label inline="4" disabled>
+                    </cn2-datefield>&nbsp;<span group="checkbox-id"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <cn2-checkbox id="SubmChec_UndeTheBuilCont_Appl_ASetOfThes10"
+                      event-change="SubmChec_UndeTheBuilCont_Appl_ASetOfThes10_change(this)" disabled>
+                    </cn2-checkbox>
+                  </td>
+                  <td colspan="2">
+                    A set of these calculations (Form BPD_BS01) is
+                    attached. The building design score is&nbsp;<cn2-textbox
+                      id="SubmChec_UndeTheBuilCont_Appl_TheBuilScorIs10" maxlength="5" no-label inline="3" disabled>
+                    </cn2-textbox> (for Superstructure) and&nbsp;<cn2-textbox
+                      id="SubmChec_UndeTheBuilCont_Appl_TheBuilScorIs20" maxlength="5" no-label inline="3" disabled>
+                    </cn2-textbox> (for basement if any) for GFA of m<sup>2</sup>. The planning
+                    permission 1<sup>st</sup> applied on&nbsp;<cn2-datefield
+                      id="SubmChec_UndeTheBuilCont_Appl_ThePlanPermWas10" onfocusout="validateDate(this)" no-label
+                      inline="3" disabled>
+                    </cn2-datefield> (state the date).&nbsp;<span group="checkbox-id"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <cn2-checkbox id="SubmChec_UndeTheBuilCont_Appl_ASetOfThes20" event-change="removeMandCheck(this)"
+                      disabled>
+                    </cn2-checkbox>
+                  </td>
+                  <td colspan="2">a set of both architectural and structural
+                    Buildability Detailed Design and Implementation Plans
+                    (BDIP) are attached. &nbsp;<span group="checkbox-id"></span></td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <cn2-checkbox id="SubmChec_UndeTheBuilCont_Appl_BuilScorSubmIn10"
+                      event-change="removeMandCheck(this)" disabled>
+                    </cn2-checkbox>
+                  </td>
+                  <td>Buildable Design Score submitted in the previous BP
+                    submission and is unchanged. &nbsp;<span group="checkbox-id"></span></td>
+                  <td style="border-left-style: none;"></td>
+                </tr>
+                <tr>
+                  <td width="20%" rowspan="3">
+                    <input type="radio" id="SubmChec_UndeTheBuilCont_NotAppl10" checked mandatory
+                      onchange="SubmChec_UndeTheBuilCont_change(this)" name="SubmChec_UndeTheBuilCont_name" />&nbsp;Not
+                    Applicable
+                  </td>
+                  <td width="1%">
+                    <input type="radio" id="SubmChec_UndeTheBuilCont_NotAppl_PlanPermRequ10"
+                      name="SubmChec_UndeTheBuilCont_NotAppl_name"
+                      onchange="SubmChec_UndeTheBuilCont_NotAppl_change(this)" disabled />&nbsp;
+                  </td>
+                  <td colspan="2">
+                    Planning Permission requirements:&nbsp;<span group="radio-id"></span><br><br>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <input type="radio" id="SubmChec_UndeTheBuilCont_NotAppl_PlanPermRequ_Gfa2000M2Plan10"
+                          onchange="SubmChec_UndeTheBuilCont_NotAppl_PlanPermRequ_change(this)"
+                          name="SubmChec_UndeTheBuilCont_NotAppl_PlanPermRequ_name" disabled />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        GFA &lt; 2000 m<sup>2</sup> (planning permission applied
+                        after 1 Jan 2004)&nbsp;<span group="radio2-id"></span>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <input type="radio" id="SubmChec_UndeTheBuilCont_NotAppl_PlanPermRequ_Gfa5000M2Plan10"
+                          onchange="SubmChec_UndeTheBuilCont_NotAppl_PlanPermRequ_change(this)"
+                          name="SubmChec_UndeTheBuilCont_NotAppl_PlanPermRequ_name" disabled />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        GFA &lt; 5000 m<sup>2</sup> (planning permission applied on
+                        or after 1 Jan 2004)<span group="radio2-id"></span>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <input type="radio" id="SubmChec_UndeTheBuilCont_NotAppl_PlanPermRequ_Gfa5000M2Plan20"
+                          onchange="SubmChec_UndeTheBuilCont_NotAppl_PlanPermRequ_change(this)"
+                          name="SubmChec_UndeTheBuilCont_NotAppl_PlanPermRequ_name" disabled />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        GFA &lt; 5000 m<sup>2</sup> (planning permission applied on
+                        or after 15 December 2019)<span group="radio2-id"></span>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <input type="radio" id="SubmChec_UndeTheBuilCont_NotAppl_PlanPermRequ_PlanPermApplBefo10"
+                          onchange="SubmChec_UndeTheBuilCont_NotAppl_PlanPermRequ_change(this)"
+                          name="SubmChec_UndeTheBuilCont_NotAppl_PlanPermRequ_name" disabled />
+                      </div>
+                      <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                        Planning permission applied before 1 Jan 2001<span group="radio2-id"></span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <td width="1%">
+                  <input type="radio" id="SubmChec_UndeTheBuilCont_NotAppl_Exem10"
+                    name="SubmChec_UndeTheBuilCont_NotAppl_name"
+                    onchange="SubmChec_UndeTheBuilCont_NotAppl_change(this)" disabled />&nbsp;
+                </td>
+                <td colspan="2">
+                  Exempted&nbsp;<span group="radio-id"></span>
+                </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <input type="radio" id="SubmChec_UndeTheBuilCont_NotAppl_ProjSubmAnOut10"
+                      name="SubmChec_UndeTheBuilCont_NotAppl_name"
+                      onchange="SubmChec_UndeTheBuilCont_NotAppl_change(this)" disabled />&nbsp;
+                  </td>
+                  <td colspan="2">
+                    Project submitting an outcome-based proposal in lieu
+                    of a buildable design scores stated in COP on
+                    Buildability and BPD_BS01 (for projects with planning
+                    permission applied on or after 15 December 2019).&nbsp;<span group="radio-id"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td rowspan="6">III.5</td>
+                  <td colspan="4">
+                    Category of building (for mixed development, more than 1
+                    box may be ticked)
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">Residential (landed)</td>
+                  <td width="1%">
+                    <cn2-checkbox id="SubmChec_CateOfBuilFor_ResiLanded10"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">Residential (non-landed)</td>
+                  <td width="1%">
+                    <cn2-checkbox id="SubmChec_CateOfBuilFor_ResiNonLanded10"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">Commercial</td>
+                  <td width="1%">
+                    <cn2-checkbox id="SubmChec_CateOfBuilFor_Comm10"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">Industrial</td>
+                  <td width="1%">
+                    <cn2-checkbox id="SubmChec_CateOfBuilFor_Indu10"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">Institutional and others</td>
+                  <td width="1%">
+                    <cn2-checkbox id="SubmChec_CateOfBuilFor_InstAndOthe10"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="5" style="padding: 0px;">
+                    <table class="table table-bordered" style="margin-bottom: 0px;">
+                      <tbody>
+                        <tr>
+                          <td rowspan="11">III.6</td>
+                          <td colspan="5">
+                            Under the Building Control (Environmental Sustainability)
+                            Regulations is –<br>
+                            The planning permission was 1<sup>st</sup> applied on&nbsp;
+                            <cn2-datefield id="SubmChec_UndeTheBuilCont_ThePlanPermWas10"
+                              event-change="DCSubmissionDate30_change()" disabled no-label
+                              onfocusout="validateDate(this)" inline="3">
+                            </cn2-datefield>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td rowspan="8" width="15%"><input type="radio" id="SubmChec_UndeTheBuilCont_GMAppl10" checked
+                              mandatory onchange="SubmChec_UndeTheBldgCont_EnviSustReg1_change(this)"
+                              name="SubmChec_UndeTheBldgCont_EnviSustReg1_name" />&nbsp;Applicable
+                          </td>
+                          <td><input type="radio" id="SubmChec_UndeTheBuilCont_TheLandOnWhic10" disabled
+                              onchange="SubmChec_UndeTheBldgCont_EnviSustReg1_change(this)"
+                              name="SubmChec_UndeTheBldgCont_EnviSustReg3_name" />
+                          </td>
+                          <td colspan="3">
+                            <div class="mls-espro-form-fields row pb-3">
+                              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                The land on which the development lies was sold on or
+                                after 5th May 2010 under
+                                the Goverment Land Sales Programme and it
+                                is within the area described in the regulations.
+                                The development is required to obtain the Green Mark
+                                Certification with <cn2-select id="SubmChec_UndeTheBuilCont_CertWith10" no-label
+                                  inline="5" disabled
+                                  options="GM GoldPlus rating:1) GM GoldPlus rating,GM Platinum rating:2) GM Platinum rating">
+                                </cn2-select>
+                              </div>
+                            </div>
+                            <div class="mls-espro-form-fields row pb-3" style="line-height: 40px;">
+                              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                The development is erected on the plot of land located
+                                in<br>
+                                <cn2-select id="SubmChec_UndeTheBuilCont_Regu10" no-label inline="7"
+                                  options="Central – Blue Boundary Area:Central - Blue Boundary Area,Central – Red Boundary Area:Central - Red Boundary Area,Jurong Gateway:Jurong Gateway,Jurong Lake District:Jurong Lake District,Kallang Riverside:Kallang Riverside,Paya Lebar Central:Paya Lebar Central,Punggol Eco-Town:Punggol Eco-Town,Woodlands Regional Centre:Woodlands Regional Centre"
+                                  event-change="SubmChec_UndeTheBuilCont_Regu_change(this, SubmChec_UndeTheBuilCont_SoldOnDate10)"
+                                  disabled>
+                                </cn2-select>
+                                &nbsp;as listed in the Regulations.
+                                The said plot is sold on&nbsp;<cn2-datefield id="SubmChec_UndeTheBuilCont_SoldOnDate10"
+                                  onfocusout="validateDate(this)" no-label inline="4" disabled></cn2-datefield>
+                                &nbsp;under the Goverment Land Sales
+                              </div>
+                            </div>
+                            <div class="mls-espro-form-fields row pb-3">
+                              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                Application for the certification has been made to BCA.
+                                The Green Mark Reference no,
+                                from BCA (acknowledgement
+                                correspondence attached is:
+                              </div>
+                            </div>
+                            <div class="mls-espro-form-fields row">
+                              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <cn2-button label="Add" disabled id="addBtn10" disabled
+                                  event-click="insertDuplicate('greenMarkForm','A1');enableDelete('greenMarkForm');">
+                                </cn2-button>
+                              </div>
+                            </div>
+                            <div id="greenMarkForm">
+                              <div class="mls-espro-form-fields row pt-2" id="A1">
+                                <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                                  <cn2-textbox id="SubmChec_UndeTheBuilCont_RefNoAckn10"
+                                    prefix="SubmChec_UndeTheBuilCont_RefNoAckn" suffix="0" disabled no-label
+                                    maxlength="255">
+                                  </cn2-textbox>
+                                </div>
+                                <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2">
+                                  <cn2-button label="Delete" style="float: right;" id="delete1" disabled danger
+                                    class="deleteBtn"
+                                    event-click="removeDuplicate(this.id,'A1','greenMarkForm');disableDelete('greenMarkForm');"
+                                    prefix="delete"></cn2-button>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td rowspan="7"><input type="radio" id="SubmChec_UndeTheBuilCont_TheLandOnWhic20" disabled
+                              onchange="SubmChec_UndeTheBldgCont_EnviSustReg1_change(this)"
+                              name="SubmChec_UndeTheBldgCont_EnviSustReg3_name" />
+                          </td>
+                          <td colspan="2">For development which the above does not apply, the
+                            development is required to
+                            achieve a
+                            minimum Environmental Sustainability Standard.</td>
+                        </tr>
+                        <tr>
+                          <td><input type="radio" id="SubmChec_UndeTheBuilCont_GMAppl20" disabled
+                              onchange="SubmChec_UndeTheBldgCont_EnviSustReg2(this)"
+                              name="SubmChec_UndeTheBldgCont_EnviSustReg2_name" /></td>
+                          <td colspan="2">A set of
+                            supporting documents is
+                            attached:<br><br>
+                            The GM e-Filling No. is<br>
+                            <cn2-textbox id="lblSubmChec_UndeTheBuilCont_GMApplGM10" no-label inline="2" disabled>
+                            </cn2-textbox>&nbsp;
+                            <cn2-textbox id="SubmChec_UndeTheBuilCont_GMEFillNo10" no-label inline="4" disabled>
+                            </cn2-textbox>&nbsp;-&nbsp;
+                            <cn2-textbox id="SubmChec_UndeTheBuilCont_GMEFillNo10_1" no-label inline="3" numeric
+                              maxlength="5" disabled>
+                            </cn2-textbox>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><input type="radio" id="SubmChec_UndeTheBldgCont_EnviSustReg_TotaGreeMarkScor10" disabled
+                              onchange="SubmChec_UndeTheBldgCont_EnviSustReg2(this)"
+                              name="SubmChec_UndeTheBldgCont_EnviSustReg2_name" />
+                          </td>
+                          <td colspan="2">
+                            <table class="table table-bordered">
+                              <tbody>
+                                <tr>
+                                  <td colspan="2">Project Type
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2">
+                                    <cn2-select id="SubmChec_UndeTheBuilCont_ProjType10" no-label disabled inline="8"
+                                      event-change="SubmChec_UndeTheBldgCont_EnviSustReg_TotaGreeMarkScor_change(this)"
+                                      options="Residential Applicable:R,Non-Residential Applicable:NR,Mixed-Use (Res Applicable):MDR,Mixed-Use (Non-Res Applicable):MDNR,Mixed-Use (Res & Non-Res Applicable):MDRNR">
+                                    </cn2-select>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2" style="text-align: center;">Total
+                                    Green Mark Score based on Code
+                                    (1<sup>st</sup> to
+                                    3rd Edition)</td>
+                                </tr>
+                                <tr>
+                                  <td width="50%">
+                                    <span id="totalGrnMarkRes">Residential
+                                      Buildings</span>
+                                  </td>
+                                  <td>
+                                    <span id="totalGrnMarkNonRes">Non-Residential
+                                      Buildings</span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <cn2-textbox id="SubmChec_UndeTheBuilCont_ResGMScor10" no-label numeric
+                                      maxlength="3" disabled>
+                                    </cn2-textbox>
+                                  </td>
+                                  <td>
+                                    <cn2-textbox id="SubmChec_UndeTheBuilCont_NonResGMScor10" no-label numeric
+                                      maxlength="3" disabled>
+                                    </cn2-textbox>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><input type="radio" id="SubmChec_UndeTheBldgCont_EnviSustReg_MiniEnviSustStan10" disabled
+                              onchange="SubmChec_UndeTheBldgCont_EnviSustReg2(this)"
+                              name="SubmChec_UndeTheBldgCont_EnviSustReg2_name" />
+                          <td colspan="2">
+                            <table class="table table-bordered">
+                              <tbody>
+                                <tr>
+                                  <td colspan="4">Project Type
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td colspan="4">
+                                    <cn2-select id="SubmChec_UndeTheBuilCont_ProjType10" no-label disabled inline="8"
+                                      event-change="SubmChec_UndeTheBldgCont_EnviSustReg_MiniEnviSustStan_change(this)"
+                                      options="Residential:Residential,Residential (Lifts Upgrading):Residential (Lifts Upgrading),Non-Residential:Non-Residential,Non-Residential (Link ways/, Underground Passes/, Open Sheds & Substations):Non-Residential (Link ways/, Underground Passes/, Open Sheds & Substations),Mixed-Use (Residential):Mixed-Use (Residential),Mixed-Use (Non-Residential):Mixed-Use (Non-Residential),Mixed-Use (Residential & Non-Residential):Mixed-Use (Residential & Non-Residential)">
+                                    </cn2-select>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td colspan="4" style="text-align: center;">Minimum
+                                    Environmental Sustainability
+                                    Standard based on Code (4th Edition)</td>
+                                </tr>
+                                <tr>
+                                  <td width="50%" colspan="2">
+                                    Residential Buildings
+                                  </td>
+                                  <td colspan="2">
+                                    Non-Residential Buildings
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    Base Requirements
+                                  </td>
+                                  <td>
+                                    Elective Options
+                                  </td>
+                                  <td>
+                                    Base Requirements
+                                  </td>
+                                  <td>
+                                    Elective Options
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="25%">
+                                    <cn2-textbox
+                                      id="SubmChec_UndeTheBldgCont_EnviSustReg_MiniEnviSustStan_ResiBldgBaseRequ10"
+                                      event-blur="resValueRange_blur(this)" no-label numeric maxlength="3" disabled>
+                                    </cn2-textbox>
+                                  </td>
+                                  <td width="25%">
+                                    <cn2-textbox
+                                      id="SubmChec_UndeTheBldgCont_EnviSustReg_MiniEnviSustStan_ResiBldgElecOpti10"
+                                      event-blur="resValueRange_blur(this)" no-label numeric maxlength="3" disabled>
+                                    </cn2-textbox>
+                                  </td>
+                                  <td width="25%">
+                                    <cn2-textbox
+                                      id="SubmChec_UndeTheBldgCont_EnviSustReg_MiniEnviSustStan_NonResiBldgBaseRequ10"
+                                      no-label event-blur="resValueRange_blur(this)" numeric maxlength="3" disabled>
+                                    </cn2-textbox>
+                                  </td>
+                                  <td width="25%">
+                                    <cn2-textbox
+                                      id="SubmChec_UndeTheBldgCont_EnviSustReg_MiniEnviSustStan_NonResiBldgElecOpti10"
+                                      no-label event-blur="resValueRange_blur(this)" numeric maxlength="3" disabled>
+                                    </cn2-textbox>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><input type="radio" id="SubmChec_UndeTheBuilCont_GMAppl30" disabled
+                              onchange="SubmChec_UndeTheBldgCont_EnviSustReg2(this)"
+                              name="SubmChec_UndeTheBldgCont_EnviSustReg2_name" />
+                          </td>
+                          <td colspan="2">The Green Mark score is submitted in previous BP
+                            submission and is unchanged.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><input type="radio" id="SubmChec_UndeTheBldgCont_EnviSustReg_ForTheDeveThatIs10" disabled
+                              onchange="SubmChec_UndeTheBldgCont_EnviSustReg2(this)"
+                              name="SubmChec_UndeTheBldgCont_EnviSustReg2_name" />
+                          </td>
+                          <td colspan="2">For development that is required to meet the Minimum
+                            Environmental
+                            Sustainability
+                            Standard but
+                            has already applied for
+                            the Green Mark Scheme on a voluntary basis.:<br><br>
+                            Certification with&nbsp;&nbsp;<cn2-select
+                              id="SubmChec_UndeTheBldgCont_EnviSustReg_ForTheDeveThatIs20" no-label inline="5"
+                              options="Green Mark Gold:Green Mark Gold,Green Mark Gold Plus:Green Mark Gold Plus,Green Mark Gold Platinum:Green Mark Gold Platinum"
+                              disabled>
+                            </cn2-select>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><input type="radio" id="SubmChec_UndeTheBuilCont_GMWaivObta10" disabled
+                              onchange="SubmChec_UndeTheBldgCont_EnviSustReg2(this)"
+                              name="SubmChec_UndeTheBldgCont_EnviSustReg2_name" />
+                          </td>
+                          <td colspan="2">Waiver obtained (Approval Letter Attached)
+                          </td>
+                        </tr>
+                        <tr>
+                        <tr>
+                          <td colspan="5">
+                            <div class="mls-espro-form-fields row">
+                              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <input type="radio" id="SubmChec_UndeTheBuilCont_GMNotAppl10" checked mandatory
+                                  onchange="SubmChec_UndeTheBldgCont_EnviSustReg1_change(this)"
+                                  name="SubmChec_UndeTheBldgCont_EnviSustReg1_name" />&nbsp;Not
+                                Applicable
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>III.7</td>
+                  <td colspan="3">
+                    This is a new erection of non-residential project and the
+                    first set of plans is submitted on or after 1 April 2017.
+                    I confirm that the air-conditioning systems for
+                    ventilation shall comply with the Minimum Efficiency
+                    Rating Value (MERV) for cleaning of air given in the SS
+                    553:2016 - Code of Practice for Air Conditioning and
+                    Mechanical Ventilation Buildings.
+                  </td>
+                  <td width="1%">
+                    <cn2-checkbox id="SubmChec_PEDeclInOf12"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>III.8</td>
+                  <td colspan="3">
+                    Form BCA-BP-SGFA for Computation of SGFA of New Building /
+                    Building works is attached.
+                  </td>
+                  <td width="1%">
+                    <cn2-checkbox id="SubmChec_FormBCABPSGFA10"></cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page6">
+          <div class="mls-espo-right-inner-container">
+            <h2 class="text-center">
+              FEE COMPUTATION FOR PLANS OF BUILDING WORKS <br />[Second
+              Schedule of the Building Control Regulations]
+            </h2>
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <input type="radio" id="FeeComForBuilWork10" name="FeeComForBuilWork_name"
+                      onchange="FeeComForBuilWork_change(this)" />
+                  </td>
+                  <td colspan="5">
+                    Plan fee computation of building works (for projects whose first set of plans is
+                    submitted to the CBC for approval before 10 September 2017)
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <input type="radio" id="FeeComForBuilWork20" name="FeeComForBuilWork_name"
+                      onchange="FeeComForBuilWork_change(this)" />
+                  </td>
+                  <td colspan="5">
+                    Plan fee computation of building works (for projects whose first set of plans is
+                    submitted to the Commissioner of Building Control or approval on or after
+                    10 September 2017 but before 31 August 2020)
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <input type="radio" id="FeeComForBuilWork30" name="FeeComForBuilWork_name"
+                      onchange="FeeComForBuilWork_change(this)" />
+                  </td>
+                  <td colspan="5">
+                    Plan fee computation of building works (for projects whose first set of plans is
+                    submitted to the Commissioner of Building Control for approval on or after
+                    31 August 2020)
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="6">
+                    <i style="font-size: 14px;">To declare only Type of Work that they are paying in this section e.g
+                      declare incremental
+                      SGFA without initial SGFA (which is already submitted earlier on).</i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>S/N</b>
+                  </td>
+                  <td>
+                    <b>Type of Building</b>
+                  </td>
+                  <td>
+                    <b>Criteria</b>
+                  </td>
+                  <td>
+                    <b id="headerTd_id">SGFA/Plan Area (m<sup>2</sup>)/No. of storeys</b>
+                  </td>
+                  <td>
+                    <b>Rate</b>
+                  </td>
+                  <td>
+                    <b>Computed Fees</b>
+                  </td>
+                </tr>
+                <tr group-id="aftebutTd_id" hidden>
+                  <td rowspan="2">1.</td>
+                  <td rowspan="2" width="17%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <cn2-checkbox id="TypeOfBuilWork_NewBuilBuilWork16"
+                          event-change="TypeOfBuilWork_NewBuilBuilWork16_change(this)">
+                        </cn2-checkbox>
+                      </div>
+                      <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                        New SGFA for General Building
+                      </div>
+                    </div>
+                  </td>
+                  <td width="18%">
+                    A1 below sublevel
+                  </td>
+                  <td>
+                    SGFA (m<sup>2</sup>)<br />
+                    <cn2-textbox id="AreaStorSub_StatGrosFlooArea16" disabled
+                      event-blur="AreaStorSub_StatGrosFlooArea16_change(this);totalfee_change()" no-label currency
+                      inline="9" class="feeTable_textbox"></cn2-textbox>
+                  </td>
+                  <td>$400/100m<sup>2</sup></td>
+                  <td>
+                    $&nbsp;<cn2-textbox id="CompFees16" inline="9" disabled maxlength="1003" currency
+                      placeholder="0.00">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr group-id="aftebutTd_id" hidden>
+                  <td>B1 above sublevel</td>
+                  <td>
+                    SGFA (m<sup>2</sup>)<br />
+                    <cn2-textbox id="AreaStorSub_StatGrosFlooArea19"
+                      event-blur="AreaStorSub_StatGrosFlooArea19_change(this);rangeValue(this, 'range', '1-2500');"
+                      disabled no-label currency inline="9" class="feeTable_textbox">
+                    </cn2-textbox><br /><br />
+                    SGFA (m<sup>2</sup>)<br />
+                    <cn2-textbox id="AreaStorSub_StatGrosFlooArea219"
+                      event-input="AreaStorSub_StatGrosFlooArea19_change(this);" class="feeTable_textbox" no-label
+                      maxlength="1003" currency inline="9">
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    For 1<sup>st</sup> 2500 m<sup>2</sup> of SGFA $300/100m<sup>2</sup> <br /><br /><br />
+                    Subsequent SGFA $240/100m<sup>2</sup>
+                  </td>
+                  <td width="18%">
+                    $&nbsp;<cn2-textbox id="CompFees19" inline="9" disabled maxlength="1003" currency
+                      placeholder="0.00">
+                    </cn2-textbox><br /><br /><br /><br />
+                    $&nbsp;<cn2-textbox id="SubsCompFees19" inline="9" disabled maxlength="1003" currency
+                      placeholder="0.00">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr group-id="aftebutTd_id" hidden>
+                  <td rowspan="2">2.</td>
+                  <td rowspan="2">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <cn2-checkbox id="TypeOfBuilWork_NewBuilBuilWork21"
+                          event-change="TypeOfBuilWork_NewBuilBuilWork21_change(this)">
+                        </cn2-checkbox>
+                      </div>
+                      <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                        New SGFA for Type 1 General Building (i.e. agricultural or industrial
+                        building)
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    A3 below sublevel
+                  </td>
+                  <td>
+                    SGFA (m<sup>2</sup>)<br />
+                    <cn2-textbox id="AreaStorSub_StatGrosFlooArea21" class="feeTable_textbox"
+                      event-blur="AreaStorSub_StatGrosFlooArea21_change(this);totalfee_change()" no-label disabled
+                      maxlength="1003" currency inline="9"></cn2-textbox>
+                  </td>
+                  <td>$400/100m<sup>2</sup></td>
+                  <td>
+                    $&nbsp;<cn2-textbox id="CompFees90" inline="9" placeholder="0.00" disabled maxlength="1003"
+                      currency>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr group-id="aftebutTd_id" hidden>
+                  <td>B3 above sublevel</td>
+                  <td>
+                    SGFA (m<sup>2</sup>)<br />
+                    <cn2-textbox id="AreaStorSub_StatGrosFlooArea40"
+                      event-blur="AreaStorSub_StatGrosFlooArea40_change(this);rangeValue(this, 'range', '1-10000');"
+                      disabled no-label currency inline="9" class="feeTable_textbox">
+                    </cn2-textbox><br /></br>
+                    SGFA (m<sup>2</sup>)<br />
+                    <cn2-textbox id="AreaStorSub_StatGrosFlooArea240"
+                      event-blur="AreaStorSub_StatGrosFlooArea40_change(this);" no-label currency inline="9"
+                      class="feeTable_textbox">
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    For 1<sup>st</sup> 10,000 m<sup>2</sup> of SGFA $150/100m<sup>2</sup>
+                    <br /><br /><br />
+                    Subsequent SGFA $220/100m<sup>2</sup>
+                  </td>
+                  <td width="18%">
+                    $&nbsp;<cn2-textbox id="CompFees100" inline="9" disabled maxlength="1003" currency
+                      placeholder="0.00">
+                    </cn2-textbox><br /><br /><br /><br />
+                    $&nbsp;<cn2-textbox id="SubsCompFees100" inline="9" disabled maxlength="1003" currency
+                      placeholder="0.00">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr group-id="aftebutTd_id" hidden>
+                  <td rowspan="2">3.</td>
+                  <td rowspan="2">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <cn2-checkbox id="TypeOfBuilWork_NewStru16"
+                          event-change="TypeOfBuilWork_NewStru16_change(this)">
+                        </cn2-checkbox>
+                      </div>
+                      <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                        New Area of Plan View for Specified Building
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    A2 below sublevel
+                  </td>
+                  <td>
+                    Area of Plan View(m<sup>2</sup>)<br />
+                    <cn2-textbox id="AreaStorSub_PlanArea16" class="feeTable_textbox"
+                      event-blur="AreaStorSub_PlanArea16_change(this);totalfee_change()" no-label disabled
+                      maxlength="1003" currency inline="9"></cn2-textbox>
+                  </td>
+                  <td>$400/100m<sup>2</sup></td>
+                  <td>
+                    $&nbsp;<cn2-textbox id="CompFees26" inline="9" placeholder="0.00" disabled maxlength="1003"
+                      currency>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr group-id="aftebutTd_id" hidden>
+                  <td>B2 above sublevel</td>
+                  <td>
+                    Area of Plan View(m<sup>2</sup>)<br />
+                    <cn2-textbox id="AreaStorSub_PlanArea19"
+                      event-blur="AreaStorSub_PlanArea19_change(this);rangeValue(this, 'range', '1-2500');"
+                      class="feeTable_textbox" disabled no-label maxlength="1003" currency inline="9">
+                    </cn2-textbox><br /></br>
+                    Area of Plan View(m<sup>2</sup>)<br />
+                    <cn2-textbox id="AreaStorSub_PlanArea219" event-blur="AreaStorSub_PlanArea19_change(this);" no-label
+                      currency inline="9" class="feeTable_textbox">
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    For 1<sup>st</sup> 2500 m<sup>2</sup> of Area of Plan $300/100m<sup>2</sup>
+                    <br /><br /><br />
+                    Subsequent Area of Plan $240/100m<sup>2</sup>
+                  </td>
+                  <td>
+                    $&nbsp;<cn2-textbox id="CompFees29" inline="9" placeholder="0.00" disabled maxlength="1003"
+                      currency>
+                    </cn2-textbox><br /><br /><br /><br />
+                    $&nbsp;<cn2-textbox id="SubsCompFees29" inline="9" placeholder="0.00" disabled maxlength="1003"
+                      currency>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr group-id="afteTd_id">
+                  <td rowspan="2">1.</td>
+                  <td rowspan="2" width="17%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <cn2-checkbox id="TypeOfBuilWork_NewBuilBuilWork15"
+                          event-change="TypeOfBuilWork_NewBuilBuilWork15_change(this)">
+                        </cn2-checkbox>
+                      </div>
+                      <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                        New SGFA for General Building
+                      </div>
+                    </div>
+                  </td>
+                  <td width="18%">
+                    A1 below sublevel
+                  </td>
+                  <td>
+                    SGFA (m<sup>2</sup>)<br />
+                    <cn2-textbox id="AreaStorSub_StatGrosFlooArea15" disabled class="feeTable_textbox"
+                      event-blur="AreaStorSub_StatGrosFlooArea15_change(this);totalfee_change()" no-label currency
+                      inline="9"></cn2-textbox>
+                  </td>
+                  <td>$400/100m<sup>2</sup></td>
+                  <td>
+                    $&nbsp;<cn2-textbox id="CompFees15" inline="9" disabled maxlength="1003" currency
+                      placeholder="0.00">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr group-id="afteTd_id">
+                  <td>B1 above sublevel</td>
+                  <td>
+                    SGFA (m<sup>2</sup>)<br />
+                    <cn2-textbox id="AreaStorSub_StatGrosFlooArea18"
+                      event-blur="AreaStorSub_StatGrosFlooArea18_change(this);rangeValue(this, 'range', '1-2500');"
+                      disabled no-label currency inline="9" class="feeTable_textbox">
+                    </cn2-textbox><br /><br />
+                    SGFA (m<sup>2</sup>)<br />
+                    <cn2-textbox id="AreaStorSub_StatGrosFlooArea218" disabled
+                      event-input="AreaStorSub_StatGrosFlooArea18_change(this);" no-label currency inline="9"
+                      class="feeTable_textbox"></cn2-textbox>
+                  </td>
+                  <td>
+                    For 1<sup>st</sup> 2500 m<sup>2</sup> of SGFA $300/100m<sup>2</sup> <br /><br /><br />
+                    Subsequent SGFA $240/100m<sup>2</sup>
+                  </td>
+                  <td width="18%">
+                    $&nbsp;<cn2-textbox id="CompFees18" inline="9" disabled maxlength="1003" currency
+                      placeholder="0.00">
+                    </cn2-textbox><br /><br /><br /><br />
+                    $&nbsp;<cn2-textbox id="SubsCompFees18" inline="9" disabled maxlength="1003" currency
+                      placeholder="0.00">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr group-id="afteTd_id">
+                  <td rowspan="2">2.</td>
+                  <td rowspan="2">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <cn2-checkbox id="TypeOfBuilWork_NewStru15"
+                          event-change="TypeOfBuilWork_NewStru15_change(this)">
+                        </cn2-checkbox>
+                      </div>
+                      <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                        New Area of Plan View for Specified Building
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    A2 below sublevel
+                  </td>
+                  <td>
+                    Area of Plan View(m<sup>2</sup>)<br />
+                    <cn2-textbox id="AreaStorSub_PlanArea15" class="feeTable_textbox"
+                      event-blur="AreaStorSub_PlanArea15_change(this);totalfee_change()" no-label disabled
+                      maxlength="1003" currency inline="9"></cn2-textbox>
+                  </td>
+                  <td>$400/100m<sup>2</sup></td>
+                  <td>
+                    $&nbsp;<cn2-textbox id="CompFees25" inline="9" placeholder="0.00" disabled maxlength="1003"
+                      currency>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr group-id="afteTd_id">
+                  <td>B2 above sublevel</td>
+                  <td>
+                    Area of Plan View(m<sup>2</sup>)<br />
+                    <cn2-textbox id="AreaStorSub_PlanArea18"
+                      event-input="AreaStorSub_PlanArea18_change(this);rangeValue(this, 'range', '1-2500');"
+                      class="feeTable_textbox" disabled no-label maxlength="1003" currency inline="9">
+                    </cn2-textbox><br /><br />
+                    Area of Plan View(m<sup>2</sup>)<br />
+                    <cn2-textbox id="AreaStorSub_PlanArea218" event-input="AreaStorSub_PlanArea18_change(this);"
+                      no-label currency inline="9" class="feeTable_textbox">
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    For 1<sup>st</sup> 2500 m<sup>2</sup> of Area of Plan $300/100m<sup>2</sup>
+                    <br /><br /><br />
+                    Subsequent Area of Plan $240/100m<sup>2</sup>
+                  </td>
+                  <td>
+                    $&nbsp;<cn2-textbox id="CompFees28" inline="9" placeholder="0.00" disabled maxlength="1003"
+                      currency>
+                    </cn2-textbox><br /><br /><br /><br />
+                    $&nbsp;<cn2-textbox id="SubsCompFees28" inline="9" placeholder="0.00" disabled maxlength="1003"
+                      currency>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr group-id="befoTd_id" hidden>
+                  <td>1.</td>
+                  <td width="17%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <cn2-checkbox id="TypeOfBuilWork_NewBuilBuilWork10"
+                          event-change="TypeOfBuilWork_NewBuilBuilWork10_change(this)">
+                        </cn2-checkbox>
+                      </div>
+                      <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                        New Building/<br>Building Works
+                      </div>
+                    </div>
+                  </td>
+                  <td width="18%">
+                    All Building
+                  </td>
+                  <td>
+                    SGFA/Plan Area (m<sup>2</sup>)<br />
+                    <cn2-textbox id="AreaStorSub_StatGrosFlooArea10"
+                      event-input="AreaStorSub_StatGrosFlooArea10_change(this);rangeValue(this, 'range', '1-2500');"
+                      no-label currency inline="9" disabled class="feeTable_textbox"></cn2-textbox><br /><br />
+                    SGFA/Plan Area (m<sup>2</sup>)<br />
+                    <cn2-textbox id="AreaStorSub_StatGrosFlooArea210"
+                      event-input="AreaStorSub_StatGrosFlooArea10_change(this);" no-label currency inline="9"
+                      maxlength="1000" class="feeTable_textbox"></cn2-textbox>
+                  </td>
+                  <td>
+                    For 1<sup>st</sup> 2500 m<sup>2</sup> of SGFA $300/100 m<sup>2</sup><br /><br /><br />
+                    Subsequent SGFA $200/100m<sup>2</sup>
+                  </td>
+                  <td width="18%">
+                    $&nbsp;<cn2-textbox id="CompFees10" inline="9" disabled maxlength="1003" placeholder="0.00"
+                      currency>
+                    </cn2-textbox><br /><br /><br /><br />
+                    $&nbsp;<cn2-textbox id="SubsCompFees10" inline="9" disabled maxlength="1003" placeholder="0.00"
+                      currency>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr group-id="befoTd_id" hidden>
+                  <td>2.</td>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <cn2-checkbox id="TypeOfBuilWork_NewStru10"
+                          event-change="TypeOfBuilWork_NewStru10_change(this)">
+                        </cn2-checkbox>
+                      </div>
+                      <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                        New Structures
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    All Structures
+                  </td>
+                  <td>
+                    SGFA/Plan Area (m<sup>2</sup>)<br />
+                    <cn2-textbox id="AreaStorSub_PlanArea10"
+                      event-input="AreaStorSub_PlanArea10_change(this,'CompFees20', 'SubsCompFees20');rangeValue(this, 'range', '1-2500');"
+                      disabled maxlength="1000" class="feeTable_textbox" no-label currency inline="9">
+                    </cn2-textbox><br /><br />
+                    SGFA/Plan Area (m<sup>2</sup>)<br />
+                    <cn2-textbox id="AreaStorSub_PlanArea210" event-input="AreaStorSub_PlanArea10_change(this);"
+                      no-label currency inline="9" maxlength="1000" class="feeTable_textbox"></cn2-textbox>
+                  </td>
+                  <td>
+                    For 1<sup>st</sup> 2500 m<sup>2</sup> of Plan Area $300/100 m<sup>2</sup> <br /><br /><br />
+                    Subsequent Plan Area $200/100m<sup>2</sup>
+                  </td>
+                  <td>
+                    $&nbsp;<cn2-textbox id="CompFees20" inline="9" disabled maxlength="1003" placeholder="0.00"
+                      currency>
+                    </cn2-textbox><br /><br /><br /><br />
+                    $&nbsp;<cn2-textbox id="SubsCompFees20" inline="9" disabled maxlength="1003" placeholder="0.00"
+                      currency>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td group-id="noFee_id">3.</td>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <cn2-checkbox id="TypeOfBuilWork_AddiAlteWorkOr10"
+                          event-change="TypeOfBuilWork_AddiAlteWorkOr10_change(this)">
+                        </cn2-checkbox>
+                      </div>
+                      <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                        Addition/ Alteration works without structural plan
+                        submission [any increase in area to be computed under
+                        item(1)<span group-id="hiddenLabel"></span>]
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    All building<span group-id="hiddenLabel2">/structures</span>
+                  </td>
+                  <td>
+                    No. of Storeys<br />
+                    <cn2-textbox id="AreaStorSub_NoOfStor10"
+                      event-blur="AreaStorSub_NoOfStor10_change(this,'CompFees30');totalfee_change()"
+                      class="feeTable_textbox" disabled no-label numeric maxlength="1000" inline="9">
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    $200/storey
+                  </td>
+                  <td>
+                    $&nbsp;<cn2-textbox id="CompFees30" inline="9" placeholder="0.00" disabled maxlength="1003"
+                      currency>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td group-id="noFee_id" rowspan="2">4.</td>
+                  <td rowspan="2">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <cn2-checkbox id="TypeOfBuilWork_AddiAlteWorkWith10"
+                          event-change="TypeOfBuilWork_AddiAlteWorkWith10_change(this)">
+                        </cn2-checkbox>
+                      </div>
+                      <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                        Addition/ Alteration works with structural plan
+                        submission [any increase in area to be computed under
+                        item(1)<span group-id="hiddenLabel"></span>]
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <cn2-checkbox id="Crit_ResiBuil10"
+                          event-change="Crit_ResiBuil10_change(this,'AreaStorSub_ResiBuilNoOfStor10','CompFees40')"
+                          disabled>
+                        </cn2-checkbox>
+                      </div>
+                      <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                        Residential Building
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    No. of Storeys<br />
+                    <cn2-textbox id="AreaStorSub_ResiBuilNoOfStor10"
+                      event-blur="AreaStorSub_NoOfStor10_change(this,'CompFees40');totalfee_change()"
+                      class="feeTable_textbox" no-label disabled numeric maxlength="1000" inline="9">
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    $200/storey
+                  </td>
+                  <td>
+                    $&nbsp;<cn2-textbox id="CompFees40" inline="9" disabled maxlength="1003" placeholder="0.00"
+                      currency>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <cn2-checkbox id="Crit_NonResiBuil10"
+                          event-change="Crit_ResiBuil10_change(this,'AreaStorSub_NonResiBuilNoOfStor10','CompFees50')"
+                          disabled>
+                        </cn2-checkbox>
+                      </div>
+                      <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                        Non Residential<br>Building
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    No. of Storeys<br />
+                    <cn2-textbox id="AreaStorSub_NonResiBuilNoOfStor10"
+                      event-blur="AreaStorSub_NoOfStor102_change(this,'CompFees50');totalfee_change()" no-label disabled
+                      numeric class="feeTable_textbox" inline="9"></cn2-textbox>
+                  </td>
+                  <td>
+                    $400/storey
+                  </td>
+                  <td>
+                    $&nbsp;<cn2-textbox id="CompFees50" inline="9" disabled maxlength="1003" placeholder="0.00"
+                      currency>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td group-id="noFee_id">5.</td>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <cn2-checkbox id="TypeOfBuilWork_AmenDeviToAppr10"
+                          event-change="TypeOfBuilWork_AmenDeviToAppr10_change(this,'Crit_AllBuilStruNoOfStor10','CompFees60')">
+                        </cn2-checkbox>
+                      </div>
+                      <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                        Amendment/ Deviation to approved plans [any increase
+                        in area to be computed under item (1)<span group-id="hiddenLabel"></span>]
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    All building<span group-id="hiddenLabel2">/structures</span>
+                  </td>
+                  <td>
+                    No. of Storeys<br />
+                    <cn2-textbox id="Crit_AllBuilStruNoOfStor10" disabled numeric
+                      event-blur="AreaStorSub_NoOfStor10_change(this,'CompFees60');totalfee_change()" no-label
+                      maxlength="1000" class="feeTable_textbox" inline="9" numeric>
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    $200/storey
+                  </td>
+                  <td>
+                    $&nbsp;<cn2-textbox id="CompFees60" inline="9" disabled currency maxlength="1003"
+                      placeholder="0.00">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    Total Plan Fee Payable
+                  </td>
+                  <td colspan="4">
+                    <span style="float: right;">
+                      $&nbsp;<cn2-textbox id="PaymMode_Paym10" no-label inline="11" disabled currency maxlength="1003"
+                        placeholder="0.00">
+                      </cn2-textbox>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Payment Mode</h2>
+            <table class="table table-bordered">
+              <tbody>
+                <!-- <tr>
+                  <td width="1%">
+                    <input type="radio" id="PaymMode_Cheq10" name="PaymMode_name" onchange="PaymMode_change(this)" />
+                  </td>
+                  <td>
+                    Cheque
+                  </td>
+                  <td width="30%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        Cheque<br />
+                        <cn2-textbox id="PaymMode_Cheq20" disabled no-label inline="8" maxlength="14"></cn2-textbox>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        Cheque Date<br />
+                        <cn2-datefield id="PaymMode_Cheq30" disabled no-label onfocusout="validateDate(this)"
+                          inline="8">
+                        </cn2-datefield>
+                      </div>
+                    </div>
+                  </td>
+                  <td width="30%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        Bank Name<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<cn2-textbox id="PaymMode_Cheq40" maxlength="254" disabled no-label
+                          inline="8">
+                        </cn2-textbox>
+                      </div>
+                    </div>
+
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        Amount Paid<br />
+                        &nbsp;$&nbsp;<cn2-textbox id="PaymMode_Cheq50" no-label inline="8" disabled maxlength="1026"
+                          placeholder="0.00" currency></cn2-textbox>
+                      </div>
+                    </div>
+                  </td>
+                </tr> -->
+                <tr>
+                  <td width="1%">
+                    <input type="radio" id="PaymMode_ePay10" name="PaymMode_name" onchange="PaymMode_change(this)" />
+                  </td>
+                  <td>
+                    ePayment
+                  </td>
+                  <td colspan="2">
+                    Please proceed to make ePayment after your e-Submission at
+                    <a href="#"
+                      onclick="ipcRenderer.send('open-default-browser','https://www.bca.gov.sg/ePayment/ePayment.html')">https://www.bca.gov.sg/ePayment/ePayment.html
+                    </a>
+                  </td>
+                </tr>
+                <!-- <tr>
+                  <td width="1%">
+                    <input type="radio" id="PaymMode_PaidEarl10" name="PaymMode_name"
+                      onchange="PaymMode_change(this)" />
+                  </td>
+                  <td>
+                    Paid Earlier
+                  </td>
+                  <td colspan="2">
+                    <cn2-select id="PaymMode_PaidEarl20" no-label disabled
+                      options="BP Plan Submission:BP Plan Submission,ST Plan Submission:ST Plan Submission">
+                    </cn2-select>
+                  </td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Payer's Detail</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="25%">
+                    Name
+                  </td>
+                  <td>
+                    <cn2-textbox id="PayeDeta_Name" maxlength="66" no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Company Name</td>
+                  <td>
+                    <cn2-textbox id="PayeDeta_CompName" maxlength="66" no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td>
+                    <cn2-textbox id="PayeDeta_Email" maxlength="50" no-label event-blur="checkEmail(this);"
+                      placeholder="example@email.com">
+                    </cn2-textbox>
+                    <span style="font-size: 13px;color: red;"><i>*Note: Receipt will be emailed to
+                        the recipient. If
+                        there is no valid email address, please leave all
+                        fields under "Payer's Detail" blank.</i></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-version-footer> </cn2-version-footer>
+    <cn2-fixed-footer></cn2-fixed-footer>
+  </div>
+</body>
+
+</html>

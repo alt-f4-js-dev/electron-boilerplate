@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PUB-DEV-WTR</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Syncfusion" />
+
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+    <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+    <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+    <script src="../cm/js/func/common.js"></script>
+    <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+    <script src="../cm/js/components/cn2sgheader.js"></script>
+    <script src="../cm/js/components/cn2masterhead.js"></script>
+    <script src="../cm/js/components/cn2versionfooter.js"></script>
+    <script src="../cm/js/components/cn2fixedfooter.js"></script>
+    <script src="../cm/js/components/cn2navbutton.js"></script>
+
+    <script src="../cm/js/components/cn2textbox.js"></script>
+    <script src="../cm/js/components/cn2textarea.js"></script>
+    <script src="../cm/js/components/cn2select.js"></script>
+    <script src="../cm/js/components/cn2button.js"></script>
+
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <cn2-master-head title="APPLICATION FOR DEVIATION ON WATER MATTER"></cn2-master-head>
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p style="margin: 0px">Help</p>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <b>For enquiries related to forms, please contact the following:</b>
+                </p>
+                <p><span id="RegulatoryAuthority_id"></span></p>
+                <div id="table-parent" style="width:auto">
+                    <table id="ContDetaTable_id" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Regulatory Authority</th>
+                                <th>Email Address</th>
+                                <th>Tel No.</th>
+                                <th>Area of Support</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="6">PUB (Water)</td>
+                                <td>pub_bpu@pub.gov.sg </td>
+                                <td>67313512</td>
+                                <td>General Enquiry</td>
+                            </tr>
+                            <tr>
+                                <td>KUANG_kim_yaw@pub.gov.sg</td>
+                                <td>67313515</td>
+                                <td>Policies
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>olivia_TEO@pub.gov.sg </td>
+                                <td>67313967</td>
+                                <td>PE Submissions</td>
+                            </tr>
+                            <tr>
+                                <td>Marwin_SUHAIMI@pub.gov.sg</td>
+                                <td>67313893</td>
+                                <td>PE Submissions</td>
+                            </tr>
+                            <tr>
+                                <td>THAM_tuck_kuan@pub.gov.sg</td>
+                                <td>67313665</td>
+                                <td>License Plumber Submissions</td>
+                            </tr>
+                            <tr>
+                                <td>LEE_Cai_Jie@pub.gov.sg </td>
+                                <td>67313250</td>
+                                <td>License Plumber Submissions</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+	<input type="hidden" id="member_id" name="member_id" />
+	<input type="hidden" id="form_validated" name="form_validated" />
+    <div class="mls-espro-form-container">
+        <div class="row">
+            <div class="mls-espro-form-left-nav" id="menu">
+                <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+                <cn2-nav-button target="page2" page-number="2" label="Particulars of Project"></cn2-nav-button>
+                <cn2-nav-button target="page3" page-number="3" label="Particulars of Water Deviation Application">
+                </cn2-nav-button>
+                <cn2-nav-button target="page4" page-number="4" label="Particulars of Professional Engineer">
+                </cn2-nav-button>
+            </div>
+            <div class="e-content mls-espro-form-right" id="page">
+                <div id="page1">
+                    <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">
+                                        <b>Date:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <cn2-textbox id="Date10" no-label inline="5" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="1%">
+                                        <b>To:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <div class="mls-espro-form-fields row">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-select no-label inline="5" id="Addr10" options="PUB:PUBBPU" disabled>
+                                                </cn2-select>
+                                            </div>
+                                        </div>
+                                        <div class="mls-espro-form-fields row pt-2">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-textarea style="height: 134px;" id="Addr20" no-label inline="5"
+                                                    disabled style="height: 140px;">
+                                                </cn2-textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Instructions</h2>
+                        <ol class="mls-intro-list">
+                            <li>
+                                This form is to be digitally signed by the Professional
+                                Engineer.
+                            </li>
+                            <li>
+                                The details of the deviation on water matter shall be clearly
+                                indicated on the plans and submitted together with this form.
+                            </li>
+                            <li>
+                                The outcome of waiver application is final once decided by the
+                                panel. Appeal for the same waiver with the same design will
+                                not be accepted.
+                            </li>
+                            <li>
+                                This form is to be accompanied by the relevant documents.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div id="page2">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Project</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td class="align-middle" width="35%">Project Reference Number</td>
+                                    <td colspan="4">
+                                        <cn2-textbox no-label id="Project_Project_Ref_No10" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle">PUB Ref.</td>
+                                    <td class="align-middle">WSN&nbsp;92433</td>
+                                    <td class="align-middle">/&nbsp;&nbsp;<cn2-textbox inline="10" no-label
+                                            id="Project_PUB_Ref10"></cn2-textbox>
+                                    </td>
+                                    <td class="align-middle">/&nbsp;&nbsp;<cn2-textbox inline="10" no-label
+                                            id="Project_PUB_Ref15"></cn2-textbox>
+                                    </td>
+                                    <td class="align-middle">/&nbsp;&nbsp;<cn2-textbox inline="10" no-label
+                                            id="Project_PUB_Ref20"></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle">Project Title</td>
+                                    <td colspan="4">
+                                        <cn2-textarea no-label id="Project_Title10" disabled></cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle">Location Description [Include Lot/Plot, MK/TS, House No.,
+                                        Building Address and Road Information]</td>
+                                    <td colspan="4">
+                                        <cn2-textarea no-label id="Project_Location_Description10" disabled>
+                                        </cn2-textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="page3">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Water Deviation Application</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                <cn2-button
+                                    event-click="insertDuplicate('psda-container','psda1','#labelNo'); disableDelete('psda-container')"
+                                    label="Insert">
+                                </cn2-button>
+                            </div>
+                        </div>
+                        <div id="psda-container">
+                            <div id="psda1" class="mls-espro-form-fields row pt-2 mls-top-section">
+                                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12 table-responsive">
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <td width="10%">
+                                                <label class="label-text none">No.</label>
+                                            </td>
+                                            <td width="40%">
+                                                Singapore Standard 636 - Clause No.
+                                            </td>
+                                            <td width="50%">
+                                                Description of Deviation
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label id="labelNo" class="label-text none">1</label>
+                                            </td>
+                                            <td>
+                                                <cn2-textbox no-label id="PartOfWateDeviAppl_SingStanCP48_ClauNo10"
+                                                    prefix="PartOfWateDeviAppl_SingStanCP48_ClauNo" suffix="0">
+                                                </cn2-textbox>
+                                            </td>
+                                            <td>
+                                                <cn2-textarea no-label id="PartOfWateDeviAppl_DescOfDevi10" mandatory
+                                                    prefix="PartOfWateDeviAppl_DescOfDevi" suffix="0"></cn2-textarea>
+                                            </td>
+                                            <td colspan="3">
+                                                <cn2-button style="float: right;" id="delete10" class="deleteBtn"
+                                                    event-click="removeDuplicate(this.id,'psda1','psda-container','#labelNo'); disableDelete('psda-container')"
+                                                    id="remove10" prefix="remove" suffix="0" danger label="Delete"
+                                                    disabled>
+                                                </cn2-button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page4">
+                    <div class="mls-espo-right-inner-container borderchecking" id="iac">
+                        <h2>Particulars of Professional Engineer</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="35%">Name*</td>
+                                    <td>
+                                        <cn2-select id="Member_Member_Name_PE10" no-label mandatory
+                                            data-options="peDropdown"
+                                            event-change="loadDropDownDetails(this); removeSelectUENerror('Members_UEN_PE10');">
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Name of Company</td>
+                                    <td>
+                                        <cn2-textbox no-label id="Member_Firm_Name_PE10" disabled>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>UEN</td>
+                                    <td>
+                                        <cn2-textbox no-label id="Members_UEN_PE10" maxlength="10" template="#########@"
+                                            event-blur="uenValidate(this)"></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle">Firm Address</td>
+                                    <td>
+                                        <cn2-textarea no-label id="Member_Address_PE10" disabled>
+                                        </cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Telephone No.</td>
+                                    <td>
+                                        <cn2-textbox no-label id="Member_Tel_No_PE10" disabled numeric></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Email Address</td>
+                                    <td>
+                                        <cn2-textbox no-label id="Member_Email_Address1_PE10" disabled
+                                            event-blur="checkEmail(this);" placeholder="example@email.com">
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <cn2-version-footer></cn2-version-footer>
+        <cn2-fixed-footer></cn2-fixed-footer>
+    </div>
+
+</body>
+
+</html>

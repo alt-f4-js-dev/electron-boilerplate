@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <title>NEA-DCLD-NA-RESUB</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2switchbutton.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head title="NOISE ASSESSMENT FOR NON-INDUSTRIAL BUILDING - RESUBMISSION">
+  </cn2-master-head>
+  <input type="hidden" name="member_id" id="member_id">
+  <input type="hidden" name="form_validated" id="form_validated">
+
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p><b>For enquiries related to forms, please contact the following:</b></p>
+        <p> <span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">NEA (CBPU)</td>
+                <td>tang_cheng_bak@nea.gov.sg</td>
+                <td>67086196</td>
+                <td rowspan="2">Noise Assessment for TOP/CSC</td>
+              </tr>
+              <tr>
+                <td>ong_yen_peng@nea.gov.sg</td>
+                <td>67319532</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions and Information"></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Project"></cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars of Application"></cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4"
+          label="Particulars and Declaration of Qualified Person for Structural Works"></cn2-nav-button>
+        <cn2-nav-button target="page5" page-number="5" label="Attachments"></cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" no-label inline="7" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                <tr>
+                  <td width="1%">
+                    <b>To:</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textbox no-label inline="7" id="Addr10" disabled>
+                        </cn2-textbox>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea id="Addr20" no-label inline="7" disabled style="height: 110px;">
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <ul class="mls-intro-list">
+              This form may take you 15 minutes to fill in. You will need the following information to
+              fill in the form:-
+              <br>
+              - Particulars of Project.<br>
+              - Particulars of Qualified Person.
+            </ul>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>This form is to be digitally signed by the Qualified Person responsible for the
+                project(s).</li>
+              <li>This form is to be accompanied with the relevant attachments.</li>
+            </ol>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Information</h2>
+            <ol class="mls-intro-list">
+              <li>For enquiries on application of status, please refer to NEA-DCLD website:<br><a
+                  onclick="ipcRenderer.send('open-default-browser', 'http://www.nea.gov.sg/anti-pollution-radiation-protection/central-building-planning/consultation');"><u>
+                    <font color="blue">
+                      http://www.nea.gov.sg/anti-pollution-radiation-protection/central-building-planning/consultation
+                    </font>
+                  </u></a>
+              </li>
+
+            </ol>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Project</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td width="18%">Application Type</td>
+                      <td style="padding-left: 3px;">
+                        <cn2-textbox no-label id="PartOfAppl_PlanType_A1" disabled>
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Project Reference Number</td>
+                      <td style="padding-left: 3px;">
+                        <cn2-textbox no-label id="Project_Project_Ref_No10" maxlength="32400" disabled>
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Project Title</td>
+                      <td style="padding-left: 3px;">
+                        <cn2-textarea no-label id="Project_Title10" maxlength="32400" disabled>
+                        </cn2-textarea>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="label-text">Location Description<br />
+                          [ Include Lot/Plot, MK/TS, House No, Building Address and Road
+                          information ]*</label>
+                      </td>
+                      <td style="padding-left: 3px;">
+                        <table class=" table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td style="padding-left: 0px;">Hse/Blk</td>
+                              <td>
+                                <cn2-textbox no-label inline="12" id="Project_Location_Description10" maxlength="32400">
+                                </cn2-textbox>
+                              </td>
+                              <td>Street Name</td>
+                              <td>
+                                <cn2-textbox no-label inline="12" id="Project_Loc_Street" maxlength="32400">
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding-left: 0px;">
+                                <cn2-select id="Project_TSMK" options="TS:TS,MK:MK" mandatory no-label></cn2-select>
+                              </td>
+                              <td>
+                                <cn2-textbox mandatory id="Project_Loc_TSNo" no-label maxlength="2" mandatory>
+                                </cn2-textbox>
+                              </td>
+                              <td>Plot</td>
+                              <td>
+                                <cn2-textbox id="Project_Loc_Plot" no-label inline="12" maxlength="32400">
+                                </cn2-textbox>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="label-text">Lot* <span style="font-size: 12px">
+                            (Click 'Add' button for additional row)</span> </label>
+                      </td>
+                      <td>
+                        <div id="psda-container">
+                          <div id="form1">
+                            <div class="mls-espro-form-fields row">
+                              <table class="table table-borderless">
+                                <tbody>
+                                  <tr>
+                                    <td width="11%" style="padding-left: 3px; padding-right: 3px;">
+                                      <cn2-textbox mandatory no-label numeric id="PlanType_A1" prefix="PlanType_A"
+                                        maxlength="5">
+                                      </cn2-textbox>
+                                    </td>
+                                    <td width="7%" style="padding-left: 3px; padding-right: 3px;">
+                                      <cn2-textbox mandatory no-label id="PlanType_B1" prefix="PlanType_B"
+                                        maxlength="1">
+                                      </cn2-textbox>
+                                    </td>
+                                    <td width="11%" style="padding-left: 3px; padding-right: 3px;">
+                                      <cn2-textbox mandatory no-label numeric id="PlanType_C1" prefix="PlanType_C"
+                                        maxlength="5">
+                                      </cn2-textbox>
+                                    </td>
+                                    <td width="7%" style="padding-left: 3px; padding-right: 3px;">
+                                      <cn2-textbox mandatory no-label id="PlanType_D1" prefix="PlanType_D"
+                                        maxlength="1">
+                                      </cn2-textbox>
+                                    </td>
+                                    <td width="11%" style="padding-left: 3px; padding-right: 3px;">
+                                      <cn2-textbox mandatory no-label numeric id="PlanType_E1" prefix="PlanType_E"
+                                        maxlength="5">
+                                      </cn2-textbox>
+                                    </td>
+                                    <td width="7%" style="padding-left: 3px; padding-right: 3px;">
+                                      <cn2-textbox mandatory no-label id="PlanType_F1" prefix="PlanType_F"
+                                        maxlength="1">
+                                      </cn2-textbox>
+                                    </td>
+                                    <td width="11%" style="padding-left: 3px; padding-right: 3px;">
+                                      <cn2-textbox mandatory no-label numeric id="PlanType_G1" prefix="PlanType_G"
+                                        maxlength="5">
+                                      </cn2-textbox>
+                                    </td>
+                                    <td width="7%" style="padding-left: 3px; padding-right: 3px;">
+                                      <cn2-textbox mandatory no-label id="PlanType_H1" prefix="PlanType_H"
+                                        maxlength="1">
+                                      </cn2-textbox>
+                                    </td>
+                                    <td width="11%" style="padding-left: 3px; padding-right: 3px;">
+                                      <cn2-textbox mandatory no-label numeric id="PlanType_I1" prefix="PlanType_I"
+                                        maxlength="5">
+                                      </cn2-textbox>
+                                    </td>
+                                    <td width="7%" style="padding-left: 3px; padding-right: 3px;">
+                                      <cn2-textbox mandatory no-label id="PlanType_J1" prefix="PlanType_J"
+                                        maxlength="1">
+                                      </cn2-textbox>
+                                    </td>
+                                    <td width="10%" style="padding-left: 3px;">
+                                      <cn2-button label="Delete" id="delete10" danger class="deleteBtn" disabled
+                                        prefix="delete" suffix="0"
+                                        event-click="removeDuplicate(this.id, 'form1', 'psda-container'); disableDelete('psda-container');">
+                                      </cn2-button>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mls-espro-form-fields row">
+                          <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                            <cn2-button label="Add"
+                              event-click="insertDuplicate('psda-container','form1'); disableDelete('psda-container');">
+                            </cn2-button>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Application</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">
+                    <label class="label-text">DCLD DC Clearance*</label>
+                  </td>
+                  <td width="80px">
+                    <label class="label-text">Date:</label>
+                  </td>
+                  <td colspan="7">
+                    <cn2-datefield onfocusout="validateDate(this)" id="Date11" inline="5" mandatory no-label>
+                    </cn2-datefield>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Case ID</td>
+                  <td style="padding-right: 3px;">
+                    <cn2-textbox id="CaseID11A" mandatory maxlength="2" no-label>
+                    </cn2-textbox>
+                  </td>
+                  <td style="padding-left: 3px; padding-right: 3px;">
+                    <cn2-textbox id="CaseID11B" mandatory maxlength="1" no-label>
+                    </cn2-textbox>
+                  </td>
+                  <td style="padding-left: 3px; padding-right: 3px;">
+                    <cn2-textbox id="CaseID11C" mandatory maxlength="5" numeric no-label>
+                    </cn2-textbox>
+                  </td>
+                  <td style="padding-left: 5px; padding-right: 5px; padding-top: 17px;" class="text-center">
+                    -
+                  </td>
+                  <td style="padding-left: 3px; padding-right: 3px;">
+                    <cn2-textbox id="CaseID11D" mandatory numeric maxlength="5" no-label>
+                    </cn2-textbox>
+                  </td>
+                  <td style="padding-left: 3px; padding-right: 3px;">
+                    <cn2-textbox id="CaseID11E" mandatory maxlength="1" no-label>
+                    </cn2-textbox>
+                  </td>
+                  <td style="padding-left: 3px;">
+                    <cn2-textbox id="CaseID11F" numeric mandatory maxlength="2" no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%" rowspan="2">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <label class="label-text">DCLD BP Clearance on EH</label>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <label class="label-text"> <span style="font-size: 12px">
+                            Check here Not Applicable</span>
+                        </label>  
+                        <div style="display: inline-block;">
+                          <cn2-checkbox id="CheckBPClearonEH" event-click="notAppl(this)">
+                          </cn2-checkbox>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td width="80px">
+                    <label class="label-text">Date:</label>
+                  </td>
+                  <td colspan="5">
+                    <cn2-datefield onfocusout="validateDate(this)" id="Date12" inline="5" no-label mandatory>
+                    </cn2-datefield>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Case ID</td>
+                  <td style="padding-right: 3px;">
+                    <cn2-textbox id="CaseID12A" mandatory maxlength="1" no-label>
+                    </cn2-textbox>
+                  </td>
+                  <td style="padding-left: 3px; padding-right: 3px;">
+                    <cn2-textbox id="CaseID12B" no-label mandatory numeric maxlength="5">
+                    </cn2-textbox>
+                  </td>
+                  <td style="padding-left: 5px; padding-right: 5px; padding-top: 17px;" class="text-center">
+                    -
+                  </td>
+                  <td style="padding-left: 3px; padding-right: 3px;">
+                    <cn2-textbox no-label id="CaseID12C" maxlength="2" mandatory>
+                    </cn2-textbox>
+                  </td>
+                  <td style="padding-left: 3px;" width="20%">
+                    <cn2-select no-label id="CaseID12D" mandatory
+                      options="BP001:BP001,BP002:BP002,BP003:BP003,BP004:BP004,BP005:BP005,BP006:BP006,BP007:BP007,BP008:BP008,BP009:BP009,BP010:BP010">
+                    </cn2-select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Application for Temporary Occupation Permit* </td>
+                  <td>
+                    <cn2-select id="TempOccPermit" mandatory
+                      options="Before TOP:Before TOP,Before CSC:Before CSC,Concurrent TOP:Concurrent TOP,Concurrent CSC:Concurrent CSC,Post TOP:Post TOP,Partial TOP:Partial TOP"
+                      no-label></cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="label-text">Remarks:<br>Application for Partial TOP*<br /> <span
+                        style="font-size: 12px">
+                        -e.g. Phase 1 (if applicable)</span> </label>
+                  </td>
+                  <td>
+                    <cn2-textarea no-label id="TempOccRemark" maxlength="550" mandatory>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page4">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Qualified Person for Structural Works</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td>
+                    <label class="label-text">SID</label>
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="Member_SID_QP10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    <label class="label-text">Name*</label>
+                  </td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_QP10" no-label mandatory data-options="qpDropdown"
+                      event-change="loadDropDownDetails(this);togglePartQp();">
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="label-text">Role In Project</label>
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="MemberRole_Member_Role_Code_Desc_QP10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="label-text">Registration No.</label>
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="MemberRole_Professional_No_QP10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="label-text">Firm Name</label>
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Firm_Name_QP10" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="label-text">UEN</label>
+                  </td>
+                  <td>
+                    <cn2-textbox template="#########@" event-blur="uenValidate(this);" no-label id="Members_UEN_QP10"
+                      maxlength="10"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="label-text">Firm Address</label>
+                  </td>
+                  <td>
+                    <cn2-textarea no-label id="Member_Address_QP10" disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="label-text">Telephone No.</label>
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Tel_No_QP10" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="label-text">Extension No.</label>
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Ext_No_QP10"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="label-text">Fax No.</label>
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Fax_No_QP10"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="label-text">Email Address</label>
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Email_Address1_QP10" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Declaration by Qualified Person for Structural Works</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>I confirm that:</td>
+                </tr>
+                <tr>
+                  <td><b>Air Conditioning and Mechanical Ventilation (ACMV) equipment</b></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        1.
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                        Locations and model types of the Air Conditioning and Mechanical
+                        Ventilation (ACMV) equipment have been indicated clearly on the
+                        submitted plans. New Condensing Units (CUs)/Variable Refrigerant Volume
+                        Systems (VRVs)/Cooling Towers (CTs) /Chillers/Generator are shown in
+                        blue. New Exhaust Air Fans (EAFs)/Fresh Air Fans (FAFs) and their
+                        direction flows are shown in magenta and green respectively. All
+                        existing and deleted equipment has been indicated in cyan and yellow
+                        respectively. *
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <cn2-checkbox id="DeclByQualPers_IAmTheQual10" mandatory checked
+                          event-click="checkedTrue(this)"></cn2-checkbox>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        2.
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                        Setback distances and direction flows from the CUs/VRVs/EAFs/FAFs/
+                        CTs/chillers/ACMV equipment to the nearest boundary line(s) of the
+                        development are indicated clearly on the submitted plans. *
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <cn2-checkbox id="DeclByQualPers_ThePartOfProj10" mandatory checked
+                          event-click="checkedTrue(this)"></cn2-checkbox>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        3.
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                        The CUs/VRVs/EAFs/FAFs/CTs/chillers/ACMV equipment provided
+                        are not facing neighbouring premises directly. If the ACMV systems
+                        are facing surrounding developments directly, mitigating measures
+                        (i.e. screens) have been installed for these equipment to minimise
+                        any potential disamenities to the neighbours. *
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <cn2-checkbox id="DeclByQualPers_TheWorkHaveBeen10" mandatory checked
+                          event-click="checkedTrue(this)"></cn2-checkbox>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        4.
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                        The information provided (e.g. noise measurement locations, type of
+                        noise meter, extrapolation distances etc.) in the submission are in line
+                        with the requirements stated in the Guideline on Boundary Noise Limits
+                        for Air Conditioning and Mechanical Ventilation Systems in
+                        Non-industrial
+                        Buildings. *
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <cn2-checkbox id="DeclByQualPers_NoRoofGutter10" mandatory checked
+                          event-click="checkedTrue(this)"></cn2-checkbox>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        5.
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                        The measurement readings recorded in the submitted noise report are able
+                        to comply with the limits stated in the Guidelines. *
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <cn2-checkbox id="DeclByQualPers_NoRoofGutter11a" mandatory checked
+                          event-click="checkedTrue(this)"></cn2-checkbox>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        6.
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                        Specifications and photographs of the CUs/VRVs/EAFs
+                        /FAFs/CTs/chillers/ACMV equipment have been provided in the submission.
+                        *
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <cn2-checkbox id="DeclByQualPers_NoRoofGutter12" mandatory checked
+                          event-click="checkedTrue(this)"></cn2-checkbox>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        7.
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                        A Type 1 noise meter was used for the measurement and
+                        the calibration certificate has been submitted. *
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <cn2-checkbox id="DeclByQualPers_NoRoofGutter13" mandatory checked
+                          event-click="checkedTrue(this)"></cn2-checkbox>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><b>Road/Rail Traffic Noise</b></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        1.
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                        A Noise Impact Assessment (NIA) study has been
+                        submitted for residential/noise-sensitive developments
+                        located within 70m from aboveground or at-grade Category 1
+                        and 2 roads, MRT tracks and stations to demonstrate that with
+                        appropriate mitigation measures, the facade and indoor noise
+                        levels (Leq 1hr) of the proposed development is able to comply
+                        with 67 dBA and 57 dBA respectively under naturally
+                        ventilated conditions (with windows and sliding doors opened).
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <cn2-switchbutton data-on="Yes" data-off="N/A" switch-id="NIAYes"
+                          event-change="switchButton(this, 'NIAYes', 'NIANA')">
+                        </cn2-switchbutton>
+                        <cn2-checkbox id="NIAYes" hidden>
+                        </cn2-checkbox>
+                        <cn2-checkbox id="NIANA" hidden>
+                        </cn2-checkbox>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        2.
+                      </div>
+                      <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10">
+                        For residential buildings/noise-sensitive premises
+                        (such as old age homes and schools etc.) located beside
+                        aboveground or at-grade MRT tracks/stations, the
+                        development is situated at least 35m (if front-facing) or
+                        25m (if end-wall facing) from the MRT tracks/stations.
+                      </div>
+                      <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                        <cn2-switchbutton data-on="Yes" data-off="N/A" switch-id="RBPYes"
+                          event-change="switchButton(this, 'RBPYes', 'RBPNA')">
+                        </cn2-switchbutton>
+                        <cn2-checkbox id="RBPYes" hidden>
+                        </cn2-checkbox>
+                        <cn2-checkbox id="RBPNA" hidden>
+                        </cn2-checkbox>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page5">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Attachments</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>
+                    Attached the relevant plans &amp; supporting documents.
+                  </td>
+                  <td width="1%">
+                    <cn2-checkbox id="ChkAttachment"
+                      event-change="ChkAttachment_change(this); fileAttachCheck(this, 'fileAttach10', true, '*.*', 'Particulars and Declaration of Qualified Person for Structural Works')"
+                      checked></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Waiver on Noise Assessment Report<br />
+                  </td>
+                  <td width="1%">
+                    <cn2-switchbutton data-on="Yes" data-off="No" switch-id="WaiveYes"
+                      event-change="switchButton(this, 'WaiveYes', 'WaiveNo'); enableWaiverRequest(this)">
+                    </cn2-switchbutton>
+                    <cn2-checkbox id="WaiveYes" hidden>
+                    </cn2-checkbox>
+                    <cn2-checkbox id="WaiveNo" hidden>
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    If yes, please indicate the reason(s) for the waiver
+                    request: <br><br>
+                    <cn2-textarea no-label id="WaiverIfYes" disabled></cn2-textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-version-footer></cn2-version-footer>
+    <cn2-fixed-footer></cn2-fixed-footer>
+
+
+  </div>
+</body>
+
+</html>

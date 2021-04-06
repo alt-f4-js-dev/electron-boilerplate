@@ -1,0 +1,2708 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <title>NPARKS_SUBM_V01</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Syncfusion" />
+
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+    <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+    <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+    <script src="../cm/js/func/common.js"></script>
+    <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+    <script src="../cm/js/components/cn2sgheader.js"></script>
+    <script src="../cm/js/components/cn2masterhead.js"></script>
+    <script src="../cm/js/components/cn2versionfooter.js"></script>
+    <script src="../cm/js/components/cn2fixedfooter.js"></script>
+
+    <script src="../cm/js/components/cn2navbutton.js"></script>
+    <script src="../cm/js/components/cn2textbox.js"></script>
+    <script src="../cm/js/components/cn2textarea.js"></script>
+    <script src="../cm/js/components/cn2select.js"></script>
+    <script src="../cm/js/components/cn2button.js"></script>
+    <script src="../cm/js/components/cn2datefield.js"></script>
+    <script src="../cm/js/components/cn2checkbox.js"></script>
+    <script src="../cm/js/components/cn2switchbutton.js"></script>
+
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <cn2-master-head title="SUBMISSION FOR NPARKS APPROVAL"></cn2-master-head>
+    <input type="hidden" name="member_id" id="member_id" />
+    <input type="hidden" name="form_validated" id="form_validated" />
+
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p style="margin: 0px">Help</p>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <b>For enquiries related to forms, please contact the following:</b>
+                </p>
+                <p><span id="RegulatoryAuthority_id"></span></p>
+                <div id="table-parent" style="width:auto">
+                    <table id="ContDetaTable_id" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Regulatory Authority</th>
+                                <th>Email Address</th>
+                                <th>Tel No.</th>
+                                <th>Area of Support</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="3">NParks</td>
+                                <td>john_loo@nparks.gov.sg</td>
+                                <td>64717827</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>eric_ng@nparks.gov.sg</td>
+                                <td>64717883</td>
+                                <td>Submissions</td>
+                            </tr>
+                            <tr>
+                                <td>andrew_lim@nparks.gov.sg</td>
+                                <td>64717821</td>
+                                <td>Submissions</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="mls-espro-form-container">
+        <div class="row">
+            <div class="mls-espro-form-left-nav" id="menu">
+                <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+                <cn2-nav-button target="page2" page-number="2" label="Particulars of Proposal">
+                </cn2-nav-button>
+                <cn2-nav-button target="page3" page-number="3" label="Purpose of Application to NParks">
+                </cn2-nav-button>
+                <!-- <cn2-nav-button target="page4" page-number="" hidden
+                    label="Submission for LUSH scheme and/or Skyrise Planting" id="targetPageIntExw1">
+                </cn2-nav-button> -->
+                <cn2-nav-button target="page4" page-number="" hidden label="Compliance of NParks Greenery Requirement"
+                    id="targetPageIntExw2">
+                </cn2-nav-button>
+                <cn2-nav-button target="page5" page-number="" hidden
+                    label="Application for Alternative Configuration of Green Buffer and/or Open Air Parking Area at Street Level Planting Area Provision due to"
+                    id="targetPageIntExw3">
+                </cn2-nav-button>
+                <cn2-nav-button target="page6" page-number="4" label="Particulars of Owner / Developer"
+                    id="targetPageNonIntExw1">
+                </cn2-nav-button>
+                <cn2-nav-button target="page7" page-number="5" label="Particulars and Declaration of Qualified Person"
+                    id="targetPageNonIntExw2">
+                </cn2-nav-button>
+                <cn2-nav-button target="page8" page-number="" hidden id="targetPageNonIntExw3"
+                    label="Fees Tabulation for NPARKS Submission (New Erection or Reconstruction or Addition & Alteration of Building Projects)">
+                </cn2-nav-button>
+            </div>
+
+            <div class="e-content mls-espro-form-right" id="page">
+                <div id="page1">
+                    <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">
+                                        <b>Date:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <cn2-textbox id="Date10" no-label inline="5" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="1%">
+                                        <b>To:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <div class="mls-espro-form-fields row">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-select no-label inline="5" id="Addr10" options="National Parks Board:NPARKS" disabled>
+                                                </cn2-select>
+                                            </div>
+                                        </div>
+                                        <div class="mls-espro-form-fields row pt-2">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-textarea id="Addr20" no-label inline="5" disabled
+                                                    style="height: 135px;">
+                                                </cn2-textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Instructions</h2>
+                        <ol class="mls-intro-list">
+                            <li>
+                                This form is to be digitally signed by the Professional
+                                Architect/Engineer.
+                            </li>
+                            <li>
+                                This form is to be accompanied by the relevant documents
+                                (refer to Submission Guidelines/Checklists.
+                            </li>
+                            <li>This form may take you 5 minutes to fill in.</li>
+                            <li>
+                                This form MUST be attached for all ES and CR submissions.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div id="page2">
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Particulars of Proposal</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Application Stage*
+                                    </td>
+                                    <td>
+                                        <cn2-select id="PartOfProp_SumbType10" no-label
+                                            event-change="setAppTypeOptions(); LushDisplay(); setDeclarationVisible(this.id); setPage9Visible()"
+                                            options="Pre-Submission Consultation(PC):Pre-Submission Consultation(PC),Development Control (DC):Development Control (DC),
+												Building Plan Internal (BP INT):Building Plan Internal (BP INT),Building Plan External (BP EXW):Building Plan External (BP EXW),
+												Certificate of Statutory Completion Internal (CSC INT):Certificate of Statutory Completion Internal (CSC INT),
+												Certificate of Statutory Completion External (CSC EXW):Certificate of Statutory Completion External (CSC EXW), Others(OTH):Others(OTH)"
+                                            mandatory>
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Application Mode*
+                                    </td>
+                                    <td>
+                                        <cn2-select id="PartOfProp_ApplMode10" no-label
+                                            options="Self-Declaration(SD):Self-Declaration(SD),Normal(Non-SD):Normal(Non-SD)"
+                                            event-change="setAppTypeOptions(); appMode_change(); setDeclarationVisible(this.id); setPage9Visible();"
+                                            mandatory>
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Application Indicator*
+                                    </td>
+                                    <td>
+                                        <cn2-select id="PartOfProp_SubmIndi10" no-label
+                                            event-change="setDeclarationVisible(this.id); setPage9Visible();"
+                                            options="New Submission:New Submission, Resubmission:Resubmission, Amendment:Amendment"
+                                            mandatory>
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Project Reference No.
+                                    </td>
+                                    <td>
+                                        <cn2-textbox id="Project_Project_Ref_No10" no-label disabled>
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Application Type*
+                                    </td>
+                                    <td>
+                                        <cn2-select id="PartOfProp_ApplType10" no-label disabled
+                                            event-change="setDeclarationVisible(this.id); setPage9Visible();">
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Project Category
+                                    </td>
+                                    <td>
+                                        <cn2-textarea disabled id="Project_Category_Code_Desc" no-label>
+                                        </cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Project Title
+                                    </td>
+                                    <td>
+                                        <cn2-textarea disabled id="Project_Title10" no-label>
+                                        </cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Location Description (Includes Lot/Plot, MK/TS,
+                                        Address/Road and Building Name if any.)
+                                    </td>
+                                    <td>
+                                        <cn2-textarea disabled id="Project_Location_Description10" no-label>
+                                        </cn2-textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="page3">
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Purpose of Application to NParks</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <cn2-checkbox id="PurposeOfAppl_SubmChec10"></cn2-checkbox>
+                                <span>Tree Felling within TCA or Vacant Land</span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <cn2-checkbox id="PurposeOfAppl_SubmChec20"></cn2-checkbox>
+                                <span>Provision of new planting area(s) within development site
+                                    (Internal)</span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <cn2-checkbox id="PurposeOfAppl_SubmChec30"></cn2-checkbox>
+                                <span>Affecting existing planting area(s) within development site
+                                    (Internal)</span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <cn2-checkbox id="PurposeOfAppl_SubmChec40"></cn2-checkbox>
+                                <span>Provision of new green verge(s) along public street
+                                    (external)</span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <cn2-checkbox id="PurposeOfAppl_SubmChec50"></cn2-checkbox>
+                                <span>Affecting existing green verge(s) along public street
+                                    (external)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div id="page4">
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Submission for LUSH scheme and/or Skyrise Planting</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Does this development fall under URA’s Landscaping for
+                                        Urban Spaces and High-Rises (LUSH) scheme?
+                                    </td>
+                                    <td>
+                                        <input id="LushScheme_SubmRadio10_Yes" name="lushRadio1"
+                                            onchange="greeneryRadio_Changed(); appMode_change()"
+                                            type="radio" /><span>&nbsp;Yes</span>
+                                    </td>
+                                    <td>
+                                        <input id="LushScheme_SubmRadio20_No" name="lushRadio1"
+                                            onchange="greeneryRadio_Changed(); appMode_change()"
+                                            type="radio" /><span>&nbsp;No</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Are there new planting within the development located
+                                        above the at-grade level (e.g. roofs, balconies, mid-level
+                                        terraces, bridges etc.)?
+                                    </td>
+                                    <td>
+                                        <input id="LushScheme_SubmRadio30_Yes" name="lushRadio2"
+                                            onchange="appMode_change();" type="radio" /><span>&nbsp;Yes</span>
+                                    </td>
+                                    <td>
+                                        <input id="LushScheme_SubmRadio40_No" name="lushRadio2"
+                                            onchange="appMode_change();" type="radio" /><span>&nbsp;No</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Are the new planting referred to above in compliance with
+                                        NParks’ safety requirements within skyrise green
+                                        margin?<br />
+                                        <span style="color:blue;">Note: If the new planting does not comply with NParks’
+                                            safety requirements within skyrise green margin,
+                                            submission for BP approval is required.</span>
+                                    </td>
+                                    <td>
+                                        <input id="LushScheme_SubmRadio50_Yes" name="lushRadio3"
+                                            onchange="appMode_change();" type="radio" /><span>&nbsp;Yes</span>
+                                    </td>
+                                    <td>
+                                        <input id="LushScheme_SubmRadio60_No" name="lushRadio3"
+                                            onchange="appMode_change();" type="radio" /><span>&nbsp;No</span>
+                                    </td>
+                                    <td>
+                                        <input id="LushScheme_SubmRadio70_Na" type="radio" name="lushRadio3"
+                                            onchange="appMode_change();" /><span>&nbsp;Not Applicable</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br />
+                    </div>
+                </div> -->
+                <div id="page4">
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Compliance of NParks Greenery Requirement</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Are you opting for alternative configuration of green
+                                        buffer and/or open air parking areas at street level
+                                        planting Area (i.e. modifying the dimension of planting
+                                        area provision to provide area for area replacement)?
+                                    </td>
+                                    <td>
+                                        <input id="ComGreenReq_SubmRadio10" type="radio" name="greeneryRadio"
+                                            onchange="greeneryRadio_Changed(); appMode_change(); greeneryCompliance_change()" /><span>&nbsp;Yes</span>
+                                    </td>
+                                    <td>
+                                        <input id="ComGreenReq_SubmRadio20" type="radio" name="greeneryRadio"
+                                            onchange="greeneryRadio_Changed(); appMode_change(); greeneryCompliance_change()" /><span>&nbsp;No</span>
+                                    </td>
+                                    <td>
+                                        <input id="ComGreenReq_SubmRadio30" type="radio" name="greeneryRadio"
+                                            onchange="greeneryRadio_Changed(); appMode_change(); greeneryCompliance_change()" /><span>&nbsp;Not
+                                            Applicable</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Do you have to make application for approval of any
+                                        non-compliance to NParks Greener requirement?
+                                    </td>
+                                    <td>
+                                        <input id="ComGreenReq_SubmRadio40" name="greeneryRadio2"
+                                            onchange="greeneryRadio_Changed(); appMode_change(); greeneryCompliance_change()"
+                                            type="radio" /><span>&nbsp;Yes</span>
+                                    </td>
+                                    <td>
+                                        <input id="ComGreenReq_SubmRadio50" name="greeneryRadio2"
+                                            onchange="greeneryRadio_Changed(); appMode_change(); greeneryCompliance_change()"
+                                            type="radio" /><span>&nbsp;No</span>
+                                    </td>
+                                    <td>
+                                        <input id="ComGreenReq_SubmRadio60" name="greeneryRadio2"
+                                            onchange="greeneryRadio_Changed(); appMode_change(); greeneryCompliance_change()"
+                                            type="radio" /><span>&nbsp;Not Applicable</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Remarks</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <cn2-textarea id="ComGreenReq_Remarks10" maxlength="32400" no-label></cn2-textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page5">
+                    <div class="mls-espo-right-inner-container">
+                        <h2>
+                            Application for Alternative Configuration of Green Buffer and/or
+                            Open Air Parking Area at Street Level Planting Area Provision
+                            due to
+                        </h2>
+                        <div>
+                            <div class="mls-espro-form-fields row">
+                                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                    <cn2-checkbox disabled id="ApplForAlteConf_TechCons10" disabled></cn2-checkbox>
+                                    <span>Technical Constraints</span>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="mls-espro-form-fields row">
+                                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                    <cn2-checkbox disabled id="ApplForAlteConf_SpecDesiInte10" disabled></cn2-checkbox>
+                                    <span>Specific design intents</span>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="mls-espro-form-fields row">
+                                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                    <cn2-checkbox disabled id="ApplForAlteConf_OthePlanCond10" disabled></cn2-checkbox>
+                                    <span>Other Planning conditions</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Non-Compliance of NParks Requirements</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="40%">
+                                        Type of Non-Compliance
+                                    </td>
+                                    <td width="25%">
+                                        Justification(s) *<br /><span style="color:blue;">Note : Please make clear
+                                            reference to supporting
+                                            document(s) attached in your submission</span>
+                                    </td>
+                                    <td width="25%">
+                                        Compensation Alternative *<br />
+                                        <span style="color:blue;">Note : Please make clear reference to supporting
+                                            document(s) and /or plan drawing(s) attached in your
+                                            submission</span>
+                                    </td>
+                                    <td width="10%">&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div id="psda-container">
+                            <div id="psda1">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td width="40%">
+                                                <cn2-select id="TypeOfNonComp10" disabled prefix="TypeOfNonComp"
+                                                    suffix="0"
+                                                    options="Conservation of Trees/Plants:Conservation of Trees/Plants,
+														Greenery Provision within Premises:Greenery Provision within Premises,
+														Greenery Provision for Roadside:Greenery Provision for Roadside,
+														Planting Specifications of Trees/Shrubs/Hedges/Turf:Planting Specifications of Trees/Shrubs/Hedges/Turf,
+														Provision for Open Space for Landed Housing Developments:Provision for Open Space for Landed Housing Developments,Others:Others"
+                                                    no-label>
+                                                </cn2-select>
+                                            </td>
+                                            <td width="25%">
+                                                <cn2-textarea id="Justification10" prefix="Justification" suffix="0"
+                                                    disabled maxlength="32400" no-label>
+                                                </cn2-textarea>
+                                            </td>
+                                            <td width="25%">
+                                                <cn2-textarea id="ComAlteProv10" prefix="ComAlteProv" suffix="0"
+                                                    disabled maxlength="32400" no-label>
+                                                </cn2-textarea>
+                                            </td>
+                                            <td width="10%" class="text-right align-middle">
+                                                <cn2-button disabled
+                                                    event-click="removeDuplicate(this.id,'psda1','psda-container');"
+                                                    class="delete10" id="remove10" prefix="remove" suffix="0" danger
+                                                    label="Delete">
+                                                </cn2-button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        &nbsp;&nbsp;<cn2-button id="add10" disabled
+                            event-click="insertDuplicate('psda-container','psda1'); " label="Add">
+                        </cn2-button>
+                    </div>
+                </div>
+                <div id="page6">
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Section I Particulars of Owner / Developer</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr hidden>
+                                    <td width="35%">
+                                        SID
+                                    </td>
+                                    <td>
+                                        <cn2-textbox id="Member_SID_Owner10" disabled no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Name
+                                    </td>
+                                    <td>
+                                        <cn2-select id="Member_Member_Name_Owner10" data-options="ownerDropdown"
+                                            event-change="loadDropDownDetails(this);" no-label></cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Firm Name
+                                    </td>
+                                    <td>
+                                        <cn2-textbox id="Member_Firm_Name_Owner10" disabled no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        UEN
+                                    </td>
+                                    <td>
+                                        <cn2-textbox id="Member_UEN_Owner10" disabled no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Designation
+                                    </td>
+                                    <td>
+                                        <cn2-textbox id="Member_Designation_Owner10" disabled no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Address
+                                    </td>
+                                    <td>
+                                        <cn2-textarea id="Member_Address_Owner10" disabled no-label></cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Telephone No.
+                                    </td>
+                                    <td>
+                                        <cn2-textbox id="Member_Tel_No_Owner10" disabled no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Handphone No.
+                                    </td>
+                                    <td>
+                                        <cn2-textbox id="Member_Mobile_No_Owner10" disabled no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Email Address
+                                    </td>
+                                    <td>
+                                        <cn2-textbox id="Member_Email_Address1_Owner10" disabled no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="page7">
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Section II Particulars of Qualified Person</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr hidden>
+                                    <td width="35%">
+                                        SID
+                                    </td>
+                                    <td>
+                                        <cn2-textbox id="Member_SID_QP10" disabled no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Name
+                                    </td>
+                                    <td>
+                                        <cn2-select id="Member_Member_Name_QP10" data-options="qpDropdown"
+                                            event-change="loadDropDownDetails(this);" no-label optional></cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Firm Name
+                                    </td>
+                                    <td>
+                                        <cn2-textbox id="Member_Firm_Name_QP10" disabled no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        UEN
+                                    </td>
+                                    <td>
+                                        <cn2-textbox id="Member_UEN_QP10" disabled no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Designation
+                                    </td>
+                                    <td>
+                                        <cn2-textbox id="Member_Designation_QP10" disabled no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Address
+                                    </td>
+                                    <td>
+                                        <cn2-textarea id="Member_Address_QP10" disabled no-label></cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        QP Professional No (Registration No.)
+                                    </td>
+                                    <td>
+                                        <cn2-textbox id="Member_Professional_No_QP10" disabled no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Telephone No.
+                                    </td>
+                                    <td>
+                                        <cn2-textbox id="Member_Tel_No_QP10" disabled no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Handphone No.
+                                    </td>
+                                    <td>
+                                        <cn2-textbox id="Member_Mobile_No_QP10" disabled no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35%">
+                                        Email Address
+                                    </td>
+                                    <td>
+                                        <cn2-textbox id="Member_Email_Address1_QP10" disabled no-label></cn2-textbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="BpInteSelfDecl" hidden class="mls-espo-right-inner-container">
+                        <h2>BP (INTERNAL) SELF-DECLARATION</h2>
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <div>
+                                    <span><b>IMPORTANT NOTICE</b></span>
+                                </div>
+                                <br />
+                                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                    <ol>
+                                        <li>
+                                            To qualify for the Self-Declaration (SD) scheme at the
+                                            Building Plan (internal) stage, you
+                                            <u><b>must</b></u> obtain DC approval via the SD scheme
+                                            and the proposed development <u><b>must</b></u> meet the
+                                            criteria as set out in <u><b>each section</b></u> below.
+                                        </li>
+                                        <br />
+                                        <li>
+                                            If the proposed development does not meet the criteria
+                                            as set out in the sections below, your application to
+                                            conduct works at the proposed development does
+                                            <u><b>not</b></u> qualify for the SD scheme. Please
+                                            submit the plans for your development through the normal
+                                            submission scheme.
+                                        </li>
+                                        <br />
+                                        <li>
+                                            If any of the sections are incorrectly filled out or the
+                                            required information as listed in Section H is not shown
+                                            on the plan,
+                                            <u><b>the application will be rejected.</b></u>
+                                        </li>
+                                        <br />
+                                        <li>
+                                            In the event that your SD application is rejected, you
+                                            will be required to submit a new application (new
+                                            E-submission number) where fresh application fees will
+                                            be applicable. In this event,
+                                            <b>
+                                                the application fee accompanying this application will
+                                                not be refunded, nor can the said application fee be
+                                                applied to offset any fresh application fees.
+                                            </b>
+                                        </li>
+                                        <br />
+                                        <li>
+                                            All developments that are processed through the BP
+                                            (internal) SD scheme <u><b>must</b></u> submit an
+                                            application through the CSC (internal) SD scheme. For
+                                            more details, refer NParks website on the Guidelines on
+                                            Greenery Provision and Tree Conservation for
+                                            Developments.
+                                        </li>
+                                        <br />
+                                        <li>
+                                            <b>The Board reserves the right to reject this
+                                                application for any other reasons whatsoever.</b>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span><u><b>Eligibility Condition</b></u></span>
+                                <br /><br />
+                                <span>You will be eligible to apply through the SD scheme, unless
+                                    your development falls under the following category:</span>
+                                <br />
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                1.) Development with Heritage Tree within the site
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.) Development along Heritage Road</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                3.) Development is abutting or within a Nature Reserve
+                                                or Nature Area
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                4.) Development is required by NParks or competent
+                                                authority to carry out Biodiversity Impact Assessment
+                                                (BIA) or Environment Impact Assessment (EIA)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                5.) Development with new pedestrian overhead bridge or
+                                                proposed building works to existing pedestrian
+                                                overhead bridge
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                6.) Development required by competent authority to
+                                                provide open space, pedestrian mall or promenade
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-weight:bold; text-decoration: underline;">Section A- Trees/Single Stem
+                                    Palms within Development
+                                    Site</span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                                <span>Please fill in the number which the proposed development
+                                    qualifies (i.e 1, 2 or 3)*</span>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                                <cn2-select no-label id="POP12A_1" options="1:1, 2:2, 3:3"></cn2-select>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <ol>
+                                    <li>
+                                        The development is located within a Gazetted Tree
+                                        Conservation Area or vacant land, and all trees/single
+                                        stem palms located within the development site are either
+                                        less than or equal to 1.0m in girth. The girth of the tree
+                                        shall be measured 1.0m from the ground. Recent photographs
+                                        showing clear view of all the trees/single stem palms
+                                        within the site shall be submitted
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        The development is located within a Gazetted Tree
+                                        Conservation Area or vacant land, and there is no
+                                        tree/single stem palm within the development site. Recent
+                                        photographs showing clear view of the site shall be
+                                        submitted
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        The development site is not located within either a Tree
+                                        Conservation Area or vacant land
+                                    </li>
+                                    <br />
+                                    <span><i>(For a copy of the map showing the Tree Conservation
+                                            Area, please visit our website at
+                                            https://www.nparks.gov.sg)</i></span>
+                                    <br />
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-weight:bold; text-decoration: underline;">Section B- Green Buffer and
+                                    Peripheral Planting Verge</span>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                                <span>Please fill in the number which the proposed development
+                                    qualifies (i.e 1, 2 or 3)*</span>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                                <cn2-select no-label id="POP12B" options="1:1, 2:2, 3:3"></cn2-select>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <ol>
+                                    <li>
+                                        Provision of green buffer and peripheral planting verge
+                                        are not required within the boundary of the development
+                                        site
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        Existing green buffer and peripheral planting verge
+                                        located within the development will not be altered or
+                                        affected by the proposed development works
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        Green buffer and peripheral planting verge in the
+                                        development have been provided in accordance with NParks'
+                                        requirements as described in Chapter 3 (Greenery
+                                        Provisions within Premises) of NParks Guidelines on
+                                        Greenery Provision and Tree Conservation for Developments.
+                                        Trees will be planted at a maximum distance of 6.0m from
+                                        each other. The girth of the proposed trees shall be at
+                                        least 0.1m
+                                    </li>
+                                    <br />
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-weight:bold; text-decoration: underline;">Section C- Open Air Parking
+                                    Area at Street Level</span>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                                <span>Please fill in the number which the proposed development
+                                    qualifies (i.e 1, 2 or 3)*</span>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                                <cn2-select no-label id="POP12C" options="1:1, 2:2, 3:3"></cn2-select>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <ol>
+                                    <li>
+                                        No open air parking area at street level within the
+                                        development site
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        Existing planting areas and grass pavers within existing
+                                        open air parking areas at street level will not be
+                                        affected by the proposed development works
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        Planting areas and surface treatment to parking lots have
+                                        been provided in accordance with NParks' requirements as
+                                        described in Chapter 3 (Greenery Provisions within
+                                        Premises) of NParks Guidelines on Greenery Provision and
+                                        Tree Conservation for Developments. Trees will be planted
+                                        at a maximum distance of 6.0m from each other. For open
+                                        air parking area at street level using alternative
+                                        planting area configuration, trees will be planted up to a
+                                        maximum spacing of three lots width for angled parking or
+                                        two lots length for parallel parking. The girth of
+                                        proposed trees shall be at least 0.1m.
+                                    </li>
+                                    <br />
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-weight:bold; text-decoration: underline;">Section D- Government Land
+                                    Sale Site</span>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                                <span>Please fill in the number which the proposed development
+                                    qualifies (i.e 1 or 2)*</span>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                                <cn2-select no-label id="POP12D_2" options="1:1, 2:2"></cn2-select>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <ol>
+                                    <li>
+                                        The development site is a government land sale site. The
+                                        development will comply with NParks’ terms and conditions
+                                        for the land sale, including those for conservation of
+                                        trees
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        The development site is not a gevernment land sale site
+                                    </li>
+                                    <br />
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-weight:bold; text-decoration: underline;">Section E- Park and/or Park
+                                    Connector under NParks'
+                                    Management</span>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                                <span>Please fill in the number which the proposed development
+                                    qualifies (i.e 1 or 2)*</span>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                                <cn2-select no-label id="POP12E_1" options="1:1, 2:2"></cn2-select>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <ol>
+                                    <li>
+                                        The development site is abutting existing park and/or park
+                                        connector under NParks' management. The park and/or park
+                                        connector will not be affected by the development work,
+                                        and there is no proposed new access (e.g. side gate) to
+                                        the park and/or park connector.
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        The development site is not abutting park and/or park
+                                        connector under NParks' management.
+                                    </li>
+                                    <br />
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-weight:bold; text-decoration: underline;">Section F- Trees/Single Stem
+                                    Palms within Neighbouring
+                                    Lots</span>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                                <span>Please fill in the number which the proposed development
+                                    qualifies (i.e 1, 2 or 3)*</span>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                                <cn2-select no-label id="POP123F_1" options="1:1, 2:2, 3:3"></cn2-select>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <ol>
+                                    <li>
+                                        Adjacent lot is located within a Tree Conservation Area or
+                                        is a vacant land, and all trees/single stem palms within
+                                        the lot, up to a distance of 5.0m from the development
+                                        boundary, are either less than or equal to 1.0m in girth.
+                                        The girth of the tree shall be measured 1.0m from the
+                                        ground
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        Adjacent lot is located within a Tree Conservation Area or
+                                        is a vacant land, and there is no tree/single stem palm
+                                        within the lot, up to a distance of 5.0m from the
+                                        development boundary
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        Adjacent lot is not located within Tree Conservation Area
+                                        or vacant land
+                                    </li>
+                                    <br />
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-weight:bold; text-decoration: underline;">Section G- Mandatory Plan
+                                    Submission Attachments</span>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span>I attach the following plans together with my
+                                    application:</span>
+                                <ol>
+                                    <li>
+                                        <span>Site plan, location & 1st storey plan – The following
+                                            information should be included but not limited to these
+                                            plans:</span>
+                                        <ol type="a">
+                                            <li>
+                                                <span>The species, girth and height of the
+                                                    following:</span>
+                                                <ol type="i">
+                                                    <li>
+                                                        Existing trees and single stem palms within the
+                                                        development boundary and on neighbouring lots
+                                                    </li>
+                                                    <li>
+                                                        Existing trees, single stem palms and shrubs along
+                                                        the roadside
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                            <li>
+                                                <span>Location of existing trees / single stem
+                                                    palms</span>
+                                            </li>
+                                            <li>
+                                                <span>Tree legend (trees to be outlined in accordance
+                                                    with the colour code of existing and proposed
+                                                    trees/single stem palms)</span>
+                                            </li>
+                                            <li>
+                                                <span>Boundary line / road reserve line</span>
+                                            </li>
+                                            <li>
+                                                <span>Proposed elements / structure within site boundary
+                                                    and / or road reserve</span>
+                                            </li>
+                                            <li>
+                                                <span>Clear distances centre of existing trees/ single
+                                                    palms to proposed works</span>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        <span>Basement plan</span>
+                                    </li>
+                                    <li>
+                                        <span>Roof plan</span>
+                                    </li>
+                                    <li>
+                                        <span>Landscaping Plan</span>
+                                    </li>
+                                    <li>
+                                        <span>Cross sections and elevations</span>
+                                    </li>
+                                    <li>
+                                        <span>Above plans should also include new or existing
+                                            planting above at-grade level</span>
+                                    </li>
+                                    <li>
+                                        <span>Survey Plan – (survey done less than 2 years at the
+                                            point of application and endorsed by qualified
+                                            surveyor). Not applicable for Alterations & Additions
+                                            proposals.</span>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="BpExteSelfDecl" hidden class="mls-espo-right-inner-container">
+                        <h2>BP (EXTERNAL) SELF-DECLARATION</h2>
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <div>
+                                    <span><b>IMPORTANT NOTICE</b></span>
+                                </div>
+                                <br />
+                                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                    <ol>
+                                        <li>
+                                            To qualify for the Self-Declaration (SD) scheme at the
+                                            Building Plan (external) stage, the proposed development
+                                            <b>must</b> meet the criteria as set out in
+                                            <u><b>each section</b></u> below.
+                                        </li>
+                                        <br />
+                                        <li>
+                                            If the proposed development does not meet the criteria
+                                            as set out in the sections below, your application to
+                                            conduct works at the proposed development does
+                                            <u><b>not</b></u> qualify for the SD scheme. Please
+                                            submit the plans for your development through the normal
+                                            submission scheme.
+                                        </li>
+                                        <br />
+                                        <li>
+                                            If any of the sections are incorrectly filled out or the
+                                            required information as listed in Section E is not shown
+                                            on the plan,
+                                            <u><b>the application will be rejected.</b></u>
+                                        </li>
+                                        <br />
+                                        <li>
+                                            In the event that your SD application is rejected, you
+                                            will be required to submit a new application (new
+                                            E-submission number) where fresh application fees will
+                                            be applicable. In this event,
+                                            <b>
+                                                the application fee accompanying this application will
+                                                not be refunded, nor can the said application fee be
+                                                applied to offset any fresh application fees.
+                                            </b>
+                                        </li>
+                                        <br />
+                                        <li>
+                                            All developments that are processed through the BP
+                                            (external) SD Scheme must submit an application through
+                                            the CSC (external) SD scheme. For more details, please
+                                            refer NParks website on the Guidelines on Greenery
+                                            Provision and Tree Conservation for Developments.
+                                        </li>
+                                        <br />
+                                        <li>
+                                            <b>The Board reserves the right to reject this
+                                                application for any other reasons whatsoever.</b>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span><u><b>Eligibility Condition</b></u></span>
+                                <br /><br />
+                                <span>You will be eligible to apply through the SD scheme, unless
+                                    your development falls under the following category:</span>
+                                <br />
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>1.) Development along Heritage Road</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                2.) Development is abutting or within a Nature Reserve
+                                                or Nature Area
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                3.) Development with new pedestrian overhead bridge or
+                                                proposed building works to existing pedestrian
+                                                overhead bridge
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                4.) Development required by competent authority to
+                                                provide pedestrian mall or promenade
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                5.) Development with new road proposal under Street
+                                                Work Act
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-weight:bold; text-decoration: underline;">Section A- Roadside
+                                    Trees/Single Stem Palms</span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                                <span>Please fill in the number which the proposed development
+                                    qualifies (i.e 1 or 2)*</span>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                                <cn2-select no-label id="POP12A" options="1:1, 2:2"></cn2-select>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <ol>
+                                    <li>
+                                        No roadside tree/single-stem palm along the development
+                                        site
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        All existing roadside trees/single-stem palms along the
+                                        development site are less or equal to 1.0m girth. No
+                                        roadside tree/single-stem palm will be affected. All
+                                        proposed development works within the road reserve will be
+                                        conducted at a minimum distance away from all other
+                                        retained roadside trees/single-stem palms as shown in the
+                                        table below:
+                                    </li>
+                                    <br />
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width:33%">Girth of roadside tree</td>
+                                            <td style="width:33%">Girth of single stem palm</td>
+                                            <td style="width:33%">
+                                                Minimum clear distance from proposed development works
+                                                within road reserve
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width:33%">Less than or equal 0.5m</td>
+                                            <td style="width:33%">-</td>
+                                            <td style="width:33%">1.5m</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width:33%">
+                                                More than 0.5m but less than or equal 1.0m
+                                            </td>
+                                            <td style="width:33%">-</td>
+                                            <td style="width:33%">2.5m</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width:33%">-</td>
+                                            <td style="width:33%">Less than or equal 1.0m</td>
+                                            <td style="width:33%">1.0m</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-weight:bold; text-decoration: underline;">Section B- Roadside Shrubs
+                                    under NParks’ Management</span>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                                <span>Please fill in the number which the proposed development
+                                    qualifies (i.e 1, 2 or 3)*</span>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                                <cn2-select no-label id="POP123B_1" options="1:1, 2:2, 3:3"></cn2-select>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <ol>
+                                    <li>
+                                        There is no shrub within the roadside green verge along
+                                        the development site
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        Existing shrubs within the roadside green verge along the
+                                        development site will not be affected by the proposed
+                                        development work
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        Existing shrubs within the roadside green verge along the
+                                        development site will be affected by the proposed
+                                        development works. The affected area will be reinstated
+                                        with the same shrubs species and in the same density as
+                                        existing condition
+                                    </li>
+                                    <br />
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-weight:bold; text-decoration: underline;">Section C- Roadside Green
+                                    Verge</span>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                                <span>Please fill in the number which the proposed development
+                                    qualifies (i.e 1, 2 or 3)*</span>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                                <cn2-select no-label id="POP123C_1" options="1:1, 2:2, 3:3"></cn2-select>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <ol>
+                                    <li>
+                                        There is no new or existing roadside green verge along the
+                                        development site
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        There is no new roadside green verge. Existing roadside
+                                        green verge will not be affected by the proposed
+                                        development works
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        There is no new roadside green verge. Existing roadside
+                                        green verge will be affected by the proposed development
+                                        works. The roadside green verge will be reinstated with
+                                        <i>Axonopous compressus</i>
+                                    </li>
+                                    <br />
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-weight:bold; text-decoration: underline;">Section D- Park and/or Park
+                                    Connector under NParks'
+                                    Management</span>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                                <span>Please fill in the number which the proposed development
+                                    qualifies (i.e 1 or 2)*</span>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                                <cn2-select no-label id="POP12D_1" options="1:1, 2:2"></cn2-select>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <ol>
+                                    <li>
+                                        The development site is abutting existing park and/or park
+                                        connector under NParks' management. The park and/or park
+                                        connector will not be affected by the development work,
+                                        and there is no proposed new access (e.g. side gate) to
+                                        the park and/or park connector.
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        The development site is not abutting park and/or park
+                                        connector under NParks' management.
+                                    </li>
+                                    <br />
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-weight:bold; text-decoration: underline;">Section E- Mandatory Plan
+                                    Submission Attachments</span>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span>I attach the following plans together with my
+                                    application:</span>
+                                <ol>
+                                    <li>
+                                        <span>Site plan, location & 1st storey plan – The following
+                                            information should be included but not limited to these
+                                            plans:</span>
+                                        <ol type="a">
+                                            <li>
+                                                <span>The species, girth and height of the
+                                                    following:</span>
+                                                <ol type="i">
+                                                    <li>
+                                                        Existing trees and single stem palms within the
+                                                        development boundary and on neighbouring lots
+                                                    </li>
+                                                    <li>
+                                                        Existing trees, single stem palms and shrubs along
+                                                        the roadside
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                            <li>
+                                                <span>Location of existing trees / single stem palms and
+                                                    shrubs along the roadside</span>
+                                            </li>
+                                            <li>
+                                                <span>Tree legend (trees to be outlined in accordance
+                                                    with the colour code of existing and proposed
+                                                    trees/single stem palms)</span>
+                                            </li>
+                                            <li>
+                                                <span>Boundary line / road reserve line</span>
+                                            </li>
+                                            <li>
+                                                <span>Proposed elements / structure within site boundary
+                                                    and / or road reserve</span>
+                                            </li>
+                                            <li>
+                                                <span>Clear distances centre of existing trees/ single
+                                                    palms to proposed works</span>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        <span>Cross sections and elevations</span>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="CscSelfDecl" hidden class="mls-espo-right-inner-container">
+                        <h2>CSC SELF-DECLARATION</h2>
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <div>
+                                    <span><b>IMPORTANT NOTICE</b></span>
+                                </div>
+                                <br />
+                                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                    <ol>
+                                        <li>
+                                            You can only apply to NParks for CSC (internal)
+                                            clearance via the SD scheme if BP (internal) has been
+                                            approved under the SD scheme. Likewise, you can only
+                                            apply for the CSC (external) clearance via the SD scheme
+                                            if BP (external) has been approved under the SD scheme.
+                                            Please apply to NParks via the normal CSC submission for
+                                            BP (internal) and BP (external) approved under normal
+                                            submission.
+                                        </li>
+                                        <br />
+                                        <li>
+                                            The works must be implemented in accordance with the
+                                            approved plan, and are also in compliance with NParks’
+                                            requirements as stipulated in prevailing regulations and
+                                            guidelines.
+                                        </li>
+                                        <br />
+                                        <li>
+                                            If required information as listed in Section A is not
+                                            provided,
+                                            <u><b>the application will be rejected.</b></u>
+                                        </li>
+                                        <br />
+                                        <li>
+                                            In the event that your SD application is rejected, you
+                                            will be required to submit a new application (new
+                                            E-submission number.) where fresh application fees will
+                                            be applicable. In this event,
+                                            <b>
+                                                the application fee accompanying this application will
+                                                not be refunded, nor can the said application fee
+                                                applied to offset any fresh application fees.
+                                            </b>
+                                        </li>
+                                        <br />
+                                        <li>
+                                            <b>
+                                                The Board reserves the right to reject this
+                                                application for any other reasons.
+                                            </b>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span><b>Section A – Mandatory Documents</b></span>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <br />
+                                <div>
+                                    <span>I attach the following documents together with my
+                                        application:</span>
+                                </div>
+                                <br />
+                                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                    <ol>
+                                        <li>
+                                            Date stamp photo of reinstated site, proposed planting
+                                            area and/or all proposed trees. Photos must be present
+                                            the trees in their entirety and should also clearly show
+                                            the condition of the turf. All photos should be compiled
+                                            into a file.
+                                        </li>
+                                        <li>
+                                            Soil laboratory test results, if applicable
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="CscInteSubmNorm" hidden class="mls-espo-right-inner-container">
+                        <h2>CERTIFICATE OF STATUTORY COMPLETION (CSC) SUBMISSION</h2>
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>New House No</td>
+                                            <td>
+                                                <cn2-textbox id="CertOfStatComp_NewHousNo_1" maxlength="32400" no-label>
+                                                </cn2-textbox>
+                                                <br />
+                                                <cn2-textbox id="CertOfStatComp_NewHousNo_2" maxlength="32400" no-label>
+                                                </cn2-textbox>
+                                                <br />
+                                                <cn2-textbox id="CertOfStatComp_NewHousNo_3" maxlength="32400" no-label>
+                                                </cn2-textbox>
+                                                <br />
+                                                <cn2-textbox id="CertOfStatComp_NewHousNo_4" maxlength="32400" no-label>
+                                                </cn2-textbox>
+                                                <br />
+                                                <cn2-textbox id="CertOfStatComp_NewHousNo_5" maxlength="32400" no-label>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>New Development Name</td>
+                                            <td>
+                                                <cn2-textbox no-label id="CertOfStatComp_NewHousname10"
+                                                    maxlength="32400"></cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Building Development has incorporated Skyrise Greenery
+                                                installations
+                                            </td>
+                                            <td>
+                                                <cn2-select event-change="CertOfStatComp_BuilDeveHasInco10_Changed()"
+                                                    id="CertOfStatComp_BuilDeveHasInco10" options="Yes:YES, No:NO"
+                                                    no-label></cn2-select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total Area of Horizontal Greenery</td>
+                                            <td>
+                                                <span>
+                                                    <cn2-textbox id="CertOfStatComp_TotaAreaOfHori10" inline="8"
+                                                        disabled event-input="onlyFloat(this);"
+                                                        event-blur="inputZero(this)" no-label></cn2-textbox>
+                                                    m
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total Area of Vertical Greenery</td>
+                                            <td>
+                                                <span>Greenery
+                                                    <cn2-textbox id="CertOfStatComp_TotaAreaOfVert10" disabled
+                                                        event-input="onlyFloat(this);" event-blur="inputZero(this)"
+                                                        inline="8" no-label>
+                                                    </cn2-textbox>
+                                                    m</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="mls-espo-right-inner-container">
+                            <h2>Submission Checklist</h2>
+                            <div class="mls-espro-form-fields row pt-2">
+                                <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                    <table class="table table-borderless">
+                                        <tbody>
+                                            <tr>
+                                                <td>1.</td>
+                                                <td>
+                                                    Date stamp photo of reinstated site, proposed
+                                                    planting area and/or all proposed trees. Photos must
+                                                    present the trees in their entirety and should also
+                                                    clearly show the condition of the turf. All photos
+                                                    should be compiled into a file.
+                                                </td>
+                                                <td>
+                                                    <cn2-checkbox id="SubmChec_check10" no-label></cn2-checkbox>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2.</td>
+                                                <td>Soil laboratory test results</td>
+                                                <td>
+                                                    <cn2-checkbox id="SubmChec_check20" no-label></cn2-checkbox>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="DcSelfDecl" hidden class="mls-espo-right-inner-container">
+                        <h2>DC SELF-DECLARATION</h2>
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span><b>IMPORTANT NOTICE:</b></span>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <ol>
+                                    <li>
+                                        To qualify for the Self-Declaration (SD) scheme at the
+                                        Development Control stage, the proposed development
+                                        <b>must</b> meet the criteria as set out in
+                                        <b><u>each section</u></b> below.
+                                    </li>
+                                    <li>
+                                        If the proposed development does not meet the criteria as
+                                        set out in the sections below, your application to conduct
+                                        works at the proposed development does
+                                        <b><u>not</u></b> qualify for the SD scheme. Please submit
+                                        the plans for your development through the normal
+                                        submission scheme.
+                                    </li>
+                                    <li>
+                                        If any of the sections are incorrectly filled out or the
+                                        required information as listed in Section H is not shown
+                                        on the plan,
+                                        <b><u>the application will be rejected.</u></b>
+                                    </li>
+                                    <li>
+                                        In the event that items 2 and /or 3 occur, you will be
+                                        required to submit a new application (new E-submission
+                                        number) where fresh application fees will be applicable.In
+                                        this event,
+                                        <b>the application fee accompanying this application will
+                                            not be refunded, nor can the said application fee
+                                            applied to offset any fresh application fees.</b>
+                                    </li>
+                                    <li>
+                                        All developments that are processed through the DC SD
+                                        Scheme <b><u>must</u></b>
+                                        submit an application through the BP (internal) SD Scheme,
+                                        unless there is no requirement by the Commissioner of
+                                        Parks and Recreation to provide planting area within the
+                                        premises. For more details, please refer to NParks website
+                                        on the Guidelines on Greenery Provision and Tree
+                                        Conservation for Developments.
+                                    </li>
+                                    <li>
+                                        <b>The Board reserves the right to reject this application
+                                            for any other reasons whatsoever.</b>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span><b><u>Eligibility Condition</u></b></span>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span>You will be eligible to apply through the SD scheme, unless
+                                    your development falls under the following category:</span>
+                                <br />
+                                <ol>
+                                    <li>Development with Heritage Tree within the site</li>
+                                    <li>Development along Heritage Road</li>
+                                    <li>
+                                        Development is abutting or within a Nature Reserve or
+                                        Nature Area
+                                    </li>
+                                    <li>
+                                        Development is required by NParks or competent authority
+                                        to carry out Biodiversity Impact Assessment (BIA) or
+                                        Environment Impact Assessment (EIA)
+                                    </li>
+                                    <li>
+                                        Development with new pedestrian overhead bridge or
+                                        proposed building works to existing pedestrian overhead
+                                        bridge
+                                    </li>
+                                    <li>
+                                        Development required by competent authority to provide
+                                        open space, pedestrian mall or promenade
+                                    </li>
+                                    <li>
+                                        Development with new road proposal under Street Work Act
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-weight:bold; text-decoration: underline;">Section A - Trees/Single
+                                    Stem Palms within Development
+                                    Site</span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                                <span>Please fill in the number which the proposed development
+                                    qualifies (i.e 1, 2 or 3)*</span>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                                <cn2-select no-label id="POP123A" mandatory options="1:1,2:2,3:3"></cn2-select>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <ol>
+                                    <li>
+                                        The development is located within a Gazetted Tree
+                                        Conservation Area or vacant land, and all trees/single
+                                        stem palms located within the development site are either
+                                        less than or equal to 1.0m in girth. The girth of the tree
+                                        shall be measured 1.0m from the ground. Recent photographs
+                                        showing clear view of all the trees/single stem palms
+                                        within the site shall be submitted
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        The development is located within a Gazetted Tree
+                                        Conservation Area or vacant land, and there is no
+                                        tree/single stem palm within the development site. Recent
+                                        photographs showing clear view of the site shall be
+                                        submitted
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        The development site is not located within either a Tree
+                                        Conservation Area or vacant land
+                                    </li>
+                                    <br />
+                                    <span><i>(For a copy of the map showing the Tree Conservation
+                                            Area, please visit our website at
+                                            https://www.nparks.gov.sg)</i></span>
+                                    <br />
+                                </ol>
+                            </div>
+                        </div>
+                        <br />
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-weight:bold; text-decoration: underline;">Section B- Green Buffer and
+                                    Peripheral Planting Verge</span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                                <span>Please fill in the number which the proposed development
+                                    qualifies (i.e 1, 2 or 3)*</span>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                                <cn2-select no-label id="POP123B" options="1:1, 2:2, 3:3"></cn2-select>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <ol>
+                                    <li>
+                                        Provision of green buffer and peripheral planting verge
+                                        are not required within the boundary of the development
+                                        site
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        Existing green buffer and peripheral planting verge
+                                        located within the development will not be altered or
+                                        affected by the proposed development works
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        Green buffer and peripheral planting verge in the
+                                        development have been provided in accordance with NParks'
+                                        requirements as described in Chapter 3 (Greenery
+                                        Provisions within Premises) of NParks Guidelines on
+                                        Greenery Provision and Tree Conservation for Developments.
+                                        Trees will be planted at a maximum distance of 6.0m from
+                                        each other. The girth of the proposed trees shall be at
+                                        least 0.1m
+                                    </li>
+                                    <br />
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-weight:bold; text-decoration: underline;">Section C- Open Air Parking
+                                    Area at Street Level</span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                                <span>Please fill in the number which the proposed development
+                                    qualifies (i.e 1, 2 or 3)*</span>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                                <cn2-select no-label id="POP123C" options="1:1, 2:2, 3:3"></cn2-select>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <ol>
+                                    <li>
+                                        No open air parking area at street level within the
+                                        development site
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        Existing planting areas and grass pavers within existing
+                                        open air parking areas at street level will not be
+                                        affected by the proposed development works
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        Planting areas and surface treatment to parking lots have
+                                        been provided in accordance with NParks' requirements as
+                                        described in Chapter 3 (Greenery Provisions within
+                                        Premises) of NParks Guidelines on Greenery Provision and
+                                        Tree Conservation for Developments. Trees will be planted
+                                        at a maximum distance of 6.0m from each other. For open
+                                        air parking area at street level using alternative
+                                        planting area configuration, trees will be planted up to a
+                                        maximum spacing of three lots width for angled parking or
+                                        two lots length for parallel parking. The girth of
+                                        proposed trees shall be at least 0.1m.
+                                    </li>
+                                    <br />
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-weight:bold; text-decoration: underline;">Section D- NParks Terms and
+                                    Conditions for Government Land
+                                    Sale Site</span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                                <span>Please fill in the number which the proposed development
+                                    qualifies (i.e 1 or 2)*</span>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                                <cn2-select no-label id="POP12D" options="1:1, 2:2"></cn2-select>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <ol>
+                                    <li>
+                                        The development site is a government land sale site. The
+                                        development will comply with Nparks’ terms and conditions
+                                        for the land sale, including those for conservation of
+                                        trees
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        The development site is not a gevernment land sale site
+                                    </li>
+                                    <br />
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-weight:bold; text-decoration: underline;">Section E- Park and/or Park
+                                    Connector under NParks'
+                                    Management</span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                                <span>Please fill in the number which the proposed development
+                                    qualifies (i.e 1 or 2)*</span>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                                <cn2-select no-label id="POP12E" options="1:1, 2:2"></cn2-select>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <ol>
+                                    <li>
+                                        The development site is abutting existing park and/or park
+                                        connector under NParks' management. The park and/or park
+                                        connector will not be affected by the development work,
+                                        and there is no proposed new access (e.g. side gate) to
+                                        the park and/or park connector.
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        The development site is not abutting park and/or park
+                                        connector under NParks' management.
+                                    </li>
+                                    <br />
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-weight:bold; text-decoration: underline;">Section F- Trees/Single Stem
+                                    Palms within Neighbouring
+                                    Lots</span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                                <span>Please fill in the number which the proposed development
+                                    qualifies (i.e 1, 2 or 3)*</span>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                                <cn2-select no-label id="POP123F" options="1:1, 2:2, 3:3"></cn2-select>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <ol>
+                                    <li>
+                                        Adjacent lot is located within a Tree Conservation Area or
+                                        is a vacant land, and all trees/single stem palms within
+                                        the lot, up to a distance of 5.0m from the development
+                                        boundary, are either less than or equal to 1.0m in girth.
+                                        The girth of the tree shall be measured 1.0m from the
+                                        ground
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        Adjacent lot is located within a Tree Conservation Area or
+                                        is a vacant land, and there there is no tree/single stem
+                                        palm within the lot, up to a distance of 5.0m from the
+                                        development boundary
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        Adjacent lot is not located within Tree Conservation Area
+                                        or vacant land
+                                    </li>
+                                    <br />
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-weight:bold; text-decoration: underline;">Section G- Roadside
+                                    Trees/Single Stem Palms</span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-9 col-sm-9 col-lg-9 col-md-9">
+                                <span>Please fill in the number which the proposed development
+                                    qualifies (i.e 1 or 2)*</span>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-lg-3 col-md-3">
+                                <cn2-select no-label id="POP12G" options="1:1, 2:2"></cn2-select>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <ol>
+                                    <li>
+                                        No roadside tree/single-stem palm along the development
+                                        site
+                                    </li>
+                                    <br /><b><u>OR</u></b><br /><br />
+                                    <li>
+                                        <span>All existing roadside trees/single-stem palms along the
+                                            development site are less or equal to 1.0m girth. No
+                                            roadside tree/single-stem palms will be affected, or
+                                            only a maximum of two numbers of roadside
+                                            trees/single-stem palms, which are of girth less than
+                                            0.5m, will be affected by the development works. All
+                                            proposed development works within the road reserve will
+                                            be conducted at a minimum distance away from all other
+                                            retained roadside trees/single-stem palms as shown in
+                                            the table below:</span>
+                                        <br />
+                                        <br />
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="width:33%">Girth of roadside tree</td>
+                                                    <td style="width:33%">Girth of single stem palm</td>
+                                                    <td style="width:33%">
+                                                        Minimum clear distance from proposed development
+                                                        works within road reserve
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width:33%">Less than or equal 0.5m</td>
+                                                    <td style="width:33%">-</td>
+                                                    <td style="width:33%">1.5m</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width:33%">
+                                                        More than 0.5m but less than or equal 1.0m
+                                                    </td>
+                                                    <td style="width:33%">-</td>
+                                                    <td style="width:33%">2.5m</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width:33%">-</td>
+                                                    <td style="width:33%">Less than or equal 1.0m</td>
+                                                    <td style="width:33%">1.0m</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </li>
+                                    <br />
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-weight:bold; text-decoration: underline;">Section H- Mandatory Plan
+                                    Submission Attachments</span>
+                            </div>
+                        </div>
+
+                        <div class="mls-espro-form-fields row pt-2 mls-top-section">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span>I attach the following plans together with my
+                                    application:</span>
+                                <ol>
+                                    <li>
+                                        <span>Site plan, location & 1<sup>st</sup> storey plan – The
+                                            following information should be included but not limited
+                                            to these plans:</span>
+                                        <ol type="a">
+                                            <li>
+                                                <span>The species, girth and height of the
+                                                    following:</span>
+                                                <ol type="i">
+                                                    <li>
+                                                        Existing trees and single stem palms within the
+                                                        development boundary and on neighbouring lots that
+                                                        are within Tree Conservation Area or Vacant Land
+                                                    </li>
+                                                    <li>
+                                                        Existing trees, single stem palms and shrubs along
+                                                        the roadside
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                            <li>
+                                                <span>Location of existing trees / single stem
+                                                    palms</span>
+                                            </li>
+                                            <li>
+                                                <span>Tree legend (trees to be outlined in accordance
+                                                    with the colour code of existing and proposed
+                                                    trees/single stem palms)</span>
+                                            </li>
+                                            <li>
+                                                <span>Boundary line / road reserve line</span>
+                                            </li>
+                                            <li>
+                                                <span>Proposed elements / structure within site boundary
+                                                    and / or road reserve</span>
+                                            </li>
+                                            <li>
+                                                <span>Clear distances from centre of existing trees/
+                                                    single palms to proposed works</span>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        <span>Basement plan</span>
+                                    </li>
+                                    <li>
+                                        <span>Roof plan</span>
+                                    </li>
+                                    <li>
+                                        <span>Cross sections and elevations</span>
+                                    </li>
+                                    <li>
+                                        <span>Survey Plan – (survey done less than 2 years at the
+                                            point of application and endorsed by qualified
+                                            surveyor). Not applicable for Alterations & Additions
+                                            proposals.</span>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Declaration of Qualified Person</h2>
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span>I, </span>
+                                                <cn2-textbox id="DeclByQualPers_name10" mandatory inline="6"
+                                                    maxlength="32400" no-label>
+                                                </cn2-textbox>
+                                                <span> NRIC, </span>
+                                                <cn2-textbox id="DeclByQualPers_nric10" mandatory inline="3"
+                                                    maxlength="32400" no-label>
+                                                </cn2-textbox>
+                                                <br />
+                                                <span>The Qualified Person appointed by the
+                                                    developer/owner of the subject development, confirm
+                                                    that I have read and understood the provisions of
+                                                    Section 35 and 36 of the Parks and Trees Acts as
+                                                    annexed herein. I further hereby:</span>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span>a. declare and certify that all information given
+                                                    in respect of the application is true and correct in
+                                                    a material particular.</span>
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="DeclByQualPers_check10" no-label></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span>b. (For CSC only) confirm that I have inspected the
+                                                    site on
+                                                    <cn2-datefield onfocusout="validateDate(this)" disabled
+                                                        id="DeclByQualPers_date10" inline="3">
+                                                    </cn2-datefield> </span>&nbsp; and certify that all of NParks’
+                                                requirements
+                                                have been complied with, in accordance with the plan
+                                                submitted by me on behalf of the developer/ owner.
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="DeclByQualPers_check30"
+                                                    event-change="DeclByQualPers_check30_clicked()" no-label>
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container">
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-size: 1.5rem"><b><u>SECTION 32 PARKS AND TREES ACT</u></b></span>
+                                <br />
+                                <b>Approvals required</b>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                <b>32.-</b>
+                            </div>
+                            <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                                (1) Subject to the provisions of this Act, every application
+                                for an approval for the purposes of section 24, 26, 30 or 31
+                                shall be- <br />
+                                (a) made to the Commissioner in such form and manner as the
+                                Commissioner may require;
+                                <br />
+                                (b) accompanied by such plans of the works to which the
+                                application relates, and such other documents, as the
+                                Commissioner may require; and <br />
+                                (c) accompanied by such non-refundable application fee as the
+                                Commissioner may require which shall be paid in the prescribed
+                                manner.
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <u>Important notice: </u> Your application will be rejected if
+                                you fail to comply with the provisions of Section 32 above.
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-size: 1.5rem"><b><u>SECTION 35 PARKS AND TREES ACT</u></b></span>
+                                <br />
+                                <b>Duties of qualified person</b>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                <b>35.-</b>
+                            </div>
+                            <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                                (1) Every qualified person referred to in
+                                <cn2-button label="section 32(2)(a)"
+                                    event-click="openUrl('http://statutes.agc.gov.sg/aol/search/display/view.w3p;page=0;query=Id%3A%225b64dbd9-6ae6-4402-b821-69ad89c5433d%22%20Status%3Ainforce;rec=0#pr32-ps2-p1a-.')">
+                                </cn2-button>
+                                shall- <br />
+                                (a) take all reasonable steps and exercise due diligence in
+                                supervising and inspecting the works to ensure that those
+                                works are carried out in accordance with this Act and with the
+                                plans submitted under
+                                <cn2-button label="section 32"
+                                    event-click="openUrl('https://www.pub.gov.sg/compliance/drainage/standardsandreferences');">
+                                </cn2-button>
+                                and with all conditions imposed by the Commisssioner under
+                                that section; and <br />
+                                (b) notify the Commissioner of any contravention of the
+                                provisions of this Act pertaining to the works. <br />
+                                (2) Any qualified person who contravenes any of the
+                                requirements of
+                                <cn2-button label="subsection (1)"
+                                    event-click="openUrl('http://statutes.agc.gov.sg/aol/search/display/view.w3p;page=0;query=Id%3A%2256ddec5e-f756-47b2-ac82-7e4e7d6c80c6%22%20Status%3Ainforce;rec=0#pr35-ps1-.');">
+                                </cn2-button>
+                                shall be guilty of an offence and shall be liable on
+                                conviction to a fine not exceeding $30,000 and, in the case of
+                                a continuing offence, to a further fine not exceeding $500 for
+                                every day or part thereof during which the offence continues
+                                after conviction. <br />
+                                (3) In any prosecution against a qualified person for an
+                                offence under
+                                <cn2-button label="subsection (1)(b)"
+                                    event-click="openUrl('http://statutes.agc.gov.sg/aol/search/display/view.w3p;page=0;query=Id%3A%22912a0a53-8da3-4dca-8d8a-b75c4a857cc0%22%20Status%3Ainforce;rec=0#pr35-ps1-p1b-.');">
+                                </cn2-button>, it shall be a defence for him to prove to the satisfaction
+                                of the court that he did not know or could not reasonably have
+                                discovered the contravention referred to in the charge.
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-size: 1.5rem"><b><u>SECTION 36 PARKS AND TREES ACT</u></b></span>
+                                <br />
+                                <b>Liabilities related to plans, certificates and documents</b>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                                <b>36.-</b>
+                            </div>
+                            <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                                (1) Any person for whom any works are carried out, or any
+                                person who in carrying out the works deviates, or permits or
+                                authorises any planting area, open space or green verge to
+                                deviate, in any material way from any plans approved by the
+                                Commissioner under
+                                <cn2-button label="section 32"
+                                    event-click="openUrl('http://statutes.agc.gov.sg/aol/search/display/view.w3p;page=0;query=Id%3A%22fe67077e-51f1-497b-ad79-7b41cfa1b02c%22%20Status%3Ainforce;rec=0#pr32-.');">
+                                </cn2-button>
+                                shall be guilty of an offence and shall be liable on
+                                conviction to a fine not exceeding $30,000 and, in the case of
+                                a continuing offence, to a further fine not exceeding $500 for
+                                every day or part thereof during which the offence continues
+                                after conviction. <br />
+                                (2) Any person who - <br />
+                                (a) being required by this Act to make or produce to the
+                                Commissioner any plan or document; <br />
+                                (b) for the purpose of obtaining any certificate or approval
+                                from the Commissioner under this Act; or <br />
+                                (c) for the purpose of establishing any fact relevant to the
+                                administration of this Act, makes or produces any plan or
+                                document which - <br />
+                                (i) is false in a material particular; <br />
+                                (ii) has not been made by the person by whom it purports to
+                                have been made; or <br />
+                                (iii) has been in any way altered or tampered with, shall be
+                                guilty of an offence and shall be liable on conviction to a
+                                fine not exceeding $30,000
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                A copy of the Parks and Trees Act may be accessed via
+                                Singapore Statutes Online at http://statutes.agc.gov.sg
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <span style="font-size: 1.5rem"><b><u>REMINDER</u></b></span>
+                                <br />
+                                <b>Payment</b> <br />
+                                When a Qualified Person submits a development project via
+                                CORENET for NParks' processing, the Qualified Person must make
+                                payment of the application fees to NParks concurrently. <br />
+                                Payment should be made via E-payment portal at
+                                https://eve.nparks.gov.sg/eve-cpp/submissionpayment.aspx
+                                <br />
+                                <br />
+                                <u>Only complete applications will be processed</u> <br />
+                                An application is deemed completed only if the following
+                                conditions are met:- <br />
+                                <br />
+                                <ol>
+                                    <li>
+                                        Completion of all sections of the application form (where
+                                        applicable)
+                                    </li>
+                                    <li>
+                                        Submission of all supporting documents as set out in the
+                                        submisision procedure in NParks website at
+                                        [http://www.nparks.gov.sg/]
+                                    </li>
+                                    <li>
+                                        Full and complete transmission of the submission of the
+                                        application form and supporting documents over the CORENET
+                                        system. You will receive an acknowledgement notice from
+                                        the CORENET system if your submission is successfully
+                                        transmitted
+                                    </li>
+                                    <li>
+                                        Payment of the application fees is made in accordance with
+                                        the abovementioned conditions.
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page8">
+                    <div class="mls-espo-right-inner-container">
+                        <h2>
+                            Fees Tabulation for NPARKS Submission (New Erection or
+                            Reconstruction or Addition & Alteration of Building Projects)
+                        </h2>
+
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-bordered" style="text-align: center" id="feeTable">
+                                    <tbody>
+                                        <tr>
+                                            <td>No.</td>
+                                            <td>Type of Development Application</td>
+                                            <td style="width:50%;" colspan="2">Fee</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td style="width:25%; text-align: left;">
+                                                Tree Conservation Area/Vacant Land (TCA/VL)
+                                            </td>
+                                            <td style="width:25%; text-align: left;">
+                                                Non-Tree Conservation Area/ Non-Vacant
+                                                Land(Non-TCA/Non-VL)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="7">1.</td>
+                                            <td style="text-align: left">
+                                                <cn2-checkbox event-change="onSelectChange(this);" checked
+                                                    id="FeesTabuForNpar_Check1_a" disabled group-id="fee1_gid">
+                                                </cn2-checkbox>
+                                                <span>a.) Good Class Bungalow</span>
+                                            </td>
+                                            <td style="width:25%">$2675</td>
+                                            <td style="width:25%" rowspan="5">$1605</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left">
+                                                <cn2-checkbox event-change="onSelectChange(this);"
+                                                    id="FeesTabuForNpar_Check1_b" disabled group-id="fee1_gid">
+                                                </cn2-checkbox>
+                                                <span>b.) Detached(Bungalow), Semi-Detached, Terrace
+                                                    Houses, Strata Landed Housing or Cluster
+                                                    Housing</span>
+                                            </td>
+                                            <td style="width:25%">$2140</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left">
+                                                <cn2-checkbox event-change="onSelectChange(this);"
+                                                    id="FeesTabuForNpar_Check1_c" disabled group-id="fee1_gid">
+                                                </cn2-checkbox>
+                                                <span>c.) Landed Housing with open space provision (Open
+                                                    Space to be vested to NParks)</span>
+                                            </td>
+                                            <td style="width:25%">$9095</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left">
+                                                <cn2-checkbox event-change="onSelectChange(this);"
+                                                    id="FeesTabuForNpar_Check1_d" disabled group-id="fee1_gid">
+                                                </cn2-checkbox>
+                                                <span>d.) Flats, Apartments, Condominium, Commercial,
+                                                    Industrial, Warehouse, Utilities, Hotel, Students'
+                                                    Hostel or Workers' Dormitory</span>
+                                            </td>
+                                            <td style="width:25%">$2675</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left">
+                                                <cn2-checkbox event-change="onSelectChange(this);"
+                                                    id="FeesTabuForNpar_Check1_e" disabled group-id="fee1_gid">
+                                                </cn2-checkbox>
+                                                <span>e.) Places of Worship,Civic Community Institutions,
+                                                    Educational Institutions, Conservation Building,
+                                                    Petrol Station, Hospital, Golf Course, Open Vehicle
+                                                    Park or Open Car Park not relating to any
+                                                    project</span>
+                                            </td>
+                                            <td style="width:25%">$2140</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left">
+                                                <cn2-checkbox event-change="onSelectChange(this);"
+                                                    id="FeesTabuForNpar_Check1_f" disabled group-id="fee1_gid">
+                                                </cn2-checkbox>
+                                                <span>f.) Earthworks or Site Clearance not relating to
+                                                    any project (submission NOT required for
+                                                    Non-TCA/Non-VL)</span>
+                                            </td>
+                                            <td style="width:25%">$2140</td>
+                                            <td style="width:25%">No Submission Required</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left">
+                                                <cn2-checkbox event-change="onSelectChange(this);"
+                                                    id="FeesTabuForNpar_Check1_g" disabled group-id="fee1_gid">
+                                                </cn2-checkbox>
+                                                <span>g.) Any Other Type of Development Application not
+                                                    Listed in This Form</span>
+                                            </td>
+                                            <td style="width:25%">$2140</td>
+                                            <td style="width:25%">$2140</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.</td>
+                                            <td style="text-align: left">
+                                                <cn2-checkbox disabled
+                                                    event-change="FeesTabuForNpar_Check2_clicked(this);"
+                                                    id="FeesTabuForNpar_Check2"></cn2-checkbox>
+                                                <span>Rapid Transit System Depot, Bus Depot or Bus
+                                                    Interchange</span>
+                                            </td>
+                                            <td>
+                                                <input id="FeesTabuForNpar_Check2_TCL10" disabled
+                                                    name="interchangeRadio" onchange="onSelectChange(this);"
+                                                    type="radio" />&nbsp;$2675
+                                            </td>
+                                            <td>
+                                                <input id="FeesTabuForNpar_Check2_NTCL10" disabled
+                                                    name="interchangeRadio" onchange="onSelectChange(this);"
+                                                    type="radio" />&nbsp;$1605
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3.</td>
+                                            <td style="text-align: left">
+                                                <cn2-checkbox disabled event-change="onSelectChange(this);"
+                                                    id="FeesTabuForNpar_Check3"></cn2-checkbox>
+                                                <span>New Street (Street Work Act Section 18)</span>
+                                            </td>
+                                            <td colspan="2">$2675</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4.</td>
+                                            <td style="text-align: left">
+                                                <cn2-checkbox disabled event-change="onSelectChange(this);"
+                                                    id="FeesTabuForNpar_Check4"></cn2-checkbox>
+                                                <span>External Works</span>
+                                            </td>
+                                            <td colspan="2">$2140</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5.</td>
+                                            <td style="text-align: left">
+                                                <cn2-checkbox disabled event-change="onSelectChange(this);"
+                                                    id="FeesTabuForNpar_Check5"></cn2-checkbox>
+                                                <span>Pedestrian Overhead Bridge, Link Bridge, Covered
+                                                    Linkway, Covered Public Walkway, Underground
+                                                    Pedestrian Linkway or Underpass</span>
+                                            </td>
+                                            <td colspan="2">$2140</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6.</td>
+                                            <td style="text-align: left">
+                                                <cn2-checkbox disabled event-change="onSelectChange(this);"
+                                                    id="FeesTabuForNpar_Check6"></cn2-checkbox>
+                                                <span>Promenade/ Pedestrian Mall</span>
+                                            </td>
+                                            <td colspan="2">$2140</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7.</td>
+                                            <td style="text-align: left">
+                                                <cn2-checkbox disabled event-change="onSelectChange(this);"
+                                                    id="FeesTabuForNpar_Check7"></cn2-checkbox>
+                                                <span>Self-Declaration Scheme or Car Park Lodgement
+                                                    Scheme</span>
+                                            </td>
+                                            <td colspan="2">$107/Submission</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8.</td>
+                                            <td style="text-align: left">
+                                                <cn2-checkbox disabled event-change="onSelectChange(this);"
+                                                    id="FeesTabuForNpar_Check8"></cn2-checkbox>
+                                                <span>Specific Developments Exempted from Provision of
+                                                    Green Buffers and/or Peripheral Planting Verges
+                                                </span>
+                                            </td>
+                                            <td colspan="2">$0</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="text-align: left;">
+                                                Total Plan Fee Payable (inclusive 7% GST)
+                                            </td>
+                                            <td colspan="2" style="text-align: left;">
+                                                <cn2-textbox id="TotaPlanFeePaya_Label10" inline="12" value="$ 0"
+                                                    no-label disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2">
+                                                <span>Total Payment method:</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="5%">
+                                                <cn2-checkbox id="CHECK15" event-change="togglePaymentMethod(this);">
+                                                </cn2-checkbox>
+                                            </td>
+                                            <td style="text-align: center">
+                                                eNets Credit Card / Debit Card (VISA/MASTERCARD)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="5%">
+                                                <cn2-checkbox id="CHECK16" event-change="togglePaymentMethod(this);">
+                                                </cn2-checkbox>
+                                            </td>
+                                            <td style="text-align: center">
+                                                eNets Funds Transfer (CITIBANK/DBS/OCBC/SC/UOB)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="5%">
+                                                <cn2-checkbox id="CHECK17" event-change="togglePaymentMethod(this);">
+                                                </cn2-checkbox>
+                                            </td>
+                                            <td style="text-align: center">
+                                                Interbank Funds Transfer (Other FAST Participating
+                                                Banks)
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                Important Notes:
+                                <ol>
+                                    <li>
+                                        At payment, please indicate the name to be reflected in
+                                        the receipt.
+                                    </li>
+                                    <li>
+                                        For Interbank Funds Transfer:<br />
+                                        <ol type="a">
+                                            <li>
+                                                Ensure that the payment reference number (e.g.
+                                                GDP123456) is correctly keyed-in at the banking
+                                                portal.
+                                            </li>
+                                            <li>
+                                                After payment has been made, please email details of
+                                                the bank transfer to either <br />
+                                                <span style="color:blue">CHAN_MAY_LENG@NPARKS.GOV.SG</span>
+                                                or
+                                                <span style="color:blue">NPARKS_GDP@NPARKS.GOV.SG</span>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <cn2-version-footer></cn2-version-footer>
+        <cn2-fixed-footer></cn2-fixed-footer>
+    </div>
+</body>
+
+</html>

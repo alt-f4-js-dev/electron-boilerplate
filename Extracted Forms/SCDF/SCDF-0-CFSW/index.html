@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <title>SCDF-0-CSFW</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2switchbutton.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head id="certTitle" title="CERTIFICATION FOR FIRE SAFETY WORKS FOR BUILDING PLAN
+    &LT;BR&GT;[Regulation 17 of Fire Safety (Building and Pipeline Fire Safety) Regulations 2008]"
+    style="margin-top: 20px; width: 180px;">
+  </cn2-master-head>
+  <input type="hidden" id="member_id" name="member_id" />
+  <input type="hidden" id="form_validated" name="form_validated" />
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p>
+          <b>For enquiries related to forms, please contact the following:</b>
+        </p>
+        <p><span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">
+                  FSSD (BP, ME Plans, MAA, Waiver& Consultation)
+                </td>
+                <td>TAN_Chung_Yee@scdf.gov.sg</td>
+                <td>68481457</td>
+                <td>Submissions</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>62800000</td>
+                <td>E-Payment / Status Of Application</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Projects"></cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars of Certification"></cn2-nav-button>
+        <cn2-nav-button id="navbtn4" target="page4" page-number="4" label="Particulars of SCDF Approved BP Plans">
+        </cn2-nav-button>
+        <cn2-nav-button id="navbtn5" target="page5" page-number="5"
+          label="Particulars of Architect/Professional Engineer for BP Plan">
+        </cn2-nav-button>
+        <cn2-nav-button target="page6" page-number="6"
+          label="Certification by Qualified Persons/Professional Engineers/Fire Safety Engineer">
+        </cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" no-label inline="7" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To:</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-select id="Addr10" options="FSSB:FSSB" disabled hidden></cn2-select>
+                        <cn2-textarea no-label inline="7" id="Addr20" disabled>
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>
+                This Form shall be completed and digitally signed by the
+                Qualified Person (QP) and Professional Engineer wherever
+                applicable.
+              </li>
+              <li>
+                It may take you 5 minutes to complete this form.
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Projects</h2>
+
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">
+                    Project Reference Number
+                  </td>
+                  <td>
+                    <cn2-textbox id="Project_Project_Ref_No10" mandatory uppercase maxlength="50" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    Project Title
+                  </td>
+                  <td>
+                    <cn2-textarea id="Project_Title10" mandatory maxlength="1000" no-label disabled>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    Location Description [Include Lot/Plot, MK/TS, House No.,
+                    Building Address and Road information]
+                  </td>
+                  <td>
+                    <cn2-textarea id="Project_Location_Description10" mandatory maxlength="1024" no-label disabled>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Certifications*</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">
+                    Fire Safety Work Certification Type
+                  </td>
+                  <td>
+                    <cn2-select id="PartOfCert_FireSafeWorkCert10" no-label mandatory
+                      event-change="setCertTitle(this); populateApprovePlans(this)" webservice
+                      options="Certification for Fire Safety Works for Building Plan:Certification for Fire Safety Works for Building Plan,Certification for Fire Safety Works for Fire Protection Plan:Certification for Fire Safety Works for Fire Protection Plan,Certification for Fire Safety Works for Mechanical Ventilation/Air-Conditioning Plan:Certification for Fire Safety Works for Mechanical Ventilation/Air-Conditioning Plan,Certification for Fire Safety Works for Performance Based Plan:Certification for Fire Safety Works for Performance Based Plan">
+                    </cn2-select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page4">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>
+              Part 1 - Particulars of SCDF Approved
+              <span id="planAcrro">BP</span> Plans*
+            </h2>
+            <div class="mls-espro-form-fields row pt-2">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td width="10%"></td>
+                      <td width="40%" style="text-align: center;">
+                        <span id="planAcrro2">BP</span> Plan Nos.
+                      </td>
+                      <td width="35%" style="text-align: center;">
+                        Approved Dates
+                      </td>
+                      <td width="15%">
+                        <cn2-textbox id="PartOfFSSBAppr_A1" hidden disabled></cn2-textbox>
+                        <cn2-textbox id="PartOfFSSBAppr_B1" hidden disabled></cn2-textbox>
+                        <cn2-textbox id="PartOfFSSBAppr_C1" hidden disabled></cn2-textbox>
+                        <cn2-textbox id="PartOfFSSBAppr_D1" hidden disabled></cn2-textbox>
+                        <cn2-textbox id="PartOfArchProf_D1" hidden disabled></cn2-textbox>
+                        <cn2-textbox id="PartOfArchProf_C1" hidden disabled></cn2-textbox>
+                        <cn2-textbox id="PartOfProfEngi_A1" hidden disabled></cn2-textbox>
+                        <cn2-textbox id="PartOfProfEngi_B1" hidden disabled></cn2-textbox>
+                        <cn2-textbox id="PartOfProfEngi_C1" hidden disabled></cn2-textbox>
+                        <cn2-textbox id="PartOfProfEngi_D1" hidden disabled></cn2-textbox>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="mls-espro-form-fields row" id="particularsBPForm">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12" id="A1" particularsBPForm parent>
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td width="10%"><label id="labelNo">1</label></td>
+                      <td width="40%">
+                        <cn2-select id="PartOfArchProf_A1" mandatory onfocusout="validateApprovePlans(this);"
+                          scdfPlanNos event-change="loadDate(this);" event-blur="checkTemplateValid(this)" webservice
+                          prefix="PartOfArchProf_A" suffix="" no-label inline maxlength="15" group-id="partOfArch1"
+                          uppercase>
+                        </cn2-select>
+                      </td>
+                      <td width="35%">
+                        <cn2-datefield onfocusout="validateApprovePlans(this);" id="PartOfArchProf_B1"
+                          prefix="PartOfArchProf_B" suffix="" no-label inline mandatory>
+                        </cn2-datefield>
+                      </td>
+                      <td width="15%">
+                        <cn2-button label="Delete" id="delete1A" class="deleteBtn" prefix="delete" suffix="A" disabled
+                          danger
+                          event-click="removeDuplicate(this.id,'A1','particularsBPForm','#labelNo');disableDelete('particularsBPForm'); PartOfArchProf_change('particularsBPForm') ; PartOfArchProf2_change('particularsBPForm'); PartOfArchProf3_change('particularsBPForm'); ">
+                        </cn2-button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class=" mls-espro-form-fields row pt-2">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <cn2-button label="Add" cn2-array-group="particularsBPForm" cn2-array-group-id="PartOfArchProf"
+                  cn2-array-group-enabled
+                  event-click="insertDuplicate('particularsBPForm','A1','#labelNo'); disableDelete('particularsBPForm'); removeValidations('particularsBPForm');checkTemplateValid(this);">
+                </cn2-button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page5">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>
+              <span id="prtclrsId">Part 2 - Particulars of Architect/Professional Engineer for
+                BP Plan</span>
+            </h2>
+
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td width="35%">
+                    SID
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_SID_QP10" uppercase maxlength="64" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    Name*
+                  </td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_QP10" no-label data-options="qpDropdown10" mandatory
+                      event-change="loadDropDownDetails(this); nricMasking(Member_IC_Passport_No_QP10_mask); clearUenFirm('Members_UEN_QP10', 'Member_QP_Firm_Name_10')">
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    Role in Project
+                  </td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Member_Role_Code_Desc_QP10" uppercase maxlength="64" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    Registration No.
+                  </td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Professional_No_QP10" maxlength="10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr hidden nricUnmasked>
+                  <td width="35%">
+                    NRIC/Passport No.
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_QP10" uppercase maxlength="15" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr nricMasked>
+                  <td width="35%">
+                    NRIC/Passport No.
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_IC_Passport_No_QP10_mask" uppercase maxlength="15" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    Firm Name
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_QP_Firm_Name_10" uppercase maxlength="128" no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    Address
+                  </td>
+                  <td>
+                    <cn2-textarea id="Member_Address_QP10" uppercase no-label maxlength="1024" disabled>
+                    </cn2-textarea>
+                    <cn2-textbox id="Member_Address_Type_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Hse_Blk_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Bldg_Name_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Level_No_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Unit_No_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Road_Code_Desc_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_Postal_Code_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine1_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine2_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine3_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                    <cn2-textbox id="Member_Address_AddressLine4_QP10" no-label disabled hidden>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    ACRA UEN
+                  </td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_QP10" uppercase no-label template="#########@" maxlength="10"
+                      event-blur="uenValidate(this)">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    Telephone No.
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_QP10" no-label maxlength="15" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    Email Address
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_QP10" uppercase maxlength="100" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page6">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>
+              Part 3 - Certification by Qualified Persons/Professional
+              Engineers/Fire Safety Engineer
+            </h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td style="text-align: justify;">
+                        I hereby certify that the fire safety works for the
+                        above project number under SCDF approved plan numbers
+                        given in this form, have been completed in accordance
+                        with the Code for Fire Precautions in Buildings, Fire
+                        Safety Act and its Regulations and relevant Codes of
+                        Practice.
+                        <p style="text-align: left;">
+                          Please Select Year of Fire Code
+                          Compliance&nbsp;<cn2-select id="POPUP1" options="2013:2013,2018:2018" no-label inline="3">
+                          </cn2-select>
+                        </p>
+                      </td>
+                      <td width="1%">
+                        <cn2-checkbox id="CertByQualPers_IHereCertThat10"></cn2-checkbox>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-fixed-footer></cn2-fixed-footer>
+    <cn2-version-footer></cn2-version-footer>
+  </div>
+</body>
+
+</html>

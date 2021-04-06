@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <title>BCA-BE-APPLN-REGN_AC_SAC_ACO</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2switchbutton.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <cn2-master-head title="APPLICATION AS AN ACCREDITED CHECKER&lt;br&gt; [Cap 29 of the Building Control Act]">
+  </cn2-master-head>
+  <input type="hidden" name="member_id" id="member_id">
+  <input type="hidden" name="form_validated" id="form_validated">
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p>
+          <b>For enquiries related to forms, please contact the following:</b>
+        </p>
+        <p><span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">BCA (ST)</td>
+                <td>wai_hui_ling@bca.gov.sg</td>
+                <td>68044609</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>chang_heng_choy@bca.gov.sg</td>
+                <td>68044646</td>
+                <td>Policies</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button id="navPage1" target="page1" page-number="1" label="Important Notes"></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Application Type"></cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars"></cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4" label="Declaration"></cn2-nav-button>
+        <cn2-nav-button target="page5" hidden page-number="5" label="Registration Fees"></cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px;">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="20%">
+                    <cn2-textbox id="Date10" no-label inline="6" field-name="Date under Important Notes" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To:</b>
+                  </td>
+                  <td width="20%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-select mandatory event-change="ToAgency_id_change(this);" no-label inline="6"
+                          field-name="To dropdown under Important Notes" id="Addr10"
+                          options="Building and Construction Authority:BCA,Defence Science & Technology Agency:DSTA">
+                        </cn2-select>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea id="Addr20" no-label inline="6" disabled style="height:158px;"
+                          field-name="To textarea under Important Notes">
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" hidden id="firstInstructions">
+            <h2>Instructions</h2>
+            <table class="table table-borderless table-sm mls-intro-list">
+              <tbody>
+                <tr>
+                  <td width="1%">1.</td>
+                  <td>
+                    A copy of Professional Liability Insurance of at least
+                    $0.5 million is to be attached.
+                  </td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>
+                    A fee of $150 has to be paid to BCA during application.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" hidden id="secondInstructions">
+            <h2>Instructions</h2>
+            <table class="table table-borderless table-sm mls-intro-list">
+              <tbody>
+                <tr>
+                  <td width="1%">1.</td>
+                  <td>
+                    A copy of Professional Liability Insurance of at least $2
+                    million is to be attached.
+                  </td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>
+                    A copy of ISO 9001 certification is to be attached.
+                  </td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>
+                    The organisation must have no less than one AC, two other
+                    PEs, and two other civil or structural engineers with
+                    qualifications that are eligible to be registered as a
+                    professional engineer.
+                  </td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>
+                    Registration fee is $150 for Accredited Checking
+                    Organisation and $150 per Accredited Checker to be
+                    registered in the Accredited Checking Organization.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mls-espo-right-inner-container borderchecking" id="importantNotesAC">
+            <h2>Important Notes for Application</h2>
+            <table class="table table-borderless table-sm mls-intro-list">
+              <tbody>
+                <tr>
+                  <td width="1%">1.</td>
+                  <td>
+                    This form is to be used by a Professional Engineer who is
+                    applying to be an Accredited Checker for the first time.
+                  </td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>
+                    Applicant should have after registration as a
+                    PE(civil/structural), practical experience in the design
+                    and construction of buildings in Singapore at a
+                    professional level for a period not less than 10 years.
+                  </td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>
+                    Applicant should have experience in the design and
+                    supervision of major complex structures such as long-span
+                    bridges, viaducts, structures with unconventional or
+                    curvilinear geometry e.g. dome or arch-shaped structures,
+                    and/or high-rise buildings, preferably 10-storey and
+                    above. In addition, applicant should also have experience
+                    in the design and supervision of precast, prestressed and
+                    steel structures.
+                  </td>
+                </tr>
+                <tr>
+                  <td>4.</td>
+                  <td>
+                    Applicant must sign as the project QP and the project must
+                    be completed before his/her experience can be recognised.
+                  </td>
+                </tr>
+                <tr>
+                  <td>5.</td>
+                  <td>
+                    Overseas design experience in highrise buildings must be
+                    substantiated with proper documents and certifications to
+                    prove that the applicant did the actual structural design.
+                  </td>
+                </tr>
+                <tr>
+                  <td>6.</td>
+                  <td>
+                    The Commissioner of Building Control may require the
+                    applicant to undergo an interview to determine whether the
+                    applicant has acquired the requisite practical experience.
+                  </td>
+                </tr>
+                <tr>
+                  <td>7.</td>
+                  <td>
+                    Applicant will be notified on the outcome of the
+                    application. If you are successful you can register either
+                    as an Accredited Checker or as Accredited Checker in an
+                    Accredited Checking Organisation provided you fulfill the
+                    other necessary requirements.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mls-espo-right-inner-container borderchecking" hidden id="importantNotesSAC">
+            <h2>Important Notes for Application</h2>
+            <table class="table table-borderless table-sm mls-intro-list">
+              <tbody>
+                <tr>
+                  <td>1.</td>
+                  <td>
+                    This form is to be used by a Professional Engineer who is
+                    applying to be a Specialist Accredited Checker for the
+                    first time.
+                  </td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>
+                    Applicant should refer to the attached GUIDELINES on the
+                    requirements for the application.
+                  </td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>
+                    Applicant will be notified on the outcome of the
+                    application. Successful applicant can proceed to register
+                    as a specialist accredited checker where he is required to
+                    be insured against professional liability for a minimum
+                    sum of not less than $500,000.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Application Type</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">1.</td>
+                  <td>
+                    Application as an Accredited Checker.
+                  </td>
+                  <td width="1%">
+                    <input type="radio" name="appType" id="rbn_ApplFor_RegiOfAC10" onchange="appType(this);"
+                      field-name="Application as an Accredited Checker under Application Type" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>
+                    Application as a Specialist Accredited Checker.
+                  </td>
+                  <td>
+                    <input type="radio" name="appType" id="rbn_ApplFor_RegiOfSAC10" onchange="appType(this);"
+                      field-name="Application as a Specialist Accredited Checker under Application Type" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>
+                    Registration of Accredited Checker for Year. <br />
+                    <cn2-textbox disabled id="ApplFor_ReneOfAC_Year10" inline="3" no-label numeric maxlength="4"
+                      field-name="Registration of Accredited Checker for Year textbox under Application Type">
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    <input type="radio" name="appType" id="rbn_ApplFor_ReneOfAC10" onchange="appType(this);"
+                      field-name="Registration of Accredited Checker for Year radio under Application Type" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>4.</td>
+                  <td>
+                    Registration of Specialist Accredited Checker for Year.
+                    <br />
+                    <cn2-textbox disabled id="ApplFor_ReneOfACGEO_Year10" inline="3" no-label numeric maxlength="4"
+                      field-name="Registration of Specialist Accredited Checker for Year textbox under Application Type">
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    <input type="radio" name="appType" id="rbn_ApplFor_ReneOfSAC10" onchange="appType(this);"
+                      field-name="Registration of Specialist Accredited Checker for Year radio under Application Type" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>5.</td>
+                  <td>
+                    Registration of Accredited Checking Organization for
+                    Year.<br />
+                    <cn2-textbox disabled id="ApplFor_RegiOfACO_Year10" inline="3" no-label numeric maxlength="4"
+                      field-name="Registration of Accredited Checking Organization for Year textbox under Application Type">
+                    </cn2-textbox>
+                  </td>
+                  <td>
+                    <input type="radio" name="appType" id="rbn_ApplFor_ReneOfACO10" onchange="appType(this);"
+                      field-name="Registration of Accredited Checking Organization for Year radio under Application Type" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container borderchecking" id="particularsInfo">
+            <h2>Particulars</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden id="particularsAC">
+                  <td colspan="2">
+                    I hereby apply to be registered as Accredited Checker
+                    under the Building Control Act (Cap 29). My particulars
+                    are as follows:-
+                  </td>
+                </tr>
+                <tr hidden id="particularsSAC">
+                  <td colspan="2">
+                    I hereby apply to be registered as Specialist Accredited
+                    Checker under the Building Control Act (Cap 29). My
+                    particulars are as follows:-
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">
+                    Full Name*
+                  </td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Member_Name_PECMEE10" field-name="Full Name under Particulars"
+                      mandatory maxlength="66"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr id="particularsPronoRow">
+                  <td>Identification No.*</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_IC_Passport_No_PECMEE10"
+                      field-name="Identification No. under Particulars" mandatory maxlength="20"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Nationality*</td>
+                  <td>
+                    <cn2-textbox no-label id="Member_Country_PECMEE10" field-name="Nationality under Particulars"
+                      mandatory maxlength="50"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Date of Birth*</td>
+                  <td>
+                    <cn2-datefield mandatory no-label id="ACPart_DateOfBirt10"
+                      field-name="Date of Birth under Particulars" onfocusout="validateDate(this)">
+                    </cn2-datefield>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Home Address*</td>
+                  <td>
+                    <cn2-textarea id="ACPart_HomeAddr10" field-name="Home Address under Particulars" mandatory
+                      maxlength="200" no-label></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Name of Firm*</td>
+                  <td>
+                    <cn2-textarea id="Member_Firm_Name_PECMEE10" field-name="Name of Firm under Particulars" mandatory
+                      maxlength="66" no-label></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Address*</td>
+                  <td>
+                    <cn2-textarea id="Member_Address_PECMEE10" field-name="Firm Address under Particulars" mandatory
+                      maxlength="200" no-label></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address*</td>
+                  <td>
+                    <cn2-textbox mandatory id="Member_Email_Address1_PECMEE10" maxlength="50" no-label
+                      event-blur="checkEmail(this);" placeholder="example@email.com"
+                      field-name="Email Address under Particulars"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Home Telephone No.*</td>
+                  <td>
+                    <cn2-textbox id="ACPart_HomeTel10" maxlength="50" field-name="Home Telephone No. under Particulars"
+                      mandatory no-label numeric maxlength="12">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.*</td>
+                  <td>
+                    <cn2-textbox id="Member_Mobile_No_PECMEE10" field-name="Handphone No. under Particulars" mandatory
+                      maxlength="50" no-label numeric maxlength="12"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Office Telephone No.*</td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_PECMEE10" field-name="Office Telephone No. under Particulars"
+                      mandatory maxlength="50" no-label numeric maxlength="12">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr id="datePEcivil">
+                  <td>Date of Registration as a PE (Civil)*</td>
+                  <td>
+                    <cn2-datefield id="ACPart_DateOfRegiAsPE10"
+                      field-name="Date of Registration as a PE (Civil) under Particulars" mandatory no-label
+                      onfocusout="validateDate(this)">
+                    </cn2-datefield>
+                  </td>
+                </tr>
+                <tr id="PEregNo">
+                  <td>PE Registration No.*</td>
+                  <td>
+                    <cn2-textbox numeric maxlength="10" mandatory id="MemberRole_Professional_No_PECMEE10"
+                      field-name="PE Registration No. under Particulars" no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr id="datePEgeo" hidden>
+                  <td>Date of Registration as a PE (Geo)*</td>
+                  <td>
+                    <cn2-datefield id="SACPart_DateOfRegiAsPEGeo10"
+                      field-name="Date of Registration as a PE (Geo) under Particulars" no-label
+                      onfocusout="validateDate(this)">
+                    </cn2-datefield>
+                  </td>
+                </tr>
+                <tr id="PEregnoGeo" hidden>
+                  <td>PE Registration No.*</td>
+                  <td>
+                    <cn2-textbox numeric maxlength="10" id="MemberRole_Professional_No_PECMEE20"
+                      field-name="PE Registration No. (Geo) under Particulars" no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr id="ACregNo" hidden>
+                  <td>AC Registration No.</td>
+                  <td>
+                    <cn2-textbox numeric maxlength="10" id="ACPart_ACRegiNo10"
+                      field-name="AC Registration No. under Particulars" no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr id="SACregNo" hidden>
+                  <td>SAC Registration No.</td>
+                  <td>
+                    <cn2-textbox numeric maxlength="10" id="MemberRole_Professional_No_ACGEO10"
+                      field-name="SAC Registration No. under Particulars" no-label></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mls-espo-right-inner-container borderchecking" hidden id="particularsACO">
+            <h2>Particulars</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    On behalf of the organisation, I hereby apply to register
+                    it as an Accredited Checking Organisation under the
+                    Building Control Act (Cap 29).
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name of Organization*</td>
+                  <td>
+                    <cn2-textbox no-label id="Part_NameOfOrga10" field-name="Name of Organization under Particulars"
+                      maxlength="100"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address*</td>
+                  <td>
+                    <cn2-textbox no-label id="Part_Addr10" field-name="Address under Particulars" maxlength="200">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN*</td>
+                  <td>
+                    <cn2-textbox event-blur="uenValidate(this);" maxlength="10" template="#########@" no-label
+                      id="Part_UEN10" field-name="UEN under Particulars" maxlength="10"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.*</td>
+                  <td>
+                    <cn2-textbox no-label id="Part_TelNo10" field-name="Telephone No. under Particulars" numeric
+                      maxlength="12"></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mls-espo-right-inner-container borderchecking" hidden id="particularsACO">
+            <h2>Details of ACO</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>ACO Registration No. :</td>
+                  <td>
+                    <cn2-textbox no-label id="Regi_DetaOfACOs_ACORegiNo10"
+                      field-name="ACO Registration No. under Details of ACO"></cn2-textbox>
+                  </td>
+                  <td>Number of ACs :</td>
+                  <td>
+                    <cn2-textbox no-label id="Regi_DetaOfACOs_NumbOfACs10"
+                      field-name="Number of ACs under Details of ACO" disabled></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="stForm">
+              <div id="A1">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <td width="35%">Name of AC*</td>
+                      <td>
+                        <cn2-textbox class="addName" prefix="Regi_DetaOfACOs_NameOfAC" suffix="0"
+                          id="Regi_DetaOfACOs_NameOfAC10" field-name="Name of AC under Details of ACO" no-label
+                          maxlength="66"></cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Email Address of AC*</td>
+                      <td>
+                        <cn2-textbox class="addEmail" prefix="Regi_DetaOfACOs_EmaiAddrOfAC" suffix="0"
+                          id="Regi_DetaOfACOs_EmaiAddrOfAC10" field-name="Email Address of AC under Details of ACO"
+                          no-label maxlength="50" event-blur="checkEmail(this);" placeholder="example@email.com">
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>AC Registration No.*</td>
+                      <td>
+                        <cn2-textbox class="addAcRegNo" prefix="Regi_DetaOfACOs_ACRegiNo" suffix="0"
+                          id="Regi_DetaOfACOs_ACRegiNo10" field-name="AC Registration No. under Details of ACO" no-label
+                          maxlength="10"></cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Handphone No.*</td>
+                      <td>
+                        <cn2-textbox class="addHandno" prefix="Regi_DetaOfACOs_HandPhonNo" suffix="0"
+                          id="Regi_DetaOfACOs_HandPhonNo10" field-name="Handphone No. under Details of ACO" no-label
+                          numeric maxlength="12"></cn2-textbox>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <cn2-button id="delete1A" class="deleteBtn" prefix="delete" suffix="A" style="float: right;"
+                  event-click="removeDuplicate(this.id,'A1','stForm');disableDelete('stForm')" label="Delete" danger
+                  disabled>
+                </cn2-button>
+              </div>
+            </div>
+            <div class="mls-espro-form-fields row pt-2">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <cn2-button label="Add" event-click="insertDuplicate('stForm','A1');disableDelete('stForm')">
+                </cn2-button>
+              </div>
+            </div>
+
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="75%">Total Number of other PEs:*</td>
+                  <td>
+                    <cn2-textbox id="Regi_DetaOfACOs_NoOfOthePE10"
+                      field-name="Total Number of other PEs under Details of ACO" no-label numeric maxlength="3">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Total Number of other civil & structural engineers with
+                    qualifications that are eligible to be registered as a
+                    professional engineer:*
+                  </td>
+                  <td>
+                    <cn2-textbox id="Regi_DetaOfACOs_NumbOfOtheCivi10" no-label numeric maxlength="3"
+                      field-name="Total Number of other civil & structural under Details of ACO"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Details attached in BCA-BE-REGN_ACO_APPENDIX 1.*</td>
+                  <td>
+                    <cn2-checkbox event-change="removeManda(this);" style="float: right;"
+                      id="Regi_DetaOfACOs_DetaAttaInBEV10"
+                      field-name="Details attached in BCA-BE-REGN_ACO_APPENDIX 1 under Details of ACO">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mls-espo-right-inner-container borderchecking" hidden id="particularsACO">
+            <h2>Type of Organisation</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td colspan="2">(Please tick the appropriate box)</td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <cn2-checkbox id="RegiOfACO_TypeOfOrga_LiceCorp10" name="RegiOfACO"
+                      field-name="#Licensed corporation under Type of Organisation" event-change="atLeastOne(this);">
+                    </cn2-checkbox>
+                  </td>
+                  <td>
+                    #Licensed corporation
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox id="RegiOfACO_TypeOfOrga_LicePart10" name="RegiOfACO"
+                      field-name="#Licensed partnership under Type of Organisation" event-change="atLeastOne(this);">
+                    </cn2-checkbox>
+                  </td>
+                  <td>
+                    #Licensed partnership
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox id="RegiOfACO_TypeOfOrga_LiceLimiLiabPart10" name="RegiOfACO"
+                      field-name="#Licensed limited liability partnership under Type of Organisation"
+                      event-change="atLeastOne(this);">
+                    </cn2-checkbox>
+                  </td>
+                  <td>
+                    #Licensed limited liability partnership
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <cn2-checkbox id="RegiOfACO_TypeOfOrga_PartConsWhol10" name="RegiOfACO" field-name="*Partnership consisting wholly of registered professional
+                    engineers under Type of Organisation" event-change="atLeastOne(this);">
+                    </cn2-checkbox>
+                  </td>
+                  <td>
+                    *Partnership consisting wholly of registered professional
+                    engineers
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    *Please submit supporting document such as partnership
+                    agreement or registration with ACRA indicating the names
+                    of the partners.
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    #Please forward a copy of the Licence from Professional
+                    Engineers Board once you receive it.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page4">
+          <div class="mls-espo-right-inner-container borderchecking" id="checklistSAC">
+            <h2>Section I Attachment Checklist</h2>
+            <table class="table table-borderless table-sm">
+              <tbody>
+                <tr>
+                  <td width="1%">1.</td>
+                  <td>
+                    Academic Qualifications: <br />
+                    (See BCA-BE-APPLN_<span id="atta1">AC</span>_APPENDIX 1)*
+                  </td>
+                  <td width="1%">
+                    <cn2-checkbox event-change="removeManda(this)" mandatory checked id="RegiOfAC_AttaChec_AcadQual10"
+                      field-name="Academic Qualifications under Section I Attachment Checklist">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>
+                    Membership of Professional Bodies: <br />(See
+                    BCA-BE-APPLN_<span id="atta2">AC</span>_APPENDIX 1)*
+                  </td>
+                  <td>
+                    <cn2-checkbox event-change="removeManda(this)" mandatory checked
+                      id="RegiOfAC_AttaChec_MembOfProfBodi10"
+                      field-name="Membership of Professional Bodies under Section I Attachment Checklist">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>
+                    Details of Past Employment/Practice: <br />(See
+                    BCA-BE-APPLN_<span id="atta3">AC</span>_APPENDIX 2)*
+                  </td>
+                  <td>
+                    <cn2-checkbox event-change="removeManda(this)" mandatory checked
+                      id="RegiOfAC_AttaChec_DetaOfPastEmpl10"
+                      field-name="Details of Past Employment/Practice under Section I Attachment Checklist">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>4.</td>
+                  <td>
+                    Details of Practical Experience: <br />(See
+                    BCA-BE-APPLN_<span id="atta4">AC</span>_APPENDIX 3)*
+                  </td>
+                  <td>
+                    <cn2-checkbox event-change="removeManda(this)" mandatory checked
+                      id="RegiOfAC_AttaChec_DetaOfPracExpe10"
+                      field-name="Details of Practical Experience under Section I Attachment Checklist"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>5.</td>
+                  <td>
+                    Attach passport photo: (File size not more than 5MB)*
+                  </td>
+                  <td>
+                    <cn2-checkbox event-change="removeManda(this)" mandatory checked
+                      id="RegiOfAC_AttaChec_AttaPassPhot10"
+                      field-name="Attach passport photo under Section I Attachment Checklist"></cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mls-espo-right-inner-container borderchecking" id="checklistSAC">
+            <h2>Section II Declaration</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td colspan="3">
+                    <b>Details of disciplinary proceeding by Professional
+                      Engineers Board</b>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">1.</td>
+                  <td>
+                    I do not have any past or pending disciplinary proceeding
+                    by Professional Engineers Board against me.
+                  </td>
+                  <td>
+                    <input type="radio" onchange="RegiOfAC_Decl_change(this);" name="RegiOfAC_Decl"
+                      id="RegiOfAC_Decl_IDoNotHave10"
+                      field-name="I do not have any past or pending under Section II Declaration" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>
+                    There is past or pending disciplinary proceeding by
+                    Professional Engineers Board against me. The details are
+                    as follows:<span id="fieldAsterisk"></span> <br />
+                    <cn2-textarea disabled id="RegiOfAC_Decl_IHave20" maxlength="4000" no-label inline="6"
+                      field-name="There is past or pending textarea under Section II Declaration">
+                    </cn2-textarea>
+                  </td>
+                  <td>
+                    <input type="radio" onchange="RegiOfAC_Decl_change(this);" name="RegiOfAC_Decl"
+                      id="RegiOfAC_Decl_IHave10"
+                      field-name="There is past or pending radio under Section II Declaration" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>
+                    I hereby declare that all the particulars and information
+                    given in this application form and the appendices attached
+                    are true.*
+                  </td>
+                  <td>
+                    <cn2-checkbox event-change="removeManda(this)" mandatory checked id="RegiOfAC_Decl_IHereDeclThat10"
+                      field-name="I hereby declare that all under Section II Declaration">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>4.</td>
+                  <td>
+                    I have a valid practising certificate issued by
+                    Professional Engineers Board, Singapore.*
+                  </td>
+                  <td>
+                    <cn2-checkbox event-change="removeManda(this)" mandatory checked id="RegiOfAC_Decl_IHaveAValid10"
+                      field-name="I have a valid practising certificate under Section II Declaration">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mls-espo-right-inner-container borderchecking" hidden id="guidelinesSAC"
+            style="margin-bottom:65px;margin-top:-45px;">
+            <h2>
+              Guidelines for Application as a Specialist Accredited Checker
+            </h2>
+            <table class="table table-borderless table-sm">
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    An applicant for registration as a specialist accredited
+                    checker has to meet the following requirements:
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">1.</td>
+                  <td>
+                    Applicant must be registered as a professional engineer in
+                    the specialized branch of geotechnical engineering under
+                    the Professional Engineers Act.
+                  </td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>
+                    Applicant must have:
+                    <table class="table table-borderless table-sm" style="margin-bottom:0;">
+                      <tbody>
+                        <tr>
+                          <td>a)</td>
+                          <td>
+                            after registration as a professional engineer in
+                            the branch of civil engineering, practical
+                            experience at a professional level for a period
+                            not less than 10 years, of which not less than 5
+                            years experience shall be in geotechnical
+                            engineering works in Singapore; or
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>b)</td>
+                          <td>
+                            practical experience in civil or structural
+                            engineering for a period of not less than 15
+                            years, of which not less than 5 years experience
+                            shall be in geotechnical engineering works in
+                            Singapore after registration as a professional
+                            engineer.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>
+                    Applicant must have been involved in projects of
+                    engineering complexity with substantial geotechnical
+                    content which the applicant was responsible for in
+                    exercising independent engineering judgement that can
+                    include design,construction, checking or reviewing
+                    geotechnical works or investigating into geotechnical
+                    failures or problems.
+                  </td>
+                </tr>
+                <tr>
+                  <td>4.</td>
+                  <td>
+                    Applicant should have been involved in any of following
+                    types of project which are of substantial geotechnical
+                    complexity that requires applicant to exercise independent
+                    professional judgement in the area of geotechnical
+                    engineering:
+                    <table class="table table-borderless table-sm" style="margin-bottom:0;">
+                      <tbody>
+                        <tr>
+                          <td width="1%">a)</td>
+                          <td>
+                            foundations of high-rise buildings of more than 30
+                            storeys;
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>b)</td>
+                          <td>
+                            excavation work of depth more than 6 metres;
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>c)</td>
+                          <td>
+                            open face or bored tunnels of more than 2 metres
+                            in diameter;
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>d)</td>
+                          <td>
+                            permanent or temporary stabilisation of slope with
+                            a height of more than 6 metres.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>5.</td>
+                  <td>
+                    The Commissioner of Building Control may require the
+                    applicant to undergo an interview to determine whether the
+                    applicant has acquired the requisite practical experience.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mls-espo-right-inner-container borderchecking" hidden id="declarationACY">
+            <h2>Declaration</h2>
+            <table class="table table-borderless table-sm">
+              <tbody>
+                <tr>
+                  <td colspan="3">I hereby declare that:</td>
+                </tr>
+                <tr>
+                  <td width="1%">(a)</td>
+                  <td>
+                    I will ensure that there is a valid Professional Liability
+                    Insurance of at least $0.5 million for the period of my
+                    registration as an Accredited Checker and this insured sum
+                    will remain available for claim throughout the period of
+                    registration even if any claim has been made.*
+                  </td>
+                  <td>
+                    <cn2-checkbox event-change="removeManda(this);" name="Rene_ACDecl" id="Rene_ACDecl_IWillEnsuThat10"
+                      field-name="I will ensure that under Declaration">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>(b)</td>
+                  <td>
+                    I will undertake work as an Accredited Checker on my own
+                    behalf and will not undertake work as an Accredited
+                    Checker on behalf of an Accredited Checking Organisation.*
+                  </td>
+                  <td>
+                    <cn2-checkbox event-change="removeManda(this);" name="Rene_ACDecl" id="Rene_ACDecl_IWillUndeWork10"
+                      field-name=" I will undertake under Declaration">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>(c)</td>
+                  <td>
+                    I have a valid practising certificate issued by
+                    Professional Engineers' Board, Singapore for the period of
+                    my registration as an Accredited Checker.*
+                  </td>
+                  <td>
+                    <cn2-checkbox event-change="removeManda(this);" name="Rene_ACDecl" id="Rene_ACDecl_IHaveAVali10"
+                      field-name="I have a valid under Declaration">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>(d)</td>
+                  <td>
+                    all the particulars and information given in this form are
+                    true.*
+                  </td>
+                  <td>
+                    <cn2-checkbox event-change="removeManda(this);" name="Rene_ACDecl" id="Rene_ACDecl_AllThePartAnd10"
+                      field-name="all the particulars under Declaration">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mls-espo-right-inner-container borderchecking" hidden id="declarationSACY">
+            <h2>Declaration</h2>
+            <table class="table table-borderless table-sm">
+              <tbody>
+                <tr>
+                  <td colspan="3">I hereby declare that:</td>
+                </tr>
+                <tr>
+                  <td width="1%">(a)</td>
+                  <td>
+                    I will ensure that there is a valid Professional Liability
+                    Insurance of at least $0.5 million for the period of my
+                    registration as a Specialist Accredited Checker and this
+                    insured sum will remain available for claim throughout the
+                    period of registration even if any claim has been made.
+                    Please see attached.*
+                  </td>
+                  <td>
+                    <cn2-checkbox event-change="removeManda(this);" name="Rene_SACDecl"
+                      id="Rene_SACDecl_IWillEnsuThat10" field-name="Professional Liability
+                      Insurance under Declaration"></cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>(b)</td>
+                  <td>
+                    I have a valid practising certificate issued by
+                    Professional Engineers' Board, Singapore for the period of
+                    my registration as a Specialist Accredited Checker.*
+                  </td>
+                  <td>
+                    <cn2-checkbox event-change="removeManda(this);" name="Rene_SACDecl" id="Rene_SACDecl_IHaveAVali10"
+                      field-name="Professional Engineers' Board under Declaration">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>(c)</td>
+                  <td>
+                    all the particulars and information given in this form are
+                    true.*
+                  </td>
+                  <td>
+                    <cn2-checkbox event-change="removeManda(this);" name="Rene_SACDecl"
+                      id="Rene_SACDecl_AllThePartAnd10"
+                      field-name="all the particulars and information under Declaration"></cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" id="declarationACOY" hidden>
+            <h2>Declaration</h2>
+            <table class="table table-borderless table-sm">
+              <tbody>
+                <tr>
+                  <td colspan="3">I hereby declare that:</td>
+                </tr>
+                <tr>
+                  <td width="1%">(a)</td>
+                  <td>
+                    The organisation has a valid Professional Liability
+                    Insurance of at least $2 million for the period of its
+                    registration as an Accredited Checking Organisation and I
+                    will ensure that this insured sum will remain available
+                    for claim throughout the period of registration even if
+                    any claim has been made.*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="Regi_Decl_TheOrgaHasA10" name="Regi_Decl" event-change="removeManda(this);"
+                      field-name="The organisation has a valid under Declaration">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>(b)</td>
+                  <td>
+                    The organisation has a valid ISO 9001 certification.*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="Regi_Decl_TheOrgaHasA20" name="Regi_Decl" event-change="removeManda(this);"
+                      field-name="The organisation has a valid ISO under Declaration">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>(c)</td>
+                  <td>
+                    I will inform and furnish details to the Commissioner of
+                    Building Control on any change in the professional staff
+                    strength stated above.*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="Regi_Decl_IWillInfoAnd10" name="Regi_Decl" event-change="removeManda(this);"
+                      field-name="I will inform and furnish under Declaration">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>(d)</td>
+                  <td>
+                    The ACs and PEs named above would only undertake work in
+                    the above Accredited Checking Organisation.*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="Regi_Decl_TheACAndPE10" name="Regi_Decl" event-change="removeManda(this);"
+                      field-name="The ACs and PEs named above under Declaration">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>(e)</td>
+                  <td>
+                    All the particulars and information given in this form are
+                    true.*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="Regi_Decl_AllThePartAnd10" name="Regi_Decl" event-change="removeManda(this);"
+                      field-name="All the particulars and information under Declaration">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>(f)</td>
+                  <td>
+                    I have verified that all the Accredited Checkers and
+                    Professional Engineers listed above have valid practising
+                    certificates issued by Professional Engineers' Board,
+                    Singapore for the period of the registration as an
+                    Accredited Checking Organisation.*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="Regi_Decl_IHaveVeriThat10" name="Regi_Decl" event-change="removeManda(this);"
+                      field-name="I have verified that all under Declaration">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Name of Director/Partner*</td>
+                  <td>
+                    <cn2-textbox id="Regi_Decl_NameOfDirePart10" no-label maxlength="66"
+                      field-name="Name of Director/Partner under Declaration"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Identification No.*</td>
+                  <td>
+                    <cn2-textbox id="Regi_Decl_IdenNo10" no-label maxlength="20"
+                      field-name="Identification No. under Declaration"></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page5">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Registration Fees</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td colspan="2">Indicate Payment Mode :-</td>
+                </tr>
+                <tr>
+                  <td width="35%">
+                    <input type="radio" name="" id="PaymMode_ePay10" onchange="PaymMode_ePay10_change(this);"
+                      field-name="Indicate Payment Mode under Registration Fees" />
+                    &nbsp;ePayment
+                  </td>
+                  <td>
+                    Please proceed to make ePayment after your e-Submission at
+                    <a style="cursor:pointer;"
+                      onclick="ipcRenderer.send('open-default-browser', 'https://www.bca.gov.sg/ePayment');"><u>
+                        <font color="blue">
+                          https://www.bca.gov.sg/ePayment
+                        </font>
+                      </u></a>
+                    <br /><br />
+                    <cn2-textbox id="PaymMode_ePay_AmouPaid10" event-keypress="ValidateCurrency(event);" maxlength="16"
+                      label="Amount Paid: " inline="5" field-name="Amount Paid under Registration Fees"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">Payer's Detail :-</td>
+                </tr>
+                <tr>
+                  <td width="35%">Name</td>
+                  <td>
+                    <cn2-textbox id="PayeDeta_Name" field-name="Name under Registration Fees" maxlength="90" no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Company Name</td>
+                  <td>
+                    <cn2-textbox id="PayeDeta_CompName" field-name="Company Name under Registration Fees" maxlength="90"
+                      no-label></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Contact No.</td>
+                  <td>
+                    <cn2-textbox id="PayeDeta_ContNo10" field-name="Contact No. under Registration Fees" maxlength="90"
+                      no-label numeric></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td>
+                    <cn2-textbox id="PayeDeta_Emai10" field-name="Email under Registration Fees"
+                      event-blur="checkEmail(this);" placeholder="example@email.com" maxlength="90" no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Remarks (if any)</td>
+                  <td>
+                    <cn2-textbox id="PayeDeta_Rema10" field-name="Remarks under Registration Fees" maxlength="90"
+                      no-label></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <cn2-version-footer></cn2-version-footer>
+    <cn2-fixed-footer></cn2-fixed-footer>
+  </div>
+</body>
+
+</html>

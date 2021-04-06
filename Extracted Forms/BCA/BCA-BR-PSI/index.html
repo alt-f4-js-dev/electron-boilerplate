@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <title>BCA-BR-PSI</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2switchbutton.js"></script>
+  <script src="index.js"></script>
+</head>
+
+<body saved style="visibility: visible; opacity: 1;">
+  <cn2-master-head title="APPOINTMENT OF STRUCTURAL ENGINEER &lt;br&gt;The Building Control Act (Cap 29) [Section 28]"
+    agency="logo.png">
+  </cn2-master-head>
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p><b>For enquiries related to forms, please contact the following:</b></p>
+        <p> <span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>BCA(BP) &amp; (TOP)</td>
+                <td>bca_enquiry@bca.gov.sg</td>
+                <td>1800-3425222</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td rowspan="3">BCA (Buildable Design and Constructability)</td>
+                <td>kong_chew_kwek@bca.gov.sg</td>
+                <td>68044228</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>terence_teo@bca.gov.sg</td>
+                <td>68044231</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>chin_kim_hong@bca.gov.sg</td>
+                <td>68044234</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td rowspan="2">BCA(ST)</td>
+                <td>wai_hui_ling@bca.gov.sg</td>
+                <td>68044609</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>chang_heng_choy@bca.gov.sg</td>
+                <td>68044646</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td rowspan="2">BCA (CD Shelter)</td>
+                <td>lee_pheck_hoon@bca.gov.sg</td>
+                <td>68044410</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>yeo_keng@bca.gov.sg</td>
+                <td>68044416</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>BCA (Transit Shelter) </td>
+                <td>Tan Wee Kian</td>
+                <td>63961408</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td rowspan="4">BCA (Minimum Environmental Sustainability Std for Existing Bldgs &amp;
+                  Periodic Energy
+                  Audit)</td>
+                <td>aloysius_aw@bca.gov.sg</td>
+                <td>68044705</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>joseph_hong@bca.gov.sg</td>
+                <td>68044699</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>wee_kai_siong@bca.gov.sg</td>
+                <td>68044701</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>yong_siew_hwa@bca.gov.sg</td>
+                <td>68044715</td>
+                <td>Policies</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <input type="hidden" id="member_id" name="member_id" />
+  <input type="hidden" id="form_validated" name="form_validated" />
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu" style="height: 566px;">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions and Application Type">
+        </cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Building">
+        </cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars of Owner / Management Corporation">
+        </cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4" label="Particulars and Declaration by Qualified Person">
+        </cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page" style="height: 566px;">
+        <div id="page1" mandatory-fields-count="0" style="display: block;">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" field-name="Date under Instructions" no-label inline="6" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To: *</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-select no-label inline="6" id="Addr10" options="Building and Construction Authority:BCA"
+                          field-name="To dropdown under Instructions" event-change="ToAgency_id_change(this)" disabled>
+                        </cn2-select>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea id="Addr20" field-name="To textarea under Instructions" no-label inline="6"
+                          disabled style="height: 110px;">
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list" id="AppoOfStruEngi_tableList_id">
+              <li>
+                This form is to be digitally signed by the Qualified Person
+                appointed by the Owner or Management Corporation. In addition,
+                he/she is to submit a digitally signed scanned copy of the
+                appointment form BCA-BR-PSI (Form D2), manually signed by all
+                parties concerned.
+              </li>
+              <li>
+                This form may take 2-3 mins to complete.
+              </li>
+            </ol>
+            <ol class="mls-intro-list" id="AppoOfStruEngiExc_tableList_id" hidden>
+              <li>
+                This form is to be digitally signed by the appointed Qualified
+                Person.
+              </li>
+              <li>
+                This form may take you 1-2 mins to complete.
+              </li>
+            </ol>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 65px;">
+            <h2>Application Type</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">1.</td>
+                  <td>Appointment of Structural Engineer (Form D2).</td>
+                  <td width="1%"><input id="ApplType_ApptStruEngg"
+                      field-name="Appointment of Structural Engineer under Application Type" type="radio"
+                      name="ApplType_name" onchange="ApplType_change(this)" /></td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>
+                    Visual Inspection Certification (for Non-Structural or
+                    Minor Structural Defects) (Form D3).
+                  </td>
+                  <td><input id="ApplType_VIT_NonStru"
+                      field-name="Visual Inspection Certification Non-Structural under Application Type" type="radio"
+                      name="ApplType_name" onchange="ApplType_change(this)" /></td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>
+                    Visual Inspection Certification (for Structural Defects
+                    Suspected in Localised Areas/ Whole Building) (Form D4).
+                  </td>
+                  <td><input id="ApplType_VIT_Stru"
+                      field-name="Visual Inspection Certification Structural under Application Type" type="radio"
+                      name="ApplType_name" onchange="ApplType_change(this)" /></td>
+                </tr>
+                <tr>
+                  <td>4.</td>
+                  <td>
+                    Structural Inspection Certification (for Defects Suspected
+                    which are of No Structural Significance) (Form D5).
+                  </td>
+                  <td><input id="ApplType_SIC_NonStru"
+                      field-name="Structural Inspection Certification Non Structural under Application Type"
+                      type="radio" name="ApplType_name" onchange="ApplType_change(this)" /></td>
+                </tr>
+                <tr>
+                  <td>5.</td>
+                  <td>
+                    Structural Inspection Certification (for Defects Suspected
+                    which are of Structural Significance) (Form D6).
+                  </td>
+                  <td><input id="ApplType_SIC_Stru"
+                      field-name="Structural Inspection Certification Structural under Application Type" type="radio"
+                      name="ApplType_name" onchange="ApplType_change(this)" /></td>
+                </tr>
+                <tr>
+                  <td>6.</td>
+                  <td>
+                    Visual Inspection Certification (for Supervision of
+                    Remedial Works) (Form D7).
+                  </td>
+                  <td><input id="ApplType_VisInspCert"
+                      field-name="Visual Inspection Certification under Application Type" type="radio"
+                      name="ApplType_name" onchange="ApplType_change(this)" /></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page2" mandatory-fields-count="1" style="display: none;">
+          <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom: 65px;">
+            <h2>Particulars of Building</h2>
+            <div class="mls-espro-form-fields row">
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <td width="1%">
+                         
+                      </td>
+                      <td colspan="3">
+                        <div class="mls-espro-form-fields row">
+                          <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                            <input type="radio" name="PartOfBuil_name" id="PartOfBuil_SingOwne10"
+                              field-name="Single Owner under Particulars of Building"
+                              onchange="PartOfBuil_change(this);" />
+                          </div>
+                          <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                            Single Owner / Management Corporation
+                          </div>
+                        </div>
+                        <div class="mls-espro-form-fields row pt-2">
+                          <div class="col-xs-1 col-sm-1 col-lg-1 col-md-1">
+                            <input type="radio" name="PartOfBuil_name" id="PartOfBuil_MultOwne10"
+                              field-name="Multiple Owner under Particulars of Building"
+                              onchange="PartOfBuil_change(this);" />
+                          </div>
+                          <div class="col-xs-11 col-sm-11 col-lg-11 col-md-11">
+                            Multiple Owners
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="align-middle text-center">
+                        <input type="radio" name="PartOfBuilSMSMB_name" id="PartOfBuil_PSIRefe10"
+                          field-name="PSI Reference under Particulars of Building"
+                          onchange="PartOfBuilSMSMB_change(this);" />
+                        <input type="radio" id="RADIO1" field-name="RADIO1 hidden under Particulars of Building"
+                          hidden />
+                        <input type="radio" id="RADIO3" field-name="RADIO3 hidden under Particulars of Building"
+                          hidden />
+                      </td>
+                      <td width="20%">
+                        PSI Reference <br />
+                        <span style="font-size: 13px;">Periodic Structural Inspection</span>
+                      </td>
+                      <td width="1%"><b>SM</b></td>
+                      <td>
+                        <div class="mls-espro-form-fields row">
+                          <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12" id="smSingle_fields">
+                            <cn2-textbox id="PartOfBuil_NotiRefeNo10"
+                              field-name="Periodic Structural Inspection1 under Particulars of Building" numeric
+                              event-blur="yearValidation(this,event); validatePsiReference()" no-label inline="2"
+                              maxlength="4" disabled>
+                            </cn2-textbox>
+                             / 
+                            <cn2-textbox id="PartOfBuil_NotiRefeNo20"
+                              field-name="Periodic Structural Inspection2 under Particulars of Building"
+                              event-blur="monthValidation(this,event); validatePsiReference()" numeric no-label
+                              inline="2" maxlength="2" disabled>
+                            </cn2-textbox>
+                             / 
+                            <cn2-textbox id="PartOfBuil_NotiRefeNo30"
+                              field-name="Periodic Structural Inspection3 under Particulars of Building"
+                              event-blur="validatePsiReference()" numeric no-label inline="2" maxlength="4" disabled>
+                            </cn2-textbox>
+                          </div>
+                        </div>
+                        <div class="mls-espro-form-fields row" id="smMultiple_fields" hidden>
+                          <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                            <cn2-textbox id="PartOfBuil_NotiRefeNo40"
+                              field-name="Periodic Structural Inspection4 under Particulars of Building"
+                              event-blur="yearValidation(this,event); validatePsiReference()" numeric no-label
+                              inline="2" maxlength="4" disabled>
+                            </cn2-textbox>
+                             / 
+                            <cn2-textbox id="PartOfBuil_NotiRefeNo50"
+                              field-name="Periodic Structural Inspection5 under Particulars of Building"
+                              event-blur="monthValidation(this,event); validatePsiReference()" numeric no-label
+                              inline="2" maxlength="2" disabled>
+                            </cn2-textbox>
+                             / 
+                            <cn2-textbox id="PartOfBuil_NotiRefeNo60"
+                              field-name="Periodic Structural Inspection6 under Particulars of Building"
+                              event-blur="validatePsiReference()" numeric no-label inline="2" maxlength="4" disabled>
+                            </cn2-textbox>
+                             / 
+                            <cn2-textbox id="PartOfBuil_NotiRefeNo70"
+                              field-name="Periodic Structural Inspection7 under Particulars of Building"
+                              event-change="PartOfBuil_NotiRefeNo70_change(this)" event-blur="validatePsiReference()"
+                              numeric no-label inline="2" maxlength="3" disabled>
+                            </cn2-textbox>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><input type="radio" id="PartOfBuil_SMBRefe10"
+                          field-name="SMB Reference under Particulars of Building" name="PartOfBuilSMSMB_name"
+                          onchange="PartOfBuilSMSMB_change(this);" />
+                      </td>
+                      <td>
+                        SMB Reference<br />
+                        <span style="font-size:13px">Batch PSI Notice</span>
+                      </td>
+                      <td><b>SMB</b></td>
+                      <td>
+                        <cn2-textbox id="PartOfBuil_SMBRefe20" field-name="SMB1 under Particulars of Building"
+                          event-blur="yearValidation(this,event)" numeric no-label inline="2" maxlength="4" mandatory>
+                        </cn2-textbox>
+                         / 
+                        <cn2-textbox id="PartOfBuil_SMBRefe30" field-name="SMB2 under Particulars of Building"
+                          event-blur="monthValidation(this,event)" numeric no-label inline="1" maxlength="2" mandatory>
+                        </cn2-textbox>
+                         / 
+                        <cn2-textbox id="PartOfBuil_SMBRefe40" field-name="SMB3 under Particulars of Building" numeric
+                          no-label inline="2" maxlength="4" mandatory>
+                        </cn2-textbox>
+                         / 
+                        <cn2-textbox id="PartOfBuil_SMBRefe50" field-name="SMB4 under Particulars of Building"
+                          event-change="PartOfBuil_SMBRefe50_change(this)" numeric no-label inline="2" maxlength="4">
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">Building Address *</td>
+                      <td colspan="2">
+                        <cn2-textarea id="Project_Location_Description10"
+                          field-name="Building Address under Particulars of Building" mandatory no-label
+                          maxlength="250">
+                        </cn2-textarea>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">Name of Building <br />(if applicable)</td>
+                      <td colspan="2">
+                        <cn2-textbox id="ProjectAddress_Building_Name10"
+                          field-name="Name of Building under Particulars of Building" no-label maxlength="66">
+                        </cn2-textbox>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page3" mandatory-fields-count="3" style="display: none;">
+          <div class="mls-espo-right-inner-container" style="margin-bottom: 65px;">
+            <h2>Section 1 Particulars of Owner / Management Corporation</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="25%">
+                    Name
+                  </td>
+                  <td>
+                    <cn2-textbox id="Member_Member_Name_OWNMCST10" field-name="Name under Section 1 Particulars"
+                      no-label maxlength="32400">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td> </td>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="mls-espro-form-fields row">
+                          <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <input type="radio" id="PartOfTheOWNER_OWNER_radio"
+                              field-name="Owner under Section 1 Particulars" name="PartOfTheOWNER_name"
+                              onchange="PartOfTheOWNER_change(this)" />
+                          </div>
+                          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                            Owner
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="mls-espro-form-fields row">
+                          <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <input type="radio" id="PartOfTheOWNER_MSCT_radio"
+                              field-name="MCST under Section 1 Particulars" name="PartOfTheOWNER_name"
+                              onchange="PartOfTheOWNER_change(this)" />
+                          </div>
+                          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                            MCST <span id="mcstno"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="PartOfTheOWNER_MCSTNo10_hide" hidden>
+                        <cn2-textbox id="PartOfTheOWNER_MCSTNo10" field-name="MCST No. under Section 1 Particulars"
+                          no-label disabled>
+                        </cn2-textbox>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox id="Member_Firm_Name_OWNMCST10" field-name="Firm Name under Section 1 Particulars"
+                      no-label maxlength="32400">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_OWNMCST10" field-name="UEN under Section 1 Particulars" no-label
+                      maxlength="10" event-change="UENchange(this)">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address *</td>
+                  <td>
+                    <cn2-textarea id="Member_Address_OWNMCST10" field-name="Address under Section 1 Particulars"
+                      mandatory no-label maxlength="32400">
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No. *</td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_OWNMCST10" field-name="Telephone No. under Section 1 Particulars"
+                      no-label maxlength="32400" mandatory numeric>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Mobile_No_OWNMCST10" field-name="Handphone No. under Section 1 Particulars"
+                      no-label maxlength="32400" numeric>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address *</td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_OWNMCST10"
+                      field-name="Email Address under Section 1 Particulars" no-label maxlength="32400"
+                      event-change="Member_Email_Address1_OWNMCST10_change(this)" placeholder="name@example.com"
+                      mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page4" mandatory-fields-count="7" style="display: none;">
+          <div class="mls-espo-right-inner-container" id="particursOfQualifiedPers">
+            <h2>Particulars of Qualified Person</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="25%">Name *</td>
+                  <td>
+                    <cn2-textbox id="Member_Member_Name_PE10" field-name="Name under Particulars of Qualified Person"
+                      no-label maxlength="32400" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No. *</td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Professional_No_PE10"
+                      field-name="Registration No. under Particulars of Qualified Person" maxlength="5" numeric
+                      mandatory no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox id="Member_Firm_Name_PE10" field-name="Firm Name under Particulars of Qualified Person"
+                      maxlength="32400" no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_PE10" field-name="UEN under Particulars of Qualified Person"
+                      maxlength="10" event-change="UENchange(this)" no-label>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Address *
+                  </td>
+                  <td>
+                    <cn2-textarea id="Member_Address_PE10" field-name="Address under Particulars of Qualified Person"
+                      mandatory no-label maxlength="32400">
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No. *</td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_PE10"
+                      field-name="Telephone No. under Particulars of Qualified Person" mandatory no-label
+                      maxlength="32400" numeric></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Mobile_No_PE10"
+                      field-name="Handphone No. under Particulars of Qualified Person" no-label maxlength="32400"
+                      numeric>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address *</td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_PE10"
+                      field-name="Email Address under Particulars of Qualified Person" no-label maxlength="32400"
+                      event-change="Member_Email_Address1_OWNMCST10_change(this)" placeholder="name@example.com"
+                      mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container" style="margin-bottom: 65px;">
+            <h2>Declaration By Qualified Person *</h2>
+            <table class="table table-borderless" id="AppoOfStruEngi_DeclTable_id">
+              <tbody>
+                <tr>
+                  <td width="1%" style="padding-top: 19px">
+                    (1)
+                  </td>
+                  <td>
+                    I confirm that I have been appointed by the above
+                    Owner / Management corporation to carry out a  
+                    <cn2-select id="DeclByQualPers_IConfThatI10"
+                      field-name="I confirm that dropdown1 under Particulars of Qualified Person" no-label inline="4"
+                      disabled
+                      options="Visual Inspection:Visual inspection, Full Structural Investigation:Full structural investigation">
+                    </cn2-select> of the above building and declare that I have no
+                    professional or financial interest in the above building
+                    as required under Section 29 of The Building Control Act
+                    (Cap 29).
+                  </td>
+                  <td width="1%" style="padding-top: 23px">
+                    <cn2-checkbox id="DeclByQualPers_IConfThatI20"
+                      field-name="I confirm that checkbox1 under Particulars of Qualified Person" mandatory checked
+                      event-change="DeclByQualPers_IConfThatI20_change(this); remoMand(this)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-top: 19px">(2)</td>
+                  <td>
+                    I confirm that I will submit the  
+                    <cn2-select id="DeclByQualPers_IConfThatI30"
+                      field-name="I confirm that dropdown2 under Particulars of Qualified Person" no-label inline="4"
+                      disabled
+                      options="visual inspection:visual inspection, full structural inspection:full structural inspection">
+                    </cn2-select>
+                      report to Commissioner of Building Control within 2
+                    months of my appointment.
+                  </td>
+                  <td style="padding-top: 23px">
+                    <cn2-checkbox id="DeclByQualPers_IConfThatI40"
+                      field-name="I confirm that checkbox2 under Particulars of Qualified Person" mandatory checked
+                      event-change="DeclByQualPers_IConfThatI40_change(this); remoMand(this)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-borderless" id="VisuInspCertD3_DeclTable_id" hidden>
+              <tbody>
+                <tr>
+                  <td width="1%" style="padding-top: 19px">I.1</td>
+                  <td class="pl-0">
+                    <span id="span1">
+                      As required under Section 28 of The Building Control Act (Cap 29), I,
+                      Er.
+                    </span>
+                     <cn2-textbox id="DeclByQualPers_AsRequUndeSect10"
+                      field-name="As required under Section 28 textbox under Particulars of Qualified Person"
+                      maxlenght="25" no-label disabled inline="4">
+                    </cn2-textbox> 
+                    <p style="margin-bottom: 2px"></p>
+                    <span id="span2">
+                      have carried out a visual inspection of the above building from
+                    </span>  
+                    <cn2-datefield id="DeclByQualPers_AsRequUndeSect20"
+                      field-name="From Date under Section 28 under Particulars of Qualified Person" no-label
+                      onfocusout="validateDate(this);setMaxDatefield(this,'DeclByQualPers_AsRequUndeSect30')" disabled
+                      style="width: fit-content;display: inline-flex;">
+                    </cn2-datefield>
+                     to 
+                    <cn2-datefield id="DeclByQualPers_AsRequUndeSect30"
+                      field-name="To Date under Particulars of Qualified Person" no-label disabled
+                      onfocusout="validateDate(this);setMinDatefield(this,'DeclByQualPers_AsRequUndeSect20')"
+                      style="width: fit-content;display: inline-flex;">
+                    </cn2-datefield>.
+                  </td>
+                  <td width="1%" style="padding-top: 23px">
+                    <cn2-checkbox id="DeclByQualPers_AsRequUndeSect40"
+                      field-name="As required under Section 28 checkbox under Particulars of Qualified Person"
+                      event-change="DeclByQualPers_AsRequUndeSect40_change(this); remoMand(this)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr id="D3D5tr1" hidden>
+                  <td rowspan="3" group-id="D3D5td1">I.2</td>
+                  <td id="D3td1" hidden>I hereby certify that the following were visible to me during
+                    my inspection:
+                  </td>
+                  <td id="D5td1" hidden><span id="D6span1">I hereby certify that the suspected defects
+                      identified
+                      earlier in the visual
+                      inspection
+                      reported
+                      dated</span>  <cn2-datefield id="DeclByQualPers_IHereCertThat10"
+                      field-name="I hereby certify report date under Section 28 under Particulars of Qualified Person"
+                      onfocusout="validateDate(this)" disabled no-label
+                      style="width: fit-content;display: inline-flex;">
+                    </cn2-datefield> <span id="D6span2">were of no structural
+                      significance.</span>
+                  </td>
+                  <td rowspan="3" group-id="D3D5td1" style="padding-top: 17px">
+                    <cn2-checkbox id="DeclByQualPers_IHereCertThat20"
+                      field-name="I hereby certify that checkbox under Particulars of Qualified Person"
+                      event-change="DeclByQualPers_IHereCertThat20_change(this); remoMand(this)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr group-id="D3tr1" hidden>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        a) Non-structural defects
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2" style="text-indent: 20px;">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-checkbox id="RADIO2" field-name="RADIO2 hidden under Particulars of Qualified Person"
+                          hidden no-label></cn2-checkbox>
+                        <cn2-checkbox id="DeclByQualPers_IHereCertThat_NonStruDefe_RemeWorkAreRequ10"
+                          field-name="Non-structural defects Remedial works are required under Particulars of Qualified Person"
+                          d3cbox event-change="atleastOneD3Checkboxes()" disabled>
+                        </cn2-checkbox>
+                          Remedial works are
+                        required.
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row" style="text-indent: 20px;">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-checkbox id="DeclByQualPers_IHereCertThat_NonStruDefe_NoRemeWorkIs10"
+                          field-name="Non-structural defects No remedial work is required under Particulars of Qualified Person"
+                          event-change="atleastOneD3Checkboxes()" d3cbox disabled>
+                        </cn2-checkbox>
+                          No remedial work is
+                        required.
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr group-id="D3tr1" hidden>
+                  <td>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        b) Minor structural defects
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2" style="text-indent: 20px;">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-checkbox id="DeclByQualPers_IHereCertThat_MinoStruDefe_RemeAndMoniWork10"
+                          field-name="Minor structural defects Remedial and monitoring under Particulars of Qualified Person"
+                          d3cbox event-change="atleastOneD3Checkboxes()" disabled>
+                        </cn2-checkbox>
+                          Remedial and
+                        monitoring
+                        works are required.
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row" style="text-indent: 20px;">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-checkbox id="DeclByQualPers_IHereCertThat_MinoStruDefe_RemeWorkIsRequ10"
+                          field-name="Minor structural defects Remedial work is required under Particulars of Qualified Person"
+                          d3cbox event-change="atleastOneD3Checkboxes()" disabled>
+                        </cn2-checkbox>
+                          Remedial work is
+                        required.
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr id="D5tr2" hidden>
+                  <td>I.3</td>
+                  <td>
+                    <span>In arriving at my conclusion, I confirm that :</span>
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-checkbox id="DeclByQualPers_InArriAtMy_IHaveChecThe10"
+                          field-name="I have checked under Particulars of Qualified Person"
+                          event-change="atleastOneD5Checkboxes()" disabled d5cbox>
+                        </cn2-checkbox>
+                          <span id="D5trtd1">I have
+                          checked
+                          the
+                          structural plans and calculations relating to the above building and
+                          I am
+                          satisfied that there are no inadequacies in the key structural
+                          elements.</span>
+
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-checkbox id="DeclByQualPers_InArriAtMy_IHaveRecoThe10"
+                          field-name="I have reconstructed under Particulars of Qualified Person"
+                          event-change="atleastOneD5Checkboxes()" disabled d5cbox>
+                        </cn2-checkbox>
+                          <span id="D5trtd2">I have
+                          reconstructed the
+                          structural plans and I am satisfied that there are no inadequacies
+                          in
+                          the key structural elements as would be reasonably discovered by
+                          such structural
+                          appraisal.</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_InArriAtMy10"
+                      field-name="In arriving at my conclusion under Particulars of Qualified Person"
+                      event-change="DeclByQualPers_InArriAtMy10_change(this); remoMand(this)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr id="D4tr1" hidden>
+                  <td> I.2</td>
+                  <td>
+                    During my inspection, I have observed defects which are suspected to be of structural significance
+                    in  <cn2-select id="DeclByQualPers_DuriMyInspI10"
+                      field-name="During my inspection dropdown under Particulars of Qualified Person" no-label disabled
+                      inline="4"
+                      options="some localised areas:some localised areas, the whole building:the whole building">
+                    </cn2-select> A full immediate investigation is necessary to ascertain
+                    their effects on the
+                    structure. The localised defects are as follows :<cn2-textarea id="DeclByQualPers_DuriMyInspI20"
+                      field-name="During my inspection textarea under Particulars of Qualified Person" no-label disabled
+                      maxlength="1000">
+                    </cn2-textarea>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_DuriMyInspI30"
+                      field-name="During my inspection checkbox under Particulars of Qualified Person"
+                      event-change="DeclByQualPers_DuriMyInspI30_change(this); remoMand(this)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr id="1_3Span" hidden>
+                  <td><span id="span2_5">I.3</span></td>
+                  <td>
+                    <span id="span3">In support of the above, I submit my report on the visual
+                      inspection of the above
+                      building, duly
+                      prepared and signed as required under the Act.</span>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_InSuppOfThe10"
+                      field-name="In support of the above under Particulars of Qualified Person"
+                      event-change="remoMand(this)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr id="D6tr1" hidden>
+                  <td style="padding-top: 18px">I.4</td>
+                  <td>
+                    The report as attached has been submitted to <cn2-select id="DeclByQualPers_TheRepoAsAtta20"
+                      field-name="The report as attached dropdown under Particulars of Qualified Person" disabled
+                      options="Owner:Owner, Management Corporation:Management Corporation" no-label inline="4">
+                    </cn2-select>  of the building and he has been advised to rectify the
+                    defects immediately.
+                  </td>
+                  <td style="padding-top: 20px">
+                    <cn2-checkbox id="DeclByQualPers_TheRepoAsAtta10"
+                      field-name="The report as attached checkbox under Particulars of Qualified Person"
+                      event-change="DeclByQualPers_TheRepoAsAtta10_change(this);remoMand(this)">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <cn2-textbox id="Version" no-label disabled hidden></cn2-textbox>
+    </div>
+    <cn2-version-footer hidden></cn2-version-footer>
+    <cn2-fixed-footer data-next-page="page2"></cn2-fixed-footer>
+  </div>
+
+
+</body>
+
+</html>

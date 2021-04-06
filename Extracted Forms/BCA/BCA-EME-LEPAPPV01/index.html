@@ -1,0 +1,2353 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <title>BCA-EME-LEPAPPV01</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+  <script>
+    if (typeof module === "object") {
+      window.module = module;
+      module = undefined;
+    }
+  </script>
+  <script src="../cm/resources/assets/js/jquery-3.4.1.min.js"></script>
+  <script src="../cm/resources/assets/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2switchbutton.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+  <script src="index.js"></script>
+
+  <style>
+    #maskID {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      z-index: 1000;
+    }
+
+    #maskID table {
+      position: relative;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <cn2-master-head title="APPLICATION FOR APPROVAL OF LIFT PLANS <br> [Section _ of the Building Control Act]"
+    agency="logo.png">
+  </cn2-master-head>
+  <input type="hidden" name="member_id" id="member_id" />
+  <input type="hidden" name="form_validated" id="form_validated" />
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px;">Help</p>
+      </div>
+      <div class="modal-body">
+        <p>
+          <b>For enquiries related to forms, please contact the following:</b>
+        </p>
+        <p><span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width: auto;">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>BCA(BP) & (TOP)</td>
+                <td>bca_enquiry@bca.gov.sg</td>
+                <td>1800-3425222</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td rowspan="3">
+                  BCA (Buildable Design and Constructability)
+                </td>
+                <td>kong_chew_kwek@bca.gov.sg</td>
+                <td>68044228</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>terence_teo@bca.gov.sg</td>
+                <td>68044231</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>chin_kim_hong@bca.gov.sg</td>
+                <td>68044234</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td rowspan="2">BCA(ST)</td>
+                <td>wai_hui_ling@bca.gov.sg</td>
+                <td>68044609</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>chang_heng_choy@bca.gov.sg</td>
+                <td>68044646</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td rowspan="2">BCA (CD Shelter)</td>
+                <td>lee_pheck_hoon@bca.gov.sg</td>
+                <td>68044410</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>yeo_keng@bca.gov.sg</td>
+                <td>68044416</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>BCA (Transit Shelter)</td>
+                <td>Tan Wee Kian</td>
+                <td>63961408</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td rowspan="4">
+                  BCA (Minimum Environmental Sustainability Std for Existing
+                  Bldgs & Periodic Energy Audit)
+                </td>
+                <td>aloysius_aw@bca.gov.sg</td>
+                <td>68044705</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>joseph_hong@bca.gov.sg</td>
+                <td>68044699</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>wee_kai_siong@bca.gov.sg</td>
+                <td>68044701</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>yong_siew_hwa@bca.gov.sg</td>
+                <td>68044715</td>
+                <td>Policies</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color: #037ebb; color: white;">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Loader -->
+  <div id="maskID" hidden class="text-center align-middle">
+    <table class="table table-borderless mb-0">
+      <tbody>
+        <tr>
+          <td loader class="align-middle p-0">
+            <img src="loader.gif" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions" onblur="checkForMandaPage(this);">
+        </cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Application"
+          onblur="checkForMandaPage(this);"></cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars of Developer"
+          onblur="checkForMandaPage(this);"></cn2-nav-button>
+        <cn2-nav-button target="page4" page-number="4" hidden onblur="checkForMandaPage(this);"></cn2-nav-button>
+        <cn2-nav-button target="page5" page-number="5" hidden onblur="checkForMandaPage(this);"></cn2-nav-button>
+        <cn2-nav-button target="page6" page-number="6" hidden label="Fee Computation" onblur="checkForMandaPage(this);">
+        </cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom: 0px;">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" no-label inline="6" disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To:*</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-select disabled no-label inline="6" options="Building and Construction Authority:BCA"
+                          id="Addr10">
+                        </cn2-select>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea id="Addr20" no-label inline="6" disabled style="height: 150px;">
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>
+                This form is to be digitally signed by the appointed Qualified
+                Person.
+              </li>
+              <li>
+                For Design & Build project, document stating that the Builder
+                is appointing the Qualified Person is to be attached.
+              </li>
+              <li>
+                This form may take 4-6 mins to complete.
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Application</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="250px">
+                    Project Reference Number
+                  </td>
+                  <td>
+                    <cn2-textbox no-label disabled id="Project_Project_Ref_No10"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Project Title
+                  </td>
+                  <td>
+                    <cn2-textarea no-label disabled id="Project_Title10"></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Description of Building Works *
+                  </td>
+                  <td>
+                    <cn2-textarea no-label mandatory maxlength="32400" id="Project_Title20">
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Location Description
+                  </td>
+                  <td>
+                    <cn2-textarea no-label disabled id="Project_Location_Description_Description10">
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Type of Plan *
+                  </td>
+                  <td>
+                    <cn2-select no-label mandatory id="Project_TypeOfPlan10"
+                      event-change="Project_TypeOfPlan10_change(this);autoPopulateField(this, 'typeOfPlan', ['PartOfAppl_PlanType10', 'DeclByAppl_ScopOfMajoARWork10']);"
+                      options="Lift:Lift,Escalator:Escalator,Mechanised Car Parking System:Mechanised Car Parking System">
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Plan Number *
+                  </td>
+                  <td>
+                    <div class="row">
+                      <div class="col-6">
+                        <cn2-textbox no-label id="PartOfAppl_PlanType10" disabled></cn2-textbox>
+                      </div>
+                      <div class="col-6">
+                        <cn2-textbox no-label mandatory numeric maxlength="3" id="PartOfAppl_PlanType20"
+                          event-blur="rangeValue(this, 'planNo', ['1-999']);">
+                        </cn2-textbox>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Classification of Works *
+                  </td>
+                  <td class="pt-0">
+                    <table class="table table-borderless mb-0">
+                      <tbody>
+                        <tr>
+                          <td width="250px" class="pl-0">
+                            New Installations
+                          </td>
+                          <td class="pl-0">
+                            <input type="radio" name="clasOfWork" checked mandatory id="DeclByAppl_ClasOfWork10"
+                              onclick="removeMandaRadio(this, scopOfMajorARWork);" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="pl-0">
+                            Major Alteration Works
+                          </td>
+                          <td class="pl-0">
+                            <input type="radio" name="clasOfWork" checked mandatory id="DeclByAppl_ClasOfWork20"
+                              onclick="removeMandaRadio(this, scopOfMajorARWork);" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="pl-0">
+                            Retention Works
+                          </td>
+                          <td class="pl-0">
+                            <cn2-checkbox no-label id="DeclByAppl_ClasOfWork30">
+                            </cn2-checkbox>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr scopOfMajorARWork hidden>
+                  <td>
+                    Scope of major A/R works *
+                  </td>
+                  <td>
+                    <table liftCheckboxes hidden class="table table-borderless">
+                      <tbody>
+                        <tr>
+                          <td width="1%" class="pl-0">
+
+                            <!-- <cn2-select no-label id="DeclByAppl_ScopOfMajoARWork10" mandatory
+                        event-change="scopOfMajorARWork('toggle');">
+                      </cn2-select> -->
+                            <cn2-checkbox liftchkbox no-label id="DeclByAppl_ScopOfMajoARWork_LiftChk10">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="10%" class="pl-0">
+                            adding, changing or removing any safety component of a lift, <br /> or adding any safety
+                            component
+                            to a lift.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox liftchkbox no-label id="DeclByAppl_ScopOfMajoARWork_LiftChk20">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            adding or changing any programmable electronic systems in safety <br />related applications for lifts (PESSRAL) hardware or software.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox liftchkbox no-label id="DeclByAppl_ScopOfMajoARWork_LiftChk30">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            adding or changing the mass and internal dimensions of a lift car,<br /> including lift car
+                            finishing.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox liftchkbox no-label id="DeclByAppl_ScopOfMajoARWork_LiftChk40">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing the rated load or speed of a lift.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox liftchkbox no-label id="DeclByAppl_ScopOfMajoARWork_LiftChk50">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing the travel distance of a lift.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox liftchkbox no-label id="DeclByAppl_ScopOfMajoARWork_LiftChk60">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing the lift control operation (including changing the software or <br />controller or
+                            type
+                            of driving machine or brakes).
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox liftchkbox no-label id="DeclByAppl_ScopOfMajoARWork_LiftChk70">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing the number, type or size of the hoisting<br /> ropes supporting a lift car or its
+                            counterweight.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox liftchkbox no-label id="DeclByAppl_ScopOfMajoARWork_LiftChk80">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing the size of the guide rails of a lift.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox liftchkbox no-label id="DeclByAppl_ScopOfMajoARWork_LiftChk90">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing the lift landing door system, lift car door system and their control
+                            interfacing<br />(door entrance protection are excluded).
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox liftchkbox no-label id="DeclByAppl_ScopOfMajoARWork_LiftChk100">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing the pit depth and overhead clearances, eg. pit depth, overhead.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox liftchkbox no-label id="DeclByAppl_ScopOfMajoARWork_LiftChk110">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing the design of traction sheave.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox liftchkbox no-label id="DeclByAppl_ScopOfMajoARWork_LiftChk120">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing the roping configuration and compensation system.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox liftchkbox no-label id="DeclByAppl_ScopOfMajoARWork_LiftChk130">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing the number of landings served by the lift car.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="5px" class="pl-0">
+                            <cn2-checkbox liftchkbox no-label id="DeclByAppl_ScopOfMajoARWork_LiftChk140">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing the layout (including dimensions and locations of equipment) of <br />machine room,
+                            hoistway and lift pit.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table escaCheckboxes hidden class="table table-borderless">
+                      <tbody>
+                        <tr>
+                          <td width="1%" class="pl-0">
+
+                            <!-- <cn2-select no-label id="DeclByAppl_ScopOfMajoARWork10" mandatory
+                        event-change="scopOfMajorARWork('toggle');">
+                      </cn2-select> -->
+                            <cn2-checkbox disabled escachkbox no-label id="DeclByAppl_ScopOfMajoARWork_EscaChk10">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="10%" class="pl-0">
+                            changing the speed.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox disabled escachkbox no-label id="DeclByAppl_ScopOfMajoARWork_EscaChk20">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing the drive.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox disabled escachkbox no-label id="DeclByAppl_ScopOfMajoARWork_EscaChk30">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing the control.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox disabled escachkbox no-label id="DeclByAppl_ScopOfMajoARWork_EscaChk40">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing braking system.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox disabled escachkbox no-label id="DeclByAppl_ScopOfMajoARWork_EscaChk50">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing auxiliary brake.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox disabled escachkbox no-label id="DeclByAppl_ScopOfMajoARWork_EscaChk60">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing step band.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox disabled escachkbox no-label id="DeclByAppl_ScopOfMajoARWork_EscaChk70">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing programmable electronic systems in safety related applications <br />for escalators
+                            (PESSRAE) hardware or software.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox disabled escachkbox no-label id="DeclByAppl_ScopOfMajoARWork_EscaChk80">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing truss of an escalator.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table mcpsCheckboxes hidden class="table table-borderless">
+                      <tbody>
+                        <tr>
+                          <td width="1%" class="pl-0">
+
+                            <!-- <cn2-select no-label id="DeclByAppl_ScopOfMajoARWork10" mandatory
+                        event-change="scopOfMajorARWork('toggle');">
+                      </cn2-select> -->
+                            <cn2-checkbox disabled mcpschkbox no-label id="DeclByAppl_ScopOfMajoARWork_MCPSChk10">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="10%" class="pl-0">
+                            changing of transfer area in terms of size, area, access, and structure.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox disabled mcpschkbox no-label id="DeclByAppl_ScopOfMajoARWork_MCPSChk20">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing of control (for example: hold to start, automatic parking and retrieval
+                            process<br />before and after the user enter and leave the transfer area).
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox disabled mcpschkbox no-label id="DeclByAppl_ScopOfMajoARWork_MCPSChk30">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing of logic programming.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox disabled mcpschkbox no-label id="DeclByAppl_ScopOfMajoARWork_MCPSChk40">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing the method of sensing the presence of people in the transfer area.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="10px" class="pl-0">
+                            <cn2-checkbox disabled mcpschkbox no-label id="DeclByAppl_ScopOfMajoARWork_MCPSChk50">
+                            </cn2-checkbox>
+                          </td>
+                          <td width="30px" class="pl-0">
+                            changing the loading of the car parking capacity.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <cn2-textarea no-label id="DeclByAppl_ScopOfMajoARWork20" hidden>
+                    </cn2-textarea>
+                  </td>
+                </tr>
+          </div>
+          <tr>
+            <td>
+              Is this amendment plan?
+            </td>
+            <td>
+              <cn2-switchbutton data-on="YES" data-off="NO" id="DeclByAppl_IsThisAmenPlan10"
+                switch-id="DeclByAppl_IsThisAmenPlan_Yes10"
+                event-change="switchButton(this,'DeclByAppl_IsThisAmenPlan_Yes10', 'DeclByAppl_IsThisAmenPlan_No10'); activateAmendment(this, 'amenToPlanNo');">
+              </cn2-switchbutton>
+              <cn2-checkbox hidden id="DeclByAppl_IsThisAmenPlan_Yes10"></cn2-checkbox>
+              <cn2-checkbox hidden id="DeclByAppl_IsThisAmenPlan_No10"></cn2-checkbox>
+            </td>
+          </tr>
+          <tr style="border-top: 1px solid grey;">
+            <td colspan="2">
+              <cn2-button label="Add" id="DeclByAppl_Add10" event-click="duplicateContainer(this, 'amenToPlanNo');"
+                disabled>
+              </cn2-button>
+            </td>
+          </tr>
+          <tr>
+            <td>Amendment to Plan No. <br /></td>
+            <td class="pt-0" id="amenToPlanNo">
+              <table class="table table-borderless mb-0">
+                <tbody>
+                  <tr>
+                    <td class="pl-0" width="150px">
+                      <div class="mls-espro-form-fields row">
+                        <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                          <cn2-select no-label disabled options="LP:LP,EP:EP,MP:MP" plan-type
+                            id="DeclByAppl_AmenPlanType10" defaults="{'value':'LP'}">
+                          </cn2-select>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="mls-espro-form-fields row">
+                        <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                          <cn2-textbox no-label disabled numeric maxlength="3" id="DeclByAppl_AmenPlanNo10"
+                            event-blur="rangeValue(this, 'planNo', ['1-999']);">
+                          </cn2-textbox>
+                        </div>
+                      </div>
+                    </td>
+                    <td width="100px" class="pr-0">
+                      <cn2-button danger label="Delete" class="float-right" id="DeclByAppl_Delete10" disabled
+                        event-click="deleteContainer(this, 'amenToPlanNo')">
+                      </cn2-button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          </tbody>
+          </table>
+        </div>
+      </div>
+      <div id="page3">
+        <div class="mls-espo-right-inner-container borderchecking">
+          <h2>Section I Particulars of Developer(s)</h2>
+          <div class="mls-espro-form-fields row">
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+              <cn2-button label="Add" id="particularsDeveloperAdd"
+                event-click="insertDuplicate('particularsDeveloper','B1'); disableDelete('particularsDeveloper', '.particularsDeveloperDelete');removeDuplicateError('particularsDeveloper','Members_UEN_OWNER');">
+              </cn2-button>
+            </div>
+          </div>
+          <div id="accordion">
+            <div id="particularsDeveloper">
+              <div id="B1" parent>
+                <h2 class="accordion-toggle">
+                  <table class="table table-borderless">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <cn2-select label="Name" data-options="particularsDeveloperQP"
+                            event-change="loadDropDownDetails(this); removeAddUENerror(this,'Members_UEN_OWNER','0'); nricMaskingAccor(this, 'Member_IC_Passport_No_Masked_OWNER'); removeSelectUENerror('Members_UEN_OWNER10');"
+                            mandatory id="Member_Member_Name_OWNER10" prefix="Member_Member_Name_OWNER" suffix="0">
+                          </cn2-select>
+                        </td>
+                        <td nricUnmasked hidden>
+                          <cn2-textbox label="NRIC/Passport No." prefix="Member_IC_Passport_No_OWNER" suffix="0"
+                            id="Member_IC_Passport_No_OWNER10" disabled>
+                          </cn2-textbox>
+                        </td>
+                        <td nricMasked>
+                          <cn2-textbox label="NRIC/Passport No." prefix="Member_IC_Passport_No_Masked_OWNER" suffix="0"
+                            id="Member_IC_Passport_No_Masked_OWNER10" disabled>
+                          </cn2-textbox>
+                        </td>
+                        <td>
+                          <cn2-textbox label="Firm Name" id="Member_Firm_Name_OWNER10" prefix="Member_Firm_Name_OWNER"
+                            suffix="0" disabled>
+                          </cn2-textbox>
+                        </td>
+                        <td class="align-bottom">
+                          <cn2-button style="float: right;" class="particularsDeveloperDelete" label="Delete"
+                            id="particularsDeveloperDelete1A" prefix="particularsDeveloperDelete" suffix="A" danger
+                            disabled
+                            event-click="removeDuplicate(this.id,'B1','particularsDeveloper'); disableDelete('particularsDeveloper', '.particularsDeveloperDelete'); nricMaskingAccorDelete('Member_IC_Passport_No_Masked_OWNER')">
+                          </cn2-button>
+                        </td>
+                        <td class="align-middle">
+                          <span class="fa fa-angle-down collapsed" data-toggle="collapse" href="#collapse1"
+                            id="#collapse1" prefix="#collapse" child onclick="spanUpDown(this)"
+                            aria-expanded="false"></span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </h2>
+                <div id="collapse1" class="panel-collapse collapse" child="div" prefix="collapse">
+                  <table class="table table-borderless">
+                    <tbody>
+                      <tr hidden>
+                        <td>Member ID</td>
+                        <td>
+                          <cn2-textbox no-label id="Member_Member_SID_OWNER10" disabled prefix="Member_Member_SID_OWNER"
+                            suffix="0">
+                          </cn2-textbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="35%">UEN</td>
+                        <td>
+                          <cn2-textbox no-label id="Members_UEN_OWNER10" prefix="Members_UEN_OWNER" suffix="0"
+                            maxlength="10" template="#########@" event-blur="uenValidate(this)">
+                          </cn2-textbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Designation</td>
+                        <td>
+                          <cn2-textbox no-label id="Member_Designation_OWNER10" disabled
+                            prefix="Member_Designation_OWNER" suffix="0"></cn2-textbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Address</td>
+                        <td>
+                          <cn2-textarea no-label id="Member_Address_OWNER10" disabled prefix="Member_Address_OWNER"
+                            suffix="0">
+                          </cn2-textarea>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Telephone No.</td>
+                        <td>
+                          <cn2-textbox no-label id="Member_Tel_No_OWNER10" disabled prefix="Member_Tel_No_OWNER"
+                            suffix="0">
+                          </cn2-textbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Handphone No.</td>
+                        <td>
+                          <cn2-textbox no-label id="Member_Mobile_No_OWNER10" disabled prefix="Member_Mobile_No_OWNER"
+                            suffix="0"></cn2-textbox>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Email Address</td>
+                        <td>
+                          <cn2-textbox no-label id="Member_Email_Address1_OWNER10" disabled
+                            prefix="Member_Email_Address1_OWNER" suffix="0">
+                          </cn2-textbox>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="page4">
+        <div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2 id="sect2Title">
+              Section II Particulars of Qualified Person for Submission of
+              the Plans for Lift Works
+            </h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td>Member ID</td>
+                  <td>
+                    <cn2-textbox id="Member_Member_SID_QP10" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_QP10" no-label mandatory
+                      data-options="particularsQPLiftSubmissionDropdown"
+                      event-change="loadDropDownDetails(this);removeSelectUENerror('Members_UEN_QP10');">
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Professional_No_QP10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox id="Member_Firm_Name_QP10" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN*</td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_QP10" no-label template="#########@" mandatory maxlength="10"
+                      event-blur="uenValidate(this);"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea id="Member_Address_QP10" no-label disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_QP10" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Mobile_No_QP10" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_QP10" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" id="liftDeclaration">
+            <h2>
+              Declaration by Qualified Person for Submission of
+              the Plans for Lift Works
+            </h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>II.1.</td>
+                  <td>
+                    I confirm that I have been appointed under section _ of the Act as the
+                    qualified person in respect
+                    of the works herein
+                    describe. I certify that the works shown in the plans submitted with this
+                    application are in
+                    accordance with the Act and
+                    the building regulations, subject to such waiver/modification granted under
+                    section _ of the Act.
+                    *
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_Lift_IConfThatI10" checked mandatory
+                      event-change="removeMandaOnCheck(this);">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>II.2.</td>
+                  <td>
+                    I hereby declare that the particulars required for this application and as
+                    stated in these forms
+                    are correct. *
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_Lift_IHereDeclThat10" checked mandatory
+                      event-change="removeMandaOnCheck(this);">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>II.3.</td>
+                  <td>
+                    I hereby declare that I have submitted the following
+                    documents: * <br /><br />
+                    <table class="table table-borderless">
+                      <tbody>
+                        <tr>
+                          <td colspan="3" class="pl-0">
+                            For Vertical Platform Lifts/Stairlifts
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="1%" class="pl-0">1.</td>
+                          <td colspan="2">
+                            Location/site plan
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="1%" class="pl-0">2.</td>
+                          <td colspan="2">
+                            Equipment layout (elevation and plan view) to
+                            show carriage size and clearances
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="1%" class="pl-0">3.</td>
+                          <td colspan="2">
+                            System level -Type test reports (system type
+                            test reports) and certificates
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="1%" class="pl-0">4.</td>
+                          <td colspan="2">
+                            Report and documentations for PESSRAL (if
+                            applicable).
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="1%" class="pl-0">5.</td>
+                          <td colspan="2">
+                            Details on features for disabling / enabling -
+                            hold to run control if any (Jumper / software
+                            control etc.) and prevention of unauthorized
+                            access to this control. <br />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="3" class="pl-0">
+                            For All other lifts
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="3" class="pl-0">
+                            <u>Drawings (include dimensions in mm)</u>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="1%" class="pl-0">1.</td>
+                          <td colspan="2">
+                            Site plans and floor plans
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="1%" class="pl-0">2.</td>
+                          <td colspan="2">
+                            Machine room layout (plan & elevation)
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="1%" class="pl-0">3.</td>
+                          <td colspan="2">
+                            Hoistway /Shaft with Car
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="1%" class="pl-0">4.</td>
+                          <td colspan="2">
+                            Assembly Drawings of Emergency brakes
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="3" class="pl-0">
+                            <u>Certificates</u>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="1%" class="pl-0">1.</td>
+                          <td colspan="2">
+                            Type test reports (components and product test
+                            reports) and certificates for
+                            <table class="table table-borderless mb-0">
+                              <tbody>
+                                <tr>
+                                  <td width="20px" class="pl-0">
+                                    i.
+                                  </td>
+                                  <td>
+                                    PESSRAL (if applicable)
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="20px" class="pl-0">
+                                    ii.
+                                  </td>
+                                  <td>
+                                    UCMP/means of detection and stopping
+                                    (for traction lifts only)
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="20px" class="pl-0">
+                                    iii.
+                                  </td>
+                                  <td>
+                                    ACOP/means of detection and stopping
+                                    (for traction lifts only)
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="20px" class="pl-0">
+                                    iv.
+                                  </td>
+                                  <td>
+                                    Landing door locking devices
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="20px" class="pl-0">
+                                    vi.
+                                  </td>
+                                  <td>
+                                    Safety gears (for traction or hydraulic
+                                    (indirect) lifts only)
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="20px" class="pl-0">
+                                    vii.
+                                  </td>
+                                  <td>
+                                    Over speed governor (for traction lifts
+                                    only)
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="20px" class="pl-0">
+                                    viii.
+                                  </td>
+                                  <td>
+                                    Buffers (for traction or hydraulic
+                                    (indirect) lifts only)
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="20px" class="pl-0">
+                                    ix.
+                                  </td>
+                                  <td>
+                                    Rupture valve/One-way restrictor valve
+                                    (Check valve) (for hydraulic lifts only)
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="1%" class="pl-0">2.</td>
+                          <td colspan="2">
+                            Proof of electromagnetic compatibility for
+                            controller
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="1%" class="pl-0">3.</td>
+                          <td colspan="2">
+                            Pressure test data certificate for flexible hose
+                            and fitting assemblies (for hydraulic lifts
+                            only)
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="3" class="pl-0">
+                            <u>Procedures</u>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="1%" class="pl-0">1.</td>
+                          <td colspan="2">
+                            UCMP /ACOP testing and verification procedures
+                            (for traction lifts only)
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="1%" class="pl-0">2.</td>
+                          <td colspan="2">
+                            Free fall over speed protection system testing
+                            and verification (for hydraulic lifts only)
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="1%" class="pl-0">3.</td>
+                          <td colspan="2">
+                            Anti-creep system testing and verification (for
+                            hydraulic lifts only)
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="1%" class="pl-0">4.</td>
+                          <td colspan="2">
+                            PESSRA system - proof test procedures (if
+                            applicable)
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="1%" class="pl-0">5.</td>
+                          <td colspan="2">
+                            Terminal slow down and stopping devices testing
+                            and verification
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="3" class="pl-0"><u>Others</u></td>
+                        </tr>
+                        <tr>
+                          <td width="1%" class="pl-0">6.</td>
+                          <td colspan="2">
+                            Brake control circuit showing control redundancy
+                            and monitoring of brake contacts (for traction
+                            lifts only)
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="1%" class="pl-0">7.</td>
+                          <td colspan="2">
+                            Valve control circuit showing control redundancy
+                            (for hydraulic lifts only) with the exception of
+                            <br />
+                            <cn2-textarea id="DeclByQualPers_IHereDeclThatIHaveSubm70" default-disabled disabled
+                              maxlength="32400">
+                            </cn2-textarea>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_Lift_IHereDeclThatIHaveSubm10" checked mandatory
+                      event-change="removeMandaOnCheck(this); DeclByQualPers_IHereDeclThatIHaveSubm_change(this, 'DeclByQualPers_IHereDeclThatIHaveSubm70')">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" id="escaDeclaration" hidden>
+            <h2>
+              Declaration by Qualified Person for Submission of
+              the Plans for Escalator Works
+            </h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td>II.1.</td>
+                  <td>
+                    I confirm that I have been appointed under section _ of
+                    the Act as the qualified person in respect of the works
+                    herein describe. I certify that the works shown in the
+                    plans submitted with this application are in accordance
+                    with the Act and the building regulations, subject to
+                    such waiver/modification granted under section _ of the
+                    Act.*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_Esca_IConfThatI10" checked mandatory
+                      event-change="removeMandaOnCheck(this);">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>II.2.</td>
+                  <td>
+                    I hereby declare that the particulars required for this
+                    application and as stated in these forms are correct.*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_Esca_IHereDeclThat10" checked mandatory
+                      event-change="removeMandaOnCheck(this);">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>II.3.</td>
+                  <td>
+                    I hereby declare that I have submitted the following documents:* <br />
+                    <table class="table table-borderless table-sm">
+                      <tbody>
+                        <tr>
+                          <td colspan="2"><u>Drawings</u></td>
+                        </tr>
+                        <tr>
+                          <td width="1%">1.</td>
+                          <td>Location/site plan</td>
+                        </tr>
+                        <tr>
+                          <td>2.</td>
+                          <td>
+                            Design plans:
+                            <table class="table table-borderless table-sm mb-0">
+                              <tbody>
+                                <tr>
+                                  <td width="1%">a.</td>
+                                  <td>
+                                    drawings showing the safety zone, clear
+                                    height
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>b.</td>
+                                  <td>structural support</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2">
+                            <u>Proof test certificates / data</u>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1.</td>
+                          <td>
+                            Specific data, test reports and certs for:
+                            <table class="table table-borderless table-sm mb-0">
+                              <tbody>
+                                <tr>
+                                  <td width="1%">a.</td>
+                                  <td>
+                                    Calculation of stopping distances for brake
+                                    with adjustment data
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>b.</td>
+                                  <td>
+                                    Proof for breaking strength of belt
+                                    (handrail)
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>c.</td>
+                                  <td>
+                                    Proof testing of steps or pallet strength
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>d.</td>
+                                  <td>
+                                    Proof of sliding coefficients for skirting
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>e.</td>
+                                  <td>
+                                    Proof of anti-slip properties of tread
+                                    surfaces
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>f.</td>
+                                  <td>
+                                    Proof of stopping distances and deceleration
+                                    values
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>g.</td>
+                                  <td>
+                                    Test cert for balustrade glass-tempered and
+                                    laminated
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>h.</td>
+                                  <td>
+                                    Stress analysis of truss or equivalent cert
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>i.</td>
+                                  <td>
+                                    Proof of electromagnetic compatibility
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>j.</td>
+                                  <td>
+                                    Test certificates for PESSRAE components
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>k.</td>
+                                  <td>
+                                    Proof by calculation of sufficient breaking
+                                    resistance of the parts directly
+                                    driving the steps, pallets or belts e.g.
+                                    step chain, rack
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>l.</td>
+                                  <td>
+                                    Factory test reports for over current/load
+                                    monitoring function in controller
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2">
+                            <u>Procedures</u>
+                            <table class="table table-borderless table-sm mb-0">
+                              <tbody>
+                                <tr>
+                                  <td width="1%">1.</td>
+                                  <td>
+                                    Over speed and reversal prevention system
+                                    (documentations)
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>2.</td>
+                                  <td>
+                                    Proof test procedure for PESSRAE
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>3.</td>
+                                  <td>
+                                    Testing procedures of auxiliary brakes with
+                                    the exception of
+                                    <cn2-textarea id="DeclByQualPers_IHereDeclThatIHaveSubm50" maxlength="32400"
+                                      disabled>
+                                    </cn2-textarea>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_Esca_IHereDeclThatIHaveSubm10" checked mandatory
+                      event-change="removeMandaOnCheck(this);DeclByQualPers_IHereDeclThatIHaveSubm_change(this, 'DeclByQualPers_IHereDeclThatIHaveSubm50')">
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" id="mcpsDeclaration" hidden>
+            <h2>
+              Declaration by Qualified Person for Submission of
+              the Plans for MCPS Works
+            </h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">II.1.</td>
+                  <td>
+                    I confirm that I have been appointed under section _ of
+                    the Act as the qualified person in respect of the works
+                    herein describe. I certify that the works shown in the
+                    plans submitted with this application are in accordance
+                    with the Act and the building regulations, subject to
+                    such waiver/modification granted under section _ of the
+                    Act.*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_MCPS_IConfThatI10" checked mandatory>
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>II.2.</td>
+                  <td>
+                    I hereby declare that the particulars required for this
+                    application and as stated in these forms are correct.*
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_MCPS_IHereDeclThat10" checked mandatory>
+                    </cn2-checkbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>II.3.</td>
+                  <td>
+                    I hereby declare that I have submitted the following
+                    documents:*
+                    <table class="table table-borderless table-sm mb-0">
+                      <tbody>
+                        <tr>
+                          <td colspan="2"><u>Drawings</u></td>
+                        </tr>
+                        <tr>
+                          <td width="1%">1.</td>
+                          <td>Location/site plan</td>
+                        </tr>
+                        <tr>
+                          <td>2.</td>
+                          <td>
+                            Design plans of MCPS (plan, elevation and
+                            sectional views)
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>3.</td>
+                          <td>
+                            Layout drawing of transfer area which shall
+                            include:
+                            <table class="table table-borderless table-sm mb-0">
+                              <tbody>
+                                <tr>
+                                  <td width="1%">a.</td>
+                                  <td>positions and coverage of sensors</td>
+                                </tr>
+                                <tr>
+                                  <td>b.</td>
+                                  <td>position of control panel)</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>4.</td>
+                          <td>
+                            Drawing of car platform and load calculation
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>5.</td>
+                          <td>
+                            Drawing of locking mechanism and its mechanical
+                            strength
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>6.</td>
+                          <td>
+                            Electrical wiring diagram showing electrical
+                            interlock of systems
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><u>Others</u></td>
+                        </tr>
+                        <tr>
+                          <td>1.</td>
+                          <td>
+                            <u>Operation manual on the operation of car
+                              parking and retrieval</u>
+                            with the exception of
+                            <cn2-textarea id="DeclByQualPers_IHereDeclThatIHaveSubm90" disabled no-label>
+                            </cn2-textarea>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <cn2-checkbox id="DeclByQualPers_MCPS_IHereDeclThatIHaveSubm10"
+                      event-change="removeMandaOnCheck(this);DeclByQualPers_IHereDeclThatIHaveSubm_change(this, 'DeclByQualPers_IHereDeclThatIHaveSubm90')"
+                      checked mandatory></cn2-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2 id="sect3Title">
+              Section III Particulars of Qualified Person for Supervision of
+              the Installation of the Lift Works
+            </h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td>Member ID</td>
+                  <td>
+                    <cn2-textbox id="Member_Member_SID_QP20" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name</td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_QP20" no-label data-options="particularsQPSupervisionLift"
+                      event-change="loadDropDownDetails(this);removeSelectUENerror('Members_UEN_QP20');">
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Professional_No_QP20" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox id="Member_Firm_Name_QP20" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_QP20" no-label template="#########@" maxlength="10"
+                      event-blur="uenValidate(this);"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea id="Member_Address_QP20" no-label disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_QP20" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Mobile_No_QP20" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_QP20" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2 id="sect4Title">
+              Section IV Particulars of Qualified Person for Testing &
+              Commissioning of the Lift Works
+            </h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td>Member ID</td>
+                  <td>
+                    <cn2-textbox id="Member_Member_SID_QP30" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name</td>
+                  <td>
+                    <cn2-select id="Member_Member_Name_QP30" no-label
+                      data-options="particularsQPSTestingComissioningLift"
+                      event-change="loadDropDownDetails(this);removeSelectUENerror('Members_UEN_QP30');">
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Professional_No_QP30" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox id="Member_Firm_Name_QP30" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_QP30" no-label template="#########@" maxlength="10"
+                      event-blur="uenValidate(this);"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea id="Member_Address_QP30" no-label disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_QP30" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Mobile_No_QP30" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address</td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_QP30" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2 id="sect5Title">Section V Particulars of Lift Installation Contractor</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr hidden>
+                  <td>Member ID</td>
+                  <td>
+                    <cn2-textbox id="Member_SID_InstCont10" no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-select id="Member_Name_InstCont10" mandatory no-label
+                      data-options="particularsInstContDropDown"
+                      event-change="loadDropDownDetails(this);removeSelectUENerror('Members_UEN_InstCont10');">
+                    </cn2-select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.</td>
+                  <td>
+                    <cn2-textbox id="MemberRole_Professional_No_InstCont10" maxlength="4" no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name*</td>
+                  <td>
+                    <cn2-textbox id="Member_Firm_Name_InstCont10" mandatory no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN*</td>
+                  <td>
+                    <cn2-textbox id="Members_UEN_InstCont10" mandatory no-label template="#########@" maxlength="10"
+                      event-blur="uenValidate(this);">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address*</td>
+                  <td>
+                    <cn2-textarea id="Member_Address_InstCont10" mandatory no-label disabled></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.*</td>
+                  <td>
+                    <cn2-textbox id="Member_Tel_No_InstCont10" mandatory no-label disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.</td>
+                  <td>
+                    <cn2-textbox id="Member_Mobile_No_InstCont10" mandatory no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address*</td>
+                  <td>
+                    <cn2-textbox id="Member_Email_Address1_InstCont10" mandatory no-label disabled></cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="mls-espo-right-inner-container borderchecking">
+          <h2 id="sect6Title">Section VI Particulars of Lift Testing and Commissioning Contractor</h2>
+          <table class="table table-borderless">
+            <tbody>
+              <tr hidden>
+                <td>Member ID</td>
+                <td>
+                  <cn2-textbox id="Member_Member_SID_CommCont10" no-label disabled></cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td width="35%">Name</td>
+                <td>
+                  <cn2-select id="Member_Member_Name_CommCont10" no-label data-options="particularsCommContDropDown"
+                    event-change="loadDropDownDetails(this);removeSelectUENerror('Members_UEN_CommCont10');">
+                  </cn2-select>
+                </td>
+              </tr>
+              <tr>
+                <td>Registration No.</td>
+                <td>
+                  <cn2-textbox id="MemberRole_Professional_No_CommCont10" maxlength="4" no-label disabled>
+                  </cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td>Firm Name</td>
+                <td>
+                  <cn2-textbox id="Member_Firm_Name_CommCont10" no-label disabled></cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td>UEN</td>
+                <td>
+                  <cn2-textbox id="Members_UEN_CommCont10" no-label template="#########@" maxlength="10"
+                    event-blur="uenValidate(this);">
+                  </cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td>Address</td>
+                <td>
+                  <cn2-textarea id="Member_Address_CommCont10" no-label disabled></cn2-textarea>
+                </td>
+              </tr>
+              <tr>
+                <td>Telephone No.</td>
+                <td>
+                  <cn2-textbox id="Member_Tel_No_CommCont10" no-label disabled>
+                  </cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td>Handphone No.</td>
+                <td>
+                  <cn2-textbox id="Member_Mobile_No_CommCont10" no-label disabled></cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td>Email Address</td>
+                <td>
+                  <cn2-textbox id="Member_Email_Address1_CommCont10" no-label disabled></cn2-textbox>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mls-espo-right-inner-container borderchecking" submission-div>
+          <h2>Section VII Submission Checklist</h2>
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <td width="1%">VI.1.</td>
+                <td>
+                  Notification of appointment/authorisation from
+                  BCA-EME-LEPAPPV01*
+                  <table class="table table-borderless table-sm mb-0">
+                    <tbody>
+                      <tr>
+                        <td width="1%">
+                          <input onchange="SubmChec_NotiOfAppoAuth_change(this);" type="radio"
+                            name="SubmChec_NotiOfAppoAuth" id="SubmChec_NotiOfAppoAuth_IsAtta10" />
+                        </td>
+
+                        <td colspan="2">is attached.</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">
+                          <input onchange="SubmChec_NotiOfAppoAuth_change(this);" type="radio"
+                            name="SubmChec_NotiOfAppoAuth" id="SubmChec_NotiOfAppoAuth_HadBeenSubmPrev10" />
+                        </td>
+
+                        <td>
+                          had been submitted previously on
+                        </td>
+                        <td>
+                          <cn2-datefield onfocusout="validateDate(this);dateFutureTodayValidation(this)" ;
+                            id="SubmChec_NotiOfAppoAuth_HadBeenSubmPrev20" disabled no-label></cn2-datefield>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td>VI.2.</td>
+                <td>
+                  Alternative Solution from:*
+                  <table class="table table-borderless table-sm mb-0">
+                    <tbody>
+                      <tr>
+                        <td width="1%">
+                          <input onchange="SubmChec_AlteSoluAre_change(this);" type="radio" name="SubmChec_AlteSoluAre"
+                            id="SubmChec_AlteSoluAre_IsNotRequ10" />
+                        </td>
+
+                        <td colspan="2">is not required.</td>
+                      </tr>
+                      <tr>
+                        <td width="1%">
+                          <input onchange="SubmChec_AlteSoluAre_change(this);" type="radio" name="SubmChec_AlteSoluAre"
+                            id="SubmChec_AlteSoluAre_IsAtta10" />
+                        </td>
+
+                        <td colspan="2">is attached.</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">
+                          <input onchange="SubmChec_AlteSoluAre_change(this);" type="radio" name="SubmChec_AlteSoluAre"
+                            id="SubmChec_AlteSoluAre_HadBeenSubmPrev10" />
+                        </td>
+
+                        <td>
+                          had been submitted previously on
+                        </td>
+                        <td>
+                          <cn2-datefield onfocusout="validateDate(this);dateFutureTodayValidation(this)" disabled
+                            id="SubmChec_AlteSoluAre_HadBeenSubmPrev20" no-label></cn2-datefield>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td>VI.3.</td>
+                <td>
+                  Waiver/Modification from:*
+                  <table class="table table-borderless table-sm mb-0">
+                    <tbody>
+                      <tr>
+                        <td width="1%">
+                          <input onchange="SubmChec_WaivModiForm_change(this);" type="radio"
+                            name="SubmChec_WaivModiForm" id="SubmChec_WaivModiForm_IsNotRequ10" />
+                        </td>
+
+                        <td colspan="2">is not required.</td>
+                      </tr>
+                      <tr>
+                        <td width="1%">
+                          <input onchange="SubmChec_WaivModiForm_change(this);" type="radio"
+                            name="SubmChec_WaivModiForm" id="SubmChec_WaivModiForm_IsAtta10" />
+                        </td>
+
+                        <td colspan="2">is attached.</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle">
+                          <input onchange="SubmChec_WaivModiForm_change(this);" type="radio"
+                            name="SubmChec_WaivModiForm" id="SubmChec_WaivModiForm_HadBeenSubmPrev10" />
+                        </td>
+
+                        <td>
+                          had been submitted previously on
+                        </td>
+                        <td>
+                          <cn2-datefield onfocusout="validateDate(this);dateFutureTodayValidation(this)" disabled
+                            id="SubmChec_WaivModiForm_HadBeenSubmPrev20" no-label></cn2-datefield>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div id="page5"></div>
+      <div id="page6" hidden>
+        <div class="mls-espo-right-inner-container borderchecking">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <td colspan="2" class="text-center">
+                  <h2>
+                    FEE COMPUTATION FOR PLANS OF LIFT/ ESCALATOR/ MECHANISED CAR
+                    PARKING SYSTEM WORKS<br />[Second Schedule of the Building Control
+                    Regulations]
+                  </h2>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table table-bordered table-middle" new-no hidden>
+            <tbody>
+              <tr style="font-weight: bold;">
+                <td colspan="5">
+                  New Installations
+                </td>
+              </tr>
+              <tr style="font-weight: bold;">
+                <td>S/N</td>
+                <td>
+                  Equipment Type
+                </td>
+                <td>
+                  Quantity
+                </td>
+                <td>
+                  Rate
+                </td>
+                <td>
+                  Computed Fee
+                </td>
+              </tr>
+              <tr>
+                <td class="align-top">
+                  1.
+                </td>
+                <td>
+                  Passenger/ Goods/ Service/ Car Lift(s)
+                </td>
+                <td>
+                  <cn2-textbox no-label disabled fee1 id="EquiType_PassGoodServCarLift10">
+                  </cn2-textbox>
+                </td>
+                <td>
+                  $2000/Equipment
+                </td>
+                <td>
+                  $ <cn2-textbox no-label disabled currency class="compfees-textbox" fee1-total="2000" inline="10" id="CompFees10">
+                  </cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td class="align-top">
+                  2.
+                </td>
+                <td>
+                  Vertical Platform Lift(s)/ Stairlift(s)
+                </td>
+                <td>
+                  <cn2-textbox no-label disabled fee2 id="EquiType_VertPlatLiftStai10">
+                  </cn2-textbox>
+                </td>
+                <td>
+                  $200/Equipment
+                </td>
+                <td>
+                  $ <cn2-textbox no-label disabled currency fee2-total="200" inline="10" id="CompFees20" class="compfees-textbox">
+                  </cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td class="align-top">
+                  3.
+                </td>
+                <td>
+                  Escalator(s)/Passenger Conveyor(s)
+                </td>
+                <td>
+                  <cn2-textbox no-label disabled fee3 id="EquiType_EscaPassConv10"></cn2-textbox>
+                </td>
+                <td>
+                  $2000/Equipment
+                </td>
+                <td>
+                  $ <cn2-textbox no-label disabled fee3-total="2000" currency inline="10" id="CompFees30" class="compfees-textbox">
+                  </cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td class="align-top">
+                  4.
+                </td>
+                <td>
+                  Mechanised Car Parking System(s)
+                </td>
+                <td>
+                  <cn2-textbox no-label disabled fee4 id="EquiType_MechCarParkSyst10">
+                  </cn2-textbox>
+                </td>
+                <td>
+                  $2000/Equipment
+                </td>
+                <td>
+                  $ <cn2-textbox no-label disabled currency fee4-total="2000" inline="10" id="CompFees40" class="compfees-textbox">
+                  </cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="4">
+                  Total Plan Fee Payable
+                </td>
+                <td>
+                  $<cn2-textbox disabled id="PaymMode_Paym10" no-label inline="10"></cn2-textbox>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table table-bordered table-middle" major-no hidden>
+            <tbody>
+              <tr style="font-weight: bold;">
+                <td colspan="5">
+                  Major Alteration Works
+                </td>
+              </tr>
+              <tr style="font-weight: bold;">
+                <td>S/N</td>
+                <td>
+                  Equipment Type
+                </td>
+                <td>
+                  Quantity
+                </td>
+                <td>
+                  Rate
+                </td>
+                <td>
+                  Computed Fee
+                </td>
+              </tr>
+              <tr>
+                <td class="align-top">
+                  1.
+                </td>
+                <td>
+                  Passenger/ Goods/ Service/ Car Lift(s)
+                </td>
+                <td>
+                  <cn2-textbox no-label disabled fee1 id="EquiType_PassGoodServCarLift20">
+                  </cn2-textbox>
+                </td>
+                <td>
+                  $200/Equipment
+                </td>
+                <td>
+                  $ <cn2-textbox no-label disabled currency fee1-total="200" inline="10" id="CompFees50" class="compfees-textbox">
+                  </cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td class="align-top">
+                  2.
+                </td>
+                <td>
+                  Vertical Platform Lift(s)/ Stairlift(s)
+                </td>
+                <td>
+                  <cn2-textbox no-label disabled fee2 id="EquiType_VertPlatLiftStai20">
+                  </cn2-textbox>
+                </td>
+                <td>
+                  $200/Equipment
+                </td>
+                <td>
+                  $ <cn2-textbox no-label disabled currency fee2-total="200" inline="10" id="CompFees60" class="compfees-textbox">
+                  </cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td class="align-top">
+                  3.
+                </td>
+                <td>
+                  Escalator(s)/Passenger Conveyor(s)
+                </td>
+                <td>
+                  <cn2-textbox no-label disabled fee3 id="EquiType_EscaPassConv20"></cn2-textbox>
+                </td>
+                <td>
+                  $200/Equipment
+                </td>
+                <td>
+                  $ <cn2-textbox no-label disabled fee3-total="200" inline="10" id="CompFees70">
+                  </cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td class="align-top">
+                  4.
+                </td>
+                <td>
+                  Mechanised Car Parking System(s)
+                </td>
+                <td>
+                  <cn2-textbox no-label disabled fee4 id="EquiType_MechCarParkSyst20">
+                  </cn2-textbox>
+                </td>
+                <td>
+                  $200/Equipment
+                </td>
+                <td>
+                  $ <cn2-textbox no-label disabled fee4-total="200" inline="10" id="CompFees80">
+                  </cn2-textbox>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table table-bordered table-middle" yes hidden>
+            <tbody>
+              <tr style="font-weight: bold;">
+                <td colspan="5">
+                  Amendment/Deviation to approved plans
+                </td>
+              </tr>
+              <tr style="font-weight: bold;">
+                <td>S/N</td>
+                <td>
+                  Equipment Type
+                </td>
+                <td>
+                  Quantity
+                </td>
+                <td>
+                  Rate
+                </td>
+                <td>
+                  Computed Fee
+                </td>
+              </tr>
+              <tr>
+                <td class="align-top">
+                  1.
+                </td>
+                <td>
+                  Passenger/ Goods/ Service/ Car Lift(s)
+                </td>
+                <td>
+                  <cn2-textbox no-label disabled fee1 id="EquiType_PassGoodServCarLift30">
+                  </cn2-textbox>
+                </td>
+                <td>
+                  $200/Equipment
+                </td>
+                <td>
+                  $ <cn2-textbox no-label disabled fee1-total="200" inline="10" id="CompFees90">
+                  </cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td class="align-top">
+                  2.
+                </td>
+                <td>
+                  Vertical Platform Lift(s)/ Stairlift(s)
+                </td>
+                <td>
+                  <cn2-textbox no-label disabled fee2 id="EquiType_VertPlatLiftStai30">
+                  </cn2-textbox>
+                </td>
+                <td>
+                  $200/Equipment
+                </td>
+                <td>
+                  $ <cn2-textbox no-label disabled fee2-total="200" inline="10" id="CompFees100">
+                  </cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td class="align-top">
+                  3.
+                </td>
+                <td>
+                  Escalator(s)/Passenger Conveyor(s)
+                </td>
+                <td>
+                  <cn2-textbox no-label disabled fee3 id="EquiType_EscaPassConv30"></cn2-textbox>
+                </td>
+                <td>
+                  $200/Equipment
+                </td>
+                <td>
+                  $ <cn2-textbox no-label disabled fee3-total="200" inline="10" id="CompFees110">
+                  </cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td class="align-top">
+                  4.
+                </td>
+                <td>
+                  Mechanised Car Parking System(s)
+                </td>
+                <td>
+                  <cn2-textbox no-label disabled fee4 id="EquiType_MechCarParkSyst40">
+                  </cn2-textbox>
+                </td>
+                <td>
+                  $200/Equipment
+                </td>
+                <td>
+                  $ <cn2-textbox no-label disabled fee4-total="200" inline="10" id="CompFees120">
+                  </cn2-textbox>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <td colspan="3">Indicate Payment Mode :-</td>
+              </tr>
+              <tr>
+                <td rowspan="2" width="30%">
+                  <input type="radio" id="PaymMode_Cheq10" onchange="pMode_change(this);"
+                    name="PaymMode" />&nbsp;&nbsp;Cheque
+                </td>
+                <td width="35%">
+                  <cn2-textbox disabled label="Cheque No." id="PaymMode_Cheq20"></cn2-textbox>
+                </td>
+                <td width="35%">
+                  <cn2-textbox disabled label="Bank Name" id="PaymMode_Cheq40"></cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <cn2-datefield onfocusout="dateFutureTodayValidation(this);validateDate(this)" disabled
+                    label="Cheque Date" id="PaymMode_Cheq30">
+                  </cn2-datefield>
+                </td>
+                <td>
+                  <cn2-textbox disabled label="Amount Paid" currency id="PaymMode_Cheq50">
+                  </cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="2" width="25%">
+                  <input type="radio" id="PaymMode_Giro10" onchange="pMode_change(this);" name="PaymMode" />&nbsp;&nbsp;
+                  Giro
+                </td>
+                <td colspan="2">
+                  <cn2-textbox disabled label="Remittance Advice Reference Number" id="PaymMode_Giro20">
+                  </cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <cn2-datefield onfocusout="dateFutureTodayValidation(this);validateDate(this)" disabled
+                    label="GIRO Deduction Date" id="PaymMode_Giro50">
+                  </cn2-datefield>
+                </td>
+                <td>
+                  <cn2-textbox disabled label="Amount Paid" currency id="PaymMode_Giro40">
+                  </cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td width="25%">
+                  <input type="radio" id="PaymMode_ePay10" onchange="pMode_change(this);" name="PaymMode" />&nbsp;&nbsp;
+                  ePayment
+                </td>
+                <td colspan="2">
+                  <a style="cursor: pointer;"
+                    onclick="ipcRenderer.send('open-default-browser', 'https://www.bca.gov.sg/ePayment/ePayment.html');"><u>
+                      <font color="blue">https://www.bca.gov.sg/ePayment/ePayment.html</font>
+                    </u></a>
+                </td>
+              </tr>
+              <tr>
+                <td width="25%">
+                  <input type="radio" id="PaymMode_PaidEarl10" onchange="pMode_change(this);"
+                    name="PaymMode" />&nbsp;&nbsp;
+                  Paid Earlier
+                </td>
+                <td colspan="2">
+                  <cn2-select mandatory
+                    options="BP Plan Submission:BP Plan submission,ST Plan Submission:ST Plan Submission"
+                    id="PaymMode_PaidEarl20" no-label disabled>
+                  </cn2-select>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3">Payer's Detail :-</td>
+              </tr>
+              <tr>
+                <td>Name</td>
+                <td colspan="2">
+                  <cn2-textbox id="PayeDeta_Name" no-label inline dont-disabled></cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td>Company Name</td>
+                <td colspan="2">
+                  <cn2-textbox id="PayeDeta_CompName" no-label inline dont-disabled></cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td colspan="2">
+                  <cn2-textbox id="PayeDeta_Email" no-label inline event-blur="checkEmail(this);"
+                    placeholder="example@email.com" dont-disabled>
+                  </cn2-textbox>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  <span class="text-danger font-italic">*Note: Receipt will be emailed to the
+                    recipient. If there
+                    is no valid email address, please leave all fields under
+                    “Payer’s Detail” blank.</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <cn2-version-footer></cn2-version-footer>
+  <cn2-fixed-footer></cn2-fixed-footer>
+  </div>
+</body>
+
+</html>

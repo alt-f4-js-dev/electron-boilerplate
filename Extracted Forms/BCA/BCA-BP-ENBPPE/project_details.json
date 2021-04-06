@@ -1,0 +1,53 @@
+{
+  "form__name": "BCA-BP-ENBPPE",
+  "form__last_update_date": "",
+  "form__create_date": "",
+  "form__version": "1.0",
+  "FormName10": "",
+  "XFDVersion": "",
+  "agencyUrl10": {
+    "url": "https://bcaisps:443/rest/getPlanTypePlanNumberMainBP",
+    "params": "projRefNo=",
+    "body": {}
+  },
+  "Date10": "",
+  "Addr10": "",
+  "Addr20": "",
+  "Project_Project_Ref_No10": "",
+  "Project_Title10": "",
+  "Project_Title20": "",
+  "Project_Location_Description10": "",
+  "Project_PlanType_A1": "BP",
+  "Project_PlanType_B1": "",
+  "Member_Member_Name_PE10": "",
+  "MemberRole_Professional_No_PE10": "",
+  "Member_Firm_Name_PE10": "",
+  "Members_UEN_PE10": "",
+  "Member_Address_PE10": "",
+  "Member_Tel_No_PE10": "",
+  "Member_Mobile_No_PE10": "",
+  "Member_Email_Address1_PE10": "",
+  "DeclByQP_1I10": "",
+  "DeclByQP_1I20": false,
+  "DeclByQP_2I10": "",
+  "DeclByQP_2I60": false,
+  "RADIO3": "",
+  "DeclByQP_2I_SubmOn10": false,
+  "DeclByQP_2I_SubmOn20": "",
+  "DeclByQP_2I_ToBeSubm10": false,
+  "DeclByQP_2I_ToBeSubm20": "",
+  "DeclByQualPers_Rema10": "",
+  "Member_Member_SID_PE10": "",
+  "peDropdown": [
+    {
+      "Member_Member_SID_PE10": "",
+      "Member_Member_Name_PE10": "",
+      "MemberRole_Professional_No_PE10": "",
+      "Member_Firm_Name_PE10": "",
+      "Member_Address_PE10": "",
+      "Member_Tel_No_PE10": "",
+      "Member_Mobile_No_PE10": "",
+      "Member_Email_Address1_PE10": ""
+    }
+  ]
+}

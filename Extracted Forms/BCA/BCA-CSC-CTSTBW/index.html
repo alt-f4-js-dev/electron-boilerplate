@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>BCA-CSC-CTSTBW</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="author" content="Syncfusion" />
+
+  <link rel="shortcut icon" href="resources/favicon.ico" />
+  <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+  <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+  <script src="../cm/js/func/common.js"></script>
+  <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+  <script src="../cm/js/components/cn2sgheader.js"></script>
+  <script src="../cm/js/components/cn2masterhead.js"></script>
+  <script src="../cm/js/components/cn2versionfooter.js"></script>
+  <script src="../cm/js/components/cn2fixedfooter.js"></script>
+  <script src="../cm/js/components/cn2navbutton.js"></script>
+
+  <script src="../cm/js/components/cn2textbox.js"></script>
+  <script src="../cm/js/components/cn2textarea.js"></script>
+  <script src="../cm/js/components/cn2select.js"></script>
+  <script src="../cm/js/components/cn2button.js"></script>
+  <script src="../cm/js/components/cn2datefield.js"></script>
+  <script src="../cm/js/components/cn2checkbox.js"></script>
+  <script src="index.js"></script>
+
+</head>
+
+<body>
+  <cn2-master-head
+    title="CERTIFICATE OF SUPERVISION FOR TEMPORARY BUILDING WORKS<br>[The Building Control Act (Cap 29)]"
+    agency="logo.png">
+  </cn2-master-head>
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p style="margin: 0px">Help</p>
+      </div>
+      <div class="modal-body">
+        <p><b>For enquiries related to forms, please contact the following:</b></p>
+        <p> <span id="RegulatoryAuthority_id"></span></p>
+        <div id="table-parent" style="width:auto">
+          <table id="ContDetaTable_id" class="table-bordered">
+            <thead>
+              <tr>
+                <th>Regulatory Authority</th>
+                <th>Email Address</th>
+                <th>Tel No.</th>
+                <th>Area of Support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>BCA(BP) & (TOP)</td>
+                <td>bca_enquiry@bca.gov.sg</td>
+                <td>1800-3425222</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td rowspan="3">BCA (Buildable Design and Constructability)</td>
+                <td>kong_chew_kwek@bca.gov.sg</td>
+                <td>68044228</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>terence_teo@bca.gov.sg</td>
+                <td>68044231</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>chin_kim_hong@bca.gov.sg</td>
+                <td> 68044234</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td rowspan="2">BCA(ST)</td>
+                <td>wai_hui_ling@bca.gov.sg</td>
+                <td>68044609</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>chang_heng_choy@bca.gov.sg</td>
+                <td>68044646</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td rowspan="2">BCA(CD Shelter)</td>
+                <td>lee_pheck_hoon@bca.gov.sg</td>
+                <td>68044410</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>yeo_keng@bca.gov.sg</td>
+                <td>68044416</td>
+                <td>Policies</td>
+              </tr>
+              <tr>
+                <td>BCA(Transit Shelter)</td>
+                <td>tan_wee_kian@bca.gov.sg</td>
+                <td>63961408</td>
+                <td>Policies</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">OK</button>
+      </div>
+    </div>
+  </div>
+  <input type="hidden" name="member_id" id="member_id">
+  <input type="hidden" name="form_validated" id="form_validated">
+  <div class="mls-espro-form-container">
+    <div class="row">
+      <div class="mls-espro-form-left-nav" id="menu">
+        <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+        <cn2-nav-button target="page2" page-number="2" label="Particulars of Application"></cn2-nav-button>
+        <cn2-nav-button target="page3" page-number="3" label="Particulars and Declaration by Professional Engineer">
+        </cn2-nav-button>
+      </div>
+
+      <div class="e-content mls-espro-form-right" id="page">
+        <div id="page1">
+          <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px;">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="1%">
+                    <b>Date:</b>
+                  </td>
+                  <td width="15%">
+                    <cn2-textbox id="Date10" field-name="Date under Instructions" no-label inline="6" disabled>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="1%">
+                    <b>To:*</b>
+                  </td>
+                  <td width="15%">
+                    <div class="mls-espro-form-fields row">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-select mandatory event-change="ToAgency_id_change(this);" no-label inline="6" id="Addr10"
+                          field-name="To dropdown under Instructions"
+                          options="Building and Construction Authority:BCA,Defence Science & Technology Agency:DSTA">
+                        </cn2-select>
+                      </div>
+                    </div>
+                    <div class="mls-espro-form-fields row pt-2">
+                      <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                        <cn2-textarea hidden id="Addr20" field-name="To textarea under Instructions" no-label inline="6"
+                          disabled style="height:150px;">
+                        </cn2-textarea>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container" style="margin-bottom:65px;">
+            <h2>Instructions</h2>
+            <ol class="mls-intro-list">
+              <li>
+                This form is to be digitally signed by the Professional Engineer.
+              </li>
+              <li>
+                This form may take you 2-3 mins to complete.
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="page2">
+          <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom:65px;">
+            <h2>Particulars of Application</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Project Description of Temporary Building Works*</td>
+                  <td>
+                    <cn2-textarea no-label maxlength="1000" id="Project_Title20"
+                      field-name="Project Description of Temporary Building Works under Particulars of Application"
+                      mandatory></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Location Description <br>
+                    (Eg. Lot, TS/MK,
+                    Road Name, House No.)
+
+                  </td>
+                  <td>
+                    <cn2-textarea no-label maxlength="32400" id="Project_Location_Description10"
+                      field-name="Location Description under Particulars of Application"></cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Permit No(s).*</td>
+                  <td>
+                    <cn2-textbox no-label maxlength="32400" id="PartOfAppl_PermNos10"
+                      field-name="Permit No(s). under Particulars of Application" mandatory></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>BCA Reference No.</td>
+                  <td>
+                    <cn2-textbox no-label maxlength="32400" id="PartOfAppl_BcaRefNo10"
+                      field-name="BCA Reference No. under Particulars of Application"></cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Remarks</td>
+                  <td>
+                    <cn2-textarea no-label maxlength="32400" id="PartOfAppl_Rema10"
+                      field-name="Remarks under Particulars of Application"></cn2-textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="page3">
+          <div class="mls-espo-right-inner-container borderchecking">
+            <h2>Particulars of Professional Engineer</h2>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td width="35%">Name*</td>
+                  <td>
+                    <cn2-textbox no-label id='Member_Member_Name_QP10'
+                      field-name="Name under Particulars of Professional Engineer" maxlength="66" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Registration No.*</td>
+                  <td>
+                    <cn2-textbox no-label id='Member_IC_Passport_No_QP10'
+                      field-name="Registration No. under Particulars of Professional Engineer" maxlength="5" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Firm Name</td>
+                  <td>
+                    <cn2-textbox no-label id='Member_Firm_Name_QP10'
+                      field-name="Firm Name under Particulars of Professional Engineer" maxlength="66">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>UEN</td>
+                  <td>
+                    <cn2-textbox event-blur="uenValidate(this);" template="#########@" no-label maxlength='10'
+                      id='Members_UEN_QP10' field-name="UEN under Particulars of Professional Engineer">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>
+                    <cn2-textarea no-label id='Member_Address_QP10'
+                      field-name="Address under Particulars of Professional Engineer">
+                    </cn2-textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Telephone No.</td>
+                  <td>
+                    <cn2-textbox no-label id='Member_Tel_No_QP10'
+                      field-name="Telephone No. under Particulars of Professional Engineer" numeric maxlength="12">
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handphone No.*</td>
+                  <td>
+                    <cn2-textbox no-label id='Member_Mobile_No_QP10'
+                      field-name="Handphone No. under Particulars of Professional Engineer" numeric maxlength="12"
+                      mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email Address*</td>
+                  <td>
+                    <cn2-textbox placeholder="name@example.com" no-label id='Member_Email_Address1_QP10'
+                      field-name="Email Address under Particulars of Professional Engineer"
+                      event-change="EmailValidate(this)" maxlength="50" mandatory>
+                    </cn2-textbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mls-espo-right-inner-container borderchecking" style="margin-bottom:65px;">
+            <h2>Declaration of Professional Engineer*</h2>
+            <div class="mls-espro-form-fields row pt-2">
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <td>
+                      1.
+                    </td>
+                    <td>
+                      I hereby certify that I have supervised the erection of the temporary
+                      building(s) /building works and that such works have been completed in
+                      accordance with the provisions of the Building Control Act, the
+                      regulations made thereunder and the conditions under which the permit
+                      was issued, and the plans that were approved.
+
+                    </td>
+                    <td>
+                      <cn2-checkbox id="DeclByQualPers_IHereCertThat10"
+                        field-name="I hereby certify that under Declaration of Professional Engineer" checked mandatory
+                        event-change="removeManda(this)"></cn2-checkbox>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <cn2-fixed-footer></cn2-fixed-footer>
+  <cn2-version-footer></cn2-version-footer>
+  </div>
+</body>
+
+</html>

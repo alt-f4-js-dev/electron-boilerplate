@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PUB-TOP-CLR</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Syncfusion" />
+
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+    <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+    <link href="../cm/styles/styles.css" rel="stylesheet" />
+    <script src="../cm/js/func/common.js"></script>
+    <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+    <script src="../cm/js/components/cn2sgheader.js"></script>
+    <script src="../cm/js/components/cn2masterhead.js"></script>
+    <script src="../cm/js/components/cn2versionfooter.js"></script>
+    <script src="../cm/js/components/cn2fixedfooter.js"></script>
+
+    <script src="../cm/js/components/cn2textbox.js"></script>
+    <script src="../cm/js/components/cn2textarea.js"></script>
+    <script src="../cm/js/components/cn2checkbox.js"></script>
+    <script src="../cm/js/components/cn2select.js"></script>
+    <script src="../cm/js/components/cn2navbutton.js"></script>
+    <script src="../cm/js/components/cn2button.js"></script>
+
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <cn2-master-head title="APPLICATION FOR PUB CLEARANCE FOR TEMPORARY OCCUPATION PERMIT (TOP)">
+    </cn2-master-head>
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p style="margin: 0px">Help</p>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <b>For enquiries related to forms, please contact the following:</b>
+                </p>
+                <p><span id="RegulatoryAuthority_id"></span></p>
+                <div id="table-parent" style="width:auto">
+                    <table id="ContDetaTable_id" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Regulatory Authority</th>
+                                <th>Email Address</th>
+                                <th>Tel No.</th>
+                                <th>Area of Support</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PUB (Drainage)</td>
+                                <td>pub_bpu@pub.gov.sg</td>
+                                <td>67313512</td>
+                                <td>General Enquiry, Policies, Submissions</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="5">PUB (Sewerage)</td>
+                                <td>pub_bpu@pub.gov.sg</td>
+                                <td>67313512</td>
+                                <td>General Enquiry</td>
+                            </tr>
+                            <tr>
+                                <td>sophian_ismail@pub.gov.sg</td>
+                                <td>67313656</td>
+                                <td>
+                                    Approval for works affecting public sewer/Pre & Post
+                                    Construction CCTV submissions
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>LER_Seng_Chye@pub.gov.sg</td>
+                                <td>67313264</td>
+                                <td>Sewerage pre-consultation/ DC Plan Submissions</td>
+                            </tr>
+                            <tr>
+                                <td>teo_mok_tong@pub.gov.sg</td>
+                                <td>67313256</td>
+                                <td>Sewerage Clearance Submissions</td>
+                            </tr>
+                            <tr>
+                                <td>steven_cheong@pub.gov.sg</td>
+                                <td>67313339</td>
+                                <td>Code of Practice and Regulations</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="6">PUB (Water)</td>
+                                <td>pub_bpu@pub.gov.sg</td>
+                                <td>67313512</td>
+                                <td>General Enquiry</td>
+                            </tr>
+                            <tr>
+                                <td>KUANG_kim_yaw@pub.gov.sg</td>
+                                <td>67313515</td>
+                                <td>Policies</td>
+                            </tr>
+                            <tr>
+                                <td>olivia_TEO@pub.gov.sg</td>
+                                <td>67313967</td>
+                                <td>PE Submissions</td>
+                            </tr>
+                            <tr>
+                                <td>Marwin_SUHAIMI@pub.gov.sg</td>
+                                <td>67313893</td>
+                                <td>PE Submissions</td>
+                            </tr>
+                            <tr>
+                                <td>THAM_tuck_kuan@pub.gov.sg</td>
+                                <td>67313665</td>
+                                <td>License Plumber Submissions</td>
+                            </tr>
+                            <tr>
+                                <td>LEE_Cai_Jie@pub.gov.sg</td>
+                                <td>67313250</td>
+                                <td>License Plumber Submissions</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+	<input type="hidden" name="member_id" id="member_id" />
+    <input type="hidden" name="form_validated" id="form_validated" />
+    <div class="mls-espro-form-container">
+        <div class="row">
+            <div class="mls-espro-form-left-nav" id="menu">
+                <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+                <cn2-nav-button target="page2" page-number="2" label="Particulars of Application"></cn2-nav-button>
+                <cn2-nav-button target="page3" page-number="3" label="Particulars and Declaration of Qualified Person">
+                </cn2-nav-button>
+                <cn2-nav-button target="page4" page-number="4" label="Attachments"></cn2-nav-button>
+            </div>
+            <div class="e-content mls-espro-form-right" id="page">
+                <div id="page1">
+                    <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">
+                                        <b>Date:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <cn2-textbox id="Date10" no-label inline="5" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="1%">
+                                        <b>To:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <div class="mls-espro-form-fields row">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-textbox id="Addr10" no-label inline="5" disabled>
+                                                </cn2-textbox>
+                                            </div>
+                                        </div>
+                                        <div class="mls-espro-form-fields row pt-2">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-textarea id="Addr20" no-label inline="5" disabled
+                                                    style="height: 135px;">
+                                                </cn2-textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Instructions</h2>
+                        <ol class="mls-intro-list">
+                            <li>
+                                This form may take you 15 minutes to fill in.<br />
+                                You will need the following information to fill in the form:-
+                                <ul style="list-style: none;">
+                                    <li>- Particulars of Project</li>
+                                    <li>- Particulars of Qualified Person</li>
+                                    <li>- Supporting documents</li>
+                                </ul>
+                            </li>
+                            <li>
+                                This form is to be digitally signed by the Qualified Person
+                                responsible for the project(s).
+                            </li>
+                            <li>
+                                This form is to be accompanied the relevant attachments.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div id="page2">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Application</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td class="align-middle" width="35%">
+                                        Project Reference Number
+                                    </td>
+                                    <td>
+                                        <cn2-textbox disabled no-label id="Project_Project_Ref_No10"></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle">Project Title</td>
+                                    <td>
+                                        <cn2-textarea disabled no-label id="Project_Title10"></cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle">
+                                        Location Description [Include Lot/Plot, MK/TS, House No.,
+                                        Building Address and Road information]
+                                    </td>
+                                    <td>
+                                        <cn2-textarea disabled no-label id="Project_Location_Description10">
+                                        </cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Plan Type*
+                                    </td>
+                                    <td>
+                                        <div id="stForm">
+                                            <div id="A1">
+                                                <div class="mls-espro-form-fields row pt-2">
+                                                    <div class="col-xs-5 col-sm-5 col-lg-5 col-md-5">
+                                                        <cn2-select id="PartOfAppl_PlanTypeA10"
+                                                            prefix="PartOfAppl_PlanTypeA" suffix="0"
+                                                            options="BP:BP, BPNE:BPNE, BPAM:BPAM, BPAA:BPAA, AAAM:AAAM, MVNE:MVNE, MVAM:MVAM, MVAA:MVAA, MAAM:MAAM, NA:NA"
+                                                            mandatory no-label inline="15">
+                                                        </cn2-select>
+                                                    </div>
+                                                    <div class="col-xs-5 col-sm-5 col-lg-5 col-md-5">
+                                                        <cn2-textbox class="planType" id="PartOfAppl_PlanTypeB10"
+                                                            prefix="PartOfAppl_PlanTypeB" suffix="0" inline no-label
+                                                            maxlength="3" mandatory numeric
+                                                            event-change="adjustNumberLength(this,3);PartOfAppl_PlanType_change(this)"
+                                                            event-keypress="PartOfAppl_PlanType_keypress(event,this)">
+                                                        </cn2-textbox>
+                                                    </div>
+                                                    <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2">
+                                                        <cn2-button id="delete1A" class="deleteBtn" prefix="delete"
+                                                            suffix="A" style="float: right;"
+                                                            event-click="removeDuplicate(this.id,'A1','stForm');disableDelete('stForm')"
+                                                            label="Delete" danger disabled>
+                                                        </cn2-button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mls-espro-form-fields row pt-2">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-button label="Add"
+                                                    event-click="insertDuplicate('stForm','A1');disableDelete('stForm')">
+                                                </cn2-button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Application for PUB TOP Clearance*</td>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                Partial Temporary Occupation Permit &nbsp;
+                                                <input id="PartTempOccuPerm10" type="radio" name="OccuPerm10_name"
+                                                    checked mandatory
+                                                    onchange="OccuPerm10_change(this,'DescOfPartTop10')" />
+                                            </div>
+                                            <div class="col-6">
+                                                Temporary Occupation Permit &nbsp;
+                                                <input id="TempOccuPerm10" type="radio" name="OccuPerm10_name" checked
+                                                    mandatory onchange="OccuPerm10_change(this,'DescOfPartTop10')" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle">
+                                        <p id="DescOfPartTop10_label">
+                                            Description of Partial TOP
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <cn2-textarea id="DescOfPartTop10" disabled no-label></cn2-textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="page3">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Particulars of Qualified Person</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td class="align-middle" width="35%">
+                                        Name*
+                                    </td>
+                                    <td>
+                                        <cn2-select mandatory no-label id="Member_Member_Name_QP10"
+                                            data-options="qpDropdown" event-change="loadDropDownDetails(this)">
+                                        </cn2-select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle">
+                                        Role in Project
+                                    </td>
+                                    <td>
+                                        <cn2-textbox disabled no-label id="MemberRole_Member_Role_Code_Desc_QP10">
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle">
+                                        Registration No.
+                                    </td>
+                                    <td>
+                                        <cn2-textbox disabled no-label id="MemberRole_Professional_No_QP10">
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle">
+                                        Firm Name
+                                    </td>
+                                    <td>
+                                        <cn2-textbox disabled no-label id="Member_Firm_Name_QP10"></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle">
+                                        Firm Address
+                                    </td>
+                                    <td>
+                                        <cn2-textarea disabled no-label id="Member_Address_QP10"></cn2-textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle">
+                                        Telephone No.
+                                    </td>
+                                    <td>
+                                        <cn2-textbox disabled no-label id="Member_Tel_No_QP10" numeric></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle">
+                                        Email Address
+                                    </td>
+                                    <td>
+                                        <cn2-textbox disabled no-label id="Member_Email_Address1_QP10"
+                                            event-blur="checkEmail(this);" placeholder="example@email.com">
+                                        </cn2-textbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Declaration by Qualified Person</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2">I confirm that:</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                I am the Qualified Person appointed under Section 6(3)
+                                                or 9(2)(b) of the Building Control Act (Cap. 29) in
+                                                respect of the works described which include Sewerage
+                                                Works and Drainage Works and my qualification is
+                                                appropriate to the nature of these works. *
+                                            </td>
+                                            <td width="1%">
+                                                <cn2-checkbox id="DeclByQualPers_IAmTheQP10" checked mandatory>
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                The particulars of Project, Application and Submission
+                                                Checklists given in this form are correct. *
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="DeclByQualPers_ThePartOfProj10" checked mandatory>
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                The project has obtained PUB TOP clearance for
+                                                Sanitary/Sewerage OR the project has no works
+                                                involving Sanitary/Sewerage and PUB’s confirmation in
+                                                the form of a DC clearance or email is attached. *
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="DeclByQualPers_TheProjHasObta10" checked mandatory>
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                The project has obtained PUB TOP clearance for
+                                                Drainage OR the project has no works involving
+                                                drainage and PUB’s confirmation in form of a DC
+                                                clearance or email is attached. *
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="DeclByQualPers_TheProjHasObta20" checked mandatory>
+                                                </cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page4">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Attachments</h2>
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr class="text-center">
+                                            <td>
+                                                &nbsp;
+                                            </td>
+                                            <td width="1%">&nbsp;</td>
+                                            <td>CA Number</td>
+                                            <td>
+                                                PUB Email
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                PUB TOP Clearance for Sanitary/Sewerage OR<br />
+                                                PUB’s confirmation of no works<br />
+                                                involving Sanitary/Sewerage
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="Atta_TopClerForSani10"
+                                                    event-change="toggleDecl(this);">
+                                                </cn2-checkbox>
+                                            </td>
+                                            <td class="text-center">
+                                                <cn2-textbox id="Atta_TopClerForSani20" no-label inline disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                            <td class="text-center">
+                                                <cn2-checkbox id="Atta_TopClerForSani30"
+                                                    event-change="toggleDecl(this);" disabled></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                PUB TOP Clearance for Drainage OR<br />
+                                                PUB’s confirmation of no works involving Drainage
+                                            </td>
+                                            <td>
+                                                <cn2-checkbox id="Atta_TopClerForDrai10"
+                                                    event-change="toggleDecl(this);">
+                                                </cn2-checkbox>
+                                            </td>
+                                            <td class="text-center">
+                                                <cn2-textbox id="Atta_TopClerForDrai20" no-label inline disabled>
+                                                </cn2-textbox>
+                                            </td>
+                                            <td class="text-center">
+                                                <cn2-checkbox id="Atta_TopClerForDrai30"
+                                                    event-change="toggleDecl(this);" disabled></cn2-checkbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan=" 3">
+                                                Note: For clearances, fill “CA number”; for emails,
+                                                tick “PUB Email”
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <cn2-version-footer></cn2-version-footer>
+        <cn2-fixed-footer></cn2-fixed-footer>
+    </div>
+</body>
+
+</html>

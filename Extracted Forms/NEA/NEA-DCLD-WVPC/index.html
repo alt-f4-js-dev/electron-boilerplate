@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NEA-DCLD-WVPC</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Syncfusion" />
+
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link href="../cm/styles/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+    <link href="../cm/styles/bootstrap.css" rel="stylesheet" />
+    <link href="../cm/styles/styles.css" rel="stylesheet" />
+
+    <script src="../cm/js/func/common.js"></script>
+    <script src="../cm/js/components/cn2commonfunc.js"></script>
+
+    <script src="../cm/js/components/cn2sgheader.js"></script>
+    <script src="../cm/js/components/cn2masterhead.js"></script>
+    <script src="../cm/js/components/cn2versionfooter.js"></script>
+    <script src="../cm/js/components/cn2fixedfooter.js"></script>
+
+    <script src="../cm/js/components/cn2checkbox.js"></script>
+    <script src="../cm/js/components/cn2textbox.js"></script>
+    <script src="../cm/js/components/cn2textarea.js"></script>
+    <script src="../cm/js/components/cn2select.js"></script>
+    <script src="../cm/js/components/cn2navbutton.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <cn2-master-head title="WAIVER APPLICATION FORM ON POLLUTION CONTROL MATTER"></cn2-master-head>
+    <input type="hidden" name="member_id" id="member_id" />
+    <input type="hidden" name="form_validated" id="form_validated" />
+
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p style="margin: 0px">Help</p>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <b>For enquiries related to forms, please contact the following:</b>
+                </p>
+                <p><span id="RegulatoryAuthority_id"></span></p>
+                <div id="table-parent" style="width:auto">
+                    <table id="ContDetaTable_id" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Regulatory Authority</th>
+                                <th>Email Address</th>
+                                <th>Tel No.</th>
+                                <th>Area of Support</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">NEA (CBPU)</td>
+                                <td>amanda_wong@nea.gov.sg</td>
+                                <td>67086188</td>
+                                <td rowspan="2">Pollution Control Study (PCS) Report</td>
+                            </tr>
+                            <tr>
+                                <td>long_han_boon@nea.gov.sg</td>
+                                <td>67319624</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="closer btn" onclick="hideHelp()" style="background-color:#037ebb;color:white;">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="mls-espro-form-container">
+        <div class="row">
+            <div class="mls-espro-form-left-nav" id="menu">
+                <cn2-nav-button target="page1" page-number="1" label="Instructions"></cn2-nav-button>
+                <cn2-nav-button target="page2" page-number="2" label="Particulars of Development Proposal">
+                </cn2-nav-button>
+                <cn2-nav-button target="page3" page-number="3" label="Particulars of Application"></cn2-nav-button>
+                <cn2-nav-button target="page4" page-number="4" label="Particulars of Qualified Person"></cn2-nav-button>
+            </div>
+
+            <div class="e-content mls-espro-form-right" id="page">
+                <div id="page1">
+                    <div class="mls-espo-right-inner-container borderchecking" style="padding-bottom:0px">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td width="1%">
+                                        <b>Date:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <cn2-textbox id="Date10" no-label inline="7" disabled></cn2-textbox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="1%">
+                                        <b>To:</b>
+                                    </td>
+                                    <td width="15%">
+                                        <div class="mls-espro-form-fields row">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-select no-label inline="7" id="Addr10" options="Development Control and Licensing Department (DCLD):ENVCBPU" disabled>
+                                                </cn2-select>
+                                            </div>
+                                        </div>
+                                        <div class="mls-espro-form-fields row pt-2">
+                                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                                <cn2-textarea id="Addr20" no-label inline="7" disabled
+                                                    style="height: 130px;">
+                                                </cn2-textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mls-espo-right-inner-container">
+                        <h2>Instructions</h2>
+                        <ol class="mls-intro-list">
+                            <li>
+                                This form is to be digitally signed by the Qualified Person
+                                responsible for the works.
+                            </li>
+                            <li>
+                                This form is to be accompanied by the relevant attachments.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div id="page2">
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <h2>Particulars of Development Proposal</h2>
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td width="35%">
+                                                Project Reference No.
+                                            </td>
+                                            <td>
+                                                <cn2-textbox id="Project_Project_Ref_No10" disabled no-label inline>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">
+                                                Project Title
+                                            </td>
+                                            <td>
+                                                <cn2-textarea id="Project_Title10" maxlength="25" disabled no-label
+                                                    inline>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">
+                                                Location Description [Include Lot/Plot, MK/TS, House
+                                                No., Building Address and Road Information]
+                                            </td>
+                                            <td>
+                                                <cn2-textarea id="Project_Location_Description10" disabled no-label
+                                                    inline>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page3">
+                    <div class="mls-espo-right-inner-container  borderchecking">
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <h2>Particulars of Application</h2>
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td width="35%">Application for*</td>
+                                            <td>
+                                                <cn2-select id="PartOfAppl_ApplFor10" mandatory no-label inline
+                                                    options="Pre-Consultation:Pre-Consultation,Waiver:Waiver">
+                                                </cn2-select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">Development Proposal Application*</td>
+                                            <td>
+                                                <cn2-select id="PartOfAppl_DevePropAppl10"
+                                                    options="Industrial:Industrial,Non-Industrial:Non-Industrial"
+                                                    mandatory no-label inline>
+                                                </cn2-select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">
+                                                Department File Reference Number<br />(if applicable)
+                                            </td>
+                                            <td>
+                                                <cn2-textbox maxlength="25" id="PartOfAppl_DepaFileRefeNumb10" no-label
+                                                    inline>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">Subject*</td>
+                                            <td>
+                                                <cn2-textarea maxlength="1000" id="PartOfAppl_Subj10" mandatory no-label
+                                                    inline></cn2-textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page4">
+                    <div class="mls-espo-right-inner-container  borderchecking">
+                        <div class="mls-espro-form-fields row">
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <h2>Particulars of Qualified Person</h2>
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr hidden>
+                                            <td width="35%">SID</td>
+                                            <td>
+                                                <cn2-textbox id="Member_SID_QP10" disabled
+                                                    no-label inline></cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">Name*</td>
+                                            <td>
+                                                <cn2-select id="Member_Member_Name_QP10" data-options="qpDropdown"
+                                                    event-change="loadDropDownDetails(this);removeSelectUENerror('Members_UEN_QP10')"
+                                                    no-label inline mandatory>
+                                                </cn2-select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">Role In Project</td>
+                                            <td>
+                                                <cn2-textbox id="MemberRole_Member_Role_Code_Desc_QP10" disabled
+                                                    no-label inline></cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">Registration No.</td>
+                                            <td>
+                                                <cn2-textbox id="MemberRole_Professional_No_QP10" disabled no-label
+                                                    inline>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">Firm Name</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Firm_Name_QP10" disabled no-label inline>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">UEN</td>
+                                            <td>
+                                                <cn2-textbox id="Members_UEN_QP10" maxlength="10"
+                                                    event-blur="uenValidate(this);" template="#########@" no-label
+                                                    inline>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">Address</td>
+                                            <td>
+                                                <cn2-textarea id="Member_Address_QP10" disabled no-label inline>
+                                                </cn2-textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">Telephone No.</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Tel_No_QP10" disabled no-label inline>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">Extension No.</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Tel_Ext_No_QP10" no-label inline>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">Fax No.</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Fax_No_QP10" no-label inline>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="35%">Email Address</td>
+                                            <td>
+                                                <cn2-textbox id="Member_Email_Address1_QP10" disabled no-label inline>
+                                                </cn2-textbox>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-espo-right-inner-container borderchecking">
+                        <h2>Attachments</h2>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Attached the relevant plans & supporting documents
+                                    </td>
+                                    <td width="1%">
+                                        <cn2-checkbox id="SubmChec_B1"></cn2-checkbox>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <cn2-version-footer></cn2-version-footer>
+        <cn2-fixed-footer></cn2-fixed-footer>
+    </div>
+</body>
+
+</html>
